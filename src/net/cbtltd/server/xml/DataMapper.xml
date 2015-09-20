@@ -1,0 +1,127 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="net.cbtltd.server.api.DataMapper">
+
+	<resultMap id="ResultMap" type="Data">
+		<id column="ID" jdbcType="INTEGER" property="id" />
+		<result column="OrganizationID" jdbcType="INTEGER" property="organizationid" />
+		<result column="ActorID" jdbcType="INTEGER" property="actorid" />
+		<result column="Origin" jdbcType="VARCHAR" property="origin" />
+		<result column="DataType" jdbcType="VARCHAR" property="datatype" />
+		<result column="DataID" jdbcType="VARCHAR" property="dataid" />
+		<result column="State" jdbcType="VARCHAR" property="state" />
+		<result column="ToString" jdbcType="VARCHAR" property="tostring" />
+		<result column="version" jdbcType="TIMESTAMP" property="version" />
+	</resultMap>
+
+	<sql id="columns">
+		ID, OrganizationID, ActorID, Origin, DataType, DataID, State, ToString, version
+	</sql>
+
+	<select id="read" parameterType="String" resultMap="ResultMap">
+		select
+		<include refid="columns" />
+		from data
+		where ID = #{id,jdbcType=INTEGER}
+	</select>
+
+	<delete id="delete" parameterType="String">
+		delete from data
+		where ID =
+		#{id,jdbcType=INTEGER}
+	</delete>
+
+	<insert id="create" parameterType="Data" useGeneratedKeys="true" keyProperty="id">
+		insert into data (
+			OrganizationID, ActorID, Origin, DataType, DataID, State, ToString, version
+		)
+		values (
+			#{organizationid,jdbcType=INTEGER}, 
+			#{actorid,jdbcType=INTEGER},
+			#{origin,jdbcType=VARCHAR}, 
+			#{datatype,jdbcType=VARCHAR}, 
+			#{dataid,jdbcType=VARCHAR},
+			#{state,jdbcType=VARCHAR},
+			#{tostring,jdbcType=VARCHAR},
+			#{version,jdbcType=TIMESTAMP}
+		)
+	</insert>
+
+	<update id="update" parameterType="Data">
+		update data
+		<set>
+			<if test="organizationid != null">
+				OrganizationID = #{organizationid,jdbcType=INTEGER},
+			</if>
+			<if test="actorid != null">
+				ActorID = #{actorid,jdbcType=INTEGER},
+			</if>
+			<if test="origin != null">
+				Origin = #{origin,jdbcType=VARCHAR},
+			</if>
+			<if test="datatype != null">
+				DataType = #{datatype,jdbcType=VARCHAR},
+			</if>
+			<if test="dataid != null">
+				DataID = #{dataid,jdbcType=VARCHAR},
+			</if>
+			<if test="state != null">
+				State = #{state,jdbcType=VARCHAR},
+			</if>
+			<if test="tostring != null">
+				ToString = #{tostring,jdbcType=VARCHAR},
+			</if>
+			<if test="version != null">
+				version = #{version,jdbcType=TIMESTAMP},
+			</if>
+		</set>
+		where ID = #{id,jdbcType=INTEGER}
+	</update>
+
+	<update id="updateByPrimaryKey" parameterType="Data">
+		update data
+		set
+			OrganizationID = #{organizationid,jdbcType=INTEGER},
+			ActorID = #{actorid,jdbcType=INTEGER},
+			Origin = #{origin,jdbcType=VARCHAR},
+			DataType = #{datatype,jdbcType=VARCHAR},
+			DataID = #{dataid,jdbcType=VARCHAR},
+			State = #{state,jdbcType=VARCHAR},
+			ToString = #{tostring,jdbcType=VARCHAR},
+			version = #{version,jdbcType=TIMESTAMP}
+		where ID = #{id,jdbcType=INTEGER}
+	</update>
+
+	<sql id="tablewhere">
+		where ID = ID
+		<if test="organizationid != null">
+			and OrganizationID = #{organizationid,jdbcType=INTEGER}
+		</if>
+		<if test="datatype != null">
+			and DataType = #{datatype,jdbcType=VARCHAR}
+		</if>
+	</sql>
+
+	<select id="count" parameterType="Data" resultType="Integer">
+		select count(*)
+		from data
+		<include refid="tablewhere" />
+	</select>
+
+	<select id="list" parameterType="Data" resultMap="ResultMap">
+		select
+		<include refid="columns" />
+		from data
+		<include refid="tablewhere" />
+		order by ID
+	</select>
+	
+	<select id="last" parameterType="Data" resultType="java.util.Date">
+		select version
+		from data
+		where DataType = #{datatype,jdbcType=VARCHAR}
+			and DataID = #{dataid,jdbcType=VARCHAR}
+		order by version desc
+		limit 1
+	</select>
+</mapper>

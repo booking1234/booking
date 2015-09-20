@@ -1,0 +1,49 @@
+<?xml version="1.0" encoding="UTF-8"?>
+   <xs:schema xmlns:xs="http://www.w3.org/2001/XMLSchema" elementFormDefault="qualified" attributeFormDefault="unqualified">
+         <!-- XML Schema Generated from XML Document on Thu Aug 07 2014 11:24:27 GMT+0530 (India Standard Time) -->
+         <!-- with XmlGrid.net Free Online Service http://xmlgrid.net -->
+         <xs:element name="prices">
+               <xs:complexType>
+                     <xs:sequence>
+                           <xs:element name="price" maxOccurs="unbounded">
+                                 <xs:complexType>
+                                       <xs:sequence>
+                                             <xs:element name="propertyID" type="xs:int"></xs:element>
+                                             <xs:element name="propertyType" type="xs:string"></xs:element>
+                                             <xs:element name="rooms">
+                                                   <xs:complexType>
+                                                         <xs:sequence>
+                                                               <xs:element name="room" maxOccurs="unbounded">
+                                                                     <xs:complexType>
+                                                                           <xs:sequence>
+                                                                                 <xs:element name="roomID" type="xs:string"></xs:element>
+                                                                                 <xs:element name="dailyPrice" type="xs:double"></xs:element>
+                                                                                 <xs:element name="weekendRates" type="xs:double"></xs:element>
+                                                                                 <xs:element name="specialRates">
+                                                                                       <xs:complexType>
+                                                                                             <xs:sequence>
+                                                                                                   <xs:element name="specialRate" maxOccurs="unbounded">
+                                                                                                         <xs:complexType>
+                                                                                                               <xs:sequence>
+                                                                                                                     <xs:element name="startDay" type="xs:date"></xs:element>
+                                                                                                                     <xs:element name="endDay" type="xs:date"></xs:element>
+                                                                                                                     <xs:element name="rate" type="xs:double"></xs:element>
+                                                                                                               </xs:sequence>
+                                                                                                         </xs:complexType>
+                                                                                                   </xs:element>
+                                                                                             </xs:sequence>
+                                                                                       </xs:complexType>
+                                                                                 </xs:element>
+                                                                           </xs:sequence>
+                                                                     </xs:complexType>
+                                                               </xs:element>
+                                                         </xs:sequence>
+                                                   </xs:complexType>
+                                             </xs:element>
+                                       </xs:sequence>
+                                 </xs:complexType>
+                           </xs:element>
+                     </xs:sequence>
+               </xs:complexType>
+         </xs:element>
+   </xs:schema>

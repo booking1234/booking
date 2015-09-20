@@ -1,0 +1,745 @@
+<?xml version="1.0" encoding="utf-8"?>
+<wsdl:definitions xmlns:s="http://www.w3.org/2001/XMLSchema" xmlns:soap12="http://schemas.xmlsoap.org/wsdl/soap12/" xmlns:tns="http://xml.ciirus.com/" xmlns:soap="http://schemas.xmlsoap.org/wsdl/soap/" targetNamespace="http://xml.ciirus.com/" xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/">
+  <wsdl:documentation xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/">Ciirus XML</wsdl:documentation>
+  <wsdl:types>
+    <s:schema elementFormDefault="qualified" targetNamespace="http://xml.ciirus.com/">
+      <s:element name="MakeBooking">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="APIUsername" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="APIPassword" type="s:string" />
+            <s:element minOccurs="1" maxOccurs="1" name="BD" type="tns:sBookingDetails" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:complexType name="sBookingDetails">
+        <s:sequence>
+          <s:element minOccurs="0" maxOccurs="1" name="ArrivalDate" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="DepartureDate" type="s:string" />
+          <s:element minOccurs="1" maxOccurs="1" name="PropertyID" type="s:int" />
+          <s:element minOccurs="0" maxOccurs="1" name="GuestName" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="GuestEmailAddress" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="GuestTelephone" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="GuestAddress" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="GuestList" type="tns:ArrayOfSGuests" />
+          <s:element minOccurs="1" maxOccurs="1" name="PoolHeatRequired" type="s:boolean" />
+        </s:sequence>
+      </s:complexType>
+      <s:complexType name="ArrayOfSGuests">
+        <s:sequence>
+          <s:element minOccurs="0" maxOccurs="unbounded" name="sGuests" type="tns:sGuests" />
+        </s:sequence>
+      </s:complexType>
+      <s:complexType name="sGuests">
+        <s:sequence>
+          <s:element minOccurs="0" maxOccurs="1" name="Name" type="s:string" />
+          <s:element minOccurs="1" maxOccurs="1" name="Age" type="s:int" />
+        </s:sequence>
+      </s:complexType>
+      <s:element name="MakeBookingResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="1" maxOccurs="1" name="MakeBookingResult" type="tns:sBookingResult" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:complexType name="sBookingResult">
+        <s:sequence>
+          <s:element minOccurs="1" maxOccurs="1" name="BookingPlaced" type="s:boolean" />
+          <s:element minOccurs="0" maxOccurs="1" name="ErrorMessage" type="s:string" />
+          <s:element minOccurs="1" maxOccurs="1" name="BookingID" type="s:int" />
+          <s:element minOccurs="1" maxOccurs="1" name="TotalAmountIncludingTax" type="s:decimal" />
+        </s:sequence>
+      </s:complexType>
+      <s:element name="GetProperties">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="APIUsername" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="APIPassword" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="ArriveDate" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="DepartDate" type="s:string" />
+            <s:element minOccurs="1" maxOccurs="1" name="FilterOptions" type="tns:strucSearchFilterOptions" />
+            <s:element minOccurs="1" maxOccurs="1" name="SearchOptions" type="tns:strucSearchOptions" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:complexType name="strucSearchFilterOptions">
+        <s:sequence>
+          <s:element minOccurs="1" maxOccurs="1" name="ManagementCompanyID" type="s:int" />
+          <s:element minOccurs="1" maxOccurs="1" name="CommunityID" type="s:int" />
+          <s:element minOccurs="1" maxOccurs="1" name="PropertyID" type="s:int" />
+          <s:element minOccurs="1" maxOccurs="1" name="PropertyType" type="s:int" />
+          <s:element minOccurs="1" maxOccurs="1" name="HasPool" type="s:int" />
+          <s:element minOccurs="1" maxOccurs="1" name="HasSpa" type="s:int" />
+          <s:element minOccurs="1" maxOccurs="1" name="PrivacyFence" type="s:int" />
+          <s:element minOccurs="1" maxOccurs="1" name="CommunalGym" type="s:int" />
+          <s:element minOccurs="1" maxOccurs="1" name="HasGamesRoom" type="s:int" />
+          <s:element minOccurs="1" maxOccurs="1" name="IsGasFree" type="s:boolean" />
+          <s:element minOccurs="1" maxOccurs="1" name="Sleeps" type="s:int" />
+          <s:element minOccurs="1" maxOccurs="1" name="Bedrooms" type="s:int" />
+          <s:element minOccurs="1" maxOccurs="1" name="PropertyClass" type="s:int" />
+          <s:element minOccurs="1" maxOccurs="1" name="ConservationView" type="s:int" />
+          <s:element minOccurs="1" maxOccurs="1" name="WaterView" type="s:int" />
+          <s:element minOccurs="1" maxOccurs="1" name="LakeView" type="s:int" />
+          <s:element minOccurs="1" maxOccurs="1" name="WiFi" type="s:int" />
+          <s:element minOccurs="1" maxOccurs="1" name="PetsAllowed" type="s:int" />
+          <s:element minOccurs="1" maxOccurs="1" name="OnGolfCourse" type="s:int" />
+          <s:element minOccurs="1" maxOccurs="1" name="SouthFacingPool" type="s:int" />
+        </s:sequence>
+      </s:complexType>
+      <s:complexType name="strucSearchOptions">
+        <s:sequence>
+          <s:element minOccurs="1" maxOccurs="1" name="ReturnTopX" type="s:int" />
+          <s:element minOccurs="1" maxOccurs="1" name="ReturnFullDetails" type="s:boolean" />
+          <s:element minOccurs="1" maxOccurs="1" name="ReturnQuote" type="s:boolean" />
+          <s:element minOccurs="1" maxOccurs="1" name="IncludePoolHeatInQuote" type="s:boolean" />
+        </s:sequence>
+      </s:complexType>
+      <s:element name="GetPropertiesResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="GetPropertiesResult" type="tns:ArrayOfPropertyDetails" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:complexType name="ArrayOfPropertyDetails">
+        <s:sequence>
+          <s:element minOccurs="0" maxOccurs="unbounded" name="PropertyDetails" type="tns:PropertyDetails" />
+        </s:sequence>
+      </s:complexType>
+      <s:complexType name="PropertyDetails">
+        <s:sequence>
+          <s:element minOccurs="1" maxOccurs="1" name="PropertyID" type="s:int" />
+          <s:element minOccurs="0" maxOccurs="1" name="ManagementCompanyName" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="MainImageURL" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="MCPropertyName" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="WebsitePropertyName" type="s:string" />
+          <s:element minOccurs="1" maxOccurs="1" name="DescriptionSetID" type="s:int" />
+          <s:element minOccurs="0" maxOccurs="1" name="Community" type="s:string" />
+          <s:element minOccurs="1" maxOccurs="1" name="Bedrooms" type="s:int" />
+          <s:element minOccurs="1" maxOccurs="1" name="Sleeps" type="s:int" />
+          <s:element minOccurs="1" maxOccurs="1" name="Bathrooms" type="s:decimal" />
+          <s:element minOccurs="1" maxOccurs="1" name="XCO" type="s:decimal" />
+          <s:element minOccurs="1" maxOccurs="1" name="YCO" type="s:decimal" />
+          <s:element minOccurs="0" maxOccurs="1" name="Bullet1" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="Bullet2" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="Bullet3" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="Bullet4" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="Bullet5" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="CurrencySymbol" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="CurrencyCode" type="s:string" />
+          <s:element minOccurs="1" maxOccurs="1" name="HasPool" type="s:boolean" />
+          <s:element minOccurs="1" maxOccurs="1" name="HasSpa" type="s:boolean" />
+          <s:element minOccurs="1" maxOccurs="1" name="GamesRoom" type="s:boolean" />
+          <s:element minOccurs="0" maxOccurs="1" name="PropertyType" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="PropertyClass" type="s:string" />
+          <s:element minOccurs="1" maxOccurs="1" name="HostMCUserID" type="s:int" />
+          <s:element minOccurs="1" maxOccurs="1" name="QuoteExcludingTax" type="s:decimal" />
+          <s:element minOccurs="1" maxOccurs="1" name="QuoteIncludingTax" type="s:decimal" />
+          <s:element minOccurs="1" maxOccurs="1" name="LessThanMinimumNightsStay" type="s:boolean" />
+          <s:element minOccurs="1" maxOccurs="1" name="MinimumNightsStay" type="s:int" />
+          <s:element minOccurs="1" maxOccurs="1" name="CommunalPool" type="s:boolean" />
+          <s:element minOccurs="1" maxOccurs="1" name="CommunalGym" type="s:boolean" />
+          <s:element minOccurs="1" maxOccurs="1" name="ConservationView" type="s:boolean" />
+          <s:element minOccurs="1" maxOccurs="1" name="WaterView" type="s:boolean" />
+          <s:element minOccurs="1" maxOccurs="1" name="GolfView" type="s:boolean" />
+          <s:element minOccurs="1" maxOccurs="1" name="GolfIncluded" type="s:boolean" />
+          <s:element minOccurs="1" maxOccurs="1" name="WiFi" type="s:boolean" />
+          <s:element minOccurs="1" maxOccurs="1" name="Internet" type="s:boolean" />
+          <s:element minOccurs="1" maxOccurs="1" name="WiredInternetAccess" type="s:boolean" />
+          <s:element minOccurs="1" maxOccurs="1" name="PetsAllowed" type="s:boolean" />
+          <s:element minOccurs="1" maxOccurs="1" name="Stroller" type="s:boolean" />
+          <s:element minOccurs="1" maxOccurs="1" name="Crib" type="s:boolean" />
+          <s:element minOccurs="1" maxOccurs="1" name="HighChair" type="s:boolean" />
+          <s:element minOccurs="1" maxOccurs="1" name="AirCon" type="s:boolean" />
+          <s:element minOccurs="1" maxOccurs="1" name="ElectricFireplace" type="s:boolean" />
+          <s:element minOccurs="1" maxOccurs="1" name="GasFireplace" type="s:boolean" />
+          <s:element minOccurs="1" maxOccurs="1" name="WoodBurningFireplace" type="s:boolean" />
+          <s:element minOccurs="1" maxOccurs="1" name="FreeCalls" type="s:boolean" />
+          <s:element minOccurs="1" maxOccurs="1" name="FreeSolarHeatedPool" type="s:boolean" />
+          <s:element minOccurs="1" maxOccurs="1" name="PacknPlay" type="s:boolean" />
+          <s:element minOccurs="1" maxOccurs="1" name="PrivacyFence" type="s:boolean" />
+          <s:element minOccurs="1" maxOccurs="1" name="SouthFacingPool" type="s:boolean" />
+          <s:element minOccurs="1" maxOccurs="1" name="BBQ" type="s:boolean" />
+          <s:element minOccurs="1" maxOccurs="1" name="AirHockeyTable" type="s:boolean" />
+          <s:element minOccurs="1" maxOccurs="1" name="BigScreenTV" type="s:boolean" />
+          <s:element minOccurs="1" maxOccurs="1" name="CDPlayer" type="s:boolean" />
+          <s:element minOccurs="1" maxOccurs="1" name="DVDPlayer" type="s:boolean" />
+          <s:element minOccurs="1" maxOccurs="1" name="FoosballTable" type="s:boolean" />
+          <s:element minOccurs="1" maxOccurs="1" name="Grill" type="s:boolean" />
+          <s:element minOccurs="1" maxOccurs="1" name="HairDryer" type="s:boolean" />
+          <s:element minOccurs="1" maxOccurs="1" name="TVInEveryBedroom" type="s:boolean" />
+          <s:element minOccurs="1" maxOccurs="1" name="VCR" type="s:boolean" />
+          <s:element minOccurs="1" maxOccurs="1" name="IndoorJacuzzi" type="s:boolean" />
+          <s:element minOccurs="1" maxOccurs="1" name="IndoorHotTub" type="s:boolean" />
+          <s:element minOccurs="1" maxOccurs="1" name="OutdoorHotTub" type="s:boolean" />
+          <s:element minOccurs="1" maxOccurs="1" name="PavedParking" type="s:boolean" />
+          <s:element minOccurs="1" maxOccurs="1" name="PoolAccess" type="s:boolean" />
+          <s:element minOccurs="1" maxOccurs="1" name="RockingChairs" type="s:boolean" />
+          <s:element minOccurs="1" maxOccurs="1" name="VideoGames" type="s:boolean" />
+          <s:element minOccurs="1" maxOccurs="1" name="Fishing" type="s:boolean" />
+          <s:element minOccurs="0" maxOccurs="1" name="BedroomConfiguration" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="Address1" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="Address2" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="City" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="County" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="State" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="Zip" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="Country" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="Telephone" type="s:string" />
+        </s:sequence>
+      </s:complexType>
+      <s:element name="GetCommunities">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="APIUsername" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="APIPassword" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="GetCommunitiesResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="GetCommunitiesResult" type="tns:ArrayOfCommunities" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:complexType name="ArrayOfCommunities">
+        <s:sequence>
+          <s:element minOccurs="0" maxOccurs="unbounded" name="Communities" type="tns:Communities" />
+        </s:sequence>
+      </s:complexType>
+      <s:complexType name="Communities">
+        <s:sequence>
+          <s:element minOccurs="1" maxOccurs="1" name="CommunityID" type="s:int" />
+          <s:element minOccurs="0" maxOccurs="1" name="CommunityName" type="s:string" />
+        </s:sequence>
+      </s:complexType>
+      <s:element name="GetPropertyTypes">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="APIUsername" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="APIPassword" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="GetPropertyTypesResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="GetPropertyTypesResult" type="tns:ArrayOfPropertyTypes" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:complexType name="ArrayOfPropertyTypes">
+        <s:sequence>
+          <s:element minOccurs="0" maxOccurs="unbounded" name="PropertyTypes" type="tns:PropertyTypes" />
+        </s:sequence>
+      </s:complexType>
+      <s:complexType name="PropertyTypes">
+        <s:sequence>
+          <s:element minOccurs="1" maxOccurs="1" name="ID" type="s:int" />
+          <s:element minOccurs="0" maxOccurs="1" name="PropertyType" type="s:string" />
+        </s:sequence>
+      </s:complexType>
+      <s:element name="GetPropertyClasses">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="APIUsername" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="APIPassword" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="GetPropertyClassesResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="GetPropertyClassesResult" type="tns:ArrayOfPropertyClasses" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:complexType name="ArrayOfPropertyClasses">
+        <s:sequence>
+          <s:element minOccurs="0" maxOccurs="unbounded" name="PropertyClasses" type="tns:PropertyClasses" />
+        </s:sequence>
+      </s:complexType>
+      <s:complexType name="PropertyClasses">
+        <s:sequence>
+          <s:element minOccurs="1" maxOccurs="1" name="ID" type="s:int" />
+          <s:element minOccurs="0" maxOccurs="1" name="PropertyClass" type="s:string" />
+        </s:sequence>
+      </s:complexType>
+      <s:element name="IsPropertyAvailable">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="APIUsername" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="APIPassword" type="s:string" />
+            <s:element minOccurs="1" maxOccurs="1" name="PropertyID" type="s:int" />
+            <s:element minOccurs="0" maxOccurs="1" name="ArrivalDate" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="DepartureDate" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="IsPropertyAvailableResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="1" maxOccurs="1" name="IsPropertyAvailableResult" type="s:boolean" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="GetReservations">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="APIUsername" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="APIPassword" type="s:string" />
+            <s:element minOccurs="1" maxOccurs="1" name="PropertyID" type="s:int" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="GetReservationsResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="GetReservationsResult" type="tns:ArrayOfReservations" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:complexType name="ArrayOfReservations">
+        <s:sequence>
+          <s:element minOccurs="0" maxOccurs="unbounded" name="Reservations" type="tns:Reservations" />
+        </s:sequence>
+      </s:complexType>
+      <s:complexType name="Reservations">
+        <s:sequence>
+          <s:element minOccurs="1" maxOccurs="1" name="ArrivalDate" type="s:dateTime" />
+          <s:element minOccurs="1" maxOccurs="1" name="DepartureDate" type="s:dateTime" />
+        </s:sequence>
+      </s:complexType>
+      <s:element name="GetPropertyRates">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="APIUserName" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="APIPassword" type="s:string" />
+            <s:element minOccurs="1" maxOccurs="1" name="PropertyID" type="s:int" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="GetPropertyRatesResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="GetPropertyRatesResult" type="tns:ArrayOfRate" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:complexType name="ArrayOfRate">
+        <s:sequence>
+          <s:element minOccurs="0" maxOccurs="unbounded" name="Rate" type="tns:Rate" />
+        </s:sequence>
+      </s:complexType>
+      <s:complexType name="Rate">
+        <s:sequence>
+          <s:element minOccurs="1" maxOccurs="1" name="FromDate" type="s:dateTime" />
+          <s:element minOccurs="1" maxOccurs="1" name="ToDate" type="s:dateTime" />
+          <s:element minOccurs="1" maxOccurs="1" name="MinNightsStay" type="s:int" />
+          <s:element minOccurs="1" maxOccurs="1" name="DailyRate" type="s:decimal" />
+        </s:sequence>
+      </s:complexType>
+      <s:element name="GetDescriptions">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="APIUserName" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="APIPassword" type="s:string" />
+            <s:element minOccurs="1" maxOccurs="1" name="PropertyID" type="s:int" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="GetDescriptionsResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="GetDescriptionsResult" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="GetImageList">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="APIUserName" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="APIPassword" type="s:string" />
+            <s:element minOccurs="1" maxOccurs="1" name="PropertyID" type="s:int" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="GetImageListResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="GetImageListResult" type="tns:ArrayOfString" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:complexType name="ArrayOfString">
+        <s:sequence>
+          <s:element minOccurs="0" maxOccurs="unbounded" name="string" nillable="true" type="s:string" />
+        </s:sequence>
+      </s:complexType>
+      <s:element name="GetManagementCompanyList">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="APIUserName" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="APIPassword" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="GetManagementCompanyListResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="GetManagementCompanyListResult" type="tns:ArrayOfManagementCompanies" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:complexType name="ArrayOfManagementCompanies">
+        <s:sequence>
+          <s:element minOccurs="0" maxOccurs="unbounded" name="ManagementCompanies" type="tns:ManagementCompanies" />
+        </s:sequence>
+      </s:complexType>
+      <s:complexType name="ManagementCompanies">
+        <s:sequence>
+          <s:element minOccurs="1" maxOccurs="1" name="MCUserID" type="s:int" />
+          <s:element minOccurs="0" maxOccurs="1" name="MCCompanyName" type="s:string" />
+        </s:sequence>
+      </s:complexType>
+    </s:schema>
+  </wsdl:types>
+  <wsdl:message name="MakeBookingSoapIn">
+    <wsdl:part name="parameters" element="tns:MakeBooking" />
+  </wsdl:message>
+  <wsdl:message name="MakeBookingSoapOut">
+    <wsdl:part name="parameters" element="tns:MakeBookingResponse" />
+  </wsdl:message>
+  <wsdl:message name="GetPropertiesSoapIn">
+    <wsdl:part name="parameters" element="tns:GetProperties" />
+  </wsdl:message>
+  <wsdl:message name="GetPropertiesSoapOut">
+    <wsdl:part name="parameters" element="tns:GetPropertiesResponse" />
+  </wsdl:message>
+  <wsdl:message name="GetCommunitiesSoapIn">
+    <wsdl:part name="parameters" element="tns:GetCommunities" />
+  </wsdl:message>
+  <wsdl:message name="GetCommunitiesSoapOut">
+    <wsdl:part name="parameters" element="tns:GetCommunitiesResponse" />
+  </wsdl:message>
+  <wsdl:message name="GetPropertyTypesSoapIn">
+    <wsdl:part name="parameters" element="tns:GetPropertyTypes" />
+  </wsdl:message>
+  <wsdl:message name="GetPropertyTypesSoapOut">
+    <wsdl:part name="parameters" element="tns:GetPropertyTypesResponse" />
+  </wsdl:message>
+  <wsdl:message name="GetPropertyClassesSoapIn">
+    <wsdl:part name="parameters" element="tns:GetPropertyClasses" />
+  </wsdl:message>
+  <wsdl:message name="GetPropertyClassesSoapOut">
+    <wsdl:part name="parameters" element="tns:GetPropertyClassesResponse" />
+  </wsdl:message>
+  <wsdl:message name="IsPropertyAvailableSoapIn">
+    <wsdl:part name="parameters" element="tns:IsPropertyAvailable" />
+  </wsdl:message>
+  <wsdl:message name="IsPropertyAvailableSoapOut">
+    <wsdl:part name="parameters" element="tns:IsPropertyAvailableResponse" />
+  </wsdl:message>
+  <wsdl:message name="GetReservationsSoapIn">
+    <wsdl:part name="parameters" element="tns:GetReservations" />
+  </wsdl:message>
+  <wsdl:message name="GetReservationsSoapOut">
+    <wsdl:part name="parameters" element="tns:GetReservationsResponse" />
+  </wsdl:message>
+  <wsdl:message name="GetPropertyRatesSoapIn">
+    <wsdl:part name="parameters" element="tns:GetPropertyRates" />
+  </wsdl:message>
+  <wsdl:message name="GetPropertyRatesSoapOut">
+    <wsdl:part name="parameters" element="tns:GetPropertyRatesResponse" />
+  </wsdl:message>
+  <wsdl:message name="GetDescriptionsSoapIn">
+    <wsdl:part name="parameters" element="tns:GetDescriptions" />
+  </wsdl:message>
+  <wsdl:message name="GetDescriptionsSoapOut">
+    <wsdl:part name="parameters" element="tns:GetDescriptionsResponse" />
+  </wsdl:message>
+  <wsdl:message name="GetImageListSoapIn">
+    <wsdl:part name="parameters" element="tns:GetImageList" />
+  </wsdl:message>
+  <wsdl:message name="GetImageListSoapOut">
+    <wsdl:part name="parameters" element="tns:GetImageListResponse" />
+  </wsdl:message>
+  <wsdl:message name="GetManagementCompanyListSoapIn">
+    <wsdl:part name="parameters" element="tns:GetManagementCompanyList" />
+  </wsdl:message>
+  <wsdl:message name="GetManagementCompanyListSoapOut">
+    <wsdl:part name="parameters" element="tns:GetManagementCompanyListResponse" />
+  </wsdl:message>
+  <wsdl:portType name="CiirusXMLSoap">
+    <wsdl:operation name="MakeBooking">
+      <wsdl:documentation xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/">Place a booking</wsdl:documentation>
+      <wsdl:input message="tns:MakeBookingSoapIn" />
+      <wsdl:output message="tns:MakeBookingSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="GetProperties">
+      <wsdl:documentation xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/">Returns list of PropertyDetails that match the search criteria.</wsdl:documentation>
+      <wsdl:input message="tns:GetPropertiesSoapIn" />
+      <wsdl:output message="tns:GetPropertiesSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="GetCommunities">
+      <wsdl:documentation xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/">Returns the communities for which a property exists in your property list (Central Florida only)</wsdl:documentation>
+      <wsdl:input message="tns:GetCommunitiesSoapIn" />
+      <wsdl:output message="tns:GetCommunitiesSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="GetPropertyTypes">
+      <wsdl:documentation xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/">Returns a list of Property Types e.g. Villa, Condo, Apartment etc</wsdl:documentation>
+      <wsdl:input message="tns:GetPropertyTypesSoapIn" />
+      <wsdl:output message="tns:GetPropertyTypesSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="GetPropertyClasses">
+      <wsdl:documentation xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/">Returns a list of Property Classes, e.g. Standard, Superior etc</wsdl:documentation>
+      <wsdl:input message="tns:GetPropertyClassesSoapIn" />
+      <wsdl:output message="tns:GetPropertyClassesSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="IsPropertyAvailable">
+      <wsdl:documentation xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/">Check if stated property has availabilty for chosen dates. Returns True if there is availabity</wsdl:documentation>
+      <wsdl:input message="tns:IsPropertyAvailableSoapIn" />
+      <wsdl:output message="tns:IsPropertyAvailableSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="GetReservations">
+      <wsdl:documentation xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/">Returns a list of reservations with depart date &gt;= today.</wsdl:documentation>
+      <wsdl:input message="tns:GetReservationsSoapIn" />
+      <wsdl:output message="tns:GetReservationsSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="GetPropertyRates">
+      <wsdl:documentation xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/">Returns the daily net rates for specified property (for date bands where the end date &gt;= today)</wsdl:documentation>
+      <wsdl:input message="tns:GetPropertyRatesSoapIn" />
+      <wsdl:output message="tns:GetPropertyRatesSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="GetDescriptions">
+      <wsdl:documentation xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/">Returns the Description for specified property</wsdl:documentation>
+      <wsdl:input message="tns:GetDescriptionsSoapIn" />
+      <wsdl:output message="tns:GetDescriptionsSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="GetImageList">
+      <wsdl:documentation xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/">Returns a list of URLs for Images associated with specified property</wsdl:documentation>
+      <wsdl:input message="tns:GetImageListSoapIn" />
+      <wsdl:output message="tns:GetImageListSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="GetManagementCompanyList">
+      <wsdl:documentation xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/">Returns a list of all management companies that supply you with properties</wsdl:documentation>
+      <wsdl:input message="tns:GetManagementCompanyListSoapIn" />
+      <wsdl:output message="tns:GetManagementCompanyListSoapOut" />
+    </wsdl:operation>
+  </wsdl:portType>
+  <wsdl:binding name="CiirusXMLSoap" type="tns:CiirusXMLSoap">
+    <soap:binding transport="http://schemas.xmlsoap.org/soap/http" />
+    <wsdl:operation name="MakeBooking">
+      <soap:operation soapAction="http://xml.ciirus.com/MakeBooking" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetProperties">
+      <soap:operation soapAction="http://xml.ciirus.com/GetProperties" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetCommunities">
+      <soap:operation soapAction="http://xml.ciirus.com/GetCommunities" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetPropertyTypes">
+      <soap:operation soapAction="http://xml.ciirus.com/GetPropertyTypes" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetPropertyClasses">
+      <soap:operation soapAction="http://xml.ciirus.com/GetPropertyClasses" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="IsPropertyAvailable">
+      <soap:operation soapAction="http://xml.ciirus.com/IsPropertyAvailable" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetReservations">
+      <soap:operation soapAction="http://xml.ciirus.com/GetReservations" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetPropertyRates">
+      <soap:operation soapAction="http://xml.ciirus.com/GetPropertyRates" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetDescriptions">
+      <soap:operation soapAction="http://xml.ciirus.com/GetDescriptions" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetImageList">
+      <soap:operation soapAction="http://xml.ciirus.com/GetImageList" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetManagementCompanyList">
+      <soap:operation soapAction="http://xml.ciirus.com/GetManagementCompanyList" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+  </wsdl:binding>
+  <wsdl:binding name="CiirusXMLSoap12" type="tns:CiirusXMLSoap">
+    <soap12:binding transport="http://schemas.xmlsoap.org/soap/http" />
+    <wsdl:operation name="MakeBooking">
+      <soap12:operation soapAction="http://xml.ciirus.com/MakeBooking" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetProperties">
+      <soap12:operation soapAction="http://xml.ciirus.com/GetProperties" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetCommunities">
+      <soap12:operation soapAction="http://xml.ciirus.com/GetCommunities" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetPropertyTypes">
+      <soap12:operation soapAction="http://xml.ciirus.com/GetPropertyTypes" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetPropertyClasses">
+      <soap12:operation soapAction="http://xml.ciirus.com/GetPropertyClasses" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="IsPropertyAvailable">
+      <soap12:operation soapAction="http://xml.ciirus.com/IsPropertyAvailable" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetReservations">
+      <soap12:operation soapAction="http://xml.ciirus.com/GetReservations" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetPropertyRates">
+      <soap12:operation soapAction="http://xml.ciirus.com/GetPropertyRates" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetDescriptions">
+      <soap12:operation soapAction="http://xml.ciirus.com/GetDescriptions" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetImageList">
+      <soap12:operation soapAction="http://xml.ciirus.com/GetImageList" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetManagementCompanyList">
+      <soap12:operation soapAction="http://xml.ciirus.com/GetManagementCompanyList" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+  </wsdl:binding>
+  <wsdl:service name="CiirusXML">
+    <wsdl:documentation xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/">Ciirus XML</wsdl:documentation>
+    <wsdl:port name="CiirusXMLSoap" binding="tns:CiirusXMLSoap">
+      <soap:address location="http://xml.ciirus.com/CiirusXML.12.017.asmx" />
+    </wsdl:port>
+    <wsdl:port name="CiirusXMLSoap12" binding="tns:CiirusXMLSoap12">
+      <soap12:address location="http://xml.ciirus.com/CiirusXML.12.017.asmx" />
+    </wsdl:port>
+  </wsdl:service>
+</wsdl:definitions>

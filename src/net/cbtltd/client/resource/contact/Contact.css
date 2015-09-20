@@ -1,0 +1,18 @@
+.addresseesavailableStyle {
+	height: 17px; 
+	width: 280px;
+	margin: 1px;
+	margin-bottom: -1px;
+}
+.addresseesselectedStyle {
+	height: 120px;
+	width: 300px;
+}
+.mediumbuttonStyle {
+	margin: 2px;
+	-webkit-box-shadow:0 0 0 #666; 
+	-moz-box-shadow: 0 0 0 #666; 
+	box-shadow: 0 0 0 #666;
+}
+.mediumfieldStyle {width: 210px; border: 1px solid gray;}
+.messagefieldStyle {height: 300px;}

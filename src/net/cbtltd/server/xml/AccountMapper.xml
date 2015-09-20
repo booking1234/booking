@@ -1,0 +1,152 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="net.cbtltd.server.api.AccountMapper">
+
+	<cache readOnly="true"/>
+
+	<resultMap id="ResultMap" type="Account">
+		<id column="ID" jdbcType="INTEGER" property="id" />
+		<result column="Name" jdbcType="VARCHAR" property="name" />
+		<result column="State" jdbcType="VARCHAR" property="state" />
+		<result column="Subledger" jdbcType="VARCHAR" property="subledger" />
+		<result column="Type" jdbcType="VARCHAR" property="type" />
+		<result column="Notes" jdbcType="VARCHAR" property="notes" />
+	</resultMap>
+
+	<sql id="columns">
+		ID, Name, State, Subledger, Type, Notes
+	</sql>
+
+	<select id="read" parameterType="String" resultMap="ResultMap">
+		select
+		<include refid="columns" />
+		from account
+		where ID = #{id,jdbcType=INTEGER}
+	</select>
+
+	<select id="exists" parameterType="Account" resultMap="ResultMap">
+		select
+		<include refid="columns" />
+		from account
+		where name = #{name, jdbcType=VARCHAR}
+			and State not in ('Initial', 'Final')
+    	limit 0, 1
+	</select>
+
+	<insert id="create" parameterType="Account" useGeneratedKeys="true" keyProperty="id">
+		insert into account (Name, State, Subledger, Type, Notes)
+		values (
+			#{name,jdbcType=VARCHAR}, #{state,jdbcType=VARCHAR},
+			#{subledger,jdbcType=VARCHAR},
+			#{type,jdbcType=VARCHAR},
+			#{notes,jdbcType=VARCHAR}
+		)
+	</insert>
+
+	<delete id="delete" parameterType="String">
+		delete from account
+		where ID = #{id,jdbcType=INTEGER}
+	</delete>
+
+	<update id="update" parameterType="Account">
+		update account
+		<set>
+			<if test="name != null">
+				Name = #{name,jdbcType=VARCHAR},
+			</if>
+			<if test="state != null">
+				State = #{state,jdbcType=VARCHAR},
+			</if>
+			<if test="subledger != null">
+				Subledger = #{subledger,jdbcType=VARCHAR},
+			</if>
+			<if test="type != null">
+				Type = #{type,jdbcType=VARCHAR},
+			</if>
+			<if test="notes != null">
+				Notes = #{notes,jdbcType=VARCHAR},
+			</if>
+		</set>
+		where ID = #{id,jdbcType=INTEGER}
+	</update>
+
+	<update id="updateByPrimaryKey" parameterType="Account">
+		update account
+		set
+			Name = #{name,jdbcType=VARCHAR},
+			State = #{state,jdbcType=VARCHAR},
+			Subledger = #{subledger,jdbcType=VARCHAR},
+			Type = #{type,jdbcType=VARCHAR},
+			Notes = #{notes,jdbcType=VARCHAR}
+		where ID = #{id,jdbcType=INTEGER}
+	</update>
+
+	<select id="nameidbyid" parameterType="NameIdAction" resultType="NameId">
+		select distinct Name, ID
+		from account
+		where ID = #{id}
+	</select>
+
+	<select id="nameidbyname" parameterType="NameIdAction" resultType="NameId">
+		select distinct Name, ID
+		from account
+		<if test="organizationid != null">
+		join relation on relation.Link = 'Organization Account'
+			and relation.LineID = ID 
+			and relation.HeadID = #{organizationid}
+		</if>
+		where Name <![CDATA[ >= ]]> #{name}
+		<if test="type != null">
+			and Type = #{type}
+		</if>
+			and State not in ('Initial', 'Final')
+		order by Name
+		limit 0, #{numrows}
+	</select>
+
+	<select id="nameidsubledger" parameterType="NameIdAction" resultType="NameId">
+		select distinct Name, Subledger as id
+		from account
+		<if test="organizationid != null">
+		join relation on relation.Link = 'Organization Account'
+			and relation.LineID = ID 
+			and relation.HeadID = #{organizationid}
+		</if>
+		where Subledger is not null
+			and Subledger <![CDATA[ <> ]]> '0'
+			and Subledger <![CDATA[ <> ]]> ''
+			and State not in ('Initial', 'Final')
+		order by Name
+	</select>
+
+	<select id="nameidtype" parameterType="NameIdType" resultType="NameId">
+		select distinct Type as name, Type as id
+		from account
+		where Type is not null
+		order by name
+	</select>
+	
+	<select id="nameidcurrency" parameterType="NameIdAction" resultType="NameId">
+		select distinct currency.Name, currency.ID
+		from journal join currency on currency.ID = journal.Currency
+		where journal.Organizationid = #{organizationid}
+		order by Name
+	</select>
+	
+<!-- JSON Queries -->
+	<select id="accountwidget" parameterType="String" resultType="net.cbtltd.json.account.AccountWidgetItem">
+		select
+		ID, Name, Subledger, Type, Notes
+		from account
+		where account.ID = #{id,jdbcType=INTEGER}
+	</select>
+	
+	<select id="ledgerwidget" parameterType="String" resultType="net.cbtltd.json.account.AccountWidgetItem">
+		select
+		ID, Name, Subledger, Type, Notes
+		from account
+		join relation on relation.Link = 'Organization Account'
+			and relation.LineID = ID 
+			and relation.HeadID = #{organizationid}
+	</select>
+ </mapper>

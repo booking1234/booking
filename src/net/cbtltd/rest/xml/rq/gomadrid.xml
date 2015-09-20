@@ -1,0 +1,28 @@
+<?xml version='1.0' encoding='UTF-8' standalone='yes'?>
+<product>
+	<name>Camps Bay Terrace Apartment</name>
+	<state>Suspended</state>
+	<altitude>0.0</altitude>
+	<currency>EUR</currency>
+	<language>EN</language>
+	<latitude>-33.9571457582702</latitude>
+	<locationid>58777</locationid>
+	<longitude>18.3773481845856</longitude>
+	<type>Accommodation</type>
+	<unit>DAY</unit>
+	<bathroom>2</bathroom>
+	<child>0</child>
+	<code>Palm Suite</code>
+	<infant>0</infant>
+	<ownerid>890</ownerid>
+	<person>4</person>
+	<physicaladdress>107 Victoria Road
+		Camps Bay 8005
+	</physicaladdress>
+	<quantity>1</quantity>
+	<rating>8</rating>
+	<room>2</room>
+	<supplierid>5</supplierid>
+	<tax>VAT Normal</tax>
+	<toilet>2</toilet>
+</product>

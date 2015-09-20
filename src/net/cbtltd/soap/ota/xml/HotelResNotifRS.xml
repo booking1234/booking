@@ -1,0 +1,93 @@
+<?xml version="1.0" encoding="UTF-8" standalone="yes"?>
+<OTA_HotelResNotifRS xmlns="http://www.opentravel.org/OTA/2003/05"
+	PrimaryLangID="en" RetransmissionIndicator="false" SequenceNmbr="1"
+	TransactionIdentifier="1" Version="4.001" Target="Production"
+	TimeStamp="2009-07-25T14:52:47"
+	EchoToken="OTA_HotelResNotifRQ 5, 144, 2009-09-19, 2009-09-29, chris@razor.com, Mars, Christopher, 2376">
+	<Success />
+	<HotelReservations>
+		<HotelReservation>
+			<RoomStays>
+				<RoomStay PromotionVendorCode="1" WarningRPH="1">
+					<RoomRates>
+						<RoomRate PromotionVendorCode="">
+							<Rates>
+								<Rate ExpireDate="2009-09-29" EffectiveDate="2009-09-19">
+									<Base CurrencyCode="ZAR" AmountAfterTax="16000.0" />
+									<RateDescription Language="en" CreateDateTime="2009-07-25T14:52:47">
+										<Text Formatted="false">Total RACK per stay</Text>
+									</RateDescription>
+								</Rate>
+								<Rate ExpireDate="2009-09-29" EffectiveDate="2009-09-19">
+									<Base CurrencyCode="ZAR" AmountAfterTax="12000.0" />
+									<RateDescription Language="en" CreateDateTime="2009-07-25T14:52:47">
+										<Text Formatted="false">Total STO per stay</Text>
+									</RateDescription>
+								</Rate>
+							</Rates>
+						</RoomRate>
+					</RoomRates>
+					<TimeSpan End="2009-09-29" Start="2009-09-19" />
+					<BasicPropertyInfo HotelCodeContext="RZ"
+						HotelCode="144" ChainCode="5" />
+					<BookingRules>
+						<BookingRule>
+							<CancelPenalties CancelPolicyIndicator="true">
+								<CancelPenalty>
+									<Deadline OffsetUnitMultiplier="30" OffsetTimeUnit="Day" />
+									<AmountPercent Percent="100" />
+									<PenaltyDescription Language="en"
+										CreateDateTime="2009-07-25T14:52:47">
+										<Text Formatted="false">Refunds and waiver of cancellation
+											policies are at the discretion of management.
+											Refunds are dependent on releting of the room.
+											Guests are advised to take out cancellation insurance.</Text>
+									</PenaltyDescription>
+								</CancelPenalty>
+								<CancelPenalty>
+									<Deadline OffsetUnitMultiplier="60" OffsetTimeUnit="Day" />
+									<AmountPercent Percent="50" />
+								</CancelPenalty>
+								<CancelPenalty>
+									<Deadline OffsetUnitMultiplier="90" OffsetTimeUnit="Day" />
+									<AmountPercent Percent="25" />
+								</CancelPenalty>
+							</CancelPenalties>
+							<RequiredPaymts>
+								<GuaranteePayment NonRefundableIndicator="true"
+									NoCardHolderInfoReqInd="true" Type="31">
+									<AcceptedPayments>
+										<AcceptedPayment>
+											<Cash CashIndicator="true" />
+										</AcceptedPayment>
+										<AcceptedPayment>
+											<PaymentCard CardCode="VI" CardType="5" />
+										</AcceptedPayment>
+										<AcceptedPayment Remark="Deposit" />
+									</AcceptedPayments>
+								</GuaranteePayment>
+								<GuaranteePayment NonRefundableIndicator="true"
+									Type="8">
+									<AmountPercent CurrencyCode="ZAR" Percent="50.0"
+										NmbrOfNights="10" FeesInclusive="true" TaxInclusive="true" />
+									<Deadline AbsoluteDeadline="2009-07-25" />
+								</GuaranteePayment>
+							</RequiredPaymts>
+						</BookingRule>
+					</BookingRules>
+				</RoomStay>
+			</RoomStays>
+			<ResGlobalInfo>
+				<HotelReservationIDs>
+					<HotelReservationID ResID_SourceContext="RZ"
+						ResID_Source="2376" ResID_Value="102974" ResID_Type="14" />
+				</HotelReservationIDs>
+			</ResGlobalInfo>
+		</HotelReservation>
+	</HotelReservations>
+	<POS>
+		<Source>
+			<RequestorID ID="2376" ID_Context="RZ" />
+		</Source>
+	</POS>
+</OTA_HotelResNotifRS>

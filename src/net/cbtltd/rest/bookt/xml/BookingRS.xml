@@ -1,0 +1,140 @@
+<?xml version="1.0" encoding="UTF-8" standalone="yes"?>
+<ns9:booking xmlns="http://connect.bookt.com/Schemas/Event.xsd"
+	xmlns:ns2="http://connect.bookt.com/Schemas/Person.xsd" xmlns:ns3="http://schemas.microsoft.com/2003/10/Serialization/Arrays"
+	xmlns:ns4="http://connect.bookt.com/Schemas/Statement.xsd" xmlns:ns5="http://connect.bookt.com/Schemas/StatementDetail.xsd"
+	xmlns:ns6="http://connect.bookt.com/Schemas/Tax.xsd" xmlns:ns7="http://connect.bookt.com/Schemas/Booking.xsd"
+	xmlns:ns8="http://connect.bookt.com/Schemas/CreditCard.xsd" xmlns:ns9="https://connect.bookt.com/connect"
+	xmlns:ns10="http://connect.bookt.com/Schemas/Review.xsd" xmlns:ns11="http://connect.bookt.com/Schemas/Unit.xsd"
+	xmlns:ns12="http://connect.bookt.com/Schemas/Media.xsd" xmlns:ns13="http://connect.bookt.com/Schemas/Property.xsd"
+	xmlns:ns14="http://connect.bookt.com/Schemas/Fee.xsd" xmlns:ns15="http://schemas.microsoft.com/2003/10/Serialization/">
+	<ns7:AltID>0</ns7:AltID>
+	<ns7:BookedBy>
+		<ns2:Address1></ns2:Address1>
+		<ns2:Address2></ns2:Address2>
+		<ns2:AltID></ns2:AltID>
+		<ns2:CellPhone></ns2:CellPhone>
+		<ns2:City></ns2:City>
+		<ns2:Company>7457</ns2:Company>
+		<ns2:Country>South Africa</ns2:Country>
+		<ns2:FaxNumber></ns2:FaxNumber>
+		<ns2:FirstName>Test</ns2:FirstName>
+		<ns2:Greeting>Mr</ns2:Greeting>
+		<ns2:HomePhone></ns2:HomePhone>
+		<ns2:ID>801317</ns2:ID>
+		<ns2:Initial></ns2:Initial>
+		<ns2:LastName>Agent</ns2:LastName>
+		<ns2:Latitude>-30.5594820000</ns2:Latitude>
+		<ns2:LeadSource xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+			xsi:nil="true" />
+		<ns2:Longitude>22.9375060000</ns2:Longitude>
+		<ns2:Notes></ns2:Notes>
+		<ns2:PostalCode></ns2:PostalCode>
+		<ns2:Prefix></ns2:Prefix>
+		<ns2:PrimaryEmail>testagent@razor-cloud.com</ns2:PrimaryEmail>
+		<ns2:State></ns2:State>
+		<ns2:Status>A</ns2:Status>
+		<ns2:Suffix></ns2:Suffix>
+		<ns2:Tags />
+		<ns2:Title>Mr</ns2:Title>
+		<ns2:Type>C</ns2:Type>
+		<ns2:WebSite xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+			xsi:nil="true" />
+		<ns2:WorkPhone xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+			xsi:nil="true" />
+	</ns7:BookedBy>
+	<ns7:CheckIn>2012-12-03T15:00:00</ns7:CheckIn>
+	<ns7:CheckOut>2012-12-08T10:00:00</ns7:CheckOut>
+	<ns7:CreditCard xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+		xsi:nil="true" />
+	<ns7:ID>2807518</ns7:ID>
+	<ns7:NumAdults>1</ns7:NumAdults>
+	<ns7:NumChildren>0</ns7:NumChildren>
+	<ns7:PaymentTerms xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+		xsi:nil="true" />
+	<ns7:PrivateNotes>test gc</ns7:PrivateNotes>
+	<ns7:PropertyID>24269</ns7:PropertyID>
+	<ns7:PublicNotes></ns7:PublicNotes>
+	<ns7:Renter>
+		<ns2:Address1></ns2:Address1>
+		<ns2:Address2></ns2:Address2>
+		<ns2:AltID></ns2:AltID>
+		<ns2:CellPhone></ns2:CellPhone>
+		<ns2:City></ns2:City>
+		<ns2:Company></ns2:Company>
+		<ns2:Country>South Africa</ns2:Country>
+		<ns2:FaxNumber></ns2:FaxNumber>
+		<ns2:FirstName>Party 2</ns2:FirstName>
+		<ns2:Greeting>Mr</ns2:Greeting>
+		<ns2:HomePhone></ns2:HomePhone>
+		<ns2:ID>801316</ns2:ID>
+		<ns2:Initial></ns2:Initial>
+		<ns2:LastName>Test</ns2:LastName>
+		<ns2:Latitude>-30.5594820000</ns2:Latitude>
+		<ns2:LeadSource xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+			xsi:nil="true" />
+		<ns2:Longitude>22.9375060000</ns2:Longitude>
+		<ns2:Notes></ns2:Notes>
+		<ns2:PostalCode></ns2:PostalCode>
+		<ns2:Prefix></ns2:Prefix>
+		<ns2:PrimaryEmail>testparty2@razorpms.com</ns2:PrimaryEmail>
+		<ns2:State></ns2:State>
+		<ns2:Status>A</ns2:Status>
+		<ns2:Suffix></ns2:Suffix>
+		<ns2:Tags />
+		<ns2:Title>Mr</ns2:Title>
+		<ns2:Type>C</ns2:Type>
+		<ns2:WebSite xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+			xsi:nil="true" />
+		<ns2:WorkPhone xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+			xsi:nil="true" />
+	</ns7:Renter>
+	<ns7:Statement>
+		<ns4:Currency>USD</ns4:Currency>
+		<ns4:Description>Re: Booking ID:2807518 (12/3/2012-12/8/2012)
+		</ns4:Description>
+		<ns4:Details>
+			<ns5:StatementDetail>
+				<ns5:Amount>100.00</ns5:Amount>
+				<ns5:Currency>USD</ns5:Currency>
+				<ns5:ID>2908807</ns5:ID>
+				<ns5:Notes>5 Nights @ $100.00
+					&lt;small&gt;12/3/2012-12/8/2012&lt;/small&gt;</ns5:Notes>
+				<ns5:Quantity>5.0000</ns5:Quantity>
+				<ns5:Status>A</ns5:Status>
+				<ns5:SubTotal>500.00</ns5:SubTotal>
+				<ns5:Type>S</ns5:Type>
+			</ns5:StatementDetail>
+			<ns5:StatementDetail>
+				<ns5:Amount>60.00</ns5:Amount>
+				<ns5:Currency>USD</ns5:Currency>
+				<ns5:ID>2908809</ns5:ID>
+				<ns5:Notes>CA Lodging Tax</ns5:Notes>
+				<ns5:Quantity>1.0000</ns5:Quantity>
+				<ns5:Status>A</ns5:Status>
+				<ns5:SubTotal>60.00</ns5:SubTotal>
+				<ns5:Type>T</ns5:Type>
+			</ns5:StatementDetail>
+			<ns5:StatementDetail>
+				<ns5:Amount>100.00</ns5:Amount>
+				<ns5:Currency>USD</ns5:Currency>
+				<ns5:ID>2908808</ns5:ID>
+				<ns5:Notes>Reservation Fee</ns5:Notes>
+				<ns5:Quantity>1.0000</ns5:Quantity>
+				<ns5:Status>A</ns5:Status>
+				<ns5:SubTotal>100.00</ns5:SubTotal>
+				<ns5:Type>F</ns5:Type>
+			</ns5:StatementDetail>
+		</ns4:Details>
+		<ns4:DueOn>2012-12-08T10:00:00</ns4:DueOn>
+		<ns4:ID>544172</ns4:ID>
+		<ns4:Notes></ns4:Notes>
+		<ns4:Status>D</ns4:Status>
+		<ns4:Total>660.00</ns4:Total>
+		<ns4:Type xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+			xsi:nil="true" />
+	</ns7:Statement>
+	<ns7:Status>P</ns7:Status>
+	<ns7:TotalDueNow>0</ns7:TotalDueNow>
+	<ns7:Type>I</ns7:Type>
+	<ns7:UnitID>88462</ns7:UnitID>
+</ns9:booking>

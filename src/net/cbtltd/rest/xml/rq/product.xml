@@ -1,0 +1,16 @@
+<product>
+	<name>XML Test Product</name>
+	<ownerid>734118</ownerid>
+	<locationid>51018</locationid>
+	<room>3</room>
+	<person>7</person>
+	<commission>10.0</commission>
+	<discount>15.0</discount>
+	<latitude>39.6079282365642</latitude>
+	<longitude>-105.952706336975</longitude>
+	<physicaladdress>23058 US Hwy 6
+		Keystone
+		CO 80435
+		US
+	</physicaladdress>
+</product>

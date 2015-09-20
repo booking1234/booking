@@ -1,0 +1,105 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="net.cbtltd.server.api.LanguageMapper">
+
+<!-- 	<cache readOnly="true"/> -->
+
+	<resultMap id="ResultMap" type="Language">
+		<id column="ID" jdbcType="VARCHAR" property="id" />
+		<result column="Name" jdbcType="VARCHAR" property="name" />
+	</resultMap>
+
+	<sql id="columns">
+		ID, Name
+	</sql>
+
+	<select id="read" parameterType="String" resultMap="ResultMap">
+		select
+		<include refid="columns" />
+		from language
+		where ID = #{id,jdbcType=VARCHAR}
+	</select>
+
+	<select id="exists" parameterType="Language" resultMap="ResultMap">
+		select
+		<include refid="columns" />
+		from language
+		where Name = #{name,jdbcType=VARCHAR}
+		limit 1
+	</select>
+
+	<delete id="delete" parameterType="String">
+		delete from language
+		where ID = #{id,jdbcType=VARCHAR}
+	</delete>
+
+	<insert id="create" parameterType="Language">
+		insert into language (ID, Name)
+		values (#{id,jdbcType=VARCHAR}, #{name,jdbcType=VARCHAR})
+	</insert>
+
+	<update id="update" parameterType="Language">
+		update language
+		set Name = #{name,jdbcType=VARCHAR}
+		where ID = #{id,jdbcType=VARCHAR}
+	</update>
+
+	<select id="nameidbyid" parameterType="NameIdAction" resultType="NameId">
+		select distinct Name, ID
+		from language
+		where ID = #{id}
+	</select>
+
+	<select id="nameidbyname" parameterType="NameIdAction" resultType="NameId">
+		select distinct Name, ID
+		from language
+		<if test="organizationid != null">
+		join relation on Link = 'Organization Language'
+			and LineID = ID 
+			and HeadID = #{organizationid}
+		</if>
+		where Name <![CDATA[ >= ]]> #{name}
+		<if test="type != null">
+			and ID in (${type})
+		</if>
+		<if test="ids != null">
+			and ID in (${ids})
+		</if>
+		order by Name
+		limit 0, #{numrows}
+	</select>
+
+<!-- 	<select id="languagenameid" parameterType="NameIdAction" resultType="NameId"> -->
+<!-- 		select distinct Name, ID -->
+<!-- 		from language -->
+<!-- 		<if test="organizationid != null"> -->
+<!-- 			join relation on ID = relation.LineID  -->
+<!-- 				and relation.Link = 'Organization Language'  -->
+<!-- 				and relation.HeadID = #{organizationid} -->
+<!-- 		</if> -->
+<!-- 		where Name <![CDATA[ >= ]]> #{name} -->
+<!-- 		<if test="type != null"> -->
+<!-- 			and ID in (${type}) -->
+<!-- 		</if> -->
+<!-- 		<if test="ids != null"> -->
+<!-- 			and ID in (${ids}) -->
+<!-- 		</if> -->
+<!-- 		order by Name -->
+<!-- 		limit 0, #{numrows} -->
+<!-- 	</select> -->
+	
+<!-- JSON SQL queries -->
+	<select id="nameidwidget" parameterType="net.cbtltd.json.Parameter" resultType="net.cbtltd.json.nameid.NameIdWidgetItem">
+		select distinct Name, ID
+		from language
+		<if test="organizationid != null">
+			join relation on Link = 'Organization Language'
+			and LineID = ID 
+			and HeadID = #{organizationid}
+		</if>
+		<if test="id != null">
+		where ID in (${id})
+		</if>
+		order by Name
+	</select>
+</mapper>

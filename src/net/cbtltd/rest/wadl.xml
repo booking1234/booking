@@ -1,0 +1,2153 @@
+<application xmlns="http://wadl.dev.java.net/2009/02"
+	xmlns:xs="http://www.w3.org/2001/XMLSchema">
+	<grammars></grammars>
+	<resources base="http://localhost/xml/rest">
+		<resource path="/account">
+			<resource path="/activity">
+				<doc>Resource</doc>
+				<method name="GET">
+					<doc>Lists activity subsidiary accounts</doc>
+					<request>
+						<doc>Request</doc>
+						<param name="pos" style="query" default="'no_pos'" type="xs:string">
+							<doc>Mandatory POS Code</doc>
+						</param>
+						<param name="xsl" style="query" default="'no_xsl'" type="xs:string">
+							<doc>Optional XSLT</doc>
+						</param>
+					</request>
+					<response>
+						<doc>Response</doc>
+						<representation mediaType="application/xml">
+							<doc>Activity Subsidiary Account</doc>
+						</representation>
+					</response>
+				</method>
+			</resource>
+			<resource path="/asset">
+				<doc>Resource</doc>
+				<method name="GET">
+					<doc>Lists asset subsidiary accounts</doc>
+					<request>
+						<doc>Request</doc>
+						<param name="pos" style="query" default="'no_pos'" type="xs:string">
+							<doc>Mandatory POS Code</doc>
+						</param>
+						<param name="xsl" style="query" default="'no_xsl'" type="xs:string">
+							<doc>Optional XSLT</doc>
+						</param>
+					</request>
+					<response>
+						<doc>Response</doc>
+						<representation mediaType="application/xml">
+							<doc>Asset Subsidiary Account</doc>
+						</representation>
+					</response>
+				</method>
+			</resource>
+			<resource path="/currencies">
+				<doc>Resource</doc>
+				<method name="GET">
+					<doc>Lists currency names and codes</doc>
+					<request>
+						<doc>Request</doc>
+						<param name="pos" style="query" default="'no_pos'" type="xs:string">
+							<doc>Mandatory POS Code</doc>
+						</param>
+						<param name="xsl" style="query" default="'no_xsl'" type="xs:string">
+							<doc>Optional XSLT</doc>
+						</param>
+					</request>
+					<response>
+						<doc>Response</doc>
+						<representation mediaType="application/xml">
+							<doc>Currency List</doc>
+						</representation>
+					</response>
+				</method>
+			</resource>
+			<resource path="/event/{eventid}/{fromdate}/{todate}">
+				<doc>Resource</doc>
+				<param name="eventid" style="template" default="0" type="xs:string">
+					<doc>Event Reference</doc>
+				</param>
+				<param name="fromdate" style="template" type="xs:string">
+					<doc>From Date</doc>
+				</param>
+				<param name="todate" style="template" type="xs:string">
+					<doc>To Date</doc>
+				</param>
+				<method name="GET">
+					<doc>Lists transactions by event for specified eventids</doc>
+					<request>
+						<doc>Request</doc>
+						<param name="pos" style="query" default="'no_pos'" type="xs:string">
+							<doc>Mandatory POS Code</doc>
+						</param>
+						<param name="test" style="query" default="false" type="xs:boolean">
+							<doc>Optional Test Flag</doc>
+						</param>
+						<param name="xsl" style="query" default="'no_xsl'" type="xs:string">
+							<doc>Optional XSLT</doc>
+						</param>
+					</request>
+					<response>
+						<doc>Response</doc>
+						<representation mediaType="application/xml">
+							<doc>Transactions by Event ID</doc>
+						</representation>
+					</response>
+				</method>
+			</resource>
+			<resource path="/finance">
+				<doc>Resource</doc>
+				<method name="GET">
+					<doc>Lists cash and bank subsidiary accounts</doc>
+					<request>
+						<doc>Request</doc>
+						<param name="pos" style="query" default="'no_pos'" type="xs:string">
+							<doc>Mandatory POS Code</doc>
+						</param>
+						<param name="xsl" style="query" default="'no_xsl'" type="xs:string">
+							<doc>Optional XSLT</doc>
+						</param>
+					</request>
+					<response>
+						<doc>Response</doc>
+						<representation mediaType="application/xml">
+							<doc>Finance Subsidiary Account</doc>
+						</representation>
+					</response>
+				</method>
+			</resource>
+			<resource path="/list">
+				<doc>Resource</doc>
+				<method name="GET">
+					<doc>Lists account names and IDs</doc>
+					<request>
+						<doc>Request</doc>
+						<param name="pos" style="query" default="'no_pos'" type="xs:string">
+							<doc>Mandatory POS Code</doc>
+						</param>
+						<param name="xsl" style="query" default="'no_xsl'" type="xs:string">
+							<doc>Optional XSLT</doc>
+						</param>
+					</request>
+					<response>
+						<doc>Response</doc>
+						<representation mediaType="application/xml">
+							<doc>Account List</doc>
+						</representation>
+					</response>
+				</method>
+			</resource>
+			<resource path="/party">
+				<doc>Resource</doc>
+				<method name="GET">
+					<doc>Lists company and individual subsidiary accounts</doc>
+					<request>
+						<doc>Request</doc>
+						<param name="pos" style="query" default="'no_pos'" type="xs:string">
+							<doc>Mandatory POS Code</doc>
+						</param>
+						<param name="xsl" style="query" default="'no_xsl'" type="xs:string">
+							<doc>Optional XSLT</doc>
+						</param>
+					</request>
+					<response>
+						<doc>Response</doc>
+						<representation mediaType="application/xml">
+							<doc>Party Subsidiary Account</doc>
+						</representation>
+					</response>
+				</method>
+			</resource>
+			<resource path="/subledger">
+				<doc>Resource</doc>
+				<method name="GET">
+					<doc>Lists account names and subsidiary ledgers</doc>
+					<request>
+						<doc>Request</doc>
+						<param name="pos" style="query" default="'no_pos'" type="xs:string">
+							<doc>Mandatory POS Code</doc>
+						</param>
+						<param name="xsl" style="query" default="'no_xsl'" type="xs:string">
+							<doc>Optional XSLT</doc>
+						</param>
+					</request>
+					<response>
+						<doc>Response</doc>
+						<representation mediaType="application/xml">
+							<doc>Subsidiary Ledger</doc>
+						</representation>
+					</response>
+				</method>
+			</resource>
+			<resource path="/{accountid}/{fromdate}/{todate}/{currency}">
+				<doc>Resource</doc>
+				<param name="accountid" style="template" default="0" type="xs:string">
+					<doc>Account ID</doc>
+				</param>
+				<param name="fromdate" style="template" type="xs:string">
+					<doc>From Date</doc>
+				</param>
+				<param name="todate" style="template" type="xs:string">
+					<doc>To Date</doc>
+				</param>
+				<param name="currency" style="template" default="USD" type="xs:string">
+					<doc>Currency Code</doc>
+				</param>
+				<method name="GET">
+					<doc>Lists transactions by account for specified accountids, dates
+						and currency code</doc>
+					<request>
+						<doc>Request</doc>
+						<param name="pos" style="query" default="'no_pos'" type="xs:string">
+							<doc>Mandatory POS Code</doc>
+						</param>
+						<param name="xsl" style="query" default="'no_xsl'" type="xs:string">
+							<doc>Optional XSLT</doc>
+						</param>
+					</request>
+					<response>
+						<doc>Response</doc>
+						<representation mediaType="application/xml">
+							<doc>Transactions by Account</doc>
+						</representation>
+					</response>
+				</method>
+			</resource>
+		</resource>
+		<resource path="/location">
+			<resource path="/countries">
+				<doc>Resource</doc>
+				<method name="GET">
+					<doc>Lists country names and codes</doc>
+					<request>
+						<doc>Request</doc>
+						<param name="xsl" style="query" default="'no_xsl'" type="xs:string">
+							<doc>Optional XSLT</doc>
+						</param>
+					</request>
+					<response>
+						<doc>Response</doc>
+						<representation mediaType="application/xml">
+							<doc>Country List</doc>
+						</representation>
+					</response>
+				</method>
+			</resource>
+			<resource path="/list/{country}">
+				<doc>Resource</doc>
+				<param name="country" style="template" type="xs:string">
+					<doc>Country Code</doc>
+				</param>
+				<method name="GET">
+					<doc>Lists location names and codes for specified country code
+					</doc>
+					<request>
+						<doc>Request</doc>
+						<param name="xsl" style="query" default="'no_xsl'" type="xs:string">
+							<doc>Optional XSLT</doc>
+						</param>
+					</request>
+					<response>
+						<doc>Response</doc>
+						<representation mediaType="application/xml">
+							<doc>Location List</doc>
+						</representation>
+					</response>
+				</method>
+			</resource>
+			<resource path="/list/{country}/{subdivision}">
+				<doc>Resource</doc>
+				<param name="country" style="template" type="xs:string">
+					<doc>Country Code</doc>
+				</param>
+				<param name="subdivision" style="template" type="xs:string">
+					<doc>Region Code</doc>
+				</param>
+				<method name="GET">
+					<doc>Lists location names and codes for specified country and
+						region codes</doc>
+					<request>
+						<doc>Request</doc>
+						<param name="xsl" style="query" default="'no_xsl'" type="xs:string">
+							<doc>Optional XSLT</doc>
+						</param>
+					</request>
+					<response>
+						<doc>Response</doc>
+						<representation mediaType="application/xml">
+							<doc>Location List</doc>
+						</representation>
+					</response>
+				</method>
+			</resource>
+			<resource path="/list/{latitude}/{longitude}/{distance}/{unit}">
+				<doc>Resource</doc>
+				<param name="latitude" style="template" type="xs:double">
+					<doc>Latitude of Position</doc>
+				</param>
+				<param name="longitude" style="template" type="xs:double">
+					<doc>Longitude of Position</doc>
+				</param>
+				<param name="distance" style="template" default="50" type="xs:double">
+					<doc>Maximum Distance from Position</doc>
+				</param>
+				<param name="unit" style="template" default="KMT" type="xs:string">
+					<doc>Distance Unit</doc>
+				</param>
+				<method name="GET">
+					<doc>Lists locations near to a position</doc>
+					<request>
+						<doc>Request</doc>
+						<param name="xsl" style="query" default="'no_xsl'" type="xs:string">
+							<doc>Optional XSLT</doc>
+						</param>
+					</request>
+					<response>
+						<doc>Response</doc>
+						<representation mediaType="application/xml">
+							<doc>Location List</doc>
+						</representation>
+					</response>
+				</method>
+			</resource>
+			<resource path="/list/{locationid}/{distance}/{unit}">
+				<doc>Resource</doc>
+				<param name="locationid" style="template" type="xs:string">
+					<doc>Location ID</doc>
+				</param>
+				<param name="distance" style="template" default="50" type="xs:double">
+					<doc>Maximum Distance from Location</doc>
+				</param>
+				<param name="unit" style="template" default="KMT" type="xs:string">
+					<doc>Distance Unit</doc>
+				</param>
+				<method name="GET">
+					<doc>Lists locations near to another location</doc>
+					<request>
+						<doc>Request</doc>
+						<param name="xsl" style="query" default="'no_xsl'" type="xs:string">
+							<doc>Optional XSLT</doc>
+						</param>
+					</request>
+					<response>
+						<doc>Response</doc>
+						<representation mediaType="application/xml">
+							<doc>Location List</doc>
+						</representation>
+					</response>
+				</method>
+			</resource>
+			<resource path="/subdivisions/{country}">
+				<doc>Resource</doc>
+				<param name="country" style="template" type="xs:string">
+					<doc>Country Code</doc>
+				</param>
+				<method name="GET">
+					<doc>Lists region names and codes for specified country code</doc>
+					<request>
+						<doc>Request</doc>
+						<param name="xsl" style="query" default="'no_xsl'" type="xs:string">
+							<doc>Optional XSLT</doc>
+						</param>
+					</request>
+					<response>
+						<doc>Response</doc>
+						<representation mediaType="application/xml">
+							<doc>Region List</doc>
+						</representation>
+					</response>
+				</method>
+			</resource>
+			<resource path="/units">
+				<doc>Resource</doc>
+				<method name="GET">
+					<doc>Lists allowed distance units of measure</doc>
+					<request>
+						<doc>Request</doc>
+						<param name="xsl" style="query" default="'no_xsl'" type="xs:string">
+							<doc>Optional XSLT</doc>
+						</param>
+					</request>
+					<response>
+						<doc>Response</doc>
+						<representation mediaType="application/xml">
+							<doc>Distance Unit List</doc>
+						</representation>
+					</response>
+				</method>
+			</resource>
+			<resource path="/{locationid}">
+				<doc>Resource</doc>
+				<param name="locationid" style="template" type="xs:string">
+					<doc>Location ID</doc>
+				</param>
+				<method name="GET">
+					<doc>Lists details of a location</doc>
+					<request>
+						<doc>Request</doc>
+						<param name="xsl" style="query" default="'no_xsl'" type="xs:string">
+							<doc>Optional XSLT</doc>
+						</param>
+					</request>
+					<response>
+						<doc>Response</doc>
+						<representation mediaType="application/xml">
+							<doc>Location Details</doc>
+						</representation>
+					</response>
+				</method>
+			</resource>
+		</resource>
+		<resource path="/product">
+			<resource path="/attributes">
+				<doc>Resource</doc>
+				<method name="GET">
+					<doc>List of product attributes</doc>
+					<request>
+						<doc>Request</doc>
+						<param name="pos" style="query" default="'no_pos'" type="xs:string">
+							<doc>Mandatory POS Code</doc>
+						</param>
+						<param name="xsl" style="query" default="'no_xsl'" type="xs:string">
+							<doc>Optional XSLT</doc>
+						</param>
+					</request>
+					<response>
+						<doc>Response</doc>
+						<representation mediaType="application/xml">
+							<doc>Product Attributes</doc>
+						</representation>
+					</response>
+				</method>
+			</resource>
+			<resource path="/bad">
+				<method name="GET">
+					<response>
+						<representation mediaType="application/xml" />
+					</response>
+				</method>
+			</resource>
+			<resource path="/list">
+				<doc>Resource</doc>
+				<method name="GET">
+					<doc>List of products name and ID</doc>
+					<request>
+						<doc>Request</doc>
+						<param name="id" style="query" type="xs:string">
+							<doc>Product ID</doc>
+						</param>
+						<param name="pos" style="query" default="'no_pos'" type="xs:string">
+							<doc>Mandatory POS Code</doc>
+						</param>
+						<param name="xsl" style="query" default="'no_xsl'" type="xs:string">
+							<doc>Optional XSLT</doc>
+						</param>
+					</request>
+					<response>
+						<doc>Response</doc>
+						<representation mediaType="application/xml">
+							<doc>Product List</doc>
+						</representation>
+					</response>
+				</method>
+			</resource>
+			<resource path="/list/{latitude}/{longitude}/{distance}/{unit}">
+				<doc>Resource</doc>
+				<param name="latitude" style="template" type="xs:double">
+					<doc>Latitude of Position</doc>
+				</param>
+				<param name="longitude" style="template" type="xs:double">
+					<doc>Longitude of Position</doc>
+				</param>
+				<param name="distance" style="template" default="50" type="xs:double">
+					<doc>Maximum Distance from Position</doc>
+				</param>
+				<param name="unit" style="template" default="KMT" type="xs:string">
+					<doc>Distance Unit</doc>
+				</param>
+				<method name="GET">
+					<doc>List of products near to a position</doc>
+					<request>
+						<doc>Request</doc>
+						<param name="pos" style="query" default="'no_pos'" type="xs:string">
+							<doc>Mandatory POS Code</doc>
+						</param>
+						<param name="xsl" style="query" default="'no_xsl'" type="xs:string">
+							<doc>Optional XSLT</doc>
+						</param>
+					</request>
+					<response>
+						<doc>Response</doc>
+						<representation mediaType="application/xml">
+							<doc>Product List</doc>
+						</representation>
+					</response>
+				</method>
+			</resource>
+			<resource path="/list/{locationid}/{distance}/{unit}">
+				<doc>Resource</doc>
+				<param name="locationid" style="template" type="xs:string">
+					<doc>Location ID</doc>
+				</param>
+				<param name="distance" style="template" default="50" type="xs:double">
+					<doc>Maximum Distance from Location</doc>
+				</param>
+				<param name="unit" style="template" default="KMT" type="xs:string">
+					<doc>Distance Unit</doc>
+				</param>
+				<method name="GET">
+					<doc>List of products near a location</doc>
+					<request>
+						<doc>Request</doc>
+						<param name="pos" style="query" default="'no_pos'" type="xs:string">
+							<doc>Mandatory POS Code</doc>
+						</param>
+						<param name="xsl" style="query" default="'no_xsl'" type="xs:string">
+							<doc>Optional XSLT</doc>
+						</param>
+					</request>
+					<response>
+						<doc>Response</doc>
+						<representation mediaType="application/xml">
+							<doc>Product List</doc>
+						</representation>
+					</response>
+				</method>
+			</resource>
+			<resource path="/list/{type}">
+				<doc>Resource</doc>
+				<param name="type" style="template" default="Accommodation"
+					type="xs:string">
+					<doc>Product Type</doc>
+				</param>
+				<method name="GET">
+					<doc>List of products by type</doc>
+					<request>
+						<doc>Request</doc>
+						<param name="pos" style="query" default="'no_pos'" type="xs:string">
+							<doc>Mandatory POS Code</doc>
+						</param>
+						<param name="xsl" style="query" default="'no_xsl'" type="xs:string">
+							<doc>Optional XSLT</doc>
+						</param>
+					</request>
+					<response>
+						<doc>Response</doc>
+						<representation mediaType="application/xml">
+							<doc>Product List</doc>
+						</representation>
+					</response>
+				</method>
+			</resource>
+			<resource path="/list/{type}/{locationid}">
+				<doc>Resource</doc>
+				<param name="type" style="template" default="Accommodation"
+					type="xs:string">
+					<doc>Product Type</doc>
+				</param>
+				<param name="locationid" style="template" type="xs:string">
+					<doc>Location ID</doc>
+				</param>
+				<method name="GET">
+					<doc>List of products of a type at a location</doc>
+					<request>
+						<doc>Request</doc>
+						<param name="pos" style="query" default="'no_pos'" type="xs:string">
+							<doc>Mandatory POS Code</doc>
+						</param>
+						<param name="xsl" style="query" default="'no_xsl'" type="xs:string">
+							<doc>Optional XSLT</doc>
+						</param>
+					</request>
+					<response>
+						<doc>Response</doc>
+						<representation mediaType="application/xml">
+							<doc>Product List</doc>
+						</representation>
+					</response>
+				</method>
+			</resource>
+			<resource path="/types">
+				<doc>Resource</doc>
+				<method name="GET">
+					<doc>List of product types</doc>
+					<request>
+						<doc>Request</doc>
+						<param name="pos" style="query" default="'no_pos'" type="xs:string">
+							<doc>Mandatory POS Code</doc>
+						</param>
+						<param name="xsl" style="query" default="'no_xsl'" type="xs:string">
+							<doc>Optional XSLT</doc>
+						</param>
+					</request>
+					<response>
+						<doc>Response</doc>
+						<representation mediaType="application/xml">
+							<doc>Product Types</doc>
+						</representation>
+					</response>
+				</method>
+			</resource>
+			<resource
+				path="/upload/{name}/{ownerid}/{locationid}/{room}/{person}/{commission}/{discount}/{latitude}/{longitude}/{address}">
+				<doc>Resource</doc>
+				<param name="name" style="template" type="xs:string">
+					<doc>Product Name</doc>
+				</param>
+				<param name="ownerid" style="template" type="xs:string">
+					<doc>Owner ID</doc>
+				</param>
+				<param name="locationid" style="template" type="xs:string">
+					<doc>Location ID</doc>
+				</param>
+				<param name="room" style="template" default="1" type="xs:int">
+					<doc>Room Count</doc>
+				</param>
+				<param name="person" style="template" default="2" type="xs:int">
+					<doc>Person Count</doc>
+				</param>
+				<param name="commission" style="template" default="20.0" type="xs:double">
+					<doc>Manager Commission</doc>
+				</param>
+				<param name="discount" style="template" default="20.0" type="xs:double">
+					<doc>Agent Discount</doc>
+				</param>
+				<param name="latitude" style="template" default="0.0" type="xs:double">
+					<doc>Latitude</doc>
+				</param>
+				<param name="longitude" style="template" default="0.0" type="xs:double">
+					<doc>Longitude</doc>
+				</param>
+				<param name="address" style="template" type="xs:string">
+					<doc>Street Address</doc>
+				</param>
+				<method name="GET">
+					<doc>Upload product data</doc>
+					<request>
+						<doc>Request</doc>
+						<param name="pos" style="query" default="'no_pos'" type="xs:string">
+							<doc>Mandatory POS Code</doc>
+						</param>
+						<param name="test" style="query" default="false" type="xs:boolean">
+							<doc>Optional Test Flag</doc>
+						</param>
+						<param name="xsl" style="query" default="'no_xsl'" type="xs:string">
+							<doc>Optional XSLT</doc>
+						</param>
+					</request>
+					<response>
+						<doc>Response</doc>
+						<representation mediaType="application/xml">
+							<doc>Product Record</doc>
+						</representation>
+					</response>
+				</method>
+			</resource>
+			<resource path="/upload/{name}/{type}/{unit}">
+				<doc>Resource</doc>
+				<param name="name" style="template" type="xs:string">
+					<doc>Product Name</doc>
+				</param>
+				<param name="type" style="template" type="xs:string">
+					<doc>Product Type</doc>
+				</param>
+				<param name="unit" style="template" type="xs:string">
+					<doc>Product Unit</doc>
+				</param>
+				<method name="GET">
+					<doc>Upload product data</doc>
+					<request>
+						<doc>Request</doc>
+						<param name="pos" style="query" default="'no_pos'" type="xs:string">
+							<doc>Mandatory POS Code</doc>
+						</param>
+						<param name="test" style="query" default="false" type="xs:boolean">
+							<doc>Optional Test Flag</doc>
+						</param>
+						<param name="xsl" style="query" default="'no_xsl'" type="xs:string">
+							<doc>Optional XSLT</doc>
+						</param>
+					</request>
+					<response>
+						<doc>Response</doc>
+						<representation mediaType="application/xml">
+							<doc>Product ID</doc>
+						</representation>
+					</response>
+				</method>
+			</resource>
+			<resource path="/upload/{productid}/attribute/{attribute}">
+				<doc>Resource</doc>
+				<param name="productid" style="template" type="xs:string">
+					<doc>Product ID</doc>
+				</param>
+				<param name="attribute" style="template" type="xs:string">
+					<doc>Attribute Code(s)</doc>
+				</param>
+				<method name="GET">
+					<doc>Upload product attribute(s)</doc>
+					<request>
+						<doc>Request</doc>
+						<param name="pos" style="query" default="'no_pos'" type="xs:string">
+							<doc>Mandatory POS Code</doc>
+						</param>
+						<param name="test" style="query" default="false" type="xs:boolean">
+							<doc>Optional Test Flag</doc>
+						</param>
+						<param name="xsl" style="query" default="'no_xsl'" type="xs:string">
+							<doc>Optional XSLT</doc>
+						</param>
+					</request>
+					<response>
+						<doc>Response</doc>
+						<representation mediaType="application/xml">
+							<doc>Attribute Upload</doc>
+						</representation>
+					</response>
+				</method>
+			</resource>
+			<resource
+				path="/upload/{productid}/image/{image_url}/{language}/{image_notes}">
+				<doc>Resource</doc>
+				<param name="productid" style="template" type="xs:string">
+					<doc>Product ID</doc>
+				</param>
+				<param name="image_url" style="template" type="xs:string">
+					<doc>Image URL</doc>
+				</param>
+				<param name="language" style="template" default="EN" type="xs:string">
+					<doc>Language of Notes</doc>
+				</param>
+				<param name="image_notes" style="template" type="xs:string">
+					<doc>Image Notes</doc>
+				</param>
+				<method name="GET">
+					<doc>Upload product image(s)</doc>
+					<request>
+						<doc>Request</doc>
+						<param name="pos" style="query" default="'no_pos'" type="xs:string">
+							<doc>Mandatory POS Code</doc>
+						</param>
+						<param name="test" style="query" default="false" type="xs:boolean">
+							<doc>Optional Test Flag</doc>
+						</param>
+						<param name="xsl" style="query" default="'no_xsl'" type="xs:string">
+							<doc>Optional XSLT</doc>
+						</param>
+					</request>
+					<response>
+						<doc>Response</doc>
+						<representation mediaType="application/xml">
+							<doc>Image Upload</doc>
+						</representation>
+					</response>
+				</method>
+			</resource>
+			<resource
+				path="/upload/{productid}/price/{fromdate}/{todate}/{value}/{minimum}/{currency}">
+				<doc>Resource</doc>
+				<param name="productid" style="template" type="xs:string">
+					<doc>Product ID</doc>
+				</param>
+				<param name="fromdate" style="template" type="xs:string">
+					<doc>From Date</doc>
+				</param>
+				<param name="todate" style="template" type="xs:string">
+					<doc>To Date</doc>
+				</param>
+				<param name="value" style="template" type="xs:double">
+					<doc>Price</doc>
+				</param>
+				<param name="minimum" style="template" type="xs:double">
+					<doc>Minimum</doc>
+				</param>
+				<param name="currency" style="template" default="USD" type="xs:string">
+					<doc>Currency Code</doc>
+				</param>
+				<method name="GET">
+					<doc>Upload product price</doc>
+					<request>
+						<doc>Request</doc>
+						<param name="pos" style="query" default="'no_pos'" type="xs:string">
+							<doc>Mandatory POS Code</doc>
+						</param>
+						<param name="test" style="query" default="false" type="xs:boolean">
+							<doc>Optional Test Flag</doc>
+						</param>
+						<param name="xsl" style="query" default="'no_xsl'" type="xs:string">
+							<doc>Optional XSLT</doc>
+						</param>
+					</request>
+					<response>
+						<doc>Response</doc>
+						<representation mediaType="application/xml">
+							<doc>Price Upload</doc>
+						</representation>
+					</response>
+				</method>
+			</resource>
+			<resource path="/upload/{productid}/text/{type}/{language}/{notes}">
+				<doc>Resource</doc>
+				<param name="productid" style="template" type="xs:string">
+					<doc>Product ID</doc>
+				</param>
+				<param name="type" style="template" type="xs:string">
+					<doc>Text Type</doc>
+				</param>
+				<param name="language" style="template" type="xs:string">
+					<doc>Language</doc>
+				</param>
+				<param name="notes" style="template" type="xs:string">
+					<doc>Descriptive Text</doc>
+				</param>
+				<method name="GET">
+					<doc>Upload descriptive text</doc>
+					<request>
+						<doc>Request</doc>
+						<param name="pos" style="query" default="'no_pos'" type="xs:string">
+							<doc>Mandatory POS Code</doc>
+						</param>
+						<param name="test" style="query" default="false" type="xs:boolean">
+							<doc>Optional Test Flag</doc>
+						</param>
+						<param name="xsl" style="query" default="'no_xsl'" type="xs:string">
+							<doc>Optional XSLT</doc>
+						</param>
+					</request>
+					<response>
+						<doc>Response</doc>
+						<representation mediaType="application/xml">
+							<doc>Product Text</doc>
+						</representation>
+					</response>
+				</method>
+			</resource>
+			<resource path="/{productid}">
+				<doc>Resource</doc>
+				<param name="productid" style="template" type="xs:string">
+					<doc>Product ID</doc>
+				</param>
+				<method name="GET">
+					<doc>Product information</doc>
+					<request>
+						<doc>Request</doc>
+						<param name="pos" style="query" default="'no_pos'" type="xs:string">
+							<doc>Mandatory POS Code</doc>
+						</param>
+						<param name="test" style="query" default="false" type="xs:boolean">
+							<doc>Optional Test Flag</doc>
+						</param>
+						<param name="xsl" style="query" default="'no_xsl'" type="xs:string">
+							<doc>Optional XSLT</doc>
+						</param>
+					</request>
+					<response>
+						<doc>Response</doc>
+						<representation mediaType="application/xml">
+							<doc>Product Information</doc>
+						</representation>
+					</response>
+				</method>
+			</resource>
+			<resource path="/{productid}/attribute">
+				<doc>Resource</doc>
+				<param name="productid" style="template" type="xs:string">
+					<doc>Product ID</doc>
+				</param>
+				<method name="GET">
+					<doc>List of OTA product attributes</doc>
+					<request>
+						<doc>Request</doc>
+						<param name="pos" style="query" default="'no_pos'" type="xs:string">
+							<doc>Mandatory POS Code</doc>
+						</param>
+						<param name="test" style="query" default="false" type="xs:boolean">
+							<doc>Optional Test Flag</doc>
+						</param>
+						<param name="xsl" style="query" default="'no_xsl'" type="xs:string">
+							<doc>Optional XSLT</doc>
+						</param>
+					</request>
+					<response>
+						<doc>Response</doc>
+						<representation mediaType="application/xml">
+							<doc>Attribute List</doc>
+						</representation>
+					</response>
+				</method>
+			</resource>
+			<resource path="/{productid}/detail">
+				<doc>Resource</doc>
+				<param name="productid" style="template" type="xs:string">
+					<doc>Product ID</doc>
+				</param>
+				<method name="GET">
+					<doc>Detailed product information</doc>
+					<request>
+						<doc>Request</doc>
+						<param name="pos" style="query" default="'no_pos'" type="xs:string">
+							<doc>Mandatory POS Code</doc>
+						</param>
+						<param name="test" style="query" default="false" type="xs:boolean">
+							<doc>Optional Test Flag</doc>
+						</param>
+						<param name="xsl" style="query" default="'no_xsl'" type="xs:string">
+							<doc>Optional XSLT</doc>
+						</param>
+					</request>
+					<response>
+						<doc>Response</doc>
+						<representation mediaType="application/xml">
+							<doc>Product Information</doc>
+						</representation>
+					</response>
+				</method>
+			</resource>
+			<resource path="/{productid}/image">
+				<doc>Resource</doc>
+				<param name="productid" style="template" type="xs:string">
+					<doc>Product ID</doc>
+				</param>
+				<method name="GET">
+					<doc>List of product image URLs</doc>
+					<request>
+						<doc>Request</doc>
+						<param name="pos" style="query" default="'no_pos'" type="xs:string">
+							<doc>Mandatory POS Code</doc>
+						</param>
+						<param name="test" style="query" default="false" type="xs:boolean">
+							<doc>Optional Test Flag</doc>
+						</param>
+						<param name="xsl" style="query" default="'no_xsl'" type="xs:string">
+							<doc>Optional XSLT</doc>
+						</param>
+					</request>
+					<response>
+						<doc>Response</doc>
+						<representation mediaType="application/xml">
+							<doc>Image URL List</doc>
+						</representation>
+					</response>
+				</method>
+			</resource>
+			<resource path="/{productid}/pricelist">
+				<doc>Resource</doc>
+				<param name="productid" style="template" type="xs:string">
+					<doc>Product ID</doc>
+				</param>
+				<method name="GET">
+					<doc>List of product prices</doc>
+					<request>
+						<doc>Request</doc>
+						<param name="pos" style="query" default="'no_pos'" type="xs:string">
+							<doc>Mandatory POS Code</doc>
+						</param>
+						<param name="test" style="query" default="false" type="xs:boolean">
+							<doc>Optional Test Flag</doc>
+						</param>
+						<param name="xsl" style="query" default="'no_xsl'" type="xs:string">
+							<doc>Optional XSLT</doc>
+						</param>
+					</request>
+					<response>
+						<doc>Response</doc>
+						<representation mediaType="application/xml">
+							<doc>Price List</doc>
+						</representation>
+					</response>
+				</method>
+			</resource>
+			<resource path="/{productid}/rating">
+				<doc>Resource</doc>
+				<param name="productid" style="template" type="xs:string">
+					<doc>Product ID</doc>
+				</param>
+				<method name="GET">
+					<doc>List of product ratings</doc>
+					<request>
+						<doc>Request</doc>
+						<param name="pos" style="query" default="'no_pos'" type="xs:string">
+							<doc>Mandatory POS Code</doc>
+						</param>
+						<param name="xsl" style="query" default="'no_xsl'" type="xs:string">
+							<doc>Optional XSLT</doc>
+						</param>
+					</request>
+					<response>
+						<doc>Response</doc>
+						<representation mediaType="application/xml">
+							<doc>Rating List</doc>
+						</representation>
+					</response>
+				</method>
+			</resource>
+			<resource path="/{productid}/review">
+				<doc>Resource</doc>
+				<param name="productid" style="template" type="xs:string">
+					<doc>Product ID</doc>
+				</param>
+				<method name="GET">
+					<doc>List of product reviews</doc>
+					<request>
+						<doc>Request</doc>
+						<param name="pos" style="query" default="'no_pos'" type="xs:string">
+							<doc>Mandatory POS Code</doc>
+						</param>
+						<param name="xsl" style="query" default="'no_xsl'" type="xs:string">
+							<doc>Optional XSLT</doc>
+						</param>
+					</request>
+					<response>
+						<doc>Response</doc>
+						<representation mediaType="application/xml">
+							<doc>Review List</doc>
+						</representation>
+					</response>
+				</method>
+			</resource>
+			<resource path="/{productid}/{language}">
+				<doc>Resource</doc>
+				<param name="productid" style="template" type="xs:string">
+					<doc>Product ID</doc>
+				</param>
+				<param name="language" style="template" default="EN" type="xs:string">
+					<doc>Language Code</doc>
+				</param>
+				<method name="GET">
+					<doc>Product description by language</doc>
+					<request>
+						<doc>Request</doc>
+						<param name="pos" style="query" default="'no_pos'" type="xs:string">
+							<doc>Mandatory POS Code</doc>
+						</param>
+						<param name="test" style="query" default="false" type="xs:boolean">
+							<doc>Optional Test Flag</doc>
+						</param>
+						<param name="xsl" style="query" default="'no_xsl'" type="xs:string">
+							<doc>Optional XSLT</doc>
+						</param>
+					</request>
+					<response>
+						<doc>Response</doc>
+						<representation mediaType="application/xml">
+							<doc>Product Description</doc>
+						</representation>
+					</response>
+				</method>
+			</resource>
+		</resource>
+		<resource path="/reservation">
+			<resource path="/available/{productid}/{fromdate}/{todate}">
+				<doc>Resource</doc>
+				<param name="productid" style="template" type="xs:string">
+					<doc>Product ID</doc>
+				</param>
+				<param name="fromdate" style="template" type="xs:string">
+					<doc>From (Arrival) Date</doc>
+				</param>
+				<param name="todate" style="template" type="xs:string">
+					<doc>To (Departure) Date</doc>
+				</param>
+				<method name="GET">
+					<doc>Indicates if a product (product) is available for the
+						specified dates</doc>
+					<request>
+						<doc>Request</doc>
+						<param name="pos" style="query" default="'no_pos'" type="xs:string">
+							<doc>Mandatory POS Code</doc>
+						</param>
+						<param name="xsl" style="query" default="'no_xsl'" type="xs:string">
+							<doc>Optional XSLT</doc>
+						</param>
+					</request>
+					<response>
+						<doc>Response</doc>
+						<representation mediaType="application/xml">
+							<doc>Availability Indicator</doc>
+						</representation>
+					</response>
+				</method>
+			</resource>
+			<resource path="/cancel/{reservationid}">
+				<doc>Resource</doc>
+				<param name="reservationid" style="template" type="xs:string">
+					<doc>Reservation ID</doc>
+				</param>
+				<method name="GET">
+					<doc>Cancels a reservation that has not been confirmed</doc>
+					<request>
+						<doc>Request</doc>
+						<param name="pos" style="query" default="'no_pos'" type="xs:string">
+							<doc>Mandatory POS Code</doc>
+						</param>
+						<param name="test" style="query" default="false" type="xs:boolean">
+							<doc>Optional Test Flag</doc>
+						</param>
+						<param name="xsl" style="query" default="'no_xsl'" type="xs:string">
+							<doc>Optional XSLT</doc>
+						</param>
+					</request>
+					<response>
+						<doc>Response</doc>
+						<representation mediaType="application/xml">
+							<doc>Cancel Reservation</doc>
+						</representation>
+					</response>
+				</method>
+			</resource>
+			<resource path="/download">
+				<doc>Resource</doc>
+				<method name="GET">
+					<doc>Lists reservations made since the most recent download</doc>
+					<request>
+						<doc>Request</doc>
+						<param name="pos" style="query" default="'no_pos'" type="xs:string">
+							<doc>Mandatory POS Code</doc>
+						</param>
+						<param name="xsl" style="query" default="'no_xsl'" type="xs:string">
+							<doc>Optional XSLT</doc>
+						</param>
+					</request>
+					<response>
+						<doc>Response</doc>
+						<representation mediaType="application/xml">
+							<doc>List of New Reservations</doc>
+						</representation>
+					</response>
+				</method>
+			</resource>
+			<resource path="/downloads">
+				<doc>Resource</doc>
+				<method name="GET">
+					<doc>Lists reservations, managed by an external PMS, having future
+						departure dates</doc>
+					<request>
+						<doc>Request</doc>
+						<param name="pos" style="query" default="'no_pos'" type="xs:string">
+							<doc>Mandatory POS Code</doc>
+						</param>
+						<param name="xsl" style="query" default="'no_xsl'" type="xs:string">
+							<doc>Optional XSLT</doc>
+						</param>
+					</request>
+					<response>
+						<doc>Response</doc>
+						<representation mediaType="application/xml">
+							<doc>Availability Indicator</doc>
+						</representation>
+					</response>
+				</method>
+			</resource>
+			<resource path="/location/{locationid}/{fromdate}/{todate}">
+				<doc>Resource</doc>
+				<param name="locationid" style="template" type="xs:string">
+					<doc>Location ID</doc>
+				</param>
+				<param name="fromdate" style="template" type="xs:string">
+					<doc>From Date</doc>
+				</param>
+				<param name="todate" style="template" type="xs:string">
+					<doc>To Date</doc>
+				</param>
+				<method name="GET">
+					<doc>Lists product availability at one or more locations for the
+						specified dates</doc>
+					<request>
+						<doc>Request</doc>
+						<param name="pos" style="query" default="'no_pos'" type="xs:string">
+							<doc>Mandatory POS Code</doc>
+						</param>
+						<param name="xsl" style="query" default="'no_xsl'" type="xs:string">
+							<doc>Optional XSLT</doc>
+						</param>
+					</request>
+					<response>
+						<doc>Response</doc>
+						<representation mediaType="application/xml">
+							<doc>Availability Schedule</doc>
+						</representation>
+					</response>
+				</method>
+			</resource>
+			<resource path="/product/{productid}/{fromdate}/{todate}">
+				<doc>Resource</doc>
+				<param name="productid" style="template" type="xs:string">
+					<doc>Product ID</doc>
+				</param>
+				<param name="fromdate" style="template" type="xs:string">
+					<doc>From Date</doc>
+				</param>
+				<param name="todate" style="template" type="xs:string">
+					<doc>To Date</doc>
+				</param>
+				<method name="GET">
+					<doc>Lists availability of one or more properties for the specified
+						dates</doc>
+					<request>
+						<doc>Request</doc>
+						<param name="pos" style="query" default="'no_pos'" type="xs:string">
+							<doc>Mandatory POS Code</doc>
+						</param>
+						<param name="xsl" style="query" default="'no_xsl'" type="xs:string">
+							<doc>Optional XSLT</doc>
+						</param>
+					</request>
+					<response>
+						<doc>Response</doc>
+						<representation mediaType="application/xml">
+							<doc>Availability Schedule</doc>
+						</representation>
+					</response>
+				</method>
+			</resource>
+			<resource path="/quote/{productid}/{fromdate}/{todate}">
+				<doc>Resource</doc>
+				<param name="productid" style="template" type="xs:string">
+					<doc>Product ID</doc>
+				</param>
+				<param name="fromdate" style="template" type="xs:string">
+					<doc>From Date</doc>
+				</param>
+				<param name="todate" style="template" type="xs:string">
+					<doc>To Date</doc>
+				</param>
+				<method name="GET">
+					<doc>Quotation for a product for the specified dates</doc>
+					<request>
+						<doc>Request</doc>
+						<param name="pos" style="query" default="'no_pos'" type="xs:string">
+							<doc>Mandatory POS Code</doc>
+						</param>
+						<param name="xsl" style="query" default="'no_xsl'" type="xs:string">
+							<doc>Optional XSLT</doc>
+						</param>
+					</request>
+					<response>
+						<doc>Response</doc>
+						<representation mediaType="application/xml">
+							<doc>Price Quotation</doc>
+						</representation>
+					</response>
+				</method>
+			</resource>
+			<resource
+				path="/quotes/{latitude}/{longitude}/{distance}/{unit}/{fromdate}/{todate}">
+				<doc>Resource</doc>
+				<param name="latitude" style="template" type="xs:double">
+					<doc>Latitude of Position</doc>
+				</param>
+				<param name="longitude" style="template" type="xs:double">
+					<doc>Longitude of Position</doc>
+				</param>
+				<param name="distance" style="template" default="50" type="xs:double">
+					<doc>Maximum Distance from Position</doc>
+				</param>
+				<param name="unit" style="template" default="KMT" type="xs:string">
+					<doc>Distance Unit</doc>
+				</param>
+				<param name="fromdate" style="template" type="xs:string" />
+				<param name="todate" style="template" type="xs:string" />
+				<method name="GET">
+					<doc>Quotations for properties near to a position for the specified
+						dates</doc>
+					<request>
+						<doc>Request</doc>
+						<param name="pos" style="query" default="'no_pos'" type="xs:string">
+							<doc>Mandatory POS Code</doc>
+						</param>
+						<param name="xsl" style="query" default="'no_xsl'" type="xs:string">
+							<doc>Optional XSLT</doc>
+						</param>
+					</request>
+					<response>
+						<doc>Response</doc>
+						<representation mediaType="application/xml">
+							<doc>Price Quotations</doc>
+						</representation>
+					</response>
+				</method>
+			</resource>
+			<resource
+				path="/quotes/{locationid}/{distance}/{unit}/{fromdate}/{todate}">
+				<doc>Resource</doc>
+				<param name="locationid" style="template" type="xs:string">
+					<doc>Location ID</doc>
+				</param>
+				<param name="distance" style="template" default="50" type="xs:double">
+					<doc>Maximum Distance from Location</doc>
+				</param>
+				<param name="unit" style="template" default="KMT" type="xs:string">
+					<doc>Distance Unit</doc>
+				</param>
+				<param name="fromdate" style="template" type="xs:string">
+					<doc>From Date</doc>
+				</param>
+				<param name="todate" style="template" type="xs:string">
+					<doc>To Date</doc>
+				</param>
+				<method name="GET">
+					<doc>Quotations for properties near to a location for the specified
+						dates</doc>
+					<request>
+						<doc>Request</doc>
+						<param name="pos" style="query" default="'no_pos'" type="xs:string">
+							<doc>Mandatory POS Code</doc>
+						</param>
+						<param name="xsl" style="query" default="'no_xsl'" type="xs:string">
+							<doc>Optional XSLT</doc>
+						</param>
+					</request>
+					<response>
+						<doc>Response</doc>
+						<representation mediaType="application/xml">
+							<doc>Price Quotations</doc>
+						</representation>
+					</response>
+				</method>
+			</resource>
+			<resource path="/quotes/{locationid}/{fromdate}/{todate}">
+				<doc>Resource</doc>
+				<param name="locationid" style="template" type="xs:string">
+					<doc>Location ID</doc>
+				</param>
+				<param name="fromdate" style="template" type="xs:string">
+					<doc>From Date</doc>
+				</param>
+				<param name="todate" style="template" type="xs:string">
+					<doc>To Date</doc>
+				</param>
+				<method name="GET">
+					<doc>Quotations for properties at one or more locations for the
+						specified dates</doc>
+					<request>
+						<doc>Request</doc>
+						<param name="pos" style="query" default="'no_pos'" type="xs:string">
+							<doc>Mandatory POS Code</doc>
+						</param>
+						<param name="xsl" style="query" default="'no_xsl'" type="xs:string">
+							<doc>Optional XSLT</doc>
+						</param>
+					</request>
+					<response>
+						<doc>Response</doc>
+						<representation mediaType="application/xml">
+							<doc>Price Quotations</doc>
+						</representation>
+					</response>
+				</method>
+			</resource>
+			<resource path="/special/{latitude}/{longitude}/{distance}/{unit}">
+				<doc>Resource</doc>
+				<param name="latitude" style="template" type="xs:double">
+					<doc>Latitude of Position</doc>
+				</param>
+				<param name="longitude" style="template" type="xs:double">
+					<doc>Longitude of Position</doc>
+				</param>
+				<param name="distance" style="template" default="50" type="xs:double">
+					<doc>Maximum Distance from Position</doc>
+				</param>
+				<param name="unit" style="template" default="KMT" type="xs:string">
+					<doc>Distance Unit</doc>
+				</param>
+				<method name="GET">
+					<doc>Special offers for properties near to a position</doc>
+					<request>
+						<doc>Request</doc>
+						<param name="pos" style="query" default="'no_pos'" type="xs:string">
+							<doc>Mandatory POS Code</doc>
+						</param>
+						<param name="xsl" style="query" default="'no_xsl'" type="xs:string">
+							<doc>Optional XSLT</doc>
+						</param>
+					</request>
+					<response>
+						<doc>Response</doc>
+						<representation mediaType="application/xml">
+							<doc>Special Offer Quotations</doc>
+						</representation>
+					</response>
+				</method>
+			</resource>
+			<resource path="/special/{locationid}">
+				<doc>Resource</doc>
+				<param name="locationid" style="template" type="xs:string">
+					<doc>Location ID</doc>
+				</param>
+				<method name="GET">
+					<doc>Special offers for properties at one or more locations</doc>
+					<request>
+						<doc>Request</doc>
+						<param name="pos" style="query" default="'no_pos'" type="xs:string">
+							<doc>Mandatory POS Code</doc>
+						</param>
+						<param name="xsl" style="query" default="'no_xsl'" type="xs:string">
+							<doc>Optional XSLT</doc>
+						</param>
+					</request>
+					<response>
+						<doc>Response</doc>
+						<representation mediaType="application/xml">
+							<doc>Special Offer Quotations</doc>
+						</representation>
+					</response>
+				</method>
+			</resource>
+			<resource path="/special/{locationid}/{distance}/{unit}">
+				<doc>Resource</doc>
+				<param name="locationid" style="template" type="xs:string">
+					<doc>Location ID</doc>
+				</param>
+				<param name="distance" style="template" default="50" type="xs:double">
+					<doc>Maximum Distance from Location</doc>
+				</param>
+				<param name="unit" style="template" default="KMT" type="xs:string">
+					<doc>Distance Unit</doc>
+				</param>
+				<method name="GET">
+					<doc>Special offers for properties near to a location</doc>
+					<request>
+						<doc>Request</doc>
+						<param name="pos" style="query" default="'no_pos'" type="xs:string">
+							<doc>Mandatory POS Code</doc>
+						</param>
+						<param name="xsl" style="query" default="'no_xsl'" type="xs:string">
+							<doc>Optional XSLT</doc>
+						</param>
+					</request>
+					<response>
+						<doc>Response</doc>
+						<representation mediaType="application/xml">
+							<doc>Special Offer Quotations</doc>
+						</representation>
+					</response>
+				</method>
+			</resource>
+			<resource
+				path="/update/{reservationid}/{productid}/{fromdate}/{todate}/{quote}/{cost}/{currency}">
+				<doc>Resource</doc>
+				<param name="reservationid" style="template" type="xs:string">
+					<doc>Reservation ID</doc>
+				</param>
+				<param name="productid" style="template" type="xs:string">
+					<doc>Product ID</doc>
+				</param>
+				<param name="fromdate" style="template" type="xs:string">
+					<doc>From (Arrival) Date</doc>
+				</param>
+				<param name="todate" style="template" type="xs:string">
+					<doc>To (Departure) Date</doc>
+				</param>
+				<param name="quote" style="template" type="xs:double">
+					<doc>Quoted Price</doc>
+				</param>
+				<param name="quote" style="template" type="xs:double">
+					<doc>STO Price</doc>
+				</param>
+				<param name="currency" style="template" default="ZAR" type="xs:string">
+					<doc>Price Currency Code</doc>
+				</param>
+				<method name="GET">
+					<doc>Updates a reservation with the specified parameters</doc>
+					<request>
+						<doc>Request</doc>
+						<param name="pos" style="query" default="'no_pos'" type="xs:string">
+							<doc>Mandatory POS Code</doc>
+						</param>
+						<param name="test" style="query" default="false" type="xs:boolean">
+							<doc>Optional Test Flag</doc>
+						</param>
+						<param name="xsl" style="query" default="'no_xsl'" type="xs:string">
+							<doc>Optional XSLT</doc>
+						</param>
+					</request>
+					<response>
+						<doc>Response</doc>
+						<representation mediaType="application/xml">
+							<doc>Provisional Reservation</doc>
+						</representation>
+					</response>
+				</method>
+			</resource>
+			<resource
+				path="/upload/{reservationid}/{productid}/{fromdate}/{todate}/{emailaddress}/{familyname}/{firstname}/{price}/{currency}">
+				<doc>Resource</doc>
+				<param name="reservationid" style="template" type="xs:string">
+					<doc>Reservation ID</doc>
+				</param>
+				<param name="productid" style="template" type="xs:string">
+					<doc>Product ID</doc>
+				</param>
+				<param name="fromdate" style="template" type="xs:string">
+					<doc>From (Arrival) Date</doc>
+				</param>
+				<param name="todate" style="template" type="xs:string">
+					<doc>To (Departure) Date</doc>
+				</param>
+				<param name="emailaddress" style="template" default=""
+					type="xs:string">
+					<doc>Guest Email Address</doc>
+				</param>
+				<param name="familyname" style="template" default="Unallocated"
+					type="xs:string">
+					<doc>Guest Family Name</doc>
+				</param>
+				<param name="firstname" style="template" default="" type="xs:string">
+					<doc>Primary Guest Given Name</doc>
+				</param>
+				<param name="price" style="template" default="0" type="xs:string">
+					<doc>Quoted Price</doc>
+				</param>
+				<param name="currency" style="template" default="ZAR" type="xs:string">
+					<doc>Price Currency Code</doc>
+				</param>
+				<method name="GET">
+					<doc>Upload or update a reservation for a product between the
+						specified dates</doc>
+					<request>
+						<doc>Request</doc>
+						<param name="pos" style="query" default="'no_pos'" type="xs:string">
+							<doc>Mandatory POS Code</doc>
+						</param>
+						<param name="xsl" style="query" default="'no_xsl'" type="xs:string">
+							<doc>Optional XSLT</doc>
+						</param>
+					</request>
+					<response>
+						<doc>Response</doc>
+						<representation mediaType="application/xml">
+							<doc>Uploaded Reservation</doc>
+						</representation>
+					</response>
+				</method>
+			</resource>
+			<resource path="/uploads">
+				<doc>Resource</doc>
+				<method name="GET">
+					<doc>Lists reservations, managed by an external PMS, having future
+						departure dates</doc>
+					<request>
+						<doc>Request</doc>
+						<param name="pos" style="query" default="'no_pos'" type="xs:string">
+							<doc>Mandatory POS Code</doc>
+						</param>
+						<param name="xsl" style="query" default="'no_xsl'" type="xs:string">
+							<doc>Optional XSLT</doc>
+						</param>
+					</request>
+					<response>
+						<doc>Response</doc>
+						<representation mediaType="application/xml">
+							<doc>Availability Indicator</doc>
+						</representation>
+					</response>
+				</method>
+			</resource>
+			<resource
+				path="/{productid}/{fromdate}/{todate}/{emailaddress}/{familyname}/{firstname}/{notes}">
+				<doc>Resource</doc>
+				<param name="productid" style="template" type="xs:string">
+					<doc>Product ID</doc>
+				</param>
+				<param name="fromdate" style="template" type="xs:string">
+					<doc>From (Arrival) Date</doc>
+				</param>
+				<param name="todate" style="template" type="xs:string">
+					<doc>To (Departure) Date</doc>
+				</param>
+				<param name="emailaddress" style="template" type="xs:string">
+					<doc>Guest Email Address</doc>
+				</param>
+				<param name="familyname" style="template" type="xs:string">
+					<doc>Guest Family Name</doc>
+				</param>
+				<param name="firstname" style="template" type="xs:string">
+					<doc>Primary Guest Given Name</doc>
+				</param>
+				<param name="notes" style="template" type="xs:string">
+					<doc>Notes</doc>
+				</param>
+				<method name="GET">
+					<doc>Provisionally reserves a product for the specified dates</doc>
+					<request>
+						<doc>Request</doc>
+						<param name="pos" style="query" default="'no_pos'" type="xs:string">
+							<doc>Mandatory POS Code</doc>
+						</param>
+						<param name="test" style="query" default="false" type="xs:boolean">
+							<doc>Optional Test Flag</doc>
+						</param>
+						<param name="xsl" style="query" default="'no_xsl'" type="xs:string">
+							<doc>Optional XSLT</doc>
+						</param>
+					</request>
+					<response>
+						<doc>Response</doc>
+						<representation mediaType="application/xml">
+							<doc>Provisional Reservation</doc>
+						</representation>
+					</response>
+				</method>
+			</resource>
+		</resource>
+		<resource path="/flipkey">
+			<resource path="/bad">
+				<method name="GET">
+					<response>
+						<representation mediaType="application/xml" />
+					</response>
+				</method>
+			</resource>
+			<resource path="/getavailability">
+				<method name="GET">
+					<request>
+						<param name="xsl" style="query" default="'no_xsl'" type="xs:string" />
+					</request>
+					<response>
+						<representation mediaType="application/xml" />
+					</response>
+				</method>
+			</resource>
+			<resource path="/getavailability/{id}">
+				<param name="id" style="template" type="xs:string" />
+				<method name="GET">
+					<request>
+						<param name="xsl" style="query" default="'no_xsl'" type="xs:string" />
+					</request>
+					<response>
+						<representation mediaType="application/xml" />
+					</response>
+				</method>
+			</resource>
+			<resource path="/getproperties">
+				<method name="GET">
+					<request>
+						<param name="xsl" style="query" default="'no_xsl'" type="xs:string" />
+					</request>
+					<response>
+						<representation mediaType="application/xml" />
+					</response>
+				</method>
+			</resource>
+			<resource path="/getproperty/{id}">
+				<param name="id" style="template" type="xs:string" />
+				<method name="GET">
+					<request>
+						<param name="xsl" style="query" default="'no_xsl'" type="xs:string" />
+					</request>
+					<response>
+						<representation mediaType="application/xml" />
+					</response>
+				</method>
+			</resource>
+			<resource path="/getreservations/{fromdate}/{todate}">
+				<param name="fromdate" style="template" type="xs:string" />
+				<param name="todate" style="template" type="xs:string" />
+				<method name="GET">
+					<request>
+						<param name="xsl" style="query" default="'no_xsl'" type="xs:string" />
+					</request>
+					<response>
+						<representation mediaType="application/xml" />
+					</response>
+				</method>
+			</resource>
+			<resource path="/history">
+				<method name="GET">
+					<request>
+						<param name="xsl" style="query" default="'no_xsl'" type="xs:string" />
+					</request>
+					<response>
+						<representation mediaType="application/xml" />
+					</response>
+				</method>
+			</resource>
+		</resource>
+		<resource path="/ota">
+			<resource path="/CancelRQ/{reservationid}/{reason}">
+				<doc>Resource</doc>
+				<param name="reservationid" style="template" type="xs:string">
+					<doc>Reservation ID</doc>
+				</param>
+				<param name="reason" style="template" type="xs:string">
+					<doc>Reason for Cancellation</doc>
+				</param>
+				<method name="GET">
+					<doc>Create OTA_CancelRQ request message</doc>
+					<request>
+						<doc>Request</doc>
+						<param name="pos" style="query" type="xs:string">
+							<doc>Mandatory POS Code</doc>
+						</param>
+					</request>
+					<response>
+						<doc>Response</doc>
+						<representation mediaType="application/xml">
+							<doc>OTA_CancelRQ Request Message</doc>
+						</representation>
+					</response>
+				</method>
+			</resource>
+			<resource path="/CancelRS/{reservationid}/{reason}">
+				<doc>Resource</doc>
+				<param name="reservationid" style="template" type="xs:string" />
+				<param name="reason" style="template" type="xs:string" />
+				<method name="GET">
+					<doc>Cancel reservation with OTA_CancelRQ message</doc>
+					<request>
+						<doc>Request</doc>
+						<param name="pos" style="query" type="xs:string">
+							<doc>Mandatory POS Code</doc>
+						</param>
+					</request>
+					<response>
+						<doc>Response</doc>
+						<representation mediaType="application/xml">
+							<doc>OTACancelRS Response Message</doc>
+						</representation>
+					</response>
+				</method>
+			</resource>
+			<resource path="/HotelAvailRQ/{productids}/{fromdate}/{todate}/{summary}">
+				<doc>Resource</doc>
+				<param name="productids" style="template" type="xs:string">
+					<doc>Product ID</doc>
+				</param>
+				<param name="fromdate" style="template" type="xs:string">
+					<doc>From Date</doc>
+				</param>
+				<param name="todate" style="template" type="xs:string">
+					<doc>To Date</doc>
+				</param>
+				<param name="summary" style="template" default="false" type="xs:boolean">
+					<doc>True for availability summary for product(s) and date range
+					</doc>
+				</param>
+				<method name="GET">
+					<doc>Create OTA_HotelAvailRQ request message</doc>
+					<request>
+						<doc>Request</doc>
+						<param name="pos" style="query" type="xs:string">
+							<doc>Mandatory POS Code</doc>
+						</param>
+					</request>
+					<response>
+						<doc>Response</doc>
+						<representation mediaType="application/xml">
+							<doc>OTA_HotelAvailRQ Request Message</doc>
+						</representation>
+					</response>
+				</method>
+			</resource>
+			<resource path="/HotelAvailRS/{productids}/{fromdate}/{todate}/{summary}">
+				<doc>Resource</doc>
+				<param name="productids" style="template" type="xs:string">
+					<doc>Product ID</doc>
+				</param>
+				<param name="fromdate" style="template" type="xs:string">
+					<doc>From Date</doc>
+				</param>
+				<param name="todate" style="template" type="xs:string">
+					<doc>To Date</doc>
+				</param>
+				<param name="summary" style="template" default="false" type="xs:boolean">
+					<doc>True for availability summary for product(s) and date range
+					</doc>
+				</param>
+				<method name="GET">
+					<doc>Get availability with OTA_HotelAvailRQ message</doc>
+					<request>
+						<doc>Request</doc>
+						<param name="pos" style="query" type="xs:string">
+							<doc>Mandatory POS Code</doc>
+						</param>
+					</request>
+					<response>
+						<doc>Response</doc>
+						<representation mediaType="application/xml">
+							<doc>OTA_HotelAvailRS Response Message</doc>
+						</representation>
+					</response>
+				</method>
+			</resource>
+			<resource path="/HotelDescriptiveInfoRQ/{productids}">
+				<doc>Resource</doc>
+				<param name="productids" style="template" type="xs:string">
+					<doc>Product ID</doc>
+				</param>
+				<method name="GET">
+					<doc>Create OTA_HotelDescriptiveInfoRQ request message</doc>
+					<request>
+						<doc>Request</doc>
+						<param name="pos" style="query" type="xs:string">
+							<doc>Mandatory POS Code</doc>
+						</param>
+					</request>
+					<response>
+						<doc>Response</doc>
+						<representation mediaType="application/xml">
+							<doc>OTA_HotelDescriptiveInfoRQ Request Message</doc>
+						</representation>
+					</response>
+				</method>
+			</resource>
+			<resource path="/HotelDescriptiveInfoRS/{productids}">
+				<doc>Resource</doc>
+				<param name="productids" style="template" type="xs:string" />
+				<method name="GET">
+					<doc>Get property description with OTA_HotelDescriptiveInfoRS
+						request message</doc>
+					<request>
+						<doc>Request</doc>
+						<param name="pos" style="query" type="xs:string">
+							<doc>Mandatory POS Code</doc>
+						</param>
+					</request>
+					<response>
+						<doc>Response</doc>
+						<representation mediaType="application/xml">
+							<doc>OTA_HotelDescriptiveInfoRS Response Message</doc>
+						</representation>
+					</response>
+				</method>
+			</resource>
+			<resource
+				path="/HotelRatePlanRQ/{productid}/{fromdate}/{todate}/{currency}">
+				<doc>Resource</doc>
+				<param name="productid" style="template" type="xs:string">
+					<doc>Product ID</doc>
+				</param>
+				<param name="fromdate" style="template" type="xs:string">
+					<doc>From Date</doc>
+				</param>
+				<param name="todate" style="template" type="xs:string">
+					<doc>To Date</doc>
+				</param>
+				<param name="currency" style="template" type="xs:string">
+					<doc>Currency Code for Prices</doc>
+				</param>
+				<method name="GET">
+					<doc>Create OTA_HotelRatePlanRQ request message</doc>
+					<request>
+						<doc>Request</doc>
+						<param name="pos" style="query" type="xs:string">
+							<doc>Mandatory POS Code</doc>
+						</param>
+					</request>
+					<response>
+						<doc>Response</doc>
+						<representation mediaType="application/xml">
+							<doc>OTA_HotelRatePlanRQ Request Message</doc>
+						</representation>
+					</response>
+				</method>
+			</resource>
+			<resource
+				path="/HotelRatePlanRS/{productid}/{fromdate}/{todate}/{currency}">
+				<doc>Resource</doc>
+				<param name="productid" style="template" type="xs:string" />
+				<param name="fromdate" style="template" type="xs:string" />
+				<param name="todate" style="template" type="xs:string" />
+				<param name="currency" style="template" type="xs:string" />
+				<method name="GET">
+					<doc>Get prices with OTA_HotelRatePlanRQ request message</doc>
+					<request>
+						<doc>Request</doc>
+						<param name="pos" style="query" type="xs:string">
+							<doc>Mandatory POS Code</doc>
+						</param>
+					</request>
+					<response>
+						<doc>Response</doc>
+						<representation mediaType="application/xml">
+							<doc>OTA_HotelRatePlanRS Response Message</doc>
+						</representation>
+					</response>
+				</method>
+			</resource>
+			<resource
+				path="/HotelResNotifRQ/{productid}/{fromdate}/{todate}/{emailaddress}/{familyname}/{firstname}">
+				<doc>Resource</doc>
+				<param name="productid" style="template" type="xs:string">
+					<doc>Product ID</doc>
+				</param>
+				<param name="fromdate" style="template" type="xs:string">
+					<doc>From (Arrival) Date</doc>
+				</param>
+				<param name="todate" style="template" type="xs:string">
+					<doc>To (Departure) Date</doc>
+				</param>
+				<param name="emailaddress" style="template" type="xs:string">
+					<doc>Guest Email Address</doc>
+				</param>
+				<param name="familyname" style="template" type="xs:string">
+					<doc>Guest Family Name</doc>
+				</param>
+				<param name="firstname" style="template" type="xs:string">
+					<doc>Primary Guest Given Name</doc>
+				</param>
+				<method name="GET">
+					<doc>Create OTA_HotelResNotifRQ request message</doc>
+					<request>
+						<doc>Request</doc>
+						<param name="pos" style="query" type="xs:string">
+							<doc>Mandatory POS Code</doc>
+						</param>
+					</request>
+					<response>
+						<doc>Response</doc>
+						<representation mediaType="application/xml">
+							<doc>OTA_HotelResNotifRQ Request Message</doc>
+						</representation>
+					</response>
+				</method>
+			</resource>
+			<resource
+				path="/HotelResNotifRS/{productid}/{fromdate}/{todate}/{emailaddress}/{familyname}/{firstname}">
+				<doc>Resource</doc>
+				<param name="productid" style="template" type="xs:string">
+					<doc>Product ID</doc>
+				</param>
+				<param name="fromdate" style="template" type="xs:string">
+					<doc>From (Arrival) Date</doc>
+				</param>
+				<param name="todate" style="template" type="xs:string">
+					<doc>To (Departure) Date</doc>
+				</param>
+				<param name="emailaddress" style="template" type="xs:string">
+					<doc>Guest Email Address</doc>
+				</param>
+				<param name="familyname" style="template" type="xs:string">
+					<doc>Guest Family Name</doc>
+				</param>
+				<param name="firstname" style="template" type="xs:string">
+					<doc>Primary Guest Given Name</doc>
+				</param>
+				<method name="GET">
+					<doc>Create provisional reservation with OTA_HotelResNotifRQ
+						request message</doc>
+					<request>
+						<doc>Request</doc>
+						<param name="pos" style="query" type="xs:string">
+							<doc>Mandatory POS Code</doc>
+						</param>
+					</request>
+					<response>
+						<doc>Response</doc>
+						<representation mediaType="application/xml">
+							<doc>OTA_HotelResNotifRS Response Message</doc>
+						</representation>
+					</response>
+				</method>
+			</resource>
+			<resource path="/HotelSearchRQ/{criteria}">
+				<doc>Resource</doc>
+				<param name="criteria" style="template" type="xs:string">
+					<doc>List of Key=Value Criteria</doc>
+				</param>
+				<method name="GET">
+					<doc>Create OTA_HotelSearchRQ request message</doc>
+					<request>
+						<doc>Request</doc>
+						<param name="pos" style="query" type="xs:string">
+							<doc>Mandatory POS Code</doc>
+						</param>
+					</request>
+					<response>
+						<doc>Response</doc>
+						<representation mediaType="application/xml">
+							<doc>OTA_HotelSearchRQ Request Message</doc>
+						</representation>
+					</response>
+				</method>
+			</resource>
+			<resource path="/HotelSearchRS/{criteria}">
+				<doc>Resource</doc>
+				<param name="criteria" style="template" type="xs:string">
+					<doc>List of Key=Value Criteria</doc>
+				</param>
+				<method name="GET">
+					<doc>Get list of properties that match criteria with
+						OTA_HotelSearchRQ request message</doc>
+					<request>
+						<doc>Request</doc>
+						<param name="pos" style="query" type="xs:string">
+							<doc>Mandatory POS Code</doc>
+						</param>
+					</request>
+					<response>
+						<doc>Response</doc>
+						<representation mediaType="application/xml">
+							<doc>OTA_HotelSearchRS Response Message</doc>
+						</representation>
+					</response>
+				</method>
+			</resource>
+			<resource path="/PingRQ">
+				<doc>Resource</doc>
+				<method name="GET">
+					<doc>Create PingRQ request message</doc>
+					<request>
+						<doc>Request</doc>
+						<param name="pos" style="query" type="xs:string">
+							<doc>Mandatory POS Code</doc>
+						</param>
+					</request>
+					<response>
+						<doc>Response</doc>
+						<representation mediaType="application/xml">
+							<doc>PingRS Request Message</doc>
+						</representation>
+					</response>
+				</method>
+			</resource>
+			<resource path="/PingRS">
+				<doc>Resource</doc>
+				<method name="GET">
+					<doc>Return OTA_PingRS response message with OTA_PingRQ request
+						message</doc>
+					<request>
+						<doc>Request</doc>
+						<param name="pos" style="query" type="xs:string">
+							<doc>Mandatory POS Code</doc>
+						</param>
+					</request>
+					<response>
+						<doc>Response</doc>
+						<representation mediaType="application/xml">
+							<doc>OTA_PingRS Response Message</doc>
+						</representation>
+					</response>
+				</method>
+			</resource>
+			<resource path="/ProfileCreateRQ/{keyvalues}">
+				<doc>Resource</doc>
+				<param name="keyvalues" style="template" type="xs:string">
+					<doc>List of Key=Value Parameters</doc>
+				</param>
+				<method name="GET">
+					<doc>Create OTA_ProfileCreateRQ request message</doc>
+					<request>
+						<doc>Request</doc>
+						<param name="pos" style="query" type="xs:string">
+							<doc>Mandatory POS Code</doc>
+						</param>
+					</request>
+					<response>
+						<doc>Response</doc>
+						<representation mediaType="application/xml">
+							<doc>OTA_ProfileCreateRQ Request Message</doc>
+						</representation>
+					</response>
+				</method>
+			</resource>
+			<resource path="/ProfileCreateRS/{keyvalues}">
+				<doc>Resource</doc>
+				<param name="keyvalues" style="template" type="xs:string">
+					<doc>List of Key=Value Parameters</doc>
+				</param>
+				<method name="GET">
+					<doc>Create party record with OTA_ProfileCreateRQ request message
+					</doc>
+					<request>
+						<doc>Request</doc>
+						<param name="pos" style="query" type="xs:string">
+							<doc>Mandatory POS Code</doc>
+						</param>
+					</request>
+					<response>
+						<doc>Response</doc>
+						<representation mediaType="application/xml">
+							<doc>OTA_ProfileCreateRS Response Message</doc>
+						</representation>
+					</response>
+				</method>
+			</resource>
+			<resource path="/ReadRQ/{id}">
+				<doc>Resource</doc>
+				<param name="id" style="template" type="xs:string">
+					<doc>Reservation ID</doc>
+				</param>
+				<method name="GET">
+					<doc>Create OTA_ReadRQ request message</doc>
+					<request>
+						<doc>Request</doc>
+						<param name="pos" style="query" type="xs:string">
+							<doc>Mandatory POS Code</doc>
+						</param>
+					</request>
+					<response>
+						<doc>Response</doc>
+						<representation mediaType="application/xml">
+							<doc>OTA_ReadRQ Request Message</doc>
+						</representation>
+					</response>
+				</method>
+			</resource>
+			<resource path="/ResRetrieveRS/{id}">
+				<doc>Resource</doc>
+				<param name="id" style="template" type="xs:string">
+					<doc>Reservation ID</doc>
+				</param>
+				<method name="GET">
+					<doc>Get reservation with OTA_ReadRQ request message</doc>
+					<request>
+						<doc>Request</doc>
+						<param name="pos" style="query" type="xs:string">
+							<doc>Mandatory POS Code</doc>
+						</param>
+					</request>
+					<response>
+						<doc>Response</doc>
+						<representation mediaType="application/xml">
+							<doc>OTA_ResRetrieveRS Response Message</doc>
+						</representation>
+					</response>
+				</method>
+			</resource>
+			<resource path="/list">
+				<doc>Resource</doc>
+				<method name="GET">
+					<doc>OTA lists</doc>
+					<request>
+						<doc>Request</doc>
+						<param name="xsl" style="query" default="'no_xsl'" type="xs:string">
+							<doc>Optional XSLT</doc>
+						</param>
+					</request>
+					<response>
+						<doc>Response</doc>
+						<representation mediaType="application/xml">
+							<doc>OTA List</doc>
+						</representation>
+					</response>
+				</method>
+			</resource>
+			<resource path="/list/{type}">
+				<doc>Resource</doc>
+				<param name="type" style="template" type="xs:string">
+					<doc>OTA List</doc>
+				</param>
+				<method name="GET">
+					<doc>OTA codes by list</doc>
+					<request>
+						<doc>Request</doc>
+						<param name="xsl" style="query" default="'no_xsl'" type="xs:string">
+							<doc>Optional XSLT</doc>
+						</param>
+					</request>
+					<response>
+						<doc>Response</doc>
+						<representation mediaType="application/xml">
+							<doc>OTA List Codes</doc>
+						</representation>
+					</response>
+				</method>
+			</resource>
+		</resource>
+	</resources>
+</application>

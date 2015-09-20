@@ -1,0 +1,102 @@
+<?xml version="1.0" encoding="UTF-8" standalone="yes"?>
+<reservation>
+	<id>655290</id>
+	<name>118820</name>
+	<actorid>63766</actorid>
+	<state>FullyPaid</state>
+	<date>2012-08-31T00:00:00+02:00</date>
+	<duedate>2012-09-17T00:00:00+02:00</duedate>
+	<notes>SA VILLAS</notes>
+	<process>Reservation</process>
+	<adult>2</adult>
+	<agentid>14360</agentid>
+	<agentname>SA-Villas.com</agentname>
+	<arrivaltime>14:00:00</arrivaltime>
+	<checkin>2012-09-29</checkin>
+	<checkout>2012-10-08</checkout>
+	<child>0</child>
+	<cost>3757.0</cost>
+	<currency>USD</currency>
+	<customerid>96171</customerid>
+	<customername>Ayres</customername>
+	<departuretime>10:00:00</departuretime>
+	<deposit>100</deposit>
+	<extra>300.0</extra>
+	<fromdate>2012-09-29T00:00:00+02:00</fromdate>
+	<infant>0</infant>
+	<price>6050.0</price>
+	<productid>1996</productid>
+	<productname>Apostle's Edge</productname>
+	<quote>4696.75</quote>
+	<quotedetail>
+		<id>30512</id>
+		<name>Reservation</name>
+		<quantity>7.0</quantity>
+		<type>Accommodation Rate</type>
+		<value>750.0</value>
+	</quotedetail>
+	<quotedetail>
+		<id>3216</id>
+		<name>Length of Stay</name>
+		<quantity>1.0</quantity>
+		<type>Yield Management Rule</type>
+		<value>-302.0</value>
+	</quotedetail>
+	<quotedetail>
+		<id>3214</id>
+		<name>Last Minute Lead Time</name>
+		<quantity>1.0</quantity>
+		<type>Yield Management Rule</type>
+		<value>-931.0</value>
+	</quotedetail>
+	<quotedetail>
+		<id>3215</id>
+		<name>Last Minute Lead Time</name>
+		<quantity>1.0</quantity>
+		<type>Yield Management Rule</type>
+		<value>-35.25</value>
+	</quotedetail>
+	<quotedetail>
+		<id>30511</id>
+		<name>Reservation</name>
+		<quantity>2.0</quantity>
+		<type>Accommodation Rate</type>
+		<value>750.0</value>
+	</quotedetail>
+	<quotedetail>
+		<id>3213</id>
+		<name>Last Minute Lead Time</name>
+		<quantity>1.0</quantity>
+		<type>Yield Management Rule</type>
+		<value>-114.0</value>
+	</quotedetail>
+	<quotedetail>
+		<id>83549</id>
+		<name>Contract Fee</name>
+		<quantity>1.0</quantity>
+		<type>Mandatory Charge</type>
+		<value>30.0</value>
+	</quotedetail>
+	<quotedetail>
+		<id>55</id>
+		<name>Output VAT</name>
+		<quantity>1.0</quantity>
+		<type>Tax Included in Rate</type>
+		<value>576.09</value>
+	</quotedetail>
+	<quotedetail>
+		<id>0</id>
+		<name>Included in Price</name>
+		<quantity>1.0</quantity>
+		<type>Tax Included in Rate</type>
+		<value>-576.09</value>
+	</quotedetail>
+	<servicefrom>10:00:00</servicefrom>
+	<serviceto>18:00:00</serviceto>
+	<supplierid>5</supplierid>
+	<taxrate>12.280697272122422</taxrate>
+	<terms>Please contact us if we can help in any way. We arrange airport....
+	</terms>
+	<todate>2012-10-08T00:00:00+02:00</todate>
+	<unit>DAY</unit>
+</reservation>

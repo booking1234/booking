@@ -1,0 +1,346 @@
+<?xml version="1.0" encoding="utf-8"?>
+<wsdl:definitions targetNamespace="https://connect.bookt.com/connect"
+	xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/" xmlns:tns="https://connect.bookt.com/connect"
+	xmlns:wsaw="http://www.w3.org/2006/05/addressing/wsdl"
+	xmlns:xsd="http://www.w3.org/2001/XMLSchema">
+	<wsdl:types>
+		<xsd:schema targetNamespace="https://connect.bookt.com/connect/Imports">
+			<xsd:import schemaLocation="http://connect.bookt.com/svc/rest.svc?xsd=xsd0"
+				namespace="https://connect.bookt.com/connect" />
+		</xsd:schema>
+	</wsdl:types>
+	<wsdl:message name="IConnectREST_GetPropertyCategories_InputMessage">
+		<wsdl:part name="parameters" element="tns:GetPropertyCategories" />
+	</wsdl:message>
+	<wsdl:message name="IConnectREST_GetPropertyCategories_OutputMessage">
+		<wsdl:part name="parameters" element="tns:GetPropertyCategoriesResponse" />
+	</wsdl:message>
+	<wsdl:message name="IConnectREST_GetPropertyIDsByCategory_InputMessage">
+		<wsdl:part name="parameters" element="tns:GetPropertyIDsByCategory" />
+	</wsdl:message>
+	<wsdl:message name="IConnectREST_GetPropertyIDsByCategory_OutputMessage">
+		<wsdl:part name="parameters" element="tns:GetPropertyIDsByCategoryResponse" />
+	</wsdl:message>
+	<wsdl:message name="IConnectREST_GetPropertyIDs_InputMessage">
+		<wsdl:part name="parameters" element="tns:GetPropertyIDs" />
+	</wsdl:message>
+	<wsdl:message name="IConnectREST_GetPropertyIDs_OutputMessage">
+		<wsdl:part name="parameters" element="tns:GetPropertyIDsResponse" />
+	</wsdl:message>
+	<wsdl:message name="IConnectREST_GetProperty_InputMessage">
+		<wsdl:part name="parameters" element="tns:GetProperty" />
+	</wsdl:message>
+	<wsdl:message name="IConnectREST_GetProperty_OutputMessage">
+		<wsdl:part name="parameters" element="tns:GetPropertyResponse" />
+	</wsdl:message>
+	<wsdl:message name="IConnectREST_GetRates_InputMessage">
+		<wsdl:part name="parameters" element="tns:GetRates" />
+	</wsdl:message>
+	<wsdl:message name="IConnectREST_GetRates_OutputMessage">
+		<wsdl:part name="parameters" element="tns:GetRatesResponse" />
+	</wsdl:message>
+	<wsdl:message name="IConnectREST_GetAvailability_InputMessage">
+		<wsdl:part name="parameters" element="tns:GetAvailability" />
+	</wsdl:message>
+	<wsdl:message name="IConnectREST_GetAvailability_OutputMessage">
+		<wsdl:part name="parameters" element="tns:GetAvailabilityResponse" />
+	</wsdl:message>
+	<wsdl:message name="IConnectREST_SetRates_InputMessage">
+		<wsdl:part name="parameters" element="tns:SetRates" />
+	</wsdl:message>
+	<wsdl:message name="IConnectREST_SetRates_OutputMessage">
+		<wsdl:part name="parameters" element="tns:SetRatesResponse" />
+	</wsdl:message>
+	<wsdl:message name="IConnectREST_SetAvailability_InputMessage">
+		<wsdl:part name="parameters" element="tns:SetAvailability" />
+	</wsdl:message>
+	<wsdl:message name="IConnectREST_SetAvailability_OutputMessage">
+		<wsdl:part name="parameters" element="tns:SetAvailabilityResponse" />
+	</wsdl:message>
+	<wsdl:message name="IConnectREST_SetRatesAndAvailability_InputMessage">
+		<wsdl:part name="parameters" element="tns:SetRatesAndAvailability" />
+	</wsdl:message>
+	<wsdl:message name="IConnectREST_SetRatesAndAvailability_OutputMessage">
+		<wsdl:part name="parameters" element="tns:SetRatesAndAvailabilityResponse" />
+	</wsdl:message>
+	<wsdl:message name="IConnectREST_GetBooking_InputMessage">
+		<wsdl:part name="parameters" element="tns:GetBooking" />
+	</wsdl:message>
+	<wsdl:message name="IConnectREST_GetBooking_OutputMessage">
+		<wsdl:part name="parameters" element="tns:GetBookingResponse" />
+	</wsdl:message>
+	<wsdl:message name="IConnectREST_MakeBooking_InputMessage">
+		<wsdl:part name="parameters" element="tns:MakeBooking" />
+	</wsdl:message>
+	<wsdl:message name="IConnectREST_MakeBooking_OutputMessage">
+		<wsdl:part name="parameters" element="tns:MakeBookingResponse" />
+	</wsdl:message>
+	<wsdl:message name="IConnectREST_CancelBooking_InputMessage">
+		<wsdl:part name="parameters" element="tns:CancelBooking" />
+	</wsdl:message>
+	<wsdl:message name="IConnectREST_CancelBooking_OutputMessage">
+		<wsdl:part name="parameters" element="tns:CancelBookingResponse" />
+	</wsdl:message>
+	<wsdl:message name="IConnectREST_ModifyBooking_InputMessage">
+		<wsdl:part name="parameters" element="tns:ModifyBooking" />
+	</wsdl:message>
+	<wsdl:message name="IConnectREST_ModifyBooking_OutputMessage">
+		<wsdl:part name="parameters" element="tns:ModifyBookingResponse" />
+	</wsdl:message>
+	<wsdl:message name="IConnectREST_CreateLead_InputMessage">
+		<wsdl:part name="parameters" element="tns:CreateLead" />
+	</wsdl:message>
+	<wsdl:message name="IConnectREST_CreateLead_OutputMessage">
+		<wsdl:part name="parameters" element="tns:CreateLeadResponse" />
+	</wsdl:message>
+	<wsdl:message name="IConnectREST_CreateEvent_InputMessage">
+		<wsdl:part name="parameters" element="tns:CreateEvent" />
+	</wsdl:message>
+	<wsdl:message name="IConnectREST_CreateEvent_OutputMessage">
+		<wsdl:part name="parameters" element="tns:CreateEventResponse" />
+	</wsdl:message>
+	<wsdl:message name="IConnectREST_GetEventCategories_InputMessage">
+		<wsdl:part name="parameters" element="tns:GetEventCategories" />
+	</wsdl:message>
+	<wsdl:message name="IConnectREST_GetEventCategories_OutputMessage">
+		<wsdl:part name="parameters" element="tns:GetEventCategoriesResponse" />
+	</wsdl:message>
+	<wsdl:message name="IConnectREST_GetLead_InputMessage">
+		<wsdl:part name="parameters" element="tns:GetLead" />
+	</wsdl:message>
+	<wsdl:message name="IConnectREST_GetLead_OutputMessage">
+		<wsdl:part name="parameters" element="tns:GetLeadResponse" />
+	</wsdl:message>
+	<wsdl:message name="IConnectREST_GetEvent_InputMessage">
+		<wsdl:part name="parameters" element="tns:GetEvent" />
+	</wsdl:message>
+	<wsdl:message name="IConnectREST_GetEvent_OutputMessage">
+		<wsdl:part name="parameters" element="tns:GetEventResponse" />
+	</wsdl:message>
+	<wsdl:message name="IConnectREST_GetReviewIDs_InputMessage">
+		<wsdl:part name="parameters" element="tns:GetReviewIDs" />
+	</wsdl:message>
+	<wsdl:message name="IConnectREST_GetReviewIDs_OutputMessage">
+		<wsdl:part name="parameters" element="tns:GetReviewIDsResponse" />
+	</wsdl:message>
+	<wsdl:message name="IConnectREST_GetReview_InputMessage">
+		<wsdl:part name="parameters" element="tns:GetReview" />
+	</wsdl:message>
+	<wsdl:message name="IConnectREST_GetReview_OutputMessage">
+		<wsdl:part name="parameters" element="tns:GetReviewResponse" />
+	</wsdl:message>
+	<wsdl:message name="IConnectREST_GetReviews_InputMessage">
+		<wsdl:part name="parameters" element="tns:GetReviews" />
+	</wsdl:message>
+	<wsdl:message name="IConnectREST_GetReviews_OutputMessage">
+		<wsdl:part name="parameters" element="tns:GetReviewsResponse" />
+	</wsdl:message>
+	<wsdl:message name="IConnectREST_CreateReview_InputMessage">
+		<wsdl:part name="parameters" element="tns:CreateReview" />
+	</wsdl:message>
+	<wsdl:message name="IConnectREST_CreateReview_OutputMessage">
+		<wsdl:part name="parameters" element="tns:CreateReviewResponse" />
+	</wsdl:message>
+	<wsdl:message name="IConnectREST_DeleteReview_InputMessage">
+		<wsdl:part name="parameters" element="tns:DeleteReview" />
+	</wsdl:message>
+	<wsdl:message name="IConnectREST_DeleteReview_OutputMessage">
+		<wsdl:part name="parameters" element="tns:DeleteReviewResponse" />
+	</wsdl:message>
+	<wsdl:message name="IConnectREST_GetBusinessRules_InputMessage">
+		<wsdl:part name="parameters" element="tns:GetBusinessRules" />
+	</wsdl:message>
+	<wsdl:message name="IConnectREST_GetBusinessRules_OutputMessage">
+		<wsdl:part name="parameters" element="tns:GetBusinessRulesResponse" />
+	</wsdl:message>
+	<wsdl:portType name="IConnectREST">
+		<wsdl:operation name="GetPropertyCategories">
+			<wsdl:input
+				wsaw:Action="https://connect.bookt.com/connect/IConnectREST/GetPropertyCategories"
+				message="tns:IConnectREST_GetPropertyCategories_InputMessage" />
+			<wsdl:output
+				wsaw:Action="https://connect.bookt.com/connect/IConnectREST/GetPropertyCategoriesResponse"
+				message="tns:IConnectREST_GetPropertyCategories_OutputMessage" />
+		</wsdl:operation>
+		<wsdl:operation name="GetPropertyIDsByCategory">
+			<wsdl:input
+				wsaw:Action="https://connect.bookt.com/connect/IConnectREST/GetPropertyIDsByCategory"
+				message="tns:IConnectREST_GetPropertyIDsByCategory_InputMessage" />
+			<wsdl:output
+				wsaw:Action="https://connect.bookt.com/connect/IConnectREST/GetPropertyIDsByCategoryResponse"
+				message="tns:IConnectREST_GetPropertyIDsByCategory_OutputMessage" />
+		</wsdl:operation>
+		<wsdl:operation name="GetPropertyIDs">
+			<wsdl:input
+				wsaw:Action="https://connect.bookt.com/connect/IConnectREST/GetPropertyIDs"
+				message="tns:IConnectREST_GetPropertyIDs_InputMessage" />
+			<wsdl:output
+				wsaw:Action="https://connect.bookt.com/connect/IConnectREST/GetPropertyIDsResponse"
+				message="tns:IConnectREST_GetPropertyIDs_OutputMessage" />
+		</wsdl:operation>
+		<wsdl:operation name="GetProperty">
+			<wsdl:input
+				wsaw:Action="https://connect.bookt.com/connect/IConnectREST/GetProperty"
+				message="tns:IConnectREST_GetProperty_InputMessage" />
+			<wsdl:output
+				wsaw:Action="https://connect.bookt.com/connect/IConnectREST/GetPropertyResponse"
+				message="tns:IConnectREST_GetProperty_OutputMessage" />
+		</wsdl:operation>
+		<wsdl:operation name="GetRates">
+			<wsdl:input wsaw:Action="https://connect.bookt.com/connect/IConnectREST/GetRates"
+				message="tns:IConnectREST_GetRates_InputMessage" />
+			<wsdl:output
+				wsaw:Action="https://connect.bookt.com/connect/IConnectREST/GetRatesResponse"
+				message="tns:IConnectREST_GetRates_OutputMessage" />
+		</wsdl:operation>
+		<wsdl:operation name="GetAvailability">
+			<wsdl:input
+				wsaw:Action="https://connect.bookt.com/connect/IConnectREST/GetAvailability"
+				message="tns:IConnectREST_GetAvailability_InputMessage" />
+			<wsdl:output
+				wsaw:Action="https://connect.bookt.com/connect/IConnectREST/GetAvailabilityResponse"
+				message="tns:IConnectREST_GetAvailability_OutputMessage" />
+		</wsdl:operation>
+		<wsdl:operation name="SetRates">
+			<wsdl:input wsaw:Action="https://connect.bookt.com/connect/IConnectREST/SetRates"
+				message="tns:IConnectREST_SetRates_InputMessage" />
+			<wsdl:output
+				wsaw:Action="https://connect.bookt.com/connect/IConnectREST/SetRatesResponse"
+				message="tns:IConnectREST_SetRates_OutputMessage" />
+		</wsdl:operation>
+		<wsdl:operation name="SetAvailability">
+			<wsdl:input
+				wsaw:Action="https://connect.bookt.com/connect/IConnectREST/SetAvailability"
+				message="tns:IConnectREST_SetAvailability_InputMessage" />
+			<wsdl:output
+				wsaw:Action="https://connect.bookt.com/connect/IConnectREST/SetAvailabilityResponse"
+				message="tns:IConnectREST_SetAvailability_OutputMessage" />
+		</wsdl:operation>
+		<wsdl:operation name="SetRatesAndAvailability">
+			<wsdl:input
+				wsaw:Action="https://connect.bookt.com/connect/IConnectREST/SetRatesAndAvailability"
+				message="tns:IConnectREST_SetRatesAndAvailability_InputMessage" />
+			<wsdl:output
+				wsaw:Action="https://connect.bookt.com/connect/IConnectREST/SetRatesAndAvailabilityResponse"
+				message="tns:IConnectREST_SetRatesAndAvailability_OutputMessage" />
+		</wsdl:operation>
+		<wsdl:operation name="GetBooking">
+			<wsdl:input
+				wsaw:Action="https://connect.bookt.com/connect/IConnectREST/GetBooking"
+				message="tns:IConnectREST_GetBooking_InputMessage" />
+			<wsdl:output
+				wsaw:Action="https://connect.bookt.com/connect/IConnectREST/GetBookingResponse"
+				message="tns:IConnectREST_GetBooking_OutputMessage" />
+		</wsdl:operation>
+		<wsdl:operation name="MakeBooking">
+			<wsdl:input
+				wsaw:Action="https://connect.bookt.com/connect/IConnectREST/MakeBooking"
+				message="tns:IConnectREST_MakeBooking_InputMessage" />
+			<wsdl:output
+				wsaw:Action="https://connect.bookt.com/connect/IConnectREST/MakeBookingResponse"
+				message="tns:IConnectREST_MakeBooking_OutputMessage" />
+		</wsdl:operation>
+		<wsdl:operation name="CancelBooking">
+			<wsdl:input
+				wsaw:Action="https://connect.bookt.com/connect/IConnectREST/CancelBooking"
+				message="tns:IConnectREST_CancelBooking_InputMessage" />
+			<wsdl:output
+				wsaw:Action="https://connect.bookt.com/connect/IConnectREST/CancelBookingResponse"
+				message="tns:IConnectREST_CancelBooking_OutputMessage" />
+		</wsdl:operation>
+		<wsdl:operation name="ModifyBooking">
+			<wsdl:input
+				wsaw:Action="https://connect.bookt.com/connect/IConnectREST/ModifyBooking"
+				message="tns:IConnectREST_ModifyBooking_InputMessage" />
+			<wsdl:output
+				wsaw:Action="https://connect.bookt.com/connect/IConnectREST/ModifyBookingResponse"
+				message="tns:IConnectREST_ModifyBooking_OutputMessage" />
+		</wsdl:operation>
+		<wsdl:operation name="CreateLead">
+			<wsdl:input
+				wsaw:Action="https://connect.bookt.com/connect/IConnectREST/CreateLead"
+				message="tns:IConnectREST_CreateLead_InputMessage" />
+			<wsdl:output
+				wsaw:Action="https://connect.bookt.com/connect/IConnectREST/CreateLeadResponse"
+				message="tns:IConnectREST_CreateLead_OutputMessage" />
+		</wsdl:operation>
+		<wsdl:operation name="CreateEvent">
+			<wsdl:input
+				wsaw:Action="https://connect.bookt.com/connect/IConnectREST/CreateEvent"
+				message="tns:IConnectREST_CreateEvent_InputMessage" />
+			<wsdl:output
+				wsaw:Action="https://connect.bookt.com/connect/IConnectREST/CreateEventResponse"
+				message="tns:IConnectREST_CreateEvent_OutputMessage" />
+		</wsdl:operation>
+		<wsdl:operation name="GetEventCategories">
+			<wsdl:input
+				wsaw:Action="https://connect.bookt.com/connect/IConnectREST/GetEventCategories"
+				message="tns:IConnectREST_GetEventCategories_InputMessage" />
+			<wsdl:output
+				wsaw:Action="https://connect.bookt.com/connect/IConnectREST/GetEventCategoriesResponse"
+				message="tns:IConnectREST_GetEventCategories_OutputMessage" />
+		</wsdl:operation>
+		<wsdl:operation name="GetLead">
+			<wsdl:input wsaw:Action="https://connect.bookt.com/connect/IConnectREST/GetLead"
+				message="tns:IConnectREST_GetLead_InputMessage" />
+			<wsdl:output
+				wsaw:Action="https://connect.bookt.com/connect/IConnectREST/GetLeadResponse"
+				message="tns:IConnectREST_GetLead_OutputMessage" />
+		</wsdl:operation>
+		<wsdl:operation name="GetEvent">
+			<wsdl:input wsaw:Action="https://connect.bookt.com/connect/IConnectREST/GetEvent"
+				message="tns:IConnectREST_GetEvent_InputMessage" />
+			<wsdl:output
+				wsaw:Action="https://connect.bookt.com/connect/IConnectREST/GetEventResponse"
+				message="tns:IConnectREST_GetEvent_OutputMessage" />
+		</wsdl:operation>
+		<wsdl:operation name="GetReviewIDs">
+			<wsdl:input
+				wsaw:Action="https://connect.bookt.com/connect/IConnectREST/GetReviewIDs"
+				message="tns:IConnectREST_GetReviewIDs_InputMessage" />
+			<wsdl:output
+				wsaw:Action="https://connect.bookt.com/connect/IConnectREST/GetReviewIDsResponse"
+				message="tns:IConnectREST_GetReviewIDs_OutputMessage" />
+		</wsdl:operation>
+		<wsdl:operation name="GetReview">
+			<wsdl:input
+				wsaw:Action="https://connect.bookt.com/connect/IConnectREST/GetReview"
+				message="tns:IConnectREST_GetReview_InputMessage" />
+			<wsdl:output
+				wsaw:Action="https://connect.bookt.com/connect/IConnectREST/GetReviewResponse"
+				message="tns:IConnectREST_GetReview_OutputMessage" />
+		</wsdl:operation>
+		<wsdl:operation name="GetReviews">
+			<wsdl:input
+				wsaw:Action="https://connect.bookt.com/connect/IConnectREST/GetReviews"
+				message="tns:IConnectREST_GetReviews_InputMessage" />
+			<wsdl:output
+				wsaw:Action="https://connect.bookt.com/connect/IConnectREST/GetReviewsResponse"
+				message="tns:IConnectREST_GetReviews_OutputMessage" />
+		</wsdl:operation>
+		<wsdl:operation name="CreateReview">
+			<wsdl:input
+				wsaw:Action="https://connect.bookt.com/connect/IConnectREST/CreateReview"
+				message="tns:IConnectREST_CreateReview_InputMessage" />
+			<wsdl:output
+				wsaw:Action="https://connect.bookt.com/connect/IConnectREST/CreateReviewResponse"
+				message="tns:IConnectREST_CreateReview_OutputMessage" />
+		</wsdl:operation>
+		<wsdl:operation name="DeleteReview">
+			<wsdl:input
+				wsaw:Action="https://connect.bookt.com/connect/IConnectREST/DeleteReview"
+				message="tns:IConnectREST_DeleteReview_InputMessage" />
+			<wsdl:output
+				wsaw:Action="https://connect.bookt.com/connect/IConnectREST/DeleteReviewResponse"
+				message="tns:IConnectREST_DeleteReview_OutputMessage" />
+		</wsdl:operation>
+		<wsdl:operation name="GetBusinessRules">
+			<wsdl:input
+				wsaw:Action="https://connect.bookt.com/connect/IConnectREST/GetBusinessRules"
+				message="tns:IConnectREST_GetBusinessRules_InputMessage" />
+			<wsdl:output
+				wsaw:Action="https://connect.bookt.com/connect/IConnectREST/GetBusinessRulesResponse"
+				message="tns:IConnectREST_GetBusinessRules_OutputMessage" />
+		</wsdl:operation>
+	</wsdl:portType>
+</wsdl:definitions>

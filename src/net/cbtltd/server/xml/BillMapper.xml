@@ -1,0 +1,124 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="net.cbtltd.server.api.BillMapper">
+
+	<cache readOnly="true"/>
+
+	<resultMap id="ResultMap" type="Bill">
+		<id column="ID" jdbcType="INTEGER" property="id" />
+		<result column="ProcedureID" jdbcType="INTEGER" property="procedureID" />
+		<result column="Operation" jdbcType="VARCHAR" property="operation" />
+		<result column="EntityType" jdbcType="VARCHAR" property="entitytype" />
+		<result column="EntityID" jdbcType="INTEGER" property="entityID" />
+		<result column="Fixed" jdbcType="DOUBLE" property="fixed" />
+		<result column="Quantity" jdbcType="DOUBLE" property="quantity" />
+		<result column="Unit" jdbcType="VARCHAR" property="unit" />
+		<result column="FromDate" jdbcType="DATE" property="fromDate" />
+		<result column="ToDate" jdbcType="DATE" property="toDate" />
+		<result column="Description" jdbcType="VARCHAR" property="description" />
+		<result column="Output" jdbcType="BIT" property="output" />
+	</resultMap>
+
+	<sql id="columns">
+		ID, ProcedureID, Operation, EntityType, EntityID, Fixed, Quantity, Unit,
+		FromDate,
+		ToDate, Description, Output
+	</sql>
+
+	<select id="read" parameterType="String" resultMap="ResultMap">
+		select
+		<include refid="columns" />
+		from bill
+		where ID = #{id,jdbcType=INTEGER}
+	</select>
+
+	<select id="exists" parameterType="String" resultMap="ResultMap">
+		select
+		<include refid="columns" />
+		from bill
+		where ProcedureID = #{procedureID,jdbcType=INTEGER},
+			and Operation = #{operation,jdbcType=VARCHAR},
+			and EntityType = #{entitytype,jdbcType=VARCHAR},
+			and EntityID = #{entityID,jdbcType=INTEGER},
+			and Output = #{output,jdbcType=BIT}
+		limit 0, 1
+	</select>
+
+	<delete id="delete" parameterType="String">
+		delete from bill
+		where ID = #{id,jdbcType=INTEGER}
+  </delete>
+
+	<insert id="create" parameterType="Bill" useGeneratedKeys="true" keyProperty="id">
+<!--		<selectKey keyProperty="ID" order="AFTER" resultType="java.lang.Integer">-->
+<!--			SELECT LAST_INSERT_ID()-->
+<!--    </selectKey>-->
+		insert into bill (ProcedureID, Operation, EntityType,
+		EntityID, Fixed, Quantity,
+		Unit, FromDate, ToDate,
+		Description, Output)
+		values (#{procedureID,jdbcType=INTEGER}, #{operation,jdbcType=VARCHAR},
+		#{entitytype,jdbcType=VARCHAR},
+		#{entityID,jdbcType=INTEGER}, #{fixed,jdbcType=DOUBLE}, #{quantity,jdbcType=DOUBLE},
+		#{unit,jdbcType=VARCHAR}, #{fromDate,jdbcType=DATE},
+		#{toDate,jdbcType=DATE},
+		#{description,jdbcType=VARCHAR}, #{output,jdbcType=BIT})
+	</insert>
+
+	<update id="update" parameterType="Bill">
+		update bill
+		<set>
+			<if test="procedureID != null">
+				ProcedureID = #{procedureID,jdbcType=INTEGER},
+ 			</if>
+			<if test="operation != null">
+				Operation = #{operation,jdbcType=VARCHAR},
+ 			</if>
+			<if test="entitytype != null">
+				EntityType = #{entitytype,jdbcType=VARCHAR},
+ 			</if>
+			<if test="entityID != null">
+				EntityID = #{entityID,jdbcType=INTEGER},
+ 			</if>
+			<if test="fixed != null">
+				Fixed = #{fixed,jdbcType=DOUBLE},
+ 			</if>
+			<if test="quantity != null">
+				Quantity = #{quantity,jdbcType=DOUBLE},
+ 			</if>
+			<if test="unit != null">
+				Unit = #{unit,jdbcType=VARCHAR},
+ 			</if>
+			<if test="fromDate != null">
+				FromDate = #{fromDate,jdbcType=DATE},
+ 			</if>
+			<if test="toDate != null">
+				ToDate = #{toDate,jdbcType=DATE},
+ 			</if>
+			<if test="description != null">
+				Description = #{description,jdbcType=VARCHAR},
+ 			</if>
+			<if test="output != null">
+				Output = #{output,jdbcType=BIT},
+ 			</if>
+		</set>
+		where ID = #{id,jdbcType=INTEGER}
+	</update>
+
+	<update id="updateByPrimaryKey" parameterType="Bill">
+		update bill
+		set 
+			ProcedureID = #{procedureID,jdbcType=INTEGER},
+			Operation = #{operation,jdbcType=VARCHAR},
+			EntityType = #{entitytype,jdbcType=VARCHAR},
+			EntityID = #{entityID,jdbcType=INTEGER},
+			Fixed = #{fixed,jdbcType=DOUBLE},
+			Quantity = #{quantity,jdbcType=DOUBLE},
+			Unit = #{unit,jdbcType=VARCHAR},
+			FromDate = #{fromDate,jdbcType=DATE},
+			ToDate = #{toDate,jdbcType=DATE},
+			Description = #{description,jdbcType=VARCHAR},
+			Output = #{output,jdbcType=BIT}
+		where ID = #{id,jdbcType=INTEGER}
+  </update>
+</mapper>

@@ -1,0 +1,99 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="net.cbtltd.server.api.CountryMapper">
+
+<!-- 	<cache readOnly="true"/> -->
+
+	<resultMap id="ResultMap" type="Country">
+		<id column="ID" jdbcType="VARCHAR" property="id" />
+		<result column="Name" jdbcType="VARCHAR" property="name" />
+		<result column="Currency" jdbcType="VARCHAR" property="currency" />
+		<result column="Language" jdbcType="VARCHAR" property="language" />
+	</resultMap>
+
+	<sql id="columns">
+		ID, Name, Currency, Language
+	</sql>
+
+	<select id="read" parameterType="String" resultMap="ResultMap">
+		select
+		<include refid="columns" />
+		from country
+		where ID = #{id,jdbcType=VARCHAR}
+	</select>
+
+	<select id="readbyname" parameterType="String" resultMap="ResultMap">
+		select
+		<include refid="columns" />
+		from country
+			where Name = #{name}
+		limit 1
+	</select>
+
+	<select id="exists" parameterType="Currency" resultMap="ResultMap">
+		select
+		<include refid="columns" />
+		from country
+		where Name = #{Name,jdbcType=VARCHAR}
+		limit 1
+	</select>
+
+	<delete id="delete" parameterType="String">
+		delete from country
+		where ID = #{id,jdbcType=VARCHAR}
+	</delete>
+
+	<insert id="create" parameterType="Country">
+		insert into country (ID, Name, Currency, Language)
+		values (#{id,jdbcType=VARCHAR}, #{name,jdbcType=VARCHAR}, #{currency,jdbcType=VARCHAR}, #{language,jdbcType=VARCHAR})
+	</insert>
+
+	<update id="update" parameterType="Country">
+		update country
+		set Name = #{name,jdbcType=VARCHAR},
+		Currency = #{currency,jdbcType=VARCHAR},
+		Language = #{language,jdbcType=VARCHAR}
+		where ID = #{ID,jdbcType=VARCHAR}
+	</update>
+
+	<select id="nameidbyid" parameterType="NameIdAction" resultType="NameId">
+		select distinct Name, ID
+		from country
+		where ID = #{id}
+	</select>
+
+	<select id="nameidbyname" parameterType="NameIdAction" resultType="NameId">
+		select distinct Name, ID
+		from country
+		<if test="organizationid != null">
+			join relation on Link = 'Organization Country'
+			and LineID = ID 
+			and HeadID = #{organizationid}
+		</if>
+		where Name <![CDATA[ >= ]]> #{name}
+		order by Name
+		limit 0, #{numrows}
+	</select>
+
+<!-- JSON SQL queries -->
+	<select id="nameidwidget" parameterType="net.cbtltd.json.Parameter" resultType="net.cbtltd.json.nameid.NameIdWidgetItem">
+		select distinct Name, ID
+		from country
+		<if test="organizationid != null">
+			join relation on Link = 'Organization Country'
+			and LineID = ID 
+			and HeadID = #{organizationid}
+		</if>
+		<if test="id != null">
+		where ID in (${id})
+		</if>
+		order by Name
+	</select>
+	
+	<select id="idbyname" parameterType="String" resultType="String">
+		select ID
+		from country
+		where name = #{name,jdbcType=VARCHAR}
+	</select>
+
+</mapper>

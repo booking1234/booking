@@ -1,0 +1,234 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="net.cbtltd.server.api.RateMapper">
+
+<!-- 	<cache readOnly="true"/> -->
+
+	<resultMap id="ResultMap" type="Rate">
+	    <id column="ID" jdbcType="INTEGER" property="id" />
+	    <result column="EventID" jdbcType="INTEGER" property="eventid" />
+	    <result column="CustomerID" jdbcType="INTEGER" property="customerid" />
+	    <result column="ProductID" jdbcType="INTEGER" property="productid" />
+	    <result column="Name" jdbcType="VARCHAR" property="name" />
+	    <result column="Type" jdbcType="VARCHAR" property="type" />
+	    <result column="Quantity" jdbcType="INTEGER" property="quantity" />
+	</resultMap>
+
+	<sql id="columns">
+    ID, EventID, CustomerID, ProductID, Name, Type, Quantity
+	</sql>
+
+	<select id="read" parameterType="String" resultMap="ResultMap">
+		select
+		<include refid="columns" />
+		from rate
+		where ID = #{id,jdbcType=INTEGER}
+	</select>
+
+	<delete id="delete" parameterType="String">
+		delete from rate
+		where ID = #{id,jdbcType=INTEGER}
+	</delete>
+
+	<insert id="create" parameterType="Rate" useGeneratedKeys="true" keyProperty="id">
+    	insert into rate (EventID, CustomerID, ProductID, Name, Type, Quantity)
+    	values (
+    		#{eventid,jdbcType=INTEGER}, #{customerid,jdbcType=INTEGER}, #{productid,jdbcType=INTEGER}, 
+    		#{name,jdbcType=VARCHAR}, #{type,jdbcType=VARCHAR}, #{quantity,jdbcType=INTEGER}
+     	)
+	</insert>
+
+	<update id="update" parameterType="Rate">
+		update rate
+		<set>
+			<if test="eventid != null">
+				EventID = #{eventid,jdbcType=INTEGER},
+			</if>
+			<if test="customerid != null">
+				CustomerID = #{customerid,jdbcType=INTEGER},
+			</if>
+			<if test="productid != null">
+				ProductID = #{productid,jdbcType=INTEGER},
+			</if>
+			<if test="name != null">
+				Name = #{name,jdbcType=VARCHAR},
+			</if>
+			<if test="type != null">
+				Type = #{type,jdbcType=VARCHAR},
+			</if>
+			<if test="quantity != null">
+				Quantity = #{quantity,jdbcType=INTEGER},
+			</if>
+		</set>
+		where ID = #{id,jdbcType=INTEGER}
+	</update>
+
+	<update id="updateByPrimaryKey" parameterType="Rate">
+		update rate
+		set 
+			EventID = #{eventid,jdbcType=INTEGER},
+			CustomerID = #{customerid,jdbcType=INTEGER},
+			ProductID = #{productid,jdbcType=INTEGER},
+			Name = #{name,jdbcType=VARCHAR},
+			Type = #{type,jdbcType=VARCHAR},
+			Quantity = #{quantity,jdbcType=INTEGER},
+		where ID = #{id,jdbcType=INTEGER}
+	</update>
+
+	<update id="updateproduct" parameterType="String">
+		update rate, product set product.Rating = round(avg(rate.Quantity) * 1.66666, 0)
+		where rate.Quantity > 0
+		and product.ID = rate.ProductID
+		and rate.ProductID = #{productid}
+		group by rate.ProductID;
+	</update>
+
+	<select id="nameidbyid" parameterType="NameIdAction" resultType="NameId">
+		select distinct Name, ID
+		from rate
+		where ID = #{id}
+	</select>
+
+	<select id="nameidbyname" parameterType="NameIdAction" resultType="NameId">
+		select distinct Name, ID
+		from rate
+		<if test="organizationid != null">
+			join Product on product.ID = Rate.ProductID
+			and product.SupplierID = #{organizationid}
+		</if>
+		where Name <![CDATA[ >= ]]> #{name}
+		<if test="type != null">
+			and Type = #{type}
+		</if>
+		order by Name
+		limit 0, #{numrows}
+	</select>
+
+	<select id="columnchart" parameterType="String" resultType="VisualizationData">
+    	select 
+    		Name as category,
+    		sum(Quantity)*100/(count(rate.ID)*6) as y
+    	from rate
+    	where ProductID = #{id}
+    		and Type = 'Rating'
+			and Quantity > 0
+		group by Name
+	</select>
+	
+	<select id="linechart" parameterType="String" resultType="VisualizationData">
+		select concat(year(min(Date)), '/', month(min(Date))) as category,
+			min(event.Type) as name, 
+			sum(Quantity)*100/(count(rate.ID)*6) as y
+		from rate
+			join relation on LineID = rate.ID and Link = 'Event Rate'
+			join event on event.ID = HeadID and event.State not in ('Initial', 'Final')
+		where ProductID = #{id}
+		and rate.Type = 'Rating'
+		and event.State not in ('Initial', 'Final')
+		and Quantity > 0
+		group by Year(date), Month(date)
+	</select>
+
+<!-- 	<select id="notes" parameterType="String" resultType="RateNote"> -->
+<!-- 		select distinct Notes, event.Date -->
+<!-- 		from rate -->
+<!-- 			join relation on LineID = rate.ID  -->
+<!-- 				and Link = 'Event Rate' -->
+<!-- 			join event on event.ID = HeadID  -->
+<!-- 				and event.Type <![CDATA[ <> ]]> 'Complaint' -->
+<!-- 				and Notes is not null -->
+<!-- 				and length(Notes) <![CDATA[ > ]]> 10 -->
+<!-- 		where ProductID = #{id} -->
+<!-- 		order by Date desc -->
+<!-- 		limit 0, 10 -->
+<!-- 	</select> -->
+
+	<select id="review" parameterType="RateNoteTable" resultType="RateNote">
+		select distinct
+			rate.ID,
+			rate.EventID,
+			rate.CustomerID,
+			rate.ProductID,
+			rate.Type,
+			rate.Name,
+			rate.Quantity,
+			date(event.Date) as date,
+			rate.Quantity * 16.6666667 as rating,
+			event.Notes as notes
+		from rate
+			join event on event.ID = rate.EventID
+		where rate.ProductID = #{productid}
+			and rate.Type = 'Rating'
+			and rate.Name = 'Overall'
+			and event.Notes is not null
+			and event.Notes <![CDATA[ <> ]]> ''
+		order by ${orderby}
+		limit #{startrow}, #{numrows}
+	</select>
+
+<!--REST SQL queries-->
+	<select id="restrating" parameterType="String" resultType="net.cbtltd.rest.Rating">
+		select distinct
+			rate.ID, 
+			rate.Name, 
+			rate.State,
+			count(rate.quantity) as count,
+			round(sum(rate.quantity)/count(rate.quantity)*16.6666666666666667, 1) as average
+		from rate
+			join product on product.ID = rate.ProductID
+		where product.ID = #{id}
+			and product.State = 'Created'
+			and rate.Type = 'Rating'
+			and rate.Quantity <![CDATA[ > ]]> 0
+		group by rate.Name
+	</select>
+
+	<select id="restreview" parameterType="String" resultType="net.cbtltd.rest.Review">
+		select distinct
+			event.ID as id,
+			rate.ProductID as productid,
+			event.Notes as notes, 
+			event.State as state, 
+			event.Date as date
+		from rate
+			join event on event.ID = rate.EventID
+		where rate.ProductID = #{id}
+			and rate.Type = 'Rating'
+			and event.Notes is not null
+			and event.Notes <![CDATA[ <> ]]> ''
+			and event.State = 'Created'
+		order by event.Date desc
+	</select>
+
+<!-- JSON SQL queries -->
+	<select id="widgetreview" parameterType="RateNoteTable" resultType="net.cbtltd.json.review.ReviewWidgetItem">
+		select distinct
+			date(event.Date) as date,
+			rate.Quantity * 16.6666667 as rating,
+			event.Notes as notes
+		from rate
+			join event on event.ID = rate.EventID
+		where rate.ProductID = #{productid}
+			and rate.Type = 'Rating'
+			and rate.Name = 'Overall'
+			and event.Notes is not null
+			and event.Notes <![CDATA[ <> ]]> ''
+		order by ${orderby}
+		limit #{startrow}, #{numrows}
+	</select>
+
+	<select id="ratewidget" parameterType="net.cbtltd.json.Parameter" resultType="net.cbtltd.json.rate.RateWidgetItem">
+		select distinct
+    		rate.ID, event.Name as event, party.Name as customer, product.name as product, rate.Name, rate.Type, rate.Quantity
+		from reservation
+			join event on event.ParentID = reservation.ID
+			join product on product.ID = reservation.ProductID
+			join rate on rate.EventID = event.ID
+			left join party on party.ID = rate.CustomerID
+		where reservation.Name = #{id}
+		<if test="type != null">
+			and rate.Type = #{type}
+		</if>
+	</select>
+
+</mapper>

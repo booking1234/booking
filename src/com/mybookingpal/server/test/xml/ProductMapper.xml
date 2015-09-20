@@ -1,0 +1,155 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="com.mybookingpal.server.test.mapper.ProductMapper">
+
+	<resultMap id="ResultMap" type="Product">
+		<id column="ID" jdbcType="INTEGER" property="id" />
+		<result column="PartofID" jdbcType="INTEGER" property="partofid" />
+		<result column="OwnerID" jdbcType="INTEGER" property="ownerid" />
+		<result column="LocationID" jdbcType="INTEGER" property="locationid" />
+		<result column="SupplierID" jdbcType="INTEGER" property="supplierid" />
+		<result column="AltPartyID" jdbcType="INTEGER" property="altpartyid" />
+		<result column="AltID" jdbcType="VARCHAR" property="altid" />
+		<result column="AltSupplierID" jdbcType="VARCHAR" property="altsupplierid" />
+		<result column="Name" jdbcType="VARCHAR" property="name" />
+		<result column="State" jdbcType="VARCHAR" property="state" />
+		<result column="Options" jdbcType="VARCHAR" property="options" />
+		<result column="Type" jdbcType="VARCHAR" property="type" />
+		<result column="Webaddress" jdbcType="VARCHAR" property="webaddress" />
+		<result column="Physicaladdress" jdbcType="VARCHAR" property="physicaladdress" />
+		<result column="Tax" jdbcType="VARCHAR" property="tax" />
+		<result column="Code" jdbcType="VARCHAR" property="code" />
+		<result column="Unspsc" jdbcType="VARCHAR" property="unspsc" />
+		<result column="Currency" jdbcType="VARCHAR" property="currency" />
+		<result column="Unit" jdbcType="VARCHAR" property="unit" />
+		<result column="Servicedays" jdbcType="VARCHAR" property="servicedays" />
+		<result column="Room" jdbcType="INTEGER" property="room" />
+		<result column="Bathroom" jdbcType="INTEGER" property="bathroom" />
+		<result column="Toilet" jdbcType="INTEGER" property="toilet" />
+		<result column="Quantity" jdbcType="INTEGER" property="quantity" />
+		<result column="Person" jdbcType="INTEGER" property="person" />
+		<result column="Child" jdbcType="INTEGER" property="child" />
+		<result column="Infant" jdbcType="INTEGER" property="infant" />
+		<result column="Rating" jdbcType="INTEGER" property="rating" />
+		<result column="Linenchange" jdbcType="INTEGER" property="linenchange" />
+		<result column="Refresh" jdbcType="INTEGER" property="refresh" />
+		<result column="DynamicPricingEnabled" jdbcType="BIT" property="dynamicpricingenabled" />
+		<result column="Commission" jdbcType="DOUBLE" property="commission" />
+		<result column="Discount" jdbcType="DOUBLE" property="discount" />
+		<result column="OwnerDiscount" jdbcType="DOUBLE" property="ownerdiscount" />
+		<result column="Rank" jdbcType="DOUBLE" property="rank" />
+		<result column="Latitude" jdbcType="DOUBLE" property="latitude" />
+		<result column="Longitude" jdbcType="DOUBLE" property="longitude" />
+		<result column="Altitude" jdbcType="DOUBLE" property="altitude" />
+		<result column="SecurityDeposit" jdbcType="DOUBLE" property="securitydeposit" />
+		<result column="CleaningFee" jdbcType="DOUBLE" property="cleaningfee" />
+		<result column="AssignedtoManager" jdbcType="BOOLEAN" property="assignedtomanager" />
+		<result column="UseOnePriceRow" jdbcType="BOOLEAN" property="useonepricerow" />
+		<result column="inquire_state" jdbcType="VARCHAR" property="inquireState" />
+		<result column="version" jdbcType="TIMESTAMP" property="version" />
+	</resultMap>
+
+	<!--  REST Result Map -->
+	<resultMap id="ProductInfoResultMap" type="ProductInfo">
+		<id column="ID" jdbcType="VARCHAR" property="id" />
+		<result column="location" jdbcType="VARCHAR" property="location" />
+		<result column="country" jdbcType="VARCHAR" property="country" />
+		<result column="address" jdbcType="VARCHAR" property="address" />
+		<result column="description" jdbcType="VARCHAR" property="description" />
+		<result column="bathrooms" jdbcType="VARCHAR" property="bathrooms" />
+		<result column="commission" jdbcType="VARCHAR" property="commission" />
+		<result column="securityDeposit" jdbcType="VARCHAR" property="securityDeposit" />
+		<result column="cleaningFee" jdbcType="VARCHAR" property="cleaningFee" />
+		<result column="selected" jdbcType="BOOLEAN" property="selected" />
+	</resultMap>
+
+	<sql id="columns">
+		ID, PartofID, OwnerID, LocationID, SupplierID, AltPartyID,
+		AltID, AltSupplierID, Name, State, Options, Type, Webaddress, Physicaladdress,
+		Tax,
+		Code,
+		Unspsc, Currency, Unit, Servicedays, Room, Bathroom, Toilet,
+		Quantity, Person, Child, Infant, Rating, Linenchange, Refresh,
+		DynamicPricingEnabled, Commission, Discount, OwnerDiscount, Rank,
+		Latitude, Longitude, Altitude, SecurityDeposit, CleaningFee, AssignedtoManager, UseOnePriceRow,
+		inquire_state, version
+	</sql>
+	
+	<select id="activeproductid"  resultType="String">
+		select product.id
+		from product
+		where product.State ="Created" ; 
+	</select>
+	
+	
+	<select id="activeProductIdListBySupplier" parameterType="NameIdAction" resultType="String">
+		select
+		product.ID as id
+		from product
+		where product.SupplierID = #{id,jdbcType=INTEGER} 
+			and product.State = "Created";
+	</select>
+	
+	<select id ="activeproductidListbyChannelPartner" parameterType="NameIdAction" resultType="String">
+		select
+		product.ID as id
+		from product
+		inner join manager_to_channel
+		on product.SupplierID = manager_to_channel.property_manager_id
+			where manager_to_channel.channel_partner_id = #{id,jdbcType=INTEGER} 
+			and product.State = "Created"
+			and product.AssignedToManager = 1
+	</select>
+	
+	<select id ="productIdListWithEmptyValuesBySupplierId" parameterType="String" resultType="String">
+		select product.id from product where product.SupplierID = #{id,jdbcType=INTEGER} and ( 
+			COALESCE(product.OwnerID, '') = ''      
+			or  COALESCE(product.LocationID, '') = '' 
+			or  COALESCE(product.SupplierID, '') = ''     
+			or  COALESCE(product.AltPartyID, '') = ''              
+			or  COALESCE(product.AltID, '') = ''  
+			or  COALESCE(product.AltSupplierID, '') = ''  
+			or  COALESCE(product.Name, '') = ''    
+			or  COALESCE(product.State, '') = ''     
+			or  COALESCE(product.`Type`, '') = ''   
+			or  COALESCE(product.WebAddress, '') = ''
+			or  COALESCE(product.Code, '') = ''  
+			or  COALESCE(product.Servicedays, '') = ''    
+			or  COALESCE(product.Currency, '') = ''      
+			or  COALESCE(product.Unit, '') = ''    
+			or  COALESCE(product.Room, '') = '' 
+			or  COALESCE(product.Bathroom, '') = '' 
+			or  COALESCE(product.Toilet, '') = ''                      
+			or  COALESCE(product.Quantity, '') = '' 
+			or  COALESCE(product.Person, '') = '' 
+			or  COALESCE(product.Child, '') = ''                         
+			or  COALESCE(product.Infant, '') = ''
+			or  COALESCE(product.Baby, '') = '' 
+			or  COALESCE(product.Infant, '') = ''                          
+			or  COALESCE(product.Rating, '') = ''
+			or  COALESCE(product.Rating, '') = ''         
+			or  COALESCE(product.Commission, '') = ''                 
+			or  COALESCE(product.Rank, '') = ''                 
+			or  COALESCE(product.Latitude, '') = ''                 
+			or  COALESCE(product.Longitude, '') = ''         
+			or  COALESCE(product.Physicaladdress, '') = ''
+			or  COALESCE(product.AssignedtoManager, '') = ''                 
+			or  COALESCE(product.CleaningFee, '') = ''
+			or  COALESCE(product.SecurityDeposit, '') = ''
+			or  COALESCE(product.UseOnePriceRow, '') = ''                           
+		)
+	</select>
+	
+	<select id = "getProductsWithNoCancellationPolicy" resultType = "String">
+		select count(p.id)
+		from product as p left join property_manager_cancellation_rule as pmcr 
+		on p.SupplierID = pmcr.pm_id
+		where p.State = 'Created' 
+		and p.AssignedtoManager = 1
+		and (pmcr.cancellation_date is null 
+			or pmcr.cancellation_refund is null 
+			or pmcr.cancellation_transaction_fee is null);
+	</select>
+	
+<!-- XML Writer -->
+</mapper>

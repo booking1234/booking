@@ -1,0 +1,57 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE mapper
+PUBLIC "-//ibatis.apache.org//DTD Mapper 3.0//EN"
+"http://ibatis.apache.org/dtd/ibatis-3-mapper.dtd">
+<mapper namespace="net.cbtltd.server.api.DownloadMapper">
+
+	<resultMap id="ResultMap" type="Relation">
+		<result column="Link" property="link" jdbcType="VARCHAR" />
+		<result column="HeadID" property="headid" jdbcType="VARCHAR" />
+		<result column="LineID" property="lineid" jdbcType="VARCHAR" />
+	</resultMap>
+
+	<sql id="columns">distinct link, headid, lineid</sql>
+
+	<insert id="create" parameterType="Relation">
+		insert into download (link, headid, lineid)
+		values (#{link,	jdbcType=VARCHAR}, #{headid, jdbcType=VARCHAR}, #{lineid, jdbcType=VARCHAR})
+	</insert>
+
+	<delete id="delete" parameterType="Relation">
+		delete from download
+		where Link = #{link, jdbcType=VARCHAR} 
+		<if test="headid != null">
+			and HeadID = #{headid, jdbcType=VARCHAR}
+		</if>
+		<if test="lineid != null">
+			and LineID = #{lineid, jdbcType=VARCHAR} 
+		</if>
+	</delete>
+
+	<select id="exists" parameterType="Relation" resultMap="ResultMap">
+		select distinct
+		<include refid="columns" />
+		from download
+		where Link = #{link, jdbcType=VARCHAR}
+			and HeadID = #{headid, jdbcType=VARCHAR}
+			and LineID = #{lineid, jdbcType=VARCHAR}
+		limit 0, 1
+	</select>
+
+	
+	<select id="find" parameterType="Relation" resultType="String">
+		<if test="headid == null">
+		select distinct headid
+		from download
+		where Link = #{link, jdbcType=VARCHAR} 
+			and LineID = #{lineid, jdbcType=VARCHAR} 
+		</if>
+		<if test="lineid == null">
+		select distinct lineid
+		from download
+		where Link = #{link, jdbcType=VARCHAR} 
+			and HeadID = #{headid, jdbcType=VARCHAR}
+		</if>
+		limit 1
+	</select>
+</mapper>

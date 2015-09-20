@@ -1,0 +1,84 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="net.cbtltd.server.api.PropertyManagerCancellationRuleMapper">
+
+	<resultMap id="ResultMap" type="PropertyManagerCancellationRule">
+		<id column="ID" jdbcType="INTEGER" property="id" />
+		<result column="pm_id" jdbcType="INTEGER" property="propertyManagerId" />
+		<result column="cancellation_date" jdbcType="INTEGER" property="cancellationDate" />		
+		<result column="cancellation_refund" jdbcType="INTEGER" property="cancellationRefund" />
+		<result column="cancellation_transaction_fee" jdbcType="DOUBLE" property="cancellationTransactionFee" />				
+	</resultMap>
+		
+	<sql id="columns">
+		ID, pm_id, cancellation_date, cancellation_refund, cancellation_transaction_fee
+	</sql>
+	
+	<insert id="create" parameterType="PropertyManagerCancellationRule" useGeneratedKeys="true" keyProperty="id">
+		insert into property_manager_cancellation_rule (
+			pm_id, cancellation_date, cancellation_refund, cancellation_transaction_fee
+		)
+		values (
+			#{propertyManagerId,jdbcType=INTEGER},
+			#{cancellationDate,jdbcType=VARCHAR},
+			#{cancellationRefund,jdbcType=INTEGER},			
+			#{cancellationTransactionFee,jdbcType=DOUBLE}
+		)
+	</insert>
+
+	<select id="read" parameterType="INTEGER" resultMap="ResultMap">
+		select
+		<include refid="columns" />
+		from property_manager_cancellation_rule
+		where id = #{id,jdbcType=INTEGER}
+	</select>
+	
+	<select id="readbypmid" parameterType="INTEGER" resultMap="ResultMap">
+		select
+		<include refid="columns" />
+		from property_manager_cancellation_rule
+		where pm_id = #{id,jdbcType=INTEGER}
+	</select>
+	
+	<select id="readbydate" parameterType="INTEGER" resultMap="ResultMap">
+		select
+		<include refid="columns" />
+		from property_manager_cancellation_rule
+		where cancellation_date = #{cancelationDate,jdbcType=INTEGER}
+	</select>
+	
+	<select id="list" resultMap="ResultMap">
+		select distinct
+		<include refid="columns" />
+		from property_manager_cancellation_rule
+	</select>
+	
+	<update id="update" parameterType="PropertyManagerCancellationRule">
+		update property_manager_cancellation_rule
+		<set>
+			<if test="propertyManagerId != null">
+				pm_id = #{propertyManagerId,jdbcType=INTEGER},
+			</if>
+			<if test="cancellationDate != null">
+				cancellation_date = #{cancellationDate,jdbcType=VARCHAR},
+			</if>
+			<if test="cancelationRefund != null">
+				cancellation_refund = #{cancellationRefund,jdbcType=INTEGER},
+			</if>
+			<if test="cancellationTransactionFee != null">
+				cancellation_transaction_fee = #{cancellationTransactionFee,jdbcType=DOUBLE},
+			</if>
+		</set>
+		where ID = #{id,jdbcType=INTEGER}
+	</update>
+	
+	<delete id="delete" parameterType="INTEGER">
+		delete from property_manager_cancellation_rule
+		where id = #{id,jdbcType=INTEGER}
+	</delete>
+				
+	<delete id="deletebypmid" parameterType="INTEGER">
+		delete from property_manager_cancellation_rule
+		where pm_id = #{id,jdbcType=INTEGER}
+	</delete>
+</mapper>

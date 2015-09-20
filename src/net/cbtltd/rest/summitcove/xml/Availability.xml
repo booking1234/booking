@@ -1,0 +1,5263 @@
+
+<?xml version="1.0" encoding="ISO-8859-1"?><Availability><Reservation>
+		<PropertyID>24</PropertyID>
+		<PropertyActive>1</PropertyActive>
+		<ReservationID>38048</ReservationID>
+		<ArrivalDate>09-01-2012</ArrivalDate>
+		<ArrivalTime>4PM</ArrivalTime>
+		<DepartureDate>09-03-2012</DepartureDate>
+		<DepartureTime>10AM</DepartureTime>
+		<Canceled>0</Canceled>
+</Reservation>
+<Reservation>
+		<PropertyID>116</PropertyID>
+		<PropertyActive>1</PropertyActive>
+		<ReservationID>40996</ReservationID>
+		<ArrivalDate>09-01-2012</ArrivalDate>
+		<ArrivalTime>12PM</ArrivalTime>
+		<DepartureDate>09-08-2012</DepartureDate>
+		<DepartureTime>10AM</DepartureTime>
+		<Canceled>0</Canceled>
+</Reservation>
+<Reservation>
+		<PropertyID>129</PropertyID>
+		<PropertyActive>1</PropertyActive>
+		<ReservationID>41072</ReservationID>
+		<ArrivalDate>09-01-2012</ArrivalDate>
+		<ArrivalTime>4PM</ArrivalTime>
+		<DepartureDate>09-03-2012</DepartureDate>
+		<DepartureTime>10AM</DepartureTime>
+		<Canceled>0</Canceled>
+</Reservation>
+<Reservation>
+		<PropertyID>132</PropertyID>
+		<PropertyActive>1</PropertyActive>
+		<ReservationID>40812</ReservationID>
+		<ArrivalDate>09-01-2012</ArrivalDate>
+		<ArrivalTime>4PM</ArrivalTime>
+		<DepartureDate>09-03-2012</DepartureDate>
+		<DepartureTime>10AM</DepartureTime>
+		<Canceled>0</Canceled>
+</Reservation>
+<Reservation>
+		<PropertyID>149</PropertyID>
+		<PropertyActive>1</PropertyActive>
+		<ReservationID>38101</ReservationID>
+		<ArrivalDate>09-01-2012</ArrivalDate>
+		<ArrivalTime>4PM</ArrivalTime>
+		<DepartureDate>09-03-2012</DepartureDate>
+		<DepartureTime>10AM</DepartureTime>
+		<Canceled>0</Canceled>
+</Reservation>
+<Reservation>
+		<PropertyID>151</PropertyID>
+		<PropertyActive>1</PropertyActive>
+		<ReservationID>35123</ReservationID>
+		<ArrivalDate>09-01-2012</ArrivalDate>
+		<ArrivalTime>4PM</ArrivalTime>
+		<DepartureDate>09-03-2012</DepartureDate>
+		<DepartureTime>10AM</DepartureTime>
+		<Canceled>0</Canceled>
+</Reservation>
+<Reservation>
+		<PropertyID>194</PropertyID>
+		<PropertyActive>1</PropertyActive>
+		<ReservationID>41139</ReservationID>
+		<ArrivalDate>09-01-2012</ArrivalDate>
+		<ArrivalTime>4PM</ArrivalTime>
+		<DepartureDate>09-30-2012</DepartureDate>
+		<DepartureTime>10AM</DepartureTime>
+		<Canceled>0</Canceled>
+</Reservation>
+<Reservation>
+		<PropertyID>197</PropertyID>
+		<PropertyActive>1</PropertyActive>
+		<ReservationID>38924</ReservationID>
+		<ArrivalDate>09-01-2012</ArrivalDate>
+		<ArrivalTime>4PM</ArrivalTime>
+		<DepartureDate>09-03-2012</DepartureDate>
+		<DepartureTime>10AM</DepartureTime>
+		<Canceled>0</Canceled>
+</Reservation>
+<Reservation>
+		<PropertyID>217</PropertyID>
+		<PropertyActive>1</PropertyActive>
+		<ReservationID>40179</ReservationID>
+		<ArrivalDate>09-01-2012</ArrivalDate>
+		<ArrivalTime>4PM</ArrivalTime>
+		<DepartureDate>09-11-2012</DepartureDate>
+		<DepartureTime>10AM</DepartureTime>
+		<Canceled>0</Canceled>
+</Reservation>
+<Reservation>
+		<PropertyID>242</PropertyID>
+		<PropertyActive>1</PropertyActive>
+		<ReservationID>40836</ReservationID>
+		<ArrivalDate>09-01-2012</ArrivalDate>
+		<ArrivalTime>4PM</ArrivalTime>
+		<DepartureDate>09-03-2012</DepartureDate>
+		<DepartureTime>10AM</DepartureTime>
+		<Canceled>0</Canceled>
+</Reservation>
+<Reservation>
+		<PropertyID>240</PropertyID>
+		<PropertyActive>1</PropertyActive>
+		<ReservationID>35124</ReservationID>
+		<ArrivalDate>09-01-2012</ArrivalDate>
+		<ArrivalTime>4PM</ArrivalTime>
+		<DepartureDate>09-03-2012</DepartureDate>
+		<DepartureTime>10AM</DepartureTime>
+		<Canceled>0</Canceled>
+</Reservation>
+<Reservation>
+		<PropertyID>267</PropertyID>
+		<PropertyActive>1</PropertyActive>
+		<ReservationID>40372</ReservationID>
+		<ArrivalDate>09-01-2012</ArrivalDate>
+		<ArrivalTime>4PM</ArrivalTime>
+		<DepartureDate>09-05-2012</DepartureDate>
+		<DepartureTime>10AM</DepartureTime>
+		<Canceled>0</Canceled>
+</Reservation>
+<Reservation>
+		<PropertyID>286</PropertyID>
+		<PropertyActive>1</PropertyActive>
+		<ReservationID>41117</ReservationID>
+		<ArrivalDate>09-01-2012</ArrivalDate>
+		<ArrivalTime>4PM</ArrivalTime>
+		<DepartureDate>09-03-2012</DepartureDate>
+		<DepartureTime>10AM</DepartureTime>
+		<Canceled>0</Canceled>
+</Reservation>
+<Reservation>
+		<PropertyID>318</PropertyID>
+		<PropertyActive>1</PropertyActive>
+		<ReservationID>40835</ReservationID>
+		<ArrivalDate>09-01-2012</ArrivalDate>
+		<ArrivalTime>4PM</ArrivalTime>
+		<DepartureDate>09-03-2012</DepartureDate>
+		<DepartureTime>10AM</DepartureTime>
+		<Canceled>0</Canceled>
+</Reservation>
+<Reservation>
+		<PropertyID>334</PropertyID>
+		<PropertyActive>1</PropertyActive>
+		<ReservationID>40909</ReservationID>
+		<ArrivalDate>09-01-2012</ArrivalDate>
+		<ArrivalTime>4PM</ArrivalTime>
+		<DepartureDate>09-03-2012</DepartureDate>
+		<DepartureTime>10AM</DepartureTime>
+		<Canceled>0</Canceled>
+</Reservation>
+<Reservation>
+		<PropertyID>338</PropertyID>
+		<PropertyActive>1</PropertyActive>
+		<ReservationID>40834</ReservationID>
+		<ArrivalDate>09-01-2012</ArrivalDate>
+		<ArrivalTime>4PM</ArrivalTime>
+		<DepartureDate>09-03-2012</DepartureDate>
+		<DepartureTime>10AM</DepartureTime>
+		<Canceled>0</Canceled>
+</Reservation>
+<Reservation>
+		<PropertyID>342</PropertyID>
+		<PropertyActive>1</PropertyActive>
+		<ReservationID>41092</ReservationID>
+		<ArrivalDate>09-01-2012</ArrivalDate>
+		<ArrivalTime>4PM</ArrivalTime>
+		<DepartureDate>09-10-2012</DepartureDate>
+		<DepartureTime>10AM</DepartureTime>
+		<Canceled>0</Canceled>
+</Reservation>
+<Reservation>
+		<PropertyID>347</PropertyID>
+		<PropertyActive>1</PropertyActive>
+		<ReservationID>41065</ReservationID>
+		<ArrivalDate>09-01-2012</ArrivalDate>
+		<ArrivalTime>4PM</ArrivalTime>
+		<DepartureDate>09-03-2012</DepartureDate>
+		<DepartureTime>10AM</DepartureTime>
+		<Canceled>0</Canceled>
+</Reservation>
+<Reservation>
+		<PropertyID>348</PropertyID>
+		<PropertyActive>1</PropertyActive>
+		<ReservationID>41197</ReservationID>
+		<ArrivalDate>09-01-2012</ArrivalDate>
+		<ArrivalTime>4PM</ArrivalTime>
+		<DepartureDate>09-03-2012</DepartureDate>
+		<DepartureTime>10AM</DepartureTime>
+		<Canceled>0</Canceled>
+</Reservation>
+<Reservation>
+		<PropertyID>350</PropertyID>
+		<PropertyActive>1</PropertyActive>
+		<ReservationID>40603</ReservationID>
+		<ArrivalDate>09-01-2012</ArrivalDate>
+		<ArrivalTime>4PM</ArrivalTime>
+		<DepartureDate>09-03-2012</DepartureDate>
+		<DepartureTime>10AM</DepartureTime>
+		<Canceled>0</Canceled>
+</Reservation>
+<Reservation>
+		<PropertyID>356</PropertyID>
+		<PropertyActive>1</PropertyActive>
+		<ReservationID>41097</ReservationID>
+		<ArrivalDate>09-01-2012</ArrivalDate>
+		<ArrivalTime>4PM</ArrivalTime>
+		<DepartureDate>09-03-2012</DepartureDate>
+		<DepartureTime>10AM</DepartureTime>
+		<Canceled>0</Canceled>
+</Reservation>
+<Reservation>
+		<PropertyID>366</PropertyID>
+		<PropertyActive>1</PropertyActive>
+		<ReservationID>41058</ReservationID>
+		<ArrivalDate>09-01-2012</ArrivalDate>
+		<ArrivalTime>4PM</ArrivalTime>
+		<DepartureDate>09-08-2012</DepartureDate>
+		<DepartureTime>10AM</DepartureTime>
+		<Canceled>0</Canceled>
+</Reservation>
+<Reservation>
+		<PropertyID>369</PropertyID>
+		<PropertyActive>1</PropertyActive>
+		<ReservationID>41100</ReservationID>
+		<ArrivalDate>09-01-2012</ArrivalDate>
+		<ArrivalTime>4PM</ArrivalTime>
+		<DepartureDate>09-03-2012</DepartureDate>
+		<DepartureTime>10AM</DepartureTime>
+		<Canceled>0</Canceled>
+</Reservation>
+<Reservation>
+		<PropertyID>407</PropertyID>
+		<PropertyActive>1</PropertyActive>
+		<ReservationID>41084</ReservationID>
+		<ArrivalDate>09-01-2012</ArrivalDate>
+		<ArrivalTime>11AM</ArrivalTime>
+		<DepartureDate>09-04-2012</DepartureDate>
+		<DepartureTime>10AM</DepartureTime>
+		<Canceled>0</Canceled>
+</Reservation>
+<Reservation>
+		<PropertyID>426</PropertyID>
+		<PropertyActive>1</PropertyActive>
+		<ReservationID>40710</ReservationID>
+		<ArrivalDate>09-01-2012</ArrivalDate>
+		<ArrivalTime>4PM</ArrivalTime>
+		<DepartureDate>09-03-2012</DepartureDate>
+		<DepartureTime>10AM</DepartureTime>
+		<Canceled>0</Canceled>
+</Reservation>
+<Reservation>
+		<PropertyID>428</PropertyID>
+		<PropertyActive>1</PropertyActive>
+		<ReservationID>40283</ReservationID>
+		<ArrivalDate>09-01-2012</ArrivalDate>
+		<ArrivalTime>4PM</ArrivalTime>
+		<DepartureDate>09-03-2012</DepartureDate>
+		<DepartureTime>10AM</DepartureTime>
+		<Canceled>0</Canceled>
+</Reservation>
+<Reservation>
+		<PropertyID>433</PropertyID>
+		<PropertyActive>1</PropertyActive>
+		<ReservationID>41123</ReservationID>
+		<ArrivalDate>09-01-2012</ArrivalDate>
+		<ArrivalTime>4PM</ArrivalTime>
+		<DepartureDate>09-03-2012</DepartureDate>
+		<DepartureTime>10AM</DepartureTime>
+		<Canceled>0</Canceled>
+</Reservation>
+<Reservation>
+		<PropertyID>442</PropertyID>
+		<PropertyActive>1</PropertyActive>
+		<ReservationID>40570</ReservationID>
+		<ArrivalDate>09-01-2012</ArrivalDate>
+		<ArrivalTime>4PM</ArrivalTime>
+		<DepartureDate>09-03-2012</DepartureDate>
+		<DepartureTime>10AM</DepartureTime>
+		<Canceled>0</Canceled>
+</Reservation>
+<Reservation>
+		<PropertyID>459</PropertyID>
+		<PropertyActive>1</PropertyActive>
+		<ReservationID>41124</ReservationID>
+		<ArrivalDate>09-01-2012</ArrivalDate>
+		<ArrivalTime>4PM</ArrivalTime>
+		<DepartureDate>09-04-2012</DepartureDate>
+		<DepartureTime>10AM</DepartureTime>
+		<Canceled>0</Canceled>
+</Reservation>
+<Reservation>
+		<PropertyID>58</PropertyID>
+		<PropertyActive>1</PropertyActive>
+		<ReservationID>41193</ReservationID>
+		<ArrivalDate>09-02-2012</ArrivalDate>
+		<ArrivalTime>4PM</ArrivalTime>
+		<DepartureDate>10-02-2012</DepartureDate>
+		<DepartureTime>10AM</DepartureTime>
+		<Canceled>0</Canceled>
+</Reservation>
+<Reservation>
+		<PropertyID>140</PropertyID>
+		<PropertyActive>1</PropertyActive>
+		<ReservationID>41034</ReservationID>
+		<ArrivalDate>09-02-2012</ArrivalDate>
+		<ArrivalTime>4PM</ArrivalTime>
+		<DepartureDate>09-03-2012</DepartureDate>
+		<DepartureTime>10AM</DepartureTime>
+		<Canceled>1</Canceled>
+</Reservation>
+<Reservation>
+		<PropertyID>140</PropertyID>
+		<PropertyActive>1</PropertyActive>
+		<ReservationID>41035</ReservationID>
+		<ArrivalDate>09-02-2012</ArrivalDate>
+		<ArrivalTime>4PM</ArrivalTime>
+		<DepartureDate>09-03-2012</DepartureDate>
+		<DepartureTime>10AM</DepartureTime>
+		<Canceled>0</Canceled>
+</Reservation>
+<Reservation>
+		<PropertyID>190</PropertyID>
+		<PropertyActive>1</PropertyActive>
+		<ReservationID>41090</ReservationID>
+		<ArrivalDate>09-02-2012</ArrivalDate>
+		<ArrivalTime>12PM</ArrivalTime>
+		<DepartureDate>09-03-2012</DepartureDate>
+		<DepartureTime>10AM</DepartureTime>
+		<Canceled>0</Canceled>
+</Reservation>
+<Reservation>
+		<PropertyID>261</PropertyID>
+		<PropertyActive>1</PropertyActive>
+		<ReservationID>40572</ReservationID>
+		<ArrivalDate>09-02-2012</ArrivalDate>
+		<ArrivalTime>4PM</ArrivalTime>
+		<DepartureDate>09-06-2012</DepartureDate>
+		<DepartureTime>10AM</DepartureTime>
+		<Canceled>0</Canceled>
+</Reservation>
+<Reservation>
+		<PropertyID>328</PropertyID>
+		<PropertyActive>1</PropertyActive>
+		<ReservationID>41136</ReservationID>
+		<ArrivalDate>09-02-2012</ArrivalDate>
+		<ArrivalTime>2PM</ArrivalTime>
+		<DepartureDate>09-03-2012</DepartureDate>
+		<DepartureTime>10AM</DepartureTime>
+		<Canceled>0</Canceled>
+</Reservation>
+<Reservation>
+		<PropertyID>381</PropertyID>
+		<PropertyActive>1</PropertyActive>
+		<ReservationID>39597</ReservationID>
+		<ArrivalDate>09-02-2012</ArrivalDate>
+		<ArrivalTime>4PM</ArrivalTime>
+		<DepartureDate>09-03-2012</DepartureDate>
+		<DepartureTime>10AM</DepartureTime>
+		<Canceled>0</Canceled>
+</Reservation>
+<Reservation>
+		<PropertyID>468</PropertyID>
+		<PropertyActive>1</PropertyActive>
+		<ReservationID>40729</ReservationID>
+		<ArrivalDate>09-02-2012</ArrivalDate>
+		<ArrivalTime>4PM</ArrivalTime>
+		<DepartureDate>10-01-2012</DepartureDate>
+		<DepartureTime>10AM</DepartureTime>
+		<Canceled>1</Canceled>
+</Reservation>
+<Reservation>
+		<PropertyID>386</PropertyID>
+		<PropertyActive>1</PropertyActive>
+		<ReservationID>41152</ReservationID>
+		<ArrivalDate>09-03-2012</ArrivalDate>
+		<ArrivalTime>4PM</ArrivalTime>
+		<DepartureDate>09-07-2012</DepartureDate>
+		<DepartureTime>10AM</DepartureTime>
+		<Canceled>0</Canceled>
+</Reservation>
+<Reservation>
+		<PropertyID>143</PropertyID>
+		<PropertyActive>1</PropertyActive>
+		<ReservationID>40581</ReservationID>
+		<ArrivalDate>09-04-2012</ArrivalDate>
+		<ArrivalTime>4PM</ArrivalTime>
+		<DepartureDate>09-07-2012</DepartureDate>
+		<DepartureTime>10AM</DepartureTime>
+		<Canceled>1</Canceled>
+</Reservation>
+<Reservation>
+		<PropertyID>242</PropertyID>
+		<PropertyActive>1</PropertyActive>
+		<ReservationID>41037</ReservationID>
+		<ArrivalDate>09-04-2012</ArrivalDate>
+		<ArrivalTime>4PM</ArrivalTime>
+		<DepartureDate>09-07-2012</DepartureDate>
+		<DepartureTime>10AM</DepartureTime>
+		<Canceled>0</Canceled>
+</Reservation>
+<Reservation>
+		<PropertyID>257</PropertyID>
+		<PropertyActive>1</PropertyActive>
+		<ReservationID>41135</ReservationID>
+		<ArrivalDate>09-04-2012</ArrivalDate>
+		<ArrivalTime>4PM</ArrivalTime>
+		<DepartureDate>09-06-2012</DepartureDate>
+		<DepartureTime>10AM</DepartureTime>
+		<Canceled>0</Canceled>
+</Reservation>
+<Reservation>
+		<PropertyID>132</PropertyID>
+		<PropertyActive>1</PropertyActive>
+		<ReservationID>41173</ReservationID>
+		<ArrivalDate>09-05-2012</ArrivalDate>
+		<ArrivalTime>12PM</ArrivalTime>
+		<DepartureDate>09-08-2012</DepartureDate>
+		<DepartureTime>10AM</DepartureTime>
+		<Canceled>0</Canceled>
+</Reservation>
+<Reservation>
+		<PropertyID>220</PropertyID>
+		<PropertyActive>1</PropertyActive>
+		<ReservationID>40669</ReservationID>
+		<ArrivalDate>09-05-2012</ArrivalDate>
+		<ArrivalTime>4PM</ArrivalTime>
+		<DepartureDate>09-10-2012</DepartureDate>
+		<DepartureTime>10AM</DepartureTime>
+		<Canceled>0</Canceled>
+</Reservation>
+<Reservation>
+		<PropertyID>228</PropertyID>
+		<PropertyActive>1</PropertyActive>
+		<ReservationID>38594</ReservationID>
+		<ArrivalDate>09-05-2012</ArrivalDate>
+		<ArrivalTime>4PM</ArrivalTime>
+		<DepartureDate>09-09-2012</DepartureDate>
+		<DepartureTime>10AM</DepartureTime>
+		<Canceled>0</Canceled>
+</Reservation>
+<Reservation>
+		<PropertyID>246</PropertyID>
+		<PropertyActive>1</PropertyActive>
+		<ReservationID>38593</ReservationID>
+		<ArrivalDate>09-05-2012</ArrivalDate>
+		<ArrivalTime>4PM</ArrivalTime>
+		<DepartureDate>09-09-2012</DepartureDate>
+		<DepartureTime>10AM</DepartureTime>
+		<Canceled>0</Canceled>
+</Reservation>
+<Reservation>
+		<PropertyID>292</PropertyID>
+		<PropertyActive>1</PropertyActive>
+		<ReservationID>38596</ReservationID>
+		<ArrivalDate>09-05-2012</ArrivalDate>
+		<ArrivalTime>4PM</ArrivalTime>
+		<DepartureDate>09-09-2012</DepartureDate>
+		<DepartureTime>10AM</DepartureTime>
+		<Canceled>1</Canceled>
+</Reservation>
+<Reservation>
+		<PropertyID>296</PropertyID>
+		<PropertyActive>1</PropertyActive>
+		<ReservationID>41038</ReservationID>
+		<ArrivalDate>09-05-2012</ArrivalDate>
+		<ArrivalTime>4PM</ArrivalTime>
+		<DepartureDate>09-09-2012</DepartureDate>
+		<DepartureTime>10AM</DepartureTime>
+		<Canceled>0</Canceled>
+</Reservation>
+<Reservation>
+		<PropertyID>416</PropertyID>
+		<PropertyActive>1</PropertyActive>
+		<ReservationID>41226</ReservationID>
+		<ArrivalDate>09-05-2012</ArrivalDate>
+		<ArrivalTime>4PM</ArrivalTime>
+		<DepartureDate>09-07-2012</DepartureDate>
+		<DepartureTime>10AM</DepartureTime>
+		<Canceled>0</Canceled>
+</Reservation>
+<Reservation>
+		<PropertyID>5</PropertyID>
+		<PropertyActive>1</PropertyActive>
+		<ReservationID>40702</ReservationID>
+		<ArrivalDate>09-06-2012</ArrivalDate>
+		<ArrivalTime>4PM</ArrivalTime>
+		<DepartureDate>09-10-2012</DepartureDate>
+		<DepartureTime>10AM</DepartureTime>
+		<Canceled>1</Canceled>
+</Reservation>
+<Reservation>
+		<PropertyID>216</PropertyID>
+		<PropertyActive>1</PropertyActive>
+		<ReservationID>40186</ReservationID>
+		<ArrivalDate>09-06-2012</ArrivalDate>
+		<ArrivalTime>4PM</ArrivalTime>
+		<DepartureDate>09-10-2012</DepartureDate>
+		<DepartureTime>10AM</DepartureTime>
+		<Canceled>0</Canceled>
+</Reservation>
+<Reservation>
+		<PropertyID>239</PropertyID>
+		<PropertyActive>1</PropertyActive>
+		<ReservationID>40296</ReservationID>
+		<ArrivalDate>09-06-2012</ArrivalDate>
+		<ArrivalTime>4PM</ArrivalTime>
+		<DepartureDate>09-10-2012</DepartureDate>
+		<DepartureTime>10AM</DepartureTime>
+		<Canceled>0</Canceled>
+</Reservation>
+<Reservation>
+		<PropertyID>338</PropertyID>
+		<PropertyActive>1</PropertyActive>
+		<ReservationID>40852</ReservationID>
+		<ArrivalDate>09-06-2012</ArrivalDate>
+		<ArrivalTime>4PM</ArrivalTime>
+		<DepartureDate>09-08-2012</DepartureDate>
+		<DepartureTime>10AM</DepartureTime>
+		<Canceled>0</Canceled>
+</Reservation>
+<Reservation>
+		<PropertyID>43</PropertyID>
+		<PropertyActive>1</PropertyActive>
+		<ReservationID>40000</ReservationID>
+		<ArrivalDate>09-07-2012</ArrivalDate>
+		<ArrivalTime>4PM</ArrivalTime>
+		<DepartureDate>09-10-2012</DepartureDate>
+		<DepartureTime>10AM</DepartureTime>
+		<Canceled>0</Canceled>
+</Reservation>
+<Reservation>
+		<PropertyID>135</PropertyID>
+		<PropertyActive>1</PropertyActive>
+		<ReservationID>40705</ReservationID>
+		<ArrivalDate>09-07-2012</ArrivalDate>
+		<ArrivalTime>4PM</ArrivalTime>
+		<DepartureDate>09-09-2012</DepartureDate>
+		<DepartureTime>10AM</DepartureTime>
+		<Canceled>0</Canceled>
+</Reservation>
+<Reservation>
+		<PropertyID>149</PropertyID>
+		<PropertyActive>1</PropertyActive>
+		<ReservationID>40744</ReservationID>
+		<ArrivalDate>09-07-2012</ArrivalDate>
+		<ArrivalTime>4PM</ArrivalTime>
+		<DepartureDate>09-09-2012</DepartureDate>
+		<DepartureTime>10AM</DepartureTime>
+		<Canceled>0</Canceled>
+</Reservation>
+<Reservation>
+		<PropertyID>152</PropertyID>
+		<PropertyActive>1</PropertyActive>
+		<ReservationID>39789</ReservationID>
+		<ArrivalDate>09-07-2012</ArrivalDate>
+		<ArrivalTime>4PM</ArrivalTime>
+		<DepartureDate>09-14-2012</DepartureDate>
+		<DepartureTime>10AM</DepartureTime>
+		<Canceled>0</Canceled>
+</Reservation>
+<Reservation>
+		<PropertyID>166</PropertyID>
+		<PropertyActive>1</PropertyActive>
+		<ReservationID>40219</ReservationID>
+		<ArrivalDate>09-07-2012</ArrivalDate>
+		<ArrivalTime>4PM</ArrivalTime>
+		<DepartureDate>09-12-2012</DepartureDate>
+		<DepartureTime>10AM</DepartureTime>
+		<Canceled>0</Canceled>
+</Reservation>
+<Reservation>
+		<PropertyID>166</PropertyID>
+		<PropertyActive>1</PropertyActive>
+		<ReservationID>40220</ReservationID>
+		<ArrivalDate>09-07-2012</ArrivalDate>
+		<ArrivalTime>4PM</ArrivalTime>
+		<DepartureDate>09-12-2012</DepartureDate>
+		<DepartureTime>10AM</DepartureTime>
+		<Canceled>1</Canceled>
+</Reservation>
+<Reservation>
+		<PropertyID>192</PropertyID>
+		<PropertyActive>1</PropertyActive>
+		<ReservationID>41019</ReservationID>
+		<ArrivalDate>09-07-2012</ArrivalDate>
+		<ArrivalTime>4PM</ArrivalTime>
+		<DepartureDate>09-12-2012</DepartureDate>
+		<DepartureTime>10AM</DepartureTime>
+		<Canceled>0</Canceled>
+</Reservation>
+<Reservation>
+		<PropertyID>276</PropertyID>
+		<PropertyActive>1</PropertyActive>
+		<ReservationID>39422</ReservationID>
+		<ArrivalDate>09-07-2012</ArrivalDate>
+		<ArrivalTime>4PM</ArrivalTime>
+		<DepartureDate>09-16-2012</DepartureDate>
+		<DepartureTime>10AM</DepartureTime>
+		<Canceled>0</Canceled>
+</Reservation>
+<Reservation>
+		<PropertyID>312</PropertyID>
+		<PropertyActive>1</PropertyActive>
+		<ReservationID>41080</ReservationID>
+		<ArrivalDate>09-07-2012</ArrivalDate>
+		<ArrivalTime>4PM</ArrivalTime>
+		<DepartureDate>09-08-2012</DepartureDate>
+		<DepartureTime>10AM</DepartureTime>
+		<Canceled>0</Canceled>
+</Reservation>
+<Reservation>
+		<PropertyID>348</PropertyID>
+		<PropertyActive>1</PropertyActive>
+		<ReservationID>39691</ReservationID>
+		<ArrivalDate>09-07-2012</ArrivalDate>
+		<ArrivalTime>4PM</ArrivalTime>
+		<DepartureDate>09-10-2012</DepartureDate>
+		<DepartureTime>10AM</DepartureTime>
+		<Canceled>0</Canceled>
+</Reservation>
+<Reservation>
+		<PropertyID>356</PropertyID>
+		<PropertyActive>1</PropertyActive>
+		<ReservationID>41133</ReservationID>
+		<ArrivalDate>09-07-2012</ArrivalDate>
+		<ArrivalTime>4PM</ArrivalTime>
+		<DepartureDate>09-09-2012</DepartureDate>
+		<DepartureTime>10AM</DepartureTime>
+		<Canceled>0</Canceled>
+</Reservation>
+<Reservation>
+		<PropertyID>378</PropertyID>
+		<PropertyActive>1</PropertyActive>
+		<ReservationID>39808</ReservationID>
+		<ArrivalDate>09-07-2012</ArrivalDate>
+		<ArrivalTime>4PM</ArrivalTime>
+		<DepartureDate>09-10-2012</DepartureDate>
+		<DepartureTime>10AM</DepartureTime>
+		<Canceled>0</Canceled>
+</Reservation>
+<Reservation>
+		<PropertyID>410</PropertyID>
+		<PropertyActive>1</PropertyActive>
+		<ReservationID>39619</ReservationID>
+		<ArrivalDate>09-07-2012</ArrivalDate>
+		<ArrivalTime>4PM</ArrivalTime>
+		<DepartureDate>09-10-2012</DepartureDate>
+		<DepartureTime>10AM</DepartureTime>
+		<Canceled>1</Canceled>
+</Reservation>
+<Reservation>
+		<PropertyID>415</PropertyID>
+		<PropertyActive>1</PropertyActive>
+		<ReservationID>40221</ReservationID>
+		<ArrivalDate>09-07-2012</ArrivalDate>
+		<ArrivalTime>4PM</ArrivalTime>
+		<DepartureDate>09-12-2012</DepartureDate>
+		<DepartureTime>10AM</DepartureTime>
+		<Canceled>0</Canceled>
+</Reservation>
+<Reservation>
+		<PropertyID>271</PropertyID>
+		<PropertyActive>1</PropertyActive>
+		<ReservationID>41198</ReservationID>
+		<ArrivalDate>09-08-2012</ArrivalDate>
+		<ArrivalTime>4PM</ArrivalTime>
+		<DepartureDate>09-09-2012</DepartureDate>
+		<DepartureTime>10AM</DepartureTime>
+		<Canceled>0</Canceled>
+</Reservation>
+<Reservation>
+		<PropertyID>399</PropertyID>
+		<PropertyActive>1</PropertyActive>
+		<ReservationID>40801</ReservationID>
+		<ArrivalDate>09-08-2012</ArrivalDate>
+		<ArrivalTime>4PM</ArrivalTime>
+		<DepartureDate>09-16-2012</DepartureDate>
+		<DepartureTime>10AM</DepartureTime>
+		<Canceled>0</Canceled>
+</Reservation>
+<Reservation>
+		<PropertyID>164</PropertyID>
+		<PropertyActive>1</PropertyActive>
+		<ReservationID>40804</ReservationID>
+		<ArrivalDate>09-09-2012</ArrivalDate>
+		<ArrivalTime>4PM</ArrivalTime>
+		<DepartureDate>09-11-2012</DepartureDate>
+		<DepartureTime>10AM</DepartureTime>
+		<Canceled>1</Canceled>
+</Reservation>
+<Reservation>
+		<PropertyID>402</PropertyID>
+		<PropertyActive>1</PropertyActive>
+		<ReservationID>40344</ReservationID>
+		<ArrivalDate>09-10-2012</ArrivalDate>
+		<ArrivalTime>4PM</ArrivalTime>
+		<DepartureDate>09-17-2012</DepartureDate>
+		<DepartureTime>10AM</DepartureTime>
+		<Canceled>1</Canceled>
+</Reservation>
+<Reservation>
+		<PropertyID>466</PropertyID>
+		<PropertyActive>1</PropertyActive>
+		<ReservationID>41102</ReservationID>
+		<ArrivalDate>09-10-2012</ArrivalDate>
+		<ArrivalTime>4PM</ArrivalTime>
+		<DepartureDate>09-14-2012</DepartureDate>
+		<DepartureTime>10AM</DepartureTime>
+		<Canceled>0</Canceled>
+</Reservation>
+<Reservation>
+		<PropertyID>242</PropertyID>
+		<PropertyActive>1</PropertyActive>
+		<ReservationID>40873</ReservationID>
+		<ArrivalDate>09-11-2012</ArrivalDate>
+		<ArrivalTime>4PM</ArrivalTime>
+		<DepartureDate>09-15-2012</DepartureDate>
+		<DepartureTime>10AM</DepartureTime>
+		<Canceled>0</Canceled>
+</Reservation>
+<Reservation>
+		<PropertyID>454</PropertyID>
+		<PropertyActive>1</PropertyActive>
+		<ReservationID>40332</ReservationID>
+		<ArrivalDate>09-11-2012</ArrivalDate>
+		<ArrivalTime>4PM</ArrivalTime>
+		<DepartureDate>09-13-2012</DepartureDate>
+		<DepartureTime>10AM</DepartureTime>
+		<Canceled>0</Canceled>
+</Reservation>
+<Reservation>
+		<PropertyID>134</PropertyID>
+		<PropertyActive>1</PropertyActive>
+		<ReservationID>40230</ReservationID>
+		<ArrivalDate>09-12-2012</ArrivalDate>
+		<ArrivalTime>4PM</ArrivalTime>
+		<DepartureDate>09-15-2012</DepartureDate>
+		<DepartureTime>10AM</DepartureTime>
+		<Canceled>0</Canceled>
+</Reservation>
+<Reservation>
+		<PropertyID>91</PropertyID>
+		<PropertyActive>1</PropertyActive>
+		<ReservationID>41078</ReservationID>
+		<ArrivalDate>09-13-2012</ArrivalDate>
+		<ArrivalTime>4PM</ArrivalTime>
+		<DepartureDate>09-17-2012</DepartureDate>
+		<DepartureTime>10AM</DepartureTime>
+		<Canceled>0</Canceled>
+</Reservation>
+<Reservation>
+		<PropertyID>132</PropertyID>
+		<PropertyActive>1</PropertyActive>
+		<ReservationID>40869</ReservationID>
+		<ArrivalDate>09-13-2012</ArrivalDate>
+		<ArrivalTime>4PM</ArrivalTime>
+		<DepartureDate>09-16-2012</DepartureDate>
+		<DepartureTime>10AM</DepartureTime>
+		<Canceled>0</Canceled>
+</Reservation>
+<Reservation>
+		<PropertyID>162</PropertyID>
+		<PropertyActive>1</PropertyActive>
+		<ReservationID>41174</ReservationID>
+		<ArrivalDate>09-13-2012</ArrivalDate>
+		<ArrivalTime>4PM</ArrivalTime>
+		<DepartureDate>09-16-2012</DepartureDate>
+		<DepartureTime>10AM</DepartureTime>
+		<Canceled>0</Canceled>
+</Reservation>
+<Reservation>
+		<PropertyID>166</PropertyID>
+		<PropertyActive>1</PropertyActive>
+		<ReservationID>40872</ReservationID>
+		<ArrivalDate>09-13-2012</ArrivalDate>
+		<ArrivalTime>4PM</ArrivalTime>
+		<DepartureDate>09-17-2012</DepartureDate>
+		<DepartureTime>10AM</DepartureTime>
+		<Canceled>0</Canceled>
+</Reservation>
+<Reservation>
+		<PropertyID>316</PropertyID>
+		<PropertyActive>1</PropertyActive>
+		<ReservationID>40605</ReservationID>
+		<ArrivalDate>09-13-2012</ArrivalDate>
+		<ArrivalTime>4PM</ArrivalTime>
+		<DepartureDate>09-18-2012</DepartureDate>
+		<DepartureTime>10AM</DepartureTime>
+		<Canceled>0</Canceled>
+</Reservation>
+<Reservation>
+		<PropertyID>356</PropertyID>
+		<PropertyActive>1</PropertyActive>
+		<ReservationID>40987</ReservationID>
+		<ArrivalDate>09-13-2012</ArrivalDate>
+		<ArrivalTime>4PM</ArrivalTime>
+		<DepartureDate>09-15-2012</DepartureDate>
+		<DepartureTime>10AM</DepartureTime>
+		<Canceled>0</Canceled>
+</Reservation>
+<Reservation>
+		<PropertyID>21</PropertyID>
+		<PropertyActive>1</PropertyActive>
+		<ReservationID>40912</ReservationID>
+		<ArrivalDate>09-14-2012</ArrivalDate>
+		<ArrivalTime>4PM</ArrivalTime>
+		<DepartureDate>09-16-2012</DepartureDate>
+		<DepartureTime>10AM</DepartureTime>
+		<Canceled>0</Canceled>
+</Reservation>
+<Reservation>
+		<PropertyID>43</PropertyID>
+		<PropertyActive>1</PropertyActive>
+		<ReservationID>40668</ReservationID>
+		<ArrivalDate>09-14-2012</ArrivalDate>
+		<ArrivalTime>4PM</ArrivalTime>
+		<DepartureDate>09-16-2012</DepartureDate>
+		<DepartureTime>10AM</DepartureTime>
+		<Canceled>0</Canceled>
+</Reservation>
+<Reservation>
+		<PropertyID>147</PropertyID>
+		<PropertyActive>1</PropertyActive>
+		<ReservationID>40928</ReservationID>
+		<ArrivalDate>09-14-2012</ArrivalDate>
+		<ArrivalTime>4PM</ArrivalTime>
+		<DepartureDate>09-16-2012</DepartureDate>
+		<DepartureTime>10AM</DepartureTime>
+		<Canceled>0</Canceled>
+</Reservation>
+<Reservation>
+		<PropertyID>149</PropertyID>
+		<PropertyActive>1</PropertyActive>
+		<ReservationID>41122</ReservationID>
+		<ArrivalDate>09-14-2012</ArrivalDate>
+		<ArrivalTime>4PM</ArrivalTime>
+		<DepartureDate>09-16-2012</DepartureDate>
+		<DepartureTime>10AM</DepartureTime>
+		<Canceled>0</Canceled>
+</Reservation>
+<Reservation>
+		<PropertyID>168</PropertyID>
+		<PropertyActive>1</PropertyActive>
+		<ReservationID>39716</ReservationID>
+		<ArrivalDate>09-14-2012</ArrivalDate>
+		<ArrivalTime>4PM</ArrivalTime>
+		<DepartureDate>09-17-2012</DepartureDate>
+		<DepartureTime>10AM</DepartureTime>
+		<Canceled>1</Canceled>
+</Reservation>
+<Reservation>
+		<PropertyID>190</PropertyID>
+		<PropertyActive>1</PropertyActive>
+		<ReservationID>40629</ReservationID>
+		<ArrivalDate>09-14-2012</ArrivalDate>
+		<ArrivalTime>4PM</ArrivalTime>
+		<DepartureDate>09-16-2012</DepartureDate>
+		<DepartureTime>10AM</DepartureTime>
+		<Canceled>0</Canceled>
+</Reservation>
+<Reservation>
+		<PropertyID>197</PropertyID>
+		<PropertyActive>1</PropertyActive>
+		<ReservationID>39473</ReservationID>
+		<ArrivalDate>09-14-2012</ArrivalDate>
+		<ArrivalTime>4PM</ArrivalTime>
+		<DepartureDate>09-16-2012</DepartureDate>
+		<DepartureTime>10AM</DepartureTime>
+		<Canceled>0</Canceled>
+</Reservation>
+<Reservation>
+		<PropertyID>235</PropertyID>
+		<PropertyActive>1</PropertyActive>
+		<ReservationID>38824</ReservationID>
+		<ArrivalDate>09-14-2012</ArrivalDate>
+		<ArrivalTime>4PM</ArrivalTime>
+		<DepartureDate>09-16-2012</DepartureDate>
+		<DepartureTime>10AM</DepartureTime>
+		<Canceled>0</Canceled>
+</Reservation>
+<Reservation>
+		<PropertyID>364</PropertyID>
+		<PropertyActive>1</PropertyActive>
+		<ReservationID>40630</ReservationID>
+		<ArrivalDate>09-14-2012</ArrivalDate>
+		<ArrivalTime>4PM</ArrivalTime>
+		<DepartureDate>11-24-2012</DepartureDate>
+		<DepartureTime>10AM</DepartureTime>
+		<Canceled>0</Canceled>
+</Reservation>
+<Reservation>
+		<PropertyID>438</PropertyID>
+		<PropertyActive>1</PropertyActive>
+		<ReservationID>37587</ReservationID>
+		<ArrivalDate>09-14-2012</ArrivalDate>
+		<ArrivalTime>4PM</ArrivalTime>
+		<DepartureDate>09-17-2012</DepartureDate>
+		<DepartureTime>10AM</DepartureTime>
+		<Canceled>1</Canceled>
+</Reservation>
+<Reservation>
+		<PropertyID>134</PropertyID>
+		<PropertyActive>1</PropertyActive>
+		<ReservationID>40263</ReservationID>
+		<ArrivalDate>09-15-2012</ArrivalDate>
+		<ArrivalTime>4PM</ArrivalTime>
+		<DepartureDate>09-22-2012</DepartureDate>
+		<DepartureTime>10AM</DepartureTime>
+		<Canceled>0</Canceled>
+</Reservation>
+<Reservation>
+		<PropertyID>264</PropertyID>
+		<PropertyActive>1</PropertyActive>
+		<ReservationID>41086</ReservationID>
+		<ArrivalDate>09-15-2012</ArrivalDate>
+		<ArrivalTime>4PM</ArrivalTime>
+		<DepartureDate>09-17-2012</DepartureDate>
+		<DepartureTime>10AM</DepartureTime>
+		<Canceled>0</Canceled>
+</Reservation>
+<Reservation>
+		<PropertyID>416</PropertyID>
+		<PropertyActive>1</PropertyActive>
+		<ReservationID>41221</ReservationID>
+		<ArrivalDate>09-15-2012</ArrivalDate>
+		<ArrivalTime>4PM</ArrivalTime>
+		<DepartureDate>09-17-2012</DepartureDate>
+		<DepartureTime>10AM</DepartureTime>
+		<Canceled>0</Canceled>
+</Reservation>
+<Reservation>
+		<PropertyID>365</PropertyID>
+		<PropertyActive>1</PropertyActive>
+		<ReservationID>40266</ReservationID>
+		<ArrivalDate>09-16-2012</ArrivalDate>
+		<ArrivalTime>4PM</ArrivalTime>
+		<DepartureDate>09-22-2012</DepartureDate>
+		<DepartureTime>10AM</DepartureTime>
+		<Canceled>0</Canceled>
+</Reservation>
+<Reservation>
+		<PropertyID>363</PropertyID>
+		<PropertyActive>1</PropertyActive>
+		<ReservationID>38894</ReservationID>
+		<ArrivalDate>09-17-2012</ArrivalDate>
+		<ArrivalTime>4PM</ArrivalTime>
+		<DepartureDate>12-12-2012</DepartureDate>
+		<DepartureTime>10AM</DepartureTime>
+		<Canceled>0</Canceled>
+</Reservation>
+<Reservation>
+		<PropertyID>367</PropertyID>
+		<PropertyActive>1</PropertyActive>
+		<ReservationID>40930</ReservationID>
+		<ArrivalDate>09-18-2012</ArrivalDate>
+		<ArrivalTime>4PM</ArrivalTime>
+		<DepartureDate>09-25-2012</DepartureDate>
+		<DepartureTime>10AM</DepartureTime>
+		<Canceled>0</Canceled>
+</Reservation>
+<Reservation>
+		<PropertyID>372</PropertyID>
+		<PropertyActive>1</PropertyActive>
+		<ReservationID>40140</ReservationID>
+		<ArrivalDate>09-18-2012</ArrivalDate>
+		<ArrivalTime>4PM</ArrivalTime>
+		<DepartureDate>09-23-2012</DepartureDate>
+		<DepartureTime>10AM</DepartureTime>
+		<Canceled>0</Canceled>
+</Reservation>
+<Reservation>
+		<PropertyID>152</PropertyID>
+		<PropertyActive>1</PropertyActive>
+		<ReservationID>40311</ReservationID>
+		<ArrivalDate>09-19-2012</ArrivalDate>
+		<ArrivalTime>4PM</ArrivalTime>
+		<DepartureDate>09-23-2012</DepartureDate>
+		<DepartureTime>10AM</DepartureTime>
+		<Canceled>0</Canceled>
+</Reservation>
+<Reservation>
+		<PropertyID>230</PropertyID>
+		<PropertyActive>1</PropertyActive>
+		<ReservationID>40818</ReservationID>
+		<ArrivalDate>09-19-2012</ArrivalDate>
+		<ArrivalTime>4PM</ArrivalTime>
+		<DepartureDate>09-26-2012</DepartureDate>
+		<DepartureTime>10AM</DepartureTime>
+		<Canceled>0</Canceled>
+</Reservation>
+<Reservation>
+		<PropertyID>82</PropertyID>
+		<PropertyActive>1</PropertyActive>
+		<ReservationID>41205</ReservationID>
+		<ArrivalDate>09-20-2012</ArrivalDate>
+		<ArrivalTime>4PM</ArrivalTime>
+		<DepartureDate>09-24-2012</DepartureDate>
+		<DepartureTime>10AM</DepartureTime>
+		<Canceled>0</Canceled>
+</Reservation>
+<Reservation>
+		<PropertyID>171</PropertyID>
+		<PropertyActive>1</PropertyActive>
+		<ReservationID>39348</ReservationID>
+		<ArrivalDate>09-20-2012</ArrivalDate>
+		<ArrivalTime>4PM</ArrivalTime>
+		<DepartureDate>09-23-2012</DepartureDate>
+		<DepartureTime>10AM</DepartureTime>
+		<Canceled>0</Canceled>
+</Reservation>
+<Reservation>
+		<PropertyID>241</PropertyID>
+		<PropertyActive>1</PropertyActive>
+		<ReservationID>40508</ReservationID>
+		<ArrivalDate>09-20-2012</ArrivalDate>
+		<ArrivalTime>4PM</ArrivalTime>
+		<DepartureDate>09-24-2012</DepartureDate>
+		<DepartureTime>10AM</DepartureTime>
+		<Canceled>0</Canceled>
+</Reservation>
+<Reservation>
+		<PropertyID>263</PropertyID>
+		<PropertyActive>1</PropertyActive>
+		<ReservationID>41144</ReservationID>
+		<ArrivalDate>09-20-2012</ArrivalDate>
+		<ArrivalTime>4PM</ArrivalTime>
+		<DepartureDate>09-24-2012</DepartureDate>
+		<DepartureTime>10AM</DepartureTime>
+		<Canceled>0</Canceled>
+</Reservation>
+<Reservation>
+		<PropertyID>281</PropertyID>
+		<PropertyActive>1</PropertyActive>
+		<ReservationID>41161</ReservationID>
+		<ArrivalDate>09-20-2012</ArrivalDate>
+		<ArrivalTime>4PM</ArrivalTime>
+		<DepartureDate>09-25-2012</DepartureDate>
+		<DepartureTime>10AM</DepartureTime>
+		<Canceled>0</Canceled>
+</Reservation>
+<Reservation>
+		<PropertyID>348</PropertyID>
+		<PropertyActive>1</PropertyActive>
+		<ReservationID>40933</ReservationID>
+		<ArrivalDate>09-20-2012</ArrivalDate>
+		<ArrivalTime>4PM</ArrivalTime>
+		<DepartureDate>09-26-2012</DepartureDate>
+		<DepartureTime>10AM</DepartureTime>
+		<Canceled>0</Canceled>
+</Reservation>
+<Reservation>
+		<PropertyID>453</PropertyID>
+		<PropertyActive>1</PropertyActive>
+		<ReservationID>40723</ReservationID>
+		<ArrivalDate>09-20-2012</ArrivalDate>
+		<ArrivalTime>4PM</ArrivalTime>
+		<DepartureDate>09-24-2012</DepartureDate>
+		<DepartureTime>10AM</DepartureTime>
+		<Canceled>0</Canceled>
+</Reservation>
+<Reservation>
+		<PropertyID>21</PropertyID>
+		<PropertyActive>1</PropertyActive>
+		<ReservationID>40489</ReservationID>
+		<ArrivalDate>09-21-2012</ArrivalDate>
+		<ArrivalTime>4PM</ArrivalTime>
+		<DepartureDate>09-23-2012</DepartureDate>
+		<DepartureTime>10AM</DepartureTime>
+		<Canceled>0</Canceled>
+</Reservation>
+<Reservation>
+		<PropertyID>33</PropertyID>
+		<PropertyActive>1</PropertyActive>
+		<ReservationID>41093</ReservationID>
+		<ArrivalDate>09-21-2012</ArrivalDate>
+		<ArrivalTime>12PM</ArrivalTime>
+		<DepartureDate>09-23-2012</DepartureDate>
+		<DepartureTime>10AM</DepartureTime>
+		<Canceled>0</Canceled>
+</Reservation>
+<Reservation>
+		<PropertyID>153</PropertyID>
+		<PropertyActive>1</PropertyActive>
+		<ReservationID>41131</ReservationID>
+		<ArrivalDate>09-21-2012</ArrivalDate>
+		<ArrivalTime>4PM</ArrivalTime>
+		<DepartureDate>10-03-2012</DepartureDate>
+		<DepartureTime>10AM</DepartureTime>
+		<Canceled>0</Canceled>
+</Reservation>
+<Reservation>
+		<PropertyID>167</PropertyID>
+		<PropertyActive>1</PropertyActive>
+		<ReservationID>40548</ReservationID>
+		<ArrivalDate>09-21-2012</ArrivalDate>
+		<ArrivalTime>4PM</ArrivalTime>
+		<DepartureDate>09-29-2012</DepartureDate>
+		<DepartureTime>10AM</DepartureTime>
+		<Canceled>0</Canceled>
+</Reservation>
+<Reservation>
+		<PropertyID>187</PropertyID>
+		<PropertyActive>1</PropertyActive>
+		<ReservationID>40932</ReservationID>
+		<ArrivalDate>09-21-2012</ArrivalDate>
+		<ArrivalTime>4PM</ArrivalTime>
+		<DepartureDate>09-24-2012</DepartureDate>
+		<DepartureTime>10AM</DepartureTime>
+		<Canceled>0</Canceled>
+</Reservation>
+<Reservation>
+		<PropertyID>192</PropertyID>
+		<PropertyActive>1</PropertyActive>
+		<ReservationID>40382</ReservationID>
+		<ArrivalDate>09-21-2012</ArrivalDate>
+		<ArrivalTime>4PM</ArrivalTime>
+		<DepartureDate>09-23-2012</DepartureDate>
+		<DepartureTime>10AM</DepartureTime>
+		<Canceled>0</Canceled>
+</Reservation>
+<Reservation>
+		<PropertyID>286</PropertyID>
+		<PropertyActive>1</PropertyActive>
+		<ReservationID>40749</ReservationID>
+		<ArrivalDate>09-21-2012</ArrivalDate>
+		<ArrivalTime>4PM</ArrivalTime>
+		<DepartureDate>10-08-2012</DepartureDate>
+		<DepartureTime>10AM</DepartureTime>
+		<Canceled>0</Canceled>
+</Reservation>
+<Reservation>
+		<PropertyID>342</PropertyID>
+		<PropertyActive>1</PropertyActive>
+		<ReservationID>41032</ReservationID>
+		<ArrivalDate>09-21-2012</ArrivalDate>
+		<ArrivalTime>4PM</ArrivalTime>
+		<DepartureDate>09-30-2012</DepartureDate>
+		<DepartureTime>10AM</DepartureTime>
+		<Canceled>0</Canceled>
+</Reservation>
+<Reservation>
+		<PropertyID>427</PropertyID>
+		<PropertyActive>1</PropertyActive>
+		<ReservationID>40502</ReservationID>
+		<ArrivalDate>09-21-2012</ArrivalDate>
+		<ArrivalTime>4PM</ArrivalTime>
+		<DepartureDate>09-23-2012</DepartureDate>
+		<DepartureTime>10AM</DepartureTime>
+		<Canceled>0</Canceled>
+</Reservation>
+<Reservation>
+		<PropertyID>226</PropertyID>
+		<PropertyActive>1</PropertyActive>
+		<ReservationID>40645</ReservationID>
+		<ArrivalDate>09-23-2012</ArrivalDate>
+		<ArrivalTime>4PM</ArrivalTime>
+		<DepartureDate>10-01-2012</DepartureDate>
+		<DepartureTime>10AM</DepartureTime>
+		<Canceled>0</Canceled>
+</Reservation>
+<Reservation>
+		<PropertyID>96</PropertyID>
+		<PropertyActive>1</PropertyActive>
+		<ReservationID>41048</ReservationID>
+		<ArrivalDate>09-24-2012</ArrivalDate>
+		<ArrivalTime>4PM</ArrivalTime>
+		<DepartureDate>09-27-2012</DepartureDate>
+		<DepartureTime>10AM</DepartureTime>
+		<Canceled>0</Canceled>
+</Reservation>
+<Reservation>
+		<PropertyID>220</PropertyID>
+		<PropertyActive>1</PropertyActive>
+		<ReservationID>40627</ReservationID>
+		<ArrivalDate>09-24-2012</ArrivalDate>
+		<ArrivalTime>4PM</ArrivalTime>
+		<DepartureDate>09-27-2012</DepartureDate>
+		<DepartureTime>10AM</DepartureTime>
+		<Canceled>0</Canceled>
+</Reservation>
+<Reservation>
+		<PropertyID>427</PropertyID>
+		<PropertyActive>1</PropertyActive>
+		<ReservationID>40690</ReservationID>
+		<ArrivalDate>09-24-2012</ArrivalDate>
+		<ArrivalTime>4PM</ArrivalTime>
+		<DepartureDate>10-09-2012</DepartureDate>
+		<DepartureTime>10AM</DepartureTime>
+		<Canceled>0</Canceled>
+</Reservation>
+<Reservation>
+		<PropertyID>338</PropertyID>
+		<PropertyActive>1</PropertyActive>
+		<ReservationID>40970</ReservationID>
+		<ArrivalDate>09-26-2012</ArrivalDate>
+		<ArrivalTime>4PM</ArrivalTime>
+		<DepartureDate>09-30-2012</DepartureDate>
+		<DepartureTime>10AM</DepartureTime>
+		<Canceled>0</Canceled>
+</Reservation>
+<Reservation>
+		<PropertyID>147</PropertyID>
+		<PropertyActive>1</PropertyActive>
+		<ReservationID>39606</ReservationID>
+		<ArrivalDate>09-27-2012</ArrivalDate>
+		<ArrivalTime>4PM</ArrivalTime>
+		<DepartureDate>10-01-2012</DepartureDate>
+		<DepartureTime>10AM</DepartureTime>
+		<Canceled>0</Canceled>
+</Reservation>
+<Reservation>
+		<PropertyID>162</PropertyID>
+		<PropertyActive>1</PropertyActive>
+		<ReservationID>40667</ReservationID>
+		<ArrivalDate>09-27-2012</ArrivalDate>
+		<ArrivalTime>12AM</ArrivalTime>
+		<DepartureDate>09-30-2012</DepartureDate>
+		<DepartureTime>10AM</DepartureTime>
+		<Canceled>0</Canceled>
+</Reservation>
+<Reservation>
+		<PropertyID>365</PropertyID>
+		<PropertyActive>1</PropertyActive>
+		<ReservationID>40422</ReservationID>
+		<ArrivalDate>09-27-2012</ArrivalDate>
+		<ArrivalTime>4PM</ArrivalTime>
+		<DepartureDate>09-29-2012</DepartureDate>
+		<DepartureTime>10AM</DepartureTime>
+		<Canceled>0</Canceled>
+</Reservation>
+<Reservation>
+		<PropertyID>223</PropertyID>
+		<PropertyActive>1</PropertyActive>
+		<ReservationID>41177</ReservationID>
+		<ArrivalDate>09-27-2012</ArrivalDate>
+		<ArrivalTime>4PM</ArrivalTime>
+		<DepartureDate>09-30-2012</DepartureDate>
+		<DepartureTime>10AM</DepartureTime>
+		<Canceled>0</Canceled>
+</Reservation>
+<Reservation>
+		<PropertyID>456</PropertyID>
+		<PropertyActive>1</PropertyActive>
+		<ReservationID>41190</ReservationID>
+		<ArrivalDate>09-27-2012</ArrivalDate>
+		<ArrivalTime>4PM</ArrivalTime>
+		<DepartureDate>10-01-2012</DepartureDate>
+		<DepartureTime>10AM</DepartureTime>
+		<Canceled>0</Canceled>
+</Reservation>
+<Reservation>
+		<PropertyID>21</PropertyID>
+		<PropertyActive>1</PropertyActive>
+		<ReservationID>41121</ReservationID>
+		<ArrivalDate>09-28-2012</ArrivalDate>
+		<ArrivalTime>4PM</ArrivalTime>
+		<DepartureDate>09-30-2012</DepartureDate>
+		<DepartureTime>10AM</DepartureTime>
+		<Canceled>0</Canceled>
+</Reservation>
+<Reservation>
+		<PropertyID>157</PropertyID>
+		<PropertyActive>1</PropertyActive>
+		<ReservationID>41036</ReservationID>
+		<ArrivalDate>09-28-2012</ArrivalDate>
+		<ArrivalTime>4PM</ArrivalTime>
+		<DepartureDate>09-30-2012</DepartureDate>
+		<DepartureTime>10AM</DepartureTime>
+		<Canceled>0</Canceled>
+</Reservation>
+<Reservation>
+		<PropertyID>192</PropertyID>
+		<PropertyActive>1</PropertyActive>
+		<ReservationID>40918</ReservationID>
+		<ArrivalDate>09-28-2012</ArrivalDate>
+		<ArrivalTime>4PM</ArrivalTime>
+		<DepartureDate>09-30-2012</DepartureDate>
+		<DepartureTime>10AM</DepartureTime>
+		<Canceled>0</Canceled>
+</Reservation>
+<Reservation>
+		<PropertyID>227</PropertyID>
+		<PropertyActive>1</PropertyActive>
+		<ReservationID>40978</ReservationID>
+		<ArrivalDate>09-28-2012</ArrivalDate>
+		<ArrivalTime>4PM</ArrivalTime>
+		<DepartureDate>10-02-2012</DepartureDate>
+		<DepartureTime>10AM</DepartureTime>
+		<Canceled>0</Canceled>
+</Reservation>
+<Reservation>
+		<PropertyID>457</PropertyID>
+		<PropertyActive>1</PropertyActive>
+		<ReservationID>41168</ReservationID>
+		<ArrivalDate>09-28-2012</ArrivalDate>
+		<ArrivalTime>4PM</ArrivalTime>
+		<DepartureDate>09-30-2012</DepartureDate>
+		<DepartureTime>10AM</DepartureTime>
+		<Canceled>0</Canceled>
+</Reservation>
+<Reservation>
+		<PropertyID>386</PropertyID>
+		<PropertyActive>1</PropertyActive>
+		<ReservationID>40972</ReservationID>
+		<ArrivalDate>09-29-2012</ArrivalDate>
+		<ArrivalTime>4PM</ArrivalTime>
+		<DepartureDate>10-02-2012</DepartureDate>
+		<DepartureTime>10AM</DepartureTime>
+		<Canceled>0</Canceled>
+</Reservation>
+<Reservation>
+		<PropertyID>135</PropertyID>
+		<PropertyActive>1</PropertyActive>
+		<ReservationID>41216</ReservationID>
+		<ArrivalDate>09-30-2012</ArrivalDate>
+		<ArrivalTime>4PM</ArrivalTime>
+		<DepartureDate>10-05-2012</DepartureDate>
+		<DepartureTime>10AM</DepartureTime>
+		<Canceled>0</Canceled>
+</Reservation>
+<Reservation>
+		<PropertyID>134</PropertyID>
+		<PropertyActive>1</PropertyActive>
+		<ReservationID>38112</ReservationID>
+		<ArrivalDate>10-01-2012</ArrivalDate>
+		<ArrivalTime>4PM</ArrivalTime>
+		<DepartureDate>03-06-2014</DepartureDate>
+		<DepartureTime>10AM</DepartureTime>
+		<Canceled>1</Canceled>
+</Reservation>
+<Reservation>
+		<PropertyID>194</PropertyID>
+		<PropertyActive>1</PropertyActive>
+		<ReservationID>41140</ReservationID>
+		<ArrivalDate>10-01-2012</ArrivalDate>
+		<ArrivalTime>4PM</ArrivalTime>
+		<DepartureDate>12-01-2012</DepartureDate>
+		<DepartureTime>10AM</DepartureTime>
+		<Canceled>0</Canceled>
+</Reservation>
+<Reservation>
+		<PropertyID>254</PropertyID>
+		<PropertyActive>1</PropertyActive>
+		<ReservationID>41066</ReservationID>
+		<ArrivalDate>10-01-2012</ArrivalDate>
+		<ArrivalTime>4PM</ArrivalTime>
+		<DepartureDate>10-02-2012</DepartureDate>
+		<DepartureTime>10AM</DepartureTime>
+		<Canceled>0</Canceled>
+</Reservation>
+<Reservation>
+		<PropertyID>192</PropertyID>
+		<PropertyActive>1</PropertyActive>
+		<ReservationID>41031</ReservationID>
+		<ArrivalDate>10-05-2012</ArrivalDate>
+		<ArrivalTime>4PM</ArrivalTime>
+		<DepartureDate>10-08-2012</DepartureDate>
+		<DepartureTime>10AM</DepartureTime>
+		<Canceled>0</Canceled>
+</Reservation>
+<Reservation>
+		<PropertyID>378</PropertyID>
+		<PropertyActive>1</PropertyActive>
+		<ReservationID>40994</ReservationID>
+		<ArrivalDate>10-09-2012</ArrivalDate>
+		<ArrivalTime>4PM</ArrivalTime>
+		<DepartureDate>10-11-2012</DepartureDate>
+		<DepartureTime>10AM</DepartureTime>
+		<Canceled>1</Canceled>
+</Reservation>
+<Reservation>
+		<PropertyID>454</PropertyID>
+		<PropertyActive>1</PropertyActive>
+		<ReservationID>40590</ReservationID>
+		<ArrivalDate>10-10-2012</ArrivalDate>
+		<ArrivalTime>4PM</ArrivalTime>
+		<DepartureDate>10-14-2012</DepartureDate>
+		<DepartureTime>10AM</DepartureTime>
+		<Canceled>1</Canceled>
+</Reservation>
+<Reservation>
+		<PropertyID>197</PropertyID>
+		<PropertyActive>1</PropertyActive>
+		<ReservationID>41074</ReservationID>
+		<ArrivalDate>10-13-2012</ArrivalDate>
+		<ArrivalTime>4PM</ArrivalTime>
+		<DepartureDate>10-17-2012</DepartureDate>
+		<DepartureTime>10AM</DepartureTime>
+		<Canceled>0</Canceled>
+</Reservation>
+<Reservation>
+		<PropertyID>396</PropertyID>
+		<PropertyActive>1</PropertyActive>
+		<ReservationID>40414</ReservationID>
+		<ArrivalDate>10-15-2012</ArrivalDate>
+		<ArrivalTime>4PM</ArrivalTime>
+		<DepartureDate>10-22-2012</DepartureDate>
+		<DepartureTime>10AM</DepartureTime>
+		<Canceled>0</Canceled>
+</Reservation>
+<Reservation>
+		<PropertyID>143</PropertyID>
+		<PropertyActive>1</PropertyActive>
+		<ReservationID>41189</ReservationID>
+		<ArrivalDate>10-16-2012</ArrivalDate>
+		<ArrivalTime>4PM</ArrivalTime>
+		<DepartureDate>10-18-2012</DepartureDate>
+		<DepartureTime>10AM</DepartureTime>
+		<Canceled>0</Canceled>
+</Reservation>
+<Reservation>
+		<PropertyID>379</PropertyID>
+		<PropertyActive>1</PropertyActive>
+		<ReservationID>39719</ReservationID>
+		<ArrivalDate>10-18-2012</ArrivalDate>
+		<ArrivalTime>4PM</ArrivalTime>
+		<DepartureDate>10-21-2012</DepartureDate>
+		<DepartureTime>10AM</DepartureTime>
+		<Canceled>0</Canceled>
+</Reservation>
+<Reservation>
+		<PropertyID>21</PropertyID>
+		<PropertyActive>1</PropertyActive>
+		<ReservationID>40469</ReservationID>
+		<ArrivalDate>10-21-2012</ArrivalDate>
+		<ArrivalTime>4PM</ArrivalTime>
+		<DepartureDate>10-24-2012</DepartureDate>
+		<DepartureTime>10AM</DepartureTime>
+		<Canceled>0</Canceled>
+</Reservation>
+<Reservation>
+		<PropertyID>164</PropertyID>
+		<PropertyActive>1</PropertyActive>
+		<ReservationID>40567</ReservationID>
+		<ArrivalDate>10-25-2012</ArrivalDate>
+		<ArrivalTime>4PM</ArrivalTime>
+		<DepartureDate>10-29-2012</DepartureDate>
+		<DepartureTime>10AM</DepartureTime>
+		<Canceled>0</Canceled>
+</Reservation>
+<Reservation>
+		<PropertyID>434</PropertyID>
+		<PropertyActive>1</PropertyActive>
+		<ReservationID>41053</ReservationID>
+		<ArrivalDate>10-25-2012</ArrivalDate>
+		<ArrivalTime>4PM</ArrivalTime>
+		<DepartureDate>10-30-2012</DepartureDate>
+		<DepartureTime>10AM</DepartureTime>
+		<Canceled>0</Canceled>
+</Reservation>
+<Reservation>
+		<PropertyID>365</PropertyID>
+		<PropertyActive>1</PropertyActive>
+		<ReservationID>41158</ReservationID>
+		<ArrivalDate>10-26-2012</ArrivalDate>
+		<ArrivalTime>4PM</ArrivalTime>
+		<DepartureDate>10-29-2012</DepartureDate>
+		<DepartureTime>10AM</DepartureTime>
+		<Canceled>0</Canceled>
+</Reservation>
+<Reservation>
+		<PropertyID>310</PropertyID>
+		<PropertyActive>1</PropertyActive>
+		<ReservationID>40514</ReservationID>
+		<ArrivalDate>10-26-2012</ArrivalDate>
+		<ArrivalTime>4PM</ArrivalTime>
+		<DepartureDate>10-30-2012</DepartureDate>
+		<DepartureTime>10AM</DepartureTime>
+		<Canceled>0</Canceled>
+</Reservation>
+<Reservation>
+		<PropertyID>349</PropertyID>
+		<PropertyActive>1</PropertyActive>
+		<ReservationID>41219</ReservationID>
+		<ArrivalDate>10-26-2012</ArrivalDate>
+		<ArrivalTime>4PM</ArrivalTime>
+		<DepartureDate>10-29-2012</DepartureDate>
+		<DepartureTime>10AM</DepartureTime>
+		<Canceled>0</Canceled>
+</Reservation>
+<Reservation>
+		<PropertyID>434</PropertyID>
+		<PropertyActive>1</PropertyActive>
+		<ReservationID>40525</ReservationID>
+		<ArrivalDate>11-01-2012</ArrivalDate>
+		<ArrivalTime>4PM</ArrivalTime>
+		<DepartureDate>12-01-2012</DepartureDate>
+		<DepartureTime>10AM</DepartureTime>
+		<Canceled>0</Canceled>
+</Reservation>
+<Reservation>
+		<PropertyID>460</PropertyID>
+		<PropertyActive>1</PropertyActive>
+		<ReservationID>39953</ReservationID>
+		<ArrivalDate>11-01-2012</ArrivalDate>
+		<ArrivalTime>4PM</ArrivalTime>
+		<DepartureDate>03-31-2013</DepartureDate>
+		<DepartureTime>10AM</DepartureTime>
+		<Canceled>0</Canceled>
+</Reservation>
+<Reservation>
+		<PropertyID>173</PropertyID>
+		<PropertyActive>1</PropertyActive>
+		<ReservationID>41154</ReservationID>
+		<ArrivalDate>11-06-2012</ArrivalDate>
+		<ArrivalTime>4PM</ArrivalTime>
+		<DepartureDate>11-10-2012</DepartureDate>
+		<DepartureTime>10AM</DepartureTime>
+		<Canceled>0</Canceled>
+</Reservation>
+<Reservation>
+		<PropertyID>405</PropertyID>
+		<PropertyActive>1</PropertyActive>
+		<ReservationID>40636</ReservationID>
+		<ArrivalDate>11-09-2012</ArrivalDate>
+		<ArrivalTime>4PM</ArrivalTime>
+		<DepartureDate>11-12-2012</DepartureDate>
+		<DepartureTime>10AM</DepartureTime>
+		<Canceled>0</Canceled>
+</Reservation>
+<Reservation>
+		<PropertyID>161</PropertyID>
+		<PropertyActive>1</PropertyActive>
+		<ReservationID>40452</ReservationID>
+		<ArrivalDate>11-10-2012</ArrivalDate>
+		<ArrivalTime>4PM</ArrivalTime>
+		<DepartureDate>11-17-2012</DepartureDate>
+		<DepartureTime>10AM</DepartureTime>
+		<Canceled>0</Canceled>
+</Reservation>
+<Reservation>
+		<PropertyID>86</PropertyID>
+		<PropertyActive>1</PropertyActive>
+		<ReservationID>41040</ReservationID>
+		<ArrivalDate>11-16-2012</ArrivalDate>
+		<ArrivalTime>4PM</ArrivalTime>
+		<DepartureDate>11-20-2012</DepartureDate>
+		<DepartureTime>10AM</DepartureTime>
+		<Canceled>0</Canceled>
+</Reservation>
+<Reservation>
+		<PropertyID>145</PropertyID>
+		<PropertyActive>1</PropertyActive>
+		<ReservationID>39140</ReservationID>
+		<ArrivalDate>11-16-2012</ArrivalDate>
+		<ArrivalTime>4PM</ArrivalTime>
+		<DepartureDate>11-23-2012</DepartureDate>
+		<DepartureTime>10AM</DepartureTime>
+		<Canceled>0</Canceled>
+</Reservation>
+<Reservation>
+		<PropertyID>370</PropertyID>
+		<PropertyActive>1</PropertyActive>
+		<ReservationID>40890</ReservationID>
+		<ArrivalDate>11-16-2012</ArrivalDate>
+		<ArrivalTime>4PM</ArrivalTime>
+		<DepartureDate>11-18-2012</DepartureDate>
+		<DepartureTime>10AM</DepartureTime>
+		<Canceled>0</Canceled>
+</Reservation>
+<Reservation>
+		<PropertyID>410</PropertyID>
+		<PropertyActive>1</PropertyActive>
+		<ReservationID>41183</ReservationID>
+		<ArrivalDate>11-16-2012</ArrivalDate>
+		<ArrivalTime>4PM</ArrivalTime>
+		<DepartureDate>11-24-2012</DepartureDate>
+		<DepartureTime>10AM</DepartureTime>
+		<Canceled>0</Canceled>
+</Reservation>
+<Reservation>
+		<PropertyID>440</PropertyID>
+		<PropertyActive>1</PropertyActive>
+		<ReservationID>41033</ReservationID>
+		<ArrivalDate>11-16-2012</ArrivalDate>
+		<ArrivalTime>4PM</ArrivalTime>
+		<DepartureDate>11-23-2012</DepartureDate>
+		<DepartureTime>10AM</DepartureTime>
+		<Canceled>0</Canceled>
+</Reservation>
+<Reservation>
+		<PropertyID>115</PropertyID>
+		<PropertyActive>1</PropertyActive>
+		<ReservationID>40958</ReservationID>
+		<ArrivalDate>11-17-2012</ArrivalDate>
+		<ArrivalTime>4PM</ArrivalTime>
+		<DepartureDate>11-24-2012</DepartureDate>
+		<DepartureTime>10AM</DepartureTime>
+		<Canceled>0</Canceled>
+</Reservation>
+<Reservation>
+		<PropertyID>171</PropertyID>
+		<PropertyActive>1</PropertyActive>
+		<ReservationID>40441</ReservationID>
+		<ArrivalDate>11-17-2012</ArrivalDate>
+		<ArrivalTime>4PM</ArrivalTime>
+		<DepartureDate>11-25-2012</DepartureDate>
+		<DepartureTime>10AM</DepartureTime>
+		<Canceled>0</Canceled>
+</Reservation>
+<Reservation>
+		<PropertyID>220</PropertyID>
+		<PropertyActive>1</PropertyActive>
+		<ReservationID>38304</ReservationID>
+		<ArrivalDate>11-17-2012</ArrivalDate>
+		<ArrivalTime>4PM</ArrivalTime>
+		<DepartureDate>11-21-2012</DepartureDate>
+		<DepartureTime>10AM</DepartureTime>
+		<Canceled>0</Canceled>
+</Reservation>
+<Reservation>
+		<PropertyID>229</PropertyID>
+		<PropertyActive>1</PropertyActive>
+		<ReservationID>32948</ReservationID>
+		<ArrivalDate>11-17-2012</ArrivalDate>
+		<ArrivalTime>4PM</ArrivalTime>
+		<DepartureDate>11-26-2012</DepartureDate>
+		<DepartureTime>10AM</DepartureTime>
+		<Canceled>0</Canceled>
+</Reservation>
+<Reservation>
+		<PropertyID>263</PropertyID>
+		<PropertyActive>1</PropertyActive>
+		<ReservationID>41015</ReservationID>
+		<ArrivalDate>11-17-2012</ArrivalDate>
+		<ArrivalTime>4PM</ArrivalTime>
+		<DepartureDate>11-22-2012</DepartureDate>
+		<DepartureTime>10AM</DepartureTime>
+		<Canceled>0</Canceled>
+</Reservation>
+<Reservation>
+		<PropertyID>24</PropertyID>
+		<PropertyActive>1</PropertyActive>
+		<ReservationID>40426</ReservationID>
+		<ArrivalDate>11-18-2012</ArrivalDate>
+		<ArrivalTime>4PM</ArrivalTime>
+		<DepartureDate>11-24-2012</DepartureDate>
+		<DepartureTime>10AM</DepartureTime>
+		<Canceled>0</Canceled>
+</Reservation>
+<Reservation>
+		<PropertyID>153</PropertyID>
+		<PropertyActive>1</PropertyActive>
+		<ReservationID>40766</ReservationID>
+		<ArrivalDate>11-18-2012</ArrivalDate>
+		<ArrivalTime>4PM</ArrivalTime>
+		<DepartureDate>11-25-2012</DepartureDate>
+		<DepartureTime>10AM</DepartureTime>
+		<Canceled>0</Canceled>
+</Reservation>
+<Reservation>
+		<PropertyID>192</PropertyID>
+		<PropertyActive>1</PropertyActive>
+		<ReservationID>40664</ReservationID>
+		<ArrivalDate>11-18-2012</ArrivalDate>
+		<ArrivalTime>4PM</ArrivalTime>
+		<DepartureDate>11-23-2012</DepartureDate>
+		<DepartureTime>10AM</DepartureTime>
+		<Canceled>0</Canceled>
+</Reservation>
+<Reservation>
+		<PropertyID>359</PropertyID>
+		<PropertyActive>1</PropertyActive>
+		<ReservationID>40920</ReservationID>
+		<ArrivalDate>11-18-2012</ArrivalDate>
+		<ArrivalTime>4PM</ArrivalTime>
+		<DepartureDate>11-23-2012</DepartureDate>
+		<DepartureTime>10AM</DepartureTime>
+		<Canceled>0</Canceled>
+</Reservation>
+<Reservation>
+		<PropertyID>368</PropertyID>
+		<PropertyActive>1</PropertyActive>
+		<ReservationID>41164</ReservationID>
+		<ArrivalDate>11-18-2012</ArrivalDate>
+		<ArrivalTime>4PM</ArrivalTime>
+		<DepartureDate>11-23-2012</DepartureDate>
+		<DepartureTime>10AM</DepartureTime>
+		<Canceled>0</Canceled>
+</Reservation>
+<Reservation>
+		<PropertyID>452</PropertyID>
+		<PropertyActive>1</PropertyActive>
+		<ReservationID>39019</ReservationID>
+		<ArrivalDate>11-18-2012</ArrivalDate>
+		<ArrivalTime>4PM</ArrivalTime>
+		<DepartureDate>11-22-2012</DepartureDate>
+		<DepartureTime>10AM</DepartureTime>
+		<Canceled>1</Canceled>
+</Reservation>
+<Reservation>
+		<PropertyID>150</PropertyID>
+		<PropertyActive>1</PropertyActive>
+		<ReservationID>41159</ReservationID>
+		<ArrivalDate>11-19-2012</ArrivalDate>
+		<ArrivalTime>4PM</ArrivalTime>
+		<DepartureDate>11-24-2012</DepartureDate>
+		<DepartureTime>10AM</DepartureTime>
+		<Canceled>0</Canceled>
+</Reservation>
+<Reservation>
+		<PropertyID>207</PropertyID>
+		<PropertyActive>1</PropertyActive>
+		<ReservationID>41011</ReservationID>
+		<ArrivalDate>11-19-2012</ArrivalDate>
+		<ArrivalTime>4PM</ArrivalTime>
+		<DepartureDate>11-25-2012</DepartureDate>
+		<DepartureTime>10AM</DepartureTime>
+		<Canceled>0</Canceled>
+</Reservation>
+<Reservation>
+		<PropertyID>227</PropertyID>
+		<PropertyActive>1</PropertyActive>
+		<ReservationID>39940</ReservationID>
+		<ArrivalDate>11-19-2012</ArrivalDate>
+		<ArrivalTime>4PM</ArrivalTime>
+		<DepartureDate>11-23-2012</DepartureDate>
+		<DepartureTime>10AM</DepartureTime>
+		<Canceled>0</Canceled>
+</Reservation>
+<Reservation>
+		<PropertyID>137</PropertyID>
+		<PropertyActive>1</PropertyActive>
+		<ReservationID>39806</ReservationID>
+		<ArrivalDate>11-20-2012</ArrivalDate>
+		<ArrivalTime>4PM</ArrivalTime>
+		<DepartureDate>11-24-2012</DepartureDate>
+		<DepartureTime>10AM</DepartureTime>
+		<Canceled>0</Canceled>
+</Reservation>
+<Reservation>
+		<PropertyID>462</PropertyID>
+		<PropertyActive>1</PropertyActive>
+		<ReservationID>40071</ReservationID>
+		<ArrivalDate>11-20-2012</ArrivalDate>
+		<ArrivalTime>4PM</ArrivalTime>
+		<DepartureDate>11-26-2012</DepartureDate>
+		<DepartureTime>10AM</DepartureTime>
+		<Canceled>0</Canceled>
+</Reservation>
+<Reservation>
+		<PropertyID>303</PropertyID>
+		<PropertyActive>1</PropertyActive>
+		<ReservationID>40403</ReservationID>
+		<ArrivalDate>11-20-2012</ArrivalDate>
+		<ArrivalTime>4PM</ArrivalTime>
+		<DepartureDate>11-24-2012</DepartureDate>
+		<DepartureTime>10AM</DepartureTime>
+		<Canceled>0</Canceled>
+</Reservation>
+<Reservation>
+		<PropertyID>339</PropertyID>
+		<PropertyActive>1</PropertyActive>
+		<ReservationID>35491</ReservationID>
+		<ArrivalDate>11-20-2012</ArrivalDate>
+		<ArrivalTime>4PM</ArrivalTime>
+		<DepartureDate>11-25-2012</DepartureDate>
+		<DepartureTime>10AM</DepartureTime>
+		<Canceled>0</Canceled>
+</Reservation>
+<Reservation>
+		<PropertyID>397</PropertyID>
+		<PropertyActive>1</PropertyActive>
+		<ReservationID>32388</ReservationID>
+		<ArrivalDate>11-20-2012</ArrivalDate>
+		<ArrivalTime>4PM</ArrivalTime>
+		<DepartureDate>11-26-2012</DepartureDate>
+		<DepartureTime>10AM</DepartureTime>
+		<Canceled>0</Canceled>
+</Reservation>
+<Reservation>
+		<PropertyID>453</PropertyID>
+		<PropertyActive>1</PropertyActive>
+		<ReservationID>40724</ReservationID>
+		<ArrivalDate>11-20-2012</ArrivalDate>
+		<ArrivalTime>4PM</ArrivalTime>
+		<DepartureDate>11-26-2012</DepartureDate>
+		<DepartureTime>10AM</DepartureTime>
+		<Canceled>0</Canceled>
+</Reservation>
+<Reservation>
+		<PropertyID>458</PropertyID>
+		<PropertyActive>1</PropertyActive>
+		<ReservationID>40822</ReservationID>
+		<ArrivalDate>11-20-2012</ArrivalDate>
+		<ArrivalTime>4PM</ArrivalTime>
+		<DepartureDate>11-25-2012</DepartureDate>
+		<DepartureTime>10AM</DepartureTime>
+		<Canceled>0</Canceled>
+</Reservation>
+<Reservation>
+		<PropertyID>21</PropertyID>
+		<PropertyActive>1</PropertyActive>
+		<ReservationID>40782</ReservationID>
+		<ArrivalDate>11-21-2012</ArrivalDate>
+		<ArrivalTime>4PM</ArrivalTime>
+		<DepartureDate>11-25-2012</DepartureDate>
+		<DepartureTime>10AM</DepartureTime>
+		<Canceled>0</Canceled>
+</Reservation>
+<Reservation>
+		<PropertyID>82</PropertyID>
+		<PropertyActive>1</PropertyActive>
+		<ReservationID>39930</ReservationID>
+		<ArrivalDate>11-21-2012</ArrivalDate>
+		<ArrivalTime>4PM</ArrivalTime>
+		<DepartureDate>11-25-2012</DepartureDate>
+		<DepartureTime>10AM</DepartureTime>
+		<Canceled>0</Canceled>
+</Reservation>
+<Reservation>
+		<PropertyID>183</PropertyID>
+		<PropertyActive>1</PropertyActive>
+		<ReservationID>41207</ReservationID>
+		<ArrivalDate>11-21-2012</ArrivalDate>
+		<ArrivalTime>4PM</ArrivalTime>
+		<DepartureDate>11-25-2012</DepartureDate>
+		<DepartureTime>10AM</DepartureTime>
+		<Canceled>0</Canceled>
+</Reservation>
+<Reservation>
+		<PropertyID>236</PropertyID>
+		<PropertyActive>1</PropertyActive>
+		<ReservationID>40929</ReservationID>
+		<ArrivalDate>11-21-2012</ArrivalDate>
+		<ArrivalTime>4PM</ArrivalTime>
+		<DepartureDate>11-27-2012</DepartureDate>
+		<DepartureTime>10AM</DepartureTime>
+		<Canceled>0</Canceled>
+</Reservation>
+<Reservation>
+		<PropertyID>298</PropertyID>
+		<PropertyActive>1</PropertyActive>
+		<ReservationID>40500</ReservationID>
+		<ArrivalDate>11-21-2012</ArrivalDate>
+		<ArrivalTime>4PM</ArrivalTime>
+		<DepartureDate>11-26-2012</DepartureDate>
+		<DepartureTime>10AM</DepartureTime>
+		<Canceled>0</Canceled>
+</Reservation>
+<Reservation>
+		<PropertyID>375</PropertyID>
+		<PropertyActive>1</PropertyActive>
+		<ReservationID>40961</ReservationID>
+		<ArrivalDate>11-21-2012</ArrivalDate>
+		<ArrivalTime>4PM</ArrivalTime>
+		<DepartureDate>11-24-2012</DepartureDate>
+		<DepartureTime>10AM</DepartureTime>
+		<Canceled>0</Canceled>
+</Reservation>
+<Reservation>
+		<PropertyID>379</PropertyID>
+		<PropertyActive>1</PropertyActive>
+		<ReservationID>37973</ReservationID>
+		<ArrivalDate>11-21-2012</ArrivalDate>
+		<ArrivalTime>4PM</ArrivalTime>
+		<DepartureDate>11-25-2012</DepartureDate>
+		<DepartureTime>10AM</DepartureTime>
+		<Canceled>0</Canceled>
+</Reservation>
+<Reservation>
+		<PropertyID>427</PropertyID>
+		<PropertyActive>1</PropertyActive>
+		<ReservationID>40050</ReservationID>
+		<ArrivalDate>11-21-2012</ArrivalDate>
+		<ArrivalTime>4PM</ArrivalTime>
+		<DepartureDate>11-25-2012</DepartureDate>
+		<DepartureTime>10AM</DepartureTime>
+		<Canceled>0</Canceled>
+</Reservation>
+<Reservation>
+		<PropertyID>461</PropertyID>
+		<PropertyActive>1</PropertyActive>
+		<ReservationID>40931</ReservationID>
+		<ArrivalDate>11-21-2012</ArrivalDate>
+		<ArrivalTime>4PM</ArrivalTime>
+		<DepartureDate>11-25-2012</DepartureDate>
+		<DepartureTime>10AM</DepartureTime>
+		<Canceled>0</Canceled>
+</Reservation>
+<Reservation>
+		<PropertyID>468</PropertyID>
+		<PropertyActive>1</PropertyActive>
+		<ReservationID>40730</ReservationID>
+		<ArrivalDate>11-21-2012</ArrivalDate>
+		<ArrivalTime>4PM</ArrivalTime>
+		<DepartureDate>11-25-2012</DepartureDate>
+		<DepartureTime>10AM</DepartureTime>
+		<Canceled>0</Canceled>
+</Reservation>
+<Reservation>
+		<PropertyID>152</PropertyID>
+		<PropertyActive>1</PropertyActive>
+		<ReservationID>41020</ReservationID>
+		<ArrivalDate>11-22-2012</ArrivalDate>
+		<ArrivalTime>4PM</ArrivalTime>
+		<DepartureDate>12-22-2012</DepartureDate>
+		<DepartureTime>10AM</DepartureTime>
+		<Canceled>0</Canceled>
+</Reservation>
+<Reservation>
+		<PropertyID>263</PropertyID>
+		<PropertyActive>1</PropertyActive>
+		<ReservationID>41145</ReservationID>
+		<ArrivalDate>11-22-2012</ArrivalDate>
+		<ArrivalTime>4PM</ArrivalTime>
+		<DepartureDate>11-26-2012</DepartureDate>
+		<DepartureTime>10AM</DepartureTime>
+		<Canceled>0</Canceled>
+</Reservation>
+<Reservation>
+		<PropertyID>340</PropertyID>
+		<PropertyActive>1</PropertyActive>
+		<ReservationID>40327</ReservationID>
+		<ArrivalDate>11-22-2012</ArrivalDate>
+		<ArrivalTime>4PM</ArrivalTime>
+		<DepartureDate>11-27-2012</DepartureDate>
+		<DepartureTime>10AM</DepartureTime>
+		<Canceled>0</Canceled>
+</Reservation>
+<Reservation>
+		<PropertyID>271</PropertyID>
+		<PropertyActive>1</PropertyActive>
+		<ReservationID>40276</ReservationID>
+		<ArrivalDate>11-23-2012</ArrivalDate>
+		<ArrivalTime>4PM</ArrivalTime>
+		<DepartureDate>11-27-2012</DepartureDate>
+		<DepartureTime>10AM</DepartureTime>
+		<Canceled>0</Canceled>
+</Reservation>
+<Reservation>
+		<PropertyID>370</PropertyID>
+		<PropertyActive>1</PropertyActive>
+		<ReservationID>40891</ReservationID>
+		<ArrivalDate>11-23-2012</ArrivalDate>
+		<ArrivalTime>4PM</ArrivalTime>
+		<DepartureDate>11-25-2012</DepartureDate>
+		<DepartureTime>10AM</DepartureTime>
+		<Canceled>0</Canceled>
+</Reservation>
+<Reservation>
+		<PropertyID>162</PropertyID>
+		<PropertyActive>1</PropertyActive>
+		<ReservationID>41217</ReservationID>
+		<ArrivalDate>11-25-2012</ArrivalDate>
+		<ArrivalTime>4PM</ArrivalTime>
+		<DepartureDate>12-01-2012</DepartureDate>
+		<DepartureTime>10AM</DepartureTime>
+		<Canceled>0</Canceled>
+</Reservation>
+<Reservation>
+		<PropertyID>398</PropertyID>
+		<PropertyActive>1</PropertyActive>
+		<ReservationID>41171</ReservationID>
+		<ArrivalDate>11-25-2012</ArrivalDate>
+		<ArrivalTime>4PM</ArrivalTime>
+		<DepartureDate>11-30-2012</DepartureDate>
+		<DepartureTime>10AM</DepartureTime>
+		<Canceled>0</Canceled>
+</Reservation>
+<Reservation>
+		<PropertyID>302</PropertyID>
+		<PropertyActive>1</PropertyActive>
+		<ReservationID>41141</ReservationID>
+		<ArrivalDate>11-28-2012</ArrivalDate>
+		<ArrivalTime>4PM</ArrivalTime>
+		<DepartureDate>12-03-2012</DepartureDate>
+		<DepartureTime>10AM</DepartureTime>
+		<Canceled>0</Canceled>
+</Reservation>
+<Reservation>
+		<PropertyID>365</PropertyID>
+		<PropertyActive>1</PropertyActive>
+		<ReservationID>41054</ReservationID>
+		<ArrivalDate>11-30-2012</ArrivalDate>
+		<ArrivalTime>4PM</ArrivalTime>
+		<DepartureDate>12-07-2012</DepartureDate>
+		<DepartureTime>10AM</DepartureTime>
+		<Canceled>0</Canceled>
+</Reservation>
+<Reservation>
+		<PropertyID>386</PropertyID>
+		<PropertyActive>1</PropertyActive>
+		<ReservationID>40679</ReservationID>
+		<ArrivalDate>11-30-2012</ArrivalDate>
+		<ArrivalTime>4PM</ArrivalTime>
+		<DepartureDate>12-23-2012</DepartureDate>
+		<DepartureTime>10AM</DepartureTime>
+		<Canceled>1</Canceled>
+</Reservation>
+<Reservation>
+		<PropertyID>434</PropertyID>
+		<PropertyActive>1</PropertyActive>
+		<ReservationID>40532</ReservationID>
+		<ArrivalDate>12-01-2012</ArrivalDate>
+		<ArrivalTime>4PM</ArrivalTime>
+		<DepartureDate>12-31-2012</DepartureDate>
+		<DepartureTime>10AM</DepartureTime>
+		<Canceled>0</Canceled>
+</Reservation>
+<Reservation>
+		<PropertyID>350</PropertyID>
+		<PropertyActive>1</PropertyActive>
+		<ReservationID>41047</ReservationID>
+		<ArrivalDate>12-04-2012</ArrivalDate>
+		<ArrivalTime>4PM</ArrivalTime>
+		<DepartureDate>12-11-2012</DepartureDate>
+		<DepartureTime>10AM</DepartureTime>
+		<Canceled>0</Canceled>
+</Reservation>
+<Reservation>
+		<PropertyID>414</PropertyID>
+		<PropertyActive>1</PropertyActive>
+		<ReservationID>39895</ReservationID>
+		<ArrivalDate>12-05-2012</ArrivalDate>
+		<ArrivalTime>4PM</ArrivalTime>
+		<DepartureDate>12-11-2012</DepartureDate>
+		<DepartureTime>10AM</DepartureTime>
+		<Canceled>0</Canceled>
+</Reservation>
+<Reservation>
+		<PropertyID>468</PropertyID>
+		<PropertyActive>1</PropertyActive>
+		<ReservationID>40731</ReservationID>
+		<ArrivalDate>12-06-2012</ArrivalDate>
+		<ArrivalTime>4PM</ArrivalTime>
+		<DepartureDate>12-09-2012</DepartureDate>
+		<DepartureTime>10AM</DepartureTime>
+		<Canceled>0</Canceled>
+</Reservation>
+<Reservation>
+		<PropertyID>43</PropertyID>
+		<PropertyActive>1</PropertyActive>
+		<ReservationID>40968</ReservationID>
+		<ArrivalDate>12-07-2012</ArrivalDate>
+		<ArrivalTime>4PM</ArrivalTime>
+		<DepartureDate>12-10-2012</DepartureDate>
+		<DepartureTime>10AM</DepartureTime>
+		<Canceled>0</Canceled>
+</Reservation>
+<Reservation>
+		<PropertyID>82</PropertyID>
+		<PropertyActive>1</PropertyActive>
+		<ReservationID>40976</ReservationID>
+		<ArrivalDate>12-08-2012</ArrivalDate>
+		<ArrivalTime>4PM</ArrivalTime>
+		<DepartureDate>12-11-2012</DepartureDate>
+		<DepartureTime>10AM</DepartureTime>
+		<Canceled>0</Canceled>
+</Reservation>
+<Reservation>
+		<PropertyID>254</PropertyID>
+		<PropertyActive>1</PropertyActive>
+		<ReservationID>41079</ReservationID>
+		<ArrivalDate>12-08-2012</ArrivalDate>
+		<ArrivalTime>4PM</ArrivalTime>
+		<DepartureDate>12-14-2012</DepartureDate>
+		<DepartureTime>10AM</DepartureTime>
+		<Canceled>0</Canceled>
+</Reservation>
+<Reservation>
+		<PropertyID>405</PropertyID>
+		<PropertyActive>1</PropertyActive>
+		<ReservationID>40633</ReservationID>
+		<ArrivalDate>12-08-2012</ArrivalDate>
+		<ArrivalTime>4PM</ArrivalTime>
+		<DepartureDate>12-11-2012</DepartureDate>
+		<DepartureTime>10AM</DepartureTime>
+		<Canceled>0</Canceled>
+</Reservation>
+<Reservation>
+		<PropertyID>94</PropertyID>
+		<PropertyActive>1</PropertyActive>
+		<ReservationID>40473</ReservationID>
+		<ArrivalDate>12-10-2012</ArrivalDate>
+		<ArrivalTime>4PM</ArrivalTime>
+		<DepartureDate>12-14-2012</DepartureDate>
+		<DepartureTime>10AM</DepartureTime>
+		<Canceled>0</Canceled>
+</Reservation>
+<Reservation>
+		<PropertyID>459</PropertyID>
+		<PropertyActive>1</PropertyActive>
+		<ReservationID>40143</ReservationID>
+		<ArrivalDate>12-10-2012</ArrivalDate>
+		<ArrivalTime>4PM</ArrivalTime>
+		<DepartureDate>12-15-2012</DepartureDate>
+		<DepartureTime>10AM</DepartureTime>
+		<Canceled>0</Canceled>
+</Reservation>
+<Reservation>
+		<PropertyID>43</PropertyID>
+		<PropertyActive>1</PropertyActive>
+		<ReservationID>40476</ReservationID>
+		<ArrivalDate>12-12-2012</ArrivalDate>
+		<ArrivalTime>4PM</ArrivalTime>
+		<DepartureDate>12-16-2012</DepartureDate>
+		<DepartureTime>10AM</DepartureTime>
+		<Canceled>0</Canceled>
+</Reservation>
+<Reservation>
+		<PropertyID>331</PropertyID>
+		<PropertyActive>1</PropertyActive>
+		<ReservationID>34499</ReservationID>
+		<ArrivalDate>12-12-2012</ArrivalDate>
+		<ArrivalTime>4PM</ArrivalTime>
+		<DepartureDate>12-19-2012</DepartureDate>
+		<DepartureTime>10AM</DepartureTime>
+		<Canceled>0</Canceled>
+</Reservation>
+<Reservation>
+		<PropertyID>339</PropertyID>
+		<PropertyActive>1</PropertyActive>
+		<ReservationID>41162</ReservationID>
+		<ArrivalDate>12-12-2012</ArrivalDate>
+		<ArrivalTime>4PM</ArrivalTime>
+		<DepartureDate>12-17-2012</DepartureDate>
+		<DepartureTime>10AM</DepartureTime>
+		<Canceled>0</Canceled>
+</Reservation>
+<Reservation>
+		<PropertyID>202</PropertyID>
+		<PropertyActive>1</PropertyActive>
+		<ReservationID>41008</ReservationID>
+		<ArrivalDate>12-13-2012</ArrivalDate>
+		<ArrivalTime>4PM</ArrivalTime>
+		<DepartureDate>12-18-2012</DepartureDate>
+		<DepartureTime>10AM</DepartureTime>
+		<Canceled>0</Canceled>
+</Reservation>
+<Reservation>
+		<PropertyID>276</PropertyID>
+		<PropertyActive>1</PropertyActive>
+		<ReservationID>40813</ReservationID>
+		<ArrivalDate>12-13-2012</ArrivalDate>
+		<ArrivalTime>4PM</ArrivalTime>
+		<DepartureDate>12-16-2012</DepartureDate>
+		<DepartureTime>10AM</DepartureTime>
+		<Canceled>0</Canceled>
+</Reservation>
+<Reservation>
+		<PropertyID>323</PropertyID>
+		<PropertyActive>1</PropertyActive>
+		<ReservationID>40935</ReservationID>
+		<ArrivalDate>12-13-2012</ArrivalDate>
+		<ArrivalTime>4PM</ArrivalTime>
+		<DepartureDate>12-19-2012</DepartureDate>
+		<DepartureTime>10AM</DepartureTime>
+		<Canceled>0</Canceled>
+</Reservation>
+<Reservation>
+		<PropertyID>357</PropertyID>
+		<PropertyActive>1</PropertyActive>
+		<ReservationID>40753</ReservationID>
+		<ArrivalDate>12-13-2012</ArrivalDate>
+		<ArrivalTime>4PM</ArrivalTime>
+		<DepartureDate>12-17-2012</DepartureDate>
+		<DepartureTime>10AM</DepartureTime>
+		<Canceled>0</Canceled>
+</Reservation>
+<Reservation>
+		<PropertyID>24</PropertyID>
+		<PropertyActive>1</PropertyActive>
+		<ReservationID>40196</ReservationID>
+		<ArrivalDate>12-14-2012</ArrivalDate>
+		<ArrivalTime>4PM</ArrivalTime>
+		<DepartureDate>12-21-2012</DepartureDate>
+		<DepartureTime>10AM</DepartureTime>
+		<Canceled>1</Canceled>
+</Reservation>
+<Reservation>
+		<PropertyID>58</PropertyID>
+		<PropertyActive>1</PropertyActive>
+		<ReservationID>41181</ReservationID>
+		<ArrivalDate>12-14-2012</ArrivalDate>
+		<ArrivalTime>4PM</ArrivalTime>
+		<DepartureDate>12-19-2012</DepartureDate>
+		<DepartureTime>10AM</DepartureTime>
+		<Canceled>0</Canceled>
+</Reservation>
+<Reservation>
+		<PropertyID>172</PropertyID>
+		<PropertyActive>1</PropertyActive>
+		<ReservationID>37589</ReservationID>
+		<ArrivalDate>12-14-2012</ArrivalDate>
+		<ArrivalTime>4PM</ArrivalTime>
+		<DepartureDate>12-18-2012</DepartureDate>
+		<DepartureTime>10AM</DepartureTime>
+		<Canceled>0</Canceled>
+</Reservation>
+<Reservation>
+		<PropertyID>207</PropertyID>
+		<PropertyActive>1</PropertyActive>
+		<ReservationID>39679</ReservationID>
+		<ArrivalDate>12-14-2012</ArrivalDate>
+		<ArrivalTime>4PM</ArrivalTime>
+		<DepartureDate>12-19-2012</DepartureDate>
+		<DepartureTime>10AM</DepartureTime>
+		<Canceled>0</Canceled>
+</Reservation>
+<Reservation>
+		<PropertyID>310</PropertyID>
+		<PropertyActive>1</PropertyActive>
+		<ReservationID>39605</ReservationID>
+		<ArrivalDate>12-14-2012</ArrivalDate>
+		<ArrivalTime>4PM</ArrivalTime>
+		<DepartureDate>12-21-2012</DepartureDate>
+		<DepartureTime>10AM</DepartureTime>
+		<Canceled>0</Canceled>
+</Reservation>
+<Reservation>
+		<PropertyID>349</PropertyID>
+		<PropertyActive>1</PropertyActive>
+		<ReservationID>41220</ReservationID>
+		<ArrivalDate>12-14-2012</ArrivalDate>
+		<ArrivalTime>4PM</ArrivalTime>
+		<DepartureDate>12-17-2012</DepartureDate>
+		<DepartureTime>10AM</DepartureTime>
+		<Canceled>0</Canceled>
+</Reservation>
+<Reservation>
+		<PropertyID>109</PropertyID>
+		<PropertyActive>1</PropertyActive>
+		<ReservationID>40430</ReservationID>
+		<ArrivalDate>12-15-2012</ArrivalDate>
+		<ArrivalTime>4PM</ArrivalTime>
+		<DepartureDate>12-19-2012</DepartureDate>
+		<DepartureTime>10AM</DepartureTime>
+		<Canceled>0</Canceled>
+</Reservation>
+<Reservation>
+		<PropertyID>150</PropertyID>
+		<PropertyActive>1</PropertyActive>
+		<ReservationID>40507</ReservationID>
+		<ArrivalDate>12-15-2012</ArrivalDate>
+		<ArrivalTime>4PM</ArrivalTime>
+		<DepartureDate>12-22-2012</DepartureDate>
+		<DepartureTime>10AM</DepartureTime>
+		<Canceled>0</Canceled>
+</Reservation>
+<Reservation>
+		<PropertyID>171</PropertyID>
+		<PropertyActive>1</PropertyActive>
+		<ReservationID>40440</ReservationID>
+		<ArrivalDate>12-15-2012</ArrivalDate>
+		<ArrivalTime>4PM</ArrivalTime>
+		<DepartureDate>12-21-2012</DepartureDate>
+		<DepartureTime>10AM</DepartureTime>
+		<Canceled>0</Canceled>
+</Reservation>
+<Reservation>
+		<PropertyID>173</PropertyID>
+		<PropertyActive>1</PropertyActive>
+		<ReservationID>40955</ReservationID>
+		<ArrivalDate>12-15-2012</ArrivalDate>
+		<ArrivalTime>4PM</ArrivalTime>
+		<DepartureDate>12-20-2012</DepartureDate>
+		<DepartureTime>10AM</DepartureTime>
+		<Canceled>0</Canceled>
+</Reservation>
+<Reservation>
+		<PropertyID>21</PropertyID>
+		<PropertyActive>1</PropertyActive>
+		<ReservationID>40792</ReservationID>
+		<ArrivalDate>12-16-2012</ArrivalDate>
+		<ArrivalTime>4PM</ArrivalTime>
+		<DepartureDate>12-20-2012</DepartureDate>
+		<DepartureTime>10AM</DepartureTime>
+		<Canceled>1</Canceled>
+</Reservation>
+<Reservation>
+		<PropertyID>351</PropertyID>
+		<PropertyActive>1</PropertyActive>
+		<ReservationID>36884</ReservationID>
+		<ArrivalDate>12-16-2012</ArrivalDate>
+		<ArrivalTime>4PM</ArrivalTime>
+		<DepartureDate>12-20-2012</DepartureDate>
+		<DepartureTime>10AM</DepartureTime>
+		<Canceled>0</Canceled>
+</Reservation>
+<Reservation>
+		<PropertyID>395</PropertyID>
+		<PropertyActive>1</PropertyActive>
+		<ReservationID>41218</ReservationID>
+		<ArrivalDate>12-16-2012</ArrivalDate>
+		<ArrivalTime>4PM</ArrivalTime>
+		<DepartureDate>12-19-2012</DepartureDate>
+		<DepartureTime>10AM</DepartureTime>
+		<Canceled>0</Canceled>
+</Reservation>
+<Reservation>
+		<PropertyID>397</PropertyID>
+		<PropertyActive>1</PropertyActive>
+		<ReservationID>41172</ReservationID>
+		<ArrivalDate>12-16-2012</ArrivalDate>
+		<ArrivalTime>4PM</ArrivalTime>
+		<DepartureDate>12-21-2012</DepartureDate>
+		<DepartureTime>10AM</DepartureTime>
+		<Canceled>0</Canceled>
+</Reservation>
+<Reservation>
+		<PropertyID>414</PropertyID>
+		<PropertyActive>1</PropertyActive>
+		<ReservationID>33870</ReservationID>
+		<ArrivalDate>12-16-2012</ArrivalDate>
+		<ArrivalTime>4PM</ArrivalTime>
+		<DepartureDate>12-21-2012</DepartureDate>
+		<DepartureTime>10AM</DepartureTime>
+		<Canceled>0</Canceled>
+</Reservation>
+<Reservation>
+		<PropertyID>161</PropertyID>
+		<PropertyActive>1</PropertyActive>
+		<ReservationID>40653</ReservationID>
+		<ArrivalDate>12-17-2012</ArrivalDate>
+		<ArrivalTime>4PM</ArrivalTime>
+		<DepartureDate>12-22-2012</DepartureDate>
+		<DepartureTime>10AM</DepartureTime>
+		<Canceled>0</Canceled>
+</Reservation>
+<Reservation>
+		<PropertyID>401</PropertyID>
+		<PropertyActive>1</PropertyActive>
+		<ReservationID>41096</ReservationID>
+		<ArrivalDate>12-17-2012</ArrivalDate>
+		<ArrivalTime>4PM</ArrivalTime>
+		<DepartureDate>12-21-2012</DepartureDate>
+		<DepartureTime>10AM</DepartureTime>
+		<Canceled>0</Canceled>
+</Reservation>
+<Reservation>
+		<PropertyID>461</PropertyID>
+		<PropertyActive>1</PropertyActive>
+		<ReservationID>40320</ReservationID>
+		<ArrivalDate>12-17-2012</ArrivalDate>
+		<ArrivalTime>4PM</ArrivalTime>
+		<DepartureDate>12-22-2012</DepartureDate>
+		<DepartureTime>10AM</DepartureTime>
+		<Canceled>0</Canceled>
+</Reservation>
+<Reservation>
+		<PropertyID>292</PropertyID>
+		<PropertyActive>1</PropertyActive>
+		<ReservationID>41196</ReservationID>
+		<ArrivalDate>12-18-2012</ArrivalDate>
+		<ArrivalTime>4PM</ArrivalTime>
+		<DepartureDate>12-23-2012</DepartureDate>
+		<DepartureTime>10AM</DepartureTime>
+		<Canceled>0</Canceled>
+</Reservation>
+<Reservation>
+		<PropertyID>82</PropertyID>
+		<PropertyActive>1</PropertyActive>
+		<ReservationID>40565</ReservationID>
+		<ArrivalDate>12-19-2012</ArrivalDate>
+		<ArrivalTime>4PM</ArrivalTime>
+		<DepartureDate>12-23-2012</DepartureDate>
+		<DepartureTime>10AM</DepartureTime>
+		<Canceled>0</Canceled>
+</Reservation>
+<Reservation>
+		<PropertyID>240</PropertyID>
+		<PropertyActive>1</PropertyActive>
+		<ReservationID>39570</ReservationID>
+		<ArrivalDate>12-19-2012</ArrivalDate>
+		<ArrivalTime>4PM</ArrivalTime>
+		<DepartureDate>12-27-2012</DepartureDate>
+		<DepartureTime>10AM</DepartureTime>
+		<Canceled>0</Canceled>
+</Reservation>
+<Reservation>
+		<PropertyID>303</PropertyID>
+		<PropertyActive>1</PropertyActive>
+		<ReservationID>40763</ReservationID>
+		<ArrivalDate>12-19-2012</ArrivalDate>
+		<ArrivalTime>4PM</ArrivalTime>
+		<DepartureDate>12-23-2012</DepartureDate>
+		<DepartureTime>10AM</DepartureTime>
+		<Canceled>0</Canceled>
+</Reservation>
+<Reservation>
+		<PropertyID>232</PropertyID>
+		<PropertyActive>1</PropertyActive>
+		<ReservationID>41199</ReservationID>
+		<ArrivalDate>12-20-2012</ArrivalDate>
+		<ArrivalTime>4PM</ArrivalTime>
+		<DepartureDate>01-01-2013</DepartureDate>
+		<DepartureTime>10AM</DepartureTime>
+		<Canceled>0</Canceled>
+</Reservation>
+<Reservation>
+		<PropertyID>254</PropertyID>
+		<PropertyActive>1</PropertyActive>
+		<ReservationID>41210</ReservationID>
+		<ArrivalDate>12-20-2012</ArrivalDate>
+		<ArrivalTime>4PM</ArrivalTime>
+		<DepartureDate>12-30-2012</DepartureDate>
+		<DepartureTime>10AM</DepartureTime>
+		<Canceled>0</Canceled>
+</Reservation>
+<Reservation>
+		<PropertyID>257</PropertyID>
+		<PropertyActive>1</PropertyActive>
+		<ReservationID>38670</ReservationID>
+		<ArrivalDate>12-20-2012</ArrivalDate>
+		<ArrivalTime>4PM</ArrivalTime>
+		<DepartureDate>12-29-2012</DepartureDate>
+		<DepartureTime>10AM</DepartureTime>
+		<Canceled>0</Canceled>
+</Reservation>
+<Reservation>
+		<PropertyID>298</PropertyID>
+		<PropertyActive>1</PropertyActive>
+		<ReservationID>40501</ReservationID>
+		<ArrivalDate>12-20-2012</ArrivalDate>
+		<ArrivalTime>4PM</ArrivalTime>
+		<DepartureDate>12-25-2012</DepartureDate>
+		<DepartureTime>10AM</DepartureTime>
+		<Canceled>0</Canceled>
+</Reservation>
+<Reservation>
+		<PropertyID>334</PropertyID>
+		<PropertyActive>1</PropertyActive>
+		<ReservationID>41211</ReservationID>
+		<ArrivalDate>12-20-2012</ArrivalDate>
+		<ArrivalTime>4PM</ArrivalTime>
+		<DepartureDate>12-30-2012</DepartureDate>
+		<DepartureTime>10AM</DepartureTime>
+		<Canceled>0</Canceled>
+</Reservation>
+<Reservation>
+		<PropertyID>145</PropertyID>
+		<PropertyActive>1</PropertyActive>
+		<ReservationID>29485</ReservationID>
+		<ArrivalDate>12-21-2012</ArrivalDate>
+		<ArrivalTime>4PM</ArrivalTime>
+		<DepartureDate>01-02-2013</DepartureDate>
+		<DepartureTime>10AM</DepartureTime>
+		<Canceled>0</Canceled>
+</Reservation>
+<Reservation>
+		<PropertyID>201</PropertyID>
+		<PropertyActive>1</PropertyActive>
+		<ReservationID>38881</ReservationID>
+		<ArrivalDate>12-21-2012</ArrivalDate>
+		<ArrivalTime>4PM</ArrivalTime>
+		<DepartureDate>01-07-2013</DepartureDate>
+		<DepartureTime>10AM</DepartureTime>
+		<Canceled>0</Canceled>
+</Reservation>
+<Reservation>
+		<PropertyID>293</PropertyID>
+		<PropertyActive>1</PropertyActive>
+		<ReservationID>38431</ReservationID>
+		<ArrivalDate>12-21-2012</ArrivalDate>
+		<ArrivalTime>4PM</ArrivalTime>
+		<DepartureDate>01-06-2013</DepartureDate>
+		<DepartureTime>10AM</DepartureTime>
+		<Canceled>0</Canceled>
+</Reservation>
+<Reservation>
+		<PropertyID>313</PropertyID>
+		<PropertyActive>1</PropertyActive>
+		<ReservationID>39001</ReservationID>
+		<ArrivalDate>12-21-2012</ArrivalDate>
+		<ArrivalTime>4PM</ArrivalTime>
+		<DepartureDate>01-02-2013</DepartureDate>
+		<DepartureTime>10AM</DepartureTime>
+		<Canceled>0</Canceled>
+</Reservation>
+<Reservation>
+		<PropertyID>359</PropertyID>
+		<PropertyActive>1</PropertyActive>
+		<ReservationID>40066</ReservationID>
+		<ArrivalDate>12-21-2012</ArrivalDate>
+		<ArrivalTime>4PM</ArrivalTime>
+		<DepartureDate>12-29-2012</DepartureDate>
+		<DepartureTime>10AM</DepartureTime>
+		<Canceled>0</Canceled>
+</Reservation>
+<Reservation>
+		<PropertyID>379</PropertyID>
+		<PropertyActive>1</PropertyActive>
+		<ReservationID>37974</ReservationID>
+		<ArrivalDate>12-21-2012</ArrivalDate>
+		<ArrivalTime>4PM</ArrivalTime>
+		<DepartureDate>01-01-2013</DepartureDate>
+		<DepartureTime>10AM</DepartureTime>
+		<Canceled>0</Canceled>
+</Reservation>
+<Reservation>
+		<PropertyID>387</PropertyID>
+		<PropertyActive>1</PropertyActive>
+		<ReservationID>40559</ReservationID>
+		<ArrivalDate>12-21-2012</ArrivalDate>
+		<ArrivalTime>4PM</ArrivalTime>
+		<DepartureDate>12-26-2012</DepartureDate>
+		<DepartureTime>10AM</DepartureTime>
+		<Canceled>1</Canceled>
+</Reservation>
+<Reservation>
+		<PropertyID>21</PropertyID>
+		<PropertyActive>1</PropertyActive>
+		<ReservationID>38951</ReservationID>
+		<ArrivalDate>12-22-2012</ArrivalDate>
+		<ArrivalTime>4PM</ArrivalTime>
+		<DepartureDate>12-28-2012</DepartureDate>
+		<DepartureTime>10AM</DepartureTime>
+		<Canceled>0</Canceled>
+</Reservation>
+<Reservation>
+		<PropertyID>33</PropertyID>
+		<PropertyActive>1</PropertyActive>
+		<ReservationID>37223</ReservationID>
+		<ArrivalDate>12-22-2012</ArrivalDate>
+		<ArrivalTime>4PM</ArrivalTime>
+		<DepartureDate>12-28-2012</DepartureDate>
+		<DepartureTime>10AM</DepartureTime>
+		<Canceled>0</Canceled>
+</Reservation>
+<Reservation>
+		<PropertyID>192</PropertyID>
+		<PropertyActive>1</PropertyActive>
+		<ReservationID>40777</ReservationID>
+		<ArrivalDate>12-22-2012</ArrivalDate>
+		<ArrivalTime>4PM</ArrivalTime>
+		<DepartureDate>12-28-2012</DepartureDate>
+		<DepartureTime>10AM</DepartureTime>
+		<Canceled>0</Canceled>
+</Reservation>
+<Reservation>
+		<PropertyID>207</PropertyID>
+		<PropertyActive>1</PropertyActive>
+		<ReservationID>41165</ReservationID>
+		<ArrivalDate>12-22-2012</ArrivalDate>
+		<ArrivalTime>4PM</ArrivalTime>
+		<DepartureDate>12-27-2012</DepartureDate>
+		<DepartureTime>10AM</DepartureTime>
+		<Canceled>0</Canceled>
+</Reservation>
+<Reservation>
+		<PropertyID>225</PropertyID>
+		<PropertyActive>1</PropertyActive>
+		<ReservationID>40059</ReservationID>
+		<ArrivalDate>12-22-2012</ArrivalDate>
+		<ArrivalTime>4PM</ArrivalTime>
+		<DepartureDate>12-30-2012</DepartureDate>
+		<DepartureTime>10AM</DepartureTime>
+		<Canceled>0</Canceled>
+</Reservation>
+<Reservation>
+		<PropertyID>218</PropertyID>
+		<PropertyActive>1</PropertyActive>
+		<ReservationID>40829</ReservationID>
+		<ArrivalDate>12-22-2012</ArrivalDate>
+		<ArrivalTime>4PM</ArrivalTime>
+		<DepartureDate>12-27-2012</DepartureDate>
+		<DepartureTime>10AM</DepartureTime>
+		<Canceled>0</Canceled>
+</Reservation>
+<Reservation>
+		<PropertyID>226</PropertyID>
+		<PropertyActive>1</PropertyActive>
+		<ReservationID>40651</ReservationID>
+		<ArrivalDate>12-22-2012</ArrivalDate>
+		<ArrivalTime>4PM</ArrivalTime>
+		<DepartureDate>12-29-2012</DepartureDate>
+		<DepartureTime>10AM</DepartureTime>
+		<Canceled>0</Canceled>
+</Reservation>
+<Reservation>
+		<PropertyID>227</PropertyID>
+		<PropertyActive>1</PropertyActive>
+		<ReservationID>38487</ReservationID>
+		<ArrivalDate>12-22-2012</ArrivalDate>
+		<ArrivalTime>4PM</ArrivalTime>
+		<DepartureDate>12-27-2012</DepartureDate>
+		<DepartureTime>10AM</DepartureTime>
+		<Canceled>0</Canceled>
+</Reservation>
+<Reservation>
+		<PropertyID>250</PropertyID>
+		<PropertyActive>1</PropertyActive>
+		<ReservationID>40827</ReservationID>
+		<ArrivalDate>12-22-2012</ArrivalDate>
+		<ArrivalTime>4PM</ArrivalTime>
+		<DepartureDate>12-27-2012</DepartureDate>
+		<DepartureTime>10AM</DepartureTime>
+		<Canceled>0</Canceled>
+</Reservation>
+<Reservation>
+		<PropertyID>251</PropertyID>
+		<PropertyActive>1</PropertyActive>
+		<ReservationID>40830</ReservationID>
+		<ArrivalDate>12-22-2012</ArrivalDate>
+		<ArrivalTime>4PM</ArrivalTime>
+		<DepartureDate>12-27-2012</DepartureDate>
+		<DepartureTime>10AM</DepartureTime>
+		<Canceled>0</Canceled>
+</Reservation>
+<Reservation>
+		<PropertyID>400</PropertyID>
+		<PropertyActive>1</PropertyActive>
+		<ReservationID>40825</ReservationID>
+		<ArrivalDate>12-22-2012</ArrivalDate>
+		<ArrivalTime>4PM</ArrivalTime>
+		<DepartureDate>12-28-2012</DepartureDate>
+		<DepartureTime>10AM</DepartureTime>
+		<Canceled>0</Canceled>
+</Reservation>
+<Reservation>
+		<PropertyID>402</PropertyID>
+		<PropertyActive>1</PropertyActive>
+		<ReservationID>39872</ReservationID>
+		<ArrivalDate>12-22-2012</ArrivalDate>
+		<ArrivalTime>4PM</ArrivalTime>
+		<DepartureDate>12-27-2012</DepartureDate>
+		<DepartureTime>10AM</DepartureTime>
+		<Canceled>0</Canceled>
+</Reservation>
+<Reservation>
+		<PropertyID>440</PropertyID>
+		<PropertyActive>1</PropertyActive>
+		<ReservationID>40828</ReservationID>
+		<ArrivalDate>12-22-2012</ArrivalDate>
+		<ArrivalTime>4PM</ArrivalTime>
+		<DepartureDate>12-27-2012</DepartureDate>
+		<DepartureTime>10AM</DepartureTime>
+		<Canceled>0</Canceled>
+</Reservation>
+<Reservation>
+		<PropertyID>73</PropertyID>
+		<PropertyActive>1</PropertyActive>
+		<ReservationID>41046</ReservationID>
+		<ArrivalDate>12-23-2012</ArrivalDate>
+		<ArrivalTime>4PM</ArrivalTime>
+		<DepartureDate>12-29-2012</DepartureDate>
+		<DepartureTime>10AM</DepartureTime>
+		<Canceled>0</Canceled>
+</Reservation>
+<Reservation>
+		<PropertyID>115</PropertyID>
+		<PropertyActive>1</PropertyActive>
+		<ReservationID>41137</ReservationID>
+		<ArrivalDate>12-23-2012</ArrivalDate>
+		<ArrivalTime>4PM</ArrivalTime>
+		<DepartureDate>12-28-2012</DepartureDate>
+		<DepartureTime>10AM</DepartureTime>
+		<Canceled>0</Canceled>
+</Reservation>
+<Reservation>
+		<PropertyID>149</PropertyID>
+		<PropertyActive>1</PropertyActive>
+		<ReservationID>41062</ReservationID>
+		<ArrivalDate>12-23-2012</ArrivalDate>
+		<ArrivalTime>4PM</ArrivalTime>
+		<DepartureDate>12-28-2012</DepartureDate>
+		<DepartureTime>10AM</DepartureTime>
+		<Canceled>0</Canceled>
+</Reservation>
+<Reservation>
+		<PropertyID>171</PropertyID>
+		<PropertyActive>1</PropertyActive>
+		<ReservationID>40492</ReservationID>
+		<ArrivalDate>12-23-2012</ArrivalDate>
+		<ArrivalTime>4PM</ArrivalTime>
+		<DepartureDate>12-30-2012</DepartureDate>
+		<DepartureTime>10AM</DepartureTime>
+		<Canceled>0</Canceled>
+</Reservation>
+<Reservation>
+		<PropertyID>263</PropertyID>
+		<PropertyActive>1</PropertyActive>
+		<ReservationID>35662</ReservationID>
+		<ArrivalDate>12-23-2012</ArrivalDate>
+		<ArrivalTime>4PM</ArrivalTime>
+		<DepartureDate>12-29-2012</DepartureDate>
+		<DepartureTime>10AM</DepartureTime>
+		<Canceled>0</Canceled>
+</Reservation>
+<Reservation>
+		<PropertyID>351</PropertyID>
+		<PropertyActive>1</PropertyActive>
+		<ReservationID>40936</ReservationID>
+		<ArrivalDate>12-23-2012</ArrivalDate>
+		<ArrivalTime>4PM</ArrivalTime>
+		<DepartureDate>12-27-2012</DepartureDate>
+		<DepartureTime>10AM</DepartureTime>
+		<Canceled>1</Canceled>
+</Reservation>
+<Reservation>
+		<PropertyID>353</PropertyID>
+		<PropertyActive>1</PropertyActive>
+		<ReservationID>40839</ReservationID>
+		<ArrivalDate>12-23-2012</ArrivalDate>
+		<ArrivalTime>4PM</ArrivalTime>
+		<DepartureDate>12-27-2012</DepartureDate>
+		<DepartureTime>10AM</DepartureTime>
+		<Canceled>0</Canceled>
+</Reservation>
+<Reservation>
+		<PropertyID>427</PropertyID>
+		<PropertyActive>1</PropertyActive>
+		<ReservationID>39841</ReservationID>
+		<ArrivalDate>12-23-2012</ArrivalDate>
+		<ArrivalTime>4PM</ArrivalTime>
+		<DepartureDate>12-30-2012</DepartureDate>
+		<DepartureTime>10AM</DepartureTime>
+		<Canceled>0</Canceled>
+</Reservation>
+<Reservation>
+		<PropertyID>396</PropertyID>
+		<PropertyActive>1</PropertyActive>
+		<ReservationID>41082</ReservationID>
+		<ArrivalDate>12-24-2012</ArrivalDate>
+		<ArrivalTime>4PM</ArrivalTime>
+		<DepartureDate>12-28-2012</DepartureDate>
+		<DepartureTime>10AM</DepartureTime>
+		<Canceled>0</Canceled>
+</Reservation>
+<Reservation>
+		<PropertyID>5</PropertyID>
+		<PropertyActive>1</PropertyActive>
+		<ReservationID>40746</ReservationID>
+		<ArrivalDate>12-24-2012</ArrivalDate>
+		<ArrivalTime>4PM</ArrivalTime>
+		<DepartureDate>12-31-2012</DepartureDate>
+		<DepartureTime>10AM</DepartureTime>
+		<Canceled>0</Canceled>
+</Reservation>
+<Reservation>
+		<PropertyID>53</PropertyID>
+		<PropertyActive>1</PropertyActive>
+		<ReservationID>40810</ReservationID>
+		<ArrivalDate>12-24-2012</ArrivalDate>
+		<ArrivalTime>4PM</ArrivalTime>
+		<DepartureDate>12-28-2012</DepartureDate>
+		<DepartureTime>10AM</DepartureTime>
+		<Canceled>0</Canceled>
+</Reservation>
+<Reservation>
+		<PropertyID>177</PropertyID>
+		<PropertyActive>1</PropertyActive>
+		<ReservationID>41184</ReservationID>
+		<ArrivalDate>12-24-2012</ArrivalDate>
+		<ArrivalTime>4PM</ArrivalTime>
+		<DepartureDate>12-27-2012</DepartureDate>
+		<DepartureTime>10AM</DepartureTime>
+		<Canceled>0</Canceled>
+</Reservation>
+<Reservation>
+		<PropertyID>397</PropertyID>
+		<PropertyActive>1</PropertyActive>
+		<ReservationID>32387</ReservationID>
+		<ArrivalDate>12-24-2012</ArrivalDate>
+		<ArrivalTime>4PM</ArrivalTime>
+		<DepartureDate>01-02-2013</DepartureDate>
+		<DepartureTime>10AM</DepartureTime>
+		<Canceled>0</Canceled>
+</Reservation>
+<Reservation>
+		<PropertyID>465</PropertyID>
+		<PropertyActive>1</PropertyActive>
+		<ReservationID>41112</ReservationID>
+		<ArrivalDate>12-24-2012</ArrivalDate>
+		<ArrivalTime>4PM</ArrivalTime>
+		<DepartureDate>12-28-2012</DepartureDate>
+		<DepartureTime>10AM</DepartureTime>
+		<Canceled>0</Canceled>
+</Reservation>
+<Reservation>
+		<PropertyID>365</PropertyID>
+		<PropertyActive>1</PropertyActive>
+		<ReservationID>41083</ReservationID>
+		<ArrivalDate>12-25-2012</ArrivalDate>
+		<ArrivalTime>4PM</ArrivalTime>
+		<DepartureDate>01-03-2013</DepartureDate>
+		<DepartureTime>10AM</DepartureTime>
+		<Canceled>0</Canceled>
+</Reservation>
+<Reservation>
+		<PropertyID>380</PropertyID>
+		<PropertyActive>1</PropertyActive>
+		<ReservationID>40466</ReservationID>
+		<ArrivalDate>12-25-2012</ArrivalDate>
+		<ArrivalTime>4PM</ArrivalTime>
+		<DepartureDate>12-31-2012</DepartureDate>
+		<DepartureTime>10AM</DepartureTime>
+		<Canceled>0</Canceled>
+</Reservation>
+<Reservation>
+		<PropertyID>54</PropertyID>
+		<PropertyActive>1</PropertyActive>
+		<ReservationID>40644</ReservationID>
+		<ArrivalDate>12-26-2012</ArrivalDate>
+		<ArrivalTime>4PM</ArrivalTime>
+		<DepartureDate>12-31-2012</DepartureDate>
+		<DepartureTime>10AM</DepartureTime>
+		<Canceled>0</Canceled>
+</Reservation>
+<Reservation>
+		<PropertyID>78</PropertyID>
+		<PropertyActive>1</PropertyActive>
+		<ReservationID>40301</ReservationID>
+		<ArrivalDate>12-26-2012</ArrivalDate>
+		<ArrivalTime>4PM</ArrivalTime>
+		<DepartureDate>12-30-2012</DepartureDate>
+		<DepartureTime>10AM</DepartureTime>
+		<Canceled>0</Canceled>
+</Reservation>
+<Reservation>
+		<PropertyID>79</PropertyID>
+		<PropertyActive>1</PropertyActive>
+		<ReservationID>40684</ReservationID>
+		<ArrivalDate>12-26-2012</ArrivalDate>
+		<ArrivalTime>4PM</ArrivalTime>
+		<DepartureDate>12-30-2012</DepartureDate>
+		<DepartureTime>10AM</DepartureTime>
+		<Canceled>0</Canceled>
+</Reservation>
+<Reservation>
+		<PropertyID>105</PropertyID>
+		<PropertyActive>1</PropertyActive>
+		<ReservationID>40982</ReservationID>
+		<ArrivalDate>12-26-2012</ArrivalDate>
+		<ArrivalTime>4PM</ArrivalTime>
+		<DepartureDate>12-30-2012</DepartureDate>
+		<DepartureTime>10AM</DepartureTime>
+		<Canceled>0</Canceled>
+</Reservation>
+<Reservation>
+		<PropertyID>137</PropertyID>
+		<PropertyActive>1</PropertyActive>
+		<ReservationID>41094</ReservationID>
+		<ArrivalDate>12-26-2012</ArrivalDate>
+		<ArrivalTime>4PM</ArrivalTime>
+		<DepartureDate>12-29-2012</DepartureDate>
+		<DepartureTime>10AM</DepartureTime>
+		<Canceled>0</Canceled>
+</Reservation>
+<Reservation>
+		<PropertyID>148</PropertyID>
+		<PropertyActive>1</PropertyActive>
+		<ReservationID>40803</ReservationID>
+		<ArrivalDate>12-26-2012</ArrivalDate>
+		<ArrivalTime>4PM</ArrivalTime>
+		<DepartureDate>12-31-2012</DepartureDate>
+		<DepartureTime>10AM</DepartureTime>
+		<Canceled>0</Canceled>
+</Reservation>
+<Reservation>
+		<PropertyID>157</PropertyID>
+		<PropertyActive>1</PropertyActive>
+		<ReservationID>41127</ReservationID>
+		<ArrivalDate>12-26-2012</ArrivalDate>
+		<ArrivalTime>4PM</ArrivalTime>
+		<DepartureDate>01-01-2013</DepartureDate>
+		<DepartureTime>10AM</DepartureTime>
+		<Canceled>0</Canceled>
+</Reservation>
+<Reservation>
+		<PropertyID>220</PropertyID>
+		<PropertyActive>1</PropertyActive>
+		<ReservationID>38489</ReservationID>
+		<ArrivalDate>12-26-2012</ArrivalDate>
+		<ArrivalTime>4PM</ArrivalTime>
+		<DepartureDate>12-31-2012</DepartureDate>
+		<DepartureTime>10AM</DepartureTime>
+		<Canceled>0</Canceled>
+</Reservation>
+<Reservation>
+		<PropertyID>242</PropertyID>
+		<PropertyActive>1</PropertyActive>
+		<ReservationID>41204</ReservationID>
+		<ArrivalDate>12-26-2012</ArrivalDate>
+		<ArrivalTime>4PM</ArrivalTime>
+		<DepartureDate>12-30-2012</DepartureDate>
+		<DepartureTime>10AM</DepartureTime>
+		<Canceled>0</Canceled>
+</Reservation>
+<Reservation>
+		<PropertyID>235</PropertyID>
+		<PropertyActive>1</PropertyActive>
+		<ReservationID>40688</ReservationID>
+		<ArrivalDate>12-26-2012</ArrivalDate>
+		<ArrivalTime>4PM</ArrivalTime>
+		<DepartureDate>01-01-2013</DepartureDate>
+		<DepartureTime>10AM</DepartureTime>
+		<Canceled>0</Canceled>
+</Reservation>
+<Reservation>
+		<PropertyID>268</PropertyID>
+		<PropertyActive>1</PropertyActive>
+		<ReservationID>40038</ReservationID>
+		<ArrivalDate>12-26-2012</ArrivalDate>
+		<ArrivalTime>4PM</ArrivalTime>
+		<DepartureDate>12-30-2012</DepartureDate>
+		<DepartureTime>10AM</DepartureTime>
+		<Canceled>0</Canceled>
+</Reservation>
+<Reservation>
+		<PropertyID>270</PropertyID>
+		<PropertyActive>1</PropertyActive>
+		<ReservationID>38896</ReservationID>
+		<ArrivalDate>12-26-2012</ArrivalDate>
+		<ArrivalTime>4PM</ArrivalTime>
+		<DepartureDate>01-04-2013</DepartureDate>
+		<DepartureTime>10AM</DepartureTime>
+		<Canceled>0</Canceled>
+</Reservation>
+<Reservation>
+		<PropertyID>318</PropertyID>
+		<PropertyActive>1</PropertyActive>
+		<ReservationID>41200</ReservationID>
+		<ArrivalDate>12-26-2012</ArrivalDate>
+		<ArrivalTime>4PM</ArrivalTime>
+		<DepartureDate>12-30-2012</DepartureDate>
+		<DepartureTime>10AM</DepartureTime>
+		<Canceled>0</Canceled>
+</Reservation>
+<Reservation>
+		<PropertyID>336</PropertyID>
+		<PropertyActive>1</PropertyActive>
+		<ReservationID>41206</ReservationID>
+		<ArrivalDate>12-26-2012</ArrivalDate>
+		<ArrivalTime>4PM</ArrivalTime>
+		<DepartureDate>12-30-2012</DepartureDate>
+		<DepartureTime>10AM</DepartureTime>
+		<Canceled>1</Canceled>
+</Reservation>
+<Reservation>
+		<PropertyID>375</PropertyID>
+		<PropertyActive>1</PropertyActive>
+		<ReservationID>41129</ReservationID>
+		<ArrivalDate>12-26-2012</ArrivalDate>
+		<ArrivalTime>4PM</ArrivalTime>
+		<DepartureDate>12-30-2012</DepartureDate>
+		<DepartureTime>10AM</DepartureTime>
+		<Canceled>0</Canceled>
+</Reservation>
+<Reservation>
+		<PropertyID>387</PropertyID>
+		<PropertyActive>1</PropertyActive>
+		<ReservationID>39681</ReservationID>
+		<ArrivalDate>12-26-2012</ArrivalDate>
+		<ArrivalTime>4PM</ArrivalTime>
+		<DepartureDate>01-02-2013</DepartureDate>
+		<DepartureTime>10AM</DepartureTime>
+		<Canceled>0</Canceled>
+</Reservation>
+<Reservation>
+		<PropertyID>393</PropertyID>
+		<PropertyActive>1</PropertyActive>
+		<ReservationID>40300</ReservationID>
+		<ArrivalDate>12-26-2012</ArrivalDate>
+		<ArrivalTime>4PM</ArrivalTime>
+		<DepartureDate>01-02-2013</DepartureDate>
+		<DepartureTime>10AM</DepartureTime>
+		<Canceled>0</Canceled>
+</Reservation>
+<Reservation>
+		<PropertyID>414</PropertyID>
+		<PropertyActive>1</PropertyActive>
+		<ReservationID>39685</ReservationID>
+		<ArrivalDate>12-26-2012</ArrivalDate>
+		<ArrivalTime>4PM</ArrivalTime>
+		<DepartureDate>12-31-2012</DepartureDate>
+		<DepartureTime>10AM</DepartureTime>
+		<Canceled>0</Canceled>
+</Reservation>
+<Reservation>
+		<PropertyID>445</PropertyID>
+		<PropertyActive>1</PropertyActive>
+		<ReservationID>41212</ReservationID>
+		<ArrivalDate>12-26-2012</ArrivalDate>
+		<ArrivalTime>4PM</ArrivalTime>
+		<DepartureDate>12-30-2012</DepartureDate>
+		<DepartureTime>10AM</DepartureTime>
+		<Canceled>0</Canceled>
+</Reservation>
+<Reservation>
+		<PropertyID>454</PropertyID>
+		<PropertyActive>1</PropertyActive>
+		<ReservationID>38914</ReservationID>
+		<ArrivalDate>12-26-2012</ArrivalDate>
+		<ArrivalTime>4PM</ArrivalTime>
+		<DepartureDate>12-31-2012</DepartureDate>
+		<DepartureTime>10AM</DepartureTime>
+		<Canceled>0</Canceled>
+</Reservation>
+<Reservation>
+		<PropertyID>459</PropertyID>
+		<PropertyActive>1</PropertyActive>
+		<ReservationID>40387</ReservationID>
+		<ArrivalDate>12-26-2012</ArrivalDate>
+		<ArrivalTime>4PM</ArrivalTime>
+		<DepartureDate>12-30-2012</DepartureDate>
+		<DepartureTime>10AM</DepartureTime>
+		<Canceled>0</Canceled>
+</Reservation>
+<Reservation>
+		<PropertyID>149</PropertyID>
+		<PropertyActive>1</PropertyActive>
+		<ReservationID>37965</ReservationID>
+		<ArrivalDate>12-27-2012</ArrivalDate>
+		<ArrivalTime>4PM</ArrivalTime>
+		<DepartureDate>01-02-2013</DepartureDate>
+		<DepartureTime>10AM</DepartureTime>
+		<Canceled>1</Canceled>
+</Reservation>
+<Reservation>
+		<PropertyID>237</PropertyID>
+		<PropertyActive>1</PropertyActive>
+		<ReservationID>39174</ReservationID>
+		<ArrivalDate>12-27-2012</ArrivalDate>
+		<ArrivalTime>4PM</ArrivalTime>
+		<DepartureDate>01-02-2013</DepartureDate>
+		<DepartureTime>10AM</DepartureTime>
+		<Canceled>1</Canceled>
+</Reservation>
+<Reservation>
+		<PropertyID>250</PropertyID>
+		<PropertyActive>1</PropertyActive>
+		<ReservationID>39783</ReservationID>
+		<ArrivalDate>12-27-2012</ArrivalDate>
+		<ArrivalTime>4PM</ArrivalTime>
+		<DepartureDate>01-01-2013</DepartureDate>
+		<DepartureTime>10AM</DepartureTime>
+		<Canceled>0</Canceled>
+</Reservation>
+<Reservation>
+		<PropertyID>353</PropertyID>
+		<PropertyActive>1</PropertyActive>
+		<ReservationID>41076</ReservationID>
+		<ArrivalDate>12-27-2012</ArrivalDate>
+		<ArrivalTime>4PM</ArrivalTime>
+		<DepartureDate>01-02-2013</DepartureDate>
+		<DepartureTime>10AM</DepartureTime>
+		<Canceled>0</Canceled>
+</Reservation>
+<Reservation>
+		<PropertyID>378</PropertyID>
+		<PropertyActive>1</PropertyActive>
+		<ReservationID>40917</ReservationID>
+		<ArrivalDate>12-27-2012</ArrivalDate>
+		<ArrivalTime>4PM</ArrivalTime>
+		<DepartureDate>12-31-2012</DepartureDate>
+		<DepartureTime>10AM</DepartureTime>
+		<Canceled>0</Canceled>
+</Reservation>
+<Reservation>
+		<PropertyID>372</PropertyID>
+		<PropertyActive>1</PropertyActive>
+		<ReservationID>41194</ReservationID>
+		<ArrivalDate>12-27-2012</ArrivalDate>
+		<ArrivalTime>4PM</ArrivalTime>
+		<DepartureDate>12-31-2012</DepartureDate>
+		<DepartureTime>10AM</DepartureTime>
+		<Canceled>0</Canceled>
+</Reservation>
+<Reservation>
+		<PropertyID>43</PropertyID>
+		<PropertyActive>1</PropertyActive>
+		<ReservationID>41203</ReservationID>
+		<ArrivalDate>12-28-2012</ArrivalDate>
+		<ArrivalTime>4PM</ArrivalTime>
+		<DepartureDate>01-01-2013</DepartureDate>
+		<DepartureTime>10AM</DepartureTime>
+		<Canceled>0</Canceled>
+</Reservation>
+<Reservation>
+		<PropertyID>70</PropertyID>
+		<PropertyActive>1</PropertyActive>
+		<ReservationID>40538</ReservationID>
+		<ArrivalDate>12-28-2012</ArrivalDate>
+		<ArrivalTime>4PM</ArrivalTime>
+		<DepartureDate>01-02-2013</DepartureDate>
+		<DepartureTime>10AM</DepartureTime>
+		<Canceled>0</Canceled>
+</Reservation>
+<Reservation>
+		<PropertyID>183</PropertyID>
+		<PropertyActive>1</PropertyActive>
+		<ReservationID>41208</ReservationID>
+		<ArrivalDate>12-28-2012</ArrivalDate>
+		<ArrivalTime>4PM</ArrivalTime>
+		<DepartureDate>01-03-2013</DepartureDate>
+		<DepartureTime>10AM</DepartureTime>
+		<Canceled>0</Canceled>
+</Reservation>
+<Reservation>
+		<PropertyID>150</PropertyID>
+		<PropertyActive>1</PropertyActive>
+		<ReservationID>40992</ReservationID>
+		<ArrivalDate>12-28-2012</ArrivalDate>
+		<ArrivalTime>4PM</ArrivalTime>
+		<DepartureDate>01-02-2013</DepartureDate>
+		<DepartureTime>10AM</DepartureTime>
+		<Canceled>0</Canceled>
+</Reservation>
+<Reservation>
+		<PropertyID>192</PropertyID>
+		<PropertyActive>1</PropertyActive>
+		<ReservationID>39992</ReservationID>
+		<ArrivalDate>12-28-2012</ArrivalDate>
+		<ArrivalTime>4PM</ArrivalTime>
+		<DepartureDate>01-03-2013</DepartureDate>
+		<DepartureTime>10AM</DepartureTime>
+		<Canceled>0</Canceled>
+</Reservation>
+<Reservation>
+		<PropertyID>218</PropertyID>
+		<PropertyActive>1</PropertyActive>
+		<ReservationID>41134</ReservationID>
+		<ArrivalDate>12-28-2012</ArrivalDate>
+		<ArrivalTime>4PM</ArrivalTime>
+		<DepartureDate>01-02-2013</DepartureDate>
+		<DepartureTime>10AM</DepartureTime>
+		<Canceled>0</Canceled>
+</Reservation>
+<Reservation>
+		<PropertyID>287</PropertyID>
+		<PropertyActive>1</PropertyActive>
+		<ReservationID>41026</ReservationID>
+		<ArrivalDate>12-28-2012</ArrivalDate>
+		<ArrivalTime>4PM</ArrivalTime>
+		<DepartureDate>01-01-2013</DepartureDate>
+		<DepartureTime>10AM</DepartureTime>
+		<Canceled>0</Canceled>
+</Reservation>
+<Reservation>
+		<PropertyID>310</PropertyID>
+		<PropertyActive>1</PropertyActive>
+		<ReservationID>39345</ReservationID>
+		<ArrivalDate>12-28-2012</ArrivalDate>
+		<ArrivalTime>4PM</ArrivalTime>
+		<DepartureDate>01-04-2013</DepartureDate>
+		<DepartureTime>10AM</DepartureTime>
+		<Canceled>0</Canceled>
+</Reservation>
+<Reservation>
+		<PropertyID>366</PropertyID>
+		<PropertyActive>1</PropertyActive>
+		<ReservationID>39631</ReservationID>
+		<ArrivalDate>12-28-2012</ArrivalDate>
+		<ArrivalTime>4PM</ArrivalTime>
+		<DepartureDate>01-01-2013</DepartureDate>
+		<DepartureTime>10AM</DepartureTime>
+		<Canceled>0</Canceled>
+</Reservation>
+<Reservation>
+		<PropertyID>21</PropertyID>
+		<PropertyActive>1</PropertyActive>
+		<ReservationID>39659</ReservationID>
+		<ArrivalDate>12-29-2012</ArrivalDate>
+		<ArrivalTime>4PM</ArrivalTime>
+		<DepartureDate>01-03-2013</DepartureDate>
+		<DepartureTime>10AM</DepartureTime>
+		<Canceled>0</Canceled>
+</Reservation>
+<Reservation>
+		<PropertyID>24</PropertyID>
+		<PropertyActive>1</PropertyActive>
+		<ReservationID>39887</ReservationID>
+		<ArrivalDate>12-29-2012</ArrivalDate>
+		<ArrivalTime>4PM</ArrivalTime>
+		<DepartureDate>01-01-2013</DepartureDate>
+		<DepartureTime>10AM</DepartureTime>
+		<Canceled>0</Canceled>
+</Reservation>
+<Reservation>
+		<PropertyID>143</PropertyID>
+		<PropertyActive>1</PropertyActive>
+		<ReservationID>38302</ReservationID>
+		<ArrivalDate>12-29-2012</ArrivalDate>
+		<ArrivalTime>4PM</ArrivalTime>
+		<DepartureDate>01-05-2013</DepartureDate>
+		<DepartureTime>10AM</DepartureTime>
+		<Canceled>0</Canceled>
+</Reservation>
+<Reservation>
+		<PropertyID>151</PropertyID>
+		<PropertyActive>1</PropertyActive>
+		<ReservationID>39888</ReservationID>
+		<ArrivalDate>12-29-2012</ArrivalDate>
+		<ArrivalTime>4PM</ArrivalTime>
+		<DepartureDate>01-01-2013</DepartureDate>
+		<DepartureTime>10AM</DepartureTime>
+		<Canceled>0</Canceled>
+</Reservation>
+<Reservation>
+		<PropertyID>230</PropertyID>
+		<PropertyActive>1</PropertyActive>
+		<ReservationID>39640</ReservationID>
+		<ArrivalDate>12-29-2012</ArrivalDate>
+		<ArrivalTime>4PM</ArrivalTime>
+		<DepartureDate>01-05-2013</DepartureDate>
+		<DepartureTime>10AM</DepartureTime>
+		<Canceled>0</Canceled>
+</Reservation>
+<Reservation>
+		<PropertyID>342</PropertyID>
+		<PropertyActive>1</PropertyActive>
+		<ReservationID>41148</ReservationID>
+		<ArrivalDate>12-30-2012</ArrivalDate>
+		<ArrivalTime>4PM</ArrivalTime>
+		<DepartureDate>01-04-2013</DepartureDate>
+		<DepartureTime>10AM</DepartureTime>
+		<Canceled>0</Canceled>
+</Reservation>
+<Reservation>
+		<PropertyID>404</PropertyID>
+		<PropertyActive>1</PropertyActive>
+		<ReservationID>38712</ReservationID>
+		<ArrivalDate>12-30-2012</ArrivalDate>
+		<ArrivalTime>4PM</ArrivalTime>
+		<DepartureDate>01-04-2013</DepartureDate>
+		<DepartureTime>10AM</DepartureTime>
+		<Canceled>0</Canceled>
+</Reservation>
+<Reservation>
+		<PropertyID>165</PropertyID>
+		<PropertyActive>1</PropertyActive>
+		<ReservationID>41120</ReservationID>
+		<ArrivalDate>12-31-2012</ArrivalDate>
+		<ArrivalTime>4PM</ArrivalTime>
+		<DepartureDate>01-05-2013</DepartureDate>
+		<DepartureTime>10AM</DepartureTime>
+		<Canceled>0</Canceled>
+</Reservation>
+<Reservation>
+		<PropertyID>207</PropertyID>
+		<PropertyActive>1</PropertyActive>
+		<ReservationID>40274</ReservationID>
+		<ArrivalDate>12-31-2012</ArrivalDate>
+		<ArrivalTime>4PM</ArrivalTime>
+		<DepartureDate>01-04-2013</DepartureDate>
+		<DepartureTime>10AM</DepartureTime>
+		<Canceled>0</Canceled>
+</Reservation>
+<Reservation>
+		<PropertyID>242</PropertyID>
+		<PropertyActive>1</PropertyActive>
+		<ReservationID>40778</ReservationID>
+		<ArrivalDate>12-31-2012</ArrivalDate>
+		<ArrivalTime>4PM</ArrivalTime>
+		<DepartureDate>01-04-2013</DepartureDate>
+		<DepartureTime>10AM</DepartureTime>
+		<Canceled>0</Canceled>
+</Reservation>
+<Reservation>
+		<PropertyID>263</PropertyID>
+		<PropertyActive>1</PropertyActive>
+		<ReservationID>37344</ReservationID>
+		<ArrivalDate>12-31-2012</ArrivalDate>
+		<ArrivalTime>4PM</ArrivalTime>
+		<DepartureDate>01-05-2013</DepartureDate>
+		<DepartureTime>10AM</DepartureTime>
+		<Canceled>0</Canceled>
+</Reservation>
+<Reservation>
+		<PropertyID>331</PropertyID>
+		<PropertyActive>1</PropertyActive>
+		<ReservationID>38449</ReservationID>
+		<ArrivalDate>12-31-2012</ArrivalDate>
+		<ArrivalTime>4PM</ArrivalTime>
+		<DepartureDate>01-06-2013</DepartureDate>
+		<DepartureTime>10AM</DepartureTime>
+		<Canceled>0</Canceled>
+</Reservation>
+<Reservation>
+		<PropertyID>339</PropertyID>
+		<PropertyActive>1</PropertyActive>
+		<ReservationID>41063</ReservationID>
+		<ArrivalDate>12-31-2012</ArrivalDate>
+		<ArrivalTime>4PM</ArrivalTime>
+		<DepartureDate>01-05-2013</DepartureDate>
+		<DepartureTime>10AM</DepartureTime>
+		<Canceled>0</Canceled>
+</Reservation>
+<Reservation>
+		<PropertyID>378</PropertyID>
+		<PropertyActive>1</PropertyActive>
+		<ReservationID>40971</ReservationID>
+		<ArrivalDate>12-31-2012</ArrivalDate>
+		<ArrivalTime>4PM</ArrivalTime>
+		<DepartureDate>01-04-2013</DepartureDate>
+		<DepartureTime>10AM</DepartureTime>
+		<Canceled>0</Canceled>
+</Reservation>
+<Reservation>
+		<PropertyID>375</PropertyID>
+		<PropertyActive>1</PropertyActive>
+		<ReservationID>41042</ReservationID>
+		<ArrivalDate>12-31-2012</ArrivalDate>
+		<ArrivalTime>4PM</ArrivalTime>
+		<DepartureDate>01-05-2013</DepartureDate>
+		<DepartureTime>10AM</DepartureTime>
+		<Canceled>0</Canceled>
+</Reservation>
+<Reservation>
+		<PropertyID>434</PropertyID>
+		<PropertyActive>1</PropertyActive>
+		<ReservationID>40533</ReservationID>
+		<ArrivalDate>12-31-2012</ArrivalDate>
+		<ArrivalTime>4PM</ArrivalTime>
+		<DepartureDate>01-30-2013</DepartureDate>
+		<DepartureTime>10AM</DepartureTime>
+		<Canceled>0</Canceled>
+</Reservation>
+<Reservation>
+		<PropertyID>396</PropertyID>
+		<PropertyActive>1</PropertyActive>
+		<ReservationID>41088</ReservationID>
+		<ArrivalDate>01-01-2013</ArrivalDate>
+		<ArrivalTime>4PM</ArrivalTime>
+		<DepartureDate>01-05-2013</DepartureDate>
+		<DepartureTime>10AM</DepartureTime>
+		<Canceled>0</Canceled>
+</Reservation>
+<Reservation>
+		<PropertyID>24</PropertyID>
+		<PropertyActive>1</PropertyActive>
+		<ReservationID>40925</ReservationID>
+		<ArrivalDate>01-01-2013</ArrivalDate>
+		<ArrivalTime>4PM</ArrivalTime>
+		<DepartureDate>01-06-2013</DepartureDate>
+		<DepartureTime>10AM</DepartureTime>
+		<Canceled>0</Canceled>
+</Reservation>
+<Reservation>
+		<PropertyID>115</PropertyID>
+		<PropertyActive>1</PropertyActive>
+		<ReservationID>41185</ReservationID>
+		<ArrivalDate>01-01-2013</ArrivalDate>
+		<ArrivalTime>4PM</ArrivalTime>
+		<DepartureDate>01-05-2013</DepartureDate>
+		<DepartureTime>10AM</DepartureTime>
+		<Canceled>0</Canceled>
+</Reservation>
+<Reservation>
+		<PropertyID>220</PropertyID>
+		<PropertyActive>1</PropertyActive>
+		<ReservationID>36001</ReservationID>
+		<ArrivalDate>01-01-2013</ArrivalDate>
+		<ArrivalTime>4PM</ArrivalTime>
+		<DepartureDate>01-05-2013</DepartureDate>
+		<DepartureTime>10AM</DepartureTime>
+		<Canceled>0</Canceled>
+</Reservation>
+<Reservation>
+		<PropertyID>102</PropertyID>
+		<PropertyActive>1</PropertyActive>
+		<ReservationID>39111</ReservationID>
+		<ArrivalDate>01-02-2013</ArrivalDate>
+		<ArrivalTime>4PM</ArrivalTime>
+		<DepartureDate>02-02-2013</DepartureDate>
+		<DepartureTime>10AM</DepartureTime>
+		<Canceled>0</Canceled>
+</Reservation>
+<Reservation>
+		<PropertyID>462</PropertyID>
+		<PropertyActive>1</PropertyActive>
+		<ReservationID>40072</ReservationID>
+		<ArrivalDate>01-02-2013</ArrivalDate>
+		<ArrivalTime>4PM</ArrivalTime>
+		<DepartureDate>01-07-2013</DepartureDate>
+		<DepartureTime>10AM</DepartureTime>
+		<Canceled>0</Canceled>
+</Reservation>
+<Reservation>
+		<PropertyID>313</PropertyID>
+		<PropertyActive>1</PropertyActive>
+		<ReservationID>41091</ReservationID>
+		<ArrivalDate>01-02-2013</ArrivalDate>
+		<ArrivalTime>4PM</ArrivalTime>
+		<DepartureDate>01-05-2013</DepartureDate>
+		<DepartureTime>10AM</DepartureTime>
+		<Canceled>0</Canceled>
+</Reservation>
+<Reservation>
+		<PropertyID>348</PropertyID>
+		<PropertyActive>1</PropertyActive>
+		<ReservationID>37139</ReservationID>
+		<ArrivalDate>01-02-2013</ArrivalDate>
+		<ArrivalTime>4PM</ArrivalTime>
+		<DepartureDate>01-07-2013</DepartureDate>
+		<DepartureTime>10AM</DepartureTime>
+		<Canceled>0</Canceled>
+</Reservation>
+<Reservation>
+		<PropertyID>353</PropertyID>
+		<PropertyActive>1</PropertyActive>
+		<ReservationID>40470</ReservationID>
+		<ArrivalDate>01-02-2013</ArrivalDate>
+		<ArrivalTime>4PM</ArrivalTime>
+		<DepartureDate>01-06-2013</DepartureDate>
+		<DepartureTime>10AM</DepartureTime>
+		<Canceled>0</Canceled>
+</Reservation>
+<Reservation>
+		<PropertyID>359</PropertyID>
+		<PropertyActive>1</PropertyActive>
+		<ReservationID>40919</ReservationID>
+		<ArrivalDate>01-02-2013</ArrivalDate>
+		<ArrivalTime>4PM</ArrivalTime>
+		<DepartureDate>01-11-2013</DepartureDate>
+		<DepartureTime>10AM</DepartureTime>
+		<Canceled>0</Canceled>
+</Reservation>
+<Reservation>
+		<PropertyID>398</PropertyID>
+		<PropertyActive>1</PropertyActive>
+		<ReservationID>40995</ReservationID>
+		<ArrivalDate>01-02-2013</ArrivalDate>
+		<ArrivalTime>4PM</ArrivalTime>
+		<DepartureDate>01-06-2013</DepartureDate>
+		<DepartureTime>10AM</DepartureTime>
+		<Canceled>0</Canceled>
+</Reservation>
+<Reservation>
+		<PropertyID>427</PropertyID>
+		<PropertyActive>1</PropertyActive>
+		<ReservationID>38797</ReservationID>
+		<ArrivalDate>01-02-2013</ArrivalDate>
+		<ArrivalTime>4PM</ArrivalTime>
+		<DepartureDate>01-06-2013</DepartureDate>
+		<DepartureTime>10AM</DepartureTime>
+		<Canceled>0</Canceled>
+</Reservation>
+<Reservation>
+		<PropertyID>192</PropertyID>
+		<PropertyActive>1</PropertyActive>
+		<ReservationID>40966</ReservationID>
+		<ArrivalDate>01-03-2013</ArrivalDate>
+		<ArrivalTime>4PM</ArrivalTime>
+		<DepartureDate>01-06-2013</DepartureDate>
+		<DepartureTime>10AM</DepartureTime>
+		<Canceled>0</Canceled>
+</Reservation>
+<Reservation>
+		<PropertyID>225</PropertyID>
+		<PropertyActive>1</PropertyActive>
+		<ReservationID>41107</ReservationID>
+		<ArrivalDate>01-03-2013</ArrivalDate>
+		<ArrivalTime>4PM</ArrivalTime>
+		<DepartureDate>01-08-2013</DepartureDate>
+		<DepartureTime>10AM</DepartureTime>
+		<Canceled>0</Canceled>
+</Reservation>
+<Reservation>
+		<PropertyID>287</PropertyID>
+		<PropertyActive>1</PropertyActive>
+		<ReservationID>37266</ReservationID>
+		<ArrivalDate>01-03-2013</ArrivalDate>
+		<ArrivalTime>4PM</ArrivalTime>
+		<DepartureDate>01-08-2013</DepartureDate>
+		<DepartureTime>10AM</DepartureTime>
+		<Canceled>0</Canceled>
+</Reservation>
+<Reservation>
+		<PropertyID>302</PropertyID>
+		<PropertyActive>1</PropertyActive>
+		<ReservationID>41012</ReservationID>
+		<ArrivalDate>01-03-2013</ArrivalDate>
+		<ArrivalTime>4PM</ArrivalTime>
+		<DepartureDate>01-06-2013</DepartureDate>
+		<DepartureTime>10AM</DepartureTime>
+		<Canceled>0</Canceled>
+</Reservation>
+<Reservation>
+		<PropertyID>395</PropertyID>
+		<PropertyActive>1</PropertyActive>
+		<ReservationID>41153</ReservationID>
+		<ArrivalDate>01-03-2013</ArrivalDate>
+		<ArrivalTime>4PM</ArrivalTime>
+		<DepartureDate>01-19-2013</DepartureDate>
+		<DepartureTime>10AM</DepartureTime>
+		<Canceled>0</Canceled>
+</Reservation>
+<Reservation>
+		<PropertyID>99</PropertyID>
+		<PropertyActive>1</PropertyActive>
+		<ReservationID>41061</ReservationID>
+		<ArrivalDate>01-04-2013</ArrivalDate>
+		<ArrivalTime>4PM</ArrivalTime>
+		<DepartureDate>01-08-2013</DepartureDate>
+		<DepartureTime>10AM</DepartureTime>
+		<Canceled>0</Canceled>
+</Reservation>
+<Reservation>
+		<PropertyID>162</PropertyID>
+		<PropertyActive>1</PropertyActive>
+		<ReservationID>40455</ReservationID>
+		<ArrivalDate>01-04-2013</ArrivalDate>
+		<ArrivalTime>4PM</ArrivalTime>
+		<DepartureDate>01-10-2013</DepartureDate>
+		<DepartureTime>10AM</DepartureTime>
+		<Canceled>0</Canceled>
+</Reservation>
+<Reservation>
+		<PropertyID>168</PropertyID>
+		<PropertyActive>1</PropertyActive>
+		<ReservationID>41059</ReservationID>
+		<ArrivalDate>01-04-2013</ArrivalDate>
+		<ArrivalTime>4PM</ArrivalTime>
+		<DepartureDate>01-08-2013</DepartureDate>
+		<DepartureTime>10AM</DepartureTime>
+		<Canceled>0</Canceled>
+</Reservation>
+<Reservation>
+		<PropertyID>207</PropertyID>
+		<PropertyActive>1</PropertyActive>
+		<ReservationID>40275</ReservationID>
+		<ArrivalDate>01-04-2013</ArrivalDate>
+		<ArrivalTime>4PM</ArrivalTime>
+		<DepartureDate>01-06-2013</DepartureDate>
+		<DepartureTime>10AM</DepartureTime>
+		<Canceled>0</Canceled>
+</Reservation>
+<Reservation>
+		<PropertyID>82</PropertyID>
+		<PropertyActive>1</PropertyActive>
+		<ReservationID>40863</ReservationID>
+		<ArrivalDate>01-05-2013</ArrivalDate>
+		<ArrivalTime>4PM</ArrivalTime>
+		<DepartureDate>01-12-2013</DepartureDate>
+		<DepartureTime>10AM</DepartureTime>
+		<Canceled>0</Canceled>
+</Reservation>
+<Reservation>
+		<PropertyID>89</PropertyID>
+		<PropertyActive>1</PropertyActive>
+		<ReservationID>40843</ReservationID>
+		<ArrivalDate>01-05-2013</ArrivalDate>
+		<ArrivalTime>4PM</ArrivalTime>
+		<DepartureDate>01-10-2013</DepartureDate>
+		<DepartureTime>10AM</DepartureTime>
+		<Canceled>0</Canceled>
+</Reservation>
+<Reservation>
+		<PropertyID>143</PropertyID>
+		<PropertyActive>1</PropertyActive>
+		<ReservationID>39500</ReservationID>
+		<ArrivalDate>01-05-2013</ArrivalDate>
+		<ArrivalTime>4PM</ArrivalTime>
+		<DepartureDate>01-09-2013</DepartureDate>
+		<DepartureTime>10AM</DepartureTime>
+		<Canceled>0</Canceled>
+</Reservation>
+<Reservation>
+		<PropertyID>263</PropertyID>
+		<PropertyActive>1</PropertyActive>
+		<ReservationID>40859</ReservationID>
+		<ArrivalDate>01-05-2013</ArrivalDate>
+		<ArrivalTime>4PM</ArrivalTime>
+		<DepartureDate>01-14-2013</DepartureDate>
+		<DepartureTime>10AM</DepartureTime>
+		<Canceled>0</Canceled>
+</Reservation>
+<Reservation>
+		<PropertyID>378</PropertyID>
+		<PropertyActive>1</PropertyActive>
+		<ReservationID>40647</ReservationID>
+		<ArrivalDate>01-05-2013</ArrivalDate>
+		<ArrivalTime>4PM</ArrivalTime>
+		<DepartureDate>01-11-2013</DepartureDate>
+		<DepartureTime>10AM</DepartureTime>
+		<Canceled>0</Canceled>
+</Reservation>
+<Reservation>
+		<PropertyID>115</PropertyID>
+		<PropertyActive>1</PropertyActive>
+		<ReservationID>40916</ReservationID>
+		<ArrivalDate>01-06-2013</ArrivalDate>
+		<ArrivalTime>3PM</ArrivalTime>
+		<DepartureDate>01-11-2013</DepartureDate>
+		<DepartureTime>10AM</DepartureTime>
+		<Canceled>0</Canceled>
+</Reservation>
+<Reservation>
+		<PropertyID>58</PropertyID>
+		<PropertyActive>1</PropertyActive>
+		<ReservationID>41191</ReservationID>
+		<ArrivalDate>01-07-2013</ArrivalDate>
+		<ArrivalTime>4PM</ArrivalTime>
+		<DepartureDate>01-11-2013</DepartureDate>
+		<DepartureTime>10AM</DepartureTime>
+		<Canceled>0</Canceled>
+</Reservation>
+<Reservation>
+		<PropertyID>202</PropertyID>
+		<PropertyActive>1</PropertyActive>
+		<ReservationID>41155</ReservationID>
+		<ArrivalDate>01-07-2013</ArrivalDate>
+		<ArrivalTime>4PM</ArrivalTime>
+		<DepartureDate>01-17-2013</DepartureDate>
+		<DepartureTime>10AM</DepartureTime>
+		<Canceled>0</Canceled>
+</Reservation>
+<Reservation>
+		<PropertyID>459</PropertyID>
+		<PropertyActive>1</PropertyActive>
+		<ReservationID>40696</ReservationID>
+		<ArrivalDate>01-07-2013</ArrivalDate>
+		<ArrivalTime>4PM</ArrivalTime>
+		<DepartureDate>01-12-2013</DepartureDate>
+		<DepartureTime>10AM</DepartureTime>
+		<Canceled>0</Canceled>
+</Reservation>
+<Reservation>
+		<PropertyID>151</PropertyID>
+		<PropertyActive>1</PropertyActive>
+		<ReservationID>40693</ReservationID>
+		<ArrivalDate>01-08-2013</ArrivalDate>
+		<ArrivalTime>4PM</ArrivalTime>
+		<DepartureDate>01-12-2013</DepartureDate>
+		<DepartureTime>10AM</DepartureTime>
+		<Canceled>0</Canceled>
+</Reservation>
+<Reservation>
+		<PropertyID>220</PropertyID>
+		<PropertyActive>1</PropertyActive>
+		<ReservationID>40832</ReservationID>
+		<ArrivalDate>01-08-2013</ArrivalDate>
+		<ArrivalTime>4PM</ArrivalTime>
+		<DepartureDate>01-13-2013</DepartureDate>
+		<DepartureTime>10AM</DepartureTime>
+		<Canceled>0</Canceled>
+</Reservation>
+<Reservation>
+		<PropertyID>363</PropertyID>
+		<PropertyActive>1</PropertyActive>
+		<ReservationID>40302</ReservationID>
+		<ArrivalDate>01-09-2013</ArrivalDate>
+		<ArrivalTime>4PM</ArrivalTime>
+		<DepartureDate>02-01-2013</DepartureDate>
+		<DepartureTime>10AM</DepartureTime>
+		<Canceled>0</Canceled>
+</Reservation>
+<Reservation>
+		<PropertyID>292</PropertyID>
+		<PropertyActive>1</PropertyActive>
+		<ReservationID>40903</ReservationID>
+		<ArrivalDate>01-10-2013</ArrivalDate>
+		<ArrivalTime>4PM</ArrivalTime>
+		<DepartureDate>01-14-2013</DepartureDate>
+		<DepartureTime>10AM</DepartureTime>
+		<Canceled>0</Canceled>
+</Reservation>
+<Reservation>
+		<PropertyID>450</PropertyID>
+		<PropertyActive>1</PropertyActive>
+		<ReservationID>40964</ReservationID>
+		<ArrivalDate>01-11-2013</ArrivalDate>
+		<ArrivalTime>4PM</ArrivalTime>
+		<DepartureDate>01-13-2013</DepartureDate>
+		<DepartureTime>10AM</DepartureTime>
+		<Canceled>0</Canceled>
+</Reservation>
+<Reservation>
+		<PropertyID>418</PropertyID>
+		<PropertyActive>1</PropertyActive>
+		<ReservationID>41085</ReservationID>
+		<ArrivalDate>01-12-2013</ArrivalDate>
+		<ArrivalTime>4PM</ArrivalTime>
+		<DepartureDate>01-16-2013</DepartureDate>
+		<DepartureTime>10AM</DepartureTime>
+		<Canceled>0</Canceled>
+</Reservation>
+<Reservation>
+		<PropertyID>351</PropertyID>
+		<PropertyActive>1</PropertyActive>
+		<ReservationID>40277</ReservationID>
+		<ArrivalDate>01-12-2013</ArrivalDate>
+		<ArrivalTime>4PM</ArrivalTime>
+		<DepartureDate>02-08-2013</DepartureDate>
+		<DepartureTime>10AM</DepartureTime>
+		<Canceled>0</Canceled>
+</Reservation>
+<Reservation>
+		<PropertyID>241</PropertyID>
+		<PropertyActive>1</PropertyActive>
+		<ReservationID>40737</ReservationID>
+		<ArrivalDate>01-13-2013</ArrivalDate>
+		<ArrivalTime>4PM</ArrivalTime>
+		<DepartureDate>01-18-2013</DepartureDate>
+		<DepartureTime>10AM</DepartureTime>
+		<Canceled>0</Canceled>
+</Reservation>
+<Reservation>
+		<PropertyID>397</PropertyID>
+		<PropertyActive>1</PropertyActive>
+		<ReservationID>36875</ReservationID>
+		<ArrivalDate>01-13-2013</ArrivalDate>
+		<ArrivalTime>4PM</ArrivalTime>
+		<DepartureDate>01-18-2013</DepartureDate>
+		<DepartureTime>10AM</DepartureTime>
+		<Canceled>1</Canceled>
+</Reservation>
+<Reservation>
+		<PropertyID>225</PropertyID>
+		<PropertyActive>1</PropertyActive>
+		<ReservationID>37766</ReservationID>
+		<ArrivalDate>01-15-2013</ArrivalDate>
+		<ArrivalTime>4PM</ArrivalTime>
+		<DepartureDate>03-15-2013</DepartureDate>
+		<DepartureTime>10AM</DepartureTime>
+		<Canceled>0</Canceled>
+</Reservation>
+<Reservation>
+		<PropertyID>325</PropertyID>
+		<PropertyActive>1</PropertyActive>
+		<ReservationID>41146</ReservationID>
+		<ArrivalDate>01-16-2013</ArrivalDate>
+		<ArrivalTime>4PM</ArrivalTime>
+		<DepartureDate>01-20-2013</DepartureDate>
+		<DepartureTime>10AM</DepartureTime>
+		<Canceled>0</Canceled>
+</Reservation>
+<Reservation>
+		<PropertyID>21</PropertyID>
+		<PropertyActive>1</PropertyActive>
+		<ReservationID>40954</ReservationID>
+		<ArrivalDate>01-17-2013</ArrivalDate>
+		<ArrivalTime>4PM</ArrivalTime>
+		<DepartureDate>01-20-2013</DepartureDate>
+		<DepartureTime>10AM</DepartureTime>
+		<Canceled>0</Canceled>
+</Reservation>
+<Reservation>
+		<PropertyID>115</PropertyID>
+		<PropertyActive>1</PropertyActive>
+		<ReservationID>40257</ReservationID>
+		<ArrivalDate>01-17-2013</ArrivalDate>
+		<ArrivalTime>4PM</ArrivalTime>
+		<DepartureDate>01-21-2013</DepartureDate>
+		<DepartureTime>10AM</DepartureTime>
+		<Canceled>0</Canceled>
+</Reservation>
+<Reservation>
+		<PropertyID>202</PropertyID>
+		<PropertyActive>1</PropertyActive>
+		<ReservationID>38851</ReservationID>
+		<ArrivalDate>01-17-2013</ArrivalDate>
+		<ArrivalTime>4PM</ArrivalTime>
+		<DepartureDate>01-21-2013</DepartureDate>
+		<DepartureTime>10AM</DepartureTime>
+		<Canceled>0</Canceled>
+</Reservation>
+<Reservation>
+		<PropertyID>268</PropertyID>
+		<PropertyActive>1</PropertyActive>
+		<ReservationID>39169</ReservationID>
+		<ArrivalDate>01-17-2013</ArrivalDate>
+		<ArrivalTime>4PM</ArrivalTime>
+		<DepartureDate>01-21-2013</DepartureDate>
+		<DepartureTime>10AM</DepartureTime>
+		<Canceled>0</Canceled>
+</Reservation>
+<Reservation>
+		<PropertyID>378</PropertyID>
+		<PropertyActive>1</PropertyActive>
+		<ReservationID>40820</ReservationID>
+		<ArrivalDate>01-17-2013</ArrivalDate>
+		<ArrivalTime>4PM</ArrivalTime>
+		<DepartureDate>01-22-2013</DepartureDate>
+		<DepartureTime>10AM</DepartureTime>
+		<Canceled>0</Canceled>
+</Reservation>
+<Reservation>
+		<PropertyID>227</PropertyID>
+		<PropertyActive>1</PropertyActive>
+		<ReservationID>40913</ReservationID>
+		<ArrivalDate>01-18-2013</ArrivalDate>
+		<ArrivalTime>4PM</ArrivalTime>
+		<DepartureDate>01-23-2013</DepartureDate>
+		<DepartureTime>10AM</DepartureTime>
+		<Canceled>0</Canceled>
+</Reservation>
+<Reservation>
+		<PropertyID>263</PropertyID>
+		<PropertyActive>1</PropertyActive>
+		<ReservationID>40687</ReservationID>
+		<ArrivalDate>01-18-2013</ArrivalDate>
+		<ArrivalTime>4PM</ArrivalTime>
+		<DepartureDate>01-23-2013</DepartureDate>
+		<DepartureTime>10AM</DepartureTime>
+		<Canceled>0</Canceled>
+</Reservation>
+<Reservation>
+		<PropertyID>148</PropertyID>
+		<PropertyActive>1</PropertyActive>
+		<ReservationID>41179</ReservationID>
+		<ArrivalDate>01-19-2013</ArrivalDate>
+		<ArrivalTime>4PM</ArrivalTime>
+		<DepartureDate>01-23-2013</DepartureDate>
+		<DepartureTime>10AM</DepartureTime>
+		<Canceled>0</Canceled>
+</Reservation>
+<Reservation>
+		<PropertyID>402</PropertyID>
+		<PropertyActive>1</PropertyActive>
+		<ReservationID>39997</ReservationID>
+		<ArrivalDate>01-19-2013</ArrivalDate>
+		<ArrivalTime>4PM</ArrivalTime>
+		<DepartureDate>01-25-2013</DepartureDate>
+		<DepartureTime>10AM</DepartureTime>
+		<Canceled>0</Canceled>
+</Reservation>
+<Reservation>
+		<PropertyID>400</PropertyID>
+		<PropertyActive>1</PropertyActive>
+		<ReservationID>41157</ReservationID>
+		<ArrivalDate>01-20-2013</ArrivalDate>
+		<ArrivalTime>4PM</ArrivalTime>
+		<DepartureDate>01-26-2013</DepartureDate>
+		<DepartureTime>10AM</DepartureTime>
+		<Canceled>0</Canceled>
+</Reservation>
+<Reservation>
+		<PropertyID>33</PropertyID>
+		<PropertyActive>1</PropertyActive>
+		<ReservationID>40740</ReservationID>
+		<ArrivalDate>01-21-2013</ArrivalDate>
+		<ArrivalTime>4PM</ArrivalTime>
+		<DepartureDate>01-27-2013</DepartureDate>
+		<DepartureTime>10AM</DepartureTime>
+		<Canceled>0</Canceled>
+</Reservation>
+<Reservation>
+		<PropertyID>157</PropertyID>
+		<PropertyActive>1</PropertyActive>
+		<ReservationID>40739</ReservationID>
+		<ArrivalDate>01-21-2013</ArrivalDate>
+		<ArrivalTime>4PM</ArrivalTime>
+		<DepartureDate>01-27-2013</DepartureDate>
+		<DepartureTime>10AM</DepartureTime>
+		<Canceled>0</Canceled>
+</Reservation>
+<Reservation>
+		<PropertyID>384</PropertyID>
+		<PropertyActive>1</PropertyActive>
+		<ReservationID>41089</ReservationID>
+		<ArrivalDate>01-21-2013</ArrivalDate>
+		<ArrivalTime>4PM</ArrivalTime>
+		<DepartureDate>01-24-2013</DepartureDate>
+		<DepartureTime>10AM</DepartureTime>
+		<Canceled>0</Canceled>
+</Reservation>
+<Reservation>
+		<PropertyID>350</PropertyID>
+		<PropertyActive>1</PropertyActive>
+		<ReservationID>40474</ReservationID>
+		<ArrivalDate>01-22-2013</ArrivalDate>
+		<ArrivalTime>4PM</ArrivalTime>
+		<DepartureDate>02-05-2013</DepartureDate>
+		<DepartureTime>10AM</DepartureTime>
+		<Canceled>0</Canceled>
+</Reservation>
+<Reservation>
+		<PropertyID>220</PropertyID>
+		<PropertyActive>1</PropertyActive>
+		<ReservationID>38893</ReservationID>
+		<ArrivalDate>01-23-2013</ArrivalDate>
+		<ArrivalTime>4PM</ArrivalTime>
+		<DepartureDate>01-27-2013</DepartureDate>
+		<DepartureTime>10AM</DepartureTime>
+		<Canceled>0</Canceled>
+</Reservation>
+<Reservation>
+		<PropertyID>405</PropertyID>
+		<PropertyActive>1</PropertyActive>
+		<ReservationID>41118</ReservationID>
+		<ArrivalDate>01-23-2013</ArrivalDate>
+		<ArrivalTime>4PM</ArrivalTime>
+		<DepartureDate>01-27-2013</DepartureDate>
+		<DepartureTime>10AM</DepartureTime>
+		<Canceled>0</Canceled>
+</Reservation>
+<Reservation>
+		<PropertyID>180</PropertyID>
+		<PropertyActive>1</PropertyActive>
+		<ReservationID>41214</ReservationID>
+		<ArrivalDate>01-24-2013</ArrivalDate>
+		<ArrivalTime>4PM</ArrivalTime>
+		<DepartureDate>01-30-2013</DepartureDate>
+		<DepartureTime>10AM</DepartureTime>
+		<Canceled>0</Canceled>
+</Reservation>
+<Reservation>
+		<PropertyID>78</PropertyID>
+		<PropertyActive>1</PropertyActive>
+		<ReservationID>36758</ReservationID>
+		<ArrivalDate>01-24-2013</ArrivalDate>
+		<ArrivalTime>4PM</ArrivalTime>
+		<DepartureDate>01-28-2013</DepartureDate>
+		<DepartureTime>10AM</DepartureTime>
+		<Canceled>0</Canceled>
+</Reservation>
+<Reservation>
+		<PropertyID>89</PropertyID>
+		<PropertyActive>1</PropertyActive>
+		<ReservationID>41215</ReservationID>
+		<ArrivalDate>01-25-2013</ArrivalDate>
+		<ArrivalTime>4PM</ArrivalTime>
+		<DepartureDate>01-30-2013</DepartureDate>
+		<DepartureTime>10AM</DepartureTime>
+		<Canceled>0</Canceled>
+</Reservation>
+<Reservation>
+		<PropertyID>149</PropertyID>
+		<PropertyActive>1</PropertyActive>
+		<ReservationID>40819</ReservationID>
+		<ArrivalDate>01-25-2013</ArrivalDate>
+		<ArrivalTime>4PM</ArrivalTime>
+		<DepartureDate>01-30-2013</DepartureDate>
+		<DepartureTime>10AM</DepartureTime>
+		<Canceled>0</Canceled>
+</Reservation>
+<Reservation>
+		<PropertyID>201</PropertyID>
+		<PropertyActive>1</PropertyActive>
+		<ReservationID>40477</ReservationID>
+		<ArrivalDate>01-25-2013</ArrivalDate>
+		<ArrivalTime>4PM</ArrivalTime>
+		<DepartureDate>01-29-2013</DepartureDate>
+		<DepartureTime>10AM</DepartureTime>
+		<Canceled>0</Canceled>
+</Reservation>
+<Reservation>
+		<PropertyID>263</PropertyID>
+		<PropertyActive>1</PropertyActive>
+		<ReservationID>40860</ReservationID>
+		<ArrivalDate>01-25-2013</ArrivalDate>
+		<ArrivalTime>4PM</ArrivalTime>
+		<DepartureDate>02-02-2013</DepartureDate>
+		<DepartureTime>10AM</DepartureTime>
+		<Canceled>0</Canceled>
+</Reservation>
+<Reservation>
+		<PropertyID>91</PropertyID>
+		<PropertyActive>1</PropertyActive>
+		<ReservationID>37546</ReservationID>
+		<ArrivalDate>01-26-2013</ArrivalDate>
+		<ArrivalTime>4PM</ArrivalTime>
+		<DepartureDate>02-09-2013</DepartureDate>
+		<DepartureTime>10AM</DepartureTime>
+		<Canceled>0</Canceled>
+</Reservation>
+<Reservation>
+		<PropertyID>161</PropertyID>
+		<PropertyActive>1</PropertyActive>
+		<ReservationID>40453</ReservationID>
+		<ArrivalDate>01-26-2013</ArrivalDate>
+		<ArrivalTime>4PM</ArrivalTime>
+		<DepartureDate>02-02-2013</DepartureDate>
+		<DepartureTime>10AM</DepartureTime>
+		<Canceled>0</Canceled>
+</Reservation>
+<Reservation>
+		<PropertyID>229</PropertyID>
+		<PropertyActive>1</PropertyActive>
+		<ReservationID>37056</ReservationID>
+		<ArrivalDate>01-26-2013</ArrivalDate>
+		<ArrivalTime>9AM</ArrivalTime>
+		<DepartureDate>02-09-2013</DepartureDate>
+		<DepartureTime>10AM</DepartureTime>
+		<Canceled>1</Canceled>
+</Reservation>
+<Reservation>
+		<PropertyID>353</PropertyID>
+		<PropertyActive>1</PropertyActive>
+		<ReservationID>37310</ReservationID>
+		<ArrivalDate>01-26-2013</ArrivalDate>
+		<ArrivalTime>4PM</ArrivalTime>
+		<DepartureDate>01-28-2013</DepartureDate>
+		<DepartureTime>10AM</DepartureTime>
+		<Canceled>0</Canceled>
+</Reservation>
+<Reservation>
+		<PropertyID>402</PropertyID>
+		<PropertyActive>1</PropertyActive>
+		<ReservationID>39998</ReservationID>
+		<ArrivalDate>01-27-2013</ArrivalDate>
+		<ArrivalTime>4PM</ArrivalTime>
+		<DepartureDate>02-01-2013</DepartureDate>
+		<DepartureTime>10AM</DepartureTime>
+		<Canceled>1</Canceled>
+</Reservation>
+<Reservation>
+		<PropertyID>240</PropertyID>
+		<PropertyActive>1</PropertyActive>
+		<ReservationID>40895</ReservationID>
+		<ArrivalDate>01-28-2013</ArrivalDate>
+		<ArrivalTime>4PM</ArrivalTime>
+		<DepartureDate>02-05-2013</DepartureDate>
+		<DepartureTime>10AM</DepartureTime>
+		<Canceled>0</Canceled>
+</Reservation>
+<Reservation>
+		<PropertyID>325</PropertyID>
+		<PropertyActive>1</PropertyActive>
+		<ReservationID>41126</ReservationID>
+		<ArrivalDate>01-29-2013</ArrivalDate>
+		<ArrivalTime>4PM</ArrivalTime>
+		<DepartureDate>02-03-2013</DepartureDate>
+		<DepartureTime>10AM</DepartureTime>
+		<Canceled>0</Canceled>
+</Reservation>
+<Reservation>
+		<PropertyID>169</PropertyID>
+		<PropertyActive>1</PropertyActive>
+		<ReservationID>39582</ReservationID>
+		<ArrivalDate>01-30-2013</ArrivalDate>
+		<ArrivalTime>4PM</ArrivalTime>
+		<DepartureDate>02-28-2013</DepartureDate>
+		<DepartureTime>10AM</DepartureTime>
+		<Canceled>0</Canceled>
+</Reservation>
+<Reservation>
+		<PropertyID>201</PropertyID>
+		<PropertyActive>1</PropertyActive>
+		<ReservationID>40945</ReservationID>
+		<ArrivalDate>01-30-2013</ArrivalDate>
+		<ArrivalTime>4PM</ArrivalTime>
+		<DepartureDate>02-03-2013</DepartureDate>
+		<DepartureTime>10AM</DepartureTime>
+		<Canceled>0</Canceled>
+</Reservation>
+<Reservation>
+		<PropertyID>434</PropertyID>
+		<PropertyActive>1</PropertyActive>
+		<ReservationID>40535</ReservationID>
+		<ArrivalDate>01-30-2013</ArrivalDate>
+		<ArrivalTime>4PM</ArrivalTime>
+		<DepartureDate>03-01-2013</DepartureDate>
+		<DepartureTime>10AM</DepartureTime>
+		<Canceled>0</Canceled>
+</Reservation>
+<Reservation>
+		<PropertyID>448</PropertyID>
+		<PropertyActive>1</PropertyActive>
+		<ReservationID>41138</ReservationID>
+		<ArrivalDate>01-31-2013</ArrivalDate>
+		<ArrivalTime>4PM</ArrivalTime>
+		<DepartureDate>02-04-2013</DepartureDate>
+		<DepartureTime>10AM</DepartureTime>
+		<Canceled>0</Canceled>
+</Reservation>
+<Reservation>
+		<PropertyID>452</PropertyID>
+		<PropertyActive>1</PropertyActive>
+		<ReservationID>40395</ReservationID>
+		<ArrivalDate>01-31-2013</ArrivalDate>
+		<ArrivalTime>4PM</ArrivalTime>
+		<DepartureDate>02-24-2013</DepartureDate>
+		<DepartureTime>10AM</DepartureTime>
+		<Canceled>0</Canceled>
+</Reservation>
+<Reservation>
+		<PropertyID>218</PropertyID>
+		<PropertyActive>1</PropertyActive>
+		<ReservationID>40528</ReservationID>
+		<ArrivalDate>02-01-2013</ArrivalDate>
+		<ArrivalTime>4PM</ArrivalTime>
+		<DepartureDate>02-10-2013</DepartureDate>
+		<DepartureTime>10AM</DepartureTime>
+		<Canceled>0</Canceled>
+</Reservation>
+<Reservation>
+		<PropertyID>363</PropertyID>
+		<PropertyActive>1</PropertyActive>
+		<ReservationID>38905</ReservationID>
+		<ArrivalDate>02-01-2013</ArrivalDate>
+		<ArrivalTime>4PM</ArrivalTime>
+		<DepartureDate>02-28-2013</DepartureDate>
+		<DepartureTime>10AM</DepartureTime>
+		<Canceled>0</Canceled>
+</Reservation>
+<Reservation>
+		<PropertyID>450</PropertyID>
+		<PropertyActive>1</PropertyActive>
+		<ReservationID>40965</ReservationID>
+		<ArrivalDate>02-01-2013</ArrivalDate>
+		<ArrivalTime>4PM</ArrivalTime>
+		<DepartureDate>02-03-2013</DepartureDate>
+		<DepartureTime>10AM</DepartureTime>
+		<Canceled>0</Canceled>
+</Reservation>
+<Reservation>
+		<PropertyID>197</PropertyID>
+		<PropertyActive>1</PropertyActive>
+		<ReservationID>37549</ReservationID>
+		<ArrivalDate>02-02-2013</ArrivalDate>
+		<ArrivalTime>4PM</ArrivalTime>
+		<DepartureDate>02-15-2013</DepartureDate>
+		<DepartureTime>10AM</DepartureTime>
+		<Canceled>0</Canceled>
+</Reservation>
+<Reservation>
+		<PropertyID>254</PropertyID>
+		<PropertyActive>1</PropertyActive>
+		<ReservationID>41130</ReservationID>
+		<ArrivalDate>02-02-2013</ArrivalDate>
+		<ArrivalTime>4PM</ArrivalTime>
+		<DepartureDate>02-09-2013</DepartureDate>
+		<DepartureTime>10AM</DepartureTime>
+		<Canceled>1</Canceled>
+</Reservation>
+<Reservation>
+		<PropertyID>378</PropertyID>
+		<PropertyActive>1</PropertyActive>
+		<ReservationID>41213</ReservationID>
+		<ArrivalDate>02-02-2013</ArrivalDate>
+		<ArrivalTime>4PM</ArrivalTime>
+		<DepartureDate>02-10-2013</DepartureDate>
+		<DepartureTime>10AM</DepartureTime>
+		<Canceled>0</Canceled>
+</Reservation>
+<Reservation>
+		<PropertyID>89</PropertyID>
+		<PropertyActive>1</PropertyActive>
+		<ReservationID>40606</ReservationID>
+		<ArrivalDate>02-03-2013</ArrivalDate>
+		<ArrivalTime>4PM</ArrivalTime>
+		<DepartureDate>02-10-2013</DepartureDate>
+		<DepartureTime>10AM</DepartureTime>
+		<Canceled>0</Canceled>
+</Reservation>
+<Reservation>
+		<PropertyID>167</PropertyID>
+		<PropertyActive>1</PropertyActive>
+		<ReservationID>39995</ReservationID>
+		<ArrivalDate>02-03-2013</ArrivalDate>
+		<ArrivalTime>4PM</ArrivalTime>
+		<DepartureDate>02-10-2013</DepartureDate>
+		<DepartureTime>10AM</DepartureTime>
+		<Canceled>0</Canceled>
+</Reservation>
+<Reservation>
+		<PropertyID>175</PropertyID>
+		<PropertyActive>1</PropertyActive>
+		<ReservationID>41030</ReservationID>
+		<ArrivalDate>02-03-2013</ArrivalDate>
+		<ArrivalTime>4PM</ArrivalTime>
+		<DepartureDate>02-08-2013</DepartureDate>
+		<DepartureTime>10AM</DepartureTime>
+		<Canceled>0</Canceled>
+</Reservation>
+<Reservation>
+		<PropertyID>82</PropertyID>
+		<PropertyActive>1</PropertyActive>
+		<ReservationID>40865</ReservationID>
+		<ArrivalDate>02-04-2013</ArrivalDate>
+		<ArrivalTime>4PM</ArrivalTime>
+		<DepartureDate>02-11-2013</DepartureDate>
+		<DepartureTime>10AM</DepartureTime>
+		<Canceled>0</Canceled>
+</Reservation>
+<Reservation>
+		<PropertyID>21</PropertyID>
+		<PropertyActive>1</PropertyActive>
+		<ReservationID>41073</ReservationID>
+		<ArrivalDate>02-05-2013</ArrivalDate>
+		<ArrivalTime>4PM</ArrivalTime>
+		<DepartureDate>02-10-2013</DepartureDate>
+		<DepartureTime>10AM</DepartureTime>
+		<Canceled>0</Canceled>
+</Reservation>
+<Reservation>
+		<PropertyID>147</PropertyID>
+		<PropertyActive>1</PropertyActive>
+		<ReservationID>37399</ReservationID>
+		<ArrivalDate>02-06-2013</ArrivalDate>
+		<ArrivalTime>4PM</ArrivalTime>
+		<DepartureDate>02-10-2013</DepartureDate>
+		<DepartureTime>10AM</DepartureTime>
+		<Canceled>0</Canceled>
+</Reservation>
+<Reservation>
+		<PropertyID>171</PropertyID>
+		<PropertyActive>1</PropertyActive>
+		<ReservationID>41195</ReservationID>
+		<ArrivalDate>02-06-2013</ArrivalDate>
+		<ArrivalTime>4PM</ArrivalTime>
+		<DepartureDate>02-10-2013</DepartureDate>
+		<DepartureTime>10AM</DepartureTime>
+		<Canceled>0</Canceled>
+</Reservation>
+<Reservation>
+		<PropertyID>240</PropertyID>
+		<PropertyActive>1</PropertyActive>
+		<ReservationID>41160</ReservationID>
+		<ArrivalDate>02-06-2013</ArrivalDate>
+		<ArrivalTime>4PM</ArrivalTime>
+		<DepartureDate>02-10-2013</DepartureDate>
+		<DepartureTime>10AM</DepartureTime>
+		<Canceled>0</Canceled>
+</Reservation>
+<Reservation>
+		<PropertyID>462</PropertyID>
+		<PropertyActive>1</PropertyActive>
+		<ReservationID>40074</ReservationID>
+		<ArrivalDate>02-06-2013</ArrivalDate>
+		<ArrivalTime>4PM</ArrivalTime>
+		<DepartureDate>02-11-2013</DepartureDate>
+		<DepartureTime>10AM</DepartureTime>
+		<Canceled>0</Canceled>
+</Reservation>
+<Reservation>
+		<PropertyID>331</PropertyID>
+		<PropertyActive>1</PropertyActive>
+		<ReservationID>39499</ReservationID>
+		<ArrivalDate>02-06-2013</ArrivalDate>
+		<ArrivalTime>4PM</ArrivalTime>
+		<DepartureDate>02-10-2013</DepartureDate>
+		<DepartureTime>10AM</DepartureTime>
+		<Canceled>0</Canceled>
+</Reservation>
+<Reservation>
+		<PropertyID>458</PropertyID>
+		<PropertyActive>1</PropertyActive>
+		<ReservationID>40969</ReservationID>
+		<ArrivalDate>02-07-2013</ArrivalDate>
+		<ArrivalTime>4PM</ArrivalTime>
+		<DepartureDate>02-11-2013</DepartureDate>
+		<DepartureTime>10AM</DepartureTime>
+		<Canceled>0</Canceled>
+</Reservation>
+<Reservation>
+		<PropertyID>143</PropertyID>
+		<PropertyActive>1</PropertyActive>
+		<ReservationID>39322</ReservationID>
+		<ArrivalDate>02-08-2013</ArrivalDate>
+		<ArrivalTime>4PM</ArrivalTime>
+		<DepartureDate>02-11-2013</DepartureDate>
+		<DepartureTime>10AM</DepartureTime>
+		<Canceled>0</Canceled>
+</Reservation>
+<Reservation>
+		<PropertyID>268</PropertyID>
+		<PropertyActive>1</PropertyActive>
+		<ReservationID>41182</ReservationID>
+		<ArrivalDate>02-08-2013</ArrivalDate>
+		<ArrivalTime>4PM</ArrivalTime>
+		<DepartureDate>02-11-2013</DepartureDate>
+		<DepartureTime>10AM</DepartureTime>
+		<Canceled>0</Canceled>
+</Reservation>
+<Reservation>
+		<PropertyID>292</PropertyID>
+		<PropertyActive>1</PropertyActive>
+		<ReservationID>40478</ReservationID>
+		<ArrivalDate>02-08-2013</ArrivalDate>
+		<ArrivalTime>4PM</ArrivalTime>
+		<DepartureDate>02-10-2013</DepartureDate>
+		<DepartureTime>10AM</DepartureTime>
+		<Canceled>0</Canceled>
+</Reservation>
+<Reservation>
+		<PropertyID>296</PropertyID>
+		<PropertyActive>1</PropertyActive>
+		<ReservationID>40479</ReservationID>
+		<ArrivalDate>02-08-2013</ArrivalDate>
+		<ArrivalTime>4PM</ArrivalTime>
+		<DepartureDate>02-10-2013</DepartureDate>
+		<DepartureTime>10AM</DepartureTime>
+		<Canceled>1</Canceled>
+</Reservation>
+<Reservation>
+		<PropertyID>296</PropertyID>
+		<PropertyActive>1</PropertyActive>
+		<ReservationID>40480</ReservationID>
+		<ArrivalDate>02-08-2013</ArrivalDate>
+		<ArrivalTime>4PM</ArrivalTime>
+		<DepartureDate>02-10-2013</DepartureDate>
+		<DepartureTime>10AM</DepartureTime>
+		<Canceled>0</Canceled>
+</Reservation>
+<Reservation>
+		<PropertyID>105</PropertyID>
+		<PropertyActive>1</PropertyActive>
+		<ReservationID>40866</ReservationID>
+		<ArrivalDate>02-09-2013</ArrivalDate>
+		<ArrivalTime>4PM</ArrivalTime>
+		<DepartureDate>02-16-2013</DepartureDate>
+		<DepartureTime>10AM</DepartureTime>
+		<Canceled>1</Canceled>
+</Reservation>
+<Reservation>
+		<PropertyID>145</PropertyID>
+		<PropertyActive>1</PropertyActive>
+		<ReservationID>29033</ReservationID>
+		<ArrivalDate>02-09-2013</ArrivalDate>
+		<ArrivalTime>4PM</ArrivalTime>
+		<DepartureDate>02-13-2013</DepartureDate>
+		<DepartureTime>10AM</DepartureTime>
+		<Canceled>0</Canceled>
+</Reservation>
+<Reservation>
+		<PropertyID>149</PropertyID>
+		<PropertyActive>1</PropertyActive>
+		<ReservationID>40831</ReservationID>
+		<ArrivalDate>02-09-2013</ArrivalDate>
+		<ArrivalTime>4PM</ArrivalTime>
+		<DepartureDate>02-14-2013</DepartureDate>
+		<DepartureTime>10AM</DepartureTime>
+		<Canceled>0</Canceled>
+</Reservation>
+<Reservation>
+		<PropertyID>323</PropertyID>
+		<PropertyActive>1</PropertyActive>
+		<ReservationID>41147</ReservationID>
+		<ArrivalDate>02-09-2013</ArrivalDate>
+		<ArrivalTime>4PM</ArrivalTime>
+		<DepartureDate>02-15-2013</DepartureDate>
+		<DepartureTime>10AM</DepartureTime>
+		<Canceled>0</Canceled>
+</Reservation>
+<Reservation>
+		<PropertyID>281</PropertyID>
+		<PropertyActive>1</PropertyActive>
+		<ReservationID>41149</ReservationID>
+		<ArrivalDate>02-10-2013</ArrivalDate>
+		<ArrivalTime>4PM</ArrivalTime>
+		<DepartureDate>02-15-2013</DepartureDate>
+		<DepartureTime>10AM</DepartureTime>
+		<Canceled>0</Canceled>
+</Reservation>
+<Reservation>
+		<PropertyID>404</PropertyID>
+		<PropertyActive>1</PropertyActive>
+		<ReservationID>37734</ReservationID>
+		<ArrivalDate>02-11-2013</ArrivalDate>
+		<ArrivalTime>4PM</ArrivalTime>
+		<DepartureDate>02-15-2013</DepartureDate>
+		<DepartureTime>10AM</DepartureTime>
+		<Canceled>0</Canceled>
+</Reservation>
+<Reservation>
+		<PropertyID>187</PropertyID>
+		<PropertyActive>1</PropertyActive>
+		<ReservationID>40897</ReservationID>
+		<ArrivalDate>02-13-2013</ArrivalDate>
+		<ArrivalTime>4PM</ArrivalTime>
+		<DepartureDate>02-20-2013</DepartureDate>
+		<DepartureTime>10AM</DepartureTime>
+		<Canceled>0</Canceled>
+</Reservation>
+<Reservation>
+		<PropertyID>393</PropertyID>
+		<PropertyActive>1</PropertyActive>
+		<ReservationID>37580</ReservationID>
+		<ArrivalDate>02-13-2013</ArrivalDate>
+		<ArrivalTime>4PM</ArrivalTime>
+		<DepartureDate>02-18-2013</DepartureDate>
+		<DepartureTime>10AM</DepartureTime>
+		<Canceled>0</Canceled>
+</Reservation>
+<Reservation>
+		<PropertyID>397</PropertyID>
+		<PropertyActive>1</PropertyActive>
+		<ReservationID>36876</ReservationID>
+		<ArrivalDate>02-14-2013</ArrivalDate>
+		<ArrivalTime>4PM</ArrivalTime>
+		<DepartureDate>02-19-2013</DepartureDate>
+		<DepartureTime>10AM</DepartureTime>
+		<Canceled>0</Canceled>
+</Reservation>
+<Reservation>
+		<PropertyID>35</PropertyID>
+		<PropertyActive>1</PropertyActive>
+		<ReservationID>40586</ReservationID>
+		<ArrivalDate>02-15-2013</ArrivalDate>
+		<ArrivalTime>4PM</ArrivalTime>
+		<DepartureDate>02-18-2013</DepartureDate>
+		<DepartureTime>10AM</DepartureTime>
+		<Canceled>0</Canceled>
+</Reservation>
+<Reservation>
+		<PropertyID>143</PropertyID>
+		<PropertyActive>1</PropertyActive>
+		<ReservationID>39517</ReservationID>
+		<ArrivalDate>02-15-2013</ArrivalDate>
+		<ArrivalTime>4PM</ArrivalTime>
+		<DepartureDate>02-19-2013</DepartureDate>
+		<DepartureTime>10AM</DepartureTime>
+		<Canceled>0</Canceled>
+</Reservation>
+<Reservation>
+		<PropertyID>173</PropertyID>
+		<PropertyActive>1</PropertyActive>
+		<ReservationID>39365</ReservationID>
+		<ArrivalDate>02-15-2013</ArrivalDate>
+		<ArrivalTime>4PM</ArrivalTime>
+		<DepartureDate>02-18-2013</DepartureDate>
+		<DepartureTime>10AM</DepartureTime>
+		<Canceled>0</Canceled>
+</Reservation>
+<Reservation>
+		<PropertyID>293</PropertyID>
+		<PropertyActive>1</PropertyActive>
+		<ReservationID>38433</ReservationID>
+		<ArrivalDate>02-15-2013</ArrivalDate>
+		<ArrivalTime>4PM</ArrivalTime>
+		<DepartureDate>02-20-2013</DepartureDate>
+		<DepartureTime>10AM</DepartureTime>
+		<Canceled>0</Canceled>
+</Reservation>
+<Reservation>
+		<PropertyID>339</PropertyID>
+		<PropertyActive>1</PropertyActive>
+		<ReservationID>39869</ReservationID>
+		<ArrivalDate>02-15-2013</ArrivalDate>
+		<ArrivalTime>4PM</ArrivalTime>
+		<DepartureDate>02-24-2013</DepartureDate>
+		<DepartureTime>10AM</DepartureTime>
+		<Canceled>0</Canceled>
+</Reservation>
+<Reservation>
+		<PropertyID>387</PropertyID>
+		<PropertyActive>1</PropertyActive>
+		<ReservationID>41071</ReservationID>
+		<ArrivalDate>02-15-2013</ArrivalDate>
+		<ArrivalTime>4PM</ArrivalTime>
+		<DepartureDate>02-18-2013</DepartureDate>
+		<DepartureTime>10AM</DepartureTime>
+		<Canceled>0</Canceled>
+</Reservation>
+<Reservation>
+		<PropertyID>231</PropertyID>
+		<PropertyActive>1</PropertyActive>
+		<ReservationID>40761</ReservationID>
+		<ArrivalDate>02-16-2013</ArrivalDate>
+		<ArrivalTime>4PM</ArrivalTime>
+		<DepartureDate>02-23-2013</DepartureDate>
+		<DepartureTime>10AM</DepartureTime>
+		<Canceled>0</Canceled>
+</Reservation>
+<Reservation>
+		<PropertyID>228</PropertyID>
+		<PropertyActive>1</PropertyActive>
+		<ReservationID>41224</ReservationID>
+		<ArrivalDate>02-20-2013</ArrivalDate>
+		<ArrivalTime>4PM</ArrivalTime>
+		<DepartureDate>02-24-2013</DepartureDate>
+		<DepartureTime>10AM</DepartureTime>
+		<Canceled>0</Canceled>
+</Reservation>
+<Reservation>
+		<PropertyID>292</PropertyID>
+		<PropertyActive>1</PropertyActive>
+		<ReservationID>41081</ReservationID>
+		<ArrivalDate>02-20-2013</ArrivalDate>
+		<ArrivalTime>4PM</ArrivalTime>
+		<DepartureDate>02-24-2013</DepartureDate>
+		<DepartureTime>10AM</DepartureTime>
+		<Canceled>0</Canceled>
+</Reservation>
+<Reservation>
+		<PropertyID>366</PropertyID>
+		<PropertyActive>1</PropertyActive>
+		<ReservationID>41056</ReservationID>
+		<ArrivalDate>02-20-2013</ArrivalDate>
+		<ArrivalTime>4PM</ArrivalTime>
+		<DepartureDate>02-27-2013</DepartureDate>
+		<DepartureTime>10AM</DepartureTime>
+		<Canceled>0</Canceled>
+</Reservation>
+<Reservation>
+		<PropertyID>405</PropertyID>
+		<PropertyActive>1</PropertyActive>
+		<ReservationID>41115</ReservationID>
+		<ArrivalDate>02-20-2013</ArrivalDate>
+		<ArrivalTime>4PM</ArrivalTime>
+		<DepartureDate>02-24-2013</DepartureDate>
+		<DepartureTime>10AM</DepartureTime>
+		<Canceled>0</Canceled>
+</Reservation>
+<Reservation>
+		<PropertyID>143</PropertyID>
+		<PropertyActive>1</PropertyActive>
+		<ReservationID>40506</ReservationID>
+		<ArrivalDate>02-21-2013</ArrivalDate>
+		<ArrivalTime>4PM</ArrivalTime>
+		<DepartureDate>02-26-2013</DepartureDate>
+		<DepartureTime>10AM</DepartureTime>
+		<Canceled>0</Canceled>
+</Reservation>
+<Reservation>
+		<PropertyID>427</PropertyID>
+		<PropertyActive>1</PropertyActive>
+		<ReservationID>41176</ReservationID>
+		<ArrivalDate>02-21-2013</ArrivalDate>
+		<ArrivalTime>4PM</ArrivalTime>
+		<DepartureDate>02-25-2013</DepartureDate>
+		<DepartureTime>10AM</DepartureTime>
+		<Canceled>0</Canceled>
+</Reservation>
+<Reservation>
+		<PropertyID>263</PropertyID>
+		<PropertyActive>1</PropertyActive>
+		<ReservationID>40861</ReservationID>
+		<ArrivalDate>02-22-2013</ArrivalDate>
+		<ArrivalTime>4PM</ArrivalTime>
+		<DepartureDate>03-04-2013</DepartureDate>
+		<DepartureTime>10AM</DepartureTime>
+		<Canceled>0</Canceled>
+</Reservation>
+<Reservation>
+		<PropertyID>167</PropertyID>
+		<PropertyActive>1</PropertyActive>
+		<ReservationID>40721</ReservationID>
+		<ArrivalDate>02-23-2013</ArrivalDate>
+		<ArrivalTime>4PM</ArrivalTime>
+		<DepartureDate>03-02-2013</DepartureDate>
+		<DepartureTime>10AM</DepartureTime>
+		<Canceled>0</Canceled>
+</Reservation>
+<Reservation>
+		<PropertyID>369</PropertyID>
+		<PropertyActive>1</PropertyActive>
+		<ReservationID>38886</ReservationID>
+		<ArrivalDate>02-23-2013</ArrivalDate>
+		<ArrivalTime>4PM</ArrivalTime>
+		<DepartureDate>03-01-2013</DepartureDate>
+		<DepartureTime>10AM</DepartureTime>
+		<Canceled>0</Canceled>
+</Reservation>
+<Reservation>
+		<PropertyID>372</PropertyID>
+		<PropertyActive>1</PropertyActive>
+		<ReservationID>40250</ReservationID>
+		<ArrivalDate>02-27-2013</ArrivalDate>
+		<ArrivalTime>4PM</ArrivalTime>
+		<DepartureDate>03-03-2013</DepartureDate>
+		<DepartureTime>10AM</DepartureTime>
+		<Canceled>0</Canceled>
+</Reservation>
+<Reservation>
+		<PropertyID>79</PropertyID>
+		<PropertyActive>1</PropertyActive>
+		<ReservationID>40772</ReservationID>
+		<ArrivalDate>02-28-2013</ArrivalDate>
+		<ArrivalTime>4PM</ArrivalTime>
+		<DepartureDate>03-03-2013</DepartureDate>
+		<DepartureTime>10AM</DepartureTime>
+		<Canceled>0</Canceled>
+</Reservation>
+<Reservation>
+		<PropertyID>462</PropertyID>
+		<PropertyActive>1</PropertyActive>
+		<ReservationID>40075</ReservationID>
+		<ArrivalDate>03-01-2013</ArrivalDate>
+		<ArrivalTime>4PM</ArrivalTime>
+		<DepartureDate>03-10-2013</DepartureDate>
+		<DepartureTime>10AM</DepartureTime>
+		<Canceled>0</Canceled>
+</Reservation>
+<Reservation>
+		<PropertyID>363</PropertyID>
+		<PropertyActive>1</PropertyActive>
+		<ReservationID>38906</ReservationID>
+		<ArrivalDate>03-01-2013</ArrivalDate>
+		<ArrivalTime>4PM</ArrivalTime>
+		<DepartureDate>03-31-2013</DepartureDate>
+		<DepartureTime>10AM</DepartureTime>
+		<Canceled>0</Canceled>
+</Reservation>
+<Reservation>
+		<PropertyID>434</PropertyID>
+		<PropertyActive>1</PropertyActive>
+		<ReservationID>40536</ReservationID>
+		<ArrivalDate>03-01-2013</ArrivalDate>
+		<ArrivalTime>4PM</ArrivalTime>
+		<DepartureDate>03-31-2013</DepartureDate>
+		<DepartureTime>10AM</DepartureTime>
+		<Canceled>0</Canceled>
+</Reservation>
+<Reservation>
+		<PropertyID>393</PropertyID>
+		<PropertyActive>1</PropertyActive>
+		<ReservationID>40298</ReservationID>
+		<ArrivalDate>03-02-2013</ArrivalDate>
+		<ArrivalTime>4PM</ArrivalTime>
+		<DepartureDate>03-10-2013</DepartureDate>
+		<DepartureTime>10AM</DepartureTime>
+		<Canceled>0</Canceled>
+</Reservation>
+<Reservation>
+		<PropertyID>362</PropertyID>
+		<PropertyActive>1</PropertyActive>
+		<ReservationID>39733</ReservationID>
+		<ArrivalDate>03-03-2013</ArrivalDate>
+		<ArrivalTime>4PM</ArrivalTime>
+		<DepartureDate>03-13-2013</DepartureDate>
+		<DepartureTime>10AM</DepartureTime>
+		<Canceled>0</Canceled>
+</Reservation>
+<Reservation>
+		<PropertyID>257</PropertyID>
+		<PropertyActive>1</PropertyActive>
+		<ReservationID>38671</ReservationID>
+		<ArrivalDate>03-08-2013</ArrivalDate>
+		<ArrivalTime>4PM</ArrivalTime>
+		<DepartureDate>03-17-2013</DepartureDate>
+		<DepartureTime>10AM</DepartureTime>
+		<Canceled>0</Canceled>
+</Reservation>
+<Reservation>
+		<PropertyID>293</PropertyID>
+		<PropertyActive>1</PropertyActive>
+		<ReservationID>38432</ReservationID>
+		<ArrivalDate>03-08-2013</ArrivalDate>
+		<ArrivalTime>4PM</ArrivalTime>
+		<DepartureDate>03-31-2013</DepartureDate>
+		<DepartureTime>10AM</DepartureTime>
+		<Canceled>0</Canceled>
+</Reservation>
+<Reservation>
+		<PropertyID>77</PropertyID>
+		<PropertyActive>1</PropertyActive>
+		<ReservationID>38752</ReservationID>
+		<ArrivalDate>03-09-2013</ArrivalDate>
+		<ArrivalTime>4PM</ArrivalTime>
+		<DepartureDate>03-16-2013</DepartureDate>
+		<DepartureTime>10AM</DepartureTime>
+		<Canceled>0</Canceled>
+</Reservation>
+<Reservation>
+		<PropertyID>165</PropertyID>
+		<PropertyActive>1</PropertyActive>
+		<ReservationID>41175</ReservationID>
+		<ArrivalDate>03-09-2013</ArrivalDate>
+		<ArrivalTime>4PM</ArrivalTime>
+		<DepartureDate>03-13-2013</DepartureDate>
+		<DepartureTime>10AM</DepartureTime>
+		<Canceled>0</Canceled>
+</Reservation>
+<Reservation>
+		<PropertyID>192</PropertyID>
+		<PropertyActive>1</PropertyActive>
+		<ReservationID>39434</ReservationID>
+		<ArrivalDate>03-09-2013</ArrivalDate>
+		<ArrivalTime>4PM</ArrivalTime>
+		<DepartureDate>03-16-2013</DepartureDate>
+		<DepartureTime>10AM</DepartureTime>
+		<Canceled>0</Canceled>
+</Reservation>
+<Reservation>
+		<PropertyID>202</PropertyID>
+		<PropertyActive>1</PropertyActive>
+		<ReservationID>39437</ReservationID>
+		<ArrivalDate>03-09-2013</ArrivalDate>
+		<ArrivalTime>4PM</ArrivalTime>
+		<DepartureDate>03-14-2013</DepartureDate>
+		<DepartureTime>10AM</DepartureTime>
+		<Canceled>0</Canceled>
+</Reservation>
+<Reservation>
+		<PropertyID>387</PropertyID>
+		<PropertyActive>1</PropertyActive>
+		<ReservationID>38494</ReservationID>
+		<ArrivalDate>03-09-2013</ArrivalDate>
+		<ArrivalTime>4PM</ArrivalTime>
+		<DepartureDate>03-14-2013</DepartureDate>
+		<DepartureTime>10AM</DepartureTime>
+		<Canceled>0</Canceled>
+</Reservation>
+<Reservation>
+		<PropertyID>410</PropertyID>
+		<PropertyActive>1</PropertyActive>
+		<ReservationID>38500</ReservationID>
+		<ArrivalDate>03-09-2013</ArrivalDate>
+		<ArrivalTime>4PM</ArrivalTime>
+		<DepartureDate>03-15-2013</DepartureDate>
+		<DepartureTime>10AM</DepartureTime>
+		<Canceled>0</Canceled>
+</Reservation>
+<Reservation>
+		<PropertyID>427</PropertyID>
+		<PropertyActive>1</PropertyActive>
+		<ReservationID>40642</ReservationID>
+		<ArrivalDate>03-09-2013</ArrivalDate>
+		<ArrivalTime>4PM</ArrivalTime>
+		<DepartureDate>03-16-2013</DepartureDate>
+		<DepartureTime>10AM</DepartureTime>
+		<Canceled>0</Canceled>
+</Reservation>
+<Reservation>
+		<PropertyID>378</PropertyID>
+		<PropertyActive>1</PropertyActive>
+		<ReservationID>38928</ReservationID>
+		<ArrivalDate>03-10-2013</ArrivalDate>
+		<ArrivalTime>4PM</ArrivalTime>
+		<DepartureDate>03-15-2013</DepartureDate>
+		<DepartureTime>10AM</DepartureTime>
+		<Canceled>0</Canceled>
+</Reservation>
+<Reservation>
+		<PropertyID>89</PropertyID>
+		<PropertyActive>1</PropertyActive>
+		<ReservationID>38584</ReservationID>
+		<ArrivalDate>03-11-2013</ArrivalDate>
+		<ArrivalTime>4PM</ArrivalTime>
+		<DepartureDate>03-15-2013</DepartureDate>
+		<DepartureTime>10AM</DepartureTime>
+		<Canceled>0</Canceled>
+</Reservation>
+<Reservation>
+		<PropertyID>21</PropertyID>
+		<PropertyActive>1</PropertyActive>
+		<ReservationID>40522</ReservationID>
+		<ArrivalDate>03-12-2013</ArrivalDate>
+		<ArrivalTime>4PM</ArrivalTime>
+		<DepartureDate>03-18-2013</DepartureDate>
+		<DepartureTime>10AM</DepartureTime>
+		<Canceled>0</Canceled>
+</Reservation>
+<Reservation>
+		<PropertyID>263</PropertyID>
+		<PropertyActive>1</PropertyActive>
+		<ReservationID>40862</ReservationID>
+		<ArrivalDate>03-14-2013</ArrivalDate>
+		<ArrivalTime>4PM</ArrivalTime>
+		<DepartureDate>03-19-2013</DepartureDate>
+		<DepartureTime>10AM</DepartureTime>
+		<Canceled>0</Canceled>
+</Reservation>
+<Reservation>
+		<PropertyID>379</PropertyID>
+		<PropertyActive>1</PropertyActive>
+		<ReservationID>37975</ReservationID>
+		<ArrivalDate>03-14-2013</ArrivalDate>
+		<ArrivalTime>4PM</ArrivalTime>
+		<DepartureDate>03-24-2013</DepartureDate>
+		<DepartureTime>10AM</DepartureTime>
+		<Canceled>0</Canceled>
+</Reservation>
+<Reservation>
+		<PropertyID>225</PropertyID>
+		<PropertyActive>1</PropertyActive>
+		<ReservationID>40736</ReservationID>
+		<ArrivalDate>03-15-2013</ArrivalDate>
+		<ArrivalTime>4PM</ArrivalTime>
+		<DepartureDate>03-23-2013</DepartureDate>
+		<DepartureTime>10AM</DepartureTime>
+		<Canceled>0</Canceled>
+</Reservation>
+<Reservation>
+		<PropertyID>220</PropertyID>
+		<PropertyActive>1</PropertyActive>
+		<ReservationID>38562</ReservationID>
+		<ArrivalDate>03-15-2013</ArrivalDate>
+		<ArrivalTime>4PM</ArrivalTime>
+		<DepartureDate>03-18-2013</DepartureDate>
+		<DepartureTime>10AM</DepartureTime>
+		<Canceled>0</Canceled>
+</Reservation>
+<Reservation>
+		<PropertyID>21</PropertyID>
+		<PropertyActive>1</PropertyActive>
+		<ReservationID>40717</ReservationID>
+		<ArrivalDate>03-18-2013</ArrivalDate>
+		<ArrivalTime>4PM</ArrivalTime>
+		<DepartureDate>03-22-2013</DepartureDate>
+		<DepartureTime>10AM</DepartureTime>
+		<Canceled>1</Canceled>
+</Reservation>
+<Reservation>
+		<PropertyID>331</PropertyID>
+		<PropertyActive>1</PropertyActive>
+		<ReservationID>39795</ReservationID>
+		<ArrivalDate>03-18-2013</ArrivalDate>
+		<ArrivalTime>4PM</ArrivalTime>
+		<DepartureDate>03-22-2013</DepartureDate>
+		<DepartureTime>10AM</DepartureTime>
+		<Canceled>0</Canceled>
+</Reservation>
+<Reservation>
+		<PropertyID>397</PropertyID>
+		<PropertyActive>1</PropertyActive>
+		<ReservationID>41105</ReservationID>
+		<ArrivalDate>03-18-2013</ArrivalDate>
+		<ArrivalTime>4PM</ArrivalTime>
+		<DepartureDate>03-22-2013</DepartureDate>
+		<DepartureTime>10AM</DepartureTime>
+		<Canceled>0</Canceled>
+</Reservation>
+<Reservation>
+		<PropertyID>440</PropertyID>
+		<PropertyActive>1</PropertyActive>
+		<ReservationID>39910</ReservationID>
+		<ArrivalDate>03-18-2013</ArrivalDate>
+		<ArrivalTime>4PM</ArrivalTime>
+		<DepartureDate>03-22-2013</DepartureDate>
+		<DepartureTime>10AM</DepartureTime>
+		<Canceled>0</Canceled>
+</Reservation>
+<Reservation>
+		<PropertyID>405</PropertyID>
+		<PropertyActive>1</PropertyActive>
+		<ReservationID>41116</ReservationID>
+		<ArrivalDate>03-20-2013</ArrivalDate>
+		<ArrivalTime>4PM</ArrivalTime>
+		<DepartureDate>03-24-2013</DepartureDate>
+		<DepartureTime>10AM</DepartureTime>
+		<Canceled>0</Canceled>
+</Reservation>
+<Reservation>
+		<PropertyID>183</PropertyID>
+		<PropertyActive>1</PropertyActive>
+		<ReservationID>41050</ReservationID>
+		<ArrivalDate>03-22-2013</ArrivalDate>
+		<ArrivalTime>4PM</ArrivalTime>
+		<DepartureDate>03-31-2013</DepartureDate>
+		<DepartureTime>10AM</DepartureTime>
+		<Canceled>0</Canceled>
+</Reservation>
+<Reservation>
+		<PropertyID>153</PropertyID>
+		<PropertyActive>1</PropertyActive>
+		<ReservationID>40632</ReservationID>
+		<ArrivalDate>03-22-2013</ArrivalDate>
+		<ArrivalTime>4PM</ArrivalTime>
+		<DepartureDate>03-29-2013</DepartureDate>
+		<DepartureTime>10AM</DepartureTime>
+		<Canceled>1</Canceled>
+</Reservation>
+<Reservation>
+		<PropertyID>241</PropertyID>
+		<PropertyActive>1</PropertyActive>
+		<ReservationID>40915</ReservationID>
+		<ArrivalDate>03-22-2013</ArrivalDate>
+		<ArrivalTime>4PM</ArrivalTime>
+		<DepartureDate>03-30-2013</DepartureDate>
+		<DepartureTime>10AM</DepartureTime>
+		<Canceled>0</Canceled>
+</Reservation>
+<Reservation>
+		<PropertyID>150</PropertyID>
+		<PropertyActive>1</PropertyActive>
+		<ReservationID>39009</ReservationID>
+		<ArrivalDate>03-23-2013</ArrivalDate>
+		<ArrivalTime>4PM</ArrivalTime>
+		<DepartureDate>03-30-2013</DepartureDate>
+		<DepartureTime>10AM</DepartureTime>
+		<Canceled>0</Canceled>
+</Reservation>
+<Reservation>
+		<PropertyID>172</PropertyID>
+		<PropertyActive>1</PropertyActive>
+		<ReservationID>40583</ReservationID>
+		<ArrivalDate>03-23-2013</ArrivalDate>
+		<ArrivalTime>4PM</ArrivalTime>
+		<DepartureDate>03-31-2013</DepartureDate>
+		<DepartureTime>10AM</DepartureTime>
+		<Canceled>0</Canceled>
+</Reservation>
+<Reservation>
+		<PropertyID>229</PropertyID>
+		<PropertyActive>1</PropertyActive>
+		<ReservationID>39610</ReservationID>
+		<ArrivalDate>03-23-2013</ArrivalDate>
+		<ArrivalTime>4PM</ArrivalTime>
+		<DepartureDate>03-29-2013</DepartureDate>
+		<DepartureTime>10AM</DepartureTime>
+		<Canceled>0</Canceled>
+</Reservation>
+<Reservation>
+		<PropertyID>270</PropertyID>
+		<PropertyActive>1</PropertyActive>
+		<ReservationID>40853</ReservationID>
+		<ArrivalDate>03-23-2013</ArrivalDate>
+		<ArrivalTime>4PM</ArrivalTime>
+		<DepartureDate>03-30-2013</DepartureDate>
+		<DepartureTime>10AM</DepartureTime>
+		<Canceled>0</Canceled>
+</Reservation>
+<Reservation>
+		<PropertyID>287</PropertyID>
+		<PropertyActive>1</PropertyActive>
+		<ReservationID>39559</ReservationID>
+		<ArrivalDate>03-23-2013</ArrivalDate>
+		<ArrivalTime>4PM</ArrivalTime>
+		<DepartureDate>04-08-2013</DepartureDate>
+		<DepartureTime>10AM</DepartureTime>
+		<Canceled>0</Canceled>
+</Reservation>
+<Reservation>
+		<PropertyID>302</PropertyID>
+		<PropertyActive>1</PropertyActive>
+		<ReservationID>39755</ReservationID>
+		<ArrivalDate>03-23-2013</ArrivalDate>
+		<ArrivalTime>4PM</ArrivalTime>
+		<DepartureDate>04-02-2013</DepartureDate>
+		<DepartureTime>10AM</DepartureTime>
+		<Canceled>0</Canceled>
+</Reservation>
+<Reservation>
+		<PropertyID>344</PropertyID>
+		<PropertyActive>1</PropertyActive>
+		<ReservationID>40197</ReservationID>
+		<ArrivalDate>03-24-2013</ArrivalDate>
+		<ArrivalTime>4PM</ArrivalTime>
+		<DepartureDate>03-29-2013</DepartureDate>
+		<DepartureTime>10AM</DepartureTime>
+		<Canceled>0</Canceled>
+</Reservation>
+<Reservation>
+		<PropertyID>369</PropertyID>
+		<PropertyActive>1</PropertyActive>
+		<ReservationID>40468</ReservationID>
+		<ArrivalDate>03-24-2013</ArrivalDate>
+		<ArrivalTime>4PM</ArrivalTime>
+		<DepartureDate>03-31-2013</DepartureDate>
+		<DepartureTime>10AM</DepartureTime>
+		<Canceled>0</Canceled>
+</Reservation>
+<Reservation>
+		<PropertyID>397</PropertyID>
+		<PropertyActive>1</PropertyActive>
+		<ReservationID>36877</ReservationID>
+		<ArrivalDate>03-24-2013</ArrivalDate>
+		<ArrivalTime>4PM</ArrivalTime>
+		<DepartureDate>03-28-2013</DepartureDate>
+		<DepartureTime>10AM</DepartureTime>
+		<Canceled>1</Canceled>
+</Reservation>
+<Reservation>
+		<PropertyID>414</PropertyID>
+		<PropertyActive>1</PropertyActive>
+		<ReservationID>40106</ReservationID>
+		<ArrivalDate>03-24-2013</ArrivalDate>
+		<ArrivalTime>4PM</ArrivalTime>
+		<DepartureDate>03-30-2013</DepartureDate>
+		<DepartureTime>10AM</DepartureTime>
+		<Canceled>0</Canceled>
+</Reservation>
+<Reservation>
+		<PropertyID>448</PropertyID>
+		<PropertyActive>1</PropertyActive>
+		<ReservationID>41070</ReservationID>
+		<ArrivalDate>03-24-2013</ArrivalDate>
+		<ArrivalTime>4PM</ArrivalTime>
+		<DepartureDate>03-28-2013</DepartureDate>
+		<DepartureTime>10AM</DepartureTime>
+		<Canceled>0</Canceled>
+</Reservation>
+<Reservation>
+		<PropertyID>82</PropertyID>
+		<PropertyActive>1</PropertyActive>
+		<ReservationID>40864</ReservationID>
+		<ArrivalDate>03-25-2013</ArrivalDate>
+		<ArrivalTime>4PM</ArrivalTime>
+		<DepartureDate>04-01-2013</DepartureDate>
+		<DepartureTime>10AM</DepartureTime>
+		<Canceled>0</Canceled>
+</Reservation>
+<Reservation>
+		<PropertyID>148</PropertyID>
+		<PropertyActive>1</PropertyActive>
+		<ReservationID>41128</ReservationID>
+		<ArrivalDate>03-25-2013</ArrivalDate>
+		<ArrivalTime>4PM</ArrivalTime>
+		<DepartureDate>03-29-2013</DepartureDate>
+		<DepartureTime>10AM</DepartureTime>
+		<Canceled>0</Canceled>
+</Reservation>
+<Reservation>
+		<PropertyID>192</PropertyID>
+		<PropertyActive>1</PropertyActive>
+		<ReservationID>40967</ReservationID>
+		<ArrivalDate>03-25-2013</ArrivalDate>
+		<ArrivalTime>4PM</ArrivalTime>
+		<DepartureDate>03-29-2013</DepartureDate>
+		<DepartureTime>10AM</DepartureTime>
+		<Canceled>0</Canceled>
+</Reservation>
+<Reservation>
+		<PropertyID>220</PropertyID>
+		<PropertyActive>1</PropertyActive>
+		<ReservationID>35476</ReservationID>
+		<ArrivalDate>03-25-2013</ArrivalDate>
+		<ArrivalTime>4PM</ArrivalTime>
+		<DepartureDate>03-31-2013</DepartureDate>
+		<DepartureTime>10AM</DepartureTime>
+		<Canceled>1</Canceled>
+</Reservation>
+<Reservation>
+		<PropertyID>331</PropertyID>
+		<PropertyActive>1</PropertyActive>
+		<ReservationID>39790</ReservationID>
+		<ArrivalDate>03-25-2013</ArrivalDate>
+		<ArrivalTime>4PM</ArrivalTime>
+		<DepartureDate>03-31-2013</DepartureDate>
+		<DepartureTime>10AM</DepartureTime>
+		<Canceled>0</Canceled>
+</Reservation>
+<Reservation>
+		<PropertyID>427</PropertyID>
+		<PropertyActive>1</PropertyActive>
+		<ReservationID>40691</ReservationID>
+		<ArrivalDate>03-25-2013</ArrivalDate>
+		<ArrivalTime>4PM</ArrivalTime>
+		<DepartureDate>04-06-2013</DepartureDate>
+		<DepartureTime>10AM</DepartureTime>
+		<Canceled>0</Canceled>
+</Reservation>
+<Reservation>
+		<PropertyID>465</PropertyID>
+		<PropertyActive>1</PropertyActive>
+		<ReservationID>38694</ReservationID>
+		<ArrivalDate>03-25-2013</ArrivalDate>
+		<ArrivalTime>4PM</ArrivalTime>
+		<DepartureDate>03-29-2013</DepartureDate>
+		<DepartureTime>10AM</DepartureTime>
+		<Canceled>0</Canceled>
+</Reservation>
+<Reservation>
+		<PropertyID>21</PropertyID>
+		<PropertyActive>1</PropertyActive>
+		<ReservationID>41043</ReservationID>
+		<ArrivalDate>03-27-2013</ArrivalDate>
+		<ArrivalTime>4PM</ArrivalTime>
+		<DepartureDate>03-30-2013</DepartureDate>
+		<DepartureTime>10AM</DepartureTime>
+		<Canceled>0</Canceled>
+</Reservation>
+<Reservation>
+		<PropertyID>462</PropertyID>
+		<PropertyActive>1</PropertyActive>
+		<ReservationID>40076</ReservationID>
+		<ArrivalDate>03-28-2013</ArrivalDate>
+		<ArrivalTime>4PM</ArrivalTime>
+		<DepartureDate>04-01-2013</DepartureDate>
+		<DepartureTime>10AM</DepartureTime>
+		<Canceled>0</Canceled>
+</Reservation>
+<Reservation>
+		<PropertyID>262</PropertyID>
+		<PropertyActive>1</PropertyActive>
+		<ReservationID>39648</ReservationID>
+		<ArrivalDate>03-29-2013</ArrivalDate>
+		<ArrivalTime>4PM</ArrivalTime>
+		<DepartureDate>04-05-2013</DepartureDate>
+		<DepartureTime>10AM</DepartureTime>
+		<Canceled>0</Canceled>
+</Reservation>
+<Reservation>
+		<PropertyID>276</PropertyID>
+		<PropertyActive>1</PropertyActive>
+		<ReservationID>40814</ReservationID>
+		<ArrivalDate>03-29-2013</ArrivalDate>
+		<ArrivalTime>4PM</ArrivalTime>
+		<DepartureDate>04-06-2013</DepartureDate>
+		<DepartureTime>10AM</DepartureTime>
+		<Canceled>0</Canceled>
+</Reservation>
+<Reservation>
+		<PropertyID>171</PropertyID>
+		<PropertyActive>1</PropertyActive>
+		<ReservationID>41169</ReservationID>
+		<ArrivalDate>03-30-2013</ArrivalDate>
+		<ArrivalTime>4PM</ArrivalTime>
+		<DepartureDate>04-06-2013</DepartureDate>
+		<DepartureTime>10AM</DepartureTime>
+		<Canceled>0</Canceled>
+</Reservation>
+<Reservation>
+		<PropertyID>434</PropertyID>
+		<PropertyActive>1</PropertyActive>
+		<ReservationID>40537</ReservationID>
+		<ArrivalDate>03-31-2013</ArrivalDate>
+		<ArrivalTime>4PM</ArrivalTime>
+		<DepartureDate>04-30-2013</DepartureDate>
+		<DepartureTime>10AM</DepartureTime>
+		<Canceled>0</Canceled>
+</Reservation>
+<Reservation>
+		<PropertyID>263</PropertyID>
+		<PropertyActive>1</PropertyActive>
+		<ReservationID>41077</ReservationID>
+		<ArrivalDate>04-05-2013</ArrivalDate>
+		<ArrivalTime>4PM</ArrivalTime>
+		<DepartureDate>04-08-2013</DepartureDate>
+		<DepartureTime>10AM</DepartureTime>
+		<Canceled>0</Canceled>
+</Reservation>
+<Reservation>
+		<PropertyID>405</PropertyID>
+		<PropertyActive>1</PropertyActive>
+		<ReservationID>41114</ReservationID>
+		<ArrivalDate>04-10-2013</ArrivalDate>
+		<ArrivalTime>4PM</ArrivalTime>
+		<DepartureDate>04-14-2013</DepartureDate>
+		<DepartureTime>10AM</DepartureTime>
+		<Canceled>0</Canceled>
+</Reservation>
+<Reservation>
+		<PropertyID>434</PropertyID>
+		<PropertyActive>1</PropertyActive>
+		<ReservationID>40867</ReservationID>
+		<ArrivalDate>04-28-2013</ArrivalDate>
+		<ArrivalTime>4PM</ArrivalTime>
+		<DepartureDate>04-30-2013</DepartureDate>
+		<DepartureTime>10AM</DepartureTime>
+		<Canceled>1</Canceled>
+</Reservation>
+<Reservation>
+		<PropertyID>150</PropertyID>
+		<PropertyActive>1</PropertyActive>
+		<ReservationID>39010</ReservationID>
+		<ArrivalDate>06-19-2013</ArrivalDate>
+		<ArrivalTime>4PM</ArrivalTime>
+		<DepartureDate>06-24-2013</DepartureDate>
+		<DepartureTime>10AM</DepartureTime>
+		<Canceled>0</Canceled>
+</Reservation>
+<Reservation>
+		<PropertyID>220</PropertyID>
+		<PropertyActive>1</PropertyActive>
+		<ReservationID>40132</ReservationID>
+		<ArrivalDate>06-20-2013</ArrivalDate>
+		<ArrivalTime>4PM</ArrivalTime>
+		<DepartureDate>06-24-2013</DepartureDate>
+		<DepartureTime>10AM</DepartureTime>
+		<Canceled>0</Canceled>
+</Reservation>
+<Reservation>
+		<PropertyID>21</PropertyID>
+		<PropertyActive>1</PropertyActive>
+		<ReservationID>41027</ReservationID>
+		<ArrivalDate>06-22-2013</ArrivalDate>
+		<ArrivalTime>4PM</ArrivalTime>
+		<DepartureDate>06-29-2013</DepartureDate>
+		<DepartureTime>10AM</DepartureTime>
+		<Canceled>0</Canceled>
+</Reservation>
+<Reservation>
+		<PropertyID>229</PropertyID>
+		<PropertyActive>1</PropertyActive>
+		<ReservationID>40923</ReservationID>
+		<ArrivalDate>06-29-2013</ArrivalDate>
+		<ArrivalTime>4PM</ArrivalTime>
+		<DepartureDate>07-08-2013</DepartureDate>
+		<DepartureTime>10AM</DepartureTime>
+		<Canceled>0</Canceled>
+</Reservation>
+<Reservation>
+		<PropertyID>286</PropertyID>
+		<PropertyActive>1</PropertyActive>
+		<ReservationID>40328</ReservationID>
+		<ArrivalDate>07-06-2013</ArrivalDate>
+		<ArrivalTime>4PM</ArrivalTime>
+		<DepartureDate>07-13-2013</DepartureDate>
+		<DepartureTime>10AM</DepartureTime>
+		<Canceled>0</Canceled>
+</Reservation>
+<Reservation>
+		<PropertyID>230</PropertyID>
+		<PropertyActive>1</PropertyActive>
+		<ReservationID>41143</ReservationID>
+		<ArrivalDate>07-11-2013</ArrivalDate>
+		<ArrivalTime>4PM</ArrivalTime>
+		<DepartureDate>07-17-2013</DepartureDate>
+		<DepartureTime>10AM</DepartureTime>
+		<Canceled>0</Canceled>
+</Reservation>
+<Reservation>
+		<PropertyID>418</PropertyID>
+		<PropertyActive>1</PropertyActive>
+		<ReservationID>40720</ReservationID>
+		<ArrivalDate>07-14-2013</ArrivalDate>
+		<ArrivalTime>4PM</ArrivalTime>
+		<DepartureDate>07-26-2013</DepartureDate>
+		<DepartureTime>10AM</DepartureTime>
+		<Canceled>0</Canceled>
+</Reservation>
+<Reservation>
+		<PropertyID>342</PropertyID>
+		<PropertyActive>1</PropertyActive>
+		<ReservationID>39458</ReservationID>
+		<ArrivalDate>07-14-2013</ArrivalDate>
+		<ArrivalTime>4PM</ArrivalTime>
+		<DepartureDate>07-28-2013</DepartureDate>
+		<DepartureTime>10AM</DepartureTime>
+		<Canceled>0</Canceled>
+</Reservation>
+<Reservation>
+		<PropertyID>137</PropertyID>
+		<PropertyActive>1</PropertyActive>
+		<ReservationID>40988</ReservationID>
+		<ArrivalDate>08-01-2013</ArrivalDate>
+		<ArrivalTime>4PM</ArrivalTime>
+		<DepartureDate>08-10-2013</DepartureDate>
+		<DepartureTime>10AM</DepartureTime>
+		<Canceled>0</Canceled>
+</Reservation>
+<Reservation>
+		<PropertyID>397</PropertyID>
+		<PropertyActive>1</PropertyActive>
+		<ReservationID>41106</ReservationID>
+		<ArrivalDate>08-23-2013</ArrivalDate>
+		<ArrivalTime>4PM</ArrivalTime>
+		<DepartureDate>08-29-2013</DepartureDate>
+		<DepartureTime>10AM</DepartureTime>
+		<Canceled>0</Canceled>
+</Reservation>
+<Reservation>
+		<PropertyID>397</PropertyID>
+		<PropertyActive>1</PropertyActive>
+		<ReservationID>36879</ReservationID>
+		<ArrivalDate>11-25-2013</ArrivalDate>
+		<ArrivalTime>4PM</ArrivalTime>
+		<DepartureDate>12-01-2013</DepartureDate>
+		<DepartureTime>10AM</DepartureTime>
+		<Canceled>0</Canceled>
+</Reservation>
+<Reservation>
+		<PropertyID>145</PropertyID>
+		<PropertyActive>1</PropertyActive>
+		<ReservationID>35879</ReservationID>
+		<ArrivalDate>12-20-2013</ArrivalDate>
+		<ArrivalTime>4PM</ArrivalTime>
+		<DepartureDate>01-04-2014</DepartureDate>
+		<DepartureTime>10AM</DepartureTime>
+		<Canceled>0</Canceled>
+</Reservation>
+<Reservation>
+		<PropertyID>378</PropertyID>
+		<PropertyActive>1</PropertyActive>
+		<ReservationID>39519</ReservationID>
+		<ArrivalDate>12-20-2013</ArrivalDate>
+		<ArrivalTime>4PM</ArrivalTime>
+		<DepartureDate>12-27-2013</DepartureDate>
+		<DepartureTime>10AM</DepartureTime>
+		<Canceled>0</Canceled>
+</Reservation>
+<Reservation>
+		<PropertyID>338</PropertyID>
+		<PropertyActive>1</PropertyActive>
+		<ReservationID>40962</ReservationID>
+		<ArrivalDate>12-26-2013</ArrivalDate>
+		<ArrivalTime>4PM</ArrivalTime>
+		<DepartureDate>01-02-2014</DepartureDate>
+		<DepartureTime>10AM</DepartureTime>
+		<Canceled>0</Canceled>
+</Reservation>
+<Reservation>
+		<PropertyID>218</PropertyID>
+		<PropertyActive>1</PropertyActive>
+		<ReservationID>38578</ReservationID>
+		<ArrivalDate>03-02-2014</ArrivalDate>
+		<ArrivalTime>4PM</ArrivalTime>
+		<DepartureDate>03-07-2014</DepartureDate>
+		<DepartureTime>10AM</DepartureTime>
+		<Canceled>0</Canceled>
+</Reservation>
+</Availability>
+

@@ -1,0 +1,451 @@
+
+
+body{
+margin:0;
+padding:10px 0;
+font:76% tahoma,verdana,sans-serif;
+color:#00508a;
+ background: #fff;
+}
+
+
+#container{
+width:1020px;
+margin:0px auto;
+padding:0px 0px 0 0px;
+border-top:1px solid #94c5ff;
+border-right:1px solid #94c5ff;
+border-bottom:1px solid #94c5ff;
+border-left:1px solid #94c5ff;
+color:#222;
+ background-color: #fff;
+}
+
+a{
+text-decoration:none;
+background-color:inherit;
+color:#26c;
+}
+i{
+text-decoration:none;
+background-color:inherit;
+color:#26c;
+}
+a:hover{
+text-decoration:underline;
+}
+
+.contentcolumn img{
+border: 4px groove #00BFFF;
+ 
+}
+
+p{
+margin: 0 5px 10px 10px;
+line-height:1.5em;
+}
+
+#main p{
+padding: 0 0 0 0px;
+}
+
+#logo{
+float:right;
+width:1008px;
+margin:0px 0px 0 0;
+padding: 0 0 0px 0;
+color:#fff;
+overflow:auto;
+}
+
+#main{
+
+width:1010px;
+margin:0px;
+padding:0;
+border-top:5px solid #fff;
+border-right:5px solid #fff;
+border-left:5px solid #fff;
+background-color: #efeff7;
+}
+
+.innerheader{
+display:block;
+margin: 0 0 10px 0;
+padding:5px 0 5px 8px;
+color:#222;
+border-top:1px solid #bbb;
+border-right:1px solid #bbb;
+border-bottom:1px solid #bbb;
+border-left:1px solid #bbb;
+text-decoration:none;
+background: url("images/hborder.png") repeat-x 0px -27px;
+}
+
+#footer{
+margin:0 auto 0px auto;
+width:1010px;
+border-bottom:5px solid #fff;
+border-right:5px solid #fff;
+border-left:5px solid #fff;
+padding:0 0 5px 0;
+font-size:1em;
+color:#fff;
+text-align:center;
+background: url("images/hborder.png") repeat-x 0px -27px;
+}
+.line2{
+display:block;
+margin: 50px 5px 0px 5px;
+padding: 0px 0 5px 0px;
+background:#efeff7;
+color:#222;
+border-top:.05em solid #bbb;
+border-right:.05em solid #bbb;
+border-bottom:.05em solid #bbb;
+border-left:.05em solid #bbb;
+text-decoration:none;
+}
+h1,h2,h3,h4{
+margin:0 0 10px 0;
+font-weight:normal;
+}
+
+h1{
+font-size:2.8em;
+}
+
+h2{
+margin:0 0 4px 0;
+font-size:1.8em;
+ color: #000;
+ font-variant: small-caps;
+}
+
+h3{
+margin:20px 0 8px 0;
+font-size:1.4em;
+}
+
+h4{
+margin:10px 0 5px 0;
+font-size:1.5em;
+ color: #00BFFF;
+}
+h5{
+margin:10px 0 5px 0;
+font-size:1.5em;
+ padding-left: 20%;
+ color: #00BFFF;
+}
+h6{
+background: url(images/bullet.jpg) no-repeat left;
+	color: #777777;
+	display: block;
+	height: 20px;
+	padding: 0 0 0 40px;
+	text-decoration: none;
+	font-size: 1em;
+}
+.img_left{
+  margin-right:5px;
+  float:left;
+}
+
+.img_right{
+  margin-left:5px;
+  float:right;
+}
+
+.clear{
+clear:both;
+margin:0;
+}
+
+.right{
+text-align:right;
+}
+.line{
+display:block;
+margin: 30px 5px 10px 5px;
+padding: 0px 0 5px 0px;
+background:#eee;
+color:#222;
+border-top:.05em solid #bbb;
+border-right:.05em solid #bbb;
+border-bottom:.05em solid #bbb;
+border-left:.05em solid #bbb;
+text-decoration:none;
+}
+
+div.c1 {text-align: center
+}
+div.c3 {background-color: #efeff7;
+ border: 0px solid black; 
+ font-size: 12px; 
+ padding: 0px; 
+ text-align: left;
+  width: 955px}
+  div.c4 {background-color: #efeff7;
+ border: 0px solid black; 
+ font-size: 12px; 
+ padding: 0px; 
+ text-align: left;
+  width: 955px}
+ span.c2 {float:right;
+ margin:0px;
+ padding:10px;
+ border: 0px solid #94c5ff;
+ background:#efeff7;}
+ img.c1 {border:1px solid #94c5ff;}
+#search {
+	margin-bottom: 10px;
+}
+
+fieldset {
+	margin: 0;
+	padding: 0;
+	border: none;
+}
+.tabs{
+width: 1010px;
+overflow: hidden;
+background: transparent;
+}
+
+.tabs ul{
+font: bold 11px Arial, Verdana, sans-serif;
+margin: 0;
+padding: 0;
+list-style: none;
+}
+
+.tabs li{
+display: inline;
+margin: 0px 2px 0 0;
+padding: 0;
+text-transform: uppercase;
+}
+
+
+.tabs a{
+float: right;
+color: #000;
+background: #8fc5f4 url(images/roundleft.jpg) no-repeat left top; /*default background color of tabs, left corner image*/
+margin: 0 0px 0 .5em;
+padding: 0 0 0px 3px;
+text-decoration: none;
+letter-spacing: 1px;
+}
+
+.tabs a span{
+float: right;
+display: block;
+background: transparent url(images/roundright.jpg) no-repeat right top; /*right corner image*/
+padding: 7px 9px 3px 6px;
+cursor: pointer;
+}
+
+.tabs a span{
+float: none;
+}
+
+
+.tabs a:hover, .ubercolortabs li.selected a{
+background-color: #8fc5f4; /*background color of tabs onMouseover*/
+color:#26c;
+}
+
+.tabs a:hover span{
+background-color: transparent;
+}
+
+
+.maincontainer{
+width: 1004px; /*Width of main container*/
+margin: 0 auto; /*Center container on page*/
+}
+
+.topsection{
+
+height: 20px; /*Height of top section*/
+}
+
+.topsection h1{
+margin: 0;
+padding-top: 15px;
+}
+
+.contentwrapper{
+float: left;
+width: 100%;
+}
+
+.contentcolumn{
+margin-left: 700px; /*Margin for content column. Should be (RightColumnWidth + LeftColumnWidth)*/
+}
+
+.leftcolumn{
+float: left;
+width: 180px; /*Width of left column in pixel*/
+margin-left: -1002px; /*Set left margin to -(MainContainerWidth)*/
+
+}
+
+.rightcolumn{
+float: left;
+width: 600px; /*Width of right column in pixels*/
+margin-left: -890px; /*Set right margin to -(MainContainerWidth - LeftColumnWidth)*/
+
+}
+
+
+.innertube{
+margin: 10px; /*Margins for inner DIV inside each column (to provide padding)*/
+margin-top: 0;
+}
+
+.subheader{
+  padding-left:50px;
+  float:left;
+  word-spacing: 30px;
+  font-size: 1em;
+  color: #FF4500;
+}	
+
+#list{
+margin: 0px 0px 0 0px;
+padding: 0px 0px 0 20px;
+ 
+}
+
+#frame {
+text-align:left;
+background-color: #CCCCCC;
+position: relative;
+visibility: visible;
+width: 100%;
+margin-right: auto;
+margin-left: auto;
+float: none;
+padding-top: 12px;
+padding-bottom: 12px;
+overflow: hidden;
+ background: url(images/table.jpg) repeat-x top;
+}
+#Accounts{
+text-align:left;
+position: relative;
+visibility: visible;
+width: 12%;
+padding:0;
+margin-right: auto;
+float: left;
+ color: Red;
+}
+
+
+#Sales{
+text-align:left;
+position: relative;
+visibility: visible;
+width: 12%;
+padding:0;
+margin-right: auto;
+
+float: left; 
+}
+
+#Purchase{
+text-align:left;
+position: relative;
+visibility: visible;
+width: 12%;
+padding:0;
+margin-right: auto;
+
+float: left; 
+}
+#Inventory{
+text-align:left;
+position: relative;
+visibility: visible;
+width: 9%;
+padding:0;
+margin-right: auto;
+
+float: left; 
+}
+#Personnel{
+text-align:left;
+position: relative;
+visibility: visible;
+width: 9%;
+padding:0;
+margin-right: auto;
+
+float: left; 
+}
+#Reports{
+text-align:left;
+position: relative;
+visibility: visible;
+width: 6%;
+padding:0;
+margin-right: auto;
+
+float: left; 
+}
+#Sysadmin{
+text-align:left;
+position: relative;
+visibility: visible;
+width: 5%;
+padding:0;
+margin-right: auto;
+
+float: left; 
+}
+#Production{
+text-align:left;
+position: relative;
+visibility: visible;
+width: 6%;
+padding:0;
+margin-right: auto;
+
+float: left; 
+}
+#Maintenance{
+text-align:left;
+position: relative;
+visibility: visible;
+width: 9%;
+padding:0;
+margin-right: auto;
+
+float: left; 
+}
+#Appointment{
+text-align:left;
+position: relative;
+visibility: visible;
+width: 7%;
+padding:0;
+margin-right: auto;
+
+float: left; 
+}
+#Reservation{
+text-align:left;
+position: relative;
+visibility: visible;
+width:7%;
+padding:0;
+margin-right: auto;
+
+float: left; 
+}
+
+
+

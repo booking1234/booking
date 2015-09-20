@@ -1,0 +1,377 @@
+<wsdl:definitions xmlns:s="http://www.w3.org/2001/XMLSchema" xmlns:soap12="http://schemas.xmlsoap.org/wsdl/soap12/" xmlns:mime="http://schemas.xmlsoap.org/wsdl/mime/" xmlns:tns="http://tempuri.org/" xmlns:soap="http://schemas.xmlsoap.org/wsdl/soap/" xmlns:tm="http://microsoft.com/wsdl/mime/textMatching/" xmlns:http="http://schemas.xmlsoap.org/wsdl/http/" xmlns:soapenc="http://schemas.xmlsoap.org/soap/encoding/" xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/" targetNamespace="http://tempuri.org/">
+<wsdl:types>
+<s:schema elementFormDefault="qualified" targetNamespace="http://tempuri.org/">
+<s:element name="GetDistributionPropertes">
+<s:complexType>
+<s:sequence>
+<s:element minOccurs="0" maxOccurs="1" name="Account" type="s:string"/>
+<s:element minOccurs="0" maxOccurs="1" name="UserName" type="s:string"/>
+<s:element minOccurs="0" maxOccurs="1" name="Password" type="s:string"/>
+</s:sequence>
+</s:complexType>
+</s:element>
+<s:element name="GetDistributionPropertesResponse">
+<s:complexType>
+<s:sequence>
+<s:element minOccurs="0" maxOccurs="1" name="GetDistributionPropertesResult" type="tns:ArrayOfDistributionProperty"/>
+</s:sequence>
+</s:complexType>
+</s:element>
+<s:complexType name="ArrayOfDistributionProperty">
+<s:sequence>
+<s:element minOccurs="0" maxOccurs="unbounded" name="DistributionProperty" nillable="true" type="tns:DistributionProperty"/>
+</s:sequence>
+</s:complexType>
+<s:complexType name="DistributionProperty">
+<s:sequence>
+<s:element minOccurs="0" maxOccurs="1" name="PropertyCode" type="s:string"/>
+<s:element minOccurs="1" maxOccurs="1" name="PropertyId" type="s:int"/>
+<s:element minOccurs="0" maxOccurs="1" name="PropertyName" type="s:string"/>
+</s:sequence>
+</s:complexType>
+<s:element name="GetRatesAndAvailabilty">
+<s:complexType>
+<s:sequence>
+<s:element minOccurs="0" maxOccurs="1" name="Account" type="s:string"/>
+<s:element minOccurs="0" maxOccurs="1" name="UserName" type="s:string"/>
+<s:element minOccurs="0" maxOccurs="1" name="Password" type="s:string"/>
+<s:element minOccurs="0" maxOccurs="1" name="PropertyCode" type="s:string"/>
+<s:element minOccurs="1" maxOccurs="1" name="BeginDate" type="s:dateTime"/>
+<s:element minOccurs="1" maxOccurs="1" name="endDate" type="s:dateTime"/>
+</s:sequence>
+</s:complexType>
+</s:element>
+<s:element name="GetRatesAndAvailabiltyResponse">
+<s:complexType>
+<s:sequence>
+<s:element minOccurs="0" maxOccurs="1" name="GetRatesAndAvailabiltyResult" type="tns:RateAvailabilityUpdateRQ"/>
+</s:sequence>
+</s:complexType>
+</s:element>
+<s:complexType name="RateAvailabilityUpdateRQ">
+<s:sequence>
+<s:element minOccurs="0" maxOccurs="1" name="Authentication" type="s:string"/>
+<s:element minOccurs="0" maxOccurs="1" name="PropertyCode" type="s:string"/>
+<s:element minOccurs="0" maxOccurs="1" name="RateAvailabilities" type="tns:ArrayOfRateAvailability"/>
+</s:sequence>
+</s:complexType>
+<s:complexType name="ArrayOfRateAvailability">
+<s:sequence>
+<s:element minOccurs="0" maxOccurs="unbounded" name="RateAvailability" nillable="true" type="tns:RateAvailability"/>
+</s:sequence>
+</s:complexType>
+<s:complexType name="RateAvailability">
+<s:sequence>
+<s:element minOccurs="0" maxOccurs="1" name="RoomTypes" type="tns:ArrayOfRoomType"/>
+</s:sequence>
+</s:complexType>
+<s:complexType name="ArrayOfRoomType">
+<s:sequence>
+<s:element minOccurs="0" maxOccurs="unbounded" name="RoomType" nillable="true" type="tns:RoomType"/>
+</s:sequence>
+</s:complexType>
+<s:complexType name="RoomType">
+<s:sequence>
+<s:element minOccurs="0" maxOccurs="1" name="Id" type="s:string"/>
+<s:element minOccurs="1" maxOccurs="1" name="Date" type="s:dateTime"/>
+<s:element minOccurs="1" maxOccurs="1" name="Qty" type="s:int"/>
+<s:element minOccurs="0" maxOccurs="1" name="Rates" type="tns:ArrayOfRate"/>
+</s:sequence>
+</s:complexType>
+<s:complexType name="ArrayOfRate">
+<s:sequence>
+<s:element minOccurs="0" maxOccurs="unbounded" name="Rate" nillable="true" type="tns:Rate"/>
+</s:sequence>
+</s:complexType>
+<s:complexType name="Rate">
+<s:sequence>
+<s:element minOccurs="0" maxOccurs="1" name="Currency" type="s:string"/>
+<s:element minOccurs="1" maxOccurs="1" name="PerDay" type="s:decimal"/>
+<s:element minOccurs="0" maxOccurs="1" name="RatePlanCode" type="s:string"/>
+<s:element minOccurs="1" maxOccurs="1" name="Blackout" type="s:boolean"/>
+<s:element minOccurs="1" maxOccurs="1" name="ClosedToArrival" type="s:boolean"/>
+<s:element minOccurs="1" maxOccurs="1" name="MinStay" type="s:int"/>
+<s:element minOccurs="1" maxOccurs="1" name="MaxStay" type="s:int"/>
+</s:sequence>
+</s:complexType>
+<s:element name="GetRatesAndAvailabiltyUpdated">
+<s:complexType>
+<s:sequence>
+<s:element minOccurs="0" maxOccurs="1" name="Account" type="s:string"/>
+<s:element minOccurs="0" maxOccurs="1" name="UserName" type="s:string"/>
+<s:element minOccurs="0" maxOccurs="1" name="Password" type="s:string"/>
+<s:element minOccurs="0" maxOccurs="1" name="PropertyCode" type="s:string"/>
+<s:element minOccurs="1" maxOccurs="1" name="BeginDate" type="s:dateTime"/>
+<s:element minOccurs="1" maxOccurs="1" name="EndDate" type="s:dateTime"/>
+<s:element minOccurs="1" maxOccurs="1" name="UpdatedSince" type="s:dateTime"/>
+</s:sequence>
+</s:complexType>
+</s:element>
+<s:element name="GetRatesAndAvailabiltyUpdatedResponse">
+<s:complexType>
+<s:sequence>
+<s:element minOccurs="0" maxOccurs="1" name="GetRatesAndAvailabiltyUpdatedResult" type="tns:RateAvailabilityUpdateRQ"/>
+</s:sequence>
+</s:complexType>
+</s:element>
+<s:element name="ArrayOfDistributionProperty" nillable="true" type="tns:ArrayOfDistributionProperty"/>
+<s:element name="RateAvailabilityUpdateRQ" nillable="true" type="tns:RateAvailabilityUpdateRQ"/>
+</s:schema>
+</wsdl:types>
+<wsdl:message name="GetDistributionPropertesSoapIn">
+<wsdl:part name="parameters" element="tns:GetDistributionPropertes"/>
+</wsdl:message>
+<wsdl:message name="GetDistributionPropertesSoapOut">
+<wsdl:part name="parameters" element="tns:GetDistributionPropertesResponse"/>
+</wsdl:message>
+<wsdl:message name="GetRatesAndAvailabiltySoapIn">
+<wsdl:part name="parameters" element="tns:GetRatesAndAvailabilty"/>
+</wsdl:message>
+<wsdl:message name="GetRatesAndAvailabiltySoapOut">
+<wsdl:part name="parameters" element="tns:GetRatesAndAvailabiltyResponse"/>
+</wsdl:message>
+<wsdl:message name="GetRatesAndAvailabiltyUpdatedSoapIn">
+<wsdl:part name="parameters" element="tns:GetRatesAndAvailabiltyUpdated"/>
+</wsdl:message>
+<wsdl:message name="GetRatesAndAvailabiltyUpdatedSoapOut">
+<wsdl:part name="parameters" element="tns:GetRatesAndAvailabiltyUpdatedResponse"/>
+</wsdl:message>
+<wsdl:message name="GetDistributionPropertesHttpGetIn">
+<wsdl:part name="Account" type="s:string"/>
+<wsdl:part name="UserName" type="s:string"/>
+<wsdl:part name="Password" type="s:string"/>
+</wsdl:message>
+<wsdl:message name="GetDistributionPropertesHttpGetOut">
+<wsdl:part name="Body" element="tns:ArrayOfDistributionProperty"/>
+</wsdl:message>
+<wsdl:message name="GetRatesAndAvailabiltyHttpGetIn">
+<wsdl:part name="Account" type="s:string"/>
+<wsdl:part name="UserName" type="s:string"/>
+<wsdl:part name="Password" type="s:string"/>
+<wsdl:part name="PropertyCode" type="s:string"/>
+<wsdl:part name="BeginDate" type="s:string"/>
+<wsdl:part name="endDate" type="s:string"/>
+</wsdl:message>
+<wsdl:message name="GetRatesAndAvailabiltyHttpGetOut">
+<wsdl:part name="Body" element="tns:RateAvailabilityUpdateRQ"/>
+</wsdl:message>
+<wsdl:message name="GetRatesAndAvailabiltyUpdatedHttpGetIn">
+<wsdl:part name="Account" type="s:string"/>
+<wsdl:part name="UserName" type="s:string"/>
+<wsdl:part name="Password" type="s:string"/>
+<wsdl:part name="PropertyCode" type="s:string"/>
+<wsdl:part name="BeginDate" type="s:string"/>
+<wsdl:part name="EndDate" type="s:string"/>
+<wsdl:part name="UpdatedSince" type="s:string"/>
+</wsdl:message>
+<wsdl:message name="GetRatesAndAvailabiltyUpdatedHttpGetOut">
+<wsdl:part name="Body" element="tns:RateAvailabilityUpdateRQ"/>
+</wsdl:message>
+<wsdl:message name="GetDistributionPropertesHttpPostIn">
+<wsdl:part name="Account" type="s:string"/>
+<wsdl:part name="UserName" type="s:string"/>
+<wsdl:part name="Password" type="s:string"/>
+</wsdl:message>
+<wsdl:message name="GetDistributionPropertesHttpPostOut">
+<wsdl:part name="Body" element="tns:ArrayOfDistributionProperty"/>
+</wsdl:message>
+<wsdl:message name="GetRatesAndAvailabiltyHttpPostIn">
+<wsdl:part name="Account" type="s:string"/>
+<wsdl:part name="UserName" type="s:string"/>
+<wsdl:part name="Password" type="s:string"/>
+<wsdl:part name="PropertyCode" type="s:string"/>
+<wsdl:part name="BeginDate" type="s:string"/>
+<wsdl:part name="endDate" type="s:string"/>
+</wsdl:message>
+<wsdl:message name="GetRatesAndAvailabiltyHttpPostOut">
+<wsdl:part name="Body" element="tns:RateAvailabilityUpdateRQ"/>
+</wsdl:message>
+<wsdl:message name="GetRatesAndAvailabiltyUpdatedHttpPostIn">
+<wsdl:part name="Account" type="s:string"/>
+<wsdl:part name="UserName" type="s:string"/>
+<wsdl:part name="Password" type="s:string"/>
+<wsdl:part name="PropertyCode" type="s:string"/>
+<wsdl:part name="BeginDate" type="s:string"/>
+<wsdl:part name="EndDate" type="s:string"/>
+<wsdl:part name="UpdatedSince" type="s:string"/>
+</wsdl:message>
+<wsdl:message name="GetRatesAndAvailabiltyUpdatedHttpPostOut">
+<wsdl:part name="Body" element="tns:RateAvailabilityUpdateRQ"/>
+</wsdl:message>
+<wsdl:portType name="DistributionServiceSoap">
+<wsdl:operation name="GetDistributionPropertes">
+<wsdl:input message="tns:GetDistributionPropertesSoapIn"/>
+<wsdl:output message="tns:GetDistributionPropertesSoapOut"/>
+</wsdl:operation>
+<wsdl:operation name="GetRatesAndAvailabilty">
+<wsdl:input message="tns:GetRatesAndAvailabiltySoapIn"/>
+<wsdl:output message="tns:GetRatesAndAvailabiltySoapOut"/>
+</wsdl:operation>
+<wsdl:operation name="GetRatesAndAvailabiltyUpdated">
+<wsdl:input message="tns:GetRatesAndAvailabiltyUpdatedSoapIn"/>
+<wsdl:output message="tns:GetRatesAndAvailabiltyUpdatedSoapOut"/>
+</wsdl:operation>
+</wsdl:portType>
+<wsdl:portType name="DistributionServiceHttpGet">
+<wsdl:operation name="GetDistributionPropertes">
+<wsdl:input message="tns:GetDistributionPropertesHttpGetIn"/>
+<wsdl:output message="tns:GetDistributionPropertesHttpGetOut"/>
+</wsdl:operation>
+<wsdl:operation name="GetRatesAndAvailabilty">
+<wsdl:input message="tns:GetRatesAndAvailabiltyHttpGetIn"/>
+<wsdl:output message="tns:GetRatesAndAvailabiltyHttpGetOut"/>
+</wsdl:operation>
+<wsdl:operation name="GetRatesAndAvailabiltyUpdated">
+<wsdl:input message="tns:GetRatesAndAvailabiltyUpdatedHttpGetIn"/>
+<wsdl:output message="tns:GetRatesAndAvailabiltyUpdatedHttpGetOut"/>
+</wsdl:operation>
+</wsdl:portType>
+<wsdl:portType name="DistributionServiceHttpPost">
+<wsdl:operation name="GetDistributionPropertes">
+<wsdl:input message="tns:GetDistributionPropertesHttpPostIn"/>
+<wsdl:output message="tns:GetDistributionPropertesHttpPostOut"/>
+</wsdl:operation>
+<wsdl:operation name="GetRatesAndAvailabilty">
+<wsdl:input message="tns:GetRatesAndAvailabiltyHttpPostIn"/>
+<wsdl:output message="tns:GetRatesAndAvailabiltyHttpPostOut"/>
+</wsdl:operation>
+<wsdl:operation name="GetRatesAndAvailabiltyUpdated">
+<wsdl:input message="tns:GetRatesAndAvailabiltyUpdatedHttpPostIn"/>
+<wsdl:output message="tns:GetRatesAndAvailabiltyUpdatedHttpPostOut"/>
+</wsdl:operation>
+</wsdl:portType>
+<wsdl:binding name="DistributionServiceSoap" type="tns:DistributionServiceSoap">
+<soap:binding transport="http://schemas.xmlsoap.org/soap/http"/>
+<wsdl:operation name="GetDistributionPropertes">
+<soap:operation soapAction="http://tempuri.org/GetDistributionPropertes" style="document"/>
+<wsdl:input>
+<soap:body use="literal"/>
+</wsdl:input>
+<wsdl:output>
+<soap:body use="literal"/>
+</wsdl:output>
+</wsdl:operation>
+<wsdl:operation name="GetRatesAndAvailabilty">
+<soap:operation soapAction="http://tempuri.org/GetRatesAndAvailabilty" style="document"/>
+<wsdl:input>
+<soap:body use="literal"/>
+</wsdl:input>
+<wsdl:output>
+<soap:body use="literal"/>
+</wsdl:output>
+</wsdl:operation>
+<wsdl:operation name="GetRatesAndAvailabiltyUpdated">
+<soap:operation soapAction="http://tempuri.org/GetRatesAndAvailabiltyUpdated" style="document"/>
+<wsdl:input>
+<soap:body use="literal"/>
+</wsdl:input>
+<wsdl:output>
+<soap:body use="literal"/>
+</wsdl:output>
+</wsdl:operation>
+</wsdl:binding>
+<wsdl:binding name="DistributionServiceSoap12" type="tns:DistributionServiceSoap">
+<soap12:binding transport="http://schemas.xmlsoap.org/soap/http"/>
+<wsdl:operation name="GetDistributionPropertes">
+<soap12:operation soapAction="http://tempuri.org/GetDistributionPropertes" style="document"/>
+<wsdl:input>
+<soap12:body use="literal"/>
+</wsdl:input>
+<wsdl:output>
+<soap12:body use="literal"/>
+</wsdl:output>
+</wsdl:operation>
+<wsdl:operation name="GetRatesAndAvailabilty">
+<soap12:operation soapAction="http://tempuri.org/GetRatesAndAvailabilty" style="document"/>
+<wsdl:input>
+<soap12:body use="literal"/>
+</wsdl:input>
+<wsdl:output>
+<soap12:body use="literal"/>
+</wsdl:output>
+</wsdl:operation>
+<wsdl:operation name="GetRatesAndAvailabiltyUpdated">
+<soap12:operation soapAction="http://tempuri.org/GetRatesAndAvailabiltyUpdated" style="document"/>
+<wsdl:input>
+<soap12:body use="literal"/>
+</wsdl:input>
+<wsdl:output>
+<soap12:body use="literal"/>
+</wsdl:output>
+</wsdl:operation>
+</wsdl:binding>
+<wsdl:binding name="DistributionServiceHttpGet" type="tns:DistributionServiceHttpGet">
+<http:binding verb="GET"/>
+<wsdl:operation name="GetDistributionPropertes">
+<http:operation location="/GetDistributionPropertes"/>
+<wsdl:input>
+<http:urlEncoded/>
+</wsdl:input>
+<wsdl:output>
+<mime:mimeXml part="Body"/>
+</wsdl:output>
+</wsdl:operation>
+<wsdl:operation name="GetRatesAndAvailabilty">
+<http:operation location="/GetRatesAndAvailabilty"/>
+<wsdl:input>
+<http:urlEncoded/>
+</wsdl:input>
+<wsdl:output>
+<mime:mimeXml part="Body"/>
+</wsdl:output>
+</wsdl:operation>
+<wsdl:operation name="GetRatesAndAvailabiltyUpdated">
+<http:operation location="/GetRatesAndAvailabiltyUpdated"/>
+<wsdl:input>
+<http:urlEncoded/>
+</wsdl:input>
+<wsdl:output>
+<mime:mimeXml part="Body"/>
+</wsdl:output>
+</wsdl:operation>
+</wsdl:binding>
+<wsdl:binding name="DistributionServiceHttpPost" type="tns:DistributionServiceHttpPost">
+<http:binding verb="POST"/>
+<wsdl:operation name="GetDistributionPropertes">
+<http:operation location="/GetDistributionPropertes"/>
+<wsdl:input>
+<mime:content type="application/x-www-form-urlencoded"/>
+</wsdl:input>
+<wsdl:output>
+<mime:mimeXml part="Body"/>
+</wsdl:output>
+</wsdl:operation>
+<wsdl:operation name="GetRatesAndAvailabilty">
+<http:operation location="/GetRatesAndAvailabilty"/>
+<wsdl:input>
+<mime:content type="application/x-www-form-urlencoded"/>
+</wsdl:input>
+<wsdl:output>
+<mime:mimeXml part="Body"/>
+</wsdl:output>
+</wsdl:operation>
+<wsdl:operation name="GetRatesAndAvailabiltyUpdated">
+<http:operation location="/GetRatesAndAvailabiltyUpdated"/>
+<wsdl:input>
+<mime:content type="application/x-www-form-urlencoded"/>
+</wsdl:input>
+<wsdl:output>
+<mime:mimeXml part="Body"/>
+</wsdl:output>
+</wsdl:operation>
+</wsdl:binding>
+<wsdl:service name="DistributionService">
+<wsdl:port name="DistributionServiceSoap" binding="tns:DistributionServiceSoap">
+<soap:address location="http://connect.leisurelink.com/ExternalService/DistributionService.asmx"/>
+</wsdl:port>
+<wsdl:port name="DistributionServiceSoap12" binding="tns:DistributionServiceSoap12">
+<soap12:address location="http://connect.leisurelink.com/ExternalService/DistributionService.asmx"/>
+</wsdl:port>
+<wsdl:port name="DistributionServiceHttpGet" binding="tns:DistributionServiceHttpGet">
+<http:address location="http://connect.leisurelink.com/ExternalService/DistributionService.asmx"/>
+</wsdl:port>
+<wsdl:port name="DistributionServiceHttpPost" binding="tns:DistributionServiceHttpPost">
+<http:address location="http://connect.leisurelink.com/ExternalService/DistributionService.asmx"/>
+</wsdl:port>
+</wsdl:service>
+</wsdl:definitions>

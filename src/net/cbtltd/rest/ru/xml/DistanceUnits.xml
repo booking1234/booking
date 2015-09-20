@@ -1,0 +1,14 @@
+<?xml version="1.0" encoding="UTF-8"?>
+	<DistanceUnits>
+		<DistanceUnit DistanceUnitID="1">meters</DistanceUnit>
+		<DistanceUnit DistanceUnitID="2">minutes</DistanceUnit>
+		<DistanceUnit DistanceUnitID="3">km</DistanceUnit>
+		<DistanceUnit DistanceUnitID="6">minutes walk</DistanceUnit>
+		<DistanceUnit DistanceUnitID="8">miles</DistanceUnit>
+		<DistanceUnit DistanceUnitID="16">minutes by tube</DistanceUnit>
+		<DistanceUnit DistanceUnitID="18">minutes by train</DistanceUnit>
+		<DistanceUnit DistanceUnitID="19">minutes by bus</DistanceUnit>
+		<DistanceUnit DistanceUnitID="20">On location</DistanceUnit>
+		<DistanceUnit DistanceUnitID="21">minutes drive</DistanceUnit>
+		<DistanceUnit DistanceUnitID="22">yards</DistanceUnit>
+	</DistanceUnits>

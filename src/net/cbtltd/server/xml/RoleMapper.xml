@@ -1,0 +1,90 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="net.cbtltd.server.api.RoleMapper">
+
+	<cache readOnly="true"/>
+
+	<resultMap id="ResultMap" type="Role">
+		<id column="ID" jdbcType="INTEGER" property="id" />
+		<result column="ParentID" jdbcType="INTEGER" property="parentid" />
+		<result column="Name" jdbcType="VARCHAR" property="name" />
+		<result column="State" jdbcType="VARCHAR" property="state" />
+		<result column="Notes" jdbcType="VARCHAR" property="notes" />
+	</resultMap>
+
+	<sql id="columns">
+		ID, ParentID, Name, State, Notes
+	</sql>
+
+	<select id="read" parameterType="String" resultMap="ResultMap">
+		select
+		<include refid="columns" />
+		from role
+		where ID = #{id,jdbcType=INTEGER}
+	</select>
+
+	<delete id="delete" parameterType="String">
+		delete from role
+		where ID = #{id,jdbcType=INTEGER}
+	</delete>
+
+	<insert id="create" parameterType="Role" useGeneratedKeys="true" keyProperty="id">
+<!--		<selectKey keyProperty="ID" order="AFTER" resultType="java.lang.Integer">-->
+<!--			SELECT LAST_INSERT_ID()-->
+<!--		</selectKey>-->
+		insert into role (ParentID, Name, State,
+		Notes)
+		values (#{parentid,jdbcType=INTEGER}, #{name,jdbcType=VARCHAR},
+		#{state,jdbcType=VARCHAR},
+		#{notes,jdbcType=VARCHAR})
+	</insert>
+
+	<update id="update" parameterType="Role">
+		update role
+		<set>
+			<if test="parentid != null">
+				ParentID = #{parentid,jdbcType=INTEGER},
+      </if>
+			<if test="name != null">
+				Name = #{name,jdbcType=VARCHAR},
+      </if>
+			<if test="state != null">
+				State = #{state,jdbcType=VARCHAR},
+      </if>
+			<if test="notes != null">
+				Notes = #{notes,jdbcType=VARCHAR},
+      </if>
+		</set>
+		where ID = #{id,jdbcType=INTEGER}
+	</update>
+
+	<update id="updateByPrimaryKey" parameterType="Role">
+		update role
+		set ParentID = #{parentid,jdbcType=INTEGER},
+		Name = #{name,jdbcType=VARCHAR},
+		State = #{state,jdbcType=VARCHAR},
+		Notes = #{notes,jdbcType=VARCHAR}
+		where ID = #{id,jdbcType=INTEGER}
+	</update>
+
+	<select id="nameidbyid" parameterType="NameIdAction" resultType="NameId">
+		select distinct Name, ID
+		from role
+		where ID = #{id}
+	</select>
+
+	<select id="nameidbyname" parameterType="NameIdAction" resultType="NameId">
+		select distinct Name, ID
+		from role
+		where Name <![CDATA[ >= ]]> #{name}
+		<if test="state == null">
+			and State not in ('Initial', 'Final')
+		</if>
+		<if test="state != null">
+			and State in (${state})
+		</if>
+		order by Name
+		limit 0, #{numrows}
+	</select>
+
+</mapper>

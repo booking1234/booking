@@ -1,0 +1,77 @@
+@def fontFamily Verdana, Arial;
+@def formBackground #F3F3F3;
+@def formBorder 1px solid gray;
+@def fieldBorder 1px solid gray;
+
+.addresseesavailableStyle {
+	height: 17px; 
+	width: 280px;
+	margin: 1px;
+	margin-bottom: -1px;
+}
+.addresseesselectedStyle {
+	height: 120px;
+	width: 300px;
+}
+
+.affiliatenameField {
+	width: 170px;
+	margin-left: 5px;
+}
+
+.affiliatetermsButton {
+	margin: 10px;
+	border-bottom: 1px solid #ddd;
+	color: blue;
+	text-decoration: underline;
+	text-align: center;
+	cursor: pointer;
+	cursor: hand;
+}
+
+.affiliatetypeField {width: 150px;}
+.affiliatetermstextField {
+	height: 400px;
+	width: 100%;
+}
+
+.controlStyle {
+	height: 36px;
+	width: 100%;
+	margin-bottom: 0;
+}
+
+.goalStyle {width: 274px;}
+
+.mediumbuttonStyle {
+	margin-top: 2px;
+	margin-left: 0;
+	-webkit-box-shadow:0 0 0 #666; 
+	-moz-box-shadow: 0 0 0 #666; 
+	box-shadow: 0 0 0 #666;
+}
+
+.mediumfieldStyle {
+	width: 210px;
+	border: formBorder;
+}
+.messagefieldStyle {height: 300px;}
+
+.notesStyle {
+	position: relative;
+	width: 800px;
+	height: 700px;
+	white-space: pre-wrap;
+/* 	color: labelColor; */
+/* 	background: formBackground; */
+	border: 0;
+}
+.sendButton {
+	width: 300px;
+	margin-left: 7px;
+}
+.stackStyle {
+	height: 730px;
+	width: 800px;
+	margin-top: 10px;
+}

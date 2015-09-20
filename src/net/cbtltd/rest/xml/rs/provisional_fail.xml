@@ -1,0 +1,16 @@
+<?xml version="1.0" encoding="UTF-8" standalone="yes"?><!-- no stylesheet -->
+<provisional>
+	<arrive>2013-10-01</arrive>
+	<checkin>2013-10-01</checkin>
+	<checkout>2013-10-15</checkout>
+	<depart>2013-10-15</depart>
+	<emailaddress>tim@pinaway.com</emailaddress>
+	<familyname>Martin</familyname>
+	<firstname>Tim</firstname>
+	<message>/reservation?pos=a3a2e74b809e0e87&amp;xsl='no_xsl'
+		product_not_available:Property not available for these dates 144 from
+		2013-10-01 to 2013-10-15
+	</message>
+	<productid>144</productid>
+	<xsl>'no_xsl'</xsl>
+</provisional>

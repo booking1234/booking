@@ -1,0 +1,125 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="net.cbtltd.server.api.RuleMapper">
+
+	<resultMap id="ResultMap" type="Rule">
+		<id column="ID" jdbcType="INTEGER" property="id" />
+		<result column="ModelID" jdbcType="INTEGER" property="modelid" />
+		<result column="ModelType" jdbcType="VARCHAR" property="modeltype" />
+		<result column="Name" jdbcType="VARCHAR" property="name" />
+		<result column="Unit" jdbcType="VARCHAR" property="unit" />
+		<result column="Currency" jdbcType="VARCHAR" property="currency" />
+		<result column="FromDate" jdbcType="DATE" property="fromdate" />
+		<result column="ToDate" jdbcType="DATE" property="todate" />
+		<result column="Quantity" jdbcType="DOUBLE" property="quantity" />
+		<result column="Value" jdbcType="DOUBLE" property="value" />
+		<result column="version" jdbcType="TIMESTAMP" property="version" />
+	</resultMap>
+
+	<sql id="columns">
+		ID, ModelID, ModelType, Name, Unit, Currency, FromDate, ToDate, Quantity, Value, version
+	</sql>
+
+	<select id="read" parameterType="String" resultMap="ResultMap">
+		select
+		<include refid="columns" />
+		from data
+		where ID = #{id,jdbcType=INTEGER}
+	</select>
+
+	<delete id="delete" parameterType="String">
+		delete from data
+		where ID =
+		#{id,jdbcType=INTEGER}
+	</delete>
+
+	<insert id="create" parameterType="Rule" useGeneratedKeys="true" keyProperty="id">
+		insert into data (
+			ModelID, ModelType, Name, Unit, Currency, FromDate, ToDate, Quantity, Value, version
+		)
+		values (
+			#{modelid,jdbcType=INTEGER},
+			#{modeltype,jdbcType=VARCHAR}, 
+			#{name,jdbcType=VARCHAR}, 
+			#{unit,jdbcType=VARCHAR},
+			#{currency,jdbcType=VARCHAR},
+			#{fromdate,jdbcType=DATE},
+			#{todate,jdbcType=DATE},
+			#{quantity,jdbcType=DOUBLE},
+			#{value,jdbcType=DOUBLE},
+			#{version,jdbcType=TIMESTAMP}
+		)
+	</insert>
+
+	<update id="update" parameterType="Rule">
+		update data
+		<set>
+			<if test="modelid != null">
+				ModelID = #{modelid,jdbcType=INTEGER},
+			</if>
+			<if test="modeltype != null">
+				ModelType = #{modeltype,jdbcType=VARCHAR},
+			</if>
+			<if test="name != null">
+				Name = #{name,jdbcType=VARCHAR},
+			</if>
+			<if test="unit != null">
+				Unit = #{unit,jdbcType=VARCHAR},
+			</if>
+			<if test="currency != null">
+				Currency = #{currency,jdbcType=VARCHAR},
+			</if>
+			<if test="fromdate != null">
+				FromDate = #{fromdate,jdbcType=DATE},
+			</if>
+			<if test="todate != null">
+				ToDate = #{todate,jdbcType=DATE},
+			</if>
+			<if test="quantity != null">
+				Quantity = #{quantity,jdbcType=DOUBLE},
+			</if>
+			<if test="value != null">
+				Value = #{value,jdbcType=DOUBLE},
+			</if>
+			<if test="version != null">
+				version = #{version,jdbcType=TIMESTAMP},
+			</if>
+		</set>
+		where ID = #{id,jdbcType=INTEGER}
+	</update>
+
+	<update id="updateByPrimaryKey" parameterType="Rule">
+		update data
+		set
+			ModelID = #{modelid,jdbcType=INTEGER},
+			ModelType = #{modeltype,jdbcType=VARCHAR},
+			Name = #{name,jdbcType=VARCHAR},
+			Unit = #{unit,jdbcType=VARCHAR},
+			Currency = #{currency,jdbcType=VARCHAR},
+			FromDate = #{fromdate,jdbcType=DATE},
+			ToDate = #{todate,jdbcType=DATE},
+			Quantity = #{quantity,jdbcType=DOUBLE},
+			Value = #{value,jdbcType=DOUBLE},
+			version = #{version,jdbcType=TIMESTAMP}
+		where ID = #{id,jdbcType=INTEGER}
+	</update>
+
+	<sql id="tablewhere">
+		where ModelType = #{modeltype,jdbcType=VARCHAR}
+			and ModelID = #{modelid,jdbcType=VARCHAR}
+	</sql>
+
+	<select id="count" parameterType="Rule" resultType="Integer">
+		select count(*)
+		from data
+		<include refid="tablewhere" />
+	</select>
+
+	<select id="list" parameterType="Rule" resultMap="ResultMap">
+		select
+		<include refid="columns" />
+		from data
+		<include refid="tablewhere" />
+		order by ID
+	</select>
+</mapper>

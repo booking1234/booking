@@ -1,0 +1,219 @@
+<xs:schema attributeFormDefault="unqualified" elementFormDefault="qualified" targetNamespace="http://www.exchangefortravel.org/xft/current" xmlns:xs="http://www.w3.org/2001/XMLSchema">
+  <xs:element name="Segments">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element name="Date">
+          <xs:complexType>
+            <xs:simpleContent>
+              <xs:extension base="xs:string">
+                <xs:attribute type="xs:dateTime" name="Value"/>
+              </xs:extension>
+            </xs:simpleContent>
+          </xs:complexType>
+        </xs:element>
+        <xs:element name="Segments" maxOccurs="unbounded" minOccurs="0">
+          <xs:complexType>
+            <xs:sequence>
+              <xs:element name="Segment" maxOccurs="unbounded" minOccurs="0">
+                <xs:complexType mixed="true">
+                  <xs:sequence>
+                    <xs:element name="Code">
+                      <xs:complexType>
+                        <xs:simpleContent>
+                          <xs:extension base="xs:string">
+                            <xs:attribute type="xs:short" name="Value" use="optional"/>
+                          </xs:extension>
+                        </xs:simpleContent>
+                      </xs:complexType>
+                    </xs:element>
+                    <xs:element name="Segments">
+                      <xs:complexType>
+                        <xs:sequence>
+                          <xs:element name="Segment" maxOccurs="unbounded" minOccurs="0">
+                            <xs:complexType>
+                              <xs:sequence>
+                                <xs:element name="Begins">
+                                  <xs:complexType>
+                                    <xs:sequence>
+                                      <xs:element name="Begin" maxOccurs="unbounded" minOccurs="0">
+                                        <xs:complexType>
+                                          <xs:sequence>
+                                            <xs:element name="Price">
+                                              <xs:complexType>
+                                                <xs:simpleContent>
+                                                  <xs:extension base="xs:string">
+                                                    <xs:attribute type="xs:int" name="OriginalValue" use="optional"/>
+                                                    <xs:attribute type="xs:int" name="Value" use="optional"/>
+                                                    <xs:attribute type="xs:string" name="Ref" use="optional"/>
+                                                  </xs:extension>
+                                                </xs:simpleContent>
+                                              </xs:complexType>
+                                            </xs:element>
+                                            <xs:element name="Duration">
+                                              <xs:complexType>
+                                                <xs:simpleContent>
+                                                  <xs:extension base="xs:string">
+                                                    <xs:attribute type="xs:string" name="Ref" use="optional"/>
+                                                  </xs:extension>
+                                                </xs:simpleContent>
+                                              </xs:complexType>
+                                            </xs:element>
+                                          </xs:sequence>
+                                          <xs:attribute type="xs:date" name="Value" use="optional"/>
+                                          <xs:attribute type="xs:string" name="Ref" use="optional"/>
+                                        </xs:complexType>
+                                      </xs:element>
+                                    </xs:sequence>
+                                  </xs:complexType>
+                                </xs:element>
+                              </xs:sequence>
+                              <xs:attribute type="xs:string" name="Ref" use="optional"/>
+                            </xs:complexType>
+                          </xs:element>
+                        </xs:sequence>
+                        <xs:attribute type="xs:string" name="What" use="optional"/>
+                      </xs:complexType>
+                    </xs:element>
+                  </xs:sequence>
+                  <xs:attribute type="xs:string" name="Is" use="optional"/>
+                </xs:complexType>
+              </xs:element>
+              <xs:element name="Prices" minOccurs="0">
+                <xs:complexType>
+                  <xs:sequence>
+                    <xs:element name="Price">
+                      <xs:complexType>
+                        <xs:simpleContent>
+                          <xs:extension base="xs:string">
+                            <xs:attribute type="xs:string" name="ID"/>
+                            <xs:attribute type="xs:string" name="Default"/>
+                            <xs:attribute type="xs:string" name="Currency"/>
+                            <xs:attribute type="xs:byte" name="Decimals"/>
+                            <xs:attribute type="xs:string" name="Role"/>
+                            <xs:attribute type="xs:string" name="Target"/>
+                            <xs:attribute type="xs:string" name="Type"/>
+                          </xs:extension>
+                        </xs:simpleContent>
+                      </xs:complexType>
+                    </xs:element>
+                  </xs:sequence>
+                </xs:complexType>
+              </xs:element>
+              <xs:element name="Entities" minOccurs="0">
+                <xs:complexType>
+                  <xs:sequence>
+                    <xs:element name="Entity" maxOccurs="unbounded" minOccurs="0">
+                      <xs:complexType>
+                        <xs:sequence>
+                          <xs:element name="Begins" minOccurs="0">
+                            <xs:complexType>
+                              <xs:sequence>
+                                <xs:element name="Begin" maxOccurs="unbounded" minOccurs="0">
+                                  <xs:complexType>
+                                    <xs:simpleContent>
+                                      <xs:extension base="xs:string">
+                                        <xs:attribute type="xs:string" name="ID" use="optional"/>
+                                        <xs:attribute type="xs:string" name="Quantity" use="optional"/>
+                                        <xs:attribute type="xs:string" name="Status" use="optional"/>
+                                      </xs:extension>
+                                    </xs:simpleContent>
+                                  </xs:complexType>
+                                </xs:element>
+                              </xs:sequence>
+                            </xs:complexType>
+                          </xs:element>
+                          <xs:element name="Active" minOccurs="0">
+                            <xs:complexType>
+                              <xs:simpleContent>
+                                <xs:extension base="xs:string">
+                                  <xs:attribute type="xs:date" name="Begin"/>
+                                  <xs:attribute type="xs:date" name="End"/>
+                                </xs:extension>
+                              </xs:simpleContent>
+                            </xs:complexType>
+                          </xs:element>
+                          <xs:element name="Durations" minOccurs="0">
+                            <xs:complexType>
+                              <xs:sequence>
+                                <xs:element name="Duration" maxOccurs="unbounded" minOccurs="0">
+                                  <xs:complexType>
+                                    <xs:simpleContent>
+                                      <xs:extension base="xs:string">
+                                        <xs:attribute type="xs:string" name="ID" use="optional"/>
+                                        <xs:attribute type="xs:byte" name="Value" use="optional"/>
+                                        <xs:attribute type="xs:string" name="Unit" use="optional"/>
+                                      </xs:extension>
+                                    </xs:simpleContent>
+                                  </xs:complexType>
+                                </xs:element>
+                              </xs:sequence>
+                            </xs:complexType>
+                          </xs:element>
+                          <xs:element name="Ats" minOccurs="0">
+                            <xs:complexType>
+                              <xs:sequence>
+                                <xs:element name="At" maxOccurs="unbounded" minOccurs="0">
+                                  <xs:complexType mixed="true">
+                                    <xs:sequence>
+                                      <xs:element name="Code">
+                                        <xs:complexType>
+                                          <xs:simpleContent>
+                                            <xs:extension base="xs:string">
+                                              <xs:attribute type="xs:short" name="Value" use="optional"/>
+                                            </xs:extension>
+                                          </xs:simpleContent>
+                                        </xs:complexType>
+                                      </xs:element>
+                                      <xs:element name="Occupancies">
+                                        <xs:complexType>
+                                          <xs:sequence>
+                                            <xs:element name="Occupancy" maxOccurs="unbounded" minOccurs="0">
+                                              <xs:complexType>
+                                                <xs:simpleContent>
+                                                  <xs:extension base="xs:string">
+                                                    <xs:attribute type="xs:string" name="Unit" use="optional"/>
+                                                    <xs:attribute type="xs:byte" name="Min" use="optional"/>
+                                                    <xs:attribute type="xs:byte" name="Max" use="optional"/>
+                                                  </xs:extension>
+                                                </xs:simpleContent>
+                                              </xs:complexType>
+                                            </xs:element>
+                                          </xs:sequence>
+                                        </xs:complexType>
+                                      </xs:element>
+                                    </xs:sequence>
+                                    <xs:attribute type="xs:string" name="ID" use="optional"/>
+                                    <xs:attribute type="xs:string" name="Name" use="optional"/>
+                                  </xs:complexType>
+                                </xs:element>
+                              </xs:sequence>
+                            </xs:complexType>
+                          </xs:element>
+                        </xs:sequence>
+                        <xs:attribute type="xs:string" name="Is" use="optional"/>
+                      </xs:complexType>
+                    </xs:element>
+                  </xs:sequence>
+                </xs:complexType>
+              </xs:element>
+            </xs:sequence>
+            <xs:attribute type="xs:string" name="Name" use="optional"/>
+            <xs:attribute type="xs:string" name="What" use="optional"/>
+          </xs:complexType>
+        </xs:element>
+        <xs:element name="Vendor">
+          <xs:complexType>
+            <xs:simpleContent>
+              <xs:extension base="xs:string">
+                <xs:attribute type="xs:string" name="Name"/>
+                <xs:attribute type="xs:string" name="Code"/>
+                <xs:attribute type="xs:string" name="Licence"/>
+              </xs:extension>
+            </xs:simpleContent>
+          </xs:complexType>
+        </xs:element>
+      </xs:sequence>
+      <xs:attribute type="xs:float" name="Version"/>
+    </xs:complexType>
+  </xs:element>
+</xs:schema>

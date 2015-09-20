@@ -1,0 +1,32 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+
+<mapper namespace="net.cbtltd.server.api.PropertyDealRatesMapper">
+    <resultMap id="ResultMap" type="PropertyDealRates">
+    <id column="ID" jdbcType="INTEGER" property="id" />
+    <id column="propertyId" jdbcType="INTEGER" property="propertyId" />
+    <id column="rateId" jdbcType="INTEGER" property="rateId" />
+    
+   </resultMap>
+
+   
+<insert id="create" parameterType="PropertyDealRates" useGeneratedKeys="true" keyProperty="id">
+		insert into property_dealrates (
+			rateId, propertyId
+		)
+		values (
+			#{rateId,jdbcType=INTEGER},
+			#{propertyId,jdbcType=INTEGER}
+		)
+	</insert>
+	<select id="existsForProductId" parameterType="PropertyDealRates" resultMap="ResultMap">
+		SELECT
+		*
+		FROM property_dealrates 
+		WHERE  propertyId = #{propertyId}
+			   
+	</select>
+	
+
+    
+    </mapper>

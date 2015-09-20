@@ -1,0 +1,1222 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<xs:schema attributeFormDefault="unqualified" elementFormDefault="qualified" xmlns:xs="http://www.w3.org/2001/XMLSchema">
+	<xs:element name="units">
+		<xs:complexType>
+			<xs:sequence>
+				<xs:element minOccurs="1" maxOccurs="unbounded" name="unit">
+					<xs:complexType>
+						<xs:sequence>
+							<xs:element minOccurs="1" maxOccurs="unbounded" name="property_type" >
+								<xs:annotation>
+									<xs:documentation xml:lang="de">Hauptobjekttyp (1-Ferienhaus, 2 - Ferienwohunng, 3 - Ferienanlage)</xs:documentation>
+									<xs:documentation xml:lang="en">Main object type</xs:documentation>
+								</xs:annotation>
+								<xs:simpleType>
+									<xs:restriction base ="xs:integer">
+										<xs:enumeration value="1">
+											<xs:annotation>
+												<xs:documentation xml:lang="de">Ferienhaus</xs:documentation>
+												<xs:documentation xml:lang="en">holiday house</xs:documentation>
+											</xs:annotation>
+										</xs:enumeration>
+										<xs:enumeration value="2">
+											<xs:annotation>
+												<xs:documentation xml:lang="de">Ferienwohnung</xs:documentation>
+												<xs:documentation xml:lang="en">vacation home</xs:documentation>
+											</xs:annotation>
+										</xs:enumeration>
+										<xs:enumeration value="3">
+											<xs:annotation>
+												<xs:documentation xml:lang="de">Ferienpark</xs:documentation>
+												<xs:documentation xml:lang="en">holiday resort</xs:documentation>
+											</xs:annotation>
+										</xs:enumeration>
+									</xs:restriction>
+								</xs:simpleType>
+							</xs:element>
+							<xs:element minOccurs="1" maxOccurs="unbounded" name="title">
+								<xs:annotation>
+									<xs:documentation xml:lang="de">Bezeichnung/Name eines Objektes</xs:documentation>
+									<xs:documentation xml:lang="en">Object name</xs:documentation>
+								</xs:annotation>
+								<xs:complexType>
+									<xs:simpleContent>
+										<xs:extension base="xs:string">
+											<xs:attribute name="language" use="optional" type="xs:language">
+												<xs:annotation>
+													<xs:documentation xml:lang="de">Sprache</xs:documentation>
+													<xs:documentation xml:lang="en">Language</xs:documentation>
+												</xs:annotation>
+											</xs:attribute>
+										</xs:extension>
+									</xs:simpleContent>
+								</xs:complexType>
+							</xs:element>
+							<xs:element minOccurs="1" name="occupancies">
+								<xs:annotation>
+									<xs:documentation xml:lang="de">de</xs:documentation>
+									<xs:documentation xml:lang="en">en</xs:documentation>
+								</xs:annotation>
+								<xs:complexType>
+									<xs:attribute name="normal" type="xs:integer" use="optional">
+										<xs:annotation>
+											<xs:documentation xml:lang="de">Normalbelegung in Anzahl Personen</xs:documentation>
+											<xs:documentation xml:lang="en">Standard occupancy (Number of persons)</xs:documentation>
+										</xs:annotation>
+									</xs:attribute>
+									<xs:attribute name="maximum" type="xs:integer" use="required">
+										<xs:annotation>
+											<xs:documentation xml:lang="de">Maximalbelegung in Anzahl Personen</xs:documentation>
+											<xs:documentation xml:lang="en">Maximum occupancy (Number of persons)</xs:documentation>
+										</xs:annotation>
+									</xs:attribute>
+								</xs:complexType>
+							</xs:element>
+							<xs:element minOccurs="1" name="location">
+								<xs:annotation>
+									<xs:documentation xml:lang="de">Angaben zur Lokalisierung eines Objektes</xs:documentation>
+									<xs:documentation xml:lang="en">Information to localise an object</xs:documentation>
+								</xs:annotation>
+								<xs:complexType>
+									<xs:sequence>
+										<xs:element minOccurs="1" name="country">
+											<xs:annotation>
+												<xs:documentation xml:lang="de">Läderbezeichnung</xs:documentation>
+												<xs:documentation xml:lang="en">Country name</xs:documentation>
+											</xs:annotation>
+											<xs:complexType>
+												<xs:simpleContent>
+													<xs:extension base="xs:string">
+														<xs:attribute name="iso_code" type="xs:string" use="required">
+															<xs:annotation>
+																<xs:documentation xml:lang="de">2-stelliger Ländercode gem. ISO 3166</xs:documentation>
+																<xs:documentation xml:lang="en">Country Code following ISO 3166</xs:documentation>
+															</xs:annotation>
+														</xs:attribute>
+													</xs:extension>
+												</xs:simpleContent>
+											</xs:complexType>
+										</xs:element>
+										<xs:element minOccurs="1" name="zip_code" type="xs:string">
+											<xs:annotation>
+												<xs:documentation xml:lang="de">Postleitzahl (PLZ)</xs:documentation>
+												<xs:documentation xml:lang="en">Zip code</xs:documentation>
+											</xs:annotation>
+										</xs:element>
+										<xs:element minOccurs="1" name="city" type="xs:string">
+											<xs:annotation>
+												<xs:documentation xml:lang="de">Original Ortsname</xs:documentation>
+												<xs:documentation xml:lang="en">Original city name</xs:documentation>
+											</xs:annotation>
+										</xs:element>
+										<xs:element minOccurs="0" name="street" type="xs:string">
+											<xs:annotation>
+												<xs:documentation xml:lang="de">Strasse</xs:documentation>
+												<xs:documentation xml:lang="en">Street</xs:documentation>
+											</xs:annotation>
+										</xs:element>
+										<xs:element minOccurs="0" name="housenumber" type="xs:string">
+											<xs:annotation>
+												<xs:documentation xml:lang="de">Hausnummer</xs:documentation>
+												<xs:documentation xml:lang="en">House Number</xs:documentation>
+											</xs:annotation>
+										</xs:element>
+										<xs:element minOccurs="0" name="geocodes">
+											<xs:annotation>
+												<xs:documentation xml:lang="de">Geoinformationen zur Lokalisierung des Objektes oder des Ortes, in dem sich das Objekt befindet</xs:documentation>
+												<xs:documentation xml:lang="en">Geographic information to localise object or place where object is situated</xs:documentation>
+											</xs:annotation>
+											<xs:complexType>
+												<xs:attribute name="latitude"  use="required">
+													<xs:annotation>
+														<xs:documentation xml:lang="de"> Breitengrad im Format WGS84</xs:documentation>
+														<xs:documentation xml:lang="en"> Latitude, format WGS84</xs:documentation>
+													</xs:annotation>
+													<xs:simpleType>
+														<xs:restriction base="xs:decimal">
+															<xs:minInclusive value="-90.0"/>
+															<xs:maxInclusive value="90.0"/>
+														</xs:restriction>
+													</xs:simpleType>
+												</xs:attribute>
+												<xs:attribute name="longitude" use="required">
+													<xs:annotation>
+														<xs:documentation xml:lang="de"> Längengrad im Format WGS84</xs:documentation>
+														<xs:documentation xml:lang="en"> Longitude, format WGS84</xs:documentation>
+													</xs:annotation>
+													<xs:simpleType>
+														<xs:restriction base="xs:decimal">
+															<xs:minInclusive value="-180.0"/>
+															<xs:maxInclusive value="180.0"/>
+														</xs:restriction>
+													</xs:simpleType>
+												</xs:attribute>
+												<xs:attribute name="type" use="required">
+													<xs:annotation>
+														<xs:documentation xml:lang="de">Wert zur Unterscheidung zwischen objektbezogenen (Wert = 1) und ortsbezogenen Geoinformationen (Wert = 0)</xs:documentation>
+														<xs:documentation xml:lang="en">Value to differentiate between geographic information for objects (value = 1) and places (value = 0)</xs:documentation>
+													</xs:annotation>
+													<xs:simpleType>
+														<xs:restriction base="xs:integer">
+															<xs:enumeration value="0"/>
+															<xs:enumeration value="1"/>
+														</xs:restriction>
+													</xs:simpleType>
+												</xs:attribute>
+											</xs:complexType>
+										</xs:element>
+									</xs:sequence>
+								</xs:complexType>
+							</xs:element>
+							<xs:element minOccurs="0" maxOccurs="unbounded" name="description">
+								<xs:annotation>
+									<xs:documentation xml:lang="de">Beschreibungstext eines Objektes</xs:documentation>
+									<xs:documentation xml:lang="en">Object description</xs:documentation>
+								</xs:annotation>
+								<xs:complexType>
+									<xs:simpleContent>
+										<xs:extension base="xs:string">
+											<xs:attribute name="language" use="optional" type="xs:language">
+												<xs:annotation>
+													<xs:documentation xml:lang="de">Sprache</xs:documentation>
+													<xs:documentation xml:lang="en">Language</xs:documentation>
+												</xs:annotation>
+											</xs:attribute>
+										</xs:extension>
+									</xs:simpleContent>
+								</xs:complexType>
+							</xs:element>
+							<xs:element minOccurs="0" name="features">
+								<xs:annotation>
+									<xs:documentation xml:lang="de">Liste der Objektausstattungsmerkmale (Attribute)</xs:documentation>
+									<xs:documentation xml:lang="en">List of object features (Attributes)</xs:documentation>
+								</xs:annotation>
+								<xs:complexType>
+									<xs:sequence>
+										<xs:element minOccurs="0" maxOccurs="unbounded" name="attribute">
+											<xs:annotation>
+												<xs:documentation xml:lang="de">Beschreibung ... </xs:documentation>
+												<xs:documentation xml:lang="en">description ... </xs:documentation>
+											</xs:annotation>
+											<xs:complexType mixed="true">
+												<xs:sequence minOccurs="0">
+													<xs:element maxOccurs="unbounded" name="lookup">
+														<xs:annotation>
+															<xs:documentation xml:lang="de">Beschreibung ... </xs:documentation>
+															<xs:documentation xml:lang="en">description ... </xs:documentation>
+														</xs:annotation>
+														<xs:complexType>
+															<xs:attribute name="id" use="required">
+																<xs:annotation>
+																	<xs:documentation xml:lang="de">LookupId.</xs:documentation>
+																	<xs:documentation xml:lang="en">LookupId.</xs:documentation>
+																</xs:annotation>
+																<xs:simpleType>
+																	<xs:restriction base="xs:unsignedShort">
+																		<xs:enumeration value="181"/>
+																		<!-- lookup id: 181 name: Espressomaschine-->
+																		<xs:enumeration value="182"/>
+																		<!-- lookup id: 182 name: Privatparkplatz auf Grundstück/Hofanlage-->
+																		<xs:enumeration value="183"/>
+																		<!-- lookup id: 183 name: Abschließbarer Abstellraum-->
+																		<xs:enumeration value="184"/>
+																		<!-- lookup id: 184 name: Öffentlicher Parkplatz-->
+																		<xs:enumeration value="185"/>
+																		<!-- lookup id: 185 name: Abschließbare Garage-->
+																		<xs:enumeration value="186"/>
+																		<!-- lookup id: 186 name: Carport-->
+																		<xs:enumeration value="187"/>
+																		<!-- lookup id: 187 name: Aktivurlaub-->
+																		<xs:enumeration value="190"/>
+																		<!-- lookup id: 190 name: Allergikergeeignet-->
+																		<xs:enumeration value="191"/>
+																		<!-- lookup id: 191 name: Angeln-->
+																		<xs:enumeration value="192"/>
+																		<!-- lookup id: 192 name: Außenswimmingpool-->
+																		<xs:enumeration value="194"/>
+																		<!-- lookup id: 194 name: Dunstabzugshaube-->
+																		<xs:enumeration value="195"/>
+																		<!-- lookup id: 195 name: Basketball-->
+																		<xs:enumeration value="196"/>
+																		<!-- lookup id: 196 name: Badewanne mit Duschvorrichtung-->
+																		<xs:enumeration value="197"/>
+																		<!-- lookup id: 197 name: Badewanne ohne Duschvorrichtung-->
+																		<xs:enumeration value="198"/>
+																		<!-- lookup id: 198 name: Bergsteigen-->
+																		<xs:enumeration value="199"/>
+																		<!-- lookup id: 199 name: Bauernhaus-->
+																		<xs:enumeration value="200"/>
+																		<!-- lookup id: 200 name: Beauty and Wellness-->
+																		<xs:enumeration value="202"/>
+																		<!-- lookup id: 202 name: Bolzplatz-->
+																		<xs:enumeration value="204"/>
+																		<!-- lookup id: 204 name: Separate Dusche-->
+																		<xs:enumeration value="212"/>
+																		<!-- lookup id: 212 name: Eislaufen-->
+																		<xs:enumeration value="214"/>
+																		<!-- lookup id: 214 name: Bootsverleih-->
+																		<xs:enumeration value="215"/>
+																		<!-- lookup id: 215 name: Brötchenservice-->
+																		<xs:enumeration value="216"/>
+																		<!-- lookup id: 216 name: Abstellplatz in abschließbarer Parkgarage-->
+																		<xs:enumeration value="217"/>
+																		<!-- lookup id: 217 name: Radio/Radiowecker-->
+																		<xs:enumeration value="218"/>
+																		<!-- lookup id: 218 name: Couchecke-->
+																		<xs:enumeration value="219"/>
+																		<!-- lookup id: 219 name: Dampfbad-->
+																		<xs:enumeration value="225"/>
+																		<!-- lookup id: 225 name: Mikrowellenherd-->
+																		<xs:enumeration value="227"/>
+																		<!-- lookup id: 227 name: Einkaufsservice vor der Anreise-->
+																		<xs:enumeration value="228"/>
+																		<!-- lookup id: 228 name: Einzelne Öfen / Heizlüfter / Radiatoren-->
+																		<xs:enumeration value="229"/>
+																		<!-- lookup id: 229 name: Eisenbahnlinien-->
+																		<xs:enumeration value="230"/>
+																		<!-- lookup id: 230 name: Golfplatz-->
+																		<xs:enumeration value="231"/>
+																		<!-- lookup id: 231 name: Jagdmöglichkeit-->
+																		<xs:enumeration value="232"/>
+																		<!-- lookup id: 232 name: Kanu-->
+																		<xs:enumeration value="233"/>
+																		<!-- lookup id: 233 name: Theke/Frühstücksbar-->
+																		<xs:enumeration value="234"/>
+																		<!-- lookup id: 234 name: Fahrradverleih-->
+																		<xs:enumeration value="235"/>
+																		<!-- lookup id: 235 name: Familie und Kinder-->
+																		<xs:enumeration value="236"/>
+																		<!-- lookup id: 236 name: Farb-Fernseher-->
+																		<xs:enumeration value="238"/>
+																		<!-- lookup id: 238 name: Ferienhaus-->
+																		<xs:enumeration value="239"/>
+																		<!-- lookup id: 239 name: Ferienwohnung in Ein- oder Mehrfamilienhaus-->
+																		<xs:enumeration value="241"/>
+																		<!-- lookup id: 241 name: Flughafen/Einflugschneise-->
+																		<xs:enumeration value="243"/>
+																		<!-- lookup id: 243 name: Klettern-->
+																		<xs:enumeration value="246"/>
+																		<!-- lookup id: 246 name: Frühstück-->
+																		<xs:enumeration value="247"/>
+																		<!-- lookup id: 247 name: Fußbodenheizung-->
+																		<xs:enumeration value="248"/>
+																		<!-- lookup id: 248 name: Garderobe-->
+																		<xs:enumeration value="249"/>
+																		<!-- lookup id: 249 name: Parkähnliche Anlage-->
+																		<xs:enumeration value="250"/>
+																		<!-- lookup id: 250 name: Keine Einsicht von Straße oder Nachbargrundstück-->
+																		<xs:enumeration value="251"/>
+																		<!-- lookup id: 251 name: Nicht umzäunt-->
+																		<xs:enumeration value="254"/>
+																		<!-- lookup id: 254 name: Kühl-/Gefrierkombi-->
+																		<xs:enumeration value="255"/>
+																		<!-- lookup id: 255 name: Zweckmäßig und gepflegt, geringe Abnutzungserscheinungen-->
+																		<xs:enumeration value="257"/>
+																		<!-- lookup id: 257 name: Getränkeservice-->
+																		<xs:enumeration value="258"/>
+																		<!-- lookup id: 258 name: Mountainbiking-->
+																		<xs:enumeration value="259"/>
+																		<!-- lookup id: 259 name: Innenswimmingpool-->
+																		<xs:enumeration value="260"/>
+																		<!-- lookup id: 260 name: Hauptverkehrsstraßen-->
+																		<xs:enumeration value="263"/>
+																		<!-- lookup id: 263 name: erlaubt-->
+																		<xs:enumeration value="264"/>
+																		<!-- lookup id: 264 name: nicht erlaubt-->
+																		<xs:enumeration value="265"/>
+																		<!-- lookup id: 265 name: Herrschaftliches Landhaus/Villa-->
+																		<xs:enumeration value="266"/>
+																		<!-- lookup id: 266 name: Historisches Gebäude-->
+																		<xs:enumeration value="267"/>
+																		<!-- lookup id: 267 name: In allen Räumen vorhanden-->
+																		<xs:enumeration value="268"/>
+																		<!-- lookup id: 268 name: Industrieansiedlung-->
+																		<xs:enumeration value="269"/>
+																		<!-- lookup id: 269 name: Internet-Zugang-->
+																		<xs:enumeration value="270"/>
+																		<!-- lookup id: 270 name: Paragliding-->
+																		<xs:enumeration value="271"/>
+																		<!-- lookup id: 271 name: S/W-Fernseher-->
+																		<xs:enumeration value="272"/>
+																		<!-- lookup id: 272 name: Ofen-->
+																		<xs:enumeration value="273"/>
+																		<!-- lookup id: 273 name: Tiefkühlschrank/Truhe-->
+																		<xs:enumeration value="274"/>
+																		<!-- lookup id: 274 name: Kamin-->
+																		<xs:enumeration value="275"/>
+																		<!-- lookup id: 275 name: Radtouren-->
+																		<xs:enumeration value="277"/>
+																		<!-- lookup id: 277 name: Rafting-->
+																		<xs:enumeration value="279"/>
+																		<!-- lookup id: 279 name: Videorekorder-->
+																		<xs:enumeration value="281"/>
+																		<!-- lookup id: 281 name: Umzäunt mit einer Hecke, Mauer oder Zaun-->
+																		<xs:enumeration value="282"/>
+																		<!-- lookup id: 282 name: Keine Heizung-->
+																		<xs:enumeration value="283"/>
+																		<!-- lookup id: 283 name: Kieselstrand-->
+																		<xs:enumeration value="285"/>
+																		<!-- lookup id: 285 name: Diskothek-->
+																		<xs:enumeration value="288"/>
+																		<!-- lookup id: 288 name: Reitboxen (Gäste)-->
+																		<xs:enumeration value="290"/>
+																		<!-- lookup id: 290 name: Kochgelegenheit (2 Herdplatten)-->
+																		<xs:enumeration value="291"/>
+																		<!-- lookup id: 291 name: Kochgelegenheit (4 Herdplatten)-->
+																		<xs:enumeration value="295"/>
+																		<!-- lookup id: 295 name: Geschirrspüler-->
+																		<xs:enumeration value="296"/>
+																		<!-- lookup id: 296 name: Kultur und Kreativität-->
+																		<xs:enumeration value="299"/>
+																		<!-- lookup id: 299 name: Luxuriös und aufeinander abgestimmt-->
+																		<xs:enumeration value="301"/>
+																		<!-- lookup id: 301 name: Mehrstöckige Ferienwohnung/Maisonette-->
+																		<xs:enumeration value="302"/>
+																		<!-- lookup id: 302 name: Einbauküche-->
+																		<xs:enumeration value="303"/>
+																		<!-- lookup id: 303 name: Reithalle-->
+																		<xs:enumeration value="304"/>
+																		<!-- lookup id: 304 name: Seniorengerecht-->
+																		<xs:enumeration value="306"/>
+																		<!-- lookup id: 306 name: Alleinige Nutzung-->
+																		<xs:enumeration value="307"/>
+																		<!-- lookup id: 307 name: Mobilfunkempfang möglich-->
+																		<xs:enumeration value="309"/>
+																		<!-- lookup id: 309 name: Reitplatz / Reitmöglichkeiten-->
+																		<xs:enumeration value="312"/>
+																		<!-- lookup id: 312 name: Natur-->
+																		<xs:enumeration value="313"/>
+																		<!-- lookup id: 313 name: Gartenmitnutzung-->
+																		<xs:enumeration value="316"/>
+																		<!-- lookup id: 316 name: ja-->
+																		<xs:enumeration value="318"/>
+																		<!-- lookup id: 318 name: 2 Sätze Teller, Tassen, Besteck pro Person-->
+																		<xs:enumeration value="319"/>
+																		<!-- lookup id: 319 name: Rollstuhlgerecht / Behindertengerecht-->
+																		<xs:enumeration value="320"/>
+																		<!-- lookup id: 320 name: neu oder neu renoviert-->
+																		<xs:enumeration value="321"/>
+																		<!-- lookup id: 321 name: Objekt liegt in Ferienanlage-->
+																		<xs:enumeration value="322"/>
+																		<!-- lookup id: 322 name: Objekt liegt in Wohngebiet-->
+																		<xs:enumeration value="323"/>
+																		<!-- lookup id: 323 name: Objekt liegt in Mischgebiet-->
+																		<xs:enumeration value="324"/>
+																		<!-- lookup id: 324 name: Objekt liegt in Gewerbegebiet-->
+																		<xs:enumeration value="328"/>
+																		<!-- lookup id: 328 name: Rodeln-->
+																		<xs:enumeration value="330"/>
+																		<!-- lookup id: 330 name: Penthouse-Ferienwohnung-->
+																		<xs:enumeration value="332"/>
+																		<!-- lookup id: 332 name: Geschmackvoll und mehr als rein zweckmäßig-->
+																		<xs:enumeration value="333"/>
+																		<!-- lookup id: 333 name: Kabelfernsehen-->
+																		<xs:enumeration value="334"/>
+																		<!-- lookup id: 334 name: Rudern-->
+																		<xs:enumeration value="337"/>
+																		<!-- lookup id: 337 name: Ski (alpin)-->
+																		<xs:enumeration value="338"/>
+																		<!-- lookup id: 338 name: Ski (Langlauf)-->
+																		<xs:enumeration value="339"/>
+																		<!-- lookup id: 339 name: Sportcenter-->
+																		<xs:enumeration value="340"/>
+																		<!-- lookup id: 340 name: sehr gepflegt-->
+																		<xs:enumeration value="342"/>
+																		<!-- lookup id: 342 name: Squash-->
+																		<xs:enumeration value="343"/>
+																		<!-- lookup id: 343 name: Nichtraucherhaus-->
+																		<xs:enumeration value="344"/>
+																		<!-- lookup id: 344 name: Surfen-->
+																		<xs:enumeration value="345"/>
+																		<!-- lookup id: 345 name: Ruhe und Erholung-->
+																		<xs:enumeration value="346"/>
+																		<!-- lookup id: 346 name: SAT-Empfang-->
+																		<xs:enumeration value="347"/>
+																		<!-- lookup id: 347 name: Sandstrand-->
+																		<xs:enumeration value="348"/>
+																		<!-- lookup id: 348 name: Stereoanlage-->
+																		<xs:enumeration value="349"/>
+																		<!-- lookup id: 349 name: Tauchen-->
+																		<xs:enumeration value="350"/>
+																		<!-- lookup id: 350 name: Sauna-->
+																		<xs:enumeration value="351"/>
+																		<!-- lookup id: 351 name: Schloß/Burg-->
+																		<xs:enumeration value="352"/>
+																		<!-- lookup id: 352 name: Schränke und Schubladen bieten genügend Ablageplatz-->
+																		<xs:enumeration value="353"/>
+																		<!-- lookup id: 353 name: Backofen-->
+																		<xs:enumeration value="354"/>
+																		<!-- lookup id: 354 name: Schuhregal-->
+																		<xs:enumeration value="356"/>
+																		<!-- lookup id: 356 name: Tennis-->
+																		<xs:enumeration value="357"/>
+																		<!-- lookup id: 357 name: gepflegt-->
+																		<xs:enumeration value="359"/>
+																		<!-- lookup id: 359 name: Bidet-->
+																		<xs:enumeration value="360"/>
+																		<!-- lookup id: 360 name: Separate Essecke-->
+																		<xs:enumeration value="362"/>
+																		<!-- lookup id: 362 name: Separater Eingangsbereich (Flur oder Diele)-->
+																		<xs:enumeration value="363"/>
+																		<!-- lookup id: 363 name: Separater Fitnessraum-->
+																		<xs:enumeration value="364"/>
+																		<!-- lookup id: 364 name: Kühlschrank-->
+																		<xs:enumeration value="365"/>
+																		<!-- lookup id: 365 name: Separater Trockenraum (alleinige Nutzung)-->
+																		<xs:enumeration value="366"/>
+																		<!-- lookup id: 366 name: Separater Trockenraum (Mitnutzung)-->
+																		<xs:enumeration value="371"/>
+																		<!-- lookup id: 371 name: Wasserski-->
+																		<xs:enumeration value="373"/>
+																		<!-- lookup id: 373 name: Ski-, Snowboard- oder Schlittenverleih-->
+																		<xs:enumeration value="375"/>
+																		<!-- lookup id: 375 name: Solarium-->
+																		<xs:enumeration value="376"/>
+																		<!-- lookup id: 376 name: Sonstiger Abstellraum-->
+																		<xs:enumeration value="377"/>
+																		<!-- lookup id: 377 name: Spielplatz-->
+																		<xs:enumeration value="378"/>
+																		<!-- lookup id: 378 name: Sport-->
+																		<xs:enumeration value="380"/>
+																		<!-- lookup id: 380 name: Sprache und Studien-->
+																		<xs:enumeration value="382"/>
+																		<!-- lookup id: 382 name: Stadtnähe-->
+																		<xs:enumeration value="383"/>
+																		<!-- lookup id: 383 name: Stein/Felsstrand-->
+																		<xs:enumeration value="384"/>
+																		<!-- lookup id: 384 name: CD-Player-->
+																		<xs:enumeration value="387"/>
+																		<!-- lookup id: 387 name: teilweise-->
+																		<xs:enumeration value="388"/>
+																		<!-- lookup id: 388 name: Fax-->
+																		<xs:enumeration value="389"/>
+																		<!-- lookup id: 389 name: Telefon-->
+																		<xs:enumeration value="390"/>
+																		<!-- lookup id: 390 name: ISDN-Anschluss-->
+																		<xs:enumeration value="392"/>
+																		<!-- lookup id: 392 name: Tennisplatz-->
+																		<xs:enumeration value="396"/>
+																		<!-- lookup id: 396 name: Tischtennis-->
+																		<xs:enumeration value="397"/>
+																		<!-- lookup id: 397 name: Kaffeemaschine-->
+																		<xs:enumeration value="404"/>
+																		<!-- lookup id: 404 name: Kein TV und Radio-->
+																		<xs:enumeration value="407"/>
+																		<!-- lookup id: 407 name: nein-->
+																		<xs:enumeration value="409"/>
+																		<!-- lookup id: 409 name: Wäschetrockner/ Trocknungsmöglichkeit-->
+																		<xs:enumeration value="410"/>
+																		<!-- lookup id: 410 name: Waschmaschine-->
+																		<xs:enumeration value="412"/>
+																		<!-- lookup id: 412 name: Whirlpool-->
+																		<xs:enumeration value="413"/>
+																		<!-- lookup id: 413 name: Zentralheizung (Öl/Gas/Nachtspeicher)-->
+																		<xs:enumeration value="420"/>
+																		<!-- lookup id: 420 name: Qualitativ hochwertig, keine Schäden durch Abnutzung erkennbar-->
+																		<xs:enumeration value="423"/>
+																		<!-- lookup id: 423 name: Einfache Einrichtung-->
+																		<xs:enumeration value="425"/>
+																		<!-- lookup id: 425 name: Tageslicht-->
+																		<xs:enumeration value="442"/>
+																		<!-- lookup id: 442 name: beliebig-->
+																		<xs:enumeration value="444"/>
+																		<!-- lookup id: 444 name: Samstag-->
+																		<xs:enumeration value="446"/>
+																		<!-- lookup id: 446 name: Freitag-->
+																		<xs:enumeration value="447"/>
+																		<!-- lookup id: 447 name: Donnerstag-->
+																		<xs:enumeration value="448"/>
+																		<!-- lookup id: 448 name: Mittwoch-->
+																		<xs:enumeration value="449"/>
+																		<!-- lookup id: 449 name: Dienstag-->
+																		<xs:enumeration value="450"/>
+																		<!-- lookup id: 450 name: Montag-->
+																		<xs:enumeration value="451"/>
+																		<!-- lookup id: 451 name: Sonntag-->
+																		<xs:enumeration value="452"/>
+																		<!-- lookup id: 452 name: kleine Mängel-->
+																		<xs:enumeration value="453"/>
+																		<!-- lookup id: 453 name: renovierungsbedürftig-->
+																		<xs:enumeration value="455"/>
+																		<!-- lookup id: 455 name: Segeln-->
+																		<xs:enumeration value="474"/>
+																		<!-- lookup id: 474 name: Wohnküche-->
+																		<xs:enumeration value="476"/>
+																		<!-- lookup id: 476 name: WC-->
+																		<xs:enumeration value="477"/>
+																		<!-- lookup id: 477 name: Ventilatoren-->
+																		<xs:enumeration value="478"/>
+																		<!-- lookup id: 478 name: Terrasse-->
+																		<xs:enumeration value="479"/>
+																		<!-- lookup id: 479 name: Wintergarten-->
+																		<xs:enumeration value="480"/>
+																		<!-- lookup id: 480 name: Balkon-->
+																		<xs:enumeration value="481"/>
+																		<!-- lookup id: 481 name: Gartenhaus-->
+																		<xs:enumeration value="482"/>
+																		<!-- lookup id: 482 name: Gartengrill-->
+																		<xs:enumeration value="483"/>
+																		<!-- lookup id: 483 name: Pavillon-->
+																		<xs:enumeration value="485"/>
+																		<!-- lookup id: 485 name: Restaurant-->
+																		<xs:enumeration value="486"/>
+																		<!-- lookup id: 486 name: Freizeitanlage-->
+																		<xs:enumeration value="487"/>
+																		<!-- lookup id: 487 name: öffentliche Parkplätze-->
+																		<xs:enumeration value="492"/>
+																		<!-- lookup id: 492 name: Villa-->
+																		<xs:enumeration value="493"/>
+																		<!-- lookup id: 493 name: Ferienwohnung in Doppelbungalow-->
+																		<xs:enumeration value="494"/>
+																		<!-- lookup id: 494 name: Balkon oder Terrasse-->
+																		<xs:enumeration value="495"/>
+																		<!-- lookup id: 495 name: Feriendomizil der Luxusklasse-->
+																		<xs:enumeration value="496"/>
+																		<!-- lookup id: 496 name: alleinstehendes Ferienhaus-->
+																		<xs:enumeration value="497"/>
+																		<!-- lookup id: 497 name: Ferienwohnung in alleinstehendem Zweifamilienhaus-->
+																		<xs:enumeration value="498"/>
+																		<!-- lookup id: 498 name: Ferienwohnung in Villa-->
+																		<xs:enumeration value="499"/>
+																		<!-- lookup id: 499 name: Ferienwohnung in Bauernhaus-->
+																		<xs:enumeration value="500"/>
+																		<!-- lookup id: 500 name: Elektroheizung-->
+																		<xs:enumeration value="501"/>
+																		<!-- lookup id: 501 name: Holz- / Kohleheizung-->
+																		<xs:enumeration value="502"/>
+																		<!-- lookup id: 502 name: Besonders charmantes Feriendomizil-->
+																		<xs:enumeration value="503"/>
+																		<!-- lookup id: 503 name: Gasherd-->
+																		<xs:enumeration value="504"/>
+																		<!-- lookup id: 504 name: Gartenmöbel vorhanden-->
+																		<xs:enumeration value="506"/>
+																		<!-- lookup id: 506 name: Ferienwohnung-->
+																		<xs:enumeration value="507"/>
+																		<!-- lookup id: 507 name: Besonders charmantes Feriendomizil-->
+																		<xs:enumeration value="508"/>
+																		<!-- lookup id: 508 name: Elektro- / Holz- / Kohleheizung-->
+																		<xs:enumeration value="509"/>
+																		<!-- lookup id: 509 name: Ferienwohnung in Ferienanlage-->
+																		<xs:enumeration value="510"/>
+																		<!-- lookup id: 510 name: Ferienwohnung  in Bungalowanlage-->
+																		<xs:enumeration value="511"/>
+																		<!-- lookup id: 511 name: Ferienhaus in Bungalowanlage-->
+																		<xs:enumeration value="513"/>
+																		<!-- lookup id: 513 name: Badebassin-->
+																		<xs:enumeration value="514"/>
+																		<!-- lookup id: 514 name: Veranda-->
+																		<xs:enumeration value="516"/>
+																		<!-- lookup id: 516 name: Kamin/Ofen-->
+																		<xs:enumeration value="517"/>
+																		<!-- lookup id: 517 name: Swimmingpool-->
+																		<xs:enumeration value="518"/>
+																		<!-- lookup id: 518 name: Garage-->
+																		<xs:enumeration value="520"/>
+																		<!-- lookup id: 520 name: kombinierter Gas-/E-Herd-->
+																		<xs:enumeration value="521"/>
+																		<!-- lookup id: 521 name: E-Herd-->
+																		<xs:enumeration value="522"/>
+																		<!-- lookup id: 522 name: Toaster-->
+																		<xs:enumeration value="523"/>
+																		<!-- lookup id: 523 name: Gemeinschaftswaschmaschine-->
+																		<xs:enumeration value="524"/>
+																		<!-- lookup id: 524 name: Grill vorhanden-->
+																		<xs:enumeration value="525"/>
+																		<!-- lookup id: 525 name: Kochgelegenheit-->
+																		<xs:enumeration value="526"/>
+																		<!-- lookup id: 526 name: Heizung-->
+																		<xs:enumeration value="527"/>
+																		<!-- lookup id: 527 name: Hütte-->
+																		<xs:enumeration value="528"/>
+																		<!-- lookup id: 528 name: Chalet-->
+																		<xs:enumeration value="529"/>
+																		<!-- lookup id: 529 name: Reihenhaus-->
+																		<xs:enumeration value="530"/>
+																		<!-- lookup id: 530 name: Doppelhaus-->
+																		<xs:enumeration value="531"/>
+																		<!-- lookup id: 531 name: TV-->
+																		<xs:enumeration value="532"/>
+																		<!-- lookup id: 532 name: Parkplatz-->
+																		<xs:enumeration value="534"/>
+																		<!-- lookup id: 534 name: Landhaus-->
+																		<xs:enumeration value="535"/>
+																		<!-- lookup id: 535 name: Alarmanlage-->
+																		<xs:enumeration value="536"/>
+																		<!-- lookup id: 536 name: DVD-->
+																		<xs:enumeration value="544"/>
+																		<!-- lookup id: 544 name: Staubsauger-->
+																		<xs:enumeration value="545"/>
+																		<!-- lookup id: 545 name: Waschbecken-->
+																		<xs:enumeration value="547"/>
+																		<!-- lookup id: 547 name: Schlafcouch-->
+																		<xs:enumeration value="548"/>
+																		<!-- lookup id: 548 name: Schrankbett-->
+																		<xs:enumeration value="549"/>
+																		<!-- lookup id: 549 name: Zustellbett-->
+																		<xs:enumeration value="550"/>
+																		<!-- lookup id: 550 name: Bett-->
+																		<xs:enumeration value="551"/>
+																		<!-- lookup id: 551 name: Schrankküche-->
+																		<xs:enumeration value="552"/>
+																		<!-- lookup id: 552 name: Waschtisch-->
+																		<xs:enumeration value="553"/>
+																		<!-- lookup id: 553 name: Doppelwaschtisch-->
+																		<xs:enumeration value="557"/>
+																		<!-- lookup id: 557 name: Der Schlüssel wird vom Schlüsselhalter am Objekt übergeben-->
+																		<xs:enumeration value="558"/>
+																		<!-- lookup id: 558 name: Schlüssel ist bei Schlüsselhalter abzuholen-->
+																		<xs:enumeration value="559"/>
+																		<!-- lookup id: 559 name: Nicht möglich-->
+																		<xs:enumeration value="560"/>
+																		<!-- lookup id: 560 name: Garten-->
+																		<xs:enumeration value="561"/>
+																		<!-- lookup id: 561 name: Garage-->
+																		<xs:enumeration value="562"/>
+																		<!-- lookup id: 562 name: Tiefgarage-->
+																		<xs:enumeration value="564"/>
+																		<!-- lookup id: 564 name: Sonstige Schlüsselübergabe-->
+																		<xs:enumeration value="565"/>
+																		<!-- lookup id: 565 name: Ferienhaus in Ferienanlage-->
+																		<xs:enumeration value="566"/>
+																		<!-- lookup id: 566 name: Feriengerechte, zweckmäßige Einrichtung-->
+																		<xs:enumeration value="567"/>
+																		<!-- lookup id: 567 name: Gute, angenehme Einrichtung-->
+																		<xs:enumeration value="568"/>
+																		<!-- lookup id: 568 name: Gehobene, komfortable Einrichtung-->
+																		<xs:enumeration value="569"/>
+																		<!-- lookup id: 569 name: Hausteil-->
+																		<xs:enumeration value="570"/>
+																		<!-- lookup id: 570 name: Ofenheizung-->
+																		<xs:enumeration value="573"/>
+																		<!-- lookup id: 573 name: saisonabhängig-->
+																		<xs:enumeration value="574"/>
+																		<!-- lookup id: 574 name: Erdgeschoss-->
+																		<xs:enumeration value="575"/>
+																		<!-- lookup id: 575 name: 1. Stock-->
+																		<xs:enumeration value="576"/>
+																		<!-- lookup id: 576 name: 2. Stock-->
+																		<xs:enumeration value="577"/>
+																		<!-- lookup id: 577 name: 3. Stock-->
+																		<xs:enumeration value="578"/>
+																		<!-- lookup id: 578 name: 4. Stock-->
+																		<xs:enumeration value="579"/>
+																		<!-- lookup id: 579 name: 5. Stock-->
+																		<xs:enumeration value="580"/>
+																		<!-- lookup id: 580 name: Über 5. Stock-->
+																		<xs:enumeration value="581"/>
+																		<!-- lookup id: 581 name: Dusche-->
+																		<xs:enumeration value="582"/>
+																		<!-- lookup id: 582 name: 1-->
+																		<xs:enumeration value="583"/>
+																		<!-- lookup id: 583 name: 1.5-->
+																		<xs:enumeration value="584"/>
+																		<!-- lookup id: 584 name: 2-->
+																		<xs:enumeration value="585"/>
+																		<!-- lookup id: 585 name: 2.5-->
+																		<xs:enumeration value="586"/>
+																		<!-- lookup id: 586 name: 3-->
+																		<xs:enumeration value="587"/>
+																		<!-- lookup id: 587 name: 3.5-->
+																		<xs:enumeration value="588"/>
+																		<!-- lookup id: 588 name: 4-->
+																		<xs:enumeration value="589"/>
+																		<!-- lookup id: 589 name: 4.5-->
+																		<xs:enumeration value="590"/>
+																		<!-- lookup id: 590 name: 5-->
+																		<xs:enumeration value="591"/>
+																		<!-- lookup id: 591 name: 5.5-->
+																		<xs:enumeration value="592"/>
+																		<!-- lookup id: 592 name: 6-->
+																		<xs:enumeration value="593"/>
+																		<!-- lookup id: 593 name: 6.5-->
+																		<xs:enumeration value="594"/>
+																		<!-- lookup id: 594 name: 7-->
+																		<xs:enumeration value="595"/>
+																		<!-- lookup id: 595 name: 7.5-->
+																		<xs:enumeration value="596"/>
+																		<!-- lookup id: 596 name: 8-->
+																		<xs:enumeration value="597"/>
+																		<!-- lookup id: 597 name: 8.5-->
+																		<xs:enumeration value="598"/>
+																		<!-- lookup id: 598 name: 9-->
+																		<xs:enumeration value="599"/>
+																		<!-- lookup id: 599 name: 9.5-->
+																		<xs:enumeration value="600"/>
+																		<!-- lookup id: 600 name: 10-->
+																		<xs:enumeration value="601"/>
+																		<!-- lookup id: 601 name: 11-->
+																		<xs:enumeration value="602"/>
+																		<!-- lookup id: 602 name: 12-->
+																		<xs:enumeration value="603"/>
+																		<!-- lookup id: 603 name: 13-->
+																		<xs:enumeration value="604"/>
+																		<!-- lookup id: 604 name: 14-->
+																		<xs:enumeration value="605"/>
+																		<!-- lookup id: 605 name: 15-->
+																		<xs:enumeration value="606"/>
+																		<!-- lookup id: 606 name: >15-->
+																		<xs:enumeration value="608"/>
+																		<!-- lookup id: 608 name: Gemeinsamer Innenswimmingpool-->
+																		<xs:enumeration value="609"/>
+																		<!-- lookup id: 609 name: Gemeinsamer Außenswimmingpool-->
+																		<xs:enumeration value="610"/>
+																		<!-- lookup id: 610 name: Gemeinsamer Swimmingpool-->
+																		<xs:enumeration value="611"/>
+																		<!-- lookup id: 611 name: Kochgelegenheit (3 Herdplatten)-->
+																	</xs:restriction>
+																</xs:simpleType>
+															</xs:attribute>
+														</xs:complexType>
+													</xs:element>
+												</xs:sequence>
+												<xs:attribute name="id" use="optional">
+													<xs:annotation>
+														<xs:documentation xml:lang="de">Eindeutige Attribut-ID; Referenz zur Tabelle "attributs.xml"</xs:documentation>
+														<xs:documentation xml:lang="en">Unique Attribute ID; Reference to "attributs.xml"</xs:documentation>
+													</xs:annotation>
+													<xs:simpleType>
+														<xs:restriction base="xs:integer">
+                              <xs:enumeration value="113"/>
+                              <!-- id: 113 name: Art des Objektes, type: Lookup/Multiple-->
+                              <xs:enumeration value="115"/>
+                              <!-- id: 115 name: Ferienobjektkategorie, type: Lookup/Multiple-->
+                              <xs:enumeration value="117"/>
+                              <!-- id: 117 name: Äußerer Gesamteindruck, type: Lookup/Single-->
+                              <xs:enumeration value="118"/>
+                              <!-- id: 118 name: Gesamteindruck Möblierung und Ausstattung, type: Lookup/Single-->
+                              <xs:enumeration value="119"/>
+                              <!-- id: 119 name: Vermietung seit, type: Integer-->
+                              <xs:enumeration value="120"/>
+                              <!-- id: 120 name: Letzte Renovierung Außenbereich, type: Integer-->
+                              <xs:enumeration value="121"/>
+                              <!-- id: 121 name: Letzte Renovierung Innenbereich, type: Integer-->
+                              <xs:enumeration value="124"/>
+                              <!-- id: 124 name: Anzahl Wohnzimmer, type: Integer-->
+                              <xs:enumeration value="125"/>
+                              <!-- id: 125 name: Wohnfläche, type: Integer-->
+                              <xs:enumeration value="126"/>
+                              <!-- id: 126 name: Grundstücksfläche, type: Real-->
+                              <xs:enumeration value="127"/>
+                              <!-- id: 127 name: Normalbelegung, type: Integer-->
+                              <xs:enumeration value="128"/>
+                              <!-- id: 128 name: Maximalbelegung, type: Integer-->
+                              <xs:enumeration value="129"/>
+                              <!-- id: 129 name: Heizung, type: Lookup/Single-->
+                              <xs:enumeration value="130"/>
+                              <!-- id: 130 name: Klimatisierung, type: Lookup/Single-->
+                              <xs:enumeration value="131"/>
+                              <!-- id: 131 name: Unterhaltungselektronik, type: Lookup/Multiple-->
+                              <xs:enumeration value="132"/>
+                              <!-- id: 132 name: Sonstige Unterhaltungselektronik, type: Text-->
+                              <xs:enumeration value="133"/>
+                              <!-- id: 133 name: Telekommunikation, type: Lookup/Multiple-->
+                              <xs:enumeration value="134"/>
+                              <!-- id: 134 name: Parkmöglichkeiten, type: Lookup/Multiple-->
+                              <xs:enumeration value="135"/>
+                              <!-- id: 135 name: Einrichtungen, type: Lookup/Multiple-->
+                              <xs:enumeration value="136"/>
+                              <!-- id: 136 name: Größe Wohnzimmer, type: Integer-->
+                              <xs:enumeration value="137"/>
+                              <!-- id: 137 name: Wohnzimmer dient auch als Schlafzimmer, type: Yes/No-->
+                              <xs:enumeration value="144"/>
+                              <!-- id: 144 name: Wohnzimmerausstattung, type: Lookup/Multiple-->
+                              <xs:enumeration value="145"/>
+                              <!-- id: 145 name: Sonstige Wohnzimmerausstattung, type: Memo-->
+                              <xs:enumeration value="146"/>
+                              <!-- id: 146 name: Größe des Schlafzimmers, type: Integer-->
+                              <xs:enumeration value="147"/>
+                              <!-- id: 147 name: Anzahl Doppelbetten, type: Integer-->
+                              <xs:enumeration value="148"/>
+                              <!-- id: 148 name: Anzahl Einzelbetten, type: Integer-->
+                              <xs:enumeration value="150"/>
+                              <!-- id: 150 name: Anzahl Kinderbetten, type: Integer-->
+                              <xs:enumeration value="162"/>
+                              <!-- id: 162 name: Schlafzimmer abdunkelbar, type: Yes/No-->
+                              <xs:enumeration value="163"/>
+                              <!-- id: 163 name: Sonstige Schlafzimmereinrichtung, type: Memo-->
+                              <xs:enumeration value="164"/>
+                              <!-- id: 164 name: Größe des Badezimmers, type: Integer-->
+                              <xs:enumeration value="165"/>
+                              <!-- id: 165 name: Ausstattung Badezimmer, type: Lookup/Multiple-->
+                              <xs:enumeration value="168"/>
+                              <!-- id: 168 name: Sonstige Badezimmereinrichtung, type: Memo-->
+                              <xs:enumeration value="169"/>
+                              <!-- id: 169 name: Größe der Küche, type: Integer-->
+                              <xs:enumeration value="170"/>
+                              <!-- id: 170 name: Anzahl Esstische, type: Integer-->
+                              <xs:enumeration value="171"/>
+                              <!-- id: 171 name: Gesamtzahl Sitzplätze, type: Integer-->
+                              <xs:enumeration value="172"/>
+                              <!-- id: 172 name: Ausstattung Küche, type: Lookup/Multiple-->
+                              <xs:enumeration value="173"/>
+                              <!-- id: 173 name: Sonstige Kücheneinrichtung, type: Memo-->
+                              <xs:enumeration value="174"/>
+                              <!-- id: 174 name: Sonstige Räume, type: Lookup/Multiple-->
+                              <xs:enumeration value="175"/>
+                              <!-- id: 175 name: Sonstige Einrichtung, type: Memo-->
+                              <xs:enumeration value="189"/>
+                              <!-- id: 189 name: Lage des Objektes, type: Lookup/Single-->
+                              <xs:enumeration value="190"/>
+                              <!-- id: 190 name: Beeinträchtigung durch, type: Lookup/Multiple-->
+                              <xs:enumeration value="191"/>
+                              <!-- id: 191 name: Sonstige Beeinträchtigungen, type: Memo-->
+                              <xs:enumeration value="192"/>
+                              <!-- id: 192 name: Beschreibung der Objektanlage, type: Lookup/Multiple-->
+                              <xs:enumeration value="193"/>
+                              <!-- id: 193 name: Aussicht aus dem Objekt, type: Lookup/Multiple-->
+                              <xs:enumeration value="194"/>
+                              <!-- id: 194 name: Serviceleistungen (ggfs. kostenpflichtig), type: Lookup/Multiple-->
+                              <xs:enumeration value="200"/>
+                              <!-- id: 200 name: Entfernung Stadt, type: Real-->
+                              <xs:enumeration value="202"/>
+                              <!-- id: 202 name: Entfernung Restaurant, type: Real-->
+                              <xs:enumeration value="203"/>
+                              <!-- id: 203 name: Entfernung Einkaufsmöglichkeit, type: Real-->
+                              <xs:enumeration value="204"/>
+                              <!-- id: 204 name: Entfernung Meer, type: Real-->
+                              <xs:enumeration value="206"/>
+                              <!-- id: 206 name: Strandart, type: Lookup/Single-->
+                              <xs:enumeration value="208"/>
+                              <!-- id: 208 name: Anreisetag, type: Lookup/Single-->
+                              <xs:enumeration value="210"/>
+                              <!-- id: 210 name: Auto ist notwendig, type: Yes/No-->
+                              <xs:enumeration value="211"/>
+                              <!-- id: 211 name: Nächster Flughafen, type: Text-->
+                              <xs:enumeration value="212"/>
+                              <!-- id: 212 name: Nächster Flughafen (Entfernung), type: Real-->
+                              <xs:enumeration value="213"/>
+                              <!-- id: 213 name: Nächster Bahnhof, type: Text-->
+                              <xs:enumeration value="214"/>
+                              <!-- id: 214 name: Nächster Bahnhof (Entfernung), type: Real-->
+                              <xs:enumeration value="215"/>
+                              <!-- id: 215 name: Nächste Autobahn, type: Text-->
+                              <xs:enumeration value="216"/>
+                              <!-- id: 216 name: Nächste Autobahn (Entfernung), type: Real-->
+                              <xs:enumeration value="218"/>
+                              <!-- id: 218 name: Anfahrtsbeschreibung (Freitext), type: Memo-->
+                              <xs:enumeration value="219"/>
+                              <!-- id: 219 name: Sonstiges, type: Lookup/Multiple-->
+                              <xs:enumeration value="220"/>
+                              <!-- id: 220 name: Haustier, type: Lookup/Single-->
+                              <xs:enumeration value="222"/>
+                              <!-- id: 222 name: Freizeiteinrichtungen am Objekt, type: Lookup/Multiple-->
+                              <xs:enumeration value="223"/>
+                              <!-- id: 223 name: Sportmöglichkeiten in der Umgebung, type: Lookup/Multiple-->
+                              <xs:enumeration value="224"/>
+                              <!-- id: 224 name: Sonstige Sportmöglichkeiten, type: Memo-->
+                              <xs:enumeration value="225"/>
+                              <!-- id: 225 name: Leihmöglichkeiten, type: Lookup/Multiple-->
+                              <xs:enumeration value="226"/>
+                              <!-- id: 226 name: Sonstige Leihmöglichkeiten, type: Memo-->
+                              <xs:enumeration value="227"/>
+                              <!-- id: 227 name: Ausflugsmöglichkeiten, type: Memo-->
+                              <xs:enumeration value="256"/>
+                              <!-- id: 256 name: Stockwerk, type: Lookup/Single-->
+                              <xs:enumeration value="257"/>
+                              <!-- id: 257 name: Bei Ferienwohnungen Aufzug vorhanden, type: Yes/No-->
+                              <xs:enumeration value="260"/>
+                              <!-- id: 260 name: Anzahl Badezimmer, type: Integer-->
+                              <xs:enumeration value="261"/>
+                              <!-- id: 261 name: Anzahl Schlafzimmer, type: Integer-->
+                              <xs:enumeration value="263"/>
+                              <!-- id: 263 name: Anzahl WC, type: Integer-->
+                              <xs:enumeration value="266"/>
+                              <!-- id: 266 name: Entfernung nächster Skilift/Bergbahn/Loipe, type: Real-->
+                              <xs:enumeration value="268"/>
+                              <!-- id: 268 name: Sonstige Telekommunikation, type: Text-->
+                              <xs:enumeration value="282"/>
+                              <!-- id: 282 name: Anmerkungen zur Belegung, type: Text-->
+                              <xs:enumeration value="286"/>
+                              <!-- id: 286 name: Sonstige Lage, type: Text-->
+                              <xs:enumeration value="288"/>
+                              <!-- id: 288 name: Sonstige Ausstattung, type: Text-->
+                              <xs:enumeration value="289"/>
+                              <!-- id: 289 name: Sonstiges, type: Memo-->
+                              <xs:enumeration value="290"/>
+                              <!-- id: 290 name: Entfernung See, type: Real-->
+                              <xs:enumeration value="295"/>
+                              <!-- id: 295 name: Unmittelbare Umgebung, type: Lookup/Multiple-->
+                              <xs:enumeration value="296"/>
+                              <!-- id: 296 name: Sonstige Sport- und Freizeitmöglichkeiten, type: Memo-->
+                              <xs:enumeration value="299"/>
+                              <!-- id: 299 name: Beeinträchtigung des Objektes durch Lärm, type: Yes/No-->
+                              <xs:enumeration value="304"/>
+                              <!-- id: 304 name: Anzahl Küchen, type: Integer-->
+                              <xs:enumeration value="306"/>
+                              <!-- id: 306 name: Sonstige Räume, type: Text-->
+                              <xs:enumeration value="307"/>
+                              <!-- id: 307 name: Anzahl Schlafgelegenheiten, type: Integer-->
+                              <xs:enumeration value="310"/>
+                              <!-- id: 310 name: Erlaubte Haustiere, type: Text-->
+                              <xs:enumeration value="311"/>
+                              <!-- id: 311 name: in allen Räumen ausser, type: Text-->
+                              <xs:enumeration value="312"/>
+                              <!-- id: 312 name: Sonstige Einrichtungen, type: Text-->
+                              <xs:enumeration value="313"/>
+                              <!-- id: 313 name: Gartengrösse, type: Integer-->
+                              <xs:enumeration value="314"/>
+                              <!-- id: 314 name: Sonstiges, type: Text-->
+                              <xs:enumeration value="315"/>
+                              <!-- id: 315 name: Gartenausstattung, type: Lookup/Multiple-->
+                              <xs:enumeration value="318"/>
+                              <!-- id: 318 name: Sonstige Aussichten, type: Text-->
+                              <xs:enumeration value="319"/>
+                              <!-- id: 319 name: Sonstiges, type: Text-->
+                              <xs:enumeration value="321"/>
+                              <!-- id: 321 name: Sonstige Freizeiteinrichtungen, type: Text-->
+                              <xs:enumeration value="322"/>
+                              <!-- id: 322 name: Ortsbeschreibung, type: Memo-->
+                              <xs:enumeration value="326"/>
+                              <!-- id: 326 name: Entfernung Meer / See, type: Real-->
+                              <xs:enumeration value="342"/>
+                              <!-- id: 342 name: Entfernung Fjord, type: Real-->
+                              <xs:enumeration value="343"/>
+                              <!-- id: 343 name: Entfernung Angelmöglichkeit, type: Real-->
+                              <xs:enumeration value="344"/>
+                              <!-- id: 344 name: Entfernung Gewässer, type: Real-->
+                              <xs:enumeration value="350"/>
+                              <!-- id: 350 name: Beschreibung Schlafgelegenheit, type: Lookup/Multiple-->
+                              <xs:enumeration value="351"/>
+                              <!-- id: 351 name: Wohnzimmer abdunkelbar, type: Yes/No-->
+                              <xs:enumeration value="352"/>
+                              <!-- id: 352 name: Anzahl Etagenbetten, type: Integer-->
+                              <xs:enumeration value="354"/>
+                              <!-- id: 354 name: Gartennutzung, type: Lookup/Single-->
+                              <xs:enumeration value="355"/>
+                              <!-- id: 355 name: Name der Stadt, type: Text-->
+                              <xs:enumeration value="356"/>
+                              <!-- id: 356 name: Schlüsselübergabe, type: Lookup/Single-->
+                              <xs:enumeration value="357"/>
+                              <!-- id: 357 name: Schlüsselhalter, type: Memo-->
+                              <xs:enumeration value="360"/>
+                              <!-- id: 360 name: Sonstige Schlüsselübergabe, type: Memo-->
+                              <xs:enumeration value="361"/>
+                              <!-- id: 361 name: Aussenanlage, type: Lookup/Multiple-->
+                              <xs:enumeration value="362"/>
+                              <!-- id: 362 name: Größe, type: Real-->
+                              <xs:enumeration value="363"/>
+                              <!-- id: 363 name: Anzahl Doppelbetten, type: Integer-->
+                              <xs:enumeration value="364"/>
+                              <!-- id: 364 name: Anzahl Einzelbetten, type: Integer-->
+                              <xs:enumeration value="365"/>
+                              <!-- id: 365 name: Zimmerausstattung, type: Lookup/Multiple-->
+                              <xs:enumeration value="366"/>
+                              <!-- id: 366 name: Sonstige Zimmerausstattung, type: Memo-->
+                              <xs:enumeration value="367"/>
+                              <!-- id: 367 name: Anzahl Etagenbetten, type: Integer-->
+                              <xs:enumeration value="368"/>
+                              <!-- id: 368 name: Zimmer abdunkelbar, type: Yes/No-->
+                              <xs:enumeration value="369"/>
+                              <!-- id: 369 name: Anzahl Kinderbetten, type: Integer-->
+                              <xs:enumeration value="370"/>
+                              <!-- id: 370 name: Anzahl Esstische, type: Integer-->
+                              <xs:enumeration value="371"/>
+                              <!-- id: 371 name: Gesamtzahl Sitzplätze, type: Integer-->
+                              <xs:enumeration value="375"/>
+                              <!-- id: 375 name: Name des Sees, type: Text-->
+                              <xs:enumeration value="376"/>
+                              <!-- id: 376 name: Name des Meeres, type: Text-->
+                              <xs:enumeration value="377"/>
+                              <!-- id: 377 name: Name des Skigebietes, type: Text-->
+                              <xs:enumeration value="379"/>
+                              <!-- id: 379 name: Planquadrat im Ortsplan, type: Text-->
+                              <xs:enumeration value="380"/>
+                              <!-- id: 380 name: Anzahl Zimmer, type: Lookup/Single-->
+                              <xs:enumeration value="382"/>
+                              <!-- id: 382 name: Ortsteil, type: Text-->
+                            </xs:restriction>
+                          </xs:simpleType>
+                        </xs:attribute>
+                        <xs:attribute name="subcategory" type="xs:integer" use="optional">
+                          <xs:annotation>
+                            <xs:documentation xml:lang="de">Zum Beispiel: Nummer des Zimmers</xs:documentation>
+                            <xs:documentation xml:lang="en">Zum Beispiel: Nummer des Zimmers</xs:documentation>
+                          </xs:annotation>
+                        </xs:attribute>
+                        <xs:attribute name="language" type="xs:language" use="optional">
+                          <xs:annotation>
+                            <xs:documentation xml:lang="de">Sprache (gilt nur für Text-Attributen)</xs:documentation>
+                            <xs:documentation xml:lang="en">Language</xs:documentation>
+                          </xs:annotation>
+                        </xs:attribute>
+                      </xs:complexType>
+                    </xs:element>
+                  </xs:sequence>
+                </xs:complexType>
+              </xs:element>
+              <xs:element minOccurs="0" name="pictures">
+                <xs:annotation>
+                  <xs:documentation xml:lang="de">Objektbilder</xs:documentation>
+                  <xs:documentation xml:lang="en">Object pictures</xs:documentation>
+                </xs:annotation>
+                <xs:complexType>
+                  <xs:sequence>
+                    <xs:element minOccurs="1" maxOccurs="unbounded" name="picture">
+											<xs:annotation>
+												<xs:documentation xml:lang="de">Parameter eines Objektbildes</xs:documentation>
+												<xs:documentation xml:lang="en">Parameters of an object picture</xs:documentation>
+											</xs:annotation>
+											<xs:complexType>
+												<xs:sequence>
+													<xs:element minOccurs="0" maxOccurs="unbounded" name="comment">
+														<xs:complexType>
+															<xs:simpleContent>
+																<xs:extension base="xs:string">
+																	<xs:attribute name="language" use="required" type ="xs:language"></xs:attribute>
+																</xs:extension>
+															</xs:simpleContent>
+														</xs:complexType>
+													</xs:element>
+												</xs:sequence>
+												<xs:attribute name="attribute_no"  use="optional">
+													<xs:annotation>
+														<xs:documentation xml:lang="de">Eindeutige ID eines Attributs zur Beschreibung des Bildtyps</xs:documentation>
+														<xs:documentation xml:lang="en">Unique ID of an attribute for picture type</xs:documentation>
+													</xs:annotation>
+													<xs:simpleType>
+														<xs:union>
+															<xs:simpleType>
+																<xs:restriction base="xs:integer">
+																	<xs:annotation>
+																		<xs:documentation xml:lang="de">
+																			Bilder:
+																			234 - Aussenansicht (klein)
+																			235 - Aussenansicht
+																			236 - Innenansicht
+																		</xs:documentation>
+																		<xs:documentation xml:lang="en">
+																			Pictures:
+																			234 - Exterior view (small)
+																			235 - Exterior view
+																			236 - Interior view
+																		</xs:documentation>
+																	</xs:annotation>
+																	<xs:minInclusive value="234"/>
+																	<xs:maxInclusive value="236"/>
+																</xs:restriction>
+															</xs:simpleType>
+															<xs:simpleType>
+																<xs:restriction base="xs:integer">
+																	<xs:annotation>
+																		<xs:documentation xml:lang="de">360°-Ansicht</xs:documentation>
+																		<xs:documentation xml:lang="en">360°- view</xs:documentation>
+																	</xs:annotation>
+																	<xs:enumeration value="239"/>
+																</xs:restriction>
+															</xs:simpleType>
+															<xs:simpleType>
+																<xs:restriction base="xs:integer">
+																	<xs:annotation>
+																		<xs:documentation xml:lang="de">
+																			Bilder:
+																			242 - Bild Grundriss
+																			243-247 - Bild 1 - 5
+																		</xs:documentation>
+																		<xs:documentation xml:lang="en">
+																			Pictures:
+																			242 - Picture sketch
+																			243-247 - Picture 1 - 5
+																		</xs:documentation>
+																	</xs:annotation>
+																	<xs:minInclusive value="242"/>
+																	<xs:maxInclusive value="247"/>
+																</xs:restriction>
+															</xs:simpleType>
+															<xs:simpleType>
+																<xs:restriction base="xs:integer">
+																	<xs:annotation>
+																		<xs:documentation xml:lang="de">
+																			Bilder:
+																			327-341 - Bild 6 - 20
+																		</xs:documentation>
+																		<xs:documentation xml:lang="en">
+																			Pictures:
+																			327-341 - Picture 6 - 20
+																		</xs:documentation>
+																	</xs:annotation>
+																	<xs:minInclusive value="327"/>
+																	<xs:maxInclusive value="341"/>
+																</xs:restriction>
+															</xs:simpleType>
+															<xs:simpleType>
+																<xs:restriction base="xs:integer">
+																	<xs:annotation>
+																		<xs:documentation xml:lang="de">Video</xs:documentation>
+																		<xs:documentation xml:lang="en">Video</xs:documentation>
+																	</xs:annotation>
+																	<xs:enumeration value="384"/>
+																</xs:restriction>
+															</xs:simpleType>
+															<xs:simpleType>
+																<xs:restriction base="xs:integer">
+																	<xs:annotation>
+																		<xs:documentation xml:lang="de">
+																			Bilder:
+																			391-470 - Bild 21 - 100
+																		</xs:documentation>
+																		<xs:documentation xml:lang="en">
+																			Pictures:
+																			391-470 - Picture 21 - 100
+																		</xs:documentation>
+																	</xs:annotation>
+																	<xs:minInclusive value="391"/>
+																	<xs:maxInclusive value="470"/>
+																</xs:restriction>
+															</xs:simpleType>
+														</xs:union>
+													</xs:simpleType>
+												</xs:attribute>
+												<xs:attribute name="url" type="xs:string" use="optional">
+													<xs:annotation>
+														<xs:documentation xml:lang="de">URL zum Bild</xs:documentation>
+														<xs:documentation xml:lang="en">Picture URL</xs:documentation>
+													</xs:annotation>
+												</xs:attribute>
+											</xs:complexType>
+										</xs:element>
+									</xs:sequence>
+								</xs:complexType>
+							</xs:element>
+							<xs:element minOccurs="0" maxOccurs="unbounded" name="link"  type="xs:string">
+								<xs:annotation>
+									<xs:documentation xml:lang="de">Link zur Objektansicht auf der e-domizil-Website</xs:documentation>
+									<xs:documentation xml:lang="en">Link to object view at e-domizil''s website</xs:documentation>
+								</xs:annotation>
+							</xs:element>
+						</xs:sequence>
+						<xs:attribute name="unitownerid" type="xs:string" use="required">
+							<xs:annotation>
+								<xs:documentation xml:lang="DE">Eindeutige Referenz-Anbieternummer, vergeben durch e-domizil</xs:documentation>
+								<xs:documentation xml:lang="EN">Unique owner identifier, defined by e-domizil</xs:documentation>
+							</xs:annotation>
+						</xs:attribute>
+						<xs:attribute name="internalunitid" type="xs:string" use="required">
+							<xs:annotation>
+								<xs:documentation xml:lang="DE">AnbieterObjektNr, vergeben durch Anbieter</xs:documentation>
+								<xs:documentation xml:lang="EN">Unique unit identifier in owner system</xs:documentation>
+							</xs:annotation>
+						</xs:attribute>
+						<xs:attribute name="internalunitid2" type="xs:string" use="optional">
+							<xs:annotation>
+								<xs:documentation xml:lang="DE">AnbieterObjektNr2, vergeben durch Anbieter</xs:documentation>
+								<xs:documentation xml:lang="EN">Further Unique unit identifier in owner system</xs:documentation>
+							</xs:annotation>
+						</xs:attribute>
+						<xs:attribute name="container" type="xs:string" use="optional">
+							<xs:annotation>
+								<xs:documentation xml:lang="de">Datenkategorisierung</xs:documentation>
+								<xs:documentation xml:lang="en">Data category</xs:documentation>
+							</xs:annotation>
+						</xs:attribute>
+						<xs:attribute name="language" type="xs:string" use="optional">
+							<xs:annotation>
+								<xs:documentation xml:lang="de">Default Sprache</xs:documentation>
+								<xs:documentation xml:lang="en"></xs:documentation>
+							</xs:annotation>
+						</xs:attribute>
+					</xs:complexType>
+				</xs:element>
+			</xs:sequence>
+		</xs:complexType>
+	</xs:element>
+</xs:schema>

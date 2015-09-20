@@ -1,0 +1,307 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="net.cbtltd.server.api.TaskMapper">
+
+	<resultMap id="ResultMap" type="Task">
+		<id column="task.ID" jdbcType="INTEGER" property="id" />
+		<result column="task.ParentID" jdbcType="INTEGER" property="parentid" />
+		<result column="task.OrganizationID" jdbcType="INTEGER" property="organizationid" />
+		<result column="task.ActorID" jdbcType="INTEGER" property="actorid" />
+		<result column="task.CustomerID" jdbcType="INTEGER" property="customerid" />
+		<result column="task.ProductID" jdbcType="INTEGER" property="productid" />
+		<result column="task.LocationID" jdbcType="INTEGER" property="locationid" />
+		<result column="task.ResourceType" jdbcType="VARCHAR" property="resourcetype" />
+		<result column="task.Name" jdbcType="VARCHAR" property="name" />
+		<result column="task.State" jdbcType="VARCHAR" property="state" />
+		<result column="task.Process" jdbcType="VARCHAR" property="process" />
+		<result column="task.Starter" jdbcType="VARCHAR" property="starter" />
+		<result column="task.Outcome" jdbcType="VARCHAR" property="outcome" />
+		<result column="task.Date" jdbcType="TIMESTAMP" property="date" />
+		<result column="task.DueDate" jdbcType="TIMESTAMP" property="duedate" />
+		<result column="task.DoneDate" jdbcType="TIMESTAMP" property="donedate" />
+		<result column="task.Quantity" jdbcType="DOUBLE" property="quantity" />
+		<result column="task.Unit" jdbcType="VARCHAR" property="unit" />
+		<result column="task.Cost" jdbcType="DOUBLE" property="cost" />
+		<result column="task.Price" jdbcType="DOUBLE" property="price" />
+		<result column="task.Currency" jdbcType="VARCHAR" property="currency" />
+		<result column="task.Notes" jdbcType="VARCHAR" property="notes" />
+		<result column="party.Name" jdbcType="VARCHAR" property="actorname" />
+	</resultMap>
+
+	<sql id="columns">
+		task.ID, task.ParentID, task.OrganizationID, task.ActorID, task.CustomerID, task.ProductID, task.LocationID, 
+		task.ResourceType, task.Name, task.State, task.Process, task.Starter, task.Outcome, 
+		task.Date, task.DueDate, task.DoneDate, task.Quantity, task.Unit, task.Cost, task.Price, task.Currency, 
+		task.Notes, party.Name as actorname
+	</sql>
+
+	<select id="read" parameterType="String" resultMap="ResultMap">
+		select
+		<include refid="columns" />
+		from task
+			join party on party.ID = task.ActorID
+		where task.ID = #{id,jdbcType=INTEGER}
+	</select>
+
+	<select id="readbyparentid" parameterType="String" resultMap="ResultMap">
+		select
+		<include refid="columns" />
+		from task
+			join party on party.ID = task.ActorID
+		where task.ParentID = #{id,jdbcType=INTEGER}
+			and task.Process = 'Service'
+			and task.State not in ('Initial', 'Final')
+	</select>
+
+	<delete id="delete" parameterType="String">
+		delete from task
+		where ID = #{id,jdbcType=INTEGER}
+	</delete>
+
+	<delete id="deletebyparentid" parameterType="String">
+		delete from task
+		where ParentID = #{id,jdbcType=INTEGER}
+	</delete>
+
+	<insert id="create" parameterType="Task" useGeneratedKeys="true" keyProperty="id">
+		insert into task (
+			ParentID, OrganizationID, ActorID, CustomerID, ProductID, LocationID, ResourceType, Name, State, 
+			Process, Starter, Outcome, Date, DueDate, DoneDate, Quantity, Unit, Cost, Price, Currency, Notes
+		)
+		values (
+			#{parentid,jdbcType=INTEGER},
+			#{organizationid,jdbcType=INTEGER},
+			#{actorid,jdbcType=INTEGER},
+			#{customerid,jdbcType=INTEGER}, 
+			#{productid,jdbcType=INTEGER},
+			#{locationid,jdbcType=INTEGER},
+			#{resourcetype,jdbcType=VARCHAR},
+			#{name,jdbcType=VARCHAR},
+			#{state,jdbcType=VARCHAR},
+			#{process,jdbcType=VARCHAR},
+			#{starter,jdbcType=VARCHAR},
+			#{outcome,jdbcType=VARCHAR},
+			#{date,jdbcType=DATE},
+			#{duedate,jdbcType=DATE},
+			#{donedate,jdbcType=DATE}, 
+			#{quantity,jdbcType=DOUBLE},
+			#{unit,jdbcType=VARCHAR},
+			#{cost,jdbcType=DOUBLE},
+			#{price,jdbcType=DOUBLE},
+			#{currency,jdbcType=VARCHAR},
+			#{notes,jdbcType=VARCHAR}
+		)
+	</insert>
+
+	<update id="update" parameterType="Task">
+		update task
+		<set>
+			<if test="parentid != null">
+				ParentID = #{parentid,jdbcType=INTEGER},
+			</if>
+			<if test="organizationid != null">
+				OrganizationID = #{organizationid,jdbcType=INTEGER},
+			</if>
+			<if test="actorid != null">
+				ActorID = #{actorid,jdbcType=INTEGER},
+			</if>
+			<if test="customerid != null">
+				CustomerID = #{customerid,jdbcType=INTEGER},
+			</if>
+			<if test="productid != null">
+				ProductID = #{productid,jdbcType=INTEGER},
+			</if>
+			<if test="locationid != null">
+				LocationID = #{locationid,jdbcType=INTEGER},
+			</if>
+			<if test="resourcetype != null">
+				ResourceType = #{resourcetype,jdbcType=VARCHAR},
+			</if>
+			<if test="name != null">
+				Name = #{name,jdbcType=VARCHAR},
+			</if>
+			<if test="state != null">
+				State = #{state,jdbcType=VARCHAR},
+			</if>
+			<if test="process != null">
+				Process = #{process,jdbcType=VARCHAR},
+			</if>
+			<if test="starter != null">
+				Starter = #{starter,jdbcType=VARCHAR},
+			</if>
+			<if test="outcome != null">
+				Outcome = #{outcome,jdbcType=VARCHAR},
+			</if>
+			<if test="date != null">
+				Date = #{date,jdbcType=DATE},
+			</if>
+			<if test="duedate != null">
+				DueDate = #{duedate,jdbcType=DATE},
+			</if>
+			<if test="donedate != null">
+				DoneDate = #{donedate,jdbcType=DATE},
+			</if>
+			<if test="quantity != null">
+				Quantity = #{quantity,jdbcType=DOUBLE},
+			</if>
+			<if test="unit != null">
+				Unit = #{unit,jdbcType=VARCHAR},
+			</if>
+			<if test="cost != null">
+				Cost = #{cost,jdbcType=DOUBLE},
+			</if>
+			<if test="price != null">
+				Price = #{price,jdbcType=DOUBLE},
+			</if>
+			<if test="currency != null">
+				Currency = #{currency,jdbcType=VARCHAR},
+			</if>
+			<if test="notes != null">
+				Notes = #{notes,jdbcType=VARCHAR},
+			</if>
+		</set>
+		where ID = #{id,jdbcType=INTEGER}
+	</update>
+
+	<update id="updateByPrimaryKey" parameterType="Task">
+		update task
+		set ParentID = #{parentid,jdbcType=INTEGER},
+		OrganizationID = #{organizationid,jdbcType=INTEGER},
+		ActorID = #{actorid,jdbcType=INTEGER},
+		CustomerID = #{customerid,jdbcType=INTEGER},
+		ProductID = #{productid,jdbcType=INTEGER},
+		LocationID = #{locationid,jdbcType=INTEGER},
+		ResourceType = #{resourcetype,jdbcType=VARCHAR},
+		Name = #{name,jdbcType=VARCHAR},
+		State = #{state,jdbcType=VARCHAR},
+		Process = #{process,jdbcType=VARCHAR},
+		Starter = #{starter,jdbcType=VARCHAR},
+		Outcome = #{outcome,jdbcType=VARCHAR},
+		Date = #{date,jdbcType=DATE},
+		DueDate = #{duedate,jdbcType=DATE},
+		DoneDate = #{donedate,jdbcType=DATE},
+		Quantity = #{quantity,jdbcType=DOUBLE},
+		Unit = #{unit,jdbcType=VARCHAR},
+		Cost = #{cost,jdbcType=DOUBLE},
+		Price = #{price,jdbcType=DOUBLE},
+		Currency = #{currency,jdbcType=VARCHAR},
+		Notes = #{notes,jdbcType=VARCHAR}
+		where ID = #{id,jdbcType=INTEGER}
+	</update>
+
+	<select id="nameidbyid" parameterType="NameIdAction" resultType="NameId">
+		select distinct Name, ID
+		from task
+		where ID = #{id}
+	</select>
+
+	<select id="nameidbyname" parameterType="NameIdAction" resultType="NameId">
+		select distinct Name, ID
+		from task
+		where Name <![CDATA[ >= ]]> #{name}
+		<if test="organizationid != null">
+			and OrganizationID = #{organizationid}
+		</if>
+		<if test="type != null">
+			and Process = #{type}
+		</if>
+		<if test="state == null">
+			and State not in ('Initial', 'Final')
+		</if>
+		<if test="state != null">
+			and State in (${state})
+		</if>
+		order by Name
+		limit 0, #{numrows}
+	</select>
+
+	<select id="collisions" parameterType="Task" resultType="NameId">
+		select ID, Name
+		from task
+			join relation on HeadID = ID 
+				and Link = 'Task Resource'
+				and LineID in (${resourcelist})
+		where Date <![CDATA[ < ]]> #{duedate}
+			and Duedate <![CDATA[ > ]]> #{fromdate}
+			and ID <![CDATA[ <> ]]> #{id}
+			and State not in ('Initial', 'Final', 'Cancelled')
+	</select>
+
+	<select id="scheduleitems" parameterType="Schedule" resultType="ScheduleItem">
+			select distinct
+				product.ID as productid, 
+				product.Name as name, 
+				task.ID as id,
+				task.State as state,
+				party.Name as resource,
+				Date,
+				DueDate
+			from product
+				join task on task.ProductID = product.ID
+				left join party on PartyID = task.CustomerID
+			where task.State not in ('Initial', 'Final', 'Cancelled')
+				and Date <![CDATA[ <= ]]> date_add(#{fromdate}, interval 31 day)
+				and Duedate <![CDATA[ > ]]> #{fromdate}
+				and product.ID in (${resourcelist})
+		union
+			select distinct
+				product.ID as productid, 
+				product.Name as name, 
+				'','',
+				'9970-01-01', 
+				'9970-01-01'
+			from product
+			where product.ID in (${resourcelist})
+		order by name, Duedate
+	</select>
+
+	<sql id="wheremaintenance">
+		where task.ParentID = #{id}
+			and task.Process = 'Maintenance'
+			and task.State not in ('Initial', 'Final')
+	</sql>
+
+	<select id="maintenancetaskcount" parameterType="HasTableService" resultType="Integer">
+		select count(ID) from task
+		<include refid="wheremaintenance" />
+	</select>
+
+	<select id="maintenancetasklist" parameterType="HasTableService" resultMap="ResultMap">
+		select
+		<include refid="columns" />
+		from task
+			join party on party.ID = task.ActorID
+		<include refid="wheremaintenance" />
+		order by ${orderby}
+		limit #{startrow}, #{numrows}
+	</select>
+
+	<sql id="wherework">
+		where task.DueDate <![CDATA[ <= ]]> #{duedate}
+			<if test="actorid != null">
+			and task.ActorID = #{actorid}
+			</if>
+			<if test="process != null">
+			and task.Process = #{process}
+			</if>
+			<if test="state != null">
+			and task.State = #{state}
+			</if>
+	</sql>
+
+	<select id="workcount" parameterType="TaskTable" resultType="Integer">
+		select count(ID) from task
+		<include refid="wherework" />
+	</select>
+
+	<select id="worklist" parameterType="TaskTable" resultMap="ResultMap">
+		select
+		<include refid="columns" />
+		from task
+			join party on party.ID = task.ActorID
+		<include refid="wherework" />
+		order by ${orderby}
+		limit #{startrow}, #{numrows}
+	</select>
+
+</mapper>

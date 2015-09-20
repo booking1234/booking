@@ -1,0 +1,49 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<web-app>
+	<display-name>Razor Web Application</display-name>
+	<servlet>
+		<servlet-name>XMLServer</servlet-name>
+		<display-name>XML Server</display-name>
+		<servlet-class>
+			org.apache.cxf.transport.servlet.CXFServlet
+		</servlet-class>
+		<init-param>
+			<param-name>config-location</param-name>
+			<param-value>/WEB-INF/beans.xml</param-value>
+		</init-param>
+		<load-on-startup>2</load-on-startup>
+	</servlet>
+
+	<servlet-mapping>
+		<servlet-name>XMLServer</servlet-name>
+		<url-pattern>/services/*</url-pattern>
+	</servlet-mapping>
+	
+	<session-config>
+        <session-timeout>60</session-timeout>
+    </session-config>
+
+	<security-constraint>
+		<web-resource-collection>
+			<web-resource-name>Registration</web-resource-name>
+			<url-pattern>/services/json/registration/step</url-pattern>
+		</web-resource-collection>
+		<auth-constraint>
+			<role-name>manager</role-name>
+			<role-name>channel</role-name>
+		</auth-constraint>
+	</security-constraint>
+
+	<security-role>
+		<role-name>manager</role-name>
+		<role-name>channel</role-name>
+	</security-role>
+
+	<login-config>
+		<auth-method>FORM</auth-method>
+		<form-login-config>
+			<form-login-page>/login.html</form-login-page>
+			<form-error-page>/error.html</form-error-page>
+		</form-login-config>
+	</login-config>
+</web-app>

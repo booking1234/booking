@@ -1,0 +1,592 @@
+<?xml version="1.0"?>
+<!-- Generated using Flame-Ware Solutions XML-2-XSD v2.0 at http://www.flame-ware.com/Products/XML-2-XSD/ -->
+<xs:schema id="NewDataSet" xmlns="" xmlns:xs="http://www.w3.org/2001/XMLSchema" xmlns:msdata="urn:schemas-microsoft-com:xml-msdata">
+  <xs:element name="libelle" nillable="true">
+    <xs:complexType>
+      <xs:simpleContent msdata:ColumnName="libelle_Text" msdata:Ordinal="1">
+        <xs:extension base="xs:string">
+          <xs:attribute name="lg" type="xs:string" />
+        </xs:extension>
+      </xs:simpleContent>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="descriptif">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element name="picto" minOccurs="0" maxOccurs="unbounded">
+          <xs:complexType>
+            <xs:sequence>
+              <xs:element ref="objet" minOccurs="0" maxOccurs="unbounded" />
+            </xs:sequence>
+          </xs:complexType>
+        </xs:element>
+        <xs:element ref="paragraphe" minOccurs="0" maxOccurs="unbounded" />
+      </xs:sequence>
+      <xs:attribute name="numero" type="xs:string" />
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="objet">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element name="petit" nillable="true" minOccurs="0" maxOccurs="unbounded">
+          <xs:complexType>
+            <xs:simpleContent msdata:ColumnName="petit_Text" msdata:Ordinal="1">
+              <xs:extension base="xs:string">
+                <xs:attribute name="canal_objet" type="xs:string" />
+              </xs:extension>
+            </xs:simpleContent>
+          </xs:complexType>
+        </xs:element>
+        <xs:element name="grand" nillable="true" minOccurs="0" maxOccurs="unbounded">
+          <xs:complexType>
+            <xs:simpleContent msdata:ColumnName="grand_Text" msdata:Ordinal="1">
+              <xs:extension base="xs:string">
+                <xs:attribute name="canal_objet" type="xs:string" />
+              </xs:extension>
+            </xs:simpleContent>
+          </xs:complexType>
+        </xs:element>
+        <xs:element name="legende" nillable="true" minOccurs="0" maxOccurs="unbounded">
+          <xs:complexType>
+            <xs:simpleContent msdata:ColumnName="legende_Text" msdata:Ordinal="1">
+              <xs:extension base="xs:string">
+                <xs:attribute name="lg" type="xs:string" />
+              </xs:extension>
+            </xs:simpleContent>
+          </xs:complexType>
+        </xs:element>
+      </xs:sequence>
+      <xs:attribute name="numero" type="xs:string" />
+      <xs:attribute name="type_objet" type="xs:string" />
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="paragraphe">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element name="titre" type="xs:string" minOccurs="0" msdata:Ordinal="0" />
+        <xs:element name="texte" type="xs:string" minOccurs="0" msdata:Ordinal="1" />
+        <xs:element ref="objet" minOccurs="0" maxOccurs="unbounded" />
+      </xs:sequence>
+      <xs:attribute name="entete" type="xs:string" />
+      <xs:attribute name="numero" type="xs:string" />
+      <xs:attribute name="lg" type="xs:string" />
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="periode">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element name="date_debut" minOccurs="0" maxOccurs="unbounded">
+          <xs:complexType>
+            <xs:attribute name="jour" type="xs:string" />
+            <xs:attribute name="mois" type="xs:string" />
+            <xs:attribute name="annee" type="xs:string" />
+          </xs:complexType>
+        </xs:element>
+        <xs:element name="date_fin" minOccurs="0" maxOccurs="unbounded">
+          <xs:complexType>
+            <xs:attribute name="jour" type="xs:string" />
+            <xs:attribute name="mois" type="xs:string" />
+            <xs:attribute name="annee" type="xs:string" />
+          </xs:complexType>
+        </xs:element>
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="formule">
+    <xs:complexType>
+      <xs:attribute name="value" type="xs:string" />
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="fournisseur">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element name="identite" minOccurs="0" maxOccurs="unbounded">
+          <xs:complexType>
+            <xs:sequence>
+              <xs:element name="presentation" minOccurs="0" maxOccurs="unbounded">
+                <xs:complexType>
+                  <xs:sequence>
+                    <xs:element name="nom" minOccurs="0" maxOccurs="unbounded">
+                      <xs:complexType>
+                        <xs:sequence>
+                          <xs:element ref="libelle" minOccurs="0" maxOccurs="unbounded" />
+                        </xs:sequence>
+                      </xs:complexType>
+                    </xs:element>
+                    <xs:element ref="descriptif" minOccurs="0" maxOccurs="unbounded" />
+                  </xs:sequence>
+                </xs:complexType>
+              </xs:element>
+              <xs:element name="coordonnees" minOccurs="0" maxOccurs="unbounded">
+                <xs:complexType>
+                  <xs:sequence>
+                    <xs:element name="adresse" minOccurs="0" maxOccurs="unbounded">
+                      <xs:complexType>
+                        <xs:sequence>
+                          <xs:element name="ligne_adresse" minOccurs="0" maxOccurs="unbounded">
+                            <xs:complexType>
+                              <xs:sequence>
+                                <xs:element ref="libelle" minOccurs="0" maxOccurs="unbounded" />
+                              </xs:sequence>
+                              <xs:attribute name="numero" type="xs:string" />
+                            </xs:complexType>
+                          </xs:element>
+                        </xs:sequence>
+                      </xs:complexType>
+                    </xs:element>
+                    <xs:element name="cp" minOccurs="0" maxOccurs="unbounded">
+                      <xs:complexType>
+                        <xs:sequence>
+                          <xs:element ref="libelle" minOccurs="0" maxOccurs="unbounded" />
+                        </xs:sequence>
+                      </xs:complexType>
+                    </xs:element>
+                    <xs:element name="commune" minOccurs="0" maxOccurs="unbounded">
+                      <xs:complexType>
+                        <xs:sequence>
+                          <xs:element ref="libelle" minOccurs="0" maxOccurs="unbounded" />
+                        </xs:sequence>
+                      </xs:complexType>
+                    </xs:element>
+                    <xs:element name="telephone" minOccurs="0" maxOccurs="unbounded">
+                      <xs:complexType>
+                        <xs:sequence>
+                          <xs:element name="numero_tel" minOccurs="0" maxOccurs="unbounded">
+                            <xs:complexType>
+                              <xs:sequence>
+                                <xs:element ref="libelle" minOccurs="0" maxOccurs="unbounded" />
+                              </xs:sequence>
+                              <xs:attribute name="numero" type="xs:string" />
+                            </xs:complexType>
+                          </xs:element>
+                        </xs:sequence>
+                      </xs:complexType>
+                    </xs:element>
+                    <xs:element name="internet" minOccurs="0" maxOccurs="unbounded">
+                      <xs:complexType>
+                        <xs:sequence>
+                          <xs:element name="url" minOccurs="0" maxOccurs="unbounded">
+                            <xs:complexType>
+                              <xs:sequence>
+                                <xs:element ref="libelle" minOccurs="0" maxOccurs="unbounded" />
+                              </xs:sequence>
+                              <xs:attribute name="numero" type="xs:string" />
+                            </xs:complexType>
+                          </xs:element>
+                        </xs:sequence>
+                      </xs:complexType>
+                    </xs:element>
+                    <xs:element name="rcs" minOccurs="0" maxOccurs="unbounded">
+                      <xs:complexType>
+                        <xs:sequence>
+                          <xs:element ref="libelle" minOccurs="0" maxOccurs="unbounded" />
+                        </xs:sequence>
+                      </xs:complexType>
+                    </xs:element>
+                    <xs:element name="ape" minOccurs="0" maxOccurs="unbounded">
+                      <xs:complexType>
+                        <xs:sequence>
+                          <xs:element ref="libelle" minOccurs="0" maxOccurs="unbounded" />
+                        </xs:sequence>
+                      </xs:complexType>
+                    </xs:element>
+                    <xs:element name="siret" minOccurs="0" maxOccurs="unbounded">
+                      <xs:complexType>
+                        <xs:sequence>
+                          <xs:element ref="libelle" minOccurs="0" maxOccurs="unbounded" />
+                        </xs:sequence>
+                      </xs:complexType>
+                    </xs:element>
+                  </xs:sequence>
+                </xs:complexType>
+              </xs:element>
+            </xs:sequence>
+          </xs:complexType>
+        </xs:element>
+        <xs:element name="themes" minOccurs="0" maxOccurs="unbounded">
+          <xs:complexType>
+            <xs:sequence>
+              <xs:element name="theme" minOccurs="0" maxOccurs="unbounded">
+                <xs:complexType>
+                  <xs:sequence>
+                    <xs:element ref="libelle" minOccurs="0" maxOccurs="unbounded" />
+                    <xs:element name="theme_attache" minOccurs="0" maxOccurs="unbounded">
+                      <xs:complexType>
+                        <xs:attribute name="value" type="xs:string" />
+                      </xs:complexType>
+                    </xs:element>
+                  </xs:sequence>
+                  <xs:attribute name="value" type="xs:string" />
+                </xs:complexType>
+              </xs:element>
+            </xs:sequence>
+          </xs:complexType>
+        </xs:element>
+        <xs:element name="dictionnaire_avantages" minOccurs="0" maxOccurs="unbounded">
+          <xs:complexType>
+            <xs:sequence>
+              <xs:element name="avantage" minOccurs="0" maxOccurs="unbounded">
+                <xs:complexType>
+                  <xs:sequence>
+                    <xs:element name="nom_avantage" minOccurs="0" maxOccurs="unbounded">
+                      <xs:complexType>
+                        <xs:sequence>
+                          <xs:element ref="libelle" minOccurs="0" maxOccurs="unbounded" />
+                        </xs:sequence>
+                      </xs:complexType>
+                    </xs:element>
+                    <xs:element name="picto_avantage" minOccurs="0" maxOccurs="unbounded">
+                      <xs:complexType>
+                        <xs:sequence>
+                          <xs:element ref="objet" minOccurs="0" maxOccurs="unbounded" />
+                        </xs:sequence>
+                      </xs:complexType>
+                    </xs:element>
+                  </xs:sequence>
+                  <xs:attribute name="numero" type="xs:string" />
+                </xs:complexType>
+              </xs:element>
+            </xs:sequence>
+          </xs:complexType>
+        </xs:element>
+        <xs:element name="catalogue" minOccurs="0" maxOccurs="unbounded">
+          <xs:complexType>
+            <xs:sequence>
+              <xs:element name="informations_catalogue" minOccurs="0" maxOccurs="unbounded">
+                <xs:complexType>
+                  <xs:sequence>
+                    <xs:element name="identifiant" minOccurs="0" maxOccurs="unbounded">
+                      <xs:complexType>
+                        <xs:sequence>
+                          <xs:element ref="libelle" minOccurs="0" maxOccurs="unbounded" />
+                        </xs:sequence>
+                      </xs:complexType>
+                    </xs:element>
+                    <xs:element name="periode_catalogue" minOccurs="0" maxOccurs="unbounded">
+                      <xs:complexType>
+                        <xs:sequence>
+                          <xs:element ref="periode" minOccurs="0" maxOccurs="unbounded" />
+                        </xs:sequence>
+                      </xs:complexType>
+                    </xs:element>
+                  </xs:sequence>
+                </xs:complexType>
+              </xs:element>
+              <xs:element name="produits" minOccurs="0" maxOccurs="unbounded">
+                <xs:complexType>
+                  <xs:sequence>
+                    <xs:element name="produit" minOccurs="0" maxOccurs="unbounded">
+                      <xs:complexType>
+                        <xs:sequence>
+                          <xs:element name="lesprix" type="xs:string" minOccurs="0" msdata:Ordinal="1" />
+                          <xs:element name="nom_produit" minOccurs="0" maxOccurs="unbounded">
+                            <xs:complexType>
+                              <xs:sequence>
+                                <xs:element ref="libelle" minOccurs="0" maxOccurs="unbounded" />
+                              </xs:sequence>
+                            </xs:complexType>
+                          </xs:element>
+                          <xs:element name="informations_generiques" minOccurs="0" maxOccurs="unbounded">
+                            <xs:complexType>
+                              <xs:sequence>
+                                <xs:element name="identification_produit" minOccurs="0" maxOccurs="unbounded">
+                                  <xs:complexType>
+                                    <xs:sequence>
+                                      <xs:element name="exclusivite" minOccurs="0" maxOccurs="unbounded">
+                                        <xs:complexType>
+                                          <xs:attribute name="value" type="xs:string" />
+                                        </xs:complexType>
+                                      </xs:element>
+                                      <xs:element ref="formule" minOccurs="0" maxOccurs="unbounded" />
+                                      <xs:element name="formules" minOccurs="0" maxOccurs="unbounded">
+                                        <xs:complexType>
+                                          <xs:sequence>
+                                            <xs:element ref="formule" minOccurs="0" maxOccurs="unbounded" />
+                                          </xs:sequence>
+                                        </xs:complexType>
+                                      </xs:element>
+                                      <xs:element name="presentable_seul" minOccurs="0" maxOccurs="unbounded">
+                                        <xs:complexType>
+                                          <xs:attribute name="value" type="xs:string" />
+                                        </xs:complexType>
+                                      </xs:element>
+                                      <xs:element name="avec_acheminement" minOccurs="0" maxOccurs="unbounded">
+                                        <xs:complexType>
+                                          <xs:attribute name="value" type="xs:string" />
+                                        </xs:complexType>
+                                      </xs:element>
+                                    </xs:sequence>
+                                  </xs:complexType>
+                                </xs:element>
+                                <xs:element name="references" minOccurs="0" maxOccurs="unbounded">
+                                  <xs:complexType>
+                                    <xs:sequence>
+                                      <xs:element name="interne_to" minOccurs="0" maxOccurs="unbounded">
+                                        <xs:complexType>
+                                          <xs:sequence>
+                                            <xs:element ref="libelle" minOccurs="0" maxOccurs="unbounded" />
+                                          </xs:sequence>
+                                        </xs:complexType>
+                                      </xs:element>
+                                    </xs:sequence>
+                                  </xs:complexType>
+                                </xs:element>
+                                <xs:element name="periodes_parution" minOccurs="0" maxOccurs="unbounded">
+                                  <xs:complexType>
+                                    <xs:sequence>
+                                      <xs:element name="parution" minOccurs="0" maxOccurs="unbounded">
+                                        <xs:complexType>
+                                          <xs:sequence>
+                                            <xs:element name="periode_parution" minOccurs="0" maxOccurs="unbounded">
+                                              <xs:complexType>
+                                                <xs:sequence>
+                                                  <xs:element ref="periode" minOccurs="0" maxOccurs="unbounded" />
+                                                </xs:sequence>
+                                              </xs:complexType>
+                                            </xs:element>
+                                          </xs:sequence>
+                                          <xs:attribute name="numero" type="xs:string" />
+                                        </xs:complexType>
+                                      </xs:element>
+                                    </xs:sequence>
+                                  </xs:complexType>
+                                </xs:element>
+                                <xs:element name="destinations" minOccurs="0" maxOccurs="unbounded">
+                                  <xs:complexType>
+                                    <xs:sequence>
+                                      <xs:element name="destination" minOccurs="0" maxOccurs="unbounded">
+                                        <xs:complexType>
+                                          <xs:sequence>
+                                            <xs:element name="arrivee" minOccurs="0" maxOccurs="unbounded">
+                                              <xs:complexType>
+                                                <xs:sequence>
+                                                  <xs:element name="pays" minOccurs="0" maxOccurs="unbounded">
+                                                    <xs:complexType>
+                                                      <xs:sequence>
+                                                        <xs:element name="iso_3166-1" minOccurs="0" maxOccurs="unbounded">
+                                                          <xs:complexType>
+                                                            <xs:attribute name="value" type="xs:string" />
+                                                          </xs:complexType>
+                                                        </xs:element>
+                                                        <xs:element name="region" minOccurs="0" maxOccurs="unbounded">
+                                                          <xs:complexType>
+                                                            <xs:sequence>
+                                                              <xs:element name="iso_3166-2" minOccurs="0" maxOccurs="unbounded">
+                                                                <xs:complexType>
+                                                                  <xs:attribute name="value" type="xs:string" />
+                                                                </xs:complexType>
+                                                              </xs:element>
+                                                              <xs:element name="ville" minOccurs="0" maxOccurs="unbounded">
+                                                                <xs:complexType>
+                                                                  <xs:sequence>
+                                                                    <xs:element name="onu" minOccurs="0" maxOccurs="unbounded">
+                                                                      <xs:complexType>
+                                                                        <xs:attribute name="value" type="xs:string" />
+                                                                      </xs:complexType>
+                                                                    </xs:element>
+                                                                  </xs:sequence>
+                                                                </xs:complexType>
+                                                              </xs:element>
+                                                            </xs:sequence>
+                                                          </xs:complexType>
+                                                        </xs:element>
+                                                      </xs:sequence>
+                                                    </xs:complexType>
+                                                  </xs:element>
+                                                </xs:sequence>
+                                              </xs:complexType>
+                                            </xs:element>
+                                          </xs:sequence>
+                                          <xs:attribute name="numero" type="xs:string" />
+                                        </xs:complexType>
+                                      </xs:element>
+                                    </xs:sequence>
+                                  </xs:complexType>
+                                </xs:element>
+                              </xs:sequence>
+                            </xs:complexType>
+                          </xs:element>
+                          <xs:element name="informations_formule" minOccurs="0" maxOccurs="unbounded">
+                            <xs:complexType>
+                              <xs:sequence>
+                                <xs:element name="location" minOccurs="0" maxOccurs="unbounded">
+                                  <xs:complexType>
+                                    <xs:sequence>
+                                      <xs:element name="hebergement_location" minOccurs="0" maxOccurs="unbounded">
+                                        <xs:complexType>
+                                          <xs:sequence>
+                                            <xs:element name="type_lieu" minOccurs="0" maxOccurs="unbounded">
+                                              <xs:complexType>
+                                                <xs:attribute name="value" type="xs:string" />
+                                              </xs:complexType>
+                                            </xs:element>
+                                            <xs:element name="type_location" minOccurs="0" maxOccurs="unbounded">
+                                              <xs:complexType>
+                                                <xs:attribute name="value" type="xs:string" />
+                                              </xs:complexType>
+                                            </xs:element>
+                                            <xs:element ref="descriptif" minOccurs="0" maxOccurs="unbounded" />
+                                          </xs:sequence>
+                                        </xs:complexType>
+                                      </xs:element>
+                                      <xs:element name="station" minOccurs="0" maxOccurs="unbounded">
+                                        <xs:complexType>
+                                          <xs:sequence>
+                                            <xs:element name="lastation" minOccurs="0" maxOccurs="unbounded">
+                                              <xs:complexType>
+                                                <xs:sequence>
+                                                  <xs:element name="libelle" type="xs:string" minOccurs="0" />
+                                                  <xs:element ref="paragraphe" minOccurs="0" maxOccurs="unbounded" />
+                                                </xs:sequence>
+                                              </xs:complexType>
+                                            </xs:element>
+                                            <xs:element name="domaine" minOccurs="0" maxOccurs="unbounded">
+                                              <xs:complexType>
+                                                <xs:sequence>
+                                                  <xs:element ref="libelle" minOccurs="0" maxOccurs="unbounded" />
+                                                </xs:sequence>
+                                              </xs:complexType>
+                                            </xs:element>
+                                          </xs:sequence>
+                                        </xs:complexType>
+                                      </xs:element>
+                                      <xs:element name="sports" minOccurs="0" maxOccurs="unbounded">
+                                        <xs:complexType>
+                                          <xs:sequence>
+                                            <xs:element name="sport" minOccurs="0" maxOccurs="unbounded">
+                                              <xs:complexType>
+                                                <xs:sequence>
+                                                  <xs:element name="type_sport" minOccurs="0" maxOccurs="unbounded">
+                                                    <xs:complexType>
+                                                      <xs:attribute name="value" type="xs:string" />
+                                                    </xs:complexType>
+                                                  </xs:element>
+                                                </xs:sequence>
+                                                <xs:attribute name="numero" type="xs:string" />
+                                              </xs:complexType>
+                                            </xs:element>
+                                          </xs:sequence>
+                                        </xs:complexType>
+                                      </xs:element>
+                                      <xs:element name="services" minOccurs="0" maxOccurs="unbounded">
+                                        <xs:complexType>
+                                          <xs:sequence>
+                                            <xs:element name="service" minOccurs="0" maxOccurs="unbounded">
+                                              <xs:complexType>
+                                                <xs:sequence>
+                                                  <xs:element name="type_service" minOccurs="0" maxOccurs="unbounded">
+                                                    <xs:complexType>
+                                                      <xs:attribute name="value" type="xs:string" />
+                                                    </xs:complexType>
+                                                  </xs:element>
+                                                </xs:sequence>
+                                                <xs:attribute name="numero" type="xs:string" />
+                                              </xs:complexType>
+                                            </xs:element>
+                                          </xs:sequence>
+                                        </xs:complexType>
+                                      </xs:element>
+                                      <xs:element name="thematique" minOccurs="0" maxOccurs="unbounded">
+                                        <xs:complexType>
+                                          <xs:sequence>
+                                            <xs:element name="theme_to" minOccurs="0" maxOccurs="unbounded">
+                                              <xs:complexType>
+                                                <xs:attribute name="value" type="xs:string" />
+                                              </xs:complexType>
+                                            </xs:element>
+                                          </xs:sequence>
+                                        </xs:complexType>
+                                      </xs:element>
+                                    </xs:sequence>
+                                  </xs:complexType>
+                                </xs:element>
+                              </xs:sequence>
+                            </xs:complexType>
+                          </xs:element>
+                          <xs:element name="informations_commerciales" minOccurs="0" maxOccurs="unbounded">
+                            <xs:complexType>
+                              <xs:sequence>
+                                <xs:element name="presentation_commerciale" minOccurs="0" maxOccurs="unbounded">
+                                  <xs:complexType>
+                                    <xs:sequence>
+                                      <xs:element name="accroche_liste" minOccurs="0" maxOccurs="unbounded">
+                                        <xs:complexType>
+                                          <xs:sequence>
+                                            <xs:element ref="libelle" minOccurs="0" maxOccurs="unbounded" />
+                                          </xs:sequence>
+                                        </xs:complexType>
+                                      </xs:element>
+                                      <xs:element name="accroche_fiche" minOccurs="0" maxOccurs="unbounded">
+                                        <xs:complexType>
+                                          <xs:sequence>
+                                            <xs:element ref="libelle" minOccurs="0" maxOccurs="unbounded" />
+                                          </xs:sequence>
+                                        </xs:complexType>
+                                      </xs:element>
+                                      <xs:element ref="descriptif" minOccurs="0" maxOccurs="unbounded" />
+                                    </xs:sequence>
+                                  </xs:complexType>
+                                </xs:element>
+                                <xs:element name="reservations" minOccurs="0" maxOccurs="unbounded">
+                                  <xs:complexType>
+                                    <xs:sequence>
+                                      <xs:element name="reservation" minOccurs="0" maxOccurs="unbounded">
+                                        <xs:complexType>
+                                          <xs:sequence>
+                                            <xs:element name="type_reservation" minOccurs="0" maxOccurs="unbounded">
+                                              <xs:complexType>
+                                                <xs:attribute name="value" type="xs:string" />
+                                              </xs:complexType>
+                                            </xs:element>
+                                            <xs:element name="media_reservation" minOccurs="0" maxOccurs="unbounded">
+                                              <xs:complexType>
+                                                <xs:sequence>
+                                                  <xs:element ref="libelle" minOccurs="0" maxOccurs="unbounded" />
+                                                </xs:sequence>
+                                              </xs:complexType>
+                                            </xs:element>
+                                            <xs:element name="commentaires_reservation" minOccurs="0" maxOccurs="unbounded">
+                                              <xs:complexType>
+                                                <xs:sequence>
+                                                  <xs:element ref="libelle" minOccurs="0" maxOccurs="unbounded" />
+                                                </xs:sequence>
+                                              </xs:complexType>
+                                            </xs:element>
+                                          </xs:sequence>
+                                          <xs:attribute name="numero" type="xs:string" />
+                                        </xs:complexType>
+                                      </xs:element>
+                                    </xs:sequence>
+                                  </xs:complexType>
+                                </xs:element>
+                              </xs:sequence>
+                            </xs:complexType>
+                          </xs:element>
+                        </xs:sequence>
+                        <xs:attribute name="numero" type="xs:string" />
+                      </xs:complexType>
+                    </xs:element>
+                  </xs:sequence>
+                </xs:complexType>
+              </xs:element>
+            </xs:sequence>
+          </xs:complexType>
+        </xs:element>
+      </xs:sequence>
+      <xs:attribute name="licence" type="xs:string" />
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="NewDataSet" msdata:IsDataSet="true" msdata:UseCurrentLocale="true">
+    <xs:complexType>
+      <xs:choice minOccurs="0" maxOccurs="unbounded">
+        <xs:element ref="libelle" />
+        <xs:element ref="descriptif" />
+        <xs:element ref="objet" />
+        <xs:element ref="paragraphe" />
+        <xs:element ref="periode" />
+        <xs:element ref="formule" />
+        <xs:element ref="fournisseur" />
+      </xs:choice>
+    </xs:complexType>
+  </xs:element>
+</xs:schema>

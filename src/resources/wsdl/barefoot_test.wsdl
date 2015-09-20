@@ -1,0 +1,1664 @@
+<?xml version="1.0" encoding="utf-8"?>
+<wsdl:definitions xmlns:soap="http://schemas.xmlsoap.org/wsdl/soap/" xmlns:tns="http://www.barefoot.com/Services/" xmlns:s="http://www.w3.org/2001/XMLSchema" targetNamespace="http://www.barefoot.com/Services/" xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/">
+  <wsdl:types>
+    <s:schema elementFormDefault="qualified" targetNamespace="http://www.barefoot.com/Services/">
+      <s:element name="GetPropertyBookingDateXML">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="username" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="password" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="barefootAccount" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="date1" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="date2" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="propertyId" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="GetPropertyBookingDateXMLResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="GetPropertyBookingDateXMLResult" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="GetAvailableBookingPeriodsXML">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="username" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="password" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="barefootAccount" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="date1" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="date2" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="propertyId" type="s:string" />
+            <s:element minOccurs="1" maxOccurs="1" name="partneridx" type="s:int" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="GetAvailableBookingPeriodsXMLResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="GetAvailableBookingPeriodsXMLResult" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="IsPropertyAvailability">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="username" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="password" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="barefootAccount" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="date1" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="date2" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="propertyId" type="s:string" />
+            <s:element minOccurs="1" maxOccurs="1" name="partneridx" type="s:int" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="IsPropertyAvailabilityResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="1" maxOccurs="1" name="IsPropertyAvailabilityResult" type="s:boolean" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="GetPropertyImagesByDate">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="username" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="password" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="barefootAccount" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="strDate" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="GetPropertyImagesByDateResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="GetPropertyImagesByDateResult" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="GetPropertyAllImgsXML">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="username" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="password" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="barefootAccount" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="propertyId" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="GetPropertyAllImgsXMLResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="GetPropertyAllImgsXMLResult" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="GetPropertyRatesXML">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="username" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="password" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="barefootAccount" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="propertyId" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="Date1" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="Date2" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="GetPropertyRatesXMLResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="GetPropertyRatesXMLResult" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="GetPropertyPartnerRatesXML">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="username" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="password" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="barefootAccount" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="propertyId" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="Date1" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="Date2" type="s:string" />
+            <s:element minOccurs="1" maxOccurs="1" name="partneridx" type="s:int" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="GetPropertyPartnerRatesXMLResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="GetPropertyPartnerRatesXMLResult" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="GetPropertyRentByPropertyIDXML">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="username" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="password" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="barefootAccount" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="propertyId" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="GetPropertyRentByPropertyIDXMLResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="GetPropertyRentByPropertyIDXMLResult" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="GetPropertyPartnerRentXML">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="username" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="password" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="barefootAccount" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="propertyId" type="s:string" />
+            <s:element minOccurs="1" maxOccurs="1" name="partneridx" type="s:int" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="GetPropertyPartnerRentXMLResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="GetPropertyPartnerRentXMLResult" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="GetPropertyAvailabilityByDateXML">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="username" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="password" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="barefootAccount" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="date1" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="date2" type="s:string" />
+            <s:element minOccurs="1" maxOccurs="1" name="weekly" type="s:int" />
+            <s:element minOccurs="1" maxOccurs="1" name="partneridx" type="s:int" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="GetPropertyAvailabilityByDateXMLResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="GetPropertyAvailabilityByDateXMLResult" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="GetPropertyAvailabilityByTermXML">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="username" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="password" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="barefootAccount" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="date1" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="date2" type="s:string" />
+            <s:element minOccurs="1" maxOccurs="1" name="weekly" type="s:int" />
+            <s:element minOccurs="1" maxOccurs="1" name="sleeps" type="s:int" />
+            <s:element minOccurs="1" maxOccurs="1" name="baths" type="s:float" />
+            <s:element minOccurs="1" maxOccurs="1" name="bedrooms" type="s:int" />
+            <s:element minOccurs="0" maxOccurs="1" name="strwhere" type="s:string" />
+            <s:element minOccurs="1" maxOccurs="1" name="partneridx" type="s:int" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="GetPropertyAvailabilityByTermXMLResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="GetPropertyAvailabilityByTermXMLResult" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="GetPropertyAvailabilityByTermExtXML">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="username" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="password" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="barefootAccount" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="date1" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="date2" type="s:string" />
+            <s:element minOccurs="1" maxOccurs="1" name="weekly" type="s:int" />
+            <s:element minOccurs="1" maxOccurs="1" name="sleeps" type="s:int" />
+            <s:element minOccurs="1" maxOccurs="1" name="baths" type="s:float" />
+            <s:element minOccurs="1" maxOccurs="1" name="bedrooms" type="s:int" />
+            <s:element minOccurs="0" maxOccurs="1" name="strwhere" type="s:string" />
+            <s:element minOccurs="1" maxOccurs="1" name="partneridx" type="s:int" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="GetPropertyAvailabilityByTermExtXMLResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="GetPropertyAvailabilityByTermExtXMLResult" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="GetProperty">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="username" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="password" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="barefootAccount" type="s:string" />
+            <s:element minOccurs="1" maxOccurs="1" name="partneridx" type="s:int" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="GetPropertyResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="GetPropertyResult" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="GetPropertyExt">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="username" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="password" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="barefootAccount" type="s:string" />
+            <s:element minOccurs="1" maxOccurs="1" name="partneridx" type="s:int" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="GetPropertyExtResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="GetPropertyExtResult" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="GetLastUpdatedProperty">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="username" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="password" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="barefootAccount" type="s:string" />
+            <s:element minOccurs="1" maxOccurs="1" name="partneridx" type="s:int" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="GetLastUpdatedPropertyResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="GetLastUpdatedPropertyResult" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="GetLastUpdatedPropertyTest">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="username" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="password" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="barefootAccount" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="LastAccess" type="s:string" />
+            <s:element minOccurs="1" maxOccurs="1" name="partneridx" type="s:int" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="GetLastUpdatedPropertyTestResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="GetLastUpdatedPropertyTestResult" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="GetLastAvailChangedProperties">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="username" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="password" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="barefootAccount" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="LastAccess" type="s:string" />
+            <s:element minOccurs="1" maxOccurs="1" name="partneridx" type="s:int" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="GetLastAvailChangedPropertiesResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="GetLastAvailChangedPropertiesResult" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="GetLastAvailChangedPropertiesTest">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="username" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="password" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="barefootAccount" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="LastAccess" type="s:string" />
+            <s:element minOccurs="1" maxOccurs="1" name="partneridx" type="s:int" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="GetLastAvailChangedPropertiesTestResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="GetLastAvailChangedPropertiesTestResult" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="GetPropertyIDByTerm">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="username" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="password" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="barefootAccount" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="date1" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="date2" type="s:string" />
+            <s:element minOccurs="1" maxOccurs="1" name="weekly" type="s:int" />
+            <s:element minOccurs="1" maxOccurs="1" name="sleeps" type="s:int" />
+            <s:element minOccurs="1" maxOccurs="1" name="baths" type="s:float" />
+            <s:element minOccurs="1" maxOccurs="1" name="bedrooms" type="s:int" />
+            <s:element minOccurs="0" maxOccurs="1" name="strwhere" type="s:string" />
+            <s:element minOccurs="1" maxOccurs="1" name="partneridx" type="s:int" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="GetPropertyIDByTermResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="GetPropertyIDByTermResult" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="GetTenantList">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="username" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="password" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="barefootAccount" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="email" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="GetTenantListResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="GetTenantListResult" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="SetConsumerInfo">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="username" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="password" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="barefootAccount" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="Info" type="tns:ArrayOfString" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:complexType name="ArrayOfString">
+        <s:sequence>
+          <s:element minOccurs="0" maxOccurs="unbounded" name="string" nillable="true" type="s:string" />
+        </s:sequence>
+      </s:complexType>
+      <s:element name="SetConsumerInfoResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="1" maxOccurs="1" name="SetConsumerInfoResult" type="s:int" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="IsConsumerInfoExist">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="username" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="password" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="barefootAccount" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="email" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="IsConsumerInfoExistResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="1" maxOccurs="1" name="IsConsumerInfoExistResult" type="s:int" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="SetCommentsInfo">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="username" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="password" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="barefootAccount" type="s:string" />
+            <s:element minOccurs="1" maxOccurs="1" name="leaseid" type="s:int" />
+            <s:element minOccurs="0" maxOccurs="1" name="comments" type="s:string" />
+            <s:element minOccurs="1" maxOccurs="1" name="commentType" type="s:int" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="SetCommentsInfoResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="SetCommentsInfoResult" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="GetPropertyAmmenityNameXML">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="username" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="password" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="barefootAccount" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="num" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="GetPropertyAmmenityNameXMLResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="GetPropertyAmmenityNameXMLResult" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="GetPropertyRatesDetails">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="username" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="password" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="barefootAccount" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="leaseid" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="GetPropertyRatesDetailsResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="GetPropertyRatesDetailsResult" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="GetOptionalServiceIDs">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="username" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="password" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="barefootAccount" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="reztypeID" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="GetOptionalServiceIDsResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="GetOptionalServiceIDsResult" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="selectOptionalServices">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="username" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="password" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="barefootAccount" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="leaseid" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="selectedServiceIDs" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="waivedServiceIDs" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="selectOptionalServicesResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="selectOptionalServicesResult" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="GetLeaseidByReztypeid">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="username" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="password" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="barefootAccount" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="strADate" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="strDDate" type="s:string" />
+            <s:element minOccurs="1" maxOccurs="1" name="propertyId" type="s:int" />
+            <s:element minOccurs="1" maxOccurs="1" name="num_adult" type="s:int" />
+            <s:element minOccurs="1" maxOccurs="1" name="num_pet" type="s:int" />
+            <s:element minOccurs="1" maxOccurs="1" name="num_baby" type="s:int" />
+            <s:element minOccurs="1" maxOccurs="1" name="num_child" type="s:int" />
+            <s:element minOccurs="1" maxOccurs="1" name="reztypeid" type="s:int" />
+            <s:element minOccurs="1" maxOccurs="1" name="partneridx" type="s:int" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="GetLeaseidByReztypeidResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="GetLeaseidByReztypeidResult" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="CreateQuoteByReztypeidWNewRate">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="username" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="password" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="barefootAccount" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="strADate" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="strDDate" type="s:string" />
+            <s:element minOccurs="1" maxOccurs="1" name="propertyId" type="s:int" />
+            <s:element minOccurs="1" maxOccurs="1" name="num_adult" type="s:int" />
+            <s:element minOccurs="1" maxOccurs="1" name="num_pet" type="s:int" />
+            <s:element minOccurs="1" maxOccurs="1" name="num_baby" type="s:int" />
+            <s:element minOccurs="1" maxOccurs="1" name="num_child" type="s:int" />
+            <s:element minOccurs="1" maxOccurs="1" name="reztypeid" type="s:int" />
+            <s:element minOccurs="1" maxOccurs="1" name="partneridx" type="s:int" />
+            <s:element minOccurs="0" maxOccurs="1" name="specifiedRent" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="CreateQuoteByReztypeidWNewRateResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="CreateQuoteByReztypeidWNewRateResult" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="GetQuoteRatesDetail">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="username" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="password" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="barefootAccount" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="strADate" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="strDDate" type="s:string" />
+            <s:element minOccurs="1" maxOccurs="1" name="propertyId" type="s:int" />
+            <s:element minOccurs="1" maxOccurs="1" name="num_adult" type="s:int" />
+            <s:element minOccurs="1" maxOccurs="1" name="num_pet" type="s:int" />
+            <s:element minOccurs="1" maxOccurs="1" name="num_baby" type="s:int" />
+            <s:element minOccurs="1" maxOccurs="1" name="num_child" type="s:int" />
+            <s:element minOccurs="1" maxOccurs="1" name="reztypeid" type="s:int" />
+            <s:element minOccurs="1" maxOccurs="1" name="partneridx" type="s:int" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="GetQuoteRatesDetailResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="GetQuoteRatesDetailResult" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="CreateQuoteByReztypeid">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="username" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="password" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="barefootAccount" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="strADate" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="strDDate" type="s:string" />
+            <s:element minOccurs="1" maxOccurs="1" name="propertyId" type="s:int" />
+            <s:element minOccurs="1" maxOccurs="1" name="num_adult" type="s:int" />
+            <s:element minOccurs="1" maxOccurs="1" name="num_pet" type="s:int" />
+            <s:element minOccurs="1" maxOccurs="1" name="num_baby" type="s:int" />
+            <s:element minOccurs="1" maxOccurs="1" name="num_child" type="s:int" />
+            <s:element minOccurs="1" maxOccurs="1" name="reztypeid" type="s:int" />
+            <s:element minOccurs="1" maxOccurs="1" name="partneridx" type="s:int" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="CreateQuoteByReztypeidResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="CreateQuoteByReztypeidResult" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="GetValidMinday">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="username" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="password" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="barefootAccount" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="PropertyID" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="GetValidMindayResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="GetValidMindayResult" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="PropertyBooking">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="username" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="password" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="barefootAccount" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="Info" type="tns:ArrayOfString" />
+            <s:element minOccurs="1" maxOccurs="1" name="partneridx" type="s:int" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="PropertyBookingResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="PropertyBookingResult" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="CancelReservation">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="username" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="password" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="barefootAccount" type="s:string" />
+            <s:element minOccurs="1" maxOccurs="1" name="leasenum" type="s:int" />
+            <s:element minOccurs="1" maxOccurs="1" name="partneridx" type="s:int" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="CancelReservationResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="1" maxOccurs="1" name="CancelReservationResult" type="s:boolean" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="GetPortalRateAndPaymentSchedule">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="username" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="password" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="barefootAccount" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="strADate" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="strDDate" type="s:string" />
+            <s:element minOccurs="1" maxOccurs="1" name="propertyId" type="s:int" />
+            <s:element minOccurs="1" maxOccurs="1" name="num_adult" type="s:int" />
+            <s:element minOccurs="1" maxOccurs="1" name="num_pet" type="s:int" />
+            <s:element minOccurs="1" maxOccurs="1" name="num_baby" type="s:int" />
+            <s:element minOccurs="1" maxOccurs="1" name="num_child" type="s:int" />
+            <s:element minOccurs="1" maxOccurs="1" name="reztypeid" type="s:int" />
+            <s:element minOccurs="1" maxOccurs="1" name="partneridx" type="s:int" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="GetPortalRateAndPaymentScheduleResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="GetPortalRateAndPaymentScheduleResult" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="GetRentByLeaseNumber">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="username" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="password" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="barefootAccount" type="s:string" />
+            <s:element minOccurs="1" maxOccurs="1" name="partneridx" type="s:int" />
+            <s:element minOccurs="1" maxOccurs="1" name="leaseNum" type="s:int" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="GetRentByLeaseNumberResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="GetRentByLeaseNumberResult" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="GetMinimumDays">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="username" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="password" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="barefootAccount" type="s:string" />
+            <s:element minOccurs="1" maxOccurs="1" name="propertyID" type="s:int" />
+            <s:element minOccurs="1" maxOccurs="1" name="reztypeid" type="s:int" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="GetMinimumDaysResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="GetMinimumDaysResult" type="tns:PropertyMinimumDay" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:complexType name="PropertyMinimumDay">
+        <s:sequence>
+          <s:element minOccurs="1" maxOccurs="1" name="PropertyID" type="s:int" />
+          <s:element minOccurs="0" maxOccurs="1" name="MininumDayRules" type="tns:ArrayOfMinimumDayRule" />
+          <s:element minOccurs="0" maxOccurs="1" name="TurnoverDay" type="s:string" />
+        </s:sequence>
+      </s:complexType>
+      <s:complexType name="ArrayOfMinimumDayRule">
+        <s:sequence>
+          <s:element minOccurs="0" maxOccurs="unbounded" name="MinimumDayRule" nillable="true" type="tns:MinimumDayRule" />
+        </s:sequence>
+      </s:complexType>
+      <s:complexType name="MinimumDayRule">
+        <s:sequence>
+          <s:element minOccurs="1" maxOccurs="1" name="NumOfDayInAdvance_From" type="s:int" />
+          <s:element minOccurs="1" maxOccurs="1" name="NumOfDayInAdvance_To" type="s:int" />
+          <s:element minOccurs="1" maxOccurs="1" name="Period_From" type="s:dateTime" />
+          <s:element minOccurs="1" maxOccurs="1" name="Period_To" type="s:dateTime" />
+          <s:element minOccurs="1" maxOccurs="1" name="NumOfMinDay" type="s:int" />
+        </s:sequence>
+      </s:complexType>
+      <s:element name="GetValidCouponList">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="username" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="password" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="barefootAccount" type="s:string" />
+            <s:element minOccurs="1" maxOccurs="1" name="leaseid" type="s:int" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="GetValidCouponListResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="GetValidCouponListResult" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="AddCoupon">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="username" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="password" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="barefootAccount" type="s:string" />
+            <s:element minOccurs="1" maxOccurs="1" name="leaseid" type="s:int" />
+            <s:element minOccurs="0" maxOccurs="1" name="couponCode" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="AddCouponResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="AddCouponResult" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="RemoveCoupon">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="username" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="password" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="barefootAccount" type="s:string" />
+            <s:element minOccurs="1" maxOccurs="1" name="leaseid" type="s:int" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="RemoveCouponResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="RemoveCouponResult" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="GetQuoteRatesDetailWNewRate">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="username" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="password" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="barefootAccount" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="strADate" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="strDDate" type="s:string" />
+            <s:element minOccurs="1" maxOccurs="1" name="propertyId" type="s:int" />
+            <s:element minOccurs="1" maxOccurs="1" name="num_adult" type="s:int" />
+            <s:element minOccurs="1" maxOccurs="1" name="num_pet" type="s:int" />
+            <s:element minOccurs="1" maxOccurs="1" name="num_baby" type="s:int" />
+            <s:element minOccurs="1" maxOccurs="1" name="num_child" type="s:int" />
+            <s:element minOccurs="1" maxOccurs="1" name="Rent" type="s:float" />
+            <s:element minOccurs="1" maxOccurs="1" name="reztypeid" type="s:int" />
+            <s:element minOccurs="1" maxOccurs="1" name="partneridx" type="s:int" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="GetQuoteRatesDetailWNewRateResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="GetQuoteRatesDetailWNewRateResult" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="string" nillable="true" type="s:string" />
+      <s:element name="boolean" type="s:boolean" />
+      <s:element name="int" type="s:int" />
+      <s:element name="PropertyMinimumDay" nillable="true" type="tns:PropertyMinimumDay" />
+    </s:schema>
+  </wsdl:types>
+  <wsdl:message name="GetPropertyBookingDateXMLSoapIn">
+    <wsdl:part name="parameters" element="tns:GetPropertyBookingDateXML" />
+  </wsdl:message>
+  <wsdl:message name="GetPropertyBookingDateXMLSoapOut">
+    <wsdl:part name="parameters" element="tns:GetPropertyBookingDateXMLResponse" />
+  </wsdl:message>
+  <wsdl:message name="GetAvailableBookingPeriodsXMLSoapIn">
+    <wsdl:part name="parameters" element="tns:GetAvailableBookingPeriodsXML" />
+  </wsdl:message>
+  <wsdl:message name="GetAvailableBookingPeriodsXMLSoapOut">
+    <wsdl:part name="parameters" element="tns:GetAvailableBookingPeriodsXMLResponse" />
+  </wsdl:message>
+  <wsdl:message name="IsPropertyAvailabilitySoapIn">
+    <wsdl:part name="parameters" element="tns:IsPropertyAvailability" />
+  </wsdl:message>
+  <wsdl:message name="IsPropertyAvailabilitySoapOut">
+    <wsdl:part name="parameters" element="tns:IsPropertyAvailabilityResponse" />
+  </wsdl:message>
+  <wsdl:message name="GetPropertyImagesByDateSoapIn">
+    <wsdl:part name="parameters" element="tns:GetPropertyImagesByDate" />
+  </wsdl:message>
+  <wsdl:message name="GetPropertyImagesByDateSoapOut">
+    <wsdl:part name="parameters" element="tns:GetPropertyImagesByDateResponse" />
+  </wsdl:message>
+  <wsdl:message name="GetPropertyAllImgsXMLSoapIn">
+    <wsdl:part name="parameters" element="tns:GetPropertyAllImgsXML" />
+  </wsdl:message>
+  <wsdl:message name="GetPropertyAllImgsXMLSoapOut">
+    <wsdl:part name="parameters" element="tns:GetPropertyAllImgsXMLResponse" />
+  </wsdl:message>
+  <wsdl:message name="GetPropertyRatesXMLSoapIn">
+    <wsdl:part name="parameters" element="tns:GetPropertyRatesXML" />
+  </wsdl:message>
+  <wsdl:message name="GetPropertyRatesXMLSoapOut">
+    <wsdl:part name="parameters" element="tns:GetPropertyRatesXMLResponse" />
+  </wsdl:message>
+  <wsdl:message name="GetPropertyPartnerRatesXMLSoapIn">
+    <wsdl:part name="parameters" element="tns:GetPropertyPartnerRatesXML" />
+  </wsdl:message>
+  <wsdl:message name="GetPropertyPartnerRatesXMLSoapOut">
+    <wsdl:part name="parameters" element="tns:GetPropertyPartnerRatesXMLResponse" />
+  </wsdl:message>
+  <wsdl:message name="GetPropertyRentByPropertyIDXMLSoapIn">
+    <wsdl:part name="parameters" element="tns:GetPropertyRentByPropertyIDXML" />
+  </wsdl:message>
+  <wsdl:message name="GetPropertyRentByPropertyIDXMLSoapOut">
+    <wsdl:part name="parameters" element="tns:GetPropertyRentByPropertyIDXMLResponse" />
+  </wsdl:message>
+  <wsdl:message name="GetPropertyPartnerRentXMLSoapIn">
+    <wsdl:part name="parameters" element="tns:GetPropertyPartnerRentXML" />
+  </wsdl:message>
+  <wsdl:message name="GetPropertyPartnerRentXMLSoapOut">
+    <wsdl:part name="parameters" element="tns:GetPropertyPartnerRentXMLResponse" />
+  </wsdl:message>
+  <wsdl:message name="GetPropertyAvailabilityByDateXMLSoapIn">
+    <wsdl:part name="parameters" element="tns:GetPropertyAvailabilityByDateXML" />
+  </wsdl:message>
+  <wsdl:message name="GetPropertyAvailabilityByDateXMLSoapOut">
+    <wsdl:part name="parameters" element="tns:GetPropertyAvailabilityByDateXMLResponse" />
+  </wsdl:message>
+  <wsdl:message name="GetPropertyAvailabilityByTermXMLSoapIn">
+    <wsdl:part name="parameters" element="tns:GetPropertyAvailabilityByTermXML" />
+  </wsdl:message>
+  <wsdl:message name="GetPropertyAvailabilityByTermXMLSoapOut">
+    <wsdl:part name="parameters" element="tns:GetPropertyAvailabilityByTermXMLResponse" />
+  </wsdl:message>
+  <wsdl:message name="GetPropertyAvailabilityByTermExtXMLSoapIn">
+    <wsdl:part name="parameters" element="tns:GetPropertyAvailabilityByTermExtXML" />
+  </wsdl:message>
+  <wsdl:message name="GetPropertyAvailabilityByTermExtXMLSoapOut">
+    <wsdl:part name="parameters" element="tns:GetPropertyAvailabilityByTermExtXMLResponse" />
+  </wsdl:message>
+  <wsdl:message name="GetPropertySoapIn">
+    <wsdl:part name="parameters" element="tns:GetProperty" />
+  </wsdl:message>
+  <wsdl:message name="GetPropertySoapOut">
+    <wsdl:part name="parameters" element="tns:GetPropertyResponse" />
+  </wsdl:message>
+  <wsdl:message name="GetPropertyExtSoapIn">
+    <wsdl:part name="parameters" element="tns:GetPropertyExt" />
+  </wsdl:message>
+  <wsdl:message name="GetPropertyExtSoapOut">
+    <wsdl:part name="parameters" element="tns:GetPropertyExtResponse" />
+  </wsdl:message>
+  <wsdl:message name="GetLastUpdatedPropertySoapIn">
+    <wsdl:part name="parameters" element="tns:GetLastUpdatedProperty" />
+  </wsdl:message>
+  <wsdl:message name="GetLastUpdatedPropertySoapOut">
+    <wsdl:part name="parameters" element="tns:GetLastUpdatedPropertyResponse" />
+  </wsdl:message>
+  <wsdl:message name="GetLastUpdatedPropertyTestSoapIn">
+    <wsdl:part name="parameters" element="tns:GetLastUpdatedPropertyTest" />
+  </wsdl:message>
+  <wsdl:message name="GetLastUpdatedPropertyTestSoapOut">
+    <wsdl:part name="parameters" element="tns:GetLastUpdatedPropertyTestResponse" />
+  </wsdl:message>
+  <wsdl:message name="GetLastAvailChangedPropertiesSoapIn">
+    <wsdl:part name="parameters" element="tns:GetLastAvailChangedProperties" />
+  </wsdl:message>
+  <wsdl:message name="GetLastAvailChangedPropertiesSoapOut">
+    <wsdl:part name="parameters" element="tns:GetLastAvailChangedPropertiesResponse" />
+  </wsdl:message>
+  <wsdl:message name="GetLastAvailChangedPropertiesTestSoapIn">
+    <wsdl:part name="parameters" element="tns:GetLastAvailChangedPropertiesTest" />
+  </wsdl:message>
+  <wsdl:message name="GetLastAvailChangedPropertiesTestSoapOut">
+    <wsdl:part name="parameters" element="tns:GetLastAvailChangedPropertiesTestResponse" />
+  </wsdl:message>
+  <wsdl:message name="GetPropertyIDByTermSoapIn">
+    <wsdl:part name="parameters" element="tns:GetPropertyIDByTerm" />
+  </wsdl:message>
+  <wsdl:message name="GetPropertyIDByTermSoapOut">
+    <wsdl:part name="parameters" element="tns:GetPropertyIDByTermResponse" />
+  </wsdl:message>
+  <wsdl:message name="GetTenantListSoapIn">
+    <wsdl:part name="parameters" element="tns:GetTenantList" />
+  </wsdl:message>
+  <wsdl:message name="GetTenantListSoapOut">
+    <wsdl:part name="parameters" element="tns:GetTenantListResponse" />
+  </wsdl:message>
+  <wsdl:message name="SetConsumerInfoSoapIn">
+    <wsdl:part name="parameters" element="tns:SetConsumerInfo" />
+  </wsdl:message>
+  <wsdl:message name="SetConsumerInfoSoapOut">
+    <wsdl:part name="parameters" element="tns:SetConsumerInfoResponse" />
+  </wsdl:message>
+  <wsdl:message name="IsConsumerInfoExistSoapIn">
+    <wsdl:part name="parameters" element="tns:IsConsumerInfoExist" />
+  </wsdl:message>
+  <wsdl:message name="IsConsumerInfoExistSoapOut">
+    <wsdl:part name="parameters" element="tns:IsConsumerInfoExistResponse" />
+  </wsdl:message>
+  <wsdl:message name="SetCommentsInfoSoapIn">
+    <wsdl:part name="parameters" element="tns:SetCommentsInfo" />
+  </wsdl:message>
+  <wsdl:message name="SetCommentsInfoSoapOut">
+    <wsdl:part name="parameters" element="tns:SetCommentsInfoResponse" />
+  </wsdl:message>
+  <wsdl:message name="GetPropertyAmmenityNameXMLSoapIn">
+    <wsdl:part name="parameters" element="tns:GetPropertyAmmenityNameXML" />
+  </wsdl:message>
+  <wsdl:message name="GetPropertyAmmenityNameXMLSoapOut">
+    <wsdl:part name="parameters" element="tns:GetPropertyAmmenityNameXMLResponse" />
+  </wsdl:message>
+  <wsdl:message name="GetPropertyRatesDetailsSoapIn">
+    <wsdl:part name="parameters" element="tns:GetPropertyRatesDetails" />
+  </wsdl:message>
+  <wsdl:message name="GetPropertyRatesDetailsSoapOut">
+    <wsdl:part name="parameters" element="tns:GetPropertyRatesDetailsResponse" />
+  </wsdl:message>
+  <wsdl:message name="GetOptionalServiceIDsSoapIn">
+    <wsdl:part name="parameters" element="tns:GetOptionalServiceIDs" />
+  </wsdl:message>
+  <wsdl:message name="GetOptionalServiceIDsSoapOut">
+    <wsdl:part name="parameters" element="tns:GetOptionalServiceIDsResponse" />
+  </wsdl:message>
+  <wsdl:message name="selectOptionalServicesSoapIn">
+    <wsdl:part name="parameters" element="tns:selectOptionalServices" />
+  </wsdl:message>
+  <wsdl:message name="selectOptionalServicesSoapOut">
+    <wsdl:part name="parameters" element="tns:selectOptionalServicesResponse" />
+  </wsdl:message>
+  <wsdl:message name="GetLeaseidByReztypeidSoapIn">
+    <wsdl:part name="parameters" element="tns:GetLeaseidByReztypeid" />
+  </wsdl:message>
+  <wsdl:message name="GetLeaseidByReztypeidSoapOut">
+    <wsdl:part name="parameters" element="tns:GetLeaseidByReztypeidResponse" />
+  </wsdl:message>
+  <wsdl:message name="CreateQuoteByReztypeidWNewRateSoapIn">
+    <wsdl:part name="parameters" element="tns:CreateQuoteByReztypeidWNewRate" />
+  </wsdl:message>
+  <wsdl:message name="CreateQuoteByReztypeidWNewRateSoapOut">
+    <wsdl:part name="parameters" element="tns:CreateQuoteByReztypeidWNewRateResponse" />
+  </wsdl:message>
+  <wsdl:message name="GetQuoteRatesDetailSoapIn">
+    <wsdl:part name="parameters" element="tns:GetQuoteRatesDetail" />
+  </wsdl:message>
+  <wsdl:message name="GetQuoteRatesDetailSoapOut">
+    <wsdl:part name="parameters" element="tns:GetQuoteRatesDetailResponse" />
+  </wsdl:message>
+  <wsdl:message name="CreateQuoteByReztypeidSoapIn">
+    <wsdl:part name="parameters" element="tns:CreateQuoteByReztypeid" />
+  </wsdl:message>
+  <wsdl:message name="CreateQuoteByReztypeidSoapOut">
+    <wsdl:part name="parameters" element="tns:CreateQuoteByReztypeidResponse" />
+  </wsdl:message>
+  <wsdl:message name="GetValidMindaySoapIn">
+    <wsdl:part name="parameters" element="tns:GetValidMinday" />
+  </wsdl:message>
+  <wsdl:message name="GetValidMindaySoapOut">
+    <wsdl:part name="parameters" element="tns:GetValidMindayResponse" />
+  </wsdl:message>
+  <wsdl:message name="PropertyBookingSoapIn">
+    <wsdl:part name="parameters" element="tns:PropertyBooking" />
+  </wsdl:message>
+  <wsdl:message name="PropertyBookingSoapOut">
+    <wsdl:part name="parameters" element="tns:PropertyBookingResponse" />
+  </wsdl:message>
+  <wsdl:message name="CancelReservationSoapIn">
+    <wsdl:part name="parameters" element="tns:CancelReservation" />
+  </wsdl:message>
+  <wsdl:message name="CancelReservationSoapOut">
+    <wsdl:part name="parameters" element="tns:CancelReservationResponse" />
+  </wsdl:message>
+  <wsdl:message name="GetPortalRateAndPaymentScheduleSoapIn">
+    <wsdl:part name="parameters" element="tns:GetPortalRateAndPaymentSchedule" />
+  </wsdl:message>
+  <wsdl:message name="GetPortalRateAndPaymentScheduleSoapOut">
+    <wsdl:part name="parameters" element="tns:GetPortalRateAndPaymentScheduleResponse" />
+  </wsdl:message>
+  <wsdl:message name="GetRentByLeaseNumberSoapIn">
+    <wsdl:part name="parameters" element="tns:GetRentByLeaseNumber" />
+  </wsdl:message>
+  <wsdl:message name="GetRentByLeaseNumberSoapOut">
+    <wsdl:part name="parameters" element="tns:GetRentByLeaseNumberResponse" />
+  </wsdl:message>
+  <wsdl:message name="GetMinimumDaysSoapIn">
+    <wsdl:part name="parameters" element="tns:GetMinimumDays" />
+  </wsdl:message>
+  <wsdl:message name="GetMinimumDaysSoapOut">
+    <wsdl:part name="parameters" element="tns:GetMinimumDaysResponse" />
+  </wsdl:message>
+  <wsdl:message name="GetValidCouponListSoapIn">
+    <wsdl:part name="parameters" element="tns:GetValidCouponList" />
+  </wsdl:message>
+  <wsdl:message name="GetValidCouponListSoapOut">
+    <wsdl:part name="parameters" element="tns:GetValidCouponListResponse" />
+  </wsdl:message>
+  <wsdl:message name="AddCouponSoapIn">
+    <wsdl:part name="parameters" element="tns:AddCoupon" />
+  </wsdl:message>
+  <wsdl:message name="AddCouponSoapOut">
+    <wsdl:part name="parameters" element="tns:AddCouponResponse" />
+  </wsdl:message>
+  <wsdl:message name="RemoveCouponSoapIn">
+    <wsdl:part name="parameters" element="tns:RemoveCoupon" />
+  </wsdl:message>
+  <wsdl:message name="RemoveCouponSoapOut">
+    <wsdl:part name="parameters" element="tns:RemoveCouponResponse" />
+  </wsdl:message>
+  <wsdl:message name="GetQuoteRatesDetailWNewRateSoapIn">
+    <wsdl:part name="parameters" element="tns:GetQuoteRatesDetailWNewRate" />
+  </wsdl:message>
+  <wsdl:message name="GetQuoteRatesDetailWNewRateSoapOut">
+    <wsdl:part name="parameters" element="tns:GetQuoteRatesDetailWNewRateResponse" />
+  </wsdl:message>
+  <wsdl:portType name="BookingAccess3Soap">
+    <wsdl:operation name="GetPropertyBookingDateXML">
+      <wsdl:documentation xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/">This web service will return booking date of property.return xml string</wsdl:documentation>
+      <wsdl:input message="tns:GetPropertyBookingDateXMLSoapIn" />
+      <wsdl:output message="tns:GetPropertyBookingDateXMLSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="GetAvailableBookingPeriodsXML">
+      <wsdl:documentation xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/">Select which time periods we are going to give them to book </wsdl:documentation>
+      <wsdl:input message="tns:GetAvailableBookingPeriodsXMLSoapIn" />
+      <wsdl:output message="tns:GetAvailableBookingPeriodsXMLSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="IsPropertyAvailability">
+      <wsdl:documentation xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/">This web service is used to identify the validity of a property in a certain time period.</wsdl:documentation>
+      <wsdl:input message="tns:IsPropertyAvailabilitySoapIn" />
+      <wsdl:output message="tns:IsPropertyAvailabilitySoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="GetPropertyImagesByDate">
+      <wsdl:documentation xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/">Method description: </wsdl:documentation>
+      <wsdl:input message="tns:GetPropertyImagesByDateSoapIn" />
+      <wsdl:output message="tns:GetPropertyImagesByDateSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="GetPropertyAllImgsXML">
+      <wsdl:documentation xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/">Method description: Get all picture info associated with a property given the propertyId.return xml string</wsdl:documentation>
+      <wsdl:input message="tns:GetPropertyAllImgsXMLSoapIn" />
+      <wsdl:output message="tns:GetPropertyAllImgsXMLSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="GetPropertyRatesXML">
+      <wsdl:documentation xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/">Method description: get all rate info associated with a property given the propertyId in date1-date2 period.return xml string</wsdl:documentation>
+      <wsdl:input message="tns:GetPropertyRatesXMLSoapIn" />
+      <wsdl:output message="tns:GetPropertyRatesXMLSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="GetPropertyPartnerRatesXML">
+      <wsdl:documentation xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/">Method description: get all rate info associated with a property given the propertyId in date1-date2 period.return xml string</wsdl:documentation>
+      <wsdl:input message="tns:GetPropertyPartnerRatesXMLSoapIn" />
+      <wsdl:output message="tns:GetPropertyPartnerRatesXMLSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="GetPropertyRentByPropertyIDXML">
+      <wsdl:documentation xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/">Method description: get rent info associated with a property given the propertyId.return  xml string.</wsdl:documentation>
+      <wsdl:input message="tns:GetPropertyRentByPropertyIDXMLSoapIn" />
+      <wsdl:output message="tns:GetPropertyRentByPropertyIDXMLSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="GetPropertyPartnerRentXML">
+      <wsdl:documentation xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/">Method description: get rent info associated with a property given the propertyId.return  xml string.</wsdl:documentation>
+      <wsdl:input message="tns:GetPropertyPartnerRentXMLSoapIn" />
+      <wsdl:output message="tns:GetPropertyPartnerRentXMLSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="GetPropertyAvailabilityByDateXML">
+      <wsdl:documentation xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/">Method description: get all availiability property info in date1-date2 period.return xml string</wsdl:documentation>
+      <wsdl:input message="tns:GetPropertyAvailabilityByDateXMLSoapIn" />
+      <wsdl:output message="tns:GetPropertyAvailabilityByDateXMLSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="GetPropertyAvailabilityByTermXML">
+      <wsdl:documentation xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/">Method description: get availiability property info.return xml string</wsdl:documentation>
+      <wsdl:input message="tns:GetPropertyAvailabilityByTermXMLSoapIn" />
+      <wsdl:output message="tns:GetPropertyAvailabilityByTermXMLSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="GetPropertyAvailabilityByTermExtXML">
+      <wsdl:documentation xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/">Method description: get availiability property info.return xml string</wsdl:documentation>
+      <wsdl:input message="tns:GetPropertyAvailabilityByTermExtXMLSoapIn" />
+      <wsdl:output message="tns:GetPropertyAvailabilityByTermExtXMLSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="GetProperty">
+      <wsdl:documentation xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/">Method description: Retrieve full property info for all properties</wsdl:documentation>
+      <wsdl:input message="tns:GetPropertySoapIn" />
+      <wsdl:output message="tns:GetPropertySoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="GetPropertyExt">
+      <wsdl:documentation xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/">Method description: Retrieve full property info for all properties</wsdl:documentation>
+      <wsdl:input message="tns:GetPropertyExtSoapIn" />
+      <wsdl:output message="tns:GetPropertyExtSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="GetLastUpdatedProperty">
+      <wsdl:documentation xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/">Method description:</wsdl:documentation>
+      <wsdl:input message="tns:GetLastUpdatedPropertySoapIn" />
+      <wsdl:output message="tns:GetLastUpdatedPropertySoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="GetLastUpdatedPropertyTest">
+      <wsdl:documentation xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/">Method description:</wsdl:documentation>
+      <wsdl:input message="tns:GetLastUpdatedPropertyTestSoapIn" />
+      <wsdl:output message="tns:GetLastUpdatedPropertyTestSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="GetLastAvailChangedProperties">
+      <wsdl:documentation xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/">Method description: return property id by the last updated time</wsdl:documentation>
+      <wsdl:input message="tns:GetLastAvailChangedPropertiesSoapIn" />
+      <wsdl:output message="tns:GetLastAvailChangedPropertiesSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="GetLastAvailChangedPropertiesTest">
+      <wsdl:documentation xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/">Method description: return property id by the last updated time, this method is for test only</wsdl:documentation>
+      <wsdl:input message="tns:GetLastAvailChangedPropertiesTestSoapIn" />
+      <wsdl:output message="tns:GetLastAvailChangedPropertiesTestSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="GetPropertyIDByTerm">
+      <wsdl:documentation xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/">Method description: Retrieve property id</wsdl:documentation>
+      <wsdl:input message="tns:GetPropertyIDByTermSoapIn" />
+      <wsdl:output message="tns:GetPropertyIDByTermSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="GetTenantList">
+      <wsdl:documentation xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/">Method description: </wsdl:documentation>
+      <wsdl:input message="tns:GetTenantListSoapIn" />
+      <wsdl:output message="tns:GetTenantListSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="SetConsumerInfo">
+      <wsdl:documentation xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/">Method description: Save Guest Information&lt;br&gt;The Info parameter stores guest information like first name, last name, street, city, state, etc.Guest information is stored in this order (street1,street2,city,state,zip,country,lastname,firstname,homephone,bizphone,fax,mobile,email,propertyId)&lt;br&gt;return tid</wsdl:documentation>
+      <wsdl:input message="tns:SetConsumerInfoSoapIn" />
+      <wsdl:output message="tns:SetConsumerInfoSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="IsConsumerInfoExist">
+      <wsdl:documentation xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/">Method description: if the Guest Information with the given email(Guest's email) already exist,return Guestid(tid); if the Guest Information with the given email(Guest's email) does not exist,return 0.</wsdl:documentation>
+      <wsdl:input message="tns:IsConsumerInfoExistSoapIn" />
+      <wsdl:output message="tns:IsConsumerInfoExistSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="SetCommentsInfo">
+      <wsdl:documentation xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/">Method description: </wsdl:documentation>
+      <wsdl:input message="tns:SetCommentsInfoSoapIn" />
+      <wsdl:output message="tns:SetCommentsInfoSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="GetPropertyAmmenityNameXML">
+      <wsdl:documentation xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/">Method description: return Property Ammenity Name.return xml string</wsdl:documentation>
+      <wsdl:input message="tns:GetPropertyAmmenityNameXMLSoapIn" />
+      <wsdl:output message="tns:GetPropertyAmmenityNameXMLSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="GetPropertyRatesDetails">
+      <wsdl:documentation xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/">Method description: get all rate info associated with a lease given the leaseid</wsdl:documentation>
+      <wsdl:input message="tns:GetPropertyRatesDetailsSoapIn" />
+      <wsdl:output message="tns:GetPropertyRatesDetailsSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="GetOptionalServiceIDs">
+      <wsdl:documentation xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/">Method description: will return all optional service "ratesID"s and their names for a given reztype ID</wsdl:documentation>
+      <wsdl:input message="tns:GetOptionalServiceIDsSoapIn" />
+      <wsdl:output message="tns:GetOptionalServiceIDsSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="selectOptionalServices">
+      <wsdl:documentation xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/">Method description: use to change the optional services</wsdl:documentation>
+      <wsdl:input message="tns:selectOptionalServicesSoapIn" />
+      <wsdl:output message="tns:selectOptionalServicesSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="GetLeaseidByReztypeid">
+      <wsdl:documentation xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/">Method description: &lt;br&gt;return leaseid</wsdl:documentation>
+      <wsdl:input message="tns:GetLeaseidByReztypeidSoapIn" />
+      <wsdl:output message="tns:GetLeaseidByReztypeidSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="CreateQuoteByReztypeidWNewRate">
+      <wsdl:documentation xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/">Method description: &lt;br&gt;this method will create a quote with specified rent and leaseid will be returned</wsdl:documentation>
+      <wsdl:input message="tns:CreateQuoteByReztypeidWNewRateSoapIn" />
+      <wsdl:output message="tns:CreateQuoteByReztypeidWNewRateSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="GetQuoteRatesDetail">
+      <wsdl:documentation xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/">Method description: return Property Rates Details</wsdl:documentation>
+      <wsdl:input message="tns:GetQuoteRatesDetailSoapIn" />
+      <wsdl:output message="tns:GetQuoteRatesDetailSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="CreateQuoteByReztypeid">
+      <wsdl:documentation xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/">Method description: Create a Quote and return QuoteInfo and Property Rates Details and Payment Schedule</wsdl:documentation>
+      <wsdl:input message="tns:CreateQuoteByReztypeidSoapIn" />
+      <wsdl:output message="tns:CreateQuoteByReztypeidSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="GetValidMinday">
+      <wsdl:documentation xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/">Method description: </wsdl:documentation>
+      <wsdl:input message="tns:GetValidMindaySoapIn" />
+      <wsdl:output message="tns:GetValidMindaySoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="PropertyBooking">
+      <wsdl:documentation xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/">Method description: Booking &lt;br&gt;The Info parameter stores booking information like cardnum,Card Type,Expiration Date, etc. &lt;br&gt;Booking information is stored in this order (isTest,strPayment,EzicAccount,propertyId,strADate,strDDate,tid,leaseid,cctranstype,cFName,cLName,EzicTag,EzicTranstype,EzicPaytype,cardNum,expireMonth,expireYear,cvv,ccratetype,cctype)&lt;br&gt;cctranstype:the values should be adjusted for each customers based on the account info set by FastTransact.&lt;br&gt;VITAL or EZIC3 are needed only if VITAL or ezic3.0 are used for CC transation.&lt;br&gt;EzicTranstype,EzicPaytype:for direct mode 3.0 using A or S; for 2.0 use AUTH or SALE&lt;br&gt;cvv:Credit card verification value&lt;br&gt;ccratetype:HOTEL or nothing so far&lt;br&gt;cctype:Credit Card Type</wsdl:documentation>
+      <wsdl:input message="tns:PropertyBookingSoapIn" />
+      <wsdl:output message="tns:PropertyBookingSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="CancelReservation">
+      <wsdl:documentation xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/">Cancel a reservation</wsdl:documentation>
+      <wsdl:input message="tns:CancelReservationSoapIn" />
+      <wsdl:output message="tns:CancelReservationSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="GetPortalRateAndPaymentSchedule">
+      <wsdl:documentation xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/">return Property Rates Details and payment schedule</wsdl:documentation>
+      <wsdl:input message="tns:GetPortalRateAndPaymentScheduleSoapIn" />
+      <wsdl:output message="tns:GetPortalRateAndPaymentScheduleSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="GetRentByLeaseNumber">
+      <wsdl:documentation xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/">Method description: Get rent</wsdl:documentation>
+      <wsdl:input message="tns:GetRentByLeaseNumberSoapIn" />
+      <wsdl:output message="tns:GetRentByLeaseNumberSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="GetMinimumDays">
+      <wsdl:documentation xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/">Method description: This returns minimum rule.</wsdl:documentation>
+      <wsdl:input message="tns:GetMinimumDaysSoapIn" />
+      <wsdl:output message="tns:GetMinimumDaysSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="GetValidCouponList">
+      <wsdl:documentation xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/">Method description: </wsdl:documentation>
+      <wsdl:input message="tns:GetValidCouponListSoapIn" />
+      <wsdl:output message="tns:GetValidCouponListSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="AddCoupon">
+      <wsdl:documentation xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/">Method description: </wsdl:documentation>
+      <wsdl:input message="tns:AddCouponSoapIn" />
+      <wsdl:output message="tns:AddCouponSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="RemoveCoupon">
+      <wsdl:documentation xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/">Method description: </wsdl:documentation>
+      <wsdl:input message="tns:RemoveCouponSoapIn" />
+      <wsdl:output message="tns:RemoveCouponSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="GetQuoteRatesDetailWNewRate">
+      <wsdl:documentation xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/">Method description: get all rate info associated with a lease given the leaseid</wsdl:documentation>
+      <wsdl:input message="tns:GetQuoteRatesDetailWNewRateSoapIn" />
+      <wsdl:output message="tns:GetQuoteRatesDetailWNewRateSoapOut" />
+    </wsdl:operation>
+  </wsdl:portType>
+  <wsdl:binding name="BookingAccess3Soap" type="tns:BookingAccess3Soap">
+    <soap:binding transport="http://schemas.xmlsoap.org/soap/http" />
+    <wsdl:operation name="GetPropertyBookingDateXML">
+      <soap:operation soapAction="http://www.barefoot.com/Services/GetPropertyBookingDateXML" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetAvailableBookingPeriodsXML">
+      <soap:operation soapAction="http://www.barefoot.com/Services/GetAvailableBookingPeriodsXML" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="IsPropertyAvailability">
+      <soap:operation soapAction="http://www.barefoot.com/Services/IsPropertyAvailability" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetPropertyImagesByDate">
+      <soap:operation soapAction="http://www.barefoot.com/Services/GetPropertyImagesByDate" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetPropertyAllImgsXML">
+      <soap:operation soapAction="http://www.barefoot.com/Services/GetPropertyAllImgsXML" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetPropertyRatesXML">
+      <soap:operation soapAction="http://www.barefoot.com/Services/GetPropertyRatesXML" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetPropertyPartnerRatesXML">
+      <soap:operation soapAction="http://www.barefoot.com/Services/GetPropertyPartnerRatesXML" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetPropertyRentByPropertyIDXML">
+      <soap:operation soapAction="http://www.barefoot.com/Services/GetPropertyRentByPropertyIDXML" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetPropertyPartnerRentXML">
+      <soap:operation soapAction="http://www.barefoot.com/Services/GetPropertyPartnerRentXML" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetPropertyAvailabilityByDateXML">
+      <soap:operation soapAction="http://www.barefoot.com/Services/GetPropertyAvailabilityByDateXML" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetPropertyAvailabilityByTermXML">
+      <soap:operation soapAction="http://www.barefoot.com/Services/GetPropertyAvailabilityByTermXML" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetPropertyAvailabilityByTermExtXML">
+      <soap:operation soapAction="http://www.barefoot.com/Services/GetPropertyAvailabilityByTermExtXML" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetProperty">
+      <soap:operation soapAction="http://www.barefoot.com/Services/GetProperty" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetPropertyExt">
+      <soap:operation soapAction="http://www.barefoot.com/Services/GetPropertyExt" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetLastUpdatedProperty">
+      <soap:operation soapAction="http://www.barefoot.com/Services/GetLastUpdatedProperty" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetLastUpdatedPropertyTest">
+      <soap:operation soapAction="http://www.barefoot.com/Services/GetLastUpdatedPropertyTest" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetLastAvailChangedProperties">
+      <soap:operation soapAction="http://www.barefoot.com/Services/GetLastAvailChangedProperties" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetLastAvailChangedPropertiesTest">
+      <soap:operation soapAction="http://www.barefoot.com/Services/GetLastAvailChangedPropertiesTest" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetPropertyIDByTerm">
+      <soap:operation soapAction="http://www.barefoot.com/Services/GetPropertyIDByTerm" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetTenantList">
+      <soap:operation soapAction="http://www.barefoot.com/Services/GetTenantList" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="SetConsumerInfo">
+      <soap:operation soapAction="http://www.barefoot.com/Services/SetConsumerInfo" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="IsConsumerInfoExist">
+      <soap:operation soapAction="http://www.barefoot.com/Services/IsConsumerInfoExist" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="SetCommentsInfo">
+      <soap:operation soapAction="http://www.barefoot.com/Services/SetCommentsInfo" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetPropertyAmmenityNameXML">
+      <soap:operation soapAction="http://www.barefoot.com/Services/GetPropertyAmmenityNameXML" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetPropertyRatesDetails">
+      <soap:operation soapAction="http://www.barefoot.com/Services/GetPropertyRatesDetails" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetOptionalServiceIDs">
+      <soap:operation soapAction="http://www.barefoot.com/Services/GetOptionalServiceIDs" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="selectOptionalServices">
+      <soap:operation soapAction="http://www.barefoot.com/Services/selectOptionalServices" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetLeaseidByReztypeid">
+      <soap:operation soapAction="http://www.barefoot.com/Services/GetLeaseidByReztypeid" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="CreateQuoteByReztypeidWNewRate">
+      <soap:operation soapAction="http://www.barefoot.com/Services/CreateQuoteByReztypeidWNewRate" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetQuoteRatesDetail">
+      <soap:operation soapAction="http://www.barefoot.com/Services/GetQuoteRatesDetail" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="CreateQuoteByReztypeid">
+      <soap:operation soapAction="http://www.barefoot.com/Services/CreateQuoteByReztypeid" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetValidMinday">
+      <soap:operation soapAction="http://www.barefoot.com/Services/GetValidMinday" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="PropertyBooking">
+      <soap:operation soapAction="http://www.barefoot.com/Services/PropertyBooking" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="CancelReservation">
+      <soap:operation soapAction="http://www.barefoot.com/Services/CancelReservation" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetPortalRateAndPaymentSchedule">
+      <soap:operation soapAction="http://www.barefoot.com/Services/GetPortalRateAndPaymentSchedule" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetRentByLeaseNumber">
+      <soap:operation soapAction="http://www.barefoot.com/Services/GetRentByLeaseNumber" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetMinimumDays">
+      <soap:operation soapAction="http://www.barefoot.com/Services/GetMinimumDays" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetValidCouponList">
+      <soap:operation soapAction="http://www.barefoot.com/Services/GetValidCouponList" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="AddCoupon">
+      <soap:operation soapAction="http://www.barefoot.com/Services/AddCoupon" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="RemoveCoupon">
+      <soap:operation soapAction="http://www.barefoot.com/Services/RemoveCoupon" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetQuoteRatesDetailWNewRate">
+      <soap:operation soapAction="http://www.barefoot.com/Services/GetQuoteRatesDetailWNewRate" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+  </wsdl:binding>
+  <wsdl:service name="BookingAccess3">
+    <wsdl:port name="BookingAccess3Soap" binding="tns:BookingAccess3Soap">
+      <soap:address location="http://agent.barefoot.com/BarefootWebService/BookingAccess3.asmx" />
+    </wsdl:port>
+  </wsdl:service>
+</wsdl:definitions>

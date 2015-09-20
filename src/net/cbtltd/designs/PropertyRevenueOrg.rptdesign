@@ -1,0 +1,1818 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<report xmlns="http://www.eclipse.org/birt/2005/design" version="3.2.23" id="1">
+    <property name="createdBy">Eclipse BIRT Designer Version 3.7.2.v20120213 Build &lt;3.7.2.v20120214-1408></property>
+    <list-property name="propertyBindings">
+        <structure>
+            <property name="name">odaDriverClass</property>
+            <property name="id">36</property>
+        </structure>
+        <structure>
+            <property name="name">odaURL</property>
+            <property name="id">36</property>
+            <expression name="value" type="javascript">params["RP_Database"].value</expression>
+        </structure>
+        <structure>
+            <property name="name">odaUser</property>
+            <property name="id">36</property>
+        </structure>
+        <structure>
+            <property name="name">odaAutoCommit</property>
+            <property name="id">36</property>
+        </structure>
+        <structure>
+            <property name="name">odaIsolationMode</property>
+            <property name="id">36</property>
+        </structure>
+        <structure>
+            <property name="name">odaPassword</property>
+            <property name="id">36</property>
+        </structure>
+        <structure>
+            <property name="name">odaJndiName</property>
+            <property name="id">36</property>
+        </structure>
+        <structure>
+            <property name="name">OdaConnProfileName</property>
+            <property name="id">36</property>
+        </structure>
+        <structure>
+            <property name="name">OdaConnProfileStorePath</property>
+            <property name="id">36</property>
+        </structure>
+    </list-property>
+    <property name="units">in</property>
+    <property name="iconFile">/templates/blank_report.gif</property>
+    <property name="layoutPreference">auto layout</property>
+    <parameters>
+        <scalar-parameter name="RP_ReportID" id="52">
+            <text-property name="helpText">Enter the ID of the report</text-property>
+            <text-property name="promptText">Report ID</text-property>
+            <property name="valueType">static</property>
+            <property name="isRequired">true</property>
+            <property name="dataType">string</property>
+            <property name="distinct">true</property>
+            <property name="paramType">simple</property>
+            <property name="concealValue">false</property>
+            <property name="controlType">text-box</property>
+            <property name="autoSuggestThreshold">1</property>
+            <structure name="format">
+                <property name="category">Unformatted</property>
+            </structure>
+        </scalar-parameter>
+        <scalar-parameter name="RP_Database" id="690">
+            <text-property name="promptText">Database URL</text-property>
+            <property name="valueType">static</property>
+            <property name="dataType">string</property>
+            <property name="distinct">true</property>
+            <simple-property-list name="defaultValue">
+                <value type="constant">jdbc:mysql://54.197.247.82:3306/razor</value>
+            </simple-property-list>
+            <list-property name="selectionList"/>
+            <property name="paramType">simple</property>
+            <property name="controlType">text-box</property>
+            <structure name="format">
+                <property name="category">Unformatted</property>
+            </structure>
+        </scalar-parameter>
+    </parameters>
+    <data-sources>
+        <oda-data-source extensionID="org.eclipse.birt.report.data.oda.jdbc" name="Razor Cloud" id="36">
+            <list-property name="privateDriverProperties">
+                <ex-property>
+                    <name>contentBidiFormatStr</name>
+                    <value>ILYNN</value>
+                </ex-property>
+                <ex-property>
+                    <name>metadataBidiFormatStr</name>
+                    <value>ILYNN</value>
+                </ex-property>
+                <ex-property>
+                    <name>disabledMetadataBidiFormatStr</name>
+                </ex-property>
+                <ex-property>
+                    <name>disabledContentBidiFormatStr</name>
+                </ex-property>
+            </list-property>
+            <property name="odaDriverClass">com.mysql.jdbc.Driver</property>
+            <property name="odaURL">jdbc:mysql://uatdb.mybookingpal.com:3306/razor</property>
+            <property name="odaUser">root</property>
+            <encrypted-property name="odaPassword" encryptionID="base64">NGVWZldEZFA=</encrypted-property>
+        </oda-data-source>
+    </data-sources>
+    <data-sets>
+        <oda-data-set extensionID="org.eclipse.birt.report.data.oda.jdbc.JdbcSelectDataSet" name="OwnerTransactions" id="74">
+            <list-property name="parameters">
+                <structure>
+                    <property name="name">DSP_ReportID</property>
+                    <property name="paramName">RP_ReportID</property>
+                    <property name="dataType">integer</property>
+                    <property name="position">1</property>
+                    <property name="isInput">true</property>
+                    <property name="isOutput">false</property>
+                </structure>
+                <structure>
+                    <property name="name">DSP_ReportID_1</property>
+                    <property name="paramName">RP_ReportID</property>
+                    <property name="dataType">integer</property>
+                    <property name="position">2</property>
+                    <property name="isInput">true</property>
+                    <property name="isOutput">false</property>
+                </structure>
+            </list-property>
+            <structure name="cachedMetaData">
+                <list-property name="resultSet">
+                    <structure>
+                        <property name="position">1</property>
+                        <property name="name">FromDate</property>
+                        <property name="dataType">date-time</property>
+                    </structure>
+                    <structure>
+                        <property name="position">2</property>
+                        <property name="name">ToDate</property>
+                        <property name="dataType">date-time</property>
+                    </structure>
+                    <structure>
+                        <property name="position">3</property>
+                        <property name="name">Owner</property>
+                        <property name="dataType">string</property>
+                    </structure>
+                    <structure>
+                        <property name="position">4</property>
+                        <property name="name">OwnAddress</property>
+                        <property name="dataType">string</property>
+                    </structure>
+                    <structure>
+                        <property name="position">5</property>
+                        <property name="name">OwnTax</property>
+                        <property name="dataType">string</property>
+                    </structure>
+                    <structure>
+                        <property name="position">6</property>
+                        <property name="name">Manager</property>
+                        <property name="dataType">string</property>
+                    </structure>
+                    <structure>
+                        <property name="position">7</property>
+                        <property name="name">ManAddress</property>
+                        <property name="dataType">string</property>
+                    </structure>
+                    <structure>
+                        <property name="position">8</property>
+                        <property name="name">ManTax</property>
+                        <property name="dataType">string</property>
+                    </structure>
+                    <structure>
+                        <property name="position">9</property>
+                        <property name="name">Product</property>
+                        <property name="dataType">string</property>
+                    </structure>
+                    <structure>
+                        <property name="position">10</property>
+                        <property name="name">Invoice</property>
+                        <property name="dataType">string</property>
+                    </structure>
+                    <structure>
+                        <property name="position">11</property>
+                        <property name="name">Days</property>
+                        <property name="dataType">float</property>
+                    </structure>
+                    <structure>
+                        <property name="position">12</property>
+                        <property name="name">Date</property>
+                        <property name="dataType">date</property>
+                    </structure>
+                    <structure>
+                        <property name="position">13</property>
+                        <property name="name">Description</property>
+                        <property name="dataType">string</property>
+                    </structure>
+                    <structure>
+                        <property name="position">14</property>
+                        <property name="name">OwnerSales</property>
+                        <property name="dataType">decimal</property>
+                    </structure>
+                    <structure>
+                        <property name="position">15</property>
+                        <property name="name">OwnerTax</property>
+                        <property name="dataType">decimal</property>
+                    </structure>
+                    <structure>
+                        <property name="position">16</property>
+                        <property name="name">ManagerSales</property>
+                        <property name="dataType">decimal</property>
+                    </structure>
+                    <structure>
+                        <property name="position">17</property>
+                        <property name="name">ManagerTax</property>
+                        <property name="dataType">decimal</property>
+                    </structure>
+                    <structure>
+                        <property name="position">18</property>
+                        <property name="name">TotDays</property>
+                        <property name="dataType">integer</property>
+                    </structure>
+                    <structure>
+                        <property name="position">19</property>
+                        <property name="name">Logo</property>
+                        <property name="dataType">blob</property>
+                    </structure>
+                </list-property>
+            </structure>
+            <property name="dataSource">Razor Cloud</property>
+            <list-property name="resultSet">
+                <structure>
+                    <property name="position">1</property>
+                    <property name="name">FromDate</property>
+                    <property name="nativeName">FromDate</property>
+                    <property name="dataType">date-time</property>
+                </structure>
+                <structure>
+                    <property name="position">2</property>
+                    <property name="name">ToDate</property>
+                    <property name="nativeName">ToDate</property>
+                    <property name="dataType">date-time</property>
+                </structure>
+                <structure>
+                    <property name="position">3</property>
+                    <property name="name">Owner</property>
+                    <property name="nativeName">Owner</property>
+                    <property name="dataType">string</property>
+                </structure>
+                <structure>
+                    <property name="position">4</property>
+                    <property name="name">OwnAddress</property>
+                    <property name="nativeName">OwnAddress</property>
+                    <property name="dataType">string</property>
+                </structure>
+                <structure>
+                    <property name="position">5</property>
+                    <property name="name">OwnTax</property>
+                    <property name="nativeName">OwnTax</property>
+                    <property name="dataType">string</property>
+                </structure>
+                <structure>
+                    <property name="position">6</property>
+                    <property name="name">Manager</property>
+                    <property name="nativeName">Manager</property>
+                    <property name="dataType">string</property>
+                </structure>
+                <structure>
+                    <property name="position">7</property>
+                    <property name="name">ManAddress</property>
+                    <property name="nativeName">ManAddress</property>
+                    <property name="dataType">string</property>
+                </structure>
+                <structure>
+                    <property name="position">8</property>
+                    <property name="name">ManTax</property>
+                    <property name="nativeName">ManTax</property>
+                    <property name="dataType">string</property>
+                </structure>
+                <structure>
+                    <property name="position">9</property>
+                    <property name="name">Product</property>
+                    <property name="nativeName">Product</property>
+                    <property name="dataType">string</property>
+                </structure>
+                <structure>
+                    <property name="position">10</property>
+                    <property name="name">Invoice</property>
+                    <property name="nativeName">Invoice</property>
+                    <property name="dataType">string</property>
+                </structure>
+                <structure>
+                    <property name="position">11</property>
+                    <property name="name">Days</property>
+                    <property name="nativeName">Days</property>
+                    <property name="dataType">float</property>
+                </structure>
+                <structure>
+                    <property name="position">12</property>
+                    <property name="name">Date</property>
+                    <property name="nativeName">Date</property>
+                    <property name="dataType">date</property>
+                </structure>
+                <structure>
+                    <property name="position">13</property>
+                    <property name="name">Description</property>
+                    <property name="nativeName">Description</property>
+                    <property name="dataType">string</property>
+                </structure>
+                <structure>
+                    <property name="position">14</property>
+                    <property name="name">OwnerSales</property>
+                    <property name="nativeName">OwnerSales</property>
+                    <property name="dataType">decimal</property>
+                </structure>
+                <structure>
+                    <property name="position">15</property>
+                    <property name="name">OwnerTax</property>
+                    <property name="nativeName">OwnerTax</property>
+                    <property name="dataType">decimal</property>
+                </structure>
+                <structure>
+                    <property name="position">16</property>
+                    <property name="name">ManagerSales</property>
+                    <property name="nativeName">ManagerSales</property>
+                    <property name="dataType">decimal</property>
+                </structure>
+                <structure>
+                    <property name="position">17</property>
+                    <property name="name">ManagerTax</property>
+                    <property name="nativeName">ManagerTax</property>
+                    <property name="dataType">decimal</property>
+                </structure>
+                <structure>
+                    <property name="position">18</property>
+                    <property name="name">TotDays</property>
+                    <property name="nativeName">TotDays</property>
+                    <property name="dataType">integer</property>
+                </structure>
+                <structure>
+                    <property name="position">19</property>
+                    <property name="name">Logo</property>
+                    <property name="nativeName">Logo</property>
+                    <property name="dataType">blob</property>
+                </structure>
+            </list-property>
+            <xml-property name="queryText"><![CDATA[SELECT FromDate, ToDate,
+owner.name as Owner, 
+owner.PostalAddress as OwnAddress, 
+CONCAT('Owner VAT: ', owner.TaxNumber) as OwnTax,
+manager.Name AS Manager, 
+manager.PostalAddress as ManAddress, 
+CONCAT('Manager VAT: ', manager.TaxNumber) as ManTax,
+product.Name as Product, 
+event.name as Invoice, 
+journal.Quantity AS Days,
+date(event.date) as Date, 
+journal.description as Description,
+sum(if (event.organizationid <> journal.organizationid and journal.accountid = 61, journal.creditamount - journal.debitamount, 0)) as OwnerSales,
+sum(if (event.organizationid <> journal.organizationid and journal.accountid = 72, journal.creditamount - journal.debitamount, 0)) as OwnerTax,
+sum(if (event.organizationid = journal.organizationid and journal.accountid = 61, journal.creditamount - journal.debitamount, 0)) as ManagerSales,
+sum(if (event.organizationid = journal.organizationid and journal.accountid = 72, journal.creditamount - journal.debitamount, 0)) as ManagerTax,
+datediff(ToDate, FromDate) + 1 as TotDays,
+text.Data as Logo
+FROM report, event
+join journal on journal.eventid = event.ID and journal.accountid in (61, 72)
+left join product on journal.entitytype = 'Product' and product.ID = journal.entityid
+left join party as owner on owner.ID = journal.organizationid and event.organizationid <> journal.organizationid
+left join party as manager on manager.ID = event.organizationid
+JOIN text ON text.ID = CONCAT('Logo.', event.OrganizationID, '.jpg')
+WHERE report.ID = ?
+and event.ID in (
+SELECT distinct event.ID
+from report, event
+join journal on journal.eventid = event.ID and journal.organizationid <> event.organizationid
+join party as owner on owner.ID = journal.organizationid
+WHERE report.ID = ?
+AND owner.Name >= report.FromName
+AND owner.Name <= report.ToName
+AND event.Date >= report.FromDate
+AND event.Date <= report.ToDate 
+and event.state in ('Created', 'Invoiced')
+and event.OrganizationID = report.OrganizationID
+)
+group by event.ID
+order by owner.name, event.date, journal.organizationid desc, journal.accountid]]></xml-property>
+            <xml-property name="designerValues"><![CDATA[<?xml version="1.0" encoding="UTF-8"?>
+<model:DesignValues xmlns:design="http://www.eclipse.org/datatools/connectivity/oda/design" xmlns:model="http://www.eclipse.org/birt/report/model/adapter/odaModel">
+  <Version>2.0</Version>
+  <design:ResultSets derivedMetaData="true">
+    <design:resultSetDefinitions>
+      <design:resultSetColumns>
+        <design:resultColumnDefinitions>
+          <design:attributes>
+            <design:identifier>
+              <design:name>ActionID</design:name>
+              <design:position>1</design:position>
+            </design:identifier>
+            <design:nativeDataTypeCode>4</design:nativeDataTypeCode>
+            <design:precision>10</design:precision>
+            <design:scale>0</design:scale>
+            <design:nullability>NotNullable</design:nullability>
+            <design:uiHints>
+              <design:displayName>ActionID</design:displayName>
+            </design:uiHints>
+          </design:attributes>
+          <design:usageHints>
+            <design:label>ActionID</design:label>
+            <design:formattingHints>
+              <design:displaySize>10</design:displaySize>
+            </design:formattingHints>
+          </design:usageHints>
+        </design:resultColumnDefinitions>
+        <design:resultColumnDefinitions>
+          <design:attributes>
+            <design:identifier>
+              <design:name>EventID</design:name>
+              <design:position>2</design:position>
+            </design:identifier>
+            <design:nativeDataTypeCode>4</design:nativeDataTypeCode>
+            <design:precision>10</design:precision>
+            <design:scale>0</design:scale>
+            <design:nullability>Nullable</design:nullability>
+            <design:uiHints>
+              <design:displayName>EventID</design:displayName>
+            </design:uiHints>
+          </design:attributes>
+          <design:usageHints>
+            <design:label>EventID</design:label>
+            <design:formattingHints>
+              <design:displaySize>10</design:displaySize>
+            </design:formattingHints>
+          </design:usageHints>
+        </design:resultColumnDefinitions>
+        <design:resultColumnDefinitions>
+          <design:attributes>
+            <design:identifier>
+              <design:name>MatchID</design:name>
+              <design:position>3</design:position>
+            </design:identifier>
+            <design:nativeDataTypeCode>4</design:nativeDataTypeCode>
+            <design:precision>10</design:precision>
+            <design:scale>0</design:scale>
+            <design:nullability>Nullable</design:nullability>
+            <design:uiHints>
+              <design:displayName>MatchID</design:displayName>
+            </design:uiHints>
+          </design:attributes>
+          <design:usageHints>
+            <design:label>MatchID</design:label>
+            <design:formattingHints>
+              <design:displaySize>10</design:displaySize>
+            </design:formattingHints>
+          </design:usageHints>
+        </design:resultColumnDefinitions>
+        <design:resultColumnDefinitions>
+          <design:attributes>
+            <design:identifier>
+              <design:name>LocationID</design:name>
+              <design:position>4</design:position>
+            </design:identifier>
+            <design:nativeDataTypeCode>4</design:nativeDataTypeCode>
+            <design:precision>10</design:precision>
+            <design:scale>0</design:scale>
+            <design:nullability>Nullable</design:nullability>
+            <design:uiHints>
+              <design:displayName>LocationID</design:displayName>
+            </design:uiHints>
+          </design:attributes>
+          <design:usageHints>
+            <design:label>LocationID</design:label>
+            <design:formattingHints>
+              <design:displaySize>10</design:displaySize>
+            </design:formattingHints>
+          </design:usageHints>
+        </design:resultColumnDefinitions>
+        <design:resultColumnDefinitions>
+          <design:attributes>
+            <design:identifier>
+              <design:name>AccountID</design:name>
+              <design:position>5</design:position>
+            </design:identifier>
+            <design:nativeDataTypeCode>4</design:nativeDataTypeCode>
+            <design:precision>10</design:precision>
+            <design:scale>0</design:scale>
+            <design:nullability>Nullable</design:nullability>
+            <design:uiHints>
+              <design:displayName>AccountID</design:displayName>
+            </design:uiHints>
+          </design:attributes>
+          <design:usageHints>
+            <design:label>AccountID</design:label>
+            <design:formattingHints>
+              <design:displaySize>10</design:displaySize>
+            </design:formattingHints>
+          </design:usageHints>
+        </design:resultColumnDefinitions>
+        <design:resultColumnDefinitions>
+          <design:attributes>
+            <design:identifier>
+              <design:name>EntityType</design:name>
+              <design:position>6</design:position>
+            </design:identifier>
+            <design:nativeDataTypeCode>12</design:nativeDataTypeCode>
+            <design:precision>20</design:precision>
+            <design:scale>0</design:scale>
+            <design:nullability>Nullable</design:nullability>
+            <design:uiHints>
+              <design:displayName>EntityType</design:displayName>
+            </design:uiHints>
+          </design:attributes>
+          <design:usageHints>
+            <design:label>EntityType</design:label>
+            <design:formattingHints>
+              <design:displaySize>20</design:displaySize>
+            </design:formattingHints>
+          </design:usageHints>
+        </design:resultColumnDefinitions>
+        <design:resultColumnDefinitions>
+          <design:attributes>
+            <design:identifier>
+              <design:name>EntityID</design:name>
+              <design:position>7</design:position>
+            </design:identifier>
+            <design:nativeDataTypeCode>4</design:nativeDataTypeCode>
+            <design:precision>10</design:precision>
+            <design:scale>0</design:scale>
+            <design:nullability>Nullable</design:nullability>
+            <design:uiHints>
+              <design:displayName>EntityID</design:displayName>
+            </design:uiHints>
+          </design:attributes>
+          <design:usageHints>
+            <design:label>EntityID</design:label>
+            <design:formattingHints>
+              <design:displaySize>10</design:displaySize>
+            </design:formattingHints>
+          </design:usageHints>
+        </design:resultColumnDefinitions>
+        <design:resultColumnDefinitions>
+          <design:attributes>
+            <design:identifier>
+              <design:name>Quantity</design:name>
+              <design:position>8</design:position>
+            </design:identifier>
+            <design:nativeDataTypeCode>8</design:nativeDataTypeCode>
+            <design:precision>22</design:precision>
+            <design:scale>31</design:scale>
+            <design:nullability>Nullable</design:nullability>
+            <design:uiHints>
+              <design:displayName>Quantity</design:displayName>
+            </design:uiHints>
+          </design:attributes>
+          <design:usageHints>
+            <design:label>Quantity</design:label>
+            <design:formattingHints>
+              <design:displaySize>22</design:displaySize>
+            </design:formattingHints>
+          </design:usageHints>
+        </design:resultColumnDefinitions>
+        <design:resultColumnDefinitions>
+          <design:attributes>
+            <design:identifier>
+              <design:name>Unit</design:name>
+              <design:position>9</design:position>
+            </design:identifier>
+            <design:nativeDataTypeCode>12</design:nativeDataTypeCode>
+            <design:precision>3</design:precision>
+            <design:scale>0</design:scale>
+            <design:nullability>Nullable</design:nullability>
+            <design:uiHints>
+              <design:displayName>Unit</design:displayName>
+            </design:uiHints>
+          </design:attributes>
+          <design:usageHints>
+            <design:label>Unit</design:label>
+            <design:formattingHints>
+              <design:displaySize>3</design:displaySize>
+            </design:formattingHints>
+          </design:usageHints>
+        </design:resultColumnDefinitions>
+        <design:resultColumnDefinitions>
+          <design:attributes>
+            <design:identifier>
+              <design:name>CreditAmount</design:name>
+              <design:position>10</design:position>
+            </design:identifier>
+            <design:nativeDataTypeCode>8</design:nativeDataTypeCode>
+            <design:precision>18</design:precision>
+            <design:scale>2</design:scale>
+            <design:nullability>Nullable</design:nullability>
+            <design:uiHints>
+              <design:displayName>CreditAmount</design:displayName>
+            </design:uiHints>
+          </design:attributes>
+          <design:usageHints>
+            <design:label>CreditAmount</design:label>
+            <design:formattingHints>
+              <design:displaySize>18</design:displaySize>
+            </design:formattingHints>
+          </design:usageHints>
+        </design:resultColumnDefinitions>
+        <design:resultColumnDefinitions>
+          <design:attributes>
+            <design:identifier>
+              <design:name>DebitAmount</design:name>
+              <design:position>11</design:position>
+            </design:identifier>
+            <design:nativeDataTypeCode>8</design:nativeDataTypeCode>
+            <design:precision>18</design:precision>
+            <design:scale>2</design:scale>
+            <design:nullability>Nullable</design:nullability>
+            <design:uiHints>
+              <design:displayName>DebitAmount</design:displayName>
+            </design:uiHints>
+          </design:attributes>
+          <design:usageHints>
+            <design:label>DebitAmount</design:label>
+            <design:formattingHints>
+              <design:displaySize>18</design:displaySize>
+            </design:formattingHints>
+          </design:usageHints>
+        </design:resultColumnDefinitions>
+        <design:resultColumnDefinitions>
+          <design:attributes>
+            <design:identifier>
+              <design:name>Currency</design:name>
+              <design:position>12</design:position>
+            </design:identifier>
+            <design:nativeDataTypeCode>12</design:nativeDataTypeCode>
+            <design:precision>3</design:precision>
+            <design:scale>0</design:scale>
+            <design:nullability>Nullable</design:nullability>
+            <design:uiHints>
+              <design:displayName>Currency</design:displayName>
+            </design:uiHints>
+          </design:attributes>
+          <design:usageHints>
+            <design:label>Currency</design:label>
+            <design:formattingHints>
+              <design:displaySize>3</design:displaySize>
+            </design:formattingHints>
+          </design:usageHints>
+        </design:resultColumnDefinitions>
+        <design:resultColumnDefinitions>
+          <design:attributes>
+            <design:identifier>
+              <design:name>OrganizationID</design:name>
+              <design:position>13</design:position>
+            </design:identifier>
+            <design:nativeDataTypeCode>4</design:nativeDataTypeCode>
+            <design:precision>10</design:precision>
+            <design:scale>0</design:scale>
+            <design:nullability>Nullable</design:nullability>
+            <design:uiHints>
+              <design:displayName>OrganizationID</design:displayName>
+            </design:uiHints>
+          </design:attributes>
+          <design:usageHints>
+            <design:label>OrganizationID</design:label>
+            <design:formattingHints>
+              <design:displaySize>10</design:displaySize>
+            </design:formattingHints>
+          </design:usageHints>
+        </design:resultColumnDefinitions>
+        <design:resultColumnDefinitions>
+          <design:attributes>
+            <design:identifier>
+              <design:name>Date</design:name>
+              <design:position>14</design:position>
+            </design:identifier>
+            <design:nativeDataTypeCode>93</design:nativeDataTypeCode>
+            <design:precision>19</design:precision>
+            <design:scale>0</design:scale>
+            <design:nullability>Nullable</design:nullability>
+            <design:uiHints>
+              <design:displayName>Date</design:displayName>
+            </design:uiHints>
+          </design:attributes>
+          <design:usageHints>
+            <design:label>Date</design:label>
+            <design:formattingHints>
+              <design:displaySize>19</design:displaySize>
+            </design:formattingHints>
+          </design:usageHints>
+        </design:resultColumnDefinitions>
+        <design:resultColumnDefinitions>
+          <design:attributes>
+            <design:identifier>
+              <design:name>Process</design:name>
+              <design:position>15</design:position>
+            </design:identifier>
+            <design:nativeDataTypeCode>12</design:nativeDataTypeCode>
+            <design:precision>30</design:precision>
+            <design:scale>0</design:scale>
+            <design:nullability>Nullable</design:nullability>
+            <design:uiHints>
+              <design:displayName>Process</design:displayName>
+            </design:uiHints>
+          </design:attributes>
+          <design:usageHints>
+            <design:label>Process</design:label>
+            <design:formattingHints>
+              <design:displaySize>30</design:displaySize>
+            </design:formattingHints>
+          </design:usageHints>
+        </design:resultColumnDefinitions>
+        <design:resultColumnDefinitions>
+          <design:attributes>
+            <design:identifier>
+              <design:name>Name</design:name>
+              <design:position>16</design:position>
+            </design:identifier>
+            <design:nativeDataTypeCode>12</design:nativeDataTypeCode>
+            <design:precision>30</design:precision>
+            <design:scale>0</design:scale>
+            <design:nullability>Nullable</design:nullability>
+            <design:uiHints>
+              <design:displayName>Name</design:displayName>
+            </design:uiHints>
+          </design:attributes>
+          <design:usageHints>
+            <design:label>Name</design:label>
+            <design:formattingHints>
+              <design:displaySize>30</design:displaySize>
+            </design:formattingHints>
+          </design:usageHints>
+        </design:resultColumnDefinitions>
+        <design:resultColumnDefinitions>
+          <design:attributes>
+            <design:identifier>
+              <design:name>Amount</design:name>
+              <design:position>17</design:position>
+            </design:identifier>
+            <design:nativeDataTypeCode>8</design:nativeDataTypeCode>
+            <design:precision>19</design:precision>
+            <design:scale>2</design:scale>
+            <design:nullability>Nullable</design:nullability>
+            <design:uiHints>
+              <design:displayName>Amount</design:displayName>
+            </design:uiHints>
+          </design:attributes>
+          <design:usageHints>
+            <design:label>Amount</design:label>
+            <design:formattingHints>
+              <design:displaySize>19</design:displaySize>
+            </design:formattingHints>
+          </design:usageHints>
+        </design:resultColumnDefinitions>
+        <design:resultColumnDefinitions>
+          <design:attributes>
+            <design:identifier>
+              <design:name>Name</design:name>
+              <design:position>18</design:position>
+            </design:identifier>
+            <design:nativeDataTypeCode>12</design:nativeDataTypeCode>
+            <design:precision>30</design:precision>
+            <design:scale>0</design:scale>
+            <design:nullability>Nullable</design:nullability>
+            <design:uiHints>
+              <design:displayName>Name</design:displayName>
+            </design:uiHints>
+          </design:attributes>
+          <design:usageHints>
+            <design:label>Name</design:label>
+            <design:formattingHints>
+              <design:displaySize>30</design:displaySize>
+            </design:formattingHints>
+          </design:usageHints>
+        </design:resultColumnDefinitions>
+        <design:resultColumnDefinitions>
+          <design:attributes>
+            <design:identifier>
+              <design:name>FromName</design:name>
+              <design:position>19</design:position>
+            </design:identifier>
+            <design:nativeDataTypeCode>12</design:nativeDataTypeCode>
+            <design:precision>45</design:precision>
+            <design:scale>0</design:scale>
+            <design:nullability>Nullable</design:nullability>
+            <design:uiHints>
+              <design:displayName>FromName</design:displayName>
+            </design:uiHints>
+          </design:attributes>
+          <design:usageHints>
+            <design:label>FromName</design:label>
+            <design:formattingHints>
+              <design:displaySize>45</design:displaySize>
+            </design:formattingHints>
+          </design:usageHints>
+        </design:resultColumnDefinitions>
+        <design:resultColumnDefinitions>
+          <design:attributes>
+            <design:identifier>
+              <design:name>ToName</design:name>
+              <design:position>20</design:position>
+            </design:identifier>
+            <design:nativeDataTypeCode>12</design:nativeDataTypeCode>
+            <design:precision>45</design:precision>
+            <design:scale>0</design:scale>
+            <design:nullability>Nullable</design:nullability>
+            <design:uiHints>
+              <design:displayName>ToName</design:displayName>
+            </design:uiHints>
+          </design:attributes>
+          <design:usageHints>
+            <design:label>ToName</design:label>
+            <design:formattingHints>
+              <design:displaySize>45</design:displaySize>
+            </design:formattingHints>
+          </design:usageHints>
+        </design:resultColumnDefinitions>
+        <design:resultColumnDefinitions>
+          <design:attributes>
+            <design:identifier>
+              <design:name>FromDate</design:name>
+              <design:position>21</design:position>
+            </design:identifier>
+            <design:nativeDataTypeCode>93</design:nativeDataTypeCode>
+            <design:precision>19</design:precision>
+            <design:scale>0</design:scale>
+            <design:nullability>Nullable</design:nullability>
+            <design:uiHints>
+              <design:displayName>FromDate</design:displayName>
+            </design:uiHints>
+          </design:attributes>
+          <design:usageHints>
+            <design:label>FromDate</design:label>
+            <design:formattingHints>
+              <design:displaySize>19</design:displaySize>
+            </design:formattingHints>
+          </design:usageHints>
+        </design:resultColumnDefinitions>
+        <design:resultColumnDefinitions>
+          <design:attributes>
+            <design:identifier>
+              <design:name>ToDate</design:name>
+              <design:position>22</design:position>
+            </design:identifier>
+            <design:nativeDataTypeCode>93</design:nativeDataTypeCode>
+            <design:precision>19</design:precision>
+            <design:scale>0</design:scale>
+            <design:nullability>Nullable</design:nullability>
+            <design:uiHints>
+              <design:displayName>ToDate</design:displayName>
+            </design:uiHints>
+          </design:attributes>
+          <design:usageHints>
+            <design:label>ToDate</design:label>
+            <design:formattingHints>
+              <design:displaySize>19</design:displaySize>
+            </design:formattingHints>
+          </design:usageHints>
+        </design:resultColumnDefinitions>
+        <design:resultColumnDefinitions>
+          <design:attributes>
+            <design:identifier>
+              <design:name>ReportID</design:name>
+              <design:position>23</design:position>
+            </design:identifier>
+            <design:nativeDataTypeCode>4</design:nativeDataTypeCode>
+            <design:precision>10</design:precision>
+            <design:scale>0</design:scale>
+            <design:nullability>NotNullable</design:nullability>
+            <design:uiHints>
+              <design:displayName>ReportID</design:displayName>
+            </design:uiHints>
+          </design:attributes>
+          <design:usageHints>
+            <design:label>ReportID</design:label>
+            <design:formattingHints>
+              <design:displaySize>10</design:displaySize>
+            </design:formattingHints>
+          </design:usageHints>
+        </design:resultColumnDefinitions>
+      </design:resultSetColumns>
+    </design:resultSetDefinitions>
+  </design:ResultSets>
+</model:DesignValues>]]></xml-property>
+        </oda-data-set>
+    </data-sets>
+    <styles>
+        <style name="crosstab-cell" id="4">
+            <property name="borderBottomColor">#CCCCCC</property>
+            <property name="borderBottomStyle">solid</property>
+            <property name="borderBottomWidth">1pt</property>
+            <property name="borderLeftColor">#CCCCCC</property>
+            <property name="borderLeftStyle">solid</property>
+            <property name="borderLeftWidth">1pt</property>
+            <property name="borderRightColor">#CCCCCC</property>
+            <property name="borderRightStyle">solid</property>
+            <property name="borderRightWidth">1pt</property>
+            <property name="borderTopColor">#CCCCCC</property>
+            <property name="borderTopStyle">solid</property>
+            <property name="borderTopWidth">1pt</property>
+        </style>
+        <style name="crosstab" id="5">
+            <property name="borderBottomColor">#CCCCCC</property>
+            <property name="borderBottomStyle">solid</property>
+            <property name="borderBottomWidth">1pt</property>
+            <property name="borderLeftColor">#CCCCCC</property>
+            <property name="borderLeftStyle">solid</property>
+            <property name="borderLeftWidth">1pt</property>
+            <property name="borderRightColor">#CCCCCC</property>
+            <property name="borderRightStyle">solid</property>
+            <property name="borderRightWidth">1pt</property>
+            <property name="borderTopColor">#CCCCCC</property>
+            <property name="borderTopStyle">solid</property>
+            <property name="borderTopWidth">1pt</property>
+        </style>
+        <style name="ReportTitle" id="7">
+            <property name="fontFamily">"Arial"</property>
+            <property name="fontSize">xx-large</property>
+            <property name="fontWeight">bolder</property>
+        </style>
+        <style name="ReportHeader" id="50">
+            <property name="backgroundColor">#C0C0C0</property>
+            <property name="fontFamily">"Arial"</property>
+            <property name="fontSize">medium</property>
+            <property name="fontWeight">bold</property>
+        </style>
+        <style name="ReportLine" id="51">
+            <property name="fontFamily">"Arial"</property>
+            <property name="paddingBottom">0pt</property>
+        </style>
+        <style name="Header" id="136">
+            <property name="fontFamily">"Arial"</property>
+            <property name="fontWeight">bold</property>
+            <property name="textUnderline">none</property>
+        </style>
+        <style name="PageFooter" id="149">
+            <property name="fontFamily">"Arial"</property>
+            <structure name="dateTimeFormat">
+                <property name="category">Short Date</property>
+                <property name="pattern">Short Date</property>
+            </structure>
+        </style>
+    </styles>
+    <page-setup>
+        <simple-master-page name="Simple MasterPage" id="2">
+            <property name="type">a4</property>
+            <property name="topMargin">15mm</property>
+            <property name="leftMargin">0.4895833333333333in</property>
+            <property name="bottomMargin">20mm</property>
+            <property name="rightMargin">0.5833333333333334in</property>
+            <property name="numberAlign">right</property>
+            <property name="headerHeight">5mm</property>
+            <property name="footerHeight">10mm</property>
+            <page-footer>
+                <text id="3">
+                    <property name="style">PageFooter</property>
+                    <property name="contentType">html</property>
+                    <text-property name="content"><![CDATA[Report <VALUE-OF>params["RP_ReportID"]</VALUE-OF>&amp;nbsp;&amp;nbsp;&amp;nbsp;<value-of>new Date()</value-of>]]></text-property>
+                </text>
+            </page-footer>
+        </simple-master-page>
+    </page-setup>
+    <body>
+        <table id="8">
+            <property name="height">2.125in</property>
+            <property name="width">7.1875in</property>
+            <property name="dataSet">OwnerTransactions</property>
+            <list-property name="boundDataColumns">
+                <structure>
+                    <property name="name">Owner</property>
+                    <expression name="expression">dataSetRow["Owner"]</expression>
+                    <property name="dataType">string</property>
+                </structure>
+                <structure>
+                    <property name="name">Product</property>
+                    <expression name="expression">dataSetRow["Product"]</expression>
+                    <property name="dataType">string</property>
+                </structure>
+                <structure>
+                    <property name="name">Date</property>
+                    <expression name="expression">dataSetRow["Date"]</expression>
+                    <property name="dataType">date</property>
+                </structure>
+                <structure>
+                    <property name="name">Invoice</property>
+                    <expression name="expression">dataSetRow["Invoice"]</expression>
+                    <property name="dataType">string</property>
+                </structure>
+                <structure>
+                    <property name="name">Description</property>
+                    <expression name="expression">dataSetRow["Description"]</expression>
+                    <property name="dataType">string</property>
+                </structure>
+                <structure>
+                    <property name="name">Days</property>
+                    <expression name="expression">dataSetRow["Days"]</expression>
+                    <property name="dataType">float</property>
+                </structure>
+                <structure>
+                    <property name="name">OwnerSales</property>
+                    <expression name="expression">dataSetRow["OwnerSales"]</expression>
+                    <property name="dataType">float</property>
+                </structure>
+                <structure>
+                    <property name="name">OwnerTax</property>
+                    <expression name="expression">dataSetRow["OwnerTax"]</expression>
+                    <property name="dataType">float</property>
+                </structure>
+                <structure>
+                    <property name="name">ManageSales</property>
+                    <expression name="expression">dataSetRow["ManagerSales"]</expression>
+                    <property name="dataType">float</property>
+                </structure>
+                <structure>
+                    <property name="name">ManagerTax</property>
+                    <expression name="expression">dataSetRow["ManagerTax"]</expression>
+                    <property name="dataType">float</property>
+                </structure>
+                <structure>
+                    <property name="name">TOS</property>
+                    <property name="dataType">float</property>
+                    <simple-property-list name="aggregateOn">
+                        <value>ProductGroup</value>
+                    </simple-property-list>
+                    <property name="aggregateFunction">SUM</property>
+                    <list-property name="arguments">
+                        <structure>
+                            <property name="name">Expression</property>
+                            <expression name="value">row["OwnerSales"]</expression>
+                        </structure>
+                    </list-property>
+                </structure>
+                <structure>
+                    <property name="name">TOT</property>
+                    <property name="dataType">float</property>
+                    <simple-property-list name="aggregateOn">
+                        <value>ProductGroup</value>
+                    </simple-property-list>
+                    <property name="aggregateFunction">SUM</property>
+                    <list-property name="arguments">
+                        <structure>
+                            <property name="name">Expression</property>
+                            <expression name="value">row["OwnerTax"]</expression>
+                        </structure>
+                    </list-property>
+                </structure>
+                <structure>
+                    <property name="name">TMS</property>
+                    <property name="dataType">float</property>
+                    <simple-property-list name="aggregateOn">
+                        <value>ProductGroup</value>
+                    </simple-property-list>
+                    <property name="aggregateFunction">SUM</property>
+                    <list-property name="arguments">
+                        <structure>
+                            <property name="name">Expression</property>
+                            <expression name="value">row["ManageSales"]</expression>
+                        </structure>
+                    </list-property>
+                </structure>
+                <structure>
+                    <property name="name">TMT</property>
+                    <property name="dataType">float</property>
+                    <simple-property-list name="aggregateOn">
+                        <value>ProductGroup</value>
+                    </simple-property-list>
+                    <property name="aggregateFunction">SUM</property>
+                    <list-property name="arguments">
+                        <structure>
+                            <property name="name">Expression</property>
+                            <expression name="value">row["ManagerTax"]</expression>
+                        </structure>
+                    </list-property>
+                </structure>
+                <structure>
+                    <property name="name">ROS</property>
+                    <property name="dataType">float</property>
+                    <property name="aggregateFunction">SUM</property>
+                    <list-property name="arguments">
+                        <structure>
+                            <property name="name">Expression</property>
+                            <expression name="value">row["OwnerSales"]</expression>
+                        </structure>
+                    </list-property>
+                </structure>
+                <structure>
+                    <property name="name">ROT</property>
+                    <property name="dataType">float</property>
+                    <property name="aggregateFunction">SUM</property>
+                    <list-property name="arguments">
+                        <structure>
+                            <property name="name">Expression</property>
+                            <expression name="value">row["OwnerTax"]</expression>
+                        </structure>
+                    </list-property>
+                </structure>
+                <structure>
+                    <property name="name">RMS</property>
+                    <property name="dataType">float</property>
+                    <property name="aggregateFunction">SUM</property>
+                    <list-property name="arguments">
+                        <structure>
+                            <property name="name">Expression</property>
+                            <expression name="value">row["ManageSales"]</expression>
+                        </structure>
+                    </list-property>
+                </structure>
+                <structure>
+                    <property name="name">RMT</property>
+                    <property name="dataType">float</property>
+                    <property name="aggregateFunction">SUM</property>
+                    <list-property name="arguments">
+                        <structure>
+                            <property name="name">Expression</property>
+                            <expression name="value">row["ManagerTax"]</expression>
+                        </structure>
+                    </list-property>
+                </structure>
+                <structure>
+                    <property name="name">OOS</property>
+                    <property name="dataType">float</property>
+                    <simple-property-list name="aggregateOn">
+                        <value>Owner</value>
+                    </simple-property-list>
+                    <property name="aggregateFunction">SUM</property>
+                    <list-property name="arguments">
+                        <structure>
+                            <property name="name">Expression</property>
+                            <expression name="value">row["OwnerSales"]</expression>
+                        </structure>
+                    </list-property>
+                </structure>
+                <structure>
+                    <property name="name">OOT</property>
+                    <property name="dataType">float</property>
+                    <simple-property-list name="aggregateOn">
+                        <value>Owner</value>
+                    </simple-property-list>
+                    <property name="aggregateFunction">SUM</property>
+                    <list-property name="arguments">
+                        <structure>
+                            <property name="name">Expression</property>
+                            <expression name="value">row["OwnerTax"]</expression>
+                        </structure>
+                    </list-property>
+                </structure>
+                <structure>
+                    <property name="name">OMS</property>
+                    <property name="dataType">float</property>
+                    <simple-property-list name="aggregateOn">
+                        <value>Owner</value>
+                    </simple-property-list>
+                    <property name="aggregateFunction">SUM</property>
+                    <list-property name="arguments">
+                        <structure>
+                            <property name="name">Expression</property>
+                            <expression name="value">row["ManageSales"]</expression>
+                        </structure>
+                    </list-property>
+                </structure>
+                <structure>
+                    <property name="name">OMT</property>
+                    <property name="dataType">float</property>
+                    <simple-property-list name="aggregateOn">
+                        <value>Owner</value>
+                    </simple-property-list>
+                    <property name="aggregateFunction">SUM</property>
+                    <list-property name="arguments">
+                        <structure>
+                            <property name="name">Expression</property>
+                            <expression name="value">row["ManagerTax"]</expression>
+                        </structure>
+                    </list-property>
+                </structure>
+                <structure>
+                    <property name="name">PA</property>
+                    <property name="dataType">float</property>
+                    <simple-property-list name="aggregateOn">
+                        <value>ProductGroup</value>
+                    </simple-property-list>
+                    <property name="aggregateFunction">SUM</property>
+                    <list-property name="arguments">
+                        <structure>
+                            <property name="name">Expression</property>
+                            <expression name="value">row["Days"]</expression>
+                        </structure>
+                    </list-property>
+                </structure>
+                <structure>
+                    <property name="name">PAV</property>
+                    <expression name="expression">row["PA"] / dataSetRow["TotDays"]</expression>
+                    <property name="dataType">float</property>
+                </structure>
+                <structure>
+                    <property name="name">Manager</property>
+                    <expression name="expression">dataSetRow["Manager"]</expression>
+                    <property name="dataType">string</property>
+                </structure>
+                <structure>
+                    <property name="name">OwnAddress</property>
+                    <expression name="expression">dataSetRow["OwnAddress"]</expression>
+                    <property name="dataType">string</property>
+                </structure>
+                <structure>
+                    <property name="name">ManaAddress</property>
+                    <expression name="expression">dataSetRow["ManAddress"]</expression>
+                    <property name="dataType">string</property>
+                </structure>
+                <structure>
+                    <property name="name">ManAddress</property>
+                    <expression name="expression">dataSetRow["ManAddress"]</expression>
+                    <property name="dataType">string</property>
+                </structure>
+                <structure>
+                    <property name="name">OwnTax</property>
+                    <expression name="expression">dataSetRow["OwnTax"]</expression>
+                    <property name="dataType">string</property>
+                </structure>
+                <structure>
+                    <property name="name">ManTax</property>
+                    <expression name="expression">dataSetRow["ManTax"]</expression>
+                    <property name="dataType">string</property>
+                </structure>
+                <structure>
+                    <property name="name">GrossSales</property>
+                    <expression name="expression">dataSetRow["OwnerSales"]+dataSetRow["OwnerTax"]+dataSetRow["ManagerSales"]+dataSetRow["ManagerTax"]</expression>
+                    <property name="dataType">float</property>
+                </structure>
+                <structure>
+                    <property name="name">TGS</property>
+                    <property name="dataType">float</property>
+                    <simple-property-list name="aggregateOn">
+                        <value>ProductGroup</value>
+                    </simple-property-list>
+                    <property name="aggregateFunction">SUM</property>
+                    <list-property name="arguments">
+                        <structure>
+                            <property name="name">Expression</property>
+                            <expression name="value">row["GrossSales"]</expression>
+                        </structure>
+                    </list-property>
+                </structure>
+                <structure>
+                    <property name="name">RGS</property>
+                    <property name="dataType">float</property>
+                    <property name="aggregateFunction">SUM</property>
+                    <list-property name="arguments">
+                        <structure>
+                            <property name="name">Expression</property>
+                            <expression name="value">row["GrossSales"]</expression>
+                        </structure>
+                    </list-property>
+                </structure>
+                <structure>
+                    <property name="name">FromDate</property>
+                    <text-property name="displayName">FromDate</text-property>
+                    <expression name="expression">dataSetRow["FromDate"]</expression>
+                    <property name="dataType">date-time</property>
+                </structure>
+                <structure>
+                    <property name="name">ToDate</property>
+                    <text-property name="displayName">ToDate</text-property>
+                    <expression name="expression">dataSetRow["ToDate"]</expression>
+                    <property name="dataType">date-time</property>
+                </structure>
+                <structure>
+                    <property name="name">Logo</property>
+                    <text-property name="displayName">Logo</text-property>
+                    <expression name="expression">dataSetRow["Logo"]</expression>
+                    <property name="dataType">blob</property>
+                </structure>
+            </list-property>
+            <column id="30">
+                <property name="width">18mm</property>
+            </column>
+            <column id="31">
+                <property name="width">13mm</property>
+            </column>
+            <column id="32">
+                <property name="width">1.0729166666666667in</property>
+            </column>
+            <column id="33">
+                <property name="width">0.4583333333333333in</property>
+                <property name="textAlign">right</property>
+            </column>
+            <column id="34">
+                <property name="width">0.8541666666666666in</property>
+                <property name="textAlign">right</property>
+            </column>
+            <column id="35">
+                <property name="width">0.875in</property>
+                <property name="textAlign">right</property>
+            </column>
+            <column id="227">
+                <property name="width">0.7395833333333334in</property>
+                <property name="textAlign">right</property>
+            </column>
+            <column id="221">
+                <property name="width">0.9583333333333334in</property>
+                <property name="textAlign">right</property>
+            </column>
+            <column id="215">
+                <property name="width">0.8854166666666666in</property>
+                <property name="textAlign">right</property>
+            </column>
+            <group id="237">
+                <property name="groupName">Owner</property>
+                <property name="interval">none</property>
+                <property name="sortDirection">asc</property>
+                <expression name="keyExpr">row["Owner"]</expression>
+                <structure name="toc">
+                    <expression name="expressionValue">row["Owner"]</expression>
+                </structure>
+                <property name="repeatHeader">true</property>
+                <property name="hideDetail">false</property>
+                <property name="pageBreakAfter">auto</property>
+                <property name="pageBreakBefore">auto</property>
+                <property name="pageBreakInside">auto</property>
+                <header>
+                    <row id="366">
+                        <property name="height">0.3541666666666667in</property>
+                        <property name="style">Header</property>
+                        <cell id="367">
+                            <property name="colSpan">9</property>
+                            <property name="rowSpan">1</property>
+                            <property name="backgroundColor">#C0C0C0</property>
+                            <property name="textAlign">center</property>
+                            <image id="348">
+                                <property name="source">expr</property>
+                                <expression name="valueExpr">row["Logo"]</expression>
+                            </image>
+                        </cell>
+                    </row>
+                    <row id="323">
+                        <property name="height">0.3541666666666667in</property>
+                        <property name="style">Header</property>
+                        <cell id="324">
+                            <property name="colSpan">3</property>
+                            <property name="rowSpan">1</property>
+                            <label id="342">
+                                <property name="fontSize">large</property>
+                                <text-property name="text">Property Revenue</text-property>
+                            </label>
+                        </cell>
+                        <cell id="353">
+                            <label id="343">
+                                <property name="textAlign">left</property>
+                                <text-property name="text">Dates</text-property>
+                            </label>
+                        </cell>
+                        <cell id="328">
+                            <data id="344">
+                                <structure name="dateTimeFormat">
+                                    <property name="category">Custom</property>
+                                    <property name="pattern">dd/MM/yyyy</property>
+                                </structure>
+                                <property name="textAlign">center</property>
+                                <property name="resultSetColumn">FromDate</property>
+                            </data>
+                        </cell>
+                        <cell id="329">
+                            <data id="345">
+                                <structure name="dateTimeFormat">
+                                    <property name="category">Custom</property>
+                                    <property name="pattern">dd/MM/yyyy</property>
+                                </structure>
+                                <property name="textAlign">center</property>
+                                <property name="resultSetColumn">ToDate</property>
+                            </data>
+                        </cell>
+                        <cell id="330"/>
+                        <cell id="331">
+                            <property name="colSpan">2</property>
+                            <property name="rowSpan">5</property>
+                        </cell>
+                    </row>
+                    <row id="354">
+                        <property name="height">3mm</property>
+                        <property name="style">Header</property>
+                        <cell id="355">
+                            <property name="colSpan">3</property>
+                            <property name="rowSpan">1</property>
+                            <label id="364">
+                                <property name="textUnderline">none</property>
+                                <property name="borderBottomColor">#000000</property>
+                                <property name="borderBottomStyle">solid</property>
+                                <property name="borderBottomWidth">1px</property>
+                                <property name="paddingBottom">0pt</property>
+                                <text-property name="text">Property Owner or Beneficiary </text-property>
+                            </label>
+                        </cell>
+                        <cell id="358">
+                            <property name="colSpan">4</property>
+                            <property name="rowSpan">1</property>
+                            <label id="365">
+                                <property name="borderBottomColor">#000000</property>
+                                <property name="borderBottomStyle">solid</property>
+                                <property name="borderBottomWidth">1px</property>
+                                <property name="textAlign">left</property>
+                                <text-property name="text">Property Manager</text-property>
+                            </label>
+                        </cell>
+                    </row>
+                    <row id="238">
+                        <property name="height">3mm</property>
+                        <property name="style">Header</property>
+                        <cell id="239">
+                            <property name="colSpan">3</property>
+                            <property name="rowSpan">1</property>
+                            <data id="258">
+                                <property name="paddingTop">0pt</property>
+                                <property name="paddingBottom">0pt</property>
+                                <property name="resultSetColumn">Owner</property>
+                            </data>
+                        </cell>
+                        <cell id="242">
+                            <property name="colSpan">4</property>
+                            <property name="rowSpan">1</property>
+                            <data id="317">
+                                <property name="textAlign">left</property>
+                                <property name="resultSetColumn">Manager</property>
+                            </data>
+                        </cell>
+                    </row>
+                    <row id="287">
+                        <property name="height">5mm</property>
+                        <property name="style">Header</property>
+                        <cell id="288">
+                            <property name="colSpan">3</property>
+                            <property name="rowSpan">1</property>
+                            <data id="318">
+                                <property name="paddingTop">0pt</property>
+                                <property name="paddingBottom">0pt</property>
+                                <property name="resultSetColumn">OwnAddress</property>
+                            </data>
+                        </cell>
+                        <cell id="291">
+                            <property name="colSpan">4</property>
+                            <property name="rowSpan">1</property>
+                            <data id="320">
+                                <property name="textAlign">left</property>
+                                <property name="resultSetColumn">ManAddress</property>
+                            </data>
+                        </cell>
+                    </row>
+                    <row id="297">
+                        <property name="height">5mm</property>
+                        <property name="style">Header</property>
+                        <cell id="298">
+                            <property name="colSpan">3</property>
+                            <property name="rowSpan">1</property>
+                            <data id="321">
+                                <property name="resultSetColumn">OwnTax</property>
+                            </data>
+                        </cell>
+                        <cell id="301">
+                            <property name="colSpan">4</property>
+                            <property name="rowSpan">1</property>
+                            <data id="322">
+                                <property name="textAlign">left</property>
+                                <property name="resultSetColumn">ManTax</property>
+                            </data>
+                        </cell>
+                    </row>
+                    <row id="307">
+                        <property name="height">0.2916666666666667in</property>
+                        <property name="style">ReportHeader</property>
+                        <property name="borderTopColor">#000000</property>
+                        <property name="borderTopStyle">solid</property>
+                        <property name="borderTopWidth">medium</property>
+                        <cell id="308">
+                            <label id="38">
+                                <text-property name="text">Date</text-property>
+                            </label>
+                        </cell>
+                        <cell id="309">
+                            <label id="40">
+                                <text-property name="text">Invoice</text-property>
+                            </label>
+                        </cell>
+                        <cell id="310">
+                            <label id="42">
+                                <property name="textAlign">left</property>
+                                <text-property name="text">Reservation</text-property>
+                            </label>
+                        </cell>
+                        <cell id="311">
+                            <label id="44">
+                                <property name="textAlign">right</property>
+                                <text-property name="text">Days</text-property>
+                            </label>
+                        </cell>
+                        <cell id="312">
+                            <label id="46">
+                                <property name="textAlign">right</property>
+                                <text-property name="text">Gross</text-property>
+                            </label>
+                        </cell>
+                        <cell id="313">
+                            <label id="48">
+                                <text-property name="text">Net</text-property>
+                            </label>
+                        </cell>
+                        <cell id="314">
+                            <label id="228">
+                                <text-property name="text">VAT</text-property>
+                            </label>
+                        </cell>
+                        <cell id="315">
+                            <label id="229">
+                                <text-property name="text">Commission</text-property>
+                            </label>
+                        </cell>
+                        <cell id="316">
+                            <label id="230">
+                                <text-property name="text">VAT</text-property>
+                            </label>
+                        </cell>
+                    </row>
+                </header>
+            </group>
+            <group id="167">
+                <property name="groupName">ProductGroup</property>
+                <property name="interval">none</property>
+                <property name="sortDirection">asc</property>
+                <expression name="keyExpr">row["Product"]</expression>
+                <structure name="toc">
+                    <expression name="expressionValue">row["Product"]</expression>
+                </structure>
+                <property name="repeatHeader">true</property>
+                <property name="hideDetail">false</property>
+                <property name="pageBreakAfter">auto</property>
+                <property name="pageBreakBefore">auto</property>
+                <property name="pageBreakInside">auto</property>
+                <header>
+                    <row id="168">
+                        <property name="style">Header</property>
+                        <property name="pageBreakAfter">avoid</property>
+                        <cell id="169">
+                            <property name="colSpan">1</property>
+                            <property name="rowSpan">1</property>
+                            <label id="286">
+                                <property name="textAlign">left</property>
+                                <text-property name="text">Property</text-property>
+                            </label>
+                        </cell>
+                        <cell id="260">
+                            <property name="colSpan">3</property>
+                            <property name="rowSpan">1</property>
+                            <data id="202">
+                                <property name="resultSetColumn">Product</property>
+                            </data>
+                        </cell>
+                        <cell id="173"/>
+                        <cell id="174"/>
+                        <cell id="223"/>
+                        <cell id="217"/>
+                        <cell id="211"/>
+                    </row>
+                </header>
+                <footer>
+                    <row id="175">
+                        <property name="style">Header</property>
+                        <cell id="176">
+                            <property name="colSpan">1</property>
+                            <property name="rowSpan">1</property>
+                            <label id="282">
+                                <property name="textAlign">left</property>
+                                <list-property name="visibility">
+                                    <structure>
+                                        <property name="format">all</property>
+                                        <expression name="valueExpr">true</expression>
+                                    </structure>
+                                </list-property>
+                                <text-property name="text">Occupancy</text-property>
+                            </label>
+                        </cell>
+                        <cell id="336">
+                            <data id="281">
+                                <structure name="numberFormat">
+                                    <property name="category">Percent</property>
+                                    <property name="pattern">###0%</property>
+                                </structure>
+                                <property name="textAlign">left</property>
+                                <list-property name="visibility">
+                                    <structure>
+                                        <property name="format">all</property>
+                                        <expression name="valueExpr">true</expression>
+                                    </structure>
+                                </list-property>
+                                <property name="resultSetColumn">PAV</property>
+                            </data>
+                        </cell>
+                        <cell id="268">
+                            <property name="colSpan">1</property>
+                            <property name="rowSpan">1</property>
+                            <property name="textAlign">right</property>
+                            <label id="266">
+                                <property name="textAlign">right</property>
+                                <text-property name="text">Property Totals</text-property>
+                            </label>
+                        </cell>
+                        <cell id="274">
+                            <property name="colSpan">1</property>
+                            <property name="rowSpan">1</property>
+                            <property name="textAlign">right</property>
+                            <data id="278">
+                                <list-property name="visibility">
+                                    <structure>
+                                        <property name="format">all</property>
+                                        <expression name="valueExpr">true</expression>
+                                    </structure>
+                                </list-property>
+                                <property name="resultSetColumn">PA</property>
+                            </data>
+                        </cell>
+                        <cell id="280">
+                            <property name="textAlign">right</property>
+                            <data id="337">
+                                <structure name="numberFormat">
+                                    <property name="category">Currency</property>
+                                    <property name="pattern">###0.00;(###0.00)</property>
+                                </structure>
+                                <property name="resultSetColumn">TGS</property>
+                            </data>
+                        </cell>
+                        <cell id="181">
+                            <data id="233">
+                                <structure name="numberFormat">
+                                    <property name="category">Currency</property>
+                                    <property name="pattern">###0.00;(###0.00)</property>
+                                </structure>
+                                <property name="resultSetColumn">TOS</property>
+                            </data>
+                        </cell>
+                        <cell id="225">
+                            <data id="234">
+                                <structure name="numberFormat">
+                                    <property name="category">Currency</property>
+                                    <property name="pattern">###0.00;(###0.00)</property>
+                                </structure>
+                                <property name="resultSetColumn">TOT</property>
+                            </data>
+                        </cell>
+                        <cell id="219">
+                            <data id="235">
+                                <structure name="numberFormat">
+                                    <property name="category">Currency</property>
+                                    <property name="pattern">###0.00;(###0.00)</property>
+                                </structure>
+                                <property name="resultSetColumn">TMS</property>
+                            </data>
+                        </cell>
+                        <cell id="213">
+                            <data id="236">
+                                <structure name="numberFormat">
+                                    <property name="category">Currency</property>
+                                    <property name="pattern">###0.00;(###0.00)</property>
+                                </structure>
+                                <property name="resultSetColumn">TMT</property>
+                            </data>
+                        </cell>
+                    </row>
+                </footer>
+            </group>
+            <detail>
+                <row id="368">
+                    <property name="height">4mm</property>
+                    <property name="style">ReportLine</property>
+                    <property name="textAlign">left</property>
+                    <property name="pageBreakAfter">avoid</property>
+                    <property name="pageBreakBefore">avoid</property>
+                    <property name="pageBreakInside">avoid</property>
+                    <cell id="369">
+                        <data id="39">
+                            <structure name="dateTimeFormat">
+                                <property name="category">Custom</property>
+                                <property name="pattern">dd/MM/yyyy</property>
+                            </structure>
+                            <property name="resultSetColumn">Date</property>
+                        </data>
+                    </cell>
+                    <cell id="370">
+                        <data id="137">
+                            <property name="resultSetColumn">Invoice</property>
+                        </data>
+                    </cell>
+                    <cell id="371">
+                        <property name="colSpan">6</property>
+                        <property name="rowSpan">1</property>
+                        <data id="203">
+                            <property name="resultSetColumn">Description</property>
+                        </data>
+                    </cell>
+                    <cell id="377"/>
+                </row>
+                <row id="16">
+                    <property name="height">4mm</property>
+                    <property name="style">ReportLine</property>
+                    <property name="textAlign">left</property>
+                    <property name="pageBreakAfter">avoid</property>
+                    <property name="pageBreakBefore">avoid</property>
+                    <property name="pageBreakInside">avoid</property>
+                    <cell id="17"/>
+                    <cell id="18"/>
+                    <cell id="19"/>
+                    <cell id="20">
+                        <data id="209">
+                            <structure name="numberFormat">
+                                <property name="category">Currency</property>
+                                <property name="pattern">###0;(###0)</property>
+                            </structure>
+                            <property name="resultSetColumn">Days</property>
+                        </data>
+                    </cell>
+                    <cell id="21">
+                        <data id="335">
+                            <structure name="numberFormat">
+                                <property name="category">Currency</property>
+                                <property name="pattern">###0.00;(###0.00)</property>
+                            </structure>
+                            <property name="resultSetColumn">GrossSales</property>
+                        </data>
+                    </cell>
+                    <cell id="22">
+                        <data id="143">
+                            <structure name="numberFormat">
+                                <property name="category">Currency</property>
+                                <property name="pattern">###0.00;(###0.00)</property>
+                            </structure>
+                            <property name="resultSetColumn">OwnerSales</property>
+                        </data>
+                    </cell>
+                    <cell id="224">
+                        <data id="138">
+                            <structure name="numberFormat">
+                                <property name="category">Currency</property>
+                                <property name="pattern">###0.00;(###0.00)</property>
+                            </structure>
+                            <property name="textAlign">right</property>
+                            <property name="resultSetColumn">OwnerTax</property>
+                        </data>
+                    </cell>
+                    <cell id="218">
+                        <data id="231">
+                            <structure name="numberFormat">
+                                <property name="category">Currency</property>
+                                <property name="pattern">###0.00;(###0.00)</property>
+                            </structure>
+                            <property name="resultSetColumn">ManageSales</property>
+                        </data>
+                    </cell>
+                    <cell id="212">
+                        <data id="232">
+                            <structure name="numberFormat">
+                                <property name="category">Currency</property>
+                                <property name="pattern">###0.00;(###0.00)</property>
+                            </structure>
+                            <property name="resultSetColumn">ManagerTax</property>
+                        </data>
+                    </cell>
+                </row>
+            </detail>
+            <footer>
+                <row id="60">
+                    <property name="height">0.2916666666666667in</property>
+                    <property name="style">ReportHeader</property>
+                    <property name="borderBottomColor">#000000</property>
+                    <property name="borderBottomStyle">solid</property>
+                    <property name="borderBottomWidth">medium</property>
+                    <property name="borderTopColor">#000000</property>
+                    <property name="borderTopStyle">solid</property>
+                    <property name="borderTopWidth">medium</property>
+                    <cell id="61">
+                        <property name="colSpan">2</property>
+                        <property name="rowSpan">1</property>
+                    </cell>
+                    <cell id="63">
+                        <property name="colSpan">1</property>
+                        <property name="rowSpan">1</property>
+                    </cell>
+                    <cell id="349"/>
+                    <cell id="350">
+                        <data id="338">
+                            <structure name="numberFormat">
+                                <property name="category">Currency</property>
+                                <property name="pattern">###0.00;(###0.00)</property>
+                            </structure>
+                            <property name="resultSetColumn">RGS</property>
+                        </data>
+                    </cell>
+                    <cell id="66">
+                        <data id="261">
+                            <structure name="numberFormat">
+                                <property name="category">Currency</property>
+                                <property name="pattern">###0.00;(###0.00)</property>
+                            </structure>
+                            <property name="resultSetColumn">ROS</property>
+                        </data>
+                    </cell>
+                    <cell id="226">
+                        <data id="262">
+                            <structure name="numberFormat">
+                                <property name="category">Currency</property>
+                                <property name="pattern">###0.00;(###0.00)</property>
+                            </structure>
+                            <property name="resultSetColumn">ROT</property>
+                        </data>
+                    </cell>
+                    <cell id="220">
+                        <data id="263">
+                            <structure name="numberFormat">
+                                <property name="category">Currency</property>
+                                <property name="pattern">###0.00;(###0.00)</property>
+                            </structure>
+                            <property name="resultSetColumn">RMS</property>
+                        </data>
+                    </cell>
+                    <cell id="214">
+                        <data id="264">
+                            <structure name="numberFormat">
+                                <property name="category">Currency</property>
+                                <property name="pattern">###0.00;(###0.00)</property>
+                            </structure>
+                            <property name="resultSetColumn">RMT</property>
+                        </data>
+                    </cell>
+                </row>
+            </footer>
+        </table>
+    </body>
+</report>

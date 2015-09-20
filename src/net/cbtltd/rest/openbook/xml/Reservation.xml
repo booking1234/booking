@@ -1,0 +1,262 @@
+<?xml version="1.0" encoding="UTF-8" standalone="yes"?>
+<reservation>
+	<id>4290523</id>
+	<name>100688</name>
+	<actorid>2</actorid>
+	<altpartyid>133832</altpartyid>
+	<state>Provisional</state>
+	<date>2013-07-29T00:00:00+02:00</date>
+	<duedate>2013-07-29T00:00:00+02:00</duedate>
+	<notes>Deposit Paid $10.00</notes>
+	<actor>
+		<id>2</id>
+		<name>Unallocated</name>
+		<state>Created</state>
+		<altitude>0.0</altitude>
+		<currency>ZAR</currency>
+		<language>EN</language>
+		<locationid>58482</locationid>
+		<unit>EA</unit>
+		<address>Unknown</address>
+		<agent>false</agent>
+		<contractText>
+			<date>2013-07-29T15:48:49.677+02:00</date>
+			<id>Party2Contract</id>
+			<language>EN</language>
+			<name>Unallocated</name>
+			<state>Created</state>
+			<type>HTML</type>
+		</contractText>
+		<country>US</country>
+		<dayphone>Unknown</dayphone>
+		<jurisdictionid>3418</jurisdictionid>
+		<postaladdress>Unknown</postaladdress>
+		<postalcode>Unknown</postalcode>
+		<publicText>
+			<date>2013-07-29T15:48:49.677+02:00</date>
+			<id>Party2Public</id>
+			<language>EN</language>
+			<name>Unallocated</name>
+			<state>Created</state>
+			<type>HTML</type>
+		</publicText>
+		<urlText>
+			<date>2013-07-29T15:48:49.677+02:00</date>
+			<id>Party2Url</id>
+			<language>EN</language>
+			<name>Unallocated</name>
+			<state>Created</state>
+			<type>HTML</type>
+		</urlText>
+		<webaddress>www.razor-cloud.com</webaddress>
+	</actor>
+	<adult>1</adult>
+	<agent>
+		<id>133832</id>
+		<name>Kelly's Test Hotel</name>
+		<state>Created</state>
+		<currency>USD</currency>
+		<language>EN</language>
+		<address>343 E 4th N STE 209</address>
+		<address>Rexburg ID, 83440 USA</address>
+		<agent>false</agent>
+		<contractText>
+			<date>2013-07-29T15:48:49.677+02:00</date>
+			<id>Party133832Contract</id>
+			<language>EN</language>
+			<name>Kelly's Test Hotel</name>
+			<state>Created</state>
+			<type>HTML</type>
+		</contractText>
+		<country>US</country>
+		<dayphone>(208)624-0374</dayphone>
+		<employerid>133832</employerid>
+		<extraname>Kelly Horner</extraname>
+		<faxphone>(208)624-0373</faxphone>
+		<financeid>1464</financeid>
+		<mobilephone></mobilephone>
+		<nightphone></nightphone>
+		<postaladdress>343 E 4th N STE 209
+			Rexburg ID, 83440 USA
+		</postaladdress>
+		<postalcode>83440</postalcode>
+		<publicText>
+			<date>2013-07-29T15:48:49.677+02:00</date>
+			<id>Party133832Public</id>
+			<language>EN</language>
+			<name>Kelly's Test Hotel</name>
+			<state>Created</state>
+			<type>HTML</type>
+		</publicText>
+		<taxnumber>12345678 </taxnumber>
+		<urlText>
+			<date>2013-07-29T15:48:49.677+02:00</date>
+			<id>Party133832Url</id>
+			<language>EN</language>
+			<name>Kelly's Test Hotel</name>
+			<state>Created</state>
+			<type>HTML</type>
+		</urlText>
+		<webaddress>http://www.yahoo.com</webaddress>
+	</agent>
+	<agentid>133832</agentid>
+	<arrivaltime>14:00:00</arrivaltime>
+	<checkin>2013-08-01</checkin>
+	<checkout>2013-08-03</checkout>
+	<child>0</child>
+	<cost>80.0</cost>
+	<currency>USD</currency>
+	<customer>
+		<id>147092</id>
+		<name>whippy, whippy</name>
+		<agent>false</agent>
+		<contractText>
+			<date>2013-07-29T15:48:49.677+02:00</date>
+			<id>Party147092Contract</id>
+			<language>EN</language>
+			<name>whippy, whippy</name>
+			<state>Created</state>
+			<type>HTML</type>
+		</contractText>
+		<publicText>
+			<date>2013-07-29T15:48:49.677+02:00</date>
+			<id>Party147092Public</id>
+			<language>EN</language>
+			<name>whippy, whippy</name>
+			<state>Created</state>
+			<type>HTML</type>
+		</publicText>
+		<urlText>
+			<date>2013-07-29T15:48:49.677+02:00</date>
+			<id>Party147092Url</id>
+			<language>EN</language>
+			<name>whippy, whippy</name>
+			<state>Created</state>
+			<type>HTML</type>
+		</urlText>
+	</customer>
+	<customerid>147092</customerid>
+	<departuretime>10:00:00</departuretime>
+	<deposit>10</deposit>
+	<extra>15.0</extra>
+	<flat>201307290848</flat>
+	<fromdate>2013-08-01T00:00:00+02:00</fromdate>
+	<infant>0</infant>
+	<price>100.0</price>
+	<product>
+		<id>48342</id>
+		<name>Kelly's Test Hotel - Double Queen</name>
+		<altpartyid>133832</altpartyid>
+		<state>Created</state>
+		<currency>USD</currency>
+		<latitude>42.8713032</latitude>
+		<locationid>54384</locationid>
+		<longitude>-112.4455344</longitude>
+		<type>Accommodation</type>
+		<unit>DAY</unit>
+		<address></address>
+		<adult>4</adult>
+		<bathroom>1</bathroom>
+		<child>2</child>
+		<code></code>
+		<dynamicpricingenabled>false</dynamicpricingenabled>
+		<infant>1</infant>
+		<ownerid>133832</ownerid>
+		<person>4</person>
+		<physicaladdress></physicaladdress>
+		<quantity>10</quantity>
+		<rating>6</rating>
+		<room>1</room>
+		<servicedays>0000000</servicedays>
+		<supplierid>133832</supplierid>
+		<toilet>1</toilet>
+	</product>
+	<productid>48342</productid>
+	<quote>100.0</quote>
+	<supplier>
+		<id>133832</id>
+		<name>Kelly's Test Hotel</name>
+		<state>Created</state>
+		<texts>
+			<entry>
+				<key>Party133832Public</key>
+				<value>
+					<date>2013-07-29T15:48:49.677+02:00</date>
+					<id>Party133832Public</id>
+					<language>EN</language>
+					<name>Kelly's Test Hotel</name>
+					<state>Created</state>
+					<type>HTML</type>
+				</value>
+			</entry>
+			<entry>
+				<key>Party133832Url</key>
+				<value>
+					<date>2013-07-29T15:48:49.677+02:00</date>
+					<id>Party133832Url</id>
+					<language>EN</language>
+					<name>Kelly's Test Hotel</name>
+					<state>Created</state>
+					<type>HTML</type>
+				</value>
+			</entry>
+			<entry>
+				<key>Party133832Contract</key>
+				<value>
+					<date>2013-07-29T15:48:49.677+02:00</date>
+					<id>Party133832Contract</id>
+					<language>EN</language>
+					<name>Kelly's Test Hotel</name>
+					<state>Created</state>
+					<type>HTML</type>
+				</value>
+			</entry>
+		</texts>
+		<currency>USD</currency>
+		<language>EN</language>
+		<address>343 E 4th N STE 209</address>
+		<address>Rexburg ID, 83440 USA</address>
+		<agent>false</agent>
+		<contractText>
+			<date>2013-07-29T15:48:49.677+02:00</date>
+			<id>Party133832Contract</id>
+			<language>EN</language>
+			<name>Kelly's Test Hotel</name>
+			<state>Created</state>
+			<type>HTML</type>
+		</contractText>
+		<country>US</country>
+		<dayphone>(208)624-0374</dayphone>
+		<employerid>133832</employerid>
+		<extraname>Kelly Horner</extraname>
+		<faxphone>(208)624-0373</faxphone>
+		<financeid>1464</financeid>
+		<mobilephone></mobilephone>
+		<nightphone></nightphone>
+		<postaladdress>343 E 4th N STE 209
+			Rexburg ID, 83440 USA
+		</postaladdress>
+		<postalcode>83440</postalcode>
+		<publicText>
+			<date>2013-07-29T15:48:49.677+02:00</date>
+			<id>Party133832Public</id>
+			<language>EN</language>
+			<name>Kelly's Test Hotel</name>
+			<state>Created</state>
+			<type>HTML</type>
+		</publicText>
+		<taxnumber>12345678 </taxnumber>
+		<urlText>
+			<date>2013-07-29T15:48:49.677+02:00</date>
+			<id>Party133832Url</id>
+			<language>EN</language>
+			<name>Kelly's Test Hotel</name>
+			<state>Created</state>
+			<type>HTML</type>
+		</urlText>
+		<webaddress>http://www.yahoo.com</webaddress>
+	</supplier>
+	<supplierid>133832</supplierid>
+	<todate>2013-08-03T00:00:00+02:00</todate>
+	<unit>DAY</unit>
+</reservation>

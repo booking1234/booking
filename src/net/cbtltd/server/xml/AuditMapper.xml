@@ -1,0 +1,113 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="net.cbtltd.server.api.AuditMapper">
+
+	<resultMap id="ResultMap" type="Audit">
+		<id column="ID" jdbcType="INTEGER" property="id" />
+		<result column="ProductID" jdbcType="INTEGER" property="productid" />
+		<result column="Name" jdbcType="VARCHAR" property="name" />
+		<result column="State" jdbcType="VARCHAR" property="state" />
+		<result column="Date" jdbcType="DATE" property="date" />
+		<result column="Rating" jdbcType="INTEGER" property="rating" />
+		<result column="Notes" jdbcType="VARCHAR" property="notes" />
+	</resultMap>
+
+	<sql id="columns">
+		ID, ProductID, Name, State, Date, Rating, Notes
+	</sql>
+
+	<select id="read" parameterType="String" resultType="Audit">
+		select distinct 
+		<include refid="columns" />
+		from audit
+		where ID = #{id,jdbcType=INTEGER}
+	</select>
+	
+	<select id="count" parameterType="AuditTable" resultType="Integer">
+		select count(*)
+		from audit
+		where ProductID = #{productid,jdbcType=INTEGER}
+	</select>
+	
+	<select id="list" parameterType="AuditTable" resultType="Audit">
+		select distinct 
+		<include refid="columns" />
+		from audit
+		where ProductID = #{productid,jdbcType=INTEGER}
+		order by ${orderby}
+		limit #{startrow}, #{numrows}
+	</select>
+	
+	<delete id="delete" parameterType="String">
+		delete from audit
+		where ID = #{id,jdbcType=INTEGER}
+	</delete>
+
+	<insert id="create" parameterType="Audit" useGeneratedKeys="true" keyProperty="id">
+		insert into audit (ProductID, Name, State, Date, Rating, Notes)
+		values (
+			#{productid,jdbcType=INTEGER},
+			#{name,jdbcType=VARCHAR},
+			#{state,jdbcType=VARCHAR},
+			#{date,jdbcType=DATE}, 
+			#{rating,jdbcType=INTEGER},
+			#{notes,jdbcType=VARCHAR}
+		)
+	</insert>
+
+	<update id="update" parameterType="Audit">
+		update audit
+		<set>
+			<if test="productid != null">
+				ProductID = #{productid,jdbcType=INTEGER},
+			</if>
+			<if test="name != null">
+				Name = #{name,jdbcType=VARCHAR},
+			</if>
+			<if test="state != null">
+				State = #{state,jdbcType=VARCHAR},
+			</if>
+			<if test="date != null">
+				Date = #{date,jdbcType=DATE},
+			</if>
+			<if test="rating != null">
+				Rating = #{rating,jdbcType=INTEGER},
+			</if>
+			<if test="notes != null">
+				Notes = #{notes,jdbcType=VARCHAR},
+			</if>
+		</set>
+		where ID = #{id,jdbcType=INTEGER}
+	</update>
+
+	<update id="updateByPrimaryKey" parameterType="Audit">
+		update audit
+		set 
+			ProductID = #{productid,jdbcType=INTEGER},
+			Name = #{name,jdbcType=VARCHAR},
+			State = #{state,jdbcType=VARCHAR},
+			Date = #{date,jdbcType=DATE},
+			Rating = #{rating,jdbcType=INTEGER},
+			Notes = #{notes,jdbcType=VARCHAR}
+		where ID = #{id,jdbcType=INTEGER}
+	</update>
+
+	<select id="nameidbyid" parameterType="NameIdAction" resultType="NameId">
+		select distinct Name, ID
+		from audit
+		where ID = #{id}
+	</select>
+
+	<select id="nameidbyname" parameterType="NameIdAction" resultType="NameId">
+		select distinct Name, ID
+		from audit
+		<if test="organizationid != null">
+			join product on product.ID = audit.ProductID
+			and product.SupplierID = #{organizationid}
+		</if>
+		where Name <![CDATA[ >= ]]> #{name}
+			and State = 'Created'
+		order by Name
+		limit 0, #{numrows}
+	</select>
+</mapper>	

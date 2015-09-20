@@ -1,0 +1,172 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="net.cbtltd.server.api.ContactMapper">
+
+	<resultMap id="ResultMap" type="Contact">
+		<id column="ID" jdbcType="INTEGER" property="id" />
+		<result column="OrganizationID" jdbcType="INTEGER" property="organizationid" />
+		<result column="ActorID" jdbcType="INTEGER" property="actorid" />
+		<result column="ParentID" jdbcType="INTEGER" property="parentid" />
+		<result column="Name" jdbcType="VARCHAR" property="name" />
+		<result column="State" jdbcType="VARCHAR" property="state" />
+		<result column="Activity" jdbcType="VARCHAR" property="activity" />
+		<result column="Process" jdbcType="VARCHAR" property="process" />
+		<result column="Type" jdbcType="VARCHAR" property="type" />
+		<result column="Date" jdbcType="DATE" property="date" />
+		<result column="DueDate" jdbcType="DATE" property="duedate" />
+		<result column="DoneDate" jdbcType="DATE" property="donedate" />
+		<result column="Notes" jdbcType="VARCHAR" property="notes" />
+	</resultMap>
+
+	<sql id="columns">
+		ID, OrganizationID, ActorID, ParentID, Name, State,
+		Activity, Process, Type, Date, DueDate, DoneDate, Notes
+	</sql>
+
+	<select id="read" parameterType="String" resultMap="ResultMap">
+		select
+		<include refid="columns" />
+		from event
+		where ID = #{id,jdbcType=INTEGER}
+	</select>
+
+	<select id="brochure" parameterType="String" resultType="Brochure">
+		select distinct
+		<include refid="columns" />, LineID as customerid
+		from event
+			join relation 
+				on Link = 'Contact Party'
+				and HeadID = event.ID 
+		where ID = #{id,jdbcType=INTEGER}
+	</select>
+
+	<delete id="delete" parameterType="String">
+		delete from event
+		where ID = #{id,jdbcType=INTEGER}
+	</delete>
+
+	<insert id="create" parameterType="Event" useGeneratedKeys="true" keyProperty="id">
+		insert into event (
+			OrganizationID, ActorID, ParentID, Name, State, Activity,
+			Process, Type, Date, DueDate, DoneDate, Notes
+		)
+		values
+		(
+			#{organizationid,jdbcType=INTEGER}, 
+			#{actorid,jdbcType=INTEGER},
+			#{parentid,jdbcType=INTEGER},
+			#{name,jdbcType=VARCHAR},
+			#{state,jdbcType=VARCHAR},
+			#{activity,jdbcType=VARCHAR},
+			#{process,jdbcType=VARCHAR}, 
+			#{type,jdbcType=VARCHAR},
+			#{date,jdbcType=DATE},
+			#{duedate,jdbcType=DATE},
+			#{donedate,jdbcType=DATE}, 
+			#{notes,jdbcType=VARCHAR}
+		)
+	</insert>
+
+	<update id="update" parameterType="Event">
+		update event
+		<set>
+			<if test="organizationid != null">
+				OrganizationID = #{organizationid,jdbcType=INTEGER},
+ 			</if>
+			<if test="actorid != null">
+				ActorID = #{actorid,jdbcType=INTEGER},
+ 			</if>
+			<if test="parentid != null">
+				ParentID = #{parentid,jdbcType=INTEGER},
+ 			</if>
+			<if test="name != null">
+				Name = #{name,jdbcType=VARCHAR},
+ 			</if>
+			<if test="state != null">
+				State = #{state,jdbcType=VARCHAR},
+ 			</if>
+			<if test="activity != null">
+				Activity = #{activity,jdbcType=VARCHAR},
+ 			</if>
+			<if test="process != null">
+				Process = #{process,jdbcType=VARCHAR},
+ 			</if>
+			<if test="type != null">
+				Type = #{type,jdbcType=VARCHAR},
+ 			</if>
+			<if test="date != null">
+				Date = #{date,jdbcType=DATE},
+ 			</if>
+			<if test="duedate != null">
+				DueDate = #{duedate,jdbcType=DATE},
+ 			</if>
+			<if test="donedate != null">
+				DoneDate = #{donedate,jdbcType=DATE},
+ 			</if>
+			<if test="notes != null">
+				Notes = #{notes,jdbcType=VARCHAR},
+ 			</if>
+		</set>
+		where ID = #{id,jdbcType=INTEGER}
+	</update>
+
+	<update id="updateByPrimaryKey" parameterType="Event">
+		update event
+		set
+			OrganizationID = #{organizationid,jdbcType=INTEGER},
+			ActorID = #{actorid,jdbcType=INTEGER},
+			ParentID = #{parentid,jdbcType=INTEGER},
+			Name = #{name,jdbcType=VARCHAR},
+			State = #{state,jdbcType=VARCHAR},
+			Activity = #{activity,jdbcType=VARCHAR},
+			Process = #{process,jdbcType=VARCHAR},
+			Type = #{type,jdbcType=VARCHAR},
+			Date = #{date,jdbcType=DATE},
+			DueDate = #{duedate,jdbcType=DATE},
+			DoneDate = #{donedate,jdbcType=DATE},
+			Notes = #{notes,jdbcType=VARCHAR}
+		where ID = #{id,jdbcType=INTEGER}
+	</update>
+
+	<select id="nameidbyid" parameterType="NameIdAction" resultType="NameId">
+		select distinct Name, ID
+		from event
+		where ID = #{id}
+	</select>
+
+	<select id="nameidbyname" parameterType="NameIdAction"
+		resultType="NameId">
+		select distinct Name, ID
+		from event
+		where Name <![CDATA[ >= ]]>
+		#{name}
+		<if test="organizationid != null">
+			and OrganizationID = #{organizationid}
+		</if>
+		order by Name
+		limit 0, #{numrows}
+	</select>
+
+	<sql id="wherelist">
+		where Process = 'Marketing'
+			and Activity =  #{activity}
+			and State = 'Created'
+			and ParentID = #{id}
+	</sql>
+
+	<select id="countcontacts" parameterType="HasTableService" resultType="Integer">
+		select count(*)
+			from event
+		<include refid="wherelist" />
+	</select>
+
+	<select id="listcontacts" parameterType="HasTableService" resultMap="ResultMap">
+		select
+		<include refid="columns"/>
+		from event
+		<include refid="wherelist" />
+		order by ${orderby}
+		limit #{startrow}, #{numrows}
+	</select>
+
+</mapper>

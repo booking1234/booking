@@ -1,0 +1,40 @@
+ <?xml version="1.0" encoding="UTF-8" standalone="yes"?>
+<OTA_HotelResNotifRQ xmlns="http://www.opentravel.org/OTA/2003/05"
+	PrimaryLangID="en" RetransmissionIndicator="false" SequenceNmbr="1"
+	TransactionIdentifier="1" Version="4.001" Target="Production"
+	TimeStamp="2009-07-20T10:54:05"
+	EchoToken="OTA_HotelResNotifRQ 5, 155, 2009-07-19, 2009-07-25, chris@razor.com, Mars, Christopher, 2376">
+	<POS>
+		<Source>
+			<RequestorID ID="2376" ID_Context="RZ" />
+		</Source>
+	</POS>
+	<HotelReservations>
+		<HotelReservation>
+			<RoomStays>
+				<RoomStay PromotionVendorCode="" WarningRPH="">
+					<TimeSpan End="2009-07-25" Start="2009-07-19" />
+					<BasicPropertyInfo HotelCodeContext="RZ"
+						HotelCode="155" ChainCode="5" />
+				</RoomStay>
+			</RoomStays>
+			<ResGuests>
+				<ResGuest>
+					<Profiles>
+						<ProfileInfo>
+							<Profile ProfileType="1" StatusCode="">
+								<Customer>
+									<PersonName>
+										<GivenName> Christopher</GivenName>
+										<Surname>Mars</Surname>
+									</PersonName>
+									<Email EmailType="1">chris@razor.com</Email>
+								</Customer>
+							</Profile>
+						</ProfileInfo>
+					</Profiles>
+				</ResGuest>
+			</ResGuests>
+		</HotelReservation>
+	</HotelReservations>
+</OTA_HotelResNotifRQ>

@@ -1,0 +1,114 @@
+.attributeHeader {width: 200px;}
+.attributeContent {
+	height: 270px;
+	width: 320px;
+}
+
+.commandStyle {
+	margin-top: 10px;
+	width: 100%;
+}
+.commissionStyle {}
+.countLabel {}
+.countField {
+	width: 20px;
+	margin-left: 4px;
+}
+.countunitStyle {width: 80px;}
+.currencyField {
+	width: 110px; 
+	margin-left: 4px;
+	margin-right: 2px;
+}
+
+.daysStyle {}
+.distanceStyle {width: 265px;}
+.distanceunitStyle {margin-top: 4px;}
+.emailaddressField {width: 198px;}
+.emailaddressLabel {
+	width: 100px;
+	font-weight: bold;
+}
+.fromtodateField {width: 100px;}
+.labelStyle {color: gray;}
+.locationStyle {width: 210px;}
+
+.locationsStyle {
+	height: 500px;
+	width: 600px;
+	margin-left: 10px;
+	margin-top: 10px;
+}
+
+.mapStyle {
+	height: 730px;
+	width: 700px;
+	margin-left: 10px;
+	margin-top: 10px;
+}
+
+.notesStyle {
+	height: 300px;
+	width: 300px;
+}
+
+.offlineField {width: 80px;}
+.offlineLabel {
+	margin-left: 3px;
+	margin-bottom: 2px;
+	color: gray;
+}
+.priceinputButton {float: left;}
+.priceinputStyle {width: 63px; margin: 0; padding: 1px;}
+.pricerangeStyle {width: 200px;}
+.priceunitStyle {
+	width: 80px;
+	margin-left: 2px;
+}
+.ratingSlider {width: 180px;}
+.ratingStyle {margin-top: 2px;}
+.reservationFooter{}
+.reservationHeader{}
+.reservationLine{}
+.reservationStyle {}
+.searchLabel {
+	width: 300px;
+	color: #006699;
+	font-size: 120%;
+/* 	border-bottom: 1px solid #ddd; */
+	margin-bottom: 5px;
+}
+.searchLabelTop {margin-top: 0;}
+.searchStyle {
+	margin-top: 10px;
+	margin-left: 10px;
+	padding: 20px; 
+	background: white; 
+	position:relative; 
+	border: 1px solid #666;
+}
+.sendLabel {
+	color: red;
+	font-weight: bold;
+	margin-bottom: 10px;
+}
+.specialField {
+	float: left; 
+	width: 105px;
+}
+.specialLabel {
+	float: left;
+	width: 190px;
+	color: gray;
+}
+
+.tableStyle {width: 620px;}
+.tableScroll {
+	margin-top: 10px;
+	margin-right: 0;
+	height: 730px;
+	min-width: 800px;
+}
+.whatStyle {padding: 1px;}
+.whenStyle {padding: 1px;}
+.whereStyle {padding: 1px;}

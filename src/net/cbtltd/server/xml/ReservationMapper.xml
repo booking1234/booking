@@ -1,0 +1,1789 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="net.cbtltd.server.api.ReservationMapper">
+
+	<resultMap id="ResultMap" type="Reservation">
+		<id column="ID" jdbcType="INTEGER" property="id" />
+		<result column="ParentID" jdbcType="INTEGER" property="parentid" />
+		<result column="OrganizationID" jdbcType="INTEGER" property="organizationid" />
+		<result column="AgentID" jdbcType="INTEGER" property="agentid" />
+		<result column="CustomerID" jdbcType="INTEGER" property="customerid" />
+		<result column="ServiceID" jdbcType="INTEGER" property="serviceid" />
+		<result column="ActorID" jdbcType="INTEGER" property="actorid" />
+		<result column="ProductID" jdbcType="INTEGER" property="productid" />
+		<result column="AltPartyID" jdbcType="INTEGER" property="altpartyid" />
+		<result column="AltID" jdbcType="VARCHAR" property="altid" />
+		<result column="FinanceID" jdbcType="INTEGER" property="financeid" />
+		<result column="Name" jdbcType="VARCHAR" property="name" />
+		<result column="State" jdbcType="VARCHAR" property="state" />
+		<result column="Flat" jdbcType="VARCHAR" property="flat" />
+		<result column="Market" jdbcType="VARCHAR" property="market" />
+		<result column="Outcome" jdbcType="VARCHAR" property="outcome" />
+		<result column="Unit" jdbcType="VARCHAR" property="unit" />
+		<result column="ArrivalTime" jdbcType="TIME" property="arrivaltime" />
+		<result column="DepartureTime" jdbcType="TIME" property="departuretime" />
+		<result column="ServiceFrom" jdbcType="TIME" property="servicefrom" />
+		<result column="ServiceTo" jdbcType="TIME" property="serviceto" />
+		<result column="Date" jdbcType="DATE" property="date" />
+		<result column="FromDate" jdbcType="DATE" property="fromdate" />
+		<result column="ToDate" jdbcType="DATE" property="todate" />
+		<result column="DueDate" jdbcType="DATE" property="duedate" />
+		<result column="DoneDate" jdbcType="DATE" property="donedate" />
+		<result column="Deposit" jdbcType="DOUBLE" property="deposit" />
+		<result column="Adult" jdbcType="INTEGER" property="adult" />
+		<result column="Child" jdbcType="INTEGER" property="child" />
+		<result column="Infant" jdbcType="INTEGER" property="infant" />
+		<result column="Quantity" jdbcType="INTEGER" property="quantity" />
+		<result column="Price" jdbcType="DOUBLE" property="price" />
+		<result column="Quote" jdbcType="DOUBLE" property="quote" />
+		<result column="Cost" jdbcType="DOUBLE" property="cost" />
+		<result column="Extra" jdbcType="DOUBLE" property="extra" />
+		<result column="Currency" jdbcType="VARCHAR" property="currency" />
+		<result column="CardHolder" jdbcType="VARCHAR" property="cardholder" />
+		<result column="CardNumber" jdbcType="VARCHAR" property="cardnumber" />
+		<result column="CardMonth" jdbcType="VARCHAR" property="cardmonth" />
+		<result column="CardYear" jdbcType="VARCHAR" property="cardyear" />
+		<result column="CardCode" jdbcType="VARCHAR" property="cardcode" />
+		<result column="Servicepayer" jdbcType="INTEGER" property="servicepayer" />
+		<result column="TermsAccepted" jdbcType="BIT" property="termsaccepted" />
+		<result column="Notes" jdbcType="VARCHAR" property="notes" />
+		<result column="version" jdbcType="TIMESTAMP" property="version" />
+		<!-- <result column="confirmation_id" jdbcType="VARCHAR" property="confirmationId" /> -->
+		
+	</resultMap>
+
+	<sql id="columns">
+		ID, ParentID, OrganizationID, AgentID, CustomerID, ServiceID, ActorID, ProductID, AltPartyID, AltID, FinanceID,
+		Name, State, Flat, Market, Outcome, Unit, ArrivalTime, DepartureTime, ServiceFrom, ServiceTo, Date, FromDate, ToDate, DueDate,
+		DoneDate, Deposit, Adult, Child, Infant, Quantity, Price, Quote, Extra, Cost, Currency, CardHolder, CardNumber, CardMonth, CardYear, CardCode,
+		Servicepayer, TermsAccepted, Notes, reservation.version <!-- , confirmation_id -->
+	</sql>
+
+	<select id="read" parameterType="String" resultMap="ResultMap">
+		select
+		<include refid="columns" />
+		from reservation
+		where ID = #{id,jdbcType=INTEGER}
+	</select>
+
+	
+	<select id="readBasedOnTime" parameterType="String" resultMap="ResultMap">
+		select
+		<include refid="columns" />
+		from reservation
+		where version >= #{lastFetch,jdbcType=INTEGER}
+	</select>
+	
+	<select id="readActiveBasedOnTime" parameterType="Reservation" resultMap="ResultMap">
+		select
+		<include refid="columns" />
+		from reservation
+		where version <![CDATA[ >= ]]> #{version,jdbcType=TIMESTAMP}
+			and reservation.State not in ('Initial', 'Final', 'Cancelled')
+			<if test="productid != null">
+				and ProductID = #{productid,jdbcType=INTEGER}
+			</if>
+	</select>
+	
+	<select id="exists" parameterType="Reservation" resultMap="ResultMap">
+		select
+		<include refid="columns" />
+		from reservation
+		where ProductID = #{productid,jdbcType=INTEGER}
+			and FromDate = #{fromdate,jdbcType=DATE}
+			and ToDate = #{todate,jdbcType=DATE}
+		limit 1
+	</select>
+	
+	<select id="existsWithState" parameterType="Reservation" resultMap="ResultMap">
+		select
+		<include refid="columns" />
+		from reservation
+		where ProductID = #{productid,jdbcType=INTEGER}
+			and FromDate = #{fromdate,jdbcType=DATE}
+			and ToDate = #{todate,jdbcType=DATE}
+			and State = #{state,jdbcType=VARCHAR}
+		limit 1
+	</select>
+
+	<update id="cancelversion" parameterType="Reservation">
+		update reservation set State = 'Cancelled'
+		where ProductID = #{productid,jdbcType=INTEGER}
+			and version <![CDATA[ <> ]]> #{version,jdbcType=TIMESTAMP}
+	</update>
+	
+	<update id="cancelversionbydate" parameterType="Reservation">
+		update reservation set State = 'Cancelled'
+		where ProductID = #{productid,jdbcType=INTEGER}
+			and version <![CDATA[ <> ]]> #{version,jdbcType=TIMESTAMP}
+			and FromDate <![CDATA[ > ]]> #{version,jdbcType=DATE}
+	</update>
+	
+	<update id="cancelversionbypartyid" parameterType="Reservation">
+		update reservation set State = 'Cancelled'
+		where altpartyid = #{altpartyid,jdbcType=INTEGER}
+		    and  AltID is null 
+		    and version <![CDATA[ <> ]]> #{version,jdbcType=TIMESTAMP}
+	</update>
+	
+	<update id="cancelreservationlist" parameterType="Reservation">
+		update reservation set State = 'Cancelled'
+		where ID in 
+		<foreach item="item" index="index" collection="list" open="(" separator="," close=")">
+			#{item}
+		</foreach>
+	</update>
+	
+<!-- 	<update id="cancelversion" parameterType="Reservation"> -->
+<!-- 		update reservation set State = 'Final' -->
+<!-- 		where ProductID = #{productid,jdbcType=INTEGER} -->
+<!-- 			and FromDate = #{fromdate} -->
+<!-- 			and ToDate = #{todate} -->
+<!-- 			and version <![CDATA[ <> ]]> #{version} -->
+<!-- 	</update> -->
+	
+	<select id="offlineread" parameterType="String" resultMap="ResultMap">
+		select
+		reservation.ID, reservation.AgentID, reservation.CustomerID, reservation.Name, reservation.State, 
+		reservation.FromDate, reservation.ToDate, reservation.ArrivalTime, reservation.DepartureTime, reservation.ServiceFrom, reservation.ServiceTo,
+		reservation.Deposit, reservation.Adult, reservation.Child, reservation.Infant, reservation.Quantity, reservation.Price, reservation.Quote, reservation.Extra, 
+		reservation.Cost, reservation.Currency, reservation.TermsAccepted, reservation.Notes, reservation.version, <!-- reservation.confirmation_id  --> product.Name as productname
+		from reservation
+			join product
+				on product.ID = reservation.ProductID
+		where reservation.ID = #{id,jdbcType=INTEGER}
+	</select>
+
+	<select id="listbycustomerid" parameterType="Reservation" resultType="Reservation">
+		select
+		reservation.Name, reservation.FromDate, reservation.ToDate, reservation.Quote, reservation.Currency, product.Name as productname
+		from reservation
+			join product
+		where reservation.CustomerID = #{customerid,jdbcType=INTEGER}
+			and reservation.State not in ('Initial', 'Cancelled', 'Closed', 'Final')
+			and (reservation.OrganizationID = #{organizationid,jdbcType=INTEGER}
+			or reservation.AgentID = #{organizationid,jdbcType=INTEGER})
+			and product.ID = reservation.ProductID
+	</select>
+	
+	<select id="readbyforeignid" parameterType="String" resultMap="ResultMap">
+		select
+		<include refid="columns" />
+		from reservation
+			join download on Link = 'RESERVATION_UPLOAD' 
+				and HeadID = reservation.ID
+		where LineID = #{id}
+	</select>
+
+	<select id="readbyname" parameterType="Reservation" resultMap="ResultMap">
+		select
+		<include refid="columns" />
+		from reservation
+		where Name = #{name,jdbcType=VARCHAR}
+			and (OrganizationID = #{organizationid,jdbcType=INTEGER} 
+				or AgentID = #{organizationid,jdbcType=INTEGER})
+			and State not in ('Initial', 'Cancelled', 'Final')
+		limit 0, 1
+	</select>
+
+	<select id="readbyorganization" parameterType="Reservation" resultMap="ResultMap">
+		select
+		<include refid="columns" />
+		from reservation
+		where Name = #{name,jdbcType=VARCHAR}
+			and OrganizationID = #{organizationid,jdbcType=INTEGER}
+			and State not in ('Initial', 'Cancelled', 'Final')
+		limit 0, 1
+	</select>
+	
+	<select id="readreservationcount" parameterType="String" resultType="Integer">
+		select count(*)
+		from reservation
+		where OrganizationID = #{organizationid,jdbcType=INTEGER}
+		and AltID is not null
+	</select>
+
+	<select id="collides" parameterType="Reservation" resultMap="ResultMap">
+		select
+		<include refid="columns" />
+		from reservation
+		where ProductID = #{productid}
+			and FromDate  <![CDATA[ >= ]]>  #{fromdate}
+			and ToDate <![CDATA[ <= ]]>  #{todate}
+			and State not in ('Initial', 'Cancelled', 'Final')
+		limit 0, 1
+	</select>
+  
+	<delete id="delete" parameterType="String">
+		delete from reservation
+		where ProductID = #{productid,jdbcType=INTEGER}
+	</delete>
+
+<!-- 	<delete id="deletedummy" parameterType="String"> -->
+<!-- 		delete from reservation -->
+<!-- 		where ProductID = #{id} -->
+<!-- 			and Name is null -->
+<!-- 	</delete> -->
+
+	<delete id="deletebyexample" parameterType="Reservation">
+		delete from reservation
+		where ProductID = #{productid}
+			and FromDate  <![CDATA[ >= ]]>  #{fromdate}
+			and ToDate <![CDATA[ <= ]]>  #{todate}
+			<if test="state != null">
+			and State = #{state,jdbcType=VARCHAR}
+			</if>
+			<if test="name != null">
+			and Name = #{name,jdbcType=VARCHAR}
+			</if>
+			<if test="name == null">
+			and Name is null
+			</if>
+	</delete>
+
+	<delete id="deletebetween" parameterType="Reservation">
+		delete from reservation
+		where ProductID = #{productid,jdbcType=INTEGER}
+			and reservation.OrganizationID = #{organizationid,jdbcType=INTEGER}
+			and FromDate <![CDATA[ >= ]]> #{fromdate,jdbcType=DATE}
+			and ToDate <![CDATA[ <= ]]> #{todate,jdbcType=DATE}
+		<if test="state != null">
+			and State = #{state,jdbcType=VARCHAR}
+		</if>
+	</delete>
+
+	<delete id="remove" parameterType="Reservation">
+		delete from reservation
+		where ProductID = #{productid,jdbcType=INTEGER}
+			and reservation.OrganizationID = #{organizationid,jdbcType=INTEGER}
+		<if test="date != null">
+			and ToDate <![CDATA[ >= ]]> #{date,jdbcType=DATE}
+		</if>
+		<if test="state != null">
+			and State = #{state,jdbcType=VARCHAR}
+		</if>
+	</delete>
+
+	<insert id="create" parameterType="Reservation" useGeneratedKeys="true" keyProperty="id">
+		insert into reservation (
+			ParentID, 
+			OrganizationID, 
+			AgentID, 
+			CustomerID, 
+			ServiceID, 
+			ActorID, 
+			ProductID, 
+			AltPartyID, 
+			AltID, 
+			FinanceID,
+			Name, 
+			State,
+			Flat,
+			Market,
+			Outcome,
+			Unit, 
+			ArrivalTime, 
+			DepartureTime, 
+			ServiceFrom,
+			ServiceTo,
+			Date, 
+			FromDate, 
+			ToDate, 
+			DueDate, 
+			DoneDate, 
+			Deposit, 
+			Adult, 
+			Child, 
+			Infant,
+			Quantity,
+			Price, 
+			Quote, 
+			Extra, 
+			Cost, 
+			Currency,
+			CardHolder, 
+			CardNumber, 
+			CardMonth, 
+			CardYear, 
+			CardCode,
+			Servicepayer,
+			TermsAccepted,
+			Notes,
+			version<!-- ,
+			confirmation_id -->
+		)
+		values (
+			#{parentid,jdbcType=INTEGER}, 
+			#{organizationid,jdbcType=INTEGER},
+			#{agentid,jdbcType=INTEGER},
+			#{customerid,jdbcType=INTEGER}, 
+			#{serviceid,jdbcType=INTEGER}, 
+			#{actorid,jdbcType=INTEGER},
+			#{productid,jdbcType=INTEGER},
+			#{altpartyid,jdbcType=INTEGER},
+			#{altid,jdbcType=VARCHAR},
+			#{financeid,jdbcType=INTEGER},
+			#{name,jdbcType=VARCHAR}, 
+			#{state,jdbcType=VARCHAR},
+			#{flat,jdbcType=VARCHAR},
+			#{market,jdbcType=VARCHAR},
+			#{outcome,jdbcType=VARCHAR},
+			#{unit,jdbcType=VARCHAR}, 
+			#{arrivaltime,jdbcType=TIME},
+			#{departuretime,jdbcType=TIME},
+			#{servicefrom,jdbcType=TIME},
+			#{serviceto,jdbcType=TIME},
+			#{date,jdbcType=DATE}, 
+			#{fromdate,jdbcType=DATE},
+			#{todate,jdbcType=DATE},
+			#{duedate,jdbcType=DATE}, 
+			#{donedate,jdbcType=DATE}, 
+			#{deposit,jdbcType=DOUBLE},
+			#{adult,jdbcType=INTEGER},
+			#{child,jdbcType=INTEGER},
+			#{infant,jdbcType=INTEGER},
+			#{quantity,jdbcType=INTEGER},
+			#{price,jdbcType=DOUBLE}, 
+			#{quote,jdbcType=DOUBLE}, 
+			#{extra,jdbcType=DOUBLE}, 
+			#{cost,jdbcType=DOUBLE},
+			#{currency,jdbcType=VARCHAR},
+			#{cardholder,jdbcType=VARCHAR},
+			#{cardnumber,jdbcType=VARCHAR},
+			#{cardmonth,jdbcType=VARCHAR},
+			#{cardyear,jdbcType=VARCHAR},
+			#{cardcode,jdbcType=VARCHAR},
+			#{servicepayer,jdbcType=INTEGER}, 
+			#{termsaccepted,jdbcType=BIT}, 
+			#{notes,jdbcType=VARCHAR},
+			#{version,jdbcType=TIMESTAMP}<!-- ,
+			#{confirmationId,jdbcType=VARCHAR} -->
+		)
+	</insert>
+
+	<update id="update" parameterType="Reservation">
+		update reservation
+		<set>
+			<if test="parentid != null">
+				ParentID = #{parentid,jdbcType=INTEGER},
+			</if>
+			<if test="organizationid != null">
+				OrganizationID = #{organizationid,jdbcType=INTEGER},
+			</if>
+			<if test="agentid != null">
+				AgentID = #{agentid,jdbcType=INTEGER},
+			</if>
+			<if test="customerid != null">
+				CustomerID = #{customerid,jdbcType=INTEGER},
+			</if>
+			<if test="serviceid != null">
+				ServiceID = #{serviceid,jdbcType=INTEGER},
+			</if>
+			<if test="actorid != null">
+				ActorID = #{actorid,jdbcType=INTEGER},
+			</if>
+			<if test="productid != null">
+				ProductID = #{productid,jdbcType=INTEGER},
+			</if>
+			<if test="altpartyid != null">
+				AltPartyID = #{altpartyid,jdbcType=INTEGER},
+			</if>
+			<if test="altid != null">
+				AltID = #{altid,jdbcType=VARCHAR},
+			</if>
+			<if test="financeid != null">
+				FinanceID = #{financeid,jdbcType=INTEGER},
+			</if>
+			<if test="name != null">
+				Name = #{name,jdbcType=VARCHAR},
+			</if>
+			<if test="state != null">
+				State = #{state,jdbcType=VARCHAR},
+			</if>
+			<if test="flat != null">
+				Flat = #{flat,jdbcType=VARCHAR},
+			</if>
+			<if test="market != null">
+				Market = #{market,jdbcType=VARCHAR},
+			</if>
+			<if test="outcome != null">
+				Outcome = #{outcome,jdbcType=VARCHAR},
+			</if>
+			<if test="unit != null">
+				Unit = #{unit,jdbcType=VARCHAR},
+			</if>
+			<if test="arrivaltime != null">
+				ArrivalTime = #{arrivaltime,jdbcType=TIME},
+			</if>
+			<if test="departuretime != null">
+				DepartureTime = #{departuretime,jdbcType=TIME},
+			</if>
+			<if test="servicefrom != null">
+				ServiceFrom = #{servicefrom,jdbcType=TIME},
+			</if>
+			<if test="serviceto != null">
+				ServiceTo = #{serviceto,jdbcType=TIME},
+			</if>
+			<if test="date != null">
+				Date = #{date,jdbcType=DATE},
+			</if>
+			<if test="fromdate != null">
+				FromDate = #{fromdate,jdbcType=DATE},
+			</if>
+			<if test="todate != null">
+				ToDate = #{todate,jdbcType=DATE},
+			</if>
+			<if test="duedate != null">
+				DueDate = #{duedate,jdbcType=DATE},
+			</if>
+			<if test="donedate != null">
+				DoneDate = #{donedate,jdbcType=DATE},
+			</if>
+			<if test="deposit != null">
+				Deposit = #{deposit,jdbcType=DOUBLE},
+			</if>
+			<if test="adult != null">
+				Adult = #{adult,jdbcType=INTEGER},
+			</if>
+			<if test="child != null">
+				Child = #{child,jdbcType=INTEGER},
+			</if>
+			<if test="infant != null">
+				Infant = #{infant,jdbcType=INTEGER},
+			</if>
+			<if test="quantity != null">
+				Quantity = #{quantity,jdbcType=INTEGER},
+			</if>
+			<if test="price != null">
+				Price = #{price,jdbcType=DOUBLE},
+			</if>
+			<if test="quote != null">
+				Quote = #{quote,jdbcType=DOUBLE},
+			</if>
+			<if test="extra != null">
+				Extra = #{extra,jdbcType=DOUBLE},
+			</if>
+			<if test="cost != null">
+				Cost = #{cost,jdbcType=DOUBLE},
+			</if>
+			<if test="currency != null">
+				Currency = #{currency,jdbcType=VARCHAR},
+			</if>
+			<if test="cardholder != null">
+				CardHolder = #{cardholder,jdbcType=VARCHAR},
+			</if>
+			<if test="cardnumber != null">
+				CardNumber = #{cardnumber,jdbcType=VARCHAR},
+			</if>
+			<if test="cardmonth != null">
+				CardMonth = #{cardmonth,jdbcType=VARCHAR},
+			</if>
+			<if test="cardyear != null">
+				CardYear = #{cardyear,jdbcType=VARCHAR},
+			</if>
+			<if test="cardcode != null">
+				CardCode = #{cardcode,jdbcType=VARCHAR},
+			</if>
+			<if test="servicepayer != null">
+				Servicepayer = #{servicepayer,jdbcType=INTEGER},
+			</if>
+			<if test="termsaccepted != null">
+				TermsAccepted = #{termsaccepted,jdbcType=BIT},
+			</if>
+			<if test="notes != null">
+				Notes = #{notes,jdbcType=VARCHAR},
+			</if>
+			<if test="version != null">
+				version = #{version,jdbcType=TIMESTAMP}
+			</if> 
+			<!-- <if test="confirmationId != null">
+				confirmation_id = #{confirmationId,jdbcType=VARCHAR},
+			</if> -->
+		</set>
+		where ID = #{id,jdbcType=INTEGER}
+	</update>
+
+	<update id="updateByPrimaryKey" parameterType="Reservation">
+		update reservation
+		set 
+			ParentID = #{parentid,jdbcType=INTEGER},
+			OrganizationID = #{organizationid,jdbcType=INTEGER},
+			AgentID = #{agentid,jdbcType=INTEGER},
+			CustomerID = #{customerid,jdbcType=INTEGER},
+			ServiceID = #{serviceid,jdbcType=INTEGER},
+			ActorID = #{actorid,jdbcType=INTEGER},
+			ProductID = #{productid,jdbcType=INTEGER},
+			AltPartyId = #{altpartyid,jdbcType=INTEGER},
+			AltID = #{altid,jdbcType=VARCHAR},
+			FinanceID = #{financeid,jdbcType=INTEGER},
+			Name = #{name,jdbcType=VARCHAR},
+			State = #{state,jdbcType=VARCHAR},
+			Flat = #{flat,jdbcType=VARCHAR},
+			Market = #{market,jdbcType=VARCHAR},
+			Outcome = #{outcome,jdbcType=VARCHAR},
+			Unit = #{unit,jdbcType=VARCHAR},
+			ArrivalTime = #{arrivaltime,jdbcType=TIME},
+			DepartureTime = #{departuretime,jdbcType=TIME},
+			ServiceFrom = #{servicefrom,jdbcType=TIME},
+			ServiceTo = #{serviceto,jdbcType=TIME},
+			Date = #{date,jdbcType=DATE},
+			FromDate = #{fromdate,jdbcType=DATE},
+			ToDate = #{todate,jdbcType=DATE},
+			DueDate = #{duedate,jdbcType=DATE},
+			DoneDate = #{donedate,jdbcType=DATE},
+			Deposit = #{deposit,jdbcType=DOUBLE},
+			Adult = #{adult,jdbcType=INTEGER},
+			Child = #{child,jdbcType=INTEGER},
+			Infant = #{infant,jdbcType=INTEGER},
+			Quantity = #{quantity,jdbcType=INTEGER},
+			Price = #{price,jdbcType=DOUBLE},
+			Quote = #{quote,jdbcType=DOUBLE},
+			Extra = #{extra,jdbcType=DOUBLE},
+			Cost = #{cost,jdbcType=DOUBLE},
+			Currency = #{currency,jdbcType=VARCHAR},
+			CardHolder = #{cardholder,jdbcType=VARCHAR},
+			CardNumber = #{cardnumber,jdbcType=VARCHAR},
+			CardMonth = #{cardmonth,jdbcType=VARCHAR},
+			CardYear = #{cardyear,jdbcType=VARCHAR},
+			CardCode = #{cardcode,jdbcType=VARCHAR},
+			Servicepayer = #{servicepayer,jdbcType=INTEGER},
+			TermsAccepted = #{termsaccepted,jdbcType=BIT},
+			Notes = #{notes,jdbcType=VARCHAR},
+			version = #{version,jdbcType=TIMESTAMP}<!-- ,
+			confirmation_id = #{confirmationId,jdbcType=TIMESTAMP} -->
+		where ID = #{id,jdbcType=INTEGER}
+	</update>
+
+	<update id="deleteoldstate" parameterType="Reservation">
+		update event set DoneDate = now()
+		where Type = 'Logging'
+			and Activity = 'Reservation'
+			and ParentID = #{id}
+			and State = #{oldstate}
+      		and DoneDate is null
+	</update>
+	
+	<select id="nameidbyid" parameterType="NameIdAction" resultType="NameId">
+		select distinct Name, ID
+		from reservation
+		where ID = #{id}
+	</select>
+
+	<select id="nameidbyname" parameterType="NameIdAction" resultType="NameId">
+		select distinct Name, ID
+		from reservation
+		where Name <![CDATA[ >= ]]> #{name}
+		<if test="organizationid != null">
+			and OrganizationID = #{organizationid}
+		</if>
+		<if test="state == null">
+			and State not in ('Initial', 'Final')
+		</if>
+		<if test="state != null">
+			and State in (${state})
+		</if>
+		order by Name
+		limit 0, #{numrows}
+	</select>
+
+	<select id="actornameid" parameterType="NameIdAction" resultType="NameId">
+		select distinct party.Name, party.ID
+		from reservation
+		join party on party.ID = reservation.ActorID
+		where party.Name <![CDATA[ >= ]]> #{name}
+		<if test="organizationid != null">
+			and reservation.OrganizationID = #{organizationid}
+		</if>
+		<if test="state == null">
+			and reservation.State not in ('Initial', 'Final')
+		</if>
+		<if test="state != null">
+			and State in (${state})
+		</if>
+		order by party.Name
+		limit 0, #{numrows}
+	</select>
+
+	<select id="previousstays" parameterType="String" resultType="NameId">
+		select 
+			reservation.ID AS id, 
+			concat(product.Name, ' from ', date(FromDate), ' for ', datediff(ToDate, FromDate), ' days') AS name
+		from reservation
+		join product on product.ID = reservation.ProductID
+		where CustomerID = #{id}
+		and ToDate <![CDATA[ < ]]> now()
+		and reservation.State not in ('Cancelled')
+		order by FromDate desc
+		limit 0, 10
+	</select>
+
+	<select id="previousstaycount" parameterType="String" resultType="Integer">
+		select count(*)
+		from reservation
+			join event
+				on event.parentid = reservation.id
+				and event.type = 'Logging'
+				and event.Activity = 'Reservation'
+				and event.State = 'Arrived'
+		where reservation.CustomerID = #{id}
+		and reservation.State not in ('Initial', 'Closed', 'Cancelled', 'Final')
+	</select>
+
+	<select id="occupancy" parameterType="Yield" resultType="Integer">
+		select distinct count(timeline.ID) / day(last_day(timeline.Date)) * 100 AS Occupancy
+		from reservation
+			join timeline on timeline.Date <![CDATA[ >= ]]> fromdate 
+				and timeline.Date <![CDATA[ < ]]> todate
+		where reservation.ProductID = #{entityid}
+		and year(timeline.Date) = year(#{fromdate})
+		and month(timeline.Date) = month(#{fromdate})
+		and reservation.State not in ('Initial', 'Closed', 'Final', 'Cancelled')
+		group by reservation.ProductID
+	</select>
+	
+	
+	<select id="getschedule" parameterType="String" resultMap="ResultMap">
+		select
+		<include refid="columns"/>
+		from reservation
+		where ProductID = #{productid} 
+			and reservation.State in ('Closed', 'Confirmed')
+	</select>
+
+	<select id="next" parameterType="Yield" resultType="Integer">
+		select count(reservation.ID)
+		from reservation
+		where reservation.ProductID = #{entityid}
+			and FromDate <![CDATA[ = ]]> #{todate}
+			and reservation.State not in ('Initial', 'Final', 'Cancelled')
+		order by FromDate
+		limit 0,1
+	</select>
+	
+	<select id="previous" parameterType="Yield" resultType="Integer">
+		select count(reservation.ID)
+		from reservation
+		where reservation.ProductID = #{entityid}
+			and ToDate <![CDATA[ = ]]> #{fromdate}
+			and reservation.State not in ('Initial', 'Final', 'Cancelled')
+		order by ToDate desc
+		limit 0,1
+	</select>
+	
+	<select id="gap" parameterType="Yield" resultType="Integer">
+		select datediff(reservation.FromDate, #{fromdate}) AS gap
+		from reservation
+		where reservation.ProductID = #{entityid}
+			and FromDate <![CDATA[ > ]]> #{fromdate}
+			and reservation.State not in ('Initial', 'Final', 'Cancelled')
+		order by reservation.FromDate
+		limit 0,1
+	</select>
+
+	<select id="collisions" parameterType="HasCollision" resultType="NameId">
+		select ID, Name
+		from reservation
+		where reservation.ProductID = #{productid}
+			and FromDate <![CDATA[ < ]]> #{todate}
+			and ToDate <![CDATA[ > ]]> #{fromdate}
+			<if test="id != null">
+				and ID <![CDATA[ <> ]]> #{id}
+			</if>
+			and State not in ('Initial', 'Inquiry', 'Cancelled', 'Final')
+	</select>
+
+	<select id="parentcollisions" parameterType="HasCollision" resultType="NameId">
+		select reservation.ID, reservation.Name
+		from reservation
+		join product on product.PartofID = reservation.ProductID
+		where product.ID = #{productid}
+			and reservation.FromDate <![CDATA[ < ]]> #{todate}
+			and reservation.ToDate <![CDATA[ > ]]> #{fromdate}
+			<if test="id != null">
+				and reservation.ID <![CDATA[ <> ]]> #{id}
+			</if>
+			and reservation.State not in ('Initial', 'Inquiry', 'Final', 'Cancelled')
+	</select>
+
+	<select id="childcollisions" parameterType="HasCollision" resultType="NameId">
+		select reservation.ID, reservation.Name
+		from reservation
+		join product on product.ID = reservation.ProductID
+		where product.PartofID = #{productid}
+			and reservation.FromDate <![CDATA[ < ]]> #{todate}
+			and reservation.ToDate <![CDATA[ > ]]> #{fromdate}
+			<if test="id != null">
+				and reservation.ID <![CDATA[ <> ]]> #{id}
+			</if>	
+			and reservation.State not in ('Initial', 'Inquiry', 'Final', 'Cancelled')
+	</select>
+
+	<select id="availableitemdiscount" parameterType="AvailableItem" resultType="Double">
+		select Discount
+		from contract
+		where OrganizationID = #{supplierid}
+		and PartyID = #{agentid}
+		and contract.State in ('Created', 'Requested')
+		limit 0,1
+	</select>
+	
+	<select id="hotelinvcountnotif" parameterType="Reservation" resultType="net.cbtltd.soap.ota.server.OtaInvCount">
+		select distinct 
+			ProductID, 
+			FromDate, 
+			ToDate
+		from reservation
+		where reservation.ProductID = #{productid}
+			and ToDate <![CDATA[ >= ]]> #{fromdate}
+			and FromDate <![CDATA[ <= ]]> #{todate}
+			and State not in ('Initial', 'Final', 'Cancelled')
+		order by ProductID, FromDate
+	</select>
+
+	<select id="hotelavailabilities" parameterType="Reservation" resultType="net.cbtltd.soap.ota.server.OtaRoomStay">
+		select distinct
+			product.ID as productid, 
+			product.name as hotelname,
+			product.SupplierID as hotelgroup,
+			product.LocationID,
+			product.Latitude,
+			product.Longitude,
+			product.Altitude,
+			concat(product.Room, 'Bedroom') as roomtype,
+			price.Value,
+			price.Minimum,
+			price.Currency,
+			timeline.date as date,
+			timeline.date as todate
+		from timeline, price, product
+ 		where product.ID in (${productid})
+			and product.ID not in(
+				select distinct productID
+				from reservation
+				where productID in (${productid})
+					and reservation.State not in ('Initial', 'Cancelled', 'Final')
+					and timeline.date <![CDATA[ >= ]]> FromDate
+					and timeline.date <![CDATA[ < ]]>ToDate
+			)
+			and timeline.date <![CDATA[ >= ]]> #{fromdate}
+			and timeline.date <![CDATA[ <= ]]> #{todate}
+			and price.Entitytype = 'Product'
+			and price.EntityID = product.ID
+			and price.Date <![CDATA[ <= ]]> timeline.date
+			and price.Todate <![CDATA[ >= ]]> timeline.date
+			and price.Value is not null
+			and price.Value > 0.0		
+		order by product.ID, date
+	</select>
+		
+	<select id="hotelavailability" parameterType="Reservation" resultType="net.cbtltd.soap.ota.server.OtaRoomStay">
+		select distinct
+			product.ID as productid, 
+			product.Name as hotelname, 
+			product.SupplierID as hotelgroup,
+			product.LocationID,
+			product.Latitude, 
+			product.Longitude, 
+			product.Altitude,
+			concat(product.Room, 'Bedroom') as roomtype,
+			price.Value,
+			price.Minimum,
+			price.Unit, 
+			price.Currency,
+			#{fromdate} as date,
+			#{todate} as todate
+		from product
+			join price on price.EntityID = product.ID 
+				and price.EntityType = 'Product'
+		 		and price.Date <![CDATA[ <= ]]> #{fromdate}
+				and price.Todate <![CDATA[ >= ]]> #{fromdate}
+		where product.ID in (${productid})
+			and product.ID not in (
+				select distinct reservation.ProductID
+				from reservation
+				where reservation.ProductID in (${productid})
+					and FromDate <![CDATA[ <= ]]> #{todate}
+					and ToDate <![CDATA[ >= ]]> #{fromdate}
+					and reservation.State not in ('Initial', 'Final', 'Cancelled')
+			)
+			and price.Value is not null
+			and price.Value > 0.0		
+		order by product.ID, price.Date
+	</select>
+
+	<select id="productsatposition" parameterType="LookBook" resultType="String">
+		select distinct product.ID
+		from product
+		where product.State = 'Created'
+			and product.Type = 'Accommodation'
+			and Latitude <![CDATA[ <= ]]> #{nelatitude}
+			and Latitude <![CDATA[ >= ]]> #{swlatitude}
+			and Longitude <![CDATA[ <= ]]> #{nelongitude}
+			and Longitude <![CDATA[ >= ]]> #{swlongitude}
+			<if test="organizationid != null">
+			and SupplierID = #{organizationid}
+			</if>
+			<if test="exactperson">
+			and product.Person = #{count}
+			</if>
+			<if test="exactroom">
+			and product.Room = #{count}
+			</if>
+			<if test="minimumperson">
+			and product.Person <![CDATA[ >= ]]> #{count}
+			</if>
+			<if test="minimumroom">
+			and product.Room <![CDATA[ >= ]]> #{count}
+			</if>
+			<if test="rating != null">
+			and Rating <![CDATA[ >= ]]> #{rating}
+			</if>
+			<if test="!offline">
+			and product.Rank <![CDATA[ >= ]]> 0
+			</if>
+	</select>
+
+	<select id="productswithattributes" parameterType="Available" resultType="String">
+		select distinct HeadID
+		from relation
+		where Link = 'Product Attribute'
+			and LineID in (${attributelist})
+			and HeadID in (${productlist})
+		group by HeadID having count(HeadID) >= #{attributecount}
+	</select>
+
+	<select id="lookbookitems" parameterType="LookBook" resultType="AvailableItem">
+		select distinct 
+			#{orderby} as orderby,
+			#{agentid} as agentid,
+			#{fromdate} as fromdate,
+			#{todate} as todate,
+			#{priceunit} as priceunit,
+			min(product.ID) as productid,
+			product.Name as productname,
+			product.Latitude, 
+			product.Longitude, 
+			product.Rating, 
+			product.Rank, 
+			product.Room, 
+			product.SupplierID as supplierid,
+			supplier.Name as suppliername,
+			supplier.Rank,
+			price.Value as price, 
+			price.Value as quote, 
+			price.Value * (100.0 - product.Discount) / 100.0 as cost, 
+			price.Currency, 
+			price.Unit
+		from product
+			join price
+				on price.PartyID = product.supplierID
+					and price.State = 'Created'
+					and price.EntityType = 'Product'
+					and price.EntityID = product.ID
+					and price.Date <![CDATA[ <= ]]> #{fromdate}
+					and price.Todate <![CDATA[ >= ]]> #{fromdate}
+			join party as supplier on supplier.ID = product.SupplierID
+		where product.ID in (${productlist})
+			and product.ID not in (${collisionlist})
+		group by if(product.PartofID is null, product.ID, product.PartofID), if(product.Code is null, product.ID, product.Code)
+	</select>
+
+	<select id="productcollisions" parameterType="LookBook" resultType="String">
+		select distinct reservation.ProductID
+		from reservation
+			where reservation.ProductID in (${productlist})
+				and reservation.Fromdate <![CDATA[ < ]]> #{todate}
+				and reservation.Todate  <![CDATA[ > ]]> #{fromdate}
+				and reservation.State not in ('Initial', 'Cancelled', 'Final')
+	union
+		select distinct product.PartofID
+		from reservation
+			join product on product.ID = reservation.ProductID
+				and reservation.Fromdate <![CDATA[ < ]]> #{todate}
+				and reservation.Todate  <![CDATA[ > ]]> #{fromdate}
+				and reservation.State not in ('Initial', 'Cancelled', 'Final')
+				and product.PartofID is not null
+	union
+		select distinct product.ID
+		from reservation
+			join product on product.PartofID = reservation.ProductID
+				and reservation.Fromdate <![CDATA[ < ]]> #{todate}
+				and reservation.Todate  <![CDATA[ > ]]> #{fromdate}
+				and reservation.State not in ('Initial', 'Cancelled', 'Final')
+				and product.PartofID is not null
+	</select>
+	
+	<select id="productnocollisions" parameterType="LookBook" resultType="String">
+		select distinct reservation.ProductID
+		from reservation
+			join product on product.ID = reservation.ProductID
+		where reservation.ProductID in (${productlist})
+			and reservation.Fromdate <![CDATA[ < ]]> #{todate}
+			and reservation.Todate  <![CDATA[ > ]]> #{fromdate}
+			and reservation.State not in ('Initial', 'Cancelled', 'Final')
+		group by product.ID
+		having count(*) <![CDATA[ < ]]> min(product.Quantity)
+	</select>
+
+	<select id="productsnotavailable" parameterType="LookBook" resultType="String">
+		select distinct reservation.ProductID
+		from reservation
+			where reservation.ProductID in (${productlist})
+				and Fromdate <![CDATA[ < ]]> #{todate}
+				and Todate  <![CDATA[ > ]]> #{fromdate}
+				and State not in ('Initial', 'Cancelled', 'Final')
+	</select>
+
+	<select id="parentsnotavailable" parameterType="LookBook" resultType="String">
+		select product.PartofID
+		from product
+		where product.ID in (${collisionlist})
+<!--		and product.PartofID not in (${collisionlist})-->
+	</select>
+
+	<select id="childrennotavailable" parameterType="LookBook" resultType="String">
+		select product.ID
+		from product
+		where product.PartofID in (${collisionlist})
+<!--		and product.ID not in (${collisionlist})-->
+	</select>
+
+	<sql id="fromatposition">
+		from product
+		where product.State = 'Created'
+			and product.Type = 'Accommodation'
+			<if test="organizationid != null">
+			and product.SupplierID = #{organizationid}
+			</if>
+			<if test="nelatitude != null">
+			and product.Latitude <![CDATA[ <= ]]> #{nelatitude}
+			</if>
+			<if test="swlatitude != null">
+			and product.Latitude <![CDATA[ >= ]]> #{swlatitude}
+			</if>
+			<if test="nelongitude != null">
+			and product.Longitude <![CDATA[ <= ]]> #{nelongitude}
+			</if>
+			<if test="swlongitude != null">
+			and product.Longitude <![CDATA[ >= ]]> #{swlongitude}
+			</if>
+			<if test="exactperson">
+			and product.Person = #{count}
+			</if>
+			<if test="exactroom">
+			and product.Room = #{count}
+			</if>
+			<if test="minimumperson">
+			and product.Person <![CDATA[ >= ]]> #{count}
+			</if>
+			<if test="minimumroom">
+			and product.Room <![CDATA[ >= ]]> #{count}
+			</if>
+			<if test="rating != null">
+			and Rating <![CDATA[ >= ]]> #{rating}
+			</if>
+	</sql>
+
+	<select id="countatposition" parameterType="Available" resultType="Integer">
+		select count(distinct product.ID)
+		<include refid="fromatposition" />
+	</select>
+	
+	<select id="availableatposition" parameterType="Available" resultType="String">
+		select distinct product.ID
+		from product
+		inner join party on party.ID = product.SupplierID
+		where product.State = 'Created'
+			and product.Name IS NOT NULL
+			and party.State = 'Created'
+			and product.Type = 'Accommodation'
+			<if test="organizationid != null">
+			and product.SupplierID = #{organizationid}
+			</if>
+			<if test="nelatitude != null">
+			and product.Latitude <![CDATA[ <= ]]> #{nelatitude}
+			</if>
+			<if test="swlatitude != null">
+			and product.Latitude <![CDATA[ >= ]]> #{swlatitude}
+			</if>
+			<if test="nelongitude != null">
+			and product.Longitude <![CDATA[ <= ]]> #{nelongitude}
+			</if>
+			<if test="swlongitude != null">
+			and product.Longitude <![CDATA[ >= ]]> #{swlongitude}
+			</if>
+			<if test="exactperson">
+			and product.Person = #{count}
+			</if>
+			<if test="exactroom">
+			and product.Room = #{count}
+			</if>
+			<if test="minimumperson">
+			and product.Person <![CDATA[ >= ]]> #{count}
+			</if>
+			<if test="minimumroom">
+			and product.Room <![CDATA[ >= ]]> #{count}
+			</if>
+			<if test="rating != null">
+			and Rating <![CDATA[ >= ]]> #{rating}
+			</if>
+		order by product.Name
+		limit #{startrow}, #{numrows}
+	</select>
+	
+	<select id="parentids" parameterType="Available" resultType="String">
+		select distinct PartofID
+		from product
+		where PartofID is not null
+			and PartofID <![CDATA[ <> ]]> 0
+			and ID in (${productlist})
+	</select>
+
+	<select id="childids" parameterType="Available" resultType="String">
+		select distinct ID
+		from product
+		where ID is not null
+			and ID <![CDATA[ <> ]]> 0
+			and PartofID in (${productlist})
+	</select>
+
+	<select id="availableitem" parameterType="Available" resultType="AvailableItem">
+			select distinct
+				product.ID as productid,
+				product.Name as productname,
+				product.Rank,
+				product.Room,
+				product.SupplierID as supplierid, 
+				reservation.ID as reservationid, 
+				reservation.State as state, 
+				party.Name as partyname, 
+				supplier.Name as suppliername,
+				price.Value as price, 
+				price.Currency,
+				reservation.FromDate, 
+				reservation.ToDate
+			from reservation
+				join product on product.ID = #{id}
+				join party as supplier on supplier.ID = product.SupplierID
+				left join party on party.ID = reservation.CustomerID
+				left join price
+					on price.PartyID = product.supplierID
+						and price.State = 'Created'
+						and price.EntityType = 'Product'
+						and price.EntityID = product.ID
+						and price.Date <![CDATA[ <= ]]> #{fromdate}
+						and price.Todate <![CDATA[ >= ]]> #{fromdate}
+			where reservation.State not in ('Initial', 'Final', 'Cancelled')
+				and datediff(reservation.Todate, reservation.Fromdate) <![CDATA[ >= ]]> 1
+				and reservation.Todate <![CDATA[ > ]]> #{fromdate}
+				and reservation.ProductID in (${productlist})
+				and reservation.ID is not null
+		order by product.ID, FromDate <!-- mandatory for schedule sequence -->
+	</select>
+
+	<select id="availableitems" parameterType="Available" resultType="AvailableItem">
+			select distinct
+				product.ID as productid,
+				product.Name as productname,
+<!--				if(reservation.Flat = '', product.Name, concat(product.Name, ' ', reservation.Flat)) as productname, -->
+				product.Rank,
+				product.Room,
+				product.SupplierID as supplierid, 
+				reservation.ID as reservationid, 
+				reservation.State as state, 
+				party.Name as partyname, 
+				supplier.Name as suppliername, 
+				price.Value as price, 
+				price.Currency,
+				price.Date as priceDate,
+				reservation.FromDate, 
+				reservation.ToDate
+			from product
+				join reservation on reservation.ProductID = product.ID
+				join party as supplier on supplier.ID = product.SupplierID
+				left join party on party.ID = reservation.CustomerID
+				left join price
+					on price.PartyID = product.supplierID
+						and price.State = 'Created'
+						and price.EntityType = 'Product'
+						and price.EntityID = product.ID
+						and price.Date <![CDATA[ <= ]]> #{todate}
+						and price.Todate <![CDATA[ >= ]]> #{fromdate}
+			where reservation.State not in ('Initial', 'Final', 'Cancelled')
+				and datediff(reservation.Todate, reservation.Fromdate) <![CDATA[ >= ]]> 1
+				and reservation.Todate <![CDATA[ > ]]> #{fromdate}
+				and reservation.FromDate <![CDATA[ <= ]]> #{todate}
+				and product.ID in (${productlist})
+		union
+			select distinct 
+				product.ID as productid, 
+				product.Name as productname, 
+				product.Rank,
+				product.Room,
+				product.SupplierID as supplierid,
+				'',
+				'',
+				'',
+				supplier.Name as suppliername, 
+				price.Value as price, 
+				price.Currency,
+				price.Date as priceDate,
+				'9970-01-01', 
+				'9970-01-01'
+			from product
+				join party as supplier on supplier.ID = product.SupplierID
+				and product.ID in (${productlist})
+				left join price
+					on price.PartyID = product.supplierID
+						and price.State = 'Created'
+						and price.EntityType = 'Product'
+						and price.EntityID = product.ID
+						and price.Date <![CDATA[ <= ]]> #{todate}
+						and price.Todate <![CDATA[ >= ]]> #{fromdate}
+		order by productname, FromDate, priceDate<!-- mandatory for schedule sequence -->
+	</select>
+	
+	<select id="brochureitems" parameterType="String" resultType="AvailableItem">
+		select distinct
+			product.ID as productid,
+			product.Name as productname,
+			product.Rank,
+			product.Room,
+			product.SupplierID as supplierid, 
+			reservation.AgentID as agentid, 
+			reservation.ID as reservationid, 
+			reservation.State as state, 
+			party.Name as partyname, 
+			supplier.Name as suppliername,
+			reservation.Price,
+			reservation.Quote,
+			reservation.Extra,
+			reservation.Cost,
+			reservation.Currency,
+			reservation.FromDate,
+			reservation.ToDate
+		from reservation
+			join product on product.ID = reservation.ProductID
+			join party as supplier on supplier.ID = product.SupplierID
+			left join party on party.ID = reservation.CustomerID
+		where reservation.ParentID = #{id}
+			and reservation.State = 'Initial'
+		order by product.Name
+	</select>
+	
+	<select id="brochureproduct" resultType="AvailableItem">
+		select distinct
+			product.ID as productid,
+			product.Name as productname,
+			product.SupplierID as supplierid, 
+			supplier.Name as suppliername,
+			product.Currency as currency,
+			product.Rank,
+			date(now()) as fromdate,
+			date(now()) as todate
+		from product
+			join party as supplier on supplier.ID = product.SupplierID
+		where product.ID in 
+		<foreach item="item" index="index" collection="array" open="(" separator="," close=")">
+			#{item}
+		</foreach>
+	</select>
+
+	<select id="donestates" parameterType="String" resultType="String">
+		select distinct state 
+		from event 
+		where Type = 'Logging' 
+			and Activity = 'Reservation' 
+			and ParentID = #{id}
+			and DoneDate is null
+	</select>
+
+<!-- REST SQL queries-->
+	<select id="available" parameterType="Reservation" resultType="Boolean">
+	select sum(counter) = 0 from (
+		select count(reservation.ID) as counter
+		from reservation
+		where ProductID = #{productid}
+		and FromDate <![CDATA[ < ]]> #{todate}
+		and ToDate <![CDATA[ > ]]> #{fromdate}
+		and State not in ('Initial', 'Inquiry', 'Cancelled', 'Final')
+	union
+		select count(reservation.ID) as counter
+		from reservation
+			join product on product.ID = reservation.ProductID
+		where product.PartofID = #{productid}
+		and reservation.FromDate <![CDATA[ < ]]> #{todate}
+		and reservation.ToDate <![CDATA[ > ]]> #{fromdate}
+		and reservation.State not in ('Initial', 'Inquiry', 'Cancelled', 'Final')
+	union
+		select count(reservation.ID) as counter
+		from reservation
+			join product on product.PartofID = reservation.ProductID
+		where product.ID = #{productid}
+		and reservation.FromDate <![CDATA[ < ]]> #{todate}
+		and reservation.ToDate <![CDATA[ > ]]> #{fromdate}
+		and reservation.State not in ('Initial', 'Inquiry', 'Cancelled', 'Final')
+	) as temp
+	</select>
+
+	<select id="locationschedule" parameterType="Reservation" resultType="net.cbtltd.rest.ScheduleItem">
+		select distinct 
+			product.ID as id, 
+			product.Name as name,
+			timeline.date, 
+			reservation.Name as reservation, 
+			reservation.State as state
+		from timeline, product
+			join reservation on reservation.ProductID = product.ID
+		where product.LocationID in (${id})
+			and product.ID is not null
+			and product.State = 'Created'
+			and reservation.State not in ('Initial', 'Cancelled', 'Final')
+			and timeline.date <![CDATA[ >= ]]> FromDate
+			and timeline.date <![CDATA[ <= ]]> ToDate
+			and timeline.date <![CDATA[ >= ]]> #{fromdate}
+			and timeline.date <![CDATA[ <= ]]> #{todate}
+	union
+		select distinct 
+			product.ID as id, 
+			product.Name as name,
+			timeline.date, 
+			reservation.Name as reservation, 
+			reservation.State as state
+		from timeline, product
+			join reservation on reservation.ProductID = product.PartofID
+		where product.LocationID in (${id})
+			and product.ID is not null
+			and product.State = 'Created'
+			and reservation.State not in ('Initial', 'Cancelled', 'Final')
+			and timeline.date <![CDATA[ >= ]]> FromDate
+			and timeline.date <![CDATA[ <= ]]> ToDate
+			and timeline.date <![CDATA[ >= ]]> #{fromdate}
+			and timeline.date <![CDATA[ <= ]]> #{todate}
+	union
+		select distinct 
+			product.PartofID as id, 
+			product.Name as name,
+			timeline.date, 
+			reservation.Name as reservation, 
+			reservation.State as state
+		from timeline, product
+			join reservation on reservation.ProductID = product.ID
+		where product.LocationID in (${id})
+			and product.PartofID is not null
+			and product.State = 'Created'
+			and reservation.State not in ('Initial', 'Cancelled', 'Final')
+			and timeline.date <![CDATA[ >= ]]> FromDate
+			and timeline.date <![CDATA[ <= ]]> ToDate
+			and timeline.date <![CDATA[ >= ]]> #{fromdate}
+			and timeline.date <![CDATA[ <= ]]> #{todate}
+	union
+		select distinct 
+			product.ID as id, 
+			product.name as name, 
+			timeline.date, 
+			null,
+			'Available'
+		from timeline, product
+		where product.LocationID in (${id})
+			and product.ID is not null
+			and product.State = 'Created'
+			and product.Type = 'Accommodation'
+			and timeline.date <![CDATA[ >= ]]> #{fromdate}
+			and timeline.date <![CDATA[ <= ]]> #{todate}
+		order by id, date, reservation desc
+	</select>
+
+	<select id="productschedule" parameterType="Reservation" resultType="net.cbtltd.rest.ScheduleItem">
+		select distinct 
+			product.ID as id, 
+			product.Name as name,
+			timeline.date, 
+			reservation.Name as reservation, 
+			reservation.State as state 
+		from timeline, product
+			join reservation on reservation.ProductID = product.ID
+		where product.ID in (${id})
+			and reservation.State not in ('Initial', 'Cancelled', 'Final')
+			and timeline.date <![CDATA[ >= ]]> FromDate
+			and timeline.date <![CDATA[ < ]]> ToDate
+			and timeline.date <![CDATA[ >= ]]> #{fromdate}
+			and timeline.date <![CDATA[ <= ]]> #{todate}
+	union
+		select distinct 
+			product.ID as id, 
+			product.Name as name,
+			timeline.date, 
+			reservation.Name as reservation, 
+			reservation.State as state 
+		from timeline, product
+			join reservation on reservation.ProductID = product.PartofID
+		where product.ID in (${id})
+			and reservation.State not in ('Initial', 'Cancelled', 'Final')
+			and timeline.date <![CDATA[ >= ]]> FromDate
+			and timeline.date <![CDATA[ < ]]> ToDate
+			and timeline.date <![CDATA[ >= ]]> #{fromdate}
+			and timeline.date <![CDATA[ <= ]]> #{todate}
+	union
+		select distinct 
+			product.PartofID as id, 
+			partof.Name as name,
+			timeline.date, 
+			reservation.Name as reservation, 
+			reservation.State as state 
+		from timeline, product
+			join reservation on reservation.ProductID = product.ID
+			join product as partof on partof.ID = product.PartofID
+		where product.PartofID in (${id})
+			and reservation.State not in ('Initial', 'Cancelled', 'Final')
+			and timeline.date <![CDATA[ >= ]]> FromDate
+			and timeline.date <![CDATA[ < ]]> ToDate
+			and timeline.date <![CDATA[ >= ]]> #{fromdate}
+			and timeline.date <![CDATA[ <= ]]> #{todate}
+	union
+		select distinct 
+			product.ID as id, 
+			product.name as name, 
+			timeline.date, 
+			null,
+			'Available'
+		from timeline, product
+		where product.ID in (${id})
+			and product.Type = 'Accommodation'
+			and timeline.date <![CDATA[ >= ]]> #{fromdate}
+			and timeline.date <![CDATA[ <= ]]> #{todate}
+		order by id, date, reservation desc
+	</select>
+  
+	<select id="download" parameterType="String" resultType="net.cbtltd.rest.Download">
+		select distinct
+			reservation.Name as reservationid,
+			reservation.ProductID as productid,
+			date(reservation.FromDate) as arrive,
+			date(reservation.ToDate) as depart,
+			customer.Emailaddress as emailaddress,
+			customer.Name as guestname,
+			agent.Name as agentname,
+			reservation.Notes as notes,
+			reservation.Price as price,
+			reservation.Currency as currency
+		from reservation
+			left join party as customer on customer.ID = reservation.CustomerID
+			left join party as agent on agent.ID = reservation.AgentID
+		where reservation.OrganizationID = #{id,jdbcType=INTEGER}
+			and reservation.State not in ('Initial', 'Cancelled', 'Final')
+			and reservation.ToDate <![CDATA[ >= ]]> now()
+			and reservation.Name not in (
+				select HeadID from download 
+						where Link = 'RESERVATION_DOWNLOAD'
+						and LineID = #{id,jdbcType=INTEGER}
+			)
+	</select>
+	
+	<select id="downloads" parameterType="String" resultType="net.cbtltd.rest.Download">
+		select distinct
+			reservation.Name as reservationid,
+			reservation.ProductID as productid,
+			date(reservation.FromDate) as arrive,
+			date(reservation.ToDate) as	depart,
+			customer.Emailaddress as emailaddress,
+			customer.Name as guestname,
+			agent.Name as agentname,
+			reservation.Notes as notes,
+			reservation.Price as price,
+			reservation.Currency as currency
+		from reservation
+			left join party as customer on customer.ID = reservation.CustomerID
+			left join party as agent on agent.ID = reservation.AgentID
+			where reservation.OrganizationID = #{id,jdbcType=INTEGER}
+			and reservation.State not in ('Initial', 'Cancelled', 'Final')
+			and reservation.ToDate <![CDATA[ >= ]]> now()
+	</select>
+
+	<select id="uploads" parameterType="String" resultType="net.cbtltd.rest.Download">
+		select distinct
+			reservation.Name as reservationid,
+			LineID as foreignid,
+			reservation.ProductID as productid,
+			date(reservation.FromDate) as arrive,
+			date(reservation.ToDate) as depart,
+			customer.Emailaddress as emailaddress,
+			customer.Name as guestname,
+			agent.Name as agentname,
+			reservation.Notes as notes,
+			reservation.Price as price,
+			reservation.Currency as currency
+		from reservation
+			join download on HeadID = reservation.ID 
+				and Link = 'RESERVATION_UPLOAD'
+			left join party as customer on customer.ID = reservation.CustomerID
+			left join party as agent on agent.ID = reservation.AgentID
+		where reservation.OrganizationID = #{id,jdbcType=INTEGER}
+			and reservation.State not in ('Initial', 'Cancelled', 'Final')
+			and reservation.ToDate <![CDATA[ >= ]]> now()
+	</select>
+
+	<select id="count" parameterType="HasTableService" resultType="Integer">
+		select count(*)
+		from reservation
+		where (reservation.AgentID = #{id} or reservation.CustomerID = #{id})
+			and reservation.State not in ('Initial', 'Final', 'Cancelled')
+			and (reservation.OrganizationID = #{organizationid}
+				or reservation.AgentID = #{organizationid})
+	</select>
+	
+	<select id="list" parameterType="HasTableService" resultType="Reservation">
+		select distinct
+			reservation.Name, reservation.State, reservation.Date, reservation.FromDate, reservation.ToDate, reservation.Notes, product.Name as productname
+			from reservation
+				join product on product.ID = reservation.ProductID
+		where (reservation.AgentID = #{id} or reservation.CustomerID = #{id})
+			and reservation.State not in ('Initial', 'Cancelled', 'Final')
+			and (reservation.OrganizationID = #{organizationid}
+				or reservation.AgentID = #{organizationid})
+		order by ${orderby}
+		limit #{startrow}, #{numrows}
+	</select>
+
+	<select id="minavailable" parameterType="HasCollision" resultType="Integer">
+		select min(available)
+		from price
+		where price.Date <![CDATA[ < ]]> #{todate}
+		and #{fromdate} <![CDATA[ <= ]]> price.Todate 
+		and price.Type = 'Reservation'
+		and price.State = 'Created'
+		and price.EntityType = 'Product'
+		and price.EntityID = #{productid}
+	</select>
+
+<!-- FlipKey Queries -->
+	<select id="flipkeyhistory" parameterType="Void" resultType="net.cbtltd.rest.flipkey.History">
+		select distinct
+			product.Name as name, 
+			Emailaddress as email, 
+			date(ToDate) as checkout
+		from reservation
+			join product on product.ID = reservation.ProductID
+			join party on party.ID = reservation.CustomerID
+		where reservation.State not in ('Initial', 'Cancelled', 'Final')
+			and ToDate <![CDATA[ < ]]> now()
+			and Emailaddress is not null
+		order by ToDate
+	</select>
+
+	<select id="flipkeyproperties" parameterType="Void" resultType="net.cbtltd.rest.flipkey.Updated">
+		select distinct 
+			ID as property_id, 
+			now() as last_update
+		from product
+		where State = 'Created'
+			and Type = 'Accommodation'
+		order by ID
+	</select>
+
+	<select id="flipkeylocation" parameterType="String" resultType="net.cbtltd.rest.flipkey.Location">
+		select distinct
+			location.ID, 
+			location.Country, 
+			country.Name as countryname,
+			location.Code,
+			location.Name, 
+			location.Region as subdivision,
+			region.Name as subdivisionname, 
+			Latitude, 
+			Longitude, 
+			Altitude
+		from location
+			join country on country.ID = location.Country
+			left join region on region.Country = location.Country 
+				and region.ID = location.Region
+		where location.ID = #{id,jdbcType=VARCHAR}
+	</select>
+
+	<select id="flipkeyavailability" parameterType="Void" resultType="net.cbtltd.rest.flipkey.ScheduleItem">
+		select distinct
+			ProductID as property_id, 
+			FromDate as arrivaldate, 
+			ToDate as departuredate
+		from reservation
+			where ToDate <![CDATA[ > ]]> now()
+				and reservation.State not in ('Initial', 'Cancelled', 'Final')
+		order by ProductID, FromDate, ToDate
+	</select>
+
+	<select id="flipkeyavailabilityproduct" parameterType="String" resultType="net.cbtltd.rest.flipkey.ScheduleItem">
+		select distinct
+			ProductID as property_id, 
+			FromDate as arrivaldate, 
+			ToDate as departuredate
+		from reservation
+			where ProductID = #{id}
+			order by ProductID, FromDate, ToDate
+	</select>
+	
+	<select id="flipkeyreservation" parameterType="net.cbtltd.rest.flipkey.ScheduleItem" resultType="net.cbtltd.rest.flipkey.ScheduleItem">
+		select distinct
+			reservation.ID as reservation_id, 
+			ProductID as property_id,
+			Emailaddress as emailaddress, 
+			FromDate as arrivaldate, 
+			ToDate as departuredate
+		from reservation
+			join party on party.ID = reservation.CustomerID
+		where ToDate <![CDATA[ >= ]]> #{arrivaldate}
+			and ToDate <![CDATA[ <= ]]> #{departuredate}
+			and reservation.State not in ('Initial', 'Cancelled', 'Final')
+			and Emailaddress is not null
+		order by ProductID, FromDate, ToDate
+	</select>
+	
+<!-- JSON Queries -->
+<!-- 	<select id="calendarwidget" parameterType="net.cbtltd.json.Parameter" resultType="net.cbtltd.json.calendar.CalendarWidgetItem"> -->
+<!-- 		select distinct timeline.Date, reservation.State from reservation -->
+<!--      		join timeline on timeline.Date <![CDATA[ >= ]]> FromDate -->
+<!-- 				and timeline.Date <![CDATA[ < ]]> ToDate -->
+<!-- 				and timeline.Date <![CDATA[ >= ]]> #{fromdate} -->
+<!-- 		where reservation.ProductID = #{id} -->
+<!-- 			and reservation.State not in ('Initial', 'Cancelled', 'Final') -->
+<!-- 		order by timeline.Date -->
+<!-- 	</select> -->
+
+	<select id="calendarwidget" parameterType="net.cbtltd.json.Parameter" resultType="net.cbtltd.json.calendar.CalendarWidgetItem">
+		select distinct timeline.Date as date, reservation.State from reservation
+     		join timeline on timeline.Date <![CDATA[ >= ]]> FromDate
+			and timeline.Date <![CDATA[ < ]]> ToDate
+			and timeline.Date <![CDATA[ >= ]]> #{fromdate}
+		where reservation.ProductID = #{id}
+			and reservation.State not in ('Initial', 'Cancelled', 'Final')
+		union
+		select distinct timeline.Date as date, reservation.State from reservation
+        	join product on product.PartofID = reservation.ProductID
+	     	join timeline on timeline.Date <![CDATA[ >= ]]> FromDate
+			and timeline.Date <![CDATA[ < ]]> ToDate
+			and timeline.Date <![CDATA[ >= ]]> #{fromdate}
+		where product.ID = #{id}
+			and reservation.State not in ('Initial', 'Cancelled', 'Final')
+		union
+		select distinct timeline.Date as date, reservation.State from reservation
+        	join product on product.ID = reservation.ProductID
+	     	join timeline on timeline.Date <![CDATA[ >= ]]> FromDate
+			and timeline.Date <![CDATA[ < ]]> ToDate
+			and timeline.Date <![CDATA[ >= ]]> #{fromdate}
+		where product.PartofID = #{id}
+			and reservation.State not in ('Initial', 'Cancelled', 'Final')
+		order by date
+	</select>
+	
+	<select id="calendarelement" parameterType="net.cbtltd.json.Parameter" resultType="net.cbtltd.rest.response.CalendarElement">
+		select distinct timeline.Date as date, reservation.State from reservation
+     		join timeline on timeline.Date <![CDATA[ >= ]]> FromDate
+			and timeline.Date <![CDATA[ < ]]> ToDate
+			and timeline.Date <![CDATA[ >= ]]> #{fromdate}
+		where reservation.ProductID = #{id}
+			and reservation.State not in ('Initial', 'Cancelled', 'Final')
+		union
+		select distinct timeline.Date as date, reservation.State from reservation
+        	join product on product.PartofID = reservation.ProductID
+	     	join timeline on timeline.Date <![CDATA[ >= ]]> FromDate
+			and timeline.Date <![CDATA[ < ]]> ToDate
+			and timeline.Date <![CDATA[ >= ]]> #{fromdate}
+		where product.ID = #{id}
+			and reservation.State not in ('Initial', 'Cancelled', 'Final')
+		union
+		select distinct timeline.Date as date, reservation.State from reservation
+        	join product on product.ID = reservation.ProductID
+	     	join timeline on timeline.Date <![CDATA[ >= ]]> FromDate
+			and timeline.Date <![CDATA[ < ]]> ToDate
+			and timeline.Date <![CDATA[ >= ]]> #{fromdate}
+		where product.PartofID = #{id}
+			and reservation.State not in ('Initial', 'Cancelled', 'Final')
+		order by date
+	</select>
+	
+	<select id="reversedCalendarElement" parameterType="net.cbtltd.json.Parameter" resultType="net.cbtltd.rest.response.CalendarElement">
+		select distinct timeline.Date as date, reservation.State from reservation
+     		join timeline on timeline.Date <![CDATA[ >= ]]> FromDate
+			and timeline.Date <![CDATA[ < ]]> ToDate
+			and timeline.Date <![CDATA[ >= ]]> #{fromdate}
+		where reservation.ProductID = #{id}
+			and reservation.State in ('Initial', 'Cancelled', 'Final')
+		union
+		select distinct timeline.Date as date, reservation.State from reservation
+        	join product on product.PartofID = reservation.ProductID
+	     	join timeline on timeline.Date <![CDATA[ >= ]]> FromDate
+			and timeline.Date <![CDATA[ < ]]> ToDate
+			and timeline.Date <![CDATA[ >= ]]> #{fromdate}
+		where product.ID = #{id}
+			and reservation.State in ('Initial', 'Cancelled', 'Final')
+		union
+		select distinct timeline.Date as date, reservation.State from reservation
+        	join product on product.ID = reservation.ProductID
+	     	join timeline on timeline.Date <![CDATA[ >= ]]> FromDate
+			and timeline.Date <![CDATA[ < ]]> ToDate
+			and timeline.Date <![CDATA[ >= ]]> #{fromdate}
+		where product.PartofID = #{id}
+			and reservation.State in ('Initial', 'Cancelled', 'Final')
+		order by date
+	</select>
+
+	<select id="enquirywidgetrq" parameterType="String" resultType="net.cbtltd.json.EnquiryWidgetItem">
+		select product.ID as productid, product.Name as productname, fromdate, todate, quote, deposit, deposit, reservation.currency, reservation.notes as message
+		from reservation
+			join product on product.ID = reservation.ProductID
+		where reservation.ID = #{id}
+	</select>
+
+	<sql id="jsonselect">
+		select
+			actor.Name as actorname,
+			agent.Name as agentname,
+			customer.Name as customername,
+			organization.FinanceID as financeid,
+			organization.Name as organizationname,
+			product.latitude,
+			product.longitude,
+			product.Name as productname,
+			product.Room as productroom,
+			reservation.actorid,
+			reservation.agentid,
+			reservation.arrivaltime,
+			reservation.cost,
+			reservation.currency,
+			reservation.customerid,
+			reservation.date,
+			reservation.departuretime,
+			reservation.deposit,
+			reservation.duedate,
+			reservation.fromdate,
+			reservation.id,
+			reservation.name,
+			reservation.notes,
+			reservation.organizationid,
+			reservation.price,
+			reservation.productid,
+			reservation.quote,
+			reservation.servicefrom,
+			reservation.serviceto,
+			reservation.state,
+			reservation.termsaccepted,
+			reservation.todate,
+			reservation.unit,
+			if(customer.ID is null, agent.Emailaddress, customer.Emailaddress) as emailaddress,
+			if(customer.ID is null, agent.Name, customer.Name) as partyname,
+			quote * deposit / 100.0 as amount
+		from reservation
+			join product on product.ID = reservation.ProductID
+			left join party as actor on actor.ID = reservation.ActorID
+			left join party as agent on agent.ID = reservation.AgentID
+			left join party as customer on customer.ID = reservation.CustomerID
+			left join party as organization on organization.ID = reservation.OrganizationID
+	</sql>
+
+	<select id="listbyparentid" parameterType="String" resultType="net.cbtltd.json.reservation.ReservationWidgetItem">
+		<include refid="jsonselect" />
+		where reservation.ParentID = #{parentid}
+	</select>
+
+	<select id="readwidget" parameterType="net.cbtltd.json.Parameter" resultType="net.cbtltd.json.reservation.ReservationWidgetItem">
+		<include refid="jsonselect" />
+		where reservation.Name = #{id}
+		<if test="organizationid != null">
+			and reservation.OrganizationID = #{organizationid}
+		</if>
+	</select>
+
+	<update id="offline" parameterType="net.cbtltd.json.reservation.ReservationWidgetItem">
+		update reservation
+		set 
+			Deposit = #{deposit,jdbcType=DOUBLE},
+			Quote = #{quote,jdbcType=DOUBLE},
+			Extra = #{extra,jdbcType=DOUBLE},
+			Cost = #{cost,jdbcType=DOUBLE},
+			Notes = #{notes,jdbcType=VARCHAR}
+		where reservation.Name = #{id}
+			and reservation.OrganizationID = #{organizationid}
+	</update>
+	
+<!-- KIGO SQL queries -->
+	<select id="kigoread" parameterType="Integer" resultType="Reservation">
+	    select
+		<include refid="columns" />
+	    from download 
+	    	join party 
+	    		on party.ID = download.HeadID 
+	    		and download.Link = 'KIGO_RESERVATION_ID'
+		where download.LineID = #{id}
+	</select>
+
+<!-- Foreign SQL queries -->
+	<select id="altread" parameterType="NameId" resultMap="ResultMap">
+	    select
+		<include refid="columns" />
+	    from reservation 
+		where AltPartyId = #{name}
+			and AltID = #{id}
+	</select>
+	
+	<select id="altreadforchannel" parameterType="Reservation" resultMap="ResultMap">
+	    select
+		<include refid="columns" />
+	    from reservation 
+		where AgentID = #{agentid}
+			and AltID = #{altid}
+	</select>
+	
+	
+	<select id="reserveredDatesForPropertyid" parameterType="Reservation"  resultMap="ResultMap">
+        select reservation.ID, reservation.FromDate, reservation.ToDate, reservation.productID
+		from reservation
+		where ProductID = #{productid}
+		and FromDate <![CDATA[ < ]]> #{todate}
+		and ToDate <![CDATA[ > ]]> #{fromdate}
+		and State not in ('Initial', 'Cancelled', 'Final')
+	union
+		select reservation.ID, reservation.FromDate, reservation.ToDate, reservation.productID
+		from reservation
+			join product on product.ID = reservation.ProductID
+		where product.PartofID = #{productid}
+		and reservation.FromDate <![CDATA[ < ]]> #{todate}
+		and reservation.ToDate <![CDATA[ > ]]> #{fromdate}
+		and reservation.State not in ('Initial', 'Cancelled', 'Final')
+	union
+		select reservation.ID, reservation.FromDate, reservation.ToDate, reservation.productID
+		from reservation
+			join product on product.PartofID = reservation.ProductID
+		where product.ID = #{productid}
+		and reservation.FromDate <![CDATA[ < ]]> #{todate}
+		and reservation.ToDate <![CDATA[ > ]]> #{fromdate}
+		and reservation.State not in ('Initial', 'Cancelled', 'Final')
+		
+	</select>
+	
+	<select id="productApiReserveredDates" parameterType="Reservation"  resultMap="ResultMap">
+        select 
+        <include refid="columns" />
+		from reservation
+		where ProductID = #{productid,jdbcType=INTEGER}
+		and State in ('Closed')
+		order by FromDate asc
+	</select>
+	
+	<!-- fetch all booked dates of the property -->
+	<select id="reservedDateForProperty" parameterType="String" resultType="java.util.Date">
+		select   DATE_FORMAT(FromDate, '%Y-%m-%d') as FromDate
+		from reservation
+		where
+<!-- 		State not in ('Initial', 'Cancelled', 'Final')	  	and  -->
+		ProductID = #{productid,jdbcType=INTEGER}
+	    order by  FromDate asc;
+	</select>
+	
+	<delete id="deleteDate" parameterType="String">
+		delete from reservation
+		where ProductID = #{productid,jdbcType=INTEGER}
+		and DATE_FORMAT(FromDate, '%Y-%m-%d') = DATE_FORMAT(#{date,jdbcType=DATE}, '%Y-%m-%d')
+	</delete>
+	
+	
+	
+</mapper>

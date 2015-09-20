@@ -1,0 +1,244 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="net.cbtltd.server.api.ContractMapper">
+
+	<resultMap id="ResultMap" type="Contract">
+		<id column="contract.ID" jdbcType="INTEGER" property="id" />
+		<result column="contract.OrganizationID" jdbcType="INTEGER" property="organizationid" />
+		<result column="contract.ActorID" jdbcType="INTEGER" property="actorid" />
+		<result column="contract.PartyID" jdbcType="INTEGER" property="partyid" />
+		<result column="contract.Name" jdbcType="VARCHAR" property="name" />
+		<result column="contract.State" jdbcType="VARCHAR" property="state" />
+		<result column="contract.Process" jdbcType="VARCHAR" property="process" />
+		<result column="contract.Discount" jdbcType="INTEGER" property="discount" />
+		<result column="contract.CreditTerm" jdbcType="VARCHAR" property="creditterm" />
+		<result column="contract.CreditLimit" jdbcType="DOUBLE" property="creditlimit" />
+		<result column="contract.Target" jdbcType="DOUBLE" property="target" />
+		<result column="contract.Currency" jdbcType="VARCHAR" property="currency" />
+		<result column="contract.Date" jdbcType="DATE" property="date" />
+		<result column="contract.DueDate" jdbcType="DATE" property="duedate" />
+		<result column="contract.DoneDate" jdbcType="DATE" property="donedate" />
+		<result column="contract.Notes" jdbcType="VARCHAR" property="notes" />
+		<result column="party.Name" jdbcType="VARCHAR" property="partyname" />
+	</resultMap>
+
+	<sql id="columns">
+		contract.ID, contract.OrganizationID, contract.PartyID, contract.ActorID,
+		contract.Name, contract.State, contract.Process, contract.Currency, contract.CreditTerm,
+		contract.CreditLimit, contract.Target, contract.Discount, contract.Date, contract.DueDate, 
+		contract.DoneDate, contract.Notes, party.Name as partyname
+	</sql>
+
+	<select id="read" parameterType="String" resultMap="ResultMap">
+		select
+		<include refid="columns" />
+		from contract
+		join party on party.ID = contract.PartyID
+		where ID = #{id,jdbcType=INTEGER}
+	</select>
+
+	<select id="readbyexample" parameterType="Contract" resultMap="ResultMap">
+		select
+		<include refid="columns" />
+		from contract
+			join party on party.ID = contract.PartyID
+		where contract.Name = #{name}
+			and contract.OrganizationID = #{organizationid}
+			and contract.PartyID = #{partyid}
+			and contract.State not in ('Initial', 'Final')
+			limit 1
+	</select>
+
+	<delete id="delete" parameterType="String">
+		delete from contract
+		where id = #{id,jdbcType=INTEGER}
+	</delete>
+
+	<insert id="create" parameterType="Contract" useGeneratedKeys="true" keyProperty="id">
+		insert into contract (
+			OrganizationID, 
+			ActorID, 
+			PartyID,
+			Name, 
+			State,
+			Process,
+			Discount, 
+			CreditTerm, 
+			CreditLimit,
+			Target, 
+			Currency, 
+			Date,
+			DueDate, 
+			DoneDate, 
+			Notes
+		)
+		values (
+			#{organizationid,jdbcType=INTEGER},
+			#{actorid,jdbcType=INTEGER},
+			#{partyid,jdbcType=INTEGER},
+			#{name,jdbcType=VARCHAR}, 
+			#{state,jdbcType=VARCHAR},
+			#{process,jdbcType=VARCHAR},
+			#{discount,jdbcType=INTEGER},
+			#{creditterm,jdbcType=VARCHAR},
+			#{creditlimit,jdbcType=DOUBLE},
+			#{target,jdbcType=DOUBLE}, 
+			#{currency,jdbcType=VARCHAR},
+			#{date,jdbcType=DATE},
+			#{duedate,jdbcType=DATE},
+			#{donedate,jdbcType=DATE},
+			#{notes,jdbcType=VARCHAR}
+		)
+	</insert>
+
+	<update id="update" parameterType="Contract">
+		update contract
+		<set>
+			<if test="organizationid != null">
+				OrganizationID = #{organizationid,jdbcType=INTEGER},
+			</if>
+			<if test="actorid != null">
+				ActorID = #{actorid,jdbcType=INTEGER},
+			</if>
+			<if test="partyid != null">
+				PartyID = #{partyid,jdbcType=INTEGER},
+			</if>
+			<if test="name != null">
+				Name = #{name,jdbcType=VARCHAR},
+			</if>
+			<if test="state != null">
+				State = #{state,jdbcType=VARCHAR},
+			</if>
+			<if test="process != null">
+				Process = #{process,jdbcType=VARCHAR},
+			</if>
+			<if test="discount != null">
+				Discount = #{discount,jdbcType=INTEGER},
+			</if>
+			<if test="creditterm != null">
+				CreditTerm = #{creditterm,jdbcType=VARCHAR},
+			</if>
+			<if test="creditlimit != null">
+				CreditLimit = #{creditlimit,jdbcType=DOUBLE},
+			</if>
+			<if test="target != null">
+				Target = #{target,jdbcType=DOUBLE},
+			</if>
+			<if test="currency != null">
+				Currency = #{currency,jdbcType=VARCHAR},
+			</if>
+			<if test="date != null">
+				Date = #{date,jdbcType=DATE},
+			</if>
+			<if test="duedate != null">
+				DueDate = #{duedate,jdbcType=DATE},
+			</if>
+			<if test="donedate != null">
+				DoneDate = #{donedate,jdbcType=DATE},
+			</if>
+			<if test="notes != null">
+				Notes = #{notes,jdbcType=VARCHAR},
+			</if>
+		</set>
+		where ID = #{id,jdbcType=INTEGER}
+	</update>
+
+	<update id="updateByPrimaryKey" parameterType="Contract">
+		update contract
+		set 
+			OrganizationID = #{organizationid,jdbcType=INTEGER},
+			ActorID = #{actorid,jdbcType=INTEGER},
+			PartyID = #{partyid,jdbcType=INTEGER},
+			Name = #{name,jdbcType=VARCHAR},
+			State = #{state,jdbcType=VARCHAR},
+			Process = #{process,jdbcType=VARCHAR},
+			Discount = #{discount,jdbcType=INTEGER},
+			CreditTerm = #{creditterm,jdbcType=VARCHAR},
+			CreditLimit = #{creditlimit,jdbcType=DOUBLE},
+			Target = #{target,jdbcType=DOUBLE},
+			Currency = #{currency,jdbcType=VARCHAR},
+			Date = #{date,jdbcType=DATE},
+			DueDate = #{duedate,jdbcType=DATE},
+			DoneDate = #{donedate,jdbcType=DATE},
+			Notes = #{notes,jdbcType=VARCHAR}
+		where ID = #{id,jdbcType=INTEGER}
+	</update>
+
+	<select id="nameidbyid" parameterType="NameIdAction" resultType="NameId">
+		select distinct Name, ID
+		from contract
+		where ID = #{id,jdbcType=INTEGER}
+	</select>
+
+	<select id="nameidbyname" parameterType="NameIdAction" resultType="NameId">
+		select distinct Name, ID
+		from contract
+		where Name <![CDATA[ >= ]]> #{name}
+		<if test="organizationid != null">
+			and OrganizationID = #{organizationid}
+		</if>
+		<if test="state == null">
+			and State not in ('Initial', 'Final')
+		</if>
+		<if test="state != null">
+			and State in (${state})
+		</if>
+		order by Name
+		limit 0, #{numrows}
+	</select>
+
+	<select id="count" parameterType="Contract" resultType="Integer">
+		select count(*)
+		from contract
+		where contract.Type = #{type}
+		and OrganizationID = #{organizationid}
+	</select>
+
+	<select id="list" parameterType="Contract" resultType="Contract">
+		select
+		<include refid="columns" />
+		from contract
+			join party on party.ID = contract.PartyID
+		where contract.Type = #{type}
+			and OrganizationID = #{organizationid}
+			and contract.State not in ('Initial', 'Final')
+		order by ${orderby}
+		limit #{startrow}, #{numrows}
+	</select>
+	
+	<select id="contractcount" parameterType="HasTableService" resultType="Integer">
+		select count(*)
+		from contract
+		where contract.OrganizationID = #{id}
+			and contract.State not in ('Initial', 'Final')
+	</select>
+	
+	<select id="contractlist" parameterType="HasTableService" resultMap="ResultMap">
+		select
+		<include refid="columns" />
+		from contract
+			join party on party.ID = contract.PartyID
+		where contract.OrganizationID = #{id}
+			and contract.State not in ('Initial', 'Final')
+		order by ${orderby}
+		limit #{startrow}, #{numrows}
+	</select>
+	
+	<select id="discountcount" parameterType="HasTableService" resultType="Integer">
+		select count(*)
+		from contract
+		where contract.PartyID = #{id}
+<!--			and contract.State in ('Created', 'Requested')-->
+	</select>
+	
+	<select id="discountlist" parameterType="HasTableService" resultMap="ResultMap">
+		select
+		<include refid="columns" />
+		from contract
+			join party on party.ID = contract.OrganizationID
+		where contract.PartyID = #{id}
+		order by ${orderby}
+		limit #{startrow}, #{numrows}
+	</select>
+
+</mapper>

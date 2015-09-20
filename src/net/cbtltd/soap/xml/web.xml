@@ -1,0 +1,24 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<web-app>
+	<display-name>Razor XML Services</display-name>
+	<description>Razor Web</description>
+
+	<servlet>
+		<servlet-name>XMLServer</servlet-name>
+		<display-name>XML Server</display-name>
+		<servlet-class>
+			org.apache.cxf.transport.servlet.CXFServlet
+        </servlet-class>
+		<init-param>
+			<param-name>config-location</param-name>
+			<param-value>/WEB-INF/beans.xml</param-value>
+		</init-param>
+		<load-on-startup>2</load-on-startup>
+	</servlet>
+
+	<servlet-mapping>
+		<servlet-name>XMLServer</servlet-name>
+		<url-pattern>/*</url-pattern>
+	</servlet-mapping>
+	<!-- -->
+</web-app>

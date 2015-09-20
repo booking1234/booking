@@ -1,0 +1,224 @@
+<xs:schema attributeFormDefault="unqualified" elementFormDefault="qualified" xmlns:xs="http://www.w3.org/2001/XMLSchema">
+  <xs:element name="RTRProperties">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element name="Property" maxOccurs="unbounded" minOccurs="0">
+          <xs:complexType>
+            <xs:sequence>
+              <xs:element name="PropertyManager">
+                <xs:complexType>
+                  <xs:simpleContent>
+                    <xs:extension base="xs:string">
+                      <xs:attribute type="xs:short" name="ID" use="optional"/>
+                      <xs:attribute type="xs:string" name="Name" use="optional"/>
+                      <xs:attribute type="xs:string" name="Office" use="optional"/>
+                      <xs:attribute type="xs:string" name="Street" use="optional"/>
+                      <xs:attribute type="xs:string" name="City" use="optional"/>
+                      <xs:attribute type="xs:string" name="State-Province" use="optional"/>
+                      <xs:attribute type="xs:short" name="Zip" use="optional"/>
+                      <xs:attribute type="xs:string" name="Country" use="optional"/>
+                      <xs:attribute type="xs:long" name="Phone1" use="optional"/>
+                      <xs:attribute type="xs:string" name="Phone2" use="optional"/>
+                      <xs:attribute type="xs:long" name="Fax" use="optional"/>
+                      <xs:attribute type="xs:string" name="Email" use="optional"/>
+                      <xs:attribute type="xs:anyURI" name="WebSite" use="optional"/>
+                    </xs:extension>
+                  </xs:simpleContent>
+                </xs:complexType>
+              </xs:element>
+              <xs:element name="PropertyDetails">
+                <xs:complexType>
+                  <xs:sequence>
+                    <xs:element type="xs:string" name="PropertyName"/>
+                    <xs:element type="xs:string" name="Description"/>
+                    <xs:element type="xs:string" name="PropertyType"/>
+                    <xs:element type="xs:string" name="Street"/>
+                    <xs:element type="xs:string" name="City"/>
+                    <xs:element type="xs:string" name="State"/>
+                    <xs:element type="xs:short" name="Zip"/>
+                    <xs:element type="xs:string" name="Country"/>
+                    <xs:element type="xs:string" name="Unit"/>
+                    <xs:element type="xs:string" name="Floor"/>
+                    <xs:element type="xs:byte" name="OccupancyLimit"/>
+                    <xs:element type="xs:byte" name="TotalSleeps"/>
+                    <xs:element type="xs:string" name="Smoking"/>
+                    <xs:element type="xs:byte" name="BedRooms"/>
+                    <xs:element type="xs:byte" name="Baths"/>
+                    <xs:element type="xs:byte" name="HalfBaths"/>
+                    <xs:element type="xs:byte" name="ThreeQuarterBaths"/>
+                    <xs:element type="xs:string" name="FeeDescription"/>
+                    <xs:element type="xs:string" name="RateDescription"/>
+                    <xs:element name="Amenities">
+                      <xs:complexType>
+                        <xs:sequence>
+                          <xs:element name="Amenity" maxOccurs="unbounded" minOccurs="0">
+                            <xs:complexType>
+                              <xs:simpleContent>
+                                <xs:extension base="xs:string">
+                                  <xs:attribute type="xs:short" name="ID" use="optional"/>
+                                  <xs:attribute type="xs:string" name="Type" use="optional"/>
+                                  <xs:attribute type="xs:string" name="Label" use="optional"/>
+                                  <xs:attribute type="xs:byte" name="Value" use="optional"/>
+                                  <xs:attribute type="xs:string" name="Description" use="optional"/>
+                                </xs:extension>
+                              </xs:simpleContent>
+                            </xs:complexType>
+                          </xs:element>
+                        </xs:sequence>
+                      </xs:complexType>
+                    </xs:element>
+                    <xs:element name="LocationCode">
+                      <xs:complexType>
+                        <xs:simpleContent>
+                          <xs:extension base="xs:string">
+                            <xs:attribute type="xs:short" name="ID" use="optional"/>
+                          </xs:extension>
+                        </xs:simpleContent>
+                      </xs:complexType>
+                    </xs:element>
+                    <xs:element name="StreetCode">
+                      <xs:complexType>
+                        <xs:simpleContent>
+                          <xs:extension base="xs:string">
+                            <xs:attribute type="xs:short" name="ID" use="optional"/>
+                          </xs:extension>
+                        </xs:simpleContent>
+                      </xs:complexType>
+                    </xs:element>
+                    <xs:element name="CondoCode" minOccurs="0">
+                      <xs:complexType>
+                        <xs:simpleContent>
+                          <xs:extension base="xs:string">
+                            <xs:attribute type="xs:byte" name="ID" use="optional"/>
+                          </xs:extension>
+                        </xs:simpleContent>
+                      </xs:complexType>
+                    </xs:element>
+                    <xs:element name="Geography">
+                      <xs:complexType>
+                        <xs:simpleContent>
+                          <xs:extension base="xs:string">
+                            <xs:attribute type="xs:short" name="ID" use="optional"/>
+                          </xs:extension>
+                        </xs:simpleContent>
+                      </xs:complexType>
+                    </xs:element>
+                    <xs:element name="PropertyURL">
+                      <xs:complexType>
+                        <xs:simpleContent>
+                          <xs:extension base="xs:anyURI">
+                            <xs:attribute type="xs:string" name="PropertyURLSource" use="optional"/>
+                          </xs:extension>
+                        </xs:simpleContent>
+                      </xs:complexType>
+                    </xs:element>
+                    <xs:element name="Photos">
+                      <xs:complexType>
+                        <xs:sequence>
+                          <xs:element name="Image" maxOccurs="unbounded" minOccurs="0">
+                            <xs:complexType>
+                              <xs:simpleContent>
+                                <xs:extension base="xs:anyURI">
+                                  <xs:attribute type="xs:byte" name="ID" use="optional"/>
+                                  <xs:attribute type="xs:string" name="Caption" use="optional"/>
+                                </xs:extension>
+                              </xs:simpleContent>
+                            </xs:complexType>
+                          </xs:element>
+                        </xs:sequence>
+                        <xs:attribute type="xs:string" name="PhotoSource" use="optional"/>
+                      </xs:complexType>
+                    </xs:element>
+                    <xs:element type="xs:string" name="Activities"/>
+                    <xs:element name="Views">
+                      <xs:complexType mixed="true">
+                        <xs:sequence>
+                          <xs:element name="View" minOccurs="0">
+                            <xs:complexType>
+                              <xs:simpleContent>
+                                <xs:extension base="xs:string">
+                                  <xs:attribute type="xs:string" name="Name" use="optional"/>
+                                  <xs:attribute type="xs:string" name="Description" use="optional"/>
+                                  <xs:attribute type="xs:byte" name="ID" use="optional"/>
+                                </xs:extension>
+                              </xs:simpleContent>
+                            </xs:complexType>
+                          </xs:element>
+                        </xs:sequence>
+                      </xs:complexType>
+                    </xs:element>
+                    <xs:element name="Deposits" minOccurs="0">
+                      <xs:complexType>
+                        <xs:sequence>
+                          <xs:element name="Deposit" maxOccurs="unbounded" minOccurs="0">
+                            <xs:complexType>
+                              <xs:simpleContent>
+                                <xs:extension base="xs:string">
+                                  <xs:attribute type="xs:string" name="Name" use="optional"/>
+                                  <xs:attribute type="xs:float" name="Amount" use="optional"/>
+                                </xs:extension>
+                              </xs:simpleContent>
+                            </xs:complexType>
+                          </xs:element>
+                        </xs:sequence>
+                      </xs:complexType>
+                    </xs:element>
+                    <xs:element type="xs:string" name="PropertyRating"/>
+                  </xs:sequence>
+                </xs:complexType>
+              </xs:element>
+              <xs:element name="AvailabilityInfo">
+                <xs:complexType mixed="true">
+                  <xs:sequence>
+                    <xs:element name="Availability" maxOccurs="unbounded" minOccurs="0">
+                      <xs:complexType>
+                        <xs:simpleContent>
+                          <xs:extension base="xs:string">
+                            <xs:attribute type="xs:date" name="CheckInDate" use="optional"/>
+                            <xs:attribute type="xs:date" name="CheckOutDate" use="optional"/>
+                            <xs:attribute type="xs:string" name="Status" use="optional"/>
+                            <xs:attribute type="xs:float" name="AverageRate" use="optional"/>
+                            <xs:attribute type="xs:float" name="MinimumRate" use="optional"/>
+                            <xs:attribute type="xs:float" name="MaximumRate" use="optional"/>
+                          </xs:extension>
+                        </xs:simpleContent>
+                      </xs:complexType>
+                    </xs:element>
+                  </xs:sequence>
+                </xs:complexType>
+              </xs:element>
+              <xs:element name="RateInfo">
+                <xs:complexType mixed="true">
+                  <xs:sequence>
+                    <xs:element name="Rate" maxOccurs="unbounded" minOccurs="0">
+                      <xs:complexType>
+                        <xs:simpleContent>
+                          <xs:extension base="xs:string">
+                            <xs:attribute type="xs:string" name="Description" use="optional"/>
+                            <xs:attribute type="xs:string" name="Rules" use="optional"/>
+                            <xs:attribute type="xs:float" name="Rate" use="optional"/>
+                            <xs:attribute type="xs:date" name="CheckInDate" use="optional"/>
+                            <xs:attribute type="xs:date" name="CheckOutDate" use="optional"/>
+                            <xs:attribute type="xs:byte" name="MinimumStay" use="optional"/>
+                            <xs:attribute type="xs:float" name="DailyRate" use="optional"/>
+                            <xs:attribute type="xs:byte" name="CheckInDay" use="optional"/>
+                          </xs:extension>
+                        </xs:simpleContent>
+                      </xs:complexType>
+                    </xs:element>
+                  </xs:sequence>
+                </xs:complexType>
+              </xs:element>
+            </xs:sequence>
+            <xs:attribute type="xs:short" name="ReferenceID" use="optional"/>
+            <xs:attribute type="xs:short" name="PropertyID" use="optional"/>
+            <xs:attribute type="xs:string" name="ExternalReferenceID" use="optional"/>
+            <xs:attribute type="xs:short" name="PropertyManagerID" use="optional"/>
+          </xs:complexType>
+        </xs:element>
+      </xs:sequence>
+      <xs:attribute type="xs:byte" name="Version"/>
+      <xs:attribute type="xs:dateTime" name="TimeStamp"/>
+    </xs:complexType>
+  </xs:element>
+</xs:schema>

@@ -1,0 +1,246 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<wsdl:definitions 
+	xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/"
+	xmlns:ota="http://www.opentravel.org/OTA/2003/05" 
+	xmlns:xs="http://www.w3.org/2001/XMLSchema"
+	targetNamespace="http://www.opentravel.org/OTA/2003/05" name="RazorService">
+	
+	<!-- Define data types (import OTA schemas) -->
+	<wsdl:types>
+	
+		<xs:schema>
+			<xs:import namespace="http://www.opentravel.org/OTA/2003/05"
+				schemaLocation="http://www.opentravel.org/2008B/OTA_CancelRQ.xsd" />
+		</xs:schema>
+		<xs:schema>
+			<xs:import namespace="http://www.opentravel.org/OTA/2003/05"
+				schemaLocation="http://www.opentravel.org/2008B/OTA_CancelRS.xsd" />
+		</xs:schema>
+		
+		<xs:schema>
+			<xs:import namespace="http://www.opentravel.org/OTA/2003/05"
+				schemaLocation="http://www.opentravel.org/2008B/OTA_HotelAvailRQ.xsd" />
+		</xs:schema>
+		<xs:schema>
+			<xs:import namespace="http://www.opentravel.org/OTA/2003/05"
+				schemaLocation="http://www.opentravel.org/2008B/OTA_HotelAvailRS.xsd" />
+		</xs:schema>
+		
+		<xs:schema>
+			<xs:import namespace="http://www.opentravel.org/OTA/2003/05"
+				schemaLocation="http://www.opentravel.org/2008B/OTA_HotelDescriptiveInfoRQ.xsd" />
+		</xs:schema>
+		<xs:schema>
+			<xs:import namespace="http://www.opentravel.org/OTA/2003/05"
+				schemaLocation="http://www.opentravel.org/2008B/OTA_HotelDescriptiveInfoRS.xsd" />
+		</xs:schema>
+
+		<xs:schema>
+			<xs:import namespace="http://www.opentravel.org/OTA/2003/05"
+				schemaLocation="http://www.opentravel.org/2008B/OTA_HotelDescriptiveContentNotifRQ.xsd" />
+		</xs:schema>
+		<xs:schema>
+			<xs:import namespace="http://www.opentravel.org/OTA/2003/05"
+				schemaLocation="http://www.opentravel.org/2008B/OTA_HotelDescriptiveContentNotifRS.xsd" />
+		</xs:schema>
+		
+		<xs:schema>
+			<xs:import namespace="http://www.opentravel.org/OTA/2003/05"
+				schemaLocation="http://www.opentravel.org/2008B/OTA_HotelRatePlanRQ.xsd" />
+		</xs:schema>
+		<xs:schema>
+			<xs:import namespace="http://www.opentravel.org/OTA/2003/05"
+				schemaLocation="http://www.opentravel.org/2008B/OTA_HotelRatePlanRS.xsd" />
+		</xs:schema>
+		
+		<xs:schema>
+			<xs:import namespace="http://www.opentravel.org/OTA/2003/05"
+				schemaLocation="http://www.opentravel.org/2008B/OTA_HotelResNotifRQ.xsd" />
+		</xs:schema>
+		<xs:schema>
+			<xs:import namespace="http://www.opentravel.org/OTA/2003/05"
+				schemaLocation="http://www.opentravel.org/2008B/OTA_HotelResNotifRS.xsd" />
+		</xs:schema>
+		
+		<xs:schema>
+			<xs:import namespace="http://www.opentravel.org/OTA/2003/05"
+				schemaLocation="http://www.opentravel.org/2008B/OTA_HotelResRQ.xsd" />
+		</xs:schema>
+		<xs:schema>
+			<xs:import namespace="http://www.opentravel.org/OTA/2003/05"
+				schemaLocation="http://www.opentravel.org/2008B/OTA_HotelResRS.xsd" />
+		</xs:schema>
+		
+		<xs:schema>
+			<xs:import namespace="http://www.opentravel.org/OTA/2003/05"
+				schemaLocation="http://www.opentravel.org/2008B/OTA_HotelSearchRQ.xsd" />
+		</xs:schema>
+		<xs:schema>
+			<xs:import namespace="http://www.opentravel.org/OTA/2003/05"
+				schemaLocation="http://www.opentravel.org/2008B/OTA_HotelSearchRS.xsd" />
+		</xs:schema>
+		
+		<xs:schema>
+			<xs:import namespace="http://www.opentravel.org/OTA/2003/05"
+				schemaLocation="http://www.opentravel.org/2008B/OTA_PingRQ.xsd" />
+		</xs:schema>
+		<xs:schema>
+			<xs:import namespace="http://www.opentravel.org/OTA/2003/05"
+				schemaLocation="http://www.opentravel.org/2008B/OTA_PingRS.xsd" />
+		</xs:schema>
+		
+		<xs:schema>
+			<xs:import namespace="http://www.opentravel.org/OTA/2003/05"
+				schemaLocation="http://www.opentravel.org/2008B/OTA_ProfileCreateRQ.xsd" />
+		</xs:schema>
+		<xs:schema>
+			<xs:import namespace="http://www.opentravel.org/OTA/2003/05"
+				schemaLocation="http://www.opentravel.org/2008B/OTA_ProfileCreateRS.xsd" />
+		</xs:schema>
+		
+		<xs:schema>
+			<xs:import namespace="http://www.opentravel.org/OTA/2003/05"
+				schemaLocation="http://www.opentravel.org/2008B/OTA_ReadRQ.xsd" />
+		</xs:schema>
+		<xs:schema>
+			<xs:import namespace="http://www.opentravel.org/OTA/2003/05"
+				schemaLocation="http://www.opentravel.org/2008B/OTA_ResRetrieveRS.xsd" />
+		</xs:schema>
+		
+	</wsdl:types>
+	
+	<!-- Define request and response messages -->
+	
+	<wsdl:message name="CancelRQ">
+		<wsdl:part name="OTA_CancelRQ" element="ota:OTA_CancelRQ" />
+	</wsdl:message>
+	<wsdl:message name="CancelRS">
+		<wsdl:part name="OTA_CancelRS" element="ota:OTA_CancelRS" />
+	</wsdl:message>
+	
+	<wsdl:message name="HotelAvailRQ">
+		<wsdl:part name="OTA_HotelAvailRQ" element="ota:OTA_HotelAvailRQ" />
+	</wsdl:message>
+	<wsdl:message name="HotelAvailRS">
+		<wsdl:part name="OTA_HotelAvailRS" element="ota:OTA_HotelAvailRS" />
+	</wsdl:message>
+	
+	<wsdl:message name="HotelDescriptiveInfoRQ">
+		<wsdl:part name="OTA_HotelDescriptiveInfoRQ" element="ota:OTA_HotelDescriptiveInfoRQ" />
+	</wsdl:message>
+	<wsdl:message name="HotelDescriptiveInfoRS">
+		<wsdl:part name="OTA_HotelDescriptiveInfoRS" element="ota:OTA_HotelDescriptiveInfoRS" />
+	</wsdl:message>
+	
+	<wsdl:message name="HotelDescriptiveContentNotifRQ">
+		<wsdl:part name="OTA_HotelDescriptiveContentNotifRQ" element="ota:OTA_HotelDescriptiveContentNotifRQ" />
+	</wsdl:message>
+	<wsdl:message name="HotelDescriptiveContentNotifRS">
+		<wsdl:part name="OTA_HotelDescriptiveContentNotifRS" element="ota:OTA_HotelDescriptiveContentNotifRS" />
+	</wsdl:message>
+	
+	<wsdl:message name="HotelRatePlanRQ">
+		<wsdl:part name="OTA_HotelRatePlanRQ" element="ota:OTA_HotelRatePlanRQ" />
+	</wsdl:message>
+	<wsdl:message name="HotelRatePlanRS">
+		<wsdl:part name="OTA_HotelRatePlanRS" element="ota:OTA_HotelRatePlanRS" />
+	</wsdl:message>
+
+	<wsdl:message name="HotelResNotifRQ">
+		<wsdl:part name="OTA_HotelResNotifRQ" element="ota:OTA_HotelResNotifRQ" />
+	</wsdl:message>
+	<wsdl:message name="HotelResNotifRS">
+		<wsdl:part name="OTA_HotelResNotifRS" element="ota:OTA_HotelResNotifRS" />
+	</wsdl:message>
+
+	<wsdl:message name="HotelResRQ">
+		<wsdl:part name="OTA_HotelResRQ" element="ota:OTA_HotelResRQ" />
+	</wsdl:message>
+	<wsdl:message name="HotelResRS">
+		<wsdl:part name="OTA_HotelResRS" element="ota:OTA_HotelResRS" />
+	</wsdl:message>
+
+	<wsdl:message name="HotelSearchRQ">
+		<wsdl:part name="OTA_HotelSearchRQ" element="ota:OTA_HotelSearchRQ" />
+	</wsdl:message>
+	<wsdl:message name="HotelSearchRS">
+		<wsdl:part name="OTA_HotelSearchRS" element="ota:OTA_HotelSearchRS" />
+	</wsdl:message>
+		
+	<wsdl:message name="PingRQ">
+		<wsdl:part name="OTA_PingRQ" element="ota:OTA_PingRQ" />
+	</wsdl:message>
+	<wsdl:message name="PingRS">
+		<wsdl:part name="OTA_PingRS" element="ota:OTA_PingRS" />
+	</wsdl:message>
+		
+	<wsdl:message name="ProfileCreateRQ">
+		<wsdl:part name="OTA_ProfileCreateRQ" element="ota:OTA_ProfileCreateRQ" />
+	</wsdl:message>
+	<wsdl:message name="ProfileCreateRS">
+		<wsdl:part name="OTA_ProfileCreateRS" element="ota:OTA_ProfileCreateRS" />
+	</wsdl:message>
+		
+	<wsdl:message name="ReadRQ">
+		<wsdl:part name="OTA_ReadRQ" element="ota:OTA_ReadRQ" />
+	</wsdl:message>
+	<wsdl:message name="ResRetrieveRS">
+		<wsdl:part name="OTA_ResRetrieveRS" element="ota:OTA_ResRetrieveRS" />
+	</wsdl:message>
+
+	<!-- Define operation and reference messages-->
+	<wsdl:portType name="RazorPortType">
+	
+		<wsdl:operation name="CancelReservation">
+			<wsdl:input message="ota:CancelRQ" />
+			<wsdl:output message="ota:CancelRS" />
+<!--TODO			<wsdl:fault message="es:GetEndorsingBoarderFault"/>-->
+		</wsdl:operation>
+		
+		<wsdl:operation name="GetAvailability">
+			<wsdl:input message="ota:HotelAvailRQ" />
+			<wsdl:output message="ota:HotelAvailRS" />
+		</wsdl:operation>
+		
+		<wsdl:operation name="GetDescription">
+			<wsdl:input message="ota:HotelDescriptiveInfoRQ" />
+			<wsdl:output message="ota:HotelDescriptiveInfoRS" />
+		</wsdl:operation>
+		
+		<wsdl:operation name="SetDescription">
+			<wsdl:input message="ota:HotelDescriptiveContentNotifRQ" />
+			<wsdl:output message="ota:HotelDescriptiveContentNotifRS" />
+		</wsdl:operation>
+		
+		<wsdl:operation name="CreateReservation">
+			<wsdl:input message="ota:HotelResNotifRQ" />
+			<wsdl:output message="ota:HotelResNotifRS" />
+		</wsdl:operation>
+		
+		<wsdl:operation name="GetRate">
+			<wsdl:input message="ota:HotelRatePlanRQ" />
+			<wsdl:output message="ota:HotelRatePlanRS" />
+		</wsdl:operation>
+		
+		<wsdl:operation name="FindProperty">
+			<wsdl:input message="ota:HotelSearchRQ" />
+			<wsdl:output message="ota:HotelSearchRS" />
+		</wsdl:operation>
+		
+		<wsdl:operation name="Ping">
+			<wsdl:input message="ota:PingRQ" />
+			<wsdl:output message="ota:PingRS" />
+		</wsdl:operation>
+		
+		<wsdl:operation name="CreateParty">
+			<wsdl:input message="ota:ProfileCreateRQ" />
+			<wsdl:output message="ota:ProfileCreateRS" />
+		</wsdl:operation>
+		
+		<wsdl:operation name="GetReservation">
+			<wsdl:input message="ota:ReadRQ" />
+			<wsdl:output message="ota:ResRetrieveRS" />
+		</wsdl:operation>
+
+	</wsdl:portType>
+</wsdl:definitions>

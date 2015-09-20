@@ -1,0 +1,116 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="net.cbtltd.server.api.CurrencyMapper">
+
+<!-- 	<cache readOnly="true"/> -->
+
+	<resultMap id="ResultMap" type="Currency">
+		<id column="ID" jdbcType="VARCHAR" property="id" />
+		<result column="Name" jdbcType="VARCHAR" property="name" />
+		<result column="Number" jdbcType="VARCHAR" property="number" />
+		<result column="Decimals" jdbcType="TINYINT" property="decimals" />
+		<result column="Convertible" jdbcType="BIT" property="convertible" />
+		<result column="Paypal" jdbcType="BIT" property="paypal" />
+		<result column="Jetpay" jdbcType="BIT" property="jetpay" />
+	</resultMap>
+
+	<sql id="columns">
+		ID, Name, Number, Decimals, Convertible, Paypal, Jetpay
+	</sql>
+
+	<select id="read" parameterType="String" resultMap="ResultMap">
+		select
+		<include refid="columns" />
+		from currency
+		where ID = #{id,jdbcType=VARCHAR}
+	</select>
+
+	<delete id="delete" parameterType="String">
+		delete from currency
+		where ID = #{id,jdbcType=VARCHAR}
+	</delete>
+
+	<insert id="create" parameterType="Currency">
+		insert into currency (ID, Name, Number, Decimals, Convertible, Paypal, Jetpay)
+		values (
+			#{id,jdbcType=VARCHAR}, 
+			#{name,jdbcType=VARCHAR},
+			#{number,jdbcType=VARCHAR},
+			#{decimals,jdbcType=TINYINT},
+			#{convertible,jdbcType=BIT},
+			#{paypal,jdbcType=BIT},
+			#{jetpay,jdbcType=BIT}
+		)
+	</insert>
+
+	<update id="update" parameterType="Currency">
+	update currency
+	set Name = #{name,jdbcType=VARCHAR},
+	Number = #{number,jdbcType=VARCHAR},
+	Decimals = #{decimals,jdbcType=TINYINT}
+	Convertible = #{convertible,jdbcType=BIT}
+	Paypal = #{paypal,jdbcType=BIT}
+	Jetpay = #{jetpay,jdbcType=BIT}
+	where ID = #{id,jdbcType=VARCHAR}
+	</update>
+	
+	<select id="nameidbyid" parameterType="NameIdAction" resultType="NameId">
+		select distinct Name, ID
+		from currency
+		where ID = #{id}
+	</select>
+
+	<select id="nameidbyname" parameterType="NameIdAction" resultType="NameId">
+		select distinct Name, ID
+		from currency
+		<if test="organizationid != null">
+		join relation on Link = 'Organization Currency'
+			and LineID = ID 
+			and HeadID = #{organizationid}
+		</if>
+		where Name <![CDATA[ >= ]]> #{name}
+		<if test="ids != null">
+			and ID in (${ids})
+		</if>
+		order by Name
+		limit 0, #{numrows}
+	</select>
+
+	<select id="nameidbyrate" parameterType="NameIdAction" resultType="NameId">
+		select distinct Name, ID
+		from currency
+		where Convertible = 1
+<!-- 		where ID in ('AUD','BGN','BRL','CAD','CHF','CNY','CZK','DKK','EUR','GBP','HKD','HRK','HUF','IDR','ISK','JPY','KRW','LTL','LVL','MXN','MYR','NOK','NZD','PHP','PLN','RON','RUB','SEK','SGD','SKK','THB','TRY','USD','ZAR') -->
+		order by Name
+	</select>
+
+	<select id="nameidbypaypal" parameterType="NameIdAction" resultType="NameId">
+		select distinct Name, ID
+		from currency
+		where Paypal = 1
+		order by Name
+	</select>
+
+	<select id="nameidbyjetpay" parameterType="NameIdAction" resultType="NameId">
+		select distinct Name, ID
+		from currency
+		where Jetpay = 1
+		order by Name
+	</select>
+
+<!-- JSON SQL queries -->
+	<select id="nameidwidget" parameterType="net.cbtltd.json.Parameter" resultType="net.cbtltd.json.nameid.NameIdWidgetItem">
+		select distinct Name, ID
+		from currency
+		<if test="organizationid != null">
+			join relation on Link = 'Organization Currency'
+			and LineID = ID 
+			and HeadID = #{organizationid}
+		</if>
+		where Convertible = 1
+		<if test="id != null">
+			and ID in (${id})
+		</if>
+		order by Name
+	</select>
+</mapper>

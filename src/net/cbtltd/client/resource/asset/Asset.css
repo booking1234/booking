@@ -1,0 +1,85 @@
+.attributeStyle {
+	height: 480px;
+	width: 320px;
+}
+
+.descriptionField {
+	height: 505px;
+	width: 428px;
+	white-space: pre-wrap;
+	color: gray;
+	background: white;
+	border: 0;
+}
+
+.latitudeLabel {
+	width: 130px;
+	margin: 4px;
+}
+.linenchangeField {font-size: 90%;}
+.locationField {
+	width: 452px;
+	margin: 1px;
+	padding: 2px;
+}
+
+.mapStyle {
+	height: 500px;
+	width: 750px;
+}
+
+.offlineField {
+	width: 140px;
+	color: gray;
+}
+.offlineLabel {
+	margin-top: 2px;
+	margin-left: 10px;
+	color: gray;
+}
+.productTable {padding-right: 10px;}
+
+.productStyle {
+	margin-right: 0;
+	width: 295px;
+}
+
+.ratingSlider {width: 180px;}
+
+.servicelabelStyle {
+	margin-top: 10px;
+	font-size: 120%;
+	font-weight: bold;
+}
+.servicepriceEmpty {
+	margin: 0;
+	padding: 10px;
+	font-size: 110%;
+}
+.servicepriceLabel {
+	font-size: 120%;
+	font-weight: bold;
+}
+.servicetextStyle {
+	height: 65px;
+	width: 315px;
+}
+
+.spinnerField {width: 122px;}
+
+.stackStyle {
+	height: 675px;
+	width: 750px;
+	margin-top: 10px;
+}
+
+.textField {
+	position: relative;
+	height: 226px;
+	width: 360px;
+	white-space: pre-wrap;
+	color: gray;
+	background: white;
+	border: 1px solid gray;
+	padding: 1px;
+}

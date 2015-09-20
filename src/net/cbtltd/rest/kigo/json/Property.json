@@ -1,0 +1,20 @@
+{ "API_CALL_ID" : "20120618155426-4ba24f7ade073c38ab441af9568dd7a41fa619e290ef604cdba770da863bcde2",
+  "API_METHOD" : "listProperties",
+  "API_REPLY" : [ { "PROP_ID" : 7861,
+        "PROP_INSTANT_BOOK" : true,
+        "PROP_NAME" : "P1 campsbayterrace.com",
+        "PROP_PROVIDER_OWNER_ID" : null,
+        "PROP_PROVIDER_RA_ID" : 262
+      },
+      { "PROP_ID" : 7862,
+        "PROP_INSTANT_BOOK" : true,
+        "PROP_NAME" : "P2 campsbayterrace.com",
+        "PROP_PROVIDER_OWNER_ID" : null,
+        "PROP_PROVIDER_RA_ID" : 262
+      }
+    ],
+  "API_RESULT_CODE" : "E_OK",
+  "API_RESULT_TEXT" : "",
+  "API_REVISION" : 9,
+  "API_VERSION" : 1
+}

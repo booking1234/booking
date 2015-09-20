@@ -1,0 +1,89 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="net.cbtltd.server.api.RouteMapper">
+
+	<cache readOnly="true"/>
+
+	<resultMap id="ResultMap" type="Route">
+		<id column="ID" jdbcType="INTEGER" property="id" />
+		<result column="FromID" jdbcType="INTEGER" property="fromid" />
+		<result column="ToID" jdbcType="INTEGER" property="toid" />
+		<result column="Name" jdbcType="VARCHAR" property="name" />
+		<result column="State" jdbcType="VARCHAR" property="state" />
+		<result column="Distance" jdbcType="DOUBLE" property="distance" />
+	</resultMap>
+
+	<sql id="columns">
+		ID, FromID, ToID, Name, State, Distance
+	</sql>
+
+	<select id="read" parameterType="String" resultMap="ResultMap">
+		select
+		<include refid="columns" />
+		from route
+		where ID = #{id,jdbcType=INTEGER}
+	</select>
+
+	<delete id="delete" parameterType="String">
+		delete from route
+		where ID = #{id,jdbcType=INTEGER}
+	</delete>
+
+	<insert id="create" parameterType="Route" useGeneratedKeys="true" keyProperty="id">
+<!--		<selectKey keyProperty="ID" order="AFTER" resultType="java.lang.Integer">-->
+<!--			SELECT LAST_INSERT_ID()-->
+<!--		</selectKey>-->
+		insert into route (FromID, ToID, Name,
+		State, Distance)
+		values (#{fromid,jdbcType=INTEGER}, #{toid,jdbcType=INTEGER},
+		#{name,jdbcType=VARCHAR},
+		#{state,jdbcType=VARCHAR}, #{distance,jdbcType=DOUBLE})
+	</insert>
+
+	<update id="update" parameterType="Route">
+		update route
+		<set>
+			<if test="fromid != null">
+				FromID = #{fromid,jdbcType=INTEGER},
+      </if>
+			<if test="toid != null">
+				ToID = #{toid,jdbcType=INTEGER},
+      </if>
+			<if test="name != null">
+				Name = #{name,jdbcType=VARCHAR},
+      </if>
+			<if test="state != null">
+				State = #{state,jdbcType=VARCHAR},
+      </if>
+			<if test="distance != null">
+				Distance = #{distance,jdbcType=DOUBLE},
+      </if>
+		</set>
+		where ID = #{id,jdbcType=INTEGER}
+	</update>
+
+	<update id="updateByPrimaryKey" parameterType="Route">
+		update route
+		set FromID = #{fromid,jdbcType=INTEGER},
+		ToID = #{toid,jdbcType=INTEGER},
+		Name = #{name,jdbcType=VARCHAR},
+		State = #{state,jdbcType=VARCHAR},
+		Distance = #{distance,jdbcType=DOUBLE}
+		where ID = #{id,jdbcType=INTEGER}
+	</update>
+
+	<select id="nameidbyname" parameterType="NameIdAction" resultType="NameId">
+		select distinct Name, ID
+		from route
+		where Name <![CDATA[ >= ]]> #{name}
+		<if test="state == null">
+			and State not in ('Initial', 'Final')
+		</if>
+		<if test="state != null">
+			and State in (${state})
+		</if>
+		order by Name
+		limit 0, #{numrows}
+	</select>
+
+</mapper>

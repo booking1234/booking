@@ -1,0 +1,65 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<report xmlns="http://www.eclipse.org/birt/2005/design" version="3.2.20" id="1">
+    <list-property name="configVars">
+        <structure>
+            <property name="name">__isdisplay__RP_ReportID_288_0</property>
+            <property name="value">13693</property>
+        </structure>
+        <structure>
+            <property name="name">__isdisplay__RP_Typelist_289_1</property>
+            <property name="value">'Accommodation'</property>
+        </structure>
+        <structure>
+            <property name="name">__isdisplay__RP_Organizationlist_290_2</property>
+            <property name="value">'9768'</property>
+        </structure>
+        <structure>
+            <property name="name">__isdisplay__RP_Processlist_291_3</property>
+            <property name="value">'Purchase','Sale'</property>
+        </structure>
+        <structure>
+            <property name="name">__isdisplay__RP_Eventtypelist_292_4</property>
+            <property name="value">'Accounting'</property>
+        </structure>
+        <structure>
+            <property name="name">RP_Processlist_291_5</property>
+            <property name="value">'Purchase','Sale'</property>
+        </structure>
+        <structure>
+            <property name="name">RP_Processlist_291_type_</property>
+            <property name="value">string</property>
+        </structure>
+        <structure>
+            <property name="name">RP_ReportID_288_6</property>
+            <property name="value">13693</property>
+        </structure>
+        <structure>
+            <property name="name">RP_ReportID_288_type_</property>
+            <property name="value">string</property>
+        </structure>
+        <structure>
+            <property name="name">RP_Organizationlist_290_7</property>
+            <property name="value">'9768'</property>
+        </structure>
+        <structure>
+            <property name="name">RP_Organizationlist_290_type_</property>
+            <property name="value">string</property>
+        </structure>
+        <structure>
+            <property name="name">RP_Typelist_289_8</property>
+            <property name="value">'Accommodation'</property>
+        </structure>
+        <structure>
+            <property name="name">RP_Typelist_289_type_</property>
+            <property name="value">string</property>
+        </structure>
+        <structure>
+            <property name="name">RP_Eventtypelist_292_9</property>
+            <property name="value">'Accounting'</property>
+        </structure>
+        <structure>
+            <property name="name">RP_Eventtypelist_292_type_</property>
+            <property name="value">string</property>
+        </structure>
+    </list-property>
+</report>

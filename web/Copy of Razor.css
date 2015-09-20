@@ -1,0 +1,70 @@
+body {
+	font-family: Helvetica, Arial, sans-serif;
+	margin: 0;
+	padding: 0;
+	text-align: left;
+}
+		
+/*-------------------------- Typography -------------------------- */
+
+/* Headings */
+h2 {font-size: 1.2em}	
+h3 {font-size: 1.1em}	
+
+h2, h3, h4, h5, h6 {
+	font-weight: 400;
+	line-height: 1.1;
+	margin-bottom: .2em;
+}
+
+/* Anchors */
+a {outline: 0;}
+a img {border: 0px; text-decoration: none;}
+a:link, a:visited {
+color:#006699;
+color: #00a3f4;
+font-weight:bold
+}
+a:hover {
+color: #006699;
+}
+
+a:active  {
+color:#111;
+}
+
+/* Paragraphs */
+p {margin-bottom: 1.143em;}
+* p:last-child {margin-bottom: 0;}
+
+strong, b {font-weight: bold;}
+em, i {font-style: italic;}
+
+
+/*-------------------------- Reset the Lists -------------------------- */
+	
+ul {
+	list-style: outside disc;
+	margin: 1em 0 1.5em 1.5em;
+}
+
+ol {
+	list-style: outside decimal;
+	margin: 1em 0 1.5em 1.5em;
+}
+
+dl {margin: 0 0 1.5em 0;}
+dt {font-weight: bold;}
+dd {margin-left: 1.5em;}
+
+
+q {}
+
+/* External CSS - not obfuscated */
+@external .fix, .clear;
+.fix {clear:both}
+
+.clear { /* generic container (i.e. div) for floating buttons */
+    overflow: hidden;
+    width: 100%;
+}

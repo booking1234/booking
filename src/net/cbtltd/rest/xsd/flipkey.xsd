@@ -1,0 +1,89 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<xs:schema xmlns:xs="http://www.w3.org/2001/XMLSchema" elementFormDefault="qualified">
+  <xs:element name="rsp">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element ref="propname"/>
+        <xs:element ref="propstatus"/>
+        <xs:element ref="reviews"/>
+        <xs:element ref="links"/>
+        <xs:element ref="stats"/>
+      </xs:sequence>
+      <xs:attribute name="stat" use="required" type="xs:NCName"/>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="propname" type="xs:string"/>
+  <xs:element name="propstatus" type="xs:NCName"/>
+  <xs:element name="reviews">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element maxOccurs="unbounded" ref="review"/>
+      </xs:sequence>
+      <xs:attribute name="type" use="required" type="xs:NCName"/>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="review">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element ref="id"/>
+        <xs:element ref="username"/>
+        <xs:element ref="userlocation"/>
+        <xs:element ref="title"/>
+        <xs:element ref="date"/>
+        <xs:element ref="fdate"/>
+        <xs:element ref="text"/>
+        <xs:element ref="displayname"/>
+        <xs:element ref="rating"/>
+        <xs:element ref="status"/>
+        <xs:element ref="mgrtext"/>
+        <xs:element ref="mgrdate"/>
+        <xs:element ref="advancedurl"/>
+      </xs:sequence>
+      <xs:attribute name="type" use="required" type="xs:NCName"/>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="id" type="xs:integer"/>
+  <xs:element name="username" type="xs:NCName"/>
+  <xs:element name="userlocation" type="xs:string"/>
+  <xs:element name="title" type="xs:string"/>
+  <xs:element name="date" type="xs:integer"/>
+  <xs:element name="fdate" type="xs:string"/>
+  <xs:element name="text" type="xs:string"/>
+  <xs:element name="displayname" type="xs:string"/>
+  <xs:element name="status" type="xs:NCName"/>
+  <xs:element name="mgrtext" type="xs:string"/>
+  <xs:element name="mgrdate" type="xs:string"/>
+  <xs:element name="advancedurl" type="xs:anyURI"/>
+  <xs:element name="links">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element ref="proplink"/>
+        <xs:element ref="prev"/>
+        <xs:element ref="next"/>
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="proplink" type="xs:anyURI"/>
+  <xs:element name="prev">
+    <xs:complexType/>
+  </xs:element>
+  <xs:element name="next">
+    <xs:complexType/>
+  </xs:element>
+  <xs:element name="stats">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element ref="reviewcount"/>
+        <xs:element ref="rating"/>
+        <xs:element ref="page"/>
+        <xs:element ref="searchsize"/>
+        <xs:element ref="totalpages"/>
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="reviewcount" type="xs:integer"/>
+  <xs:element name="page" type="xs:integer"/>
+  <xs:element name="searchsize" type="xs:integer"/>
+  <xs:element name="totalpages" type="xs:integer"/>
+  <xs:element name="rating" type="xs:decimal"/>
+</xs:schema>

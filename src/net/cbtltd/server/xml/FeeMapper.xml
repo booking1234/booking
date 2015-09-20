@@ -1,0 +1,147 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="net.cbtltd.server.api.FeeMapper">
+
+	<resultMap id="ResultMap" type="Fee">
+		<id column="ID" jdbcType="INTEGER" property="id" />
+		<result column="AltID" jdbcType="VARCHAR" property="altId" />
+		<result column="EntityType" jdbcType="INTEGER" property="entityType" />
+		<result column="ProductID" jdbcType="INTEGER" property="productId" />
+		<result column="PartyID" jdbcType="INTEGER" property="partyId" />
+		<result column="Name" jdbcType="VARCHAR" property="name" />
+		<result column="State" jdbcType="INTEGER" property="state" />
+		<result column="OptionValue" jdbcType="VARCHAR" property="optionValue" />
+		<result column="TaxType" jdbcType="INTEGER" property="taxType" />
+		<result column="FromDate" jdbcType="DATE" property="fromDate" />
+		<result column="ToDate" jdbcType="DATE" property="toDate" />
+		<result column="Unit" jdbcType="INTEGER" property="unit" />
+		<result column="Value" jdbcType="DOUBLE" property="value" />
+		<result column="ValueType" jdbcType="INTEGER" property="valueType" />
+		<result column="Weight" jdbcType="INTEGER" property="weight" />
+		<result column="Currency" jdbcType="VARCHAR" property="currency" />
+		<result column="version" jdbcType="TIMESTAMP" property="version" />
+	</resultMap>
+	
+	<sql id="columns">
+		fee.ID, fee.AltID, fee.EntityType, fee.ProductID, fee.PartyID, fee.Name, fee.State, fee.OptionValue, fee.TaxType, 
+		fee.FromDate, fee.ToDate, fee.Unit, fee.Value, fee.ValueType, fee.Weight, fee.Currency, fee.version
+	</sql>
+	
+	<select id="read" parameterType="Integer" resultMap="ResultMap">
+		select
+		<include refid="columns" />
+		from fee
+		where ID = #{id,jdbcType=INTEGER}
+	</select>
+	
+	<select id="exists" parameterType="Fee" resultMap="ResultMap">
+		select
+		<include refid="columns" />
+		from fee
+		where fee.EntityType = #{entityType,jdbcType=VARCHAR} 
+			and fee.ProductID = #{productId,jdbcType=INTEGER}
+			and fee.PartyID = #{partyId,jdbcType=INTEGER}
+			and fee.Name = #{name,jdbcType=VARCHAR}
+			and fee.FromDate = #{fromDate,jdbcType=DATE}
+			and fee.ToDate = #{toDate,jdbcType=DATE}
+			<if test="state != null">
+				and fee.State = #{state,jdbcType=INTEGER}
+			</if>
+			<if test="unit != null">
+				and fee.Unit = #{unit,jdbcType=INTEGER}
+			</if>
+			<if test="taxType != null">
+				and fee.TaxType = #{taxType,jdbcType=INTEGER}
+			</if>
+			<if test="valueType != null">
+				and fee.ValueType = #{valueType,jdbcType=INTEGER}
+			</if>
+			<if test="weight != null">
+				and fee.Weight = #{weight,jdbcType=INTEGER}
+			</if>
+			<if test="currency != null">
+				and fee.Currency = #{currency,jdbcType=VARCHAR}
+			</if>	
+		limit 1
+	</select>
+	
+	
+	<insert id="create" parameterType="Fee" useGeneratedKeys="true" keyProperty="id">
+		insert into fee (
+			AltID, EntityType, ProductID, PartyID, Name, State, OptionValue,
+			TaxType, FromDate, ToDate, Unit, Value, ValueType, Weight, Currency, version 
+		)
+		values (
+			#{altId,jdbcType=VARCHAR}, 
+			#{entityType,jdbcType=INTEGER}, 
+			#{productId,jdbcType=INTEGER}, 
+			#{partyId,jdbcType=INTEGER},
+			#{name,jdbcType=VARCHAR}, 
+			#{state,jdbcType=INTEGER}, 
+			#{optionValue,jdbcType=VARCHAR}, 
+			#{taxType,jdbcType=INTEGER},
+			#{fromDate,jdbcType=DATE},
+			#{toDate,jdbcType=DATE}, 
+			#{unit,jdbcType=INTEGER},
+			#{value,jdbcType=DOUBLE}, 
+			#{valueType,jdbcType=INTEGER}, 
+			#{weight,jdbcType=INTEGER}, 
+			#{currency,jdbcType=VARCHAR},
+			#{version,jdbcType=TIMESTAMP}
+		)
+	</insert>
+	
+	
+	<update id="cancelversion" parameterType="Fee">
+		update fee set State = 3
+		where PartyID = #{partyId,jdbcType=INTEGER}
+			and ProductID = #{productId,jdbcType=INTEGER}
+			and Currency = #{currency,jdbcType=VARCHAR}
+			and version <![CDATA[ <> ]]> #{version}
+	</update>
+	
+	
+	<update id="cancelfeelist" parameterType="Fee">
+		update fee set State = 3
+		where ID in 
+		<foreach item="item" index="index" collection="list" open="(" separator="," close=")">
+			#{item}
+		</foreach>
+	</update>
+	
+	<select id="readbyproductandstate" parameterType="Fee" resultMap="ResultMap">
+		select
+		<include refid="columns" />
+		from fee
+		where ProductID = #{productId,jdbcType=INTEGER}
+			and PartyID = #{partyId,jdbcType=INTEGER}
+			and State = #{state,jdbcType=INTEGER}
+		order by FromDate	
+	</select>
+	
+	<select id="readbydateandproduct" parameterType="Fee" resultMap="ResultMap">
+			select * from fee 
+			where fee.EntityType = #{entityType}
+				and fee.ProductID = #{productId}
+				and fee.PartyID = #{partyId}
+				and fee.FromDate <![CDATA[ < ]]> #{fromDate}
+				and fee.State = #{state}
+				and fee.TaxType = #{taxType}
+				and fee.Weight = #{weight}
+	</select>
+	
+	<select id="readspecialbydateandproduct" parameterType="Fee" resultMap="ResultMap">
+			select * from fee 
+			where fee.EntityType = #{entityType}
+				and fee.ProductID = #{productId}
+				and fee.PartyID = #{partyId}
+				and fee.FromDate <![CDATA[ < ]]> #{fromDate}
+				and fee.State = #{state}
+				<if test="taxType != null">
+					and fee.TaxType = #{taxType,jdbcType=INTEGER}
+				</if>
+				and fee.Weight > 0
+			 	
+	</select>
+
+</mapper>

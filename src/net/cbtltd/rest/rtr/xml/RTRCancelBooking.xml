@@ -1,0 +1,4 @@
+<RTRBookingRequest Version="3">
+	<BookingRequest PropertyReferenceID="1462" RequestType="Cancel"
+		LeaseID="1234" />
+</RTRBookingRequest>

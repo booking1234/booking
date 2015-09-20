@@ -1,0 +1,11 @@
+<?xml version="1.0" encoding="UTF-8"?>
+	<CompositionRooms>
+		<CompositionRoom CompositionRoomID="53">WC</CompositionRoom>
+		<CompositionRoom CompositionRoomID="81">Bathroom</CompositionRoom>
+		<CompositionRoom CompositionRoomID="94">Kitchen in the living / dining room</CompositionRoom>
+		<CompositionRoom CompositionRoomID="101">Kitchen</CompositionRoom>
+		<CompositionRoom CompositionRoomID="249">Living room</CompositionRoom>
+		<CompositionRoom CompositionRoomID="257">Bedroom</CompositionRoom>
+		<CompositionRoom CompositionRoomID="372">Livingroom / Bedroom</CompositionRoom>
+		<CompositionRoom CompositionRoomID="517">Bedroom/Living room with kitchen corner</CompositionRoom>
+	</CompositionRooms>

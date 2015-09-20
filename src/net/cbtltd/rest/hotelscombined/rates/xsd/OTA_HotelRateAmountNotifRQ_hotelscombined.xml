@@ -1,0 +1,38 @@
+<?xml version="1.0" encoding="utf-8"?>
+<OTA_HotelRateAmountNotifRQ xmlns="http://www.opentravel.org/OTA/2003/05" TimeStamp="2013-01-01T12:00:00Z" EchoToken="aaa000" Version="1.0">
+<RateAmountMessages HotelCode="1001">
+<RateAmountMessage>
+<StatusApplicationControl Start="2013-01-01" End="2013-01-31"
+RatePlanCode="100" InvTypeCode="120" />
+<Rates>
+<Rate>
+<BaseByGuestAmts>
+<BaseByGuestAmt AgeQualifyingCode="10" AmountAfterTax="80.00" NumberOfGuests="2"/>
+</BaseByGuestAmts>
+</Rate>
+<Rate>
+<BaseByGuestAmts>
+<BaseByGuestAmt AgeQualifyingCode="10" AmountAfterTax="80.00" NumberOfGuests="2"/>
+</BaseByGuestAmts>
+</Rate>
+</Rates>
+</RateAmountMessage>
+<RateAmountMessage>
+<StatusApplicationControl Start="2013-01-01" End="2013-01-31"
+RatePlanCode="100" InvTypeCode="120" />
+<Rates>
+<Rate>
+<BaseByGuestAmts>
+<BaseByGuestAmt AgeQualifyingCode="10" AmountAfterTax="80.00" NumberOfGuests="2"/>
+</BaseByGuestAmts>
+</Rate>
+<Rate>
+<BaseByGuestAmts>
+<BaseByGuestAmt AgeQualifyingCode="10" AmountAfterTax="80.00" NumberOfGuests="2"/>
+</BaseByGuestAmts>
+</Rate>
+</Rates>
+</RateAmountMessage>
+
+</RateAmountMessages>
+</OTA_HotelRateAmountNotifRQ>

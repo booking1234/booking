@@ -1,0 +1,6 @@
+<?xml version="1.0" encoding="UTF-8"?>
+	<ReservationStatuses>
+		<ReservationStatus ReservationStatusID="1">Confirmed</ReservationStatus>
+		<ReservationStatus ReservationStatusID="2">Cancelled</ReservationStatus>
+		<ReservationStatus ReservationStatusID="3">Modified</ReservationStatus>
+	</ReservationStatuses>

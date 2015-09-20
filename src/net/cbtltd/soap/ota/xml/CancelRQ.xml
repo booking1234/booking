@@ -1,0 +1,15 @@
+<?xml version="1.0" encoding="UTF-8" standalone="yes"?>
+<OTA_CancelRQ xmlns="http://www.opentravel.org/OTA/2003/05"
+	PrimaryLangID="en" RetransmissionIndicator="false" SequenceNmbr="1"
+	TransactionIdentifier="1" Version="1.010" Target="Production"
+	TimeStamp="2009-07-20T10:54:02" EchoToken="OTA_CancelRQ 5, 100602, This is a test cancellation., 2376">
+	<POS>
+		<Source>
+			<RequestorID ID="2376" ID_Context="RZ" />
+		</Source>
+	</POS>
+	<UniqueID ID="100602" ID_Context="RZ" Type="14" />
+	<Reasons>
+		<Reason Language="en">This is a test cancellation.</Reason>
+	</Reasons>
+</OTA_CancelRQ>

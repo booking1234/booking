@@ -1,0 +1,290 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="net.cbtltd.server.api.SpecialMapper">
+
+	<resultMap id="ResultMap" type="Special">
+		<id column="ID" jdbcType="INTEGER" property="id" />
+		<result column="ProductID" jdbcType="INTEGER" property="productid" />
+		<result column="SupplierID" jdbcType="INTEGER" property="supplierid" />
+		<result column="Startdate" jdbcType="DATE" property="startdate" />
+		<result column="Enddate" jdbcType="DATE" property="enddate" />
+		<result column="Price" jdbcType="DOUBLE" property="price" />
+		<result column="Quote" jdbcType="DOUBLE" property="quote" />
+		<result column="Currency" jdbcType="VARCHAR" property="currency" />
+	</resultMap>
+
+	<sql id="columns">
+		ID, ProductID, SupplierID, Startdate, Enddate, Price, Quote, Currency
+	</sql>
+
+	<select id="read" parameterType="String" resultMap="ResultMap">
+		select
+		<include refid="columns" />
+		from special
+		where ID = #{id,jdbcType=INTEGER}
+	</select>
+
+	<select id="readall" parameterType="Void" resultMap="ResultMap">
+		select distinct 
+		<include refid="columns" />
+		from special
+	</select>
+
+	<delete id="delete" parameterType="String">
+		delete from special
+		where ID = #{id,jdbcType=INTEGER}
+	</delete>
+
+	<delete id="deleteall" parameterType="Void">
+		delete from special
+	</delete>
+
+	<delete id="deletequotecollision" parameterType="Reservation">
+		delete from special
+		where ProductID = #{productid}
+		and (
+			(#{fromdate} <![CDATA[ <= ]]> Startdate 
+				and #{todate} <![CDATA[ > ]]> Startdate)
+			or 
+			(#{fromdate} <![CDATA[ < ]]> Enddate
+				and #{todate} <![CDATA[ >= ]]> Enddate)
+		)
+	</delete>
+
+	<insert id="create" parameterType="Special" useGeneratedKeys="true" keyProperty="id">
+		insert into special (
+			ProductID, SupplierID, Startdate, Enddate, Price, Quote, Currency
+		)
+		values (
+			#{productid,jdbcType=INTEGER}, 
+			#{suplierid,jdbcType=INTEGER}, 
+			#{startdate,jdbcType=DATE},
+			#{enddate,jdbcType=DATE}, 
+			#{price,jdbcType=DOUBLE},
+			#{quote,jdbcType=DOUBLE}, 
+			#{currency,jdbcType=VARCHAR}
+		)
+	</insert>
+
+	<insert id="refresh" parameterType="Yield" useGeneratedKeys="true" keyProperty="id">
+		insert into special (
+			ProductID,
+			SupplierID,
+			Startdate, 
+			Enddate, 
+			Currency
+		)
+		select distinct 
+			reservation.ProductID, 
+			reservation.OrganizationID as supplierid, 
+			reservation.Todate as startdate, 
+			min(next.Fromdate) as enddate, 
+			reservation.Currency as currency
+		from reservation
+			join reservation AS next
+				on next.Fromdate <![CDATA[ >= ]]> reservation.Todate
+		where reservation.ProductID = #{entityid,jdbcType=INTEGER}
+			and reservation.ProductID = next.ProductID
+			and reservation.Todate <![CDATA[ > ]]> now()
+			and reservation.State not in ('Initial', 'Provisional', 'Final', 'Cancelled')
+			and next.State not in ('Initial', 'Provisional', 'Final', 'Cancelled')
+			and datediff(next.Fromdate, reservation.Todate) <![CDATA[ < ]]> #{param,jdbcType=INTEGER}
+		group by reservation.ProductID, reservation.Todate
+		having startdate <![CDATA[ < ]]> enddate
+<!--		order by reservation.Todate, next.Fromdate desc-->
+	</insert>
+
+<!-- 	<insert id="refreshall" parameterType="Integer" useGeneratedKeys="true" keyProperty="id"> -->
+<!-- 		insert into special ( -->
+<!-- 			ProductID, -->
+<!-- 			SupplierID, -->
+<!-- 			Startdate,  -->
+<!-- 			Enddate,  -->
+<!-- 			Currency -->
+<!-- 		) -->
+<!-- 		select distinct  -->
+<!-- 			reservation.ProductID,  -->
+<!-- 			reservation.OrganizationID as supplierid,  -->
+<!-- 			reservation.Todate as startdate,  -->
+<!-- 			min(next.Fromdate) as enddate,  -->
+<!-- 			reservation.Currency as currency -->
+<!-- 		from reservation -->
+<!-- 			join reservation AS next -->
+<!-- 				on next.Fromdate <![CDATA[ >= ]]> reservation.Todate -->
+<!-- 		where reservation.ProductID = next.ProductID -->
+<!-- 			and reservation.Todate <![CDATA[ > ]]> now() -->
+<!-- 			and reservation.State not in ('Initial', 'Provisional', 'Final', 'Cancelled') -->
+<!-- 			and next.State not in ('Initial', 'Provisional', 'Final', 'Cancelled') -->
+<!-- 			and datediff(next.Fromdate, reservation.Todate) <![CDATA[ < ]]>  -->
+<!-- 			( -->
+<!-- 				select distinct param  -->
+<!-- 				from yield  -->
+<!-- 				where entityid = reservation.ProductID  -->
+<!-- 					and name = 'Maximum Gap Filler' -->
+<!-- 				limit 0,1 -->
+<!-- 			) -->
+<!-- 		group by reservation.ProductID, reservation.Todate -->
+<!-- 		having startdate <![CDATA[ < ]]> enddate -->
+<!-- 	</insert> -->
+
+	<update id="update" parameterType="Special">
+		update special
+		<set>
+			<if test="productid != null">
+				ProductID = #{productid,jdbcType=INTEGER},
+			</if>
+			<if test="supplierid != null">
+				SupplierID = #{supplierid,jdbcType=INTEGER},
+			</if>
+			<if test="startdate != null">
+				Startdate = #{startdate,jdbcType=DATE},
+			</if>
+			<if test="enddate != null">
+				Enddate = #{enddate,jdbcType=DATE},
+			</if>
+			<if test="price != null">
+				Price = #{price,jdbcType=DOUBLE},
+			</if>
+			<if test="quote != null">
+				Quote = #{quote,jdbcType=DOUBLE},
+			</if>
+			<if test="currency != null">
+				Currency = #{currency,jdbcType=VARCHAR},
+			</if>
+		</set>
+		where ID = #{id,jdbcType=INTEGER}
+	</update>
+
+	<update id="updateByPrimaryKey" parameterType="Special">
+		update special set 
+			ProductID = #{productid,jdbcType=INTEGER},
+			SupplierID = #{supplierid,jdbcType=INTEGER},
+			Startdate = #{startdate,jdbcType=DATE},
+			Enddate = #{enddate,jdbcType=DATE},
+			Price = #{price,jdbcType=DOUBLE},
+			Quote = #{quote,jdbcType=DOUBLE},
+			Currency = #{currency,jdbcType=VARCHAR}
+		where ID = #{id,jdbcType=INTEGER}
+	</update>
+
+	<sql id="specialwhere">
+		where productID in (${productlist})
+			and (
+				date(#{fromdate}) = date(#{todate}) 
+				or 
+				(special.Startdate <![CDATA[ >= ]]> date(#{fromdate}) 
+					and special.Enddate <![CDATA[ <= ]]> date(#{todate}))
+			)
+			<if test="!countunit">
+			and product.Room <![CDATA[ >= ]]> #{count}
+			</if>
+			<if test="countunit">
+			and product.Person <![CDATA[ >= ]]> #{count}
+			</if>
+			<if test="!priceunit">
+			and special.Quote / datediff(special.Enddate, special.Startdate) <![CDATA[ >= ]]> #{pricemin}
+			</if>
+			<if test="!priceunit">
+			and special.Quote / datediff(special.Enddate, special.Startdate) <![CDATA[ <= ]]> #{pricemax}
+			</if>
+			<if test="priceunit">
+			and special.Quote <![CDATA[ >= ]]> #{pricemin}
+			</if>
+			<if test="priceunit">
+			and special.Quote <![CDATA[ <= ]]> #{pricemax}
+			</if>
+			and datediff(special.Enddate, special.Startdate) <![CDATA[ >= ]]> #{specialmin}
+			and datediff(special.Enddate, special.Startdate) <![CDATA[ <= ]]> #{specialmax}
+	</sql>
+
+	<select id="specialcount" parameterType="LookBook" resultType="Integer">
+		select count(distinct special.ID)
+		from special
+			join product on product.ID = special.ProductID
+		<include refid="specialwhere" />
+
+	</select>
+	
+	<select id="speciallist" parameterType="LookBook" resultType="AvailableItem">
+		select distinct 
+			#{agentid} as agentid,
+			#{priceunit} as priceunit,
+			special.ProductID,
+			special.SupplierID,
+			product.Name as productname,
+			party.Name as suppliername,
+			party.Rank,
+			special.Startdate as fromdate,
+			special.Enddate as todate,
+			<if test="!priceunit">
+			special.Price / datediff(special.Enddate, special.Startdate) as price,
+			</if>
+			<if test="priceunit">
+			special.Price as price,
+			</if>
+			<if test="!priceunit">
+			special.Quote / datediff(special.Enddate, special.Startdate) as quote,
+			</if>
+			<if test="priceunit">
+			special.Quote as quote,
+			</if>
+			<if test="!priceunit">
+			special.Quote * (100.0 - product.Discount) / (datediff(special.Enddate, special.Startdate) * 100.0) as cost,
+			</if>
+			<if test="priceunit">
+			special.Quote * (100.0 - product.Discount) / 100.0 as cost,
+			</if>
+			special.Currency,
+			product.Latitude,
+			product.Longitude,
+			product.Rating
+		from special
+			join product on product.ID = special.ProductID
+			join party on party.ID = product.SupplierID
+		<include refid="specialwhere" />
+	</select>
+
+	<select id="quotesbylocationid" resultType="net.cbtltd.rest.Quote">
+		select distinct
+			product.LocationID,
+			special.ProductID, 
+			product.Name as productname,
+			special.Startdate as arrive,
+			special.Enddate as depart, 
+			special.Price as rack, 
+			special.Quote, 
+			special.Quote * (100.0 - product.Discount) / 100.0 as sto,
+			special.Currency
+		from special
+			join product on product.ID = special.ProductID
+		where product.State = 'Created'
+			and product.rank <![CDATA[ >= ]]> 0
+			and product.LocationID in 
+		<foreach item="item" index="index" collection="array" open="(" separator="," close=")">
+			#{item}
+		</foreach>
+	</select>
+
+	<select id="quotesbyarea" parameterType="Area" resultType="net.cbtltd.rest.Quote">
+		select distinct
+			product.LocationID,
+			special.ProductID, 
+			product.Name as productname,
+			special.Startdate as arrive,
+			special.Enddate as depart, 
+			special.Price as rack, 
+			special.Quote, 
+			special.Quote * (100.0 - product.Discount) / 100.0 as sto,
+			special.Currency
+		from special
+			join product on product.ID = special.ProductID
+		where product.State = 'Created'
+			and product.rank <![CDATA[ >= ]]> 0
+			and Latitude <![CDATA[ <= ]]> #{nelatitude}
+			and Latitude <![CDATA[ >= ]]> #{swlatitude}
+			and Longitude <![CDATA[ <= ]]> #{nelongitude}
+			and Longitude <![CDATA[ >= ]]> #{swlongitude}
+		order by product.Name
+	</select>
+
+</mapper>

@@ -1,0 +1,24 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="net.cbtltd.server.api.ProductUpdateIntervalMapper">
+
+ 	<cache readOnly="true"/> 
+
+	<resultMap id="ResultMap" type="net.cbtltd.shared.ProductUpdateInterval">
+	    <result column="col1" jdbcType="VARCHAR" property="field" />
+	    <result column="col2" jdbcType="INTEGER" property="cronString" />
+	</resultMap>
+    
+	<sql id="columns">
+		field as col1,update_interval_as_cron as col2
+	</sql>
+	
+	<select id="getProductUpdateInterval" parameterType="String" resultMap="ResultMap">
+		select
+		<include refid="columns" />
+		from product_update_settings
+		where AltPartyID = #{partnerid,jdbcType=VARCHAR}
+	</select>
+	
+	
+</mapper>

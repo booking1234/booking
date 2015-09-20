@@ -1,0 +1,50 @@
+<web-app version="2.4" xmlns="http://java.sun.com/xml/ns/j2ee"
+         xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+         xsi:schemaLocation="http://java.sun.com/xml/ns/j2ee 
+         http://java.sun.com/xml/ns/j2ee/web-app_2_4.xsd">
+    <display-name>Razor Web Services</display-name>
+    <description>Razor Web Services</description>
+
+	<servlet>
+		<servlet-name>LucidServer</servlet-name>
+		<description>This servlet plays the "model" role in the MVP
+			architecture used in the application.</description>
+		<servlet-class>net.cbtltd.server.LucidServer</servlet-class>
+	</servlet>
+
+	<servlet>
+		<servlet-name>FileUploadServer</servlet-name>
+		<description>This servlet allows file uploads using the GWT FileUpload
+			class.</description>
+		<servlet-class>net.cbtltd.server.UploadFileService</servlet-class>
+	</servlet>
+
+	<servlet>
+		<servlet-name>XMLServer</servlet-name>
+		<display-name>XML Server</display-name>
+		<servlet-class>
+			org.apache.cxf.transport.servlet.CXFServlet
+        </servlet-class>
+		<init-param>
+			<param-name>config-location</param-name>
+			<param-value>/WEB-INF/beans.xml</param-value>
+		</init-param>
+		<load-on-startup>2</load-on-startup>
+	</servlet>
+
+	<servlet-mapping>
+		<servlet-name>LucidServer</servlet-name>
+		<url-pattern>/LucidService</url-pattern>
+	</servlet-mapping>
+
+	<servlet-mapping>
+		<servlet-name>FileUploadServer</servlet-name>
+		<url-pattern>/UploadFileService</url-pattern>
+	</servlet-mapping>
+
+	<servlet-mapping>
+		<servlet-name>XMLServer</servlet-name>
+		<url-pattern>/xml/*</url-pattern>
+	</servlet-mapping>
+
+</web-app>

@@ -1,0 +1,259 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="net.cbtltd.server.api.TaxMapper">
+
+	<resultMap id="ResultMap" type="Tax">
+		<id column="ID" jdbcType="INTEGER" property="id" />
+		<result column="AccountID" jdbcType="INTEGER" property="accountid" />
+		<result column="PartyID" jdbcType="INTEGER" property="partyid" />
+		<result column="ProductID" jdbcType="INTEGER" property="productId" />
+		<result column="Name" jdbcType="VARCHAR" property="name" />
+		<result column="State" jdbcType="VARCHAR" property="state" />
+		<result column="Type" jdbcType="VARCHAR" property="type" />
+		<result column="Notes" jdbcType="VARCHAR" property="notes" />
+		<result column="Date" jdbcType="DATE" property="date" />
+		<result column="Threshold" jdbcType="INTEGER" property="threshold" />
+		<result column="Amount" jdbcType="DOUBLE" property="amount" />
+		<result column="MandatoryType" jdbcType="VARCHAR" property="mandatoryType" />
+		<result column="AltID" jdbcType="VARCHAR" property="altId" />
+		<result column="OptionValue" jdbcType="VARCHAR" property="optionValue" />
+		<result column="version" jdbcType="TIMESTAMP" property="version" />
+	</resultMap>
+
+	<sql id="columns">
+		tax.ID, tax.AccountID, tax.PartyID, tax.ProductID, tax.Name, tax.State, tax.Type, tax.Notes, tax.Date, tax.Threshold, tax.Amount, 
+		tax.MandatoryType, tax.AltID, tax.OptionValue, tax.version
+	</sql>
+
+	<select id="read" parameterType="String" resultMap="ResultMap">
+		select
+		<include refid="columns" />
+		from tax
+		where ID = #{id,jdbcType=INTEGER}
+	</select>
+
+	<select id="exists" parameterType="Tax" resultMap="ResultMap">
+		select
+		<include refid="columns" />
+		from tax
+		where PartyID = #{partyid}
+			<if test="accountid != null">
+			and AccountID = #{accountid}
+			</if>
+			<if test="name != null">
+			and Name = #{name}
+			</if>
+			<if test="type != null">
+			and Type = #{type}
+			</if>
+			<if test="date != null">
+			and Date = #{date}
+			</if>
+		limit 1
+	</select>
+
+	<update id="cancelversion" parameterType="Tax">
+		update tax set State = 'Final'
+		where AccountID = #{accountid}
+			and PartyID = #{partyid}
+			and Name = #{name,jdbcType=VARCHAR}
+			and Type = #{type,jdbcType=VARCHAR}
+			and Date = #{date,jdbcType=DATE}
+			and version <![CDATA[ <> ]]> #{version}
+	</update>
+	
+	<update id="canceltaxlist" parameterType="Tax">
+		update tax set State = 'Final'
+		where ID in 
+		<foreach item="item" index="index" collection="list" open="(" separator="," close=")">
+			#{item}
+		</foreach>
+	</update>
+
+	<select id="taxdetail" parameterType="PriceTable" resultMap="ResultMap">
+		select distinct
+		<include refid="columns" />
+		from relation
+			join tax on tax.ID = relation.LineID
+				and relation.HeadID = #{entityid}
+				and relation.Link = 'PRODUCT_TAX'
+				and tax.Type = #{type}
+				and tax.Date <![CDATA[ <= ]]> #{date}
+				and tax.State in ('Created')
+			order by tax.ID
+	</select>
+	
+	<select id="taxbyrelation" parameterType="PriceTable" resultMap="ResultMap">
+		select
+		<include refid="columns" />
+		from relation
+			join tax on tax.ID = relation.LineID
+				and relation.HeadID = #{entityid}
+				and relation.Link = 'PRODUCT_TAX'
+				and tax.Type = #{type}
+			order by tax.ID
+	</select>
+
+	<select id="count" parameterType="TaxTable" resultType="Integer">
+		select count(ID)
+		from relation 
+			<if test="entitytype == 'Party'">
+			join tax on relation.Link = 'PARTY_TAX'
+			</if>
+			<if test="entitytype == 'Product'">
+			join tax on relation.Link = 'PRODUCT_TAX'
+			</if>
+				and tax.ID = LineID
+				and tax.State = 'Created'
+		where HeadID = #{entityid, jdbcType=INTEGER}
+	</select>
+
+	<select id="list" parameterType="TaxTable" resultMap="ResultMap">
+		select distinct 
+		<include refid="columns" />, party.Name as partyname
+		from relation
+			<if test="entitytype == 'Party'">
+			join tax on relation.Link = 'PARTY_TAX' 
+			</if>
+			<if test="entitytype == 'Product'">
+			join tax on relation.Link = 'PRODUCT_TAX' 
+			</if>
+				and tax.ID = LineID
+				and tax.State = 'Created'
+			join party on party.ID = tax.PartyID
+		where HeadID = #{entityid, jdbcType=INTEGER}
+		order by ${orderby}
+		limit #{startrow}, #{numrows}
+	</select>
+
+	<update id="delete" parameterType="String">
+		update tax
+		set State = 'Final'
+		where ID = #{id, jdbcType=INTEGER}
+	</update>
+	
+	<insert id="create" parameterType="Tax" useGeneratedKeys="true" keyProperty="id">
+		insert into tax (AccountID, PartyID, ProductID, Name, State, Type, Notes, Date, Threshold, Amount, MandatoryType, AltID, OptionValue)
+		values (
+			#{accountid,jdbcType=INTEGER}, 
+			#{partyid,jdbcType=INTEGER},
+			#{productId,jdbcType=INTEGER},
+			#{name,jdbcType=VARCHAR},
+			#{state,jdbcType=VARCHAR}, 
+			#{type,jdbcType=VARCHAR}, 
+			#{notes,jdbcType=VARCHAR}, 
+			#{date,jdbcType=DATE}, 
+			#{threshold,jdbcType=INTEGER}, 
+			#{amount,jdbcType=DOUBLE},
+			#{mandatoryType,jdbcType=VARCHAR},
+			#{altId,jdbcType=VARCHAR},
+			#{optionValue,jdbcType=VARCHAR}
+		)
+	</insert>
+
+	<update id="update" parameterType="Tax">
+		update tax
+		<set>
+			<if test="accountid != null">
+				AccountID = #{accountid,jdbcType=INTEGER},
+			</if>
+			<if test="partyid != null">
+				PartyID = #{partyid,jdbcType=INTEGER},
+			</if>
+			<if test="productId != null">
+				ProductID = #{productId,jdbcType=INTEGER},
+			</if>
+			<if test="name != null">
+				Name = #{name,jdbcType=VARCHAR},
+			</if>
+			<if test="state != null">
+				State = #{state,jdbcType=VARCHAR},
+			</if>
+			<if test="type != null">
+				Type = #{type,jdbcType=VARCHAR},
+			</if>
+			<if test="notes != null">
+				Notes = #{notes,jdbcType=VARCHAR},
+			</if>
+			<if test="date != null">
+				Date = #{date,jdbcType=DATE},
+			</if>
+			<if test="threshold != null">
+				Threshold = #{threshold,jdbcType=INTEGER},
+			</if>
+			<if test="amount != null">
+				Amount = #{amount,jdbcType=DOUBLE},
+			</if>
+			<if test="mandatoryType != null">
+				MandatoryType = #{mandatoryType,jdbcType=VARCHAR},
+			</if>
+			<if test="altId != null">
+				AltID = #{altId,jdbcType=VARCHAR},
+			</if>
+			<if test="optionValue != null">
+				OptionValue = #{optionValue,jdbcType=VARCHAR},
+			</if>
+			<if test="version != null">
+				version = #{version,jdbcType=TIMESTAMP},
+			</if>
+		</set>
+		where ID = #{id,jdbcType=INTEGER}
+	</update>
+	
+	<update id="updateByPrimaryKey" parameterType="Tax">
+		update tax
+		set AccountID = #{accountid,jdbcType=INTEGER},
+		PartyID = #{partyid,jdbcType=INTEGER},
+		ProductID = #{productId,jdbcType=INTEGER},
+		Name = #{name,jdbcType=VARCHAR},
+		State = #{state,jdbcType=VARCHAR},
+		Type = #{type,jdbcType=VARCHAR},
+		Notes = #{notes,jdbcType=VARCHAR},
+		Date = #{date,jdbcType=DATE},
+		Threshold = #{threshold,jdbcType=INTEGER},
+		Amount = #{amount,jdbcType=DOUBLE},
+		MandatoryType = #{mandatoryType,jdbcType=VARCHAR},
+		AltID = #{altId,jdbcType=VARCHAR},
+		OptionValue = #{optionValue,jdbcType=VARCHAR},
+		version = #{version,jdbcType=TIMESTAMP}
+		where ID = #{id,jdbcType=INTEGER}
+	</update>
+    
+  	<select id="nameidbyid" parameterType="NameIdAction" resultType="NameId">
+		select distinct Name,  Amount as id
+		from tax
+		where ID = #{id,jdbcType=INTEGER}
+	</select>
+
+	<select id="nameidbyname" parameterType="NameIdAction" resultType="NameId">
+		select distinct tax.Name, tax.Amount as id
+		from tax
+		<if test="organizationid != null">
+			join party on party.JurisdictionID = tax.PartyID
+				and party.ID = #{organizationid}
+		</if>
+		where tax.Name <![CDATA[ >= ]]> #{name}
+		<if test="type != null">
+			and tax.Type = #{type}
+		</if>
+		order by tax.Amount desc
+		limit 0, #{numrows}
+	</select>
+
+  	<select id="nameidtype" parameterType="Void" resultType="NameId">
+		select distinct Type as name,  Type as id
+		from tax
+		where State = 'Created'
+	</select>
+
+	<select id="readbyproductid" parameterType="Tax" resultMap="ResultMap">
+		select * from tax 
+		where tax.PartyID = #{partyid}
+			and tax.ProductID = #{productId}
+			<if test="mandatoryType != null">
+		    	and tax.MandatoryType = #{mandatoryType}
+		    </if>
+			and tax.State = 'Created'
+	</select>
+
+</mapper>

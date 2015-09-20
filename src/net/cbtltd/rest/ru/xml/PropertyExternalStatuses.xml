@@ -1,0 +1,8 @@
+<?xml version="1.0" encoding="UTF-8"?>
+	<PropertyExternalStatuses>
+		<Status ID="1">Online</Status>
+		<Status ID="2">Offline</Status>
+		<Status ID="3">Missing data</Status>
+		<Status ID="4">Requested publishing</Status>
+		<Status ID="5">Requested removal</Status>
+	</PropertyExternalStatuses>

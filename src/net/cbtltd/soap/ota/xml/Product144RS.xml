@@ -1,0 +1,365 @@
+<?xml version="1.0" encoding="UTF-8" standalone="yes"?>
+<OTA_HotelDescriptiveInfoRS xmlns="http://www.opentravel.org/OTA/2003/05"
+	PrimaryLangID="en" RetransmissionIndicator="false" SequenceNmbr="1"
+	TransactionIdentifier="1" Version="1.000" Target="Production"
+	TimeStamp="2009-07-15T17:58:00">
+	<POS>
+		<Source>
+			<RequestorID ID="5" ID_Context="RZ" />
+		</Source>
+	</POS>
+	<Success />
+	<HotelDescriptiveContents AreaID="58777"
+		BrandName="Tourinfo cc" ChainName="Nox Tourism cc" HotelCodeContext="RZ"
+		HotelName="CBT Palm Suite" HotelCityCode="CPT" HotelCode="144"
+		BrandCode="890" ChainCode="5" Overwrite="true">
+		<HotelDescriptiveContent HotelCityCode="CPT"
+			Overwrite="true" CurrencyCode="ZAR" LanguageCode="en">
+			<HotelInfo PMSSystem="RZ">
+				<HotelName HotelShortName="CBT Palm Suite">CBT Palm Suite</HotelName>
+				<CategoryCodes />
+				<Position AltitudeUnitOfMeasureCode="3" Altitude="0.0"
+					Longitude="18.3773481845856" Latitude="-33.9571457582702" />
+				<Services />
+			</HotelInfo>
+			<FacilityInfo>
+				<GuestRooms MaxOccupancy="0">
+					<GuestRoom MaxOccupancy="0" RoomTypeName="2 Bedrooms">
+						<Features />
+					</GuestRoom>
+				</GuestRooms>
+			</FacilityInfo>
+			<Policies>
+				<Policy Removal="false" LastUpdated="2009-07-15T17:58:03">
+					<CancelPolicy CancelPolicyIndicator="true">
+						<CancelPenalty>
+							<Deadline OffsetUnitMultiplier="30" OffsetTimeUnit="Day" />
+							<AmountPercent Percent="100" />
+						</CancelPenalty>
+						<CancelPenalty>
+							<Deadline OffsetUnitMultiplier="60" OffsetTimeUnit="Day" />
+							<AmountPercent Percent="50" />
+						</CancelPenalty>
+						<CancelPenalty>
+							<Deadline OffsetUnitMultiplier="90" OffsetTimeUnit="Day" />
+							<AmountPercent Percent="25" />
+						</CancelPenalty>
+					</CancelPolicy>
+				</Policy>
+				<Policy Removal="false" LastUpdated="2009-07-15T17:58:03">
+					<GuaranteePaymentPolicy>
+						<GuaranteePayment NoCardHolderInfoReqInd="false"
+							Type="31" />
+					</GuaranteePaymentPolicy>
+				</Policy>
+				<Policy Removal="false" LastUpdated="2009-07-15T17:58:03">
+					<PolicyInfo InternetGuaranteeRequiredInd="false"
+						MaxChildAge="0" KidsStayFree="false" TotalGuestCount="0"
+						UsualStayFreeChildPerAdult="0" UsualStayFreeCutoffAge="0"
+						MinRecommendedGuestAge="0" MinGuestAge="0" />
+				</Policy>
+				<Policy Removal="false" LastUpdated="2009-07-15T17:58:03">
+					<StayRequirements>
+						<StayRequirement StayContext="RZ" MaxLOS="0"
+							MinLOS="0" />
+					</StayRequirements>
+				</Policy>
+			</Policies>
+			<MultimediaDescriptions>
+				<MultimediaDescription>
+					<TextItems>
+						<TextItem CopyrightOwner="Tourinfo cc" CopyrightNotice="(c)2009 CBT Ltd London"
+							Title="Property Description">
+							<Description Language="EN">
+								An unpretentious and excellent
+								value apartment in Camps Bay 's
+								most prime position! The Palm
+								Suite is perfect for groups of
+								friends or a family. This charming
+								apartment has two en-suite
+								bedrooms adjoining onto an open plan
+								kitchen, dining area and
+								lounge. Double doors open from the
+								lounge onto a paved terrace
+								with wooden patio furniture and
+								access to the pool and barbecue.
+								Sitting under the umbrella of
+								the big palm tree sipping a drink
+								as the sun goes down over the
+								sea is a wonderfully romantic
+								experience. The Camps Bay beach,
+								bars and restaurants are a few
+								minutes stroll away. The large
+								pool deck has phenomenal views of
+								the Atlantic , and a large
+								solar-heated pool. It has four sun lounges and a barbecue,
+								and
+								it's the perfect place to watch the sun go down and to enjoy
+								a
+								drink or two. The lounge is furnished comfortably with a
+								settee
+								and casual chairs, and has some interesting African
+								artefacts
+								adding to its exotic feel. Relax and enjoy the
+								satellite TV,
+								music centre and book collection provided for your
+								entertainment. Adjoining the lounge is the open plan kitchenette
+								and dining area. Both bedrooms have views superb of Bakoven Bay
+								. Both bedrooms have queen-size beds, and the one room offers an
+								additional single bed. The apartment is fully serviced every day
+								except Christmas Day, and a laundry service is available. Our
+								staff will also help organise all aspects of your holiday, from
+								booking baby-sitters through to recommending activities. Come to
+								Camps Bay Terrace and experience Cape Town best!   </Description>
+						</TextItem>
+						<TextItem CopyrightOwner="Tourinfo cc" CopyrightNotice="(c)2009 CBT Ltd London"
+							Title="Contents Description">
+							<Description Language="EN">
+								Daily Servicing: Monday
+								â€“ Saturday except Public Holidays Concierge Service Compact
+								Bouquet DSTV All taxes All Linen and Towels   </Description>
+						</TextItem>
+						<TextItem CopyrightOwner="Tourinfo cc" CopyrightNotice="(c)2009 CBT Ltd London"
+							Title="Options Description">
+							<Description Language="EN"> Laundry on request at
+								additional expense Breakfast on request at additional expense
+								Baby sitting on request at additional expense Catering on
+								request at additional expense Transfers/Shuttles at additional
+								expense Dinner Reservations Grocery stocking at additional
+								expense DVD Collection of request   </Description>
+						</TextItem>
+						<TextItem CopyrightOwner="Tourinfo cc" CopyrightNotice="(c)2009 CBT Ltd London"
+							Title="Manager Description">
+							<Description Language="EN">Nox Tourism was founded in
+								September 2003 by Richard Marshall. We are market leaders on
+								Cape Town's Atlantic Seaboard, and continue to innovate in terms
+								of our service to both the travel trade and to the guests that
+								stay in our villas and apartments.
+
+								All of our properties are in
+								the four or five star market, and
+								options range from one bedroom
+								apartments to seven bedroom
+								villas, from penthouse apartments to
+								beach cottages. However
+								different they may be, each property has
+								what we call tourism potential and has something unique and
+								exceptional about it, whether that be views, location, luxury or
+								a combination of these and many other factors.
+
+								We have an obsessive focus on the guest experience, and every
+								guest's needs are catered to by our dedicated team of guest
+								relations consultants, property managers and housekeepers.
+							</Description>
+						</TextItem>
+					</TextItems>
+				</MultimediaDescription>
+				<MultimediaDescription>
+					<ImageItems>
+						<ImageItem Category="16">
+							<ImageFormat CopyrightOwner="Tourinfo cc"
+								CopyrightNotice="(c)2009 CBT Ltd London" Title="Thumbnail Image"
+								FileName="Product144-001Thumb.jpg">
+								<URL>
+									C:/Developer/Workspace/Lucid/tomcat/webapps/ROOT/pictures/Product144-001Thumb.jpg
+								</URL>
+							</ImageFormat>
+							<ImageFormat CopyrightOwner="Tourinfo cc"
+								CopyrightNotice="(c)2009 CBT Ltd London" Title="Fullsize Image"
+								FileName="Product144-001.jpg">
+								<URL>
+									C:/Developer/Workspace/Lucid/tomcat/webapps/ROOT/pictures/Product144-001.jpg
+								</URL>
+							</ImageFormat>
+							<Description />
+						</ImageItem>
+						<ImageItem Category="16">
+							<ImageFormat CopyrightOwner="Tourinfo cc"
+								CopyrightNotice="(c)2009 CBT Ltd London" Title="Thumbnail Image"
+								FileName="Product144-002Thumb.jpg">
+								<URL>
+									C:/Developer/Workspace/Lucid/tomcat/webapps/ROOT/pictures/Product144-002Thumb.jpg
+								</URL>
+							</ImageFormat>
+							<ImageFormat CopyrightOwner="Tourinfo cc"
+								CopyrightNotice="(c)2009 CBT Ltd London" Title="Fullsize Image"
+								FileName="Product144-002.jpg">
+								<URL>
+									C:/Developer/Workspace/Lucid/tomcat/webapps/ROOT/pictures/Product144-002.jpg
+								</URL>
+							</ImageFormat>
+							<Description />
+						</ImageItem>
+						<ImageItem Category="16">
+							<ImageFormat CopyrightOwner="Tourinfo cc"
+								CopyrightNotice="(c)2009 CBT Ltd London" Title="Thumbnail Image"
+								FileName="Product144-003Thumb.jpg">
+								<URL>
+									C:/Developer/Workspace/Lucid/tomcat/webapps/ROOT/pictures/Product144-003Thumb.jpg
+								</URL>
+							</ImageFormat>
+							<ImageFormat CopyrightOwner="Tourinfo cc"
+								CopyrightNotice="(c)2009 CBT Ltd London" Title="Fullsize Image"
+								FileName="Product144-003.jpg">
+								<URL>
+									C:/Developer/Workspace/Lucid/tomcat/webapps/ROOT/pictures/Product144-003.jpg
+								</URL>
+							</ImageFormat>
+							<Description />
+						</ImageItem>
+						<ImageItem Category="16">
+							<ImageFormat CopyrightOwner="Tourinfo cc"
+								CopyrightNotice="(c)2009 CBT Ltd London" Title="Thumbnail Image"
+								FileName="Product144-004Thumb.jpg">
+								<URL>
+									C:/Developer/Workspace/Lucid/tomcat/webapps/ROOT/pictures/Product144-004Thumb.jpg
+								</URL>
+							</ImageFormat>
+							<ImageFormat CopyrightOwner="Tourinfo cc"
+								CopyrightNotice="(c)2009 CBT Ltd London" Title="Fullsize Image"
+								FileName="Product144-004.jpg">
+								<URL>
+									C:/Developer/Workspace/Lucid/tomcat/webapps/ROOT/pictures/Product144-004.jpg
+								</URL>
+							</ImageFormat>
+							<Description />
+						</ImageItem>
+						<ImageItem Category="16">
+							<ImageFormat CopyrightOwner="Tourinfo cc"
+								CopyrightNotice="(c)2009 CBT Ltd London" Title="Thumbnail Image"
+								FileName="Product144-005Thumb.jpg">
+								<URL>
+									C:/Developer/Workspace/Lucid/tomcat/webapps/ROOT/pictures/Product144-005Thumb.jpg
+								</URL>
+							</ImageFormat>
+							<ImageFormat CopyrightOwner="Tourinfo cc"
+								CopyrightNotice="(c)2009 CBT Ltd London" Title="Fullsize Image"
+								FileName="Product144-005.jpg">
+								<URL>
+									C:/Developer/Workspace/Lucid/tomcat/webapps/ROOT/pictures/Product144-005.jpg
+								</URL>
+							</ImageFormat>
+							<Description />
+						</ImageItem>
+						<ImageItem Category="16">
+							<ImageFormat CopyrightOwner="Tourinfo cc"
+								CopyrightNotice="(c)2009 CBT Ltd London" Title="Thumbnail Image"
+								FileName="Product144-006Thumb.jpg">
+								<URL>
+									C:/Developer/Workspace/Lucid/tomcat/webapps/ROOT/pictures/Product144-006Thumb.jpg
+								</URL>
+							</ImageFormat>
+							<ImageFormat CopyrightOwner="Tourinfo cc"
+								CopyrightNotice="(c)2009 CBT Ltd London" Title="Fullsize Image"
+								FileName="Product144-006.jpg">
+								<URL>
+									C:/Developer/Workspace/Lucid/tomcat/webapps/ROOT/pictures/Product144-006.jpg
+								</URL>
+							</ImageFormat>
+							<Description />
+						</ImageItem>
+						<ImageItem Category="16">
+							<ImageFormat CopyrightOwner="Tourinfo cc"
+								CopyrightNotice="(c)2009 CBT Ltd London" Title="Thumbnail Image"
+								FileName="Product144-007Thumb.jpg">
+								<URL>
+									C:/Developer/Workspace/Lucid/tomcat/webapps/ROOT/pictures/Product144-007Thumb.jpg
+								</URL>
+							</ImageFormat>
+							<ImageFormat CopyrightOwner="Tourinfo cc"
+								CopyrightNotice="(c)2009 CBT Ltd London" Title="Fullsize Image"
+								FileName="Product144-007.jpg">
+								<URL>
+									C:/Developer/Workspace/Lucid/tomcat/webapps/ROOT/pictures/Product144-007.jpg
+								</URL>
+							</ImageFormat>
+							<Description />
+						</ImageItem>
+						<ImageItem Category="16">
+							<ImageFormat CopyrightOwner="Tourinfo cc"
+								CopyrightNotice="(c)2009 CBT Ltd London" Title="Thumbnail Image"
+								FileName="Product144-008Thumb.jpg">
+								<URL>
+									C:/Developer/Workspace/Lucid/tomcat/webapps/ROOT/pictures/Product144-008Thumb.jpg
+								</URL>
+							</ImageFormat>
+							<ImageFormat CopyrightOwner="Tourinfo cc"
+								CopyrightNotice="(c)2009 CBT Ltd London" Title="Fullsize Image"
+								FileName="Product144-008.jpg">
+								<URL>
+									C:/Developer/Workspace/Lucid/tomcat/webapps/ROOT/pictures/Product144-008.jpg
+								</URL>
+							</ImageFormat>
+							<Description />
+						</ImageItem>
+						<ImageItem Category="16">
+							<ImageFormat CopyrightOwner="Tourinfo cc"
+								CopyrightNotice="(c)2009 CBT Ltd London" Title="Thumbnail Image"
+								FileName="Product144-009Thumb.jpg">
+								<URL>
+									C:/Developer/Workspace/Lucid/tomcat/webapps/ROOT/pictures/Product144-009Thumb.jpg
+								</URL>
+							</ImageFormat>
+							<ImageFormat CopyrightOwner="Tourinfo cc"
+								CopyrightNotice="(c)2009 CBT Ltd London" Title="Fullsize Image"
+								FileName="Product144-009.jpg">
+								<URL>
+									C:/Developer/Workspace/Lucid/tomcat/webapps/ROOT/pictures/Product144-009.jpg
+								</URL>
+							</ImageFormat>
+							<Description />
+						</ImageItem>
+						<ImageItem Category="16">
+							<ImageFormat CopyrightOwner="Tourinfo cc"
+								CopyrightNotice="(c)2009 CBT Ltd London" Title="Thumbnail Image"
+								FileName="Product144-010Thumb.jpg">
+								<URL>
+									C:/Developer/Workspace/Lucid/tomcat/webapps/ROOT/pictures/Product144-010Thumb.jpg
+								</URL>
+							</ImageFormat>
+							<ImageFormat CopyrightOwner="Tourinfo cc"
+								CopyrightNotice="(c)2009 CBT Ltd London" Title="Fullsize Image"
+								FileName="Product144-010.jpg">
+								<URL>
+									C:/Developer/Workspace/Lucid/tomcat/webapps/ROOT/pictures/Product144-010.jpg
+								</URL>
+							</ImageFormat>
+							<Description />
+						</ImageItem>
+					</ImageItems>
+				</MultimediaDescription>
+			</MultimediaDescriptions>
+			<ContactInfos>
+				<ContactInfo Removal="false" ContactProfileType="12"
+					ContactProfileID="5">
+					<Addresses>
+						<Address ID="58777" Type="6">
+							<CityName>Camps Bay</CityName>
+							<PostalCode>8040</PostalCode>
+							<County>ZA</County>
+							<StateProv StateCode="WC">Western Cape</StateProv>
+							<CountryName Code="ZA">South Africa</CountryName>
+						</Address>
+					</Addresses>
+					<Phones>
+						<Phone ShareMarketInd="Yes" ShareSynchInd="Yes" PhoneNumber="+27 21 424 3353"
+							PhoneUseType="3" PhoneTechType="1" PhoneLocationType="9" />
+						<Phone ShareMarketInd="Yes" ShareSynchInd="Yes" PhoneNumber="+27 21 424 3355"
+							PhoneUseType="3" PhoneTechType="3" PhoneLocationType="9" />
+						<Phone ShareMarketInd="Yes" ShareSynchInd="Yes" PhoneNumber="+27 84 804 9902"
+							PhoneUseType="5" PhoneTechType="5" PhoneLocationType="9" />
+					</Phones>
+					<Emails>
+						<Email ShareSynchInd="Yes" EmailType="8">info@noxrentals.co.za
+						</Email>
+					</Emails>
+					<URLs>
+						<URL Type="5">www.noxrentals.co.za</URL>
+					</URLs>
+					<CompanyName CodeContext="RZ" Code="5" TravelSector="3"
+						CompanyShortName="Nox Tourism cc" />
+				</ContactInfo>
+			</ContactInfos>
+		</HotelDescriptiveContent>
+	</HotelDescriptiveContents>
+</OTA_HotelDescriptiveInfoRS>

@@ -1,0 +1,47 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="net.cbtltd.server.api.CountryCodeMapper">
+
+ 	<cache readOnly="true"/> 
+
+	<resultMap id="ResultMap" type="net.cbtltd.shared.CountryCode">
+	    <result column="countryString" jdbcType="VARCHAR" property="countryString" />
+	    <result column="countryCode" jdbcType="VARCHAR" property="countryCode" />
+	</resultMap>
+    
+	<sql id="CountryVsCode2">
+		country as countryString,iso_code2 as countryCode
+	</sql>
+	<sql id="Code3VsCode2">
+		iso_code3 as countryString,iso_code2 as countryCode
+	</sql>
+	
+	<select id="getCountryCodes" resultMap="ResultMap">
+		select
+		<include refid="CountryVsCode2" />
+		from country_code
+		union
+		select
+		<include refid="Code3VsCode2" />
+		from country_code
+		
+		
+	</select>
+	
+	<select id="getAllCountries" resultType="String">
+		select
+		country
+		from country_code
+		order by country
+	</select>
+	
+	<select id="getCountryName" resultType="String">
+		select country from country_code where iso_code2 = #{iso_code2,jdbcType=VARCHAR}
+	</select>
+
+	<select id="getPhoneCode" resultType="String">
+		select phone_code from country_code where country =
+		#{countryName,jdbcType=VARCHAR}
+	</select>
+	
+</mapper>

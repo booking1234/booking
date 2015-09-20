@@ -1,0 +1,318 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE configuration
+PUBLIC "-//mybatis.org//DTD Config 3.0//EN"
+"http://mybatis.org/dtd/mybatis-3-config.dtd">
+<configuration>
+<!--	<properties resource="net/cbtltd/server/db.properties">-->
+<!--		<property name="foo" value="bar" />-->
+<!--	</properties>-->
+	<settings>
+		<setting name="cacheEnabled" value="true" />
+<!-- NO LAZY LOADING AS IT KILLS THE POJOs FOR SERIALIZATION -->
+		<setting name="lazyLoadingEnabled" value="false" />
+		<setting name="multipleResultSetsEnabled" value="true" />
+		<setting name="useColumnLabel" value="true" />
+		<setting name="useGeneratedKeys" value="true" />
+		<setting name="defaultExecutorType" value="REUSE" />
+		<setting name="defaultStatementTimeout" value="600" />
+	</settings>
+	<typeAliases>
+		<typeAlias alias="HasCollision" type="net.cbtltd.shared.api.HasCollision" />
+		<typeAlias alias="HasPrice" type="net.cbtltd.shared.api.HasPrice" />
+		<typeAlias alias="HasTableService" type="net.cbtltd.shared.api.HasTableService" />
+		<typeAlias alias="Account" type="net.cbtltd.shared.Account" />
+		<typeAlias alias="AccountAction" type="net.cbtltd.shared.account.AccountAction" />
+		<typeAlias alias="Adjustment" type="net.cbtltd.shared.Adjustment" />
+		<typeAlias alias="Alert" type="net.cbtltd.shared.Alert" />
+		<typeAlias alias="AlertTable" type="net.cbtltd.shared.alert.AlertTable" />
+		<typeAlias alias="Area" type="net.cbtltd.shared.Area" />
+		<typeAlias alias="Asset" type="net.cbtltd.shared.Asset" />
+		<typeAlias alias="AssetTable" type="net.cbtltd.shared.asset.AssetTable" />
+		<typeAlias alias="Attribute" type="net.cbtltd.shared.Attribute" />
+		<typeAlias alias="AttributeMapAction" type="net.cbtltd.shared.AttributeMapAction" />
+		<typeAlias alias="Audit" type="net.cbtltd.shared.Audit" />
+		<typeAlias alias="AuditTable" type="net.cbtltd.shared.audit.AuditTable" />
+		<typeAlias alias="Available" type="net.cbtltd.shared.reservation.Available" />
+		<typeAlias alias="AvailableItem" type="net.cbtltd.shared.reservation.AvailableItem" />
+		<typeAlias alias="Balance" type="net.cbtltd.shared.Balance" />
+		<typeAlias alias="Bill" type="net.cbtltd.shared.Bill" />
+		<typeAlias alias="Contract" type="net.cbtltd.shared.Contract" />
+		<typeAlias alias="ContractTable" type="net.cbtltd.shared.contract.ContractTable" />
+		<typeAlias alias="ConvertionInfo" type="net.cbtltd.shared.ConvertionInfo" />
+		<typeAlias alias="Country" type="net.cbtltd.shared.Country" />
+		<typeAlias alias="Currency" type="net.cbtltd.shared.Currency" />
+		<typeAlias alias="Currencyrate" type="net.cbtltd.shared.Currencyrate" />
+		<typeAlias alias="CustomerPaymentProfile" type="net.cbtltd.shared.finance.gateway.CustomerPaymentProfile" />
+		<typeAlias alias="Data" type="net.cbtltd.shared.Data" />
+		<typeAlias alias="Depreciation" type="net.cbtltd.shared.Depreciation" />
+		<typeAlias alias="Design" type="net.cbtltd.shared.Design" />
+		<typeAlias alias="Entity" type="net.cbtltd.shared.Entity" />
+		<typeAlias alias="Event" type="net.cbtltd.shared.Event" />
+		<typeAlias alias="EventJournal" type="net.cbtltd.shared.journal.EventJournal" />
+		<typeAlias alias="EventJournalTable" type="net.cbtltd.shared.journal.EventJournalTable" />
+		<typeAlias alias="Fee" type="net.cbtltd.shared.Fee" />
+		<typeAlias alias="Finance" type="net.cbtltd.shared.Finance" />
+		<typeAlias alias="Image" type="net.cbtltd.shared.Image" />
+		<typeAlias alias="Journal" type="net.cbtltd.shared.Journal" />
+		<typeAlias alias="Language" type="net.cbtltd.shared.Language" />
+		<typeAlias alias="License" type="net.cbtltd.shared.License" />
+		<typeAlias alias="LicenseTable" type="net.cbtltd.shared.license.LicenseTable" />
+		<typeAlias alias="Location" type="net.cbtltd.shared.Location" />
+		<typeAlias alias="LocationPosition" type="net.cbtltd.shared.location.LocationPosition" />
+		<typeAlias alias="LookBook" type="net.cbtltd.shared.reservation.LookBook" />
+		<typeAlias alias="Market" type="net.cbtltd.shared.contract.Market" />
+		<typeAlias alias="MarketItem" type="net.cbtltd.shared.contract.MarketItem" />
+		<typeAlias alias="MinstayWeek" type="net.cbtltd.shared.minstay.MinstayWeek" />
+		<typeAlias alias="Model" type="net.cbtltd.shared.Model" />
+		<typeAlias alias="Monitor" type="net.cbtltd.shared.Monitor" />
+		<typeAlias alias="NameId" type="net.cbtltd.shared.NameId" />
+		<typeAlias alias="NameIdAction" type="net.cbtltd.shared.NameIdAction" />
+		<typeAlias alias="NameIdState" type="net.cbtltd.shared.NameIdState" />
+		<typeAlias alias="NameIdType" type="net.cbtltd.shared.NameIdType" />
+		<typeAlias alias="NameIdTab" type="net.cbtltd.shared.NameIdTab" />
+		<typeAlias alias="NameIdNearby" type="net.cbtltd.shared.location.NameIdNearby" />
+		<typeAlias alias="Organization" type="net.cbtltd.shared.party.Organization" />
+		<typeAlias alias="Partner" type="net.cbtltd.shared.Partner" />
+		<typeAlias alias="PartnerTable" type="net.cbtltd.shared.partner.PartnerTable" />
+		<typeAlias alias="Party" type="net.cbtltd.shared.Party" />
+		<typeAlias alias="PaymentRegister" type="net.cbtltd.shared.finance.gateway.PaymentRegister" />
+		<typeAlias alias="PendingTransaction" type="net.cbtltd.shared.PendingTransaction" />
+		<typeAlias alias="Position" type="net.cbtltd.shared.Position" />
+		<typeAlias alias="Price" type="net.cbtltd.shared.Price" />
+		<typeAlias alias="PriceExt" type="net.cbtltd.shared.PriceExt" />
+		<typeAlias alias="Rates" type="net.cbtltd.shared.Rates" />
+		<typeAlias alias="PropertyDealRates" type="net.cbtltd.shared.PropertyDealRates" />
+		<typeAlias alias="PropertyManagerConfiguration" type="net.cbtltd.shared.PropertyManagerConfiguration" />
+		<typeAlias alias="PriceCSV" type="net.cbtltd.shared.price.PriceCSV" />
+		<typeAlias alias="PriceCurrency" type="net.cbtltd.shared.price.PriceCurrency" />
+		<typeAlias alias="PriceTable" type="net.cbtltd.shared.price.PriceTable" />		
+		<typeAlias alias="PriceWeek" type="net.cbtltd.shared.price.PriceWeek" />
+		<typeAlias alias="Process" type="net.cbtltd.shared.Process" />
+		<typeAlias alias="Product" type="net.cbtltd.shared.Product" />
+		<typeAlias alias="ProductValue" type="net.cbtltd.shared.product.ProductValue" />
+		<typeAlias alias="Rate" type="net.cbtltd.shared.Rate" />
+		<typeAlias alias="RateNote" type="net.cbtltd.shared.rate.RateNote" />
+		<typeAlias alias="RateNoteTable" type="net.cbtltd.shared.rate.RateNoteTable" />
+		<typeAlias alias="Region" type="net.cbtltd.shared.Region" />
+		<typeAlias alias="Relation" type="net.cbtltd.shared.Relation" />
+		<typeAlias alias="Report" type="net.cbtltd.shared.Report" />
+		<typeAlias alias="AccountSummary" type="net.cbtltd.shared.report.AccountSummary" />
+		<typeAlias alias="Reservation" type="net.cbtltd.shared.Reservation" />
+		<typeAlias alias="Brochure" type="net.cbtltd.shared.reservation.Brochure" />
+		<typeAlias alias="Role" type="net.cbtltd.shared.Role" />
+		<typeAlias alias="RolePartyTable" type="net.cbtltd.shared.party.RolePartyTable" />
+		<typeAlias alias="RowBounds" type = "org.apache.ibatis.session.RowBounds" />
+		<typeAlias alias="Schedule" type="net.cbtltd.shared.task.Schedule" />
+		<typeAlias alias="ScheduleItem" type="net.cbtltd.shared.task.ScheduleItem" />
+		<typeAlias alias="Serial" type="net.cbtltd.shared.Serial" />
+		<typeAlias alias="Session" type="net.cbtltd.shared.Session" />
+		<typeAlias alias="Special" type="net.cbtltd.shared.Special" />
+		<typeAlias alias="Task" type="net.cbtltd.shared.Task" />
+		<typeAlias alias="Contact" type="net.cbtltd.shared.task.Contact" />
+		<typeAlias alias="TaskTable" type="net.cbtltd.shared.task.TaskTable" />
+		<typeAlias alias="Tax" type="net.cbtltd.shared.Tax" />
+		<typeAlias alias="TaxTable" type="net.cbtltd.shared.tax.TaxTable" />
+		<typeAlias alias="Text" type="net.cbtltd.shared.Text" />
+		<typeAlias alias="Time" type="net.cbtltd.shared.Time" />
+		<typeAlias alias="Unit" type="net.cbtltd.shared.Unit" />
+		<typeAlias alias="Unspsc" type="net.cbtltd.shared.Unspsc" />
+		<typeAlias alias="VisualizationData" type="net.cbtltd.shared.VisualizationData" />
+		<typeAlias alias="Void" type="java.lang.Void" />
+		<typeAlias alias="Workflow" type="net.cbtltd.shared.Workflow" />
+		<typeAlias alias="WorkflowProgress" type="net.cbtltd.shared.workflow.WorkflowProgress" />
+		<typeAlias alias="WorkflowTable" type="net.cbtltd.shared.workflow.WorkflowTable" />
+		<typeAlias alias="Yield" type="net.cbtltd.shared.Yield" />		
+		<typeAlias alias="ChannelPartner" type="net.cbtltd.shared.ChannelPartner" />
+		<typeAlias alias="ManagerToGateway" type="net.cbtltd.shared.ManagerToGateway" />
+		<typeAlias alias="PaymentGatewayProvider" type="net.cbtltd.shared.PaymentGatewayProvider" />
+		<typeAlias alias="PaymentTransaction" type="net.cbtltd.shared.PaymentTransaction"/>
+		<typeAlias alias="PropertyManagerInfo" type="net.cbtltd.shared.PropertyManagerInfo" />		
+		<typeAlias alias="PaymentMethod" type="net.cbtltd.shared.PaymentMethod" />
+		<typeAlias alias="PropertyManagerSupportCC" type="net.cbtltd.shared.PropertyManagerSupportCC" />
+		<typeAlias alias="ProductInfo" type="net.cbtltd.rest.registration.ProductInfo" />
+		<typeAlias alias="PropertyManagerCancellationRule" type="net.cbtltd.shared.PropertyManagerCancellationRule" />
+		<typeAlias alias="MinStay" type="net.cbtltd.shared.MinStay" />
+		<typeAlias alias="Image" type="net.cbtltd.shared.Image" />
+		<typeAlias alias="ChannelLastFetch" type="net.cbtltd.shared.ChannelLastFetch" />
+		<typeAlias alias="ChannelProductMap" type="net.cbtltd.shared.ChannelProductMap" />
+		<typeAlias alias="ReservationExt" type="net.cbtltd.shared.ReservationExt" />
+		<typeAlias alias="RegionCode" type="net.cbtltd.shared.RegionCode" />
+		<typeAlias alias="CountryCode" type="net.cbtltd.shared.CountryCode" />
+		<typeAlias alias="ManagerToChannel" type="net.cbtltd.shared.ManagerToChannel" />
+		<typeAlias alias="ChannelDistribution" type="net.cbtltd.shared.ChannelDistribution" />
+		
+		<!-- Exclude these SQLMap aliases.r
+		<typeAlias alias="Payment" type="net.cbtltd.shared.Payment" />
+		<typeAlias alias="PriceDetail" type="net.cbtltd.shared.price.PriceDetail" />
+		<typeAlias alias="ProductList" type="net.cbtltd.shared.product.ProductList" />
+		<typeAlias alias="Purchase" type="net.cbtltd.shared.Purchase" />
+		<typeAlias alias="Receipt" type="net.cbtltd.shared.Receipt" />
+		<typeAlias alias="Sale" type="net.cbtltd.shared.Sale" />
+		<typeAlias alias="Action" type="net.cbtltd.shared.Action" />
+		<typeAlias alias="Actor" type="net.cbtltd.shared.party.Actor" />
+		<typeAlias alias="ProductTax" type="net.cbtltd.shared.product.ProductTax" />
+		<typeAlias alias="SessionValue" type="net.cbtltd.shared.session.SessionValue" />
+		<typeAlias alias="SessionItemTable" type="net.cbtltd.shared.session.SessionItemTable" />
+		<typeAlias alias="Used" type="net.cbtltd.shared.Used" />
+		-->
+	</typeAliases>
+		
+	<plugins>
+  		<plugin interceptor="com.mybookingpal.service.interceptor.SqlInterceptor">
+    		<property name="someProperty" value="100"/>
+  		</plugin>
+	</plugins>
+	<environments default="development">
+		<environment id="development">
+			<transactionManager type="JDBC" />
+			<dataSource type="POOLED">
+				<property name="driver" value="com.mysql.jdbc.Driver" />
+ 				<property name="url" value="jdbc:mysql://localhost:3306/razor?characterEncoding=UTF8" /> 
+ 				<property name="username" value="root" /> 
+				<property name="password" value="root" />
+				
+				<!-- 		
+				<property name="url" value="jdbc:mysql://razor-cloud-test.cl8byaopxglx.us-east-1.rds.amazonaws.com:3306/demo" /> 	
+				<property name="url" value="jdbc:mysql://uat.mybookingpal.com:3306/razor" /> 
+ 				<property name="url" value="jdbc:mysql://razor-cloud-test.cl8byaopxglx.us-east-1.rds.amazonaws.com:3306/demo" /> 
+				<property name="url" value="jdbc:mysql://razor-cloud.crax8xvg1vwz.us-east-1.rds.amazonaws.com:3306/razor" /> 
+				
+ 				<property name="url" value="jdbc:mysql://uatdb.mybookingpal.com:3306/razor" />
+							 
+				<property name="username" value="root" />  
+				<property name="username" value="pavel" /> 
+				<property name="password" value="4eVfWDdP" />
+				<property name="password" value="1111"/>
+				<property name="password" value="password" />
+				-->
+				
+				<property name="poolMaximumActiveConnections" value="50" />
+			</dataSource>	
+		</environment>
+		<environment id="uat">
+			<transactionManager type="JDBC" />
+			<dataSource type="POOLED">
+				<property name="driver" value="com.mysql.jdbc.Driver" />
+ 				<property name="url" value="jdbc:mysql://uatdb.mybookingpal.com:3306/razor?characterEncoding=UTF8" /> 
+ 				<property name="username" value="pavel" /> 
+				<property name="password" value="password" />
+				<property name="poolMaximumActiveConnections" value="50" />
+			</dataSource>	
+		</environment>
+		<environment id="production">
+			<transactionManager type="JDBC" />
+			<dataSource type="POOLED">
+				<property name="driver" value="com.mysql.jdbc.Driver" />
+ 				<property name="url" value="jdbc:mysql://54.197.247.82:3306/razor?characterEncoding=UTF8" /> 
+				<property name="username" value="root" />
+				<property name="password" value="4eVfWDdP" />
+				<property name="poolMaximumActiveConnections" value="50" />
+			</dataSource>	
+		</environment>
+		<environment id="demo">
+			<transactionManager type="JDBC" />
+			<dataSource type="POOLED">
+				<property name="driver" value="com.mysql.jdbc.Driver" />
+ 				<property name="url" value="jdbc:mysql://demodb.mybookingpal.com:3306/razor?characterEncoding=UTF8" /> 
+				<property name="username" value="root" />
+				<property name="password" value="4eVfWDdP" />
+				<property name="poolMaximumActiveConnections" value="50" />
+			</dataSource>	
+		</environment>
+	</environments>
+	<mappers>
+		<mapper resource="net/cbtltd/server/xml/AccountMapper.xml"/>
+		<mapper resource="net/cbtltd/server/xml/AdjustmentMapper.xml"/>
+		<mapper resource="net/cbtltd/server/xml/AlertMapper.xml"/>
+		<mapper resource="net/cbtltd/server/xml/AssetMapper.xml"/>
+		<mapper resource="net/cbtltd/server/xml/AttributeMapper.xml" />
+		<mapper resource="net/cbtltd/server/xml/AuditMapper.xml" />
+		<mapper resource="net/cbtltd/server/xml/BillMapper.xml"/>
+		<mapper resource="net/cbtltd/server/xml/ContactMapper.xml"/>
+		<mapper resource="net/cbtltd/server/xml/ContractMapper.xml"/>
+		<mapper resource="net/cbtltd/server/xml/ConvertionInfoMapper.xml"/>
+		<mapper resource="net/cbtltd/server/xml/CountryMapper.xml"/>
+		<mapper resource="net/cbtltd/server/xml/CountryCodeMapper.xml"/>
+		<mapper resource="net/cbtltd/server/xml/ProductUpdateIntervalMapper.xml"/>
+		<mapper resource="net/cbtltd/server/xml/ProductFilterSettingsMapper.xml"/>
+		<mapper resource="net/cbtltd/server/xml/ProductExportSettingsMapper.xml"/>
+		<mapper resource="net/cbtltd/server/xml/CurrencyMapper.xml"/>
+		<mapper resource="net/cbtltd/server/xml/CurrencyrateMapper.xml"/>
+		<mapper resource="net/cbtltd/server/xml/CustomerPaymentProfileMapper.xml"/>
+		<mapper resource="net/cbtltd/server/xml/DataMapper.xml"/>
+		<mapper resource="net/cbtltd/server/xml/FeeMapper.xml"/>
+		<mapper resource="net/cbtltd/server/xml/DepreciationMapper.xml"/>
+		<mapper resource="net/cbtltd/server/xml/DesignMapper.xml"/>
+		<mapper resource="net/cbtltd/server/xml/DownloadMapper.xml"/>
+		<mapper resource="net/cbtltd/server/xml/EventMapper.xml"/>
+		<mapper resource="net/cbtltd/server/xml/FinanceMapper.xml"/>
+		<mapper resource="net/cbtltd/server/xml/ImageMapper.xml"/>
+		<mapper resource="net/cbtltd/server/xml/JournalMapper.xml"/>
+		<mapper resource="net/cbtltd/server/xml/LanguageMapper.xml"/>
+		<mapper resource="net/cbtltd/server/xml/LicenseMapper.xml"/>
+		<mapper resource="net/cbtltd/server/xml/LocationMapper.xml"/>
+		<mapper resource="net/cbtltd/server/xml/MonitorMapper.xml"/>
+		<mapper resource="net/cbtltd/server/xml/PartnerMapper.xml"/>
+		<mapper resource="net/cbtltd/server/xml/PartyMapper.xml"/>
+		<mapper resource="net/cbtltd/server/xml/PaymentRegisterMapper.xml"/>
+		<mapper resource="net/cbtltd/server/xml/PendingTransactionMapper.xml"/>
+		<mapper resource="net/cbtltd/server/xml/PriceMapper.xml"/>
+		<mapper resource="net/cbtltd/server/xml/ProductMapper.xml"/>
+		<mapper resource="net/cbtltd/server/xml/RateMapper.xml"/>
+		<mapper resource="net/cbtltd/server/xml/RegionMapper.xml"/>
+		<mapper resource="net/cbtltd/server/xml/RelationMapper.xml"/>
+		<mapper resource="net/cbtltd/server/xml/ReportMapper.xml"/>
+		<mapper resource="net/cbtltd/server/xml/ReservationMapper.xml"/>
+		<mapper resource="net/cbtltd/server/xml/RoleMapper.xml"/>
+		<mapper resource="net/cbtltd/server/xml/SerialMapper.xml"/>
+		<mapper resource="net/cbtltd/server/xml/SessionMapper.xml"/>
+		<mapper resource="net/cbtltd/server/xml/SpecialMapper.xml"/>
+		<mapper resource="net/cbtltd/server/xml/TaskMapper.xml"/>
+		<mapper resource="net/cbtltd/server/xml/TaxMapper.xml"/>
+		<mapper resource="net/cbtltd/server/xml/TextMapper.xml"/>
+		<mapper resource="net/cbtltd/server/xml/UnitMapper.xml"/>
+		<mapper resource="net/cbtltd/server/xml/UnspscMapper.xml"/>
+		<mapper resource="net/cbtltd/server/xml/WorkflowMapper.xml"/>
+		<mapper resource="net/cbtltd/server/xml/YieldMapper.xml"/>		
+		<mapper resource="net/cbtltd/server/xml/ChannelPartnerMapper.xml"/>		
+		<mapper resource="net/cbtltd/server/xml/ManagerToGatewayMapper.xml"/>		
+		<mapper resource="net/cbtltd/server/xml/PaymentGatewayProviderMapper.xml"/>
+		<mapper resource="net/cbtltd/server/xml/PropertyManagerInfoMapper.xml"/>
+		<mapper resource="net/cbtltd/server/xml/PaymentMethodMapper.xml"/>
+		<mapper resource="net/cbtltd/server/xml/PropertyManagerConfigurationMapper.xml"/>
+		<mapper resource="net/cbtltd/server/xml/PropertyManagerSupportCCMapper.xml"/>
+		<mapper resource="net/cbtltd/server/xml/PropertyManagerCancellationRuleMapper.xml"/>
+		<mapper resource="net/cbtltd/server/xml/PropertyMinStayMapper.xml"/>
+			
+		<mapper resource="net/cbtltd/server/xml/PaymentTransactionMapper.xml"/>
+		<mapper resource="net/cbtltd/server/xml/ImageMapper.xml"/>
+		
+		<mapper resource="net/cbtltd/server/xml/ChannelLastFetchMapper.xml"/>
+		<mapper resource="net/cbtltd/server/xml/ChannelProductMapMapper.xml"/>
+		<mapper resource="net/cbtltd/server/xml/ReservationExtMapper.xml"/>
+		<mapper resource="net/cbtltd/server/xml/RegionCodeMapper.xml"/>
+		<mapper resource="net/cbtltd/server/xml/PriceExtMapper.xml"/>	
+		<mapper resource="net/cbtltd/server/xml/RatesMapper.xml"/>	
+		<mapper resource="net/cbtltd/server/xml/PropertyDealRatesMapper.xml"/>	
+		
+		<mapper resource="com/mybookingpal/server/test/xml/LocationMapper.xml"/>
+		<mapper resource="com/mybookingpal/server/test/xml/PriceMapper.xml"/>
+		<mapper resource="com/mybookingpal/server/test/xml/ProductMapper.xml"/>
+		<mapper resource="com/mybookingpal/server/test/xml/RelationMapper.xml"/>
+		<mapper resource="net/cbtltd/server/xml/ManagerToChannelMapper.xml"/>
+		
+		<mapper resource="net/cbtltd/server/xml/ConvertionInfoMapper.xml"/>
+		
+			   <!-- Exclude these SQLMap XML files.
+		<mapper resource="net/cbtltd/server/xml/PurchaseMapper.xml"/>
+		<mapper resource="net/cbtltd/server/xml/ReceiptMapper.xml"/>
+		<mapper resource="net/cbtltd/server/xml/SaleMapper.xml"/>
+		<mapper resource="net/cbtltd/server/xml/AttributeMapper.xml"/>
+		<mapper resource="net/cbtltd/server/xml/RouteMapper.xml"/>
+		<mapper resource="net/cbtltd/server/xml/ScratchMapper.xml"/>
+		<mapper resource="net/cbtltd/server/xml/TypeMapper.xml"/>
+		<mapper resource="net/cbtltd/server/xml/UsedMapper.xml" />
+		<mapper resource="net/cbtltd/server/xml/ValueMapper.xml"/>
+			    -->
+	</mappers>
+</configuration>

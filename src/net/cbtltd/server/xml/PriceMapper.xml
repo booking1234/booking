@@ -1,0 +1,938 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="net.cbtltd.server.api.PriceMapper">
+
+	<resultMap id="ResultMap" type="Price">
+		<id column="price.ID" jdbcType="INTEGER" property="id" />
+		<result column="price.AltID" jdbcType="VARCHAR" property="altid" />
+		<result column="price.EntityType" jdbcType="VARCHAR" property="entitytype" />
+		<result column="price.EntityID" jdbcType="INTEGER" property="entityid" />
+		<result column="price.PartyID" jdbcType="INTEGER" property="partyid" />
+		<result column="price.SupplierID" jdbcType="INTEGER" property="supplierid" />
+		<result column="price.Name" jdbcType="VARCHAR" property="name" />
+		<result column="price.State" jdbcType="VARCHAR" property="state" />
+		<result column="price.Type" jdbcType="VARCHAR" property="type" />
+		<result column="price.Payer" jdbcType="VARCHAR" property="payer" />
+		<result column="price.Rule" jdbcType="VARCHAR" property="rule" />
+		<result column="price.Date" jdbcType="DATE" property="date" />
+		<result column="price.ToDate" jdbcType="DATE" property="todate" />
+		<result column="price.Quantity" jdbcType="DOUBLE" property="quantity" />
+		<result column="price.Unit" jdbcType="VARCHAR" property="unit" />
+		<result column="price.Value" jdbcType="DOUBLE" property="value" />
+		<result column="price.Minimum" jdbcType="DOUBLE" property="minimum" />
+		<result column="price.Factor" jdbcType="DOUBLE" property="factor" />
+		<result column="price.Cost" jdbcType="DOUBLE" property="cost" />
+		<result column="price.Available" jdbcType="INTEGER" property="available" />
+		<result column="price.Minstay" jdbcType="INTEGER" property="minStay" />
+		<result column="price.Maxtay" jdbcType="INTEGER" property="maxStay" />
+		<result column="price.Currency" jdbcType="VARCHAR" property="currency" />
+		<result column="product.Name" jdbcType="VARCHAR" property="entityname" />
+		<result column="party.Name" jdbcType="VARCHAR" property="partyname" />
+		<result column="version" jdbcType="TIMESTAMP" property="version" />
+	</resultMap>
+
+	<sql id="columns">
+		price.ID, price.AltID, price.EntityType, price.EntityID, price.PartyID, price.SupplierID, price.Name, price.State, price.Type, price.Payer, price.Rule,
+		price.Date, price.ToDate, price.Quantity, price.Unit, price.Value, price.Minimum, price.Factor, price.Cost, price.Available, price.Minstay, price.Maxstay, price.Currency,
+		price.version, product.Name as entityname, party.Name as partyname
+	</sql>
+	
+	<sql id="pricecolumns">
+		price.ID, price.AltID, price.EntityType, price.EntityID, price.PartyID, price.SupplierID, price.Name, price.State, price.Type, price.Payer, price.Rule,
+		price.Date, price.ToDate, price.Quantity, price.Unit, price.Value, price.Minimum, price.Factor, price.Cost, price.Available, price.Minstay, price.Maxstay, price.Currency,
+		price.version
+	</sql>
+	
+	<sql id="priceweekcolumns">
+		p.ID, p.AltID, p.EntityType, p.EntityID, p.PartyID, p.SupplierID, p.Name, p.State, p.Type, p.Payer, p.Rule,
+		p.Date, p.ToDate, p.Quantity, p.Unit, p.Value, p.Minimum, p.Factor, p.Cost, p.Available, p.Minstay, p.Maxstay, p.Currency,
+		p.version, tmln.start, tmln.end, tmln.week
+	</sql>
+
+     <!--nextpax to get altid of price--> 
+	<select id="altidfromdate" parameterType="Product" resultMap="ResultMap">
+		SELECT
+		<include refid="pricecolumns" />
+		FROM price
+		WHERE  price.Date = #{fromdate}
+			   AND price.Todate = #{todate}
+			   AND price.EntityID = #{entityid,jdbcType=INTEGER}
+			   AND price.State = 'Created'
+			   AND price.EntityType = "Product"
+	</select>
+	
+	<select id="read" parameterType="String" resultMap="ResultMap">
+		select
+		<include refid="columns" />
+		from price
+			join product on product.ID = price.EntityID
+			join party on party.ID = price.PartyID 
+		where price.ID = #{id,jdbcType=INTEGER}
+	</select>
+	
+	<select id="readByEntityId" parameterType="price" resultMap="ResultMap">
+		SELECT
+		<include refid="pricecolumns" />
+		FROM price
+		WHERE  price.Date <![CDATA[ < ]]> #{todate}
+			   AND price.Todate <![CDATA[ > ]]> #{date}
+			   AND price.EntityID = #{entityid,jdbcType=INTEGER}
+			   AND price.State = 'Created'
+			   AND price.EntityType = "Product"
+	</select>
+
+	
+	<select id="readByEntityIdAndEntityType" parameterType="price" resultMap="ResultMap">
+		SELECT
+		<include refid="pricecolumns" />
+		FROM price
+		WHERE  price.Date <![CDATA[ < ]]> #{todate}
+			   AND price.Todate <![CDATA[ > ]]> #{date}
+			   AND price.EntityID = #{entityid,jdbcType=INTEGER}
+			   AND price.PartyID = #{partyid,jdbcType=INTEGER}
+			   AND price.State = 'Created'
+			   AND price.EntityType = #{entitytype,jdbcType=VARCHAR}
+	    ORDER BY Date asc
+	</select>
+	
+	<select id="readByFromDate" parameterType="price" resultMap="ResultMap">
+		select
+		<include refid="columns" />
+		from price
+		join product on product.ID = price.EntityID
+			join party on party.ID = price.PartyID 
+		where price.date=#{date} 
+	
+	</select>
+	
+
+	
+	<select id="existsPrice" parameterType="Price" resultMap="ResultMap">
+		select
+		<include refid="pricecolumns" />
+		from price USE INDEX (alt_price_lookup) 
+		where price.EntityType = #{entitytype,jdbcType=VARCHAR} 
+			and price.EntityID = #{entityid,jdbcType=INTEGER}
+			and price.PartyID = #{partyid,jdbcType=INTEGER}
+			<if test="altid != null">
+			and price.AltID = #{altid,jdbcType=VARCHAR}
+			</if>
+	</select>
+	
+	<select id="existsAltID" parameterType="Price" resultMap="ResultMap">
+		select
+		<include refid="columns" />
+		from price
+			join product on product.ID = price.EntityID
+			join party on party.ID = price.PartyID 
+		where price.EntityType = #{entitytype,jdbcType=VARCHAR} 
+			and price.EntityID = #{entityid,jdbcType=INTEGER}
+			and price.PartyID = #{partyid,jdbcType=INTEGER}
+			<if test="altid != null">
+			and price.AltID = #{altid,jdbcType=VARCHAR}
+			</if>
+		limit 1
+	</select>
+
+	<select id="exists" parameterType="Price" resultMap="ResultMap">
+		select
+		<include refid="columns" />
+		from price
+			join product on product.ID = price.EntityID
+			join party on party.ID = price.PartyID 
+		where price.EntityType = #{entitytype,jdbcType=VARCHAR} 
+			and price.EntityID = #{entityid,jdbcType=INTEGER}
+			and price.PartyID = #{partyid,jdbcType=INTEGER}
+			and price.Name = #{name,jdbcType=VARCHAR}
+			and price.Type = #{type,jdbcType=VARCHAR}
+			and price.Date = #{date}
+			and price.Todate = #{todate}
+			and price.Currency = #{currency}
+			<if test="state != null">
+			and price.State = #{state}
+			</if>
+			<if test="quantity != null">
+			and price.Quantity = #{quantity}
+			</if>
+			<if test="unit != null">
+			and price.Unit = #{unit}
+			</if>
+		limit 0, 1
+	</select>
+
+	<update id="cancelversion" parameterType="Price">
+		update price set State = 'Final'
+		where PartyID = #{partyid}
+			and EntityType = #{entitytype,jdbcType=VARCHAR}
+			and EntityID = #{entityid,jdbcType=INTEGER}
+			and Currency = #{currency,jdbcType=VARCHAR}
+			and version <![CDATA[ <> ]]> #{version}
+	</update>
+	
+	<update id="cancelversionbypartyid" parameterType="Price">
+		update price set State = 'Final'
+		where PartyID = #{partyid,jdbcType=INTEGER}
+		    and EntityType = #{entitytype,jdbcType=VARCHAR}
+		    <if test="currency != null">
+				and Currency = #{currency,jdbcType=VARCHAR}
+		    </if>
+			and version <![CDATA[ <> ]]> #{version}
+	</update>
+	
+	<update id="cancelpricelist" parameterType="Price">
+		update price set State = 'Final'
+		where ID in 
+		<foreach item="item" index="index" collection="list" open="(" separator="," close=")">
+			#{item}
+		</foreach>
+	</update>
+	
+	<update id="deactivatereservationpricesbyversion" parameterType="Price">
+		update price set State = 'Final'
+		where PartyID = #{partyid}
+		    and Type = 'Reservation'
+			and version <![CDATA[ <> ]]> #{version}
+	</update>
+
+	<select id="readbydate" parameterType="Price" resultMap="ResultMap">
+		select
+		<include refid="columns" />
+		from price
+			join product on product.ID = price.EntityID
+			join party on party.ID = price.PartyID 
+		where price.EntityType = #{entitytype,jdbcType=VARCHAR}
+			and price.EntityID = #{entityid,jdbcType=INTEGER}
+			and price.PartyID = #{partyid,jdbcType=INTEGER}
+			and price.Date <![CDATA[ <= ]]> #{dateStr}
+			and price.Todate <![CDATA[ >= ]]> #{dateStr}
+			and price.State not in ('Initial', 'Final')
+		order by Date desc, Quantity desc
+		limit 0, 1
+	</select>
+	
+	<select id="readbytype" parameterType="Price" resultMap="ResultMap">
+		select
+		<include refid="columns" />
+		from price
+			join product on product.ID = price.EntityID
+			join party on party.ID = price.PartyID 
+		where price.EntityType = #{entitytype,jdbcType=VARCHAR}
+			and price.EntityID = #{entityid,jdbcType=INTEGER}
+			and price.PartyID = #{partyid,jdbcType=INTEGER}
+			and price.Type = #{type,jdbcType=VARCHAR}
+			and price.Date <![CDATA[ <= ]]> #{dateStr}
+			and price.Todate <![CDATA[ >= ]]> #{dateStr}
+			and price.State not in ('Initial', 'Final')
+	</select>
+	
+	
+	<select id="readallassociatedprices" parameterType="Price" resultMap="ResultMap"> 
+		select
+		<include refid="columns" />
+		from price
+			join product on product.ID = price.EntityID
+			join party on party.ID = price.PartyID 
+		where price.EntityType = #{entitytype,jdbcType=VARCHAR}
+			and price.EntityID = #{entityid,jdbcType=INTEGER}
+			and price.PartyID = #{partyid,jdbcType=INTEGER}
+		<!-- 	and price.Date <![CDATA[ <= ]]> #{date} --> <!-- maybe need to add quotes around  -->
+		<!--  	and price.Todate <![CDATA[ >= ]]> #{todate}
+			and price.State not in ('Initial', 'Final') -->
+	</select>
+	
+	<select id="readperdiemtax" parameterType="Price" resultMap="ResultMap">
+		select
+		<include refid="pricecolumns" />
+		from price
+		where price.EntityType = #{entitytype, jdbcType=VARCHAR}
+			and price.EntityID = #{entityid,jdbcType=INTEGER}
+			and price.PartyID =  #{partyid,jdbcType=INTEGER}
+			and price.Name = 'Per Diem Tax'
+			and price.State = 'Created'
+		limit 0, 1
+	</select>
+	
+	<select id="readsplitpriceperiods" parameterType="Price" resultMap="ResultMap">
+		select
+		<include refid="columns" />
+		from price
+			join product on product.ID = price.entityID
+			join party on party.ID = price.partyID
+		where price.EntityType = 'Product'
+			and price.EntityID = #{entityid, jdbc=INTEGER}
+			and price.PartyID = #{partyid, jdbc=INTEGER}
+			and price.State not in ('Initial', 'Final')
+			and (#{date, jdbc=DATE} between price.Date and price.ToDate
+				or #{todate, jdbc=DATE} between price.Date and price.ToDate
+				or price.Date between #{date, jdbc=DATE} and #{todate, jdbc=DATE}) 
+	</select>
+	
+	<select id="readexactmatch" parameterType="Price" resultMap="ResultMap">
+		select
+		<include refid="columns" />
+		from price
+			join product on product.ID = price.EntityID
+			join party on party.ID = price.PartyID 
+		where price.EntityType = #{entitytype,jdbcType=VARCHAR}
+			and price.EntityID = #{entityid,jdbcType=INTEGER}
+			and price.PartyID = #{partyid,jdbcType=INTEGER}
+			and price.Date = #{date}
+			and price.Todate <![CDATA[ >= ]]> #{todate}
+			and price.State not in ('Initial', 'Final')
+		order by Todate asc, Minstay asc
+		limit 0, 1
+	</select>
+
+	<select id="export" parameterType="Price" resultType="PriceCSV">
+		select
+		<include refid="columns" />
+		from price
+			join product on product.ID = price.EntityID
+			join party on party.ID = price.PartyID 
+		where price.EntityType = #{entitytype,jdbcType=VARCHAR}
+			and price.EntityID = #{entityid,jdbcType=INTEGER}
+			and price.Date <![CDATA[ <= ]]> #{date}
+			and price.Todate <![CDATA[ >= ]]> #{todate}
+			and price.State not in ('Initial', 'Final')
+	</select>
+
+	<delete id="delete" parameterType="String">
+		delete from price
+		where ID = #{id,jdbcType=INTEGER}
+	</delete>
+	
+	<delete id="deleteByAltId" parameterType="String">
+		delete from price
+		where AltID = #{altId,jdbcType=INTEGER}
+	</delete>
+	
+	<delete id="deleteByEntityId" parameterType="String">
+		delete from price
+		where EntityID = #{entityid,jdbcType=INTEGER}
+	</delete>
+
+	<delete id="deletebyexample" parameterType="Price">
+		delete from price
+		where price.EntityType = #{entitytype,jdbcType=VARCHAR}
+			and price.EntityID = #{entityid,jdbcType=INTEGER}
+			<if test="todate != null">
+			and price.Date <![CDATA[ <= ]]> #{todate}
+			</if>
+			<if test="date != null">
+			and price.Todate <![CDATA[ > ]]> #{date}
+			</if>
+			<if test="partyid != null">
+			and	PartyID = #{partyid,jdbcType=INTEGER}
+			</if>
+			<if test="type != null">
+			and	Type = #{type,jdbcType=VARCHAR}
+			</if>
+			<if test="currency != null">
+			and	Currency = #{currency,jdbcType=VARCHAR}
+			</if>
+			<if test="unit != null">
+			and	Unit = #{unit,jdbcType=VARCHAR}
+			</if>
+	</delete>
+
+	<insert id="copy" parameterType="NameId" useGeneratedKeys="true" keyProperty="id">
+	  	insert into price (AltID, EntityType, EntityID, PartyID, SupplierID, Name, State, Type,Payer, Rule, Date, ToDate, Quantity, Unit, Value, Minimum, Factor, Cost, Available, Minstay, Currency)
+		select 
+		AltID, EntityType, #{id,jdbcType=INTEGER}, PartyID, SupplierID, Name, State, Type, Payer, Rule, Date, ToDate, Quantity, Unit, Value, Minimum, Factor, Cost, Available, Minstay, Currency
+		from price 
+		where EntityID = #{name,jdbcType=INTEGER}
+			
+	</insert>
+
+	<insert id="create" parameterType="Price" useGeneratedKeys="true" keyProperty="id">
+		insert into price (
+			AltID, EntityType, EntityID, PartyID, SupplierID, Name, State, Type, Payer, Rule,
+			Date, ToDate, Quantity, Unit, Value, Minimum, Factor, Cost, Available, Minstay, Maxstay, Currency, version
+		)
+		values (
+			#{altid,jdbcType=VARCHAR}, 
+			#{entitytype,jdbcType=VARCHAR}, 
+			#{entityid,jdbcType=INTEGER}, 
+			#{partyid,jdbcType=INTEGER},
+			#{supplierid,jdbcType=INTEGER},
+			#{name,jdbcType=VARCHAR}, 
+			#{state,jdbcType=VARCHAR}, 
+			#{type,jdbcType=VARCHAR}, 
+			#{payer,jdbcType=VARCHAR},
+			#{rule,jdbcType=VARCHAR},
+			#{date,jdbcType=DATE},
+			#{todate,jdbcType=DATE}, 
+			#{quantity,jdbcType=DOUBLE}, 
+			#{unit,jdbcType=VARCHAR},
+			#{value,jdbcType=DOUBLE}, 
+			#{minimum,jdbcType=DOUBLE}, 
+			#{factor,jdbcType=DOUBLE}, 
+			#{cost,jdbcType=DOUBLE}, 
+			#{available,jdbcType=INTEGER},
+			#{minStay,jdbcType=INTEGER},
+			#{maxStay,jdbcType=INTEGER},
+			#{currency,jdbcType=VARCHAR},
+			#{version,jdbcType=TIMESTAMP}
+		)
+	</insert>
+	
+	<update id="update" parameterType="Price">
+		update price
+		<set>
+			<if test="altid != null">
+				AltID = #{altid,jdbcType=VARCHAR},
+			</if>
+			<if test="entitytype != null">
+				EntityType = #{entitytype,jdbcType=VARCHAR},
+			</if>
+			<if test="entityid != null">
+				EntityID = #{entityid,jdbcType=INTEGER},
+			</if>
+			<if test="partyid != null">
+				PartyID = #{partyid,jdbcType=INTEGER},
+			</if>
+			<if test="supplierid != null">
+				SupplierID = #{supplierid,jdbcType=INTEGER},
+			</if>
+			<if test="name != null">
+				Name = #{name,jdbcType=VARCHAR},
+			</if>
+			<if test="state != null">
+				State = #{state,jdbcType=VARCHAR},
+			</if>
+			<if test="type != null">
+				Type = #{type,jdbcType=VARCHAR},
+			</if>
+			<if test="payer != null">
+				Payer = #{payer,jdbcType=VARCHAR},
+			</if>
+			<if test="rule != null">
+				Rule = #{rule,jdbcType=VARCHAR},
+			</if>
+			<if test="date != null">
+				Date = #{date,jdbcType=DATE},
+			</if>
+			<if test="todate != null">
+				ToDate = #{todate,jdbcType=DATE},
+			</if>
+			<if test="value != null">
+				Value = #{value,jdbcType=DOUBLE},
+			</if>
+			<if test="minimum != null">
+				Minimum = #{minimum,jdbcType=DOUBLE},
+			</if>
+			<if test="factor != null">
+				Factor = #{factor,jdbcType=DOUBLE},
+			</if>
+			<if test="cost != null">
+				Cost = #{cost,jdbcType=DOUBLE},
+			</if>
+			<if test="available != null">
+				Available = #{available,jdbcType=INTEGER},
+			</if>
+			<if test="minStay != null">
+				Minstay = #{minStay,jdbcType=INTEGER},
+			</if>
+			<if test="maxStay != null">
+				Maxstay = #{maxStay,jdbcType=INTEGER},
+			</if>
+			<if test="currency != null">
+				Currency = #{currency,jdbcType=VARCHAR},
+			</if>
+			<if test="quantity != null">
+				Quantity = #{quantity,jdbcType=DOUBLE},
+			</if>
+			<if test="unit != null">
+				Unit = #{unit,jdbcType=VARCHAR},
+			</if>
+			<if test="version != null">
+				version = #{version,jdbcType=TIMESTAMP},
+			</if>
+		</set>
+		where ID = #{id,jdbcType=INTEGER}
+	</update>
+
+	<update id="updateByPrimaryKey" parameterType="Price">
+		update price
+		set
+		    AltID = #{altid,jdbcType=VARCHAR},
+			EntityType = #{entitytype,jdbcType=VARCHAR},
+			EntityID = #{entityid,jdbcType=INTEGER},
+			PartyID = #{partyid,jdbcType=INTEGER},
+			SupplierID = #{supplierid,jdbcType=INTEGER},
+			Name = #{name,jdbcType=VARCHAR},
+			State = #{state,jdbcType=VARCHAR},
+			Type = #{type,jdbcType=VARCHAR},
+			Payer = #{payer,jdbcType=VARCHAR},
+			Rule = #{rule,jdbcType=VARCHAR},
+			Date = #{date,jdbcType=DATE},
+			ToDate = #{todate,jdbcType=DATE},
+			Quantity = #{quantity,jdbcType=DOUBLE},
+			Unit = #{unit,jdbcType=VARCHAR},
+			Value = #{value,jdbcType=DOUBLE},
+			Minimum = #{minimum,jdbcType=DOUBLE},
+			Factor = #{factor,jdbcType=DOUBLE},
+			Cost = #{cost,jdbcType=DOUBLE},
+			Available = #{available,jdbcType=INTEGER},
+			Minstay = #{minStay,jdbcType=INTEGER},
+			Currency = #{currency,jdbcType=VARCHAR},
+			version = #{version,jdbcType=TIMESTAMP}
+		where ID = #{id,jdbcType=INTEGER}
+	</update>
+  
+	<select id="nameidbyid" parameterType="NameIdAction" resultType="NameId">
+		select distinct Name, ID
+		from price
+		where ID = #{id}
+	</select>
+
+	<select id="nameidbyname" parameterType="NameIdAction" resultType="NameId">
+		select distinct Name, ID
+		from price
+		where Name <![CDATA[ >= ]]> ucase(#{name})
+		<if test="type != null">
+			and EntityType = #{type}
+		</if>
+		<if test="id != null">
+			and EntityID = #{id}
+		</if>
+		<if test="state == null">
+			and State = 'Created'
+		</if>
+		<if test="state != null">
+			and State = #{state}
+		</if>
+		order by Name
+		limit 0, #{numrows}
+	</select>
+	
+	<select id="pricecurrency" parameterType="PriceCurrency" resultType="NameId">
+		select distinct Currency as name, Currency as id 
+		from price 
+		where Name = #{name}
+			and State not in ('Initial', 'Final')
+			and EntityType = #{entitytype}
+			<if test="entityid != null">
+			and EntityID = #{entityid}
+			</if>
+	</select>
+  
+	<select id="value" parameterType="Price" resultType="Double">
+		select Value
+	    from price
+		where EntityType = #{entitytype,jdbcType=VARCHAR}
+			and EntityID = #{entityid,jdbcType=INTEGER}
+			and PartyID = #{entityid,jdbcType=INTEGER}
+		    and Date <![CDATA[ <= ]]> #date#
+		    and Quantity <![CDATA[ <= ]]> #quantity#
+			and Unit = #{unit,jdbcType=VARCHAR}
+			and Currency = #{currency,jdbcType=VARCHAR}
+			and State not in ('Initial', 'Final')
+	    order by Date desc, Quantity desc
+	    limit 0, 1
+	</select>
+
+	<sql id="pricewhere">
+		where price.PartyID = #{partyid}
+			and price.EntityType = #{entitytype}
+			and price.EntityID = #{entityid}
+			and price.Type in ('Reservation', 'Retail')
+			and price.State = 'Created'
+			<if test="date != null">
+			and price.ToDate <![CDATA[ >= ]]> #{date}
+			</if>
+	</sql>
+
+	<select id="count" parameterType="PriceTable" resultType="Integer">
+		select count(*)
+		from price
+		<include refid="pricewhere" />
+	</select>
+	
+	<select id="list" parameterType="PriceTable" resultMap="ResultMap">
+		select
+		<include refid="columns" />
+		from price
+			join product on product.ID = price.EntityID
+			join party on party.ID = price.PartyID 
+		<include refid="pricewhere" />
+		order by ${orderby}
+		limit #{startrow}, #{numrows}
+	</select>
+
+	<select id="pricedetails" parameterType="HasPrice" resultMap="ResultMap">
+		select
+		<include refid="columns" />
+		from price
+			join product on product.ID = price.EntityID
+			join party on party.ID = price.PartyID 
+		where price.PartyID = #{partyid}
+			and price.EntityType = #{entitytype}
+			and price.EntityID = #{entityid}
+			and price.Type in ('Reservation', 'Retail')
+			and price.State = 'Created'
+			<if test="date != null">
+			and price.ToDate <![CDATA[ >= ]]> #{date}
+			</if>
+	</select>
+
+	<sql id="productfeaturewhere">
+		where price.EntityType in ('Feature', 'Mandatory', 'MandatoryPerDay')
+			and price.EntityID = #{entityid}
+			and price.State = 'Created'
+	</sql>
+
+	<select id="productfeaturecount" parameterType="Price" resultType="Integer">
+		select count(*)
+		from price
+		<include refid="productfeaturewhere" />
+	</select>
+	
+	<select id="productfeaturelist" parameterType="Price" resultMap="ResultMap">
+		select distinct
+		<include refid="columns" />
+		from price
+			left join product on product.ID = price.EntityID
+			left join party on party.ID = price.SupplierID
+		<include refid="productfeaturewhere" />
+		order by ${orderby}
+		limit #{startrow}, #{numrows}
+	</select>
+	
+	<select id="entityfeature" parameterType="Price" resultMap="ResultMap">
+		select distinct
+		<include refid="columns" />
+		from price
+			left join product on product.ID = price.EntityID
+			left join party on party.ID = price.SupplierID
+		where price.EntityType = #{entitytype}
+			and price.EntityID = #{entityid}
+			and price.State = 'Created'
+			<if test="date != null">
+			and price.Date <![CDATA[ <= ]]> #{date}
+			and price.ToDate <![CDATA[ >= ]]> #{date}
+			</if>
+	</select>
+	
+	<select id="quotedetail" parameterType="String" resultMap="ResultMap">
+		select distinct
+		<include refid="columns" />
+		from price
+			left join product on product.ID = price.EntityID
+			left join party on party.ID = price.PartyID 
+		where price.EntityType = 'Reservation'
+			and price.EntityID = #{id}
+			and price.State = 'Created'
+		order by price.ID
+	</select>
+
+	<sql id="servicewhere">
+		where price.EntityType = #{entitytype}
+			and price.EntityID = #{entityid}
+			and price.Type in ('DayofArrival', 'DayofDeparture', 'RefreshDay', 'LinenChange')
+			and price.State not in ('Initial', 'Final')
+			<if test="date != null">
+			and price.ToDate <![CDATA[ >= ]]> #{date}
+			</if>
+	</sql>
+	
+	<select id="servicecount" parameterType="PriceTable" resultType="Integer">
+		select count(*)
+		from price
+		<include refid="servicewhere" />
+	</select>
+	
+	<select id="servicelist" parameterType="PriceTable" resultMap="ResultMap">
+		select
+		<include refid="columns" />
+		from price
+			join product on product.ID = price.EntityID
+			join party on party.ID = price.PartyID 
+		<include refid="servicewhere" />
+		order by ${orderby}
+		limit #{startrow}, #{numrows}
+	</select>
+
+	<select id="restreadLimitedRows" parameterType="Price" resultMap="ResultMap">
+		select price.Currency, price.Date, price.Minstay, price.quantity, price.rule, price.todate, price.unit, price.value
+		from price
+			join product on product.ID = price.EntityID
+			join party on party.ID = price.PartyID 
+		where price.EntityType = #{entitytype,jdbcType=VARCHAR}
+			and price.EntityID = #{entityid,jdbcType=INTEGER}
+			and price.PartyID = #{partyid,jdbcType=INTEGER}
+			and price.State not in ('Initial', 'Final')
+			<if test="date != null and todate != null">
+				and (select DATE_SUB(price.date, INTERVAL 14 DAY)) <![CDATA[ <= ]]> #{date,jdbcType=DATE}
+				and #{todate,jdbcType=DATE} <![CDATA[ <= ]]> (select DATE_ADD(price.todate, INTERVAL 14 DAY)) 
+			</if>
+		order by Date
+	</select>
+
+	<select id="restread" parameterType="Price" resultMap="ResultMap">
+		select
+		<include refid="columns" />
+		from price
+			join product on product.ID = price.EntityID
+			join party on party.ID = price.PartyID 
+		where price.EntityType = #{entitytype,jdbcType=VARCHAR}
+			and price.EntityID = #{entityid,jdbcType=INTEGER}
+			and price.PartyID = #{partyid,jdbcType=INTEGER}
+			and price.State not in ('Initial', 'Final')
+			<if test="date != null and todate != null">
+				and (select DATE_SUB(price.date, INTERVAL 14 DAY)) <![CDATA[ <= ]]> #{date,jdbcType=DATE}
+				and #{todate,jdbcType=DATE} <![CDATA[ <= ]]> (select DATE_ADD(price.todate, INTERVAL 14 DAY)) 
+			</if>
+		order by Date
+	</select>
+
+	<select id="otarates" parameterType="net.cbtltd.soap.ota.server.OtaRate" resultType="net.cbtltd.soap.ota.server.OtaRate">
+		select
+			ID, 
+			EntityID as productid,
+			Date as fromdate, 
+			ToDate,
+			Value, 
+			Minimum, 
+			Currency
+		from price
+		where price.EntityType = 'Product'
+			and price.EntityID = #{productid,jdbcType=INTEGER}
+			and price.Date <![CDATA[ <= ]]> #{todate}
+			and price.ToDate <![CDATA[ >= ]]> #{fromdate}
+			and price.State not in ('Initial', 'Final')
+			and price.Value is not null
+			and price.Value > 0.0
+		order by Date
+	</select>
+	
+	<insert id="insertList" parameterType="java.util.List">
+		REPLACE INTO price (
+			<include refid="pricecolumns" />
+		)
+		VALUES (
+		<foreach item="Price" index="index" collection="list" open="" close="" separator="),(">
+			#{Price.id},
+			#{Price.altid},
+			#{Price.entitytype},
+			#{Price.entityid},
+			#{Price.partyid},
+			#{Price.supplierid},
+			#{Price.name},
+			#{Price.state},
+			#{Price.type},
+			#{Price.payer},
+			#{Price.rule},
+			#{Price.date},
+			#{Price.todate},
+			#{Price.quantity},
+			#{Price.unit},
+			#{Price.value},
+			#{Price.minimum},
+			#{Price.factor},
+			#{Price.cost},
+			#{Price.available},
+			#{Price.minStay},
+			#{Price.maxStay},
+			#{Price.currency},
+			#{Price.version}
+		</foreach>
+		)
+	</insert>
+
+<!-- JSON SQL-->
+	<select id="pricewidget" parameterType="PriceTable" resultType="net.cbtltd.json.price.PriceWidgetItem">
+		select
+			Date as fromdate, 
+			ToDate as todate,
+			Value as price, 
+			Minimum, 
+			Currency,
+			Unit
+		from price
+		where price.EntityType = #{entitytype}
+			and price.EntityID = #{entityid}
+			and price.ToDate <![CDATA[ >= ]]> #{date}
+			and price.Type in ('Reservation', 'Retail')
+			and price.State not in ('Initial', 'Final')
+			and price.Value is not null
+			and price.Value > 0.0
+		order by Date
+		limit #{startrow}, #{numrows}
+	</select>
+
+	<select id="featurewidget" parameterType="PriceTable" resultType="net.cbtltd.json.price.PriceWidgetItem">
+		select
+			price.ID,
+			price.Name,
+			price.Type,
+			text.Notes as notes,
+			price.SupplierID,
+			party.Name as suppliername,
+			price.Currency,
+			price.Unit,
+			price.Date as fromdate, 
+			price.ToDate as todate,
+			price.Quantity,
+			price.Cost,
+			price.Available,
+			price.Value as price, 
+			price.Minimum
+		from price
+			left join party on party.ID = price.SupplierID
+			left join text on text.ID = concat('Price',price.ID,'Public')
+		where price.EntityType = 'Feature'
+			and price.EntityID = #{entityid}
+			and price.Date <![CDATA[ <= ]]> #{date}
+			and price.ToDate <![CDATA[ >= ]]> #{date}
+			and price.State not in ('Initial', 'Final')
+			and price.Value is not null
+			and price.Value > 0.0
+		order by Type, Name
+		limit #{startrow}, #{numrows}
+	</select>
+	
+	<select id="productsByPartyId" parameterType="Price" resultMap="ResultMap">
+		select distinct
+		<include refid="columns" />
+		from price
+			join party on party.ID = price.PartyID
+		where price.PartyID = #{partyid}
+			and price.State = 'Created'
+			and price.Type = 'Reservation'
+	</select>
+	
+	
+	
+	<select id="listallactiveprices" parameterType="PriceTable" resultMap="ResultMap">
+		select
+		*
+		from price
+			where price.State = 'Created' AND price.Type ='Reservation'; 
+	</select>
+	
+	<select id="getcheckinprice" resultMap="ResultMap">
+		select * from price as p
+			where p.id in
+				<foreach item="item" index="index" collection="list" open="(" separator="," close=")">
+					#{item}
+				</foreach>
+		order by p.Date ASC
+		limit 0,1
+	</select>
+	
+	<select id="getpropertydetailcheckinprice" parameterType="Price" resultMap="ResultMap">
+		select
+		<include refid="columns" />
+		from price
+			join product on product.ID = price.EntityID
+			join party on party.ID = price.PartyID 
+		where price.EntityType = #{entitytype,jdbcType=VARCHAR}
+			and price.EntityID = #{entityid,jdbcType=INTEGER}
+			and price.PartyID = #{partyid,jdbcType=INTEGER}
+			and price.State not in ('Initial', 'Final')
+			<if test="date != null">
+				and price.date <![CDATA[ <= ]]> #{date,jdbcType=DATE}
+				and #{date,jdbcType=DATE} <![CDATA[ <= ]]> price.todate
+			</if>
+		order by Date desc, ToDate desc
+		limit 1
+	</select>
+	
+	<select id="getpricetable" parameterType="Price" resultMap="ResultMap">
+	select property_min_stay.Value as Minstay, price.ID, price.AltID, price.EntityType, price.EntityID, price.PartyID, price.SupplierID, price.Name, price.State, price.Type, price.Payer, price.Rule,
+		price.Date, price.ToDate, price.Quantity, price.Unit, price.Value, price.Minimum, price.Factor, price.Cost, price.Available, price.Maxstay, price.Currency,
+		price.version, product.Name as entityname, party.Name as partyname
+	 from price
+		left join property_min_stay on property_min_stay.ProductID = price.EntityID 
+		and property_min_stay.SupplierID = price.PartyID
+		and property_min_stay.FromDate <![CDATA[ <= ]]> IF(price.Date <![CDATA[ < ]]> CURDATE(), CURDATE(), price.Date)
+		and property_min_stay.ToDate <![CDATA[ >= ]]> price.Date
+		join product on product.ID = price.EntityID
+		join party on party.ID = price.PartyID 
+	where price.EntityType = #{entitytype,jdbcType=VARCHAR}
+		and price.EntityID = #{entityid,jdbcType=INTEGER}
+		and price.PartyID = #{partyid,jdbcType=INTEGER}
+		and price.State not in ('Initial', 'Final')
+		<if test="date != null and todate != null">
+			and (select DATE_SUB(price.date, INTERVAL 14 DAY))  <![CDATA[ <= ]]> #{date,jdbcType=DATE}
+			and #{todate,jdbcType=DATE}  <![CDATA[ <= ]]> (select DATE_ADD(price.todate, INTERVAL 14 DAY))
+		</if>
+	order by Date;
+	</select>
+	
+	<select id="getPricesByWeeks" parameterType="PriceWeek" resultType="net.cbtltd.json.price.WeeklyPrice">
+		select 
+		<include refid="priceweekcolumns" />
+		 from price p 
+			join (select week(date) as week, (select DATE_SUB(date, INTERVAL (select DAYOFWEEK(date) - 1) DAY)) as start, (SELECT DATE(date + INTERVAL (7 - DAYOFWEEK(date)) DAY)) as end
+			from timeline where date <![CDATA[ >= ]]> #{fromDate,jdbcType=DATE} and date <![CDATA[ <= ]]> #{toDate,jdbcType=DATE} group by week order by date) as tmln 
+		on (p.EntityType = 'Product' and p.entityid = #{id,jdbcType=VARCHAR} and p.state = 'Created' 
+		and ((p.toDate <![CDATA[ >= ]]> tmln.start and p.toDate <![CDATA[ <= ]]> tmln.end)
+		or (p.date <![CDATA[ >= ]]> tmln.start and p.date <![CDATA[ <= ]]> tmln.end)
+		or (p.date <![CDATA[ <= ]]> tmln.start and p.toDate <![CDATA[ >= ]]> tmln.end)));
+	</select>
+	
+	<select id="maxVersion" parameterType="Price" resultType="Date">
+		select
+			max(version)
+		from price
+		where PartyID = #{partyid,jdbcType=INTEGER}
+		<if test="available != null">
+			and Available = #{available,jdbcType=INTEGER}
+		</if>
+		<if test="state != null">
+			and State = #{state,jdbcType=VARCHAR}
+		</if>
+	</select>
+	
+	<select id="readContractFee" parameterType="price" resultMap="ResultMap">
+		select
+		<include refid="columns" />
+		from price
+		join product on product.ID = price.EntityID
+			join party on party.ID = price.PartyID 
+		where price.EntityType = 'Mandatory'
+			and price.EntityID = #{entityid}
+			and price.State = 'Created'
+			and price.Name='Contract Fee'
+			and price.Date  <![CDATA[ <=  ]]>  '2015-01-10'
+			and price.ToDate  <![CDATA[ >= ]]> '2015-01-10'
+	
+	</select>
+	
+
+	<select id="getExtraCost" parameterType="price" resultMap="ResultMap">
+		SELECT
+		<include refid="pricecolumns" />
+		FROM price
+		WHERE  price.EntityID = #{entityid,jdbcType=INTEGER}
+			   AND price.State = 'Created'
+			   AND price.EntityType = "Product"
+			   AND price.Name = #{name}
+			   AND price.Type = 'FEE'
+	</select>
+
+	<select id="readByEntityIdAndDate" parameterType="price" resultMap="ResultMap">
+		SELECT
+		<include refid="pricecolumns" />
+		FROM price
+		WHERE  price.Date <![CDATA[ >= ]]> #{date}
+			   AND price.EntityID = #{entityid,jdbcType=INTEGER}
+			   AND price.State = 'Created'
+			   AND price.EntityType = "Product"
+			   AND price.Type = 'Reservation'
+	</select>
+
+	<select id="readByEntityIdAndDateRange" parameterType="price" resultMap="ResultMap">
+		SELECT
+		<include refid="pricecolumns" />
+		FROM price
+		WHERE  price.Date <![CDATA[ >= ]]> #{date}
+			   AND price.Todate <![CDATA[ <= ]]> #{date}
+			   AND price.EntityID = #{entityid,jdbcType=INTEGER}
+			   AND price.State = 'Created'
+			   AND price.EntityType = "Product"
+	</select>
+	
+</mapper>

@@ -1,0 +1,96 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd" >
+<mapper namespace="net.cbtltd.server.api.RegionMapper">
+
+	<cache readOnly="true"/>
+
+	<resultMap id="ResultMap" type="Region">
+		<id column="ID" property="id" jdbcType="VARCHAR" />
+		<id column="Country" property="country" jdbcType="VARCHAR" />
+		<result column="Name" property="name" jdbcType="VARCHAR" />
+	</resultMap>
+
+	<sql id="columns">
+		ID, Country, Name
+	</sql>
+
+	<select id="readbylocation" parameterType="Location" resultMap="ResultMap">
+		select
+		<include refid="columns" />
+		from region
+		where ID = #{region,jdbcType=VARCHAR}
+			and Country = #{country,jdbcType=VARCHAR}
+	</select>
+
+	<select id="readbyname" parameterType="Region" resultMap="ResultMap">
+		select
+		<include refid="columns" />
+		from region
+		where Name like concat('%', #{name,jdbcType=VARCHAR}, '%')
+			and Country = #{country,jdbcType=VARCHAR}
+		order by ID
+		limit 1
+	</select>
+
+	<delete id="delete" parameterType="Region">
+		delete from region
+		where ID = #{id,jdbcType=VARCHAR}
+		and Country = #{country,jdbcType=VARCHAR}
+	</delete>
+
+	<insert id="create" parameterType="Region">
+		insert into region (ID, Country, Name)
+		values (#{id,jdbcType=VARCHAR}, #{country,jdbcType=VARCHAR}, #{name,jdbcType=VARCHAR})
+	</insert>
+
+	<update id="update" parameterType="Region">
+		update region
+		<set>
+			<if test="name != null">
+				Name = #{name,jdbcType=VARCHAR},
+			</if>
+		</set>
+		where ID = #{id,jdbcType=VARCHAR}
+		and Country = #{country,jdbcType=VARCHAR}
+	</update>
+
+	<update id="updateByPrimaryKey" parameterType="Region">
+		update region
+		set Name = #{name,jdbcType=VARCHAR}
+		where ID = #{id,jdbcType=VARCHAR}
+		and Country = #{country,jdbcType=VARCHAR}
+	</update>
+  
+	<select id="name" parameterType="Region" resultMap="ResultMap">
+		select
+		<include refid="columns" />
+		from region
+	    where Country = #{country}
+			and name like concat('%', #{name}, '%')
+	    limit 0, 1
+	</select>
+
+ 	<select id="nameidbyid" parameterType="NameIdAction" resultType="NameId">
+		select distinct Name, ID
+		from region
+		where ID = #{id}
+	</select>
+
+	<select id="nameidbyname" parameterType="NameIdAction" resultType="NameId">
+		select distinct Name, ID
+		from region
+		where Name <![CDATA[ >= ]]> #{name}
+		<if test="type != null">
+			and Country in (${type})
+		</if>
+		<if test="state == null">
+			and State not in ('Initial', 'Final')
+		</if>
+		<if test="state != null">
+			and State in (${state})
+		</if>
+		order by Name
+		limit 0, #{numrows}
+	</select>
+ 
+</mapper>

@@ -1,0 +1,81 @@
+<?xml version="1.0" encoding="UTF-8" standalone="yes"?>
+<ns8:booking xmlns="http://connect.bookt.com/Schemas/Event.xsd"
+	xmlns:ns2="http://connect.bookt.com/Schemas/Person.xsd" xmlns:ns3="http://schemas.microsoft.com/2003/10/Serialization/Arrays"
+	xmlns:ns4="http://connect.bookt.com/Schemas/Statement.xsd" xmlns:ns5="http://connect.bookt.com/Schemas/StatementDetail.xsd"
+	xmlns:ns6="http://connect.bookt.com/Schemas/Booking.xsd" xmlns:ns7="http://connect.bookt.com/Schemas/CreditCard.xsd"
+	xmlns:ns8="https://connect.bookt.com/svc/rest.svc" xmlns:ns9="http://connect.bookt.com/Schemas/Review.xsd"
+	xmlns:ns10="http://connect.bookt.com/Schemas/Unit.xsd" xmlns:ns11="http://connect.bookt.com/Schemas/Tax.xsd"
+	xmlns:ns12="http://connect.bookt.com/Schemas/Media.xsd" xmlns:ns13="http://connect.bookt.com/Schemas/Property.xsd"
+	xmlns:ns14="http://connect.bookt.com/Schemas/Fee.xsd" xmlns:ns15="http://schemas.microsoft.com/2003/10/Serialization/">
+	<ns6:AltID>155144</ns6:AltID>
+	<ns6:BookedBy>
+		<ns2:Address1>PO BOX 16343</ns2:Address1>
+		<ns2:Address2>Vlaeberg</ns2:Address2>
+		<ns2:AltID>1968</ns2:AltID>
+		<ns2:CellPhone>072 3100 488</ns2:CellPhone>
+		<ns2:City>8018</ns2:City>
+		<ns2:Company>1968</ns2:Company>
+		<ns2:Country>US</ns2:Country>
+		<ns2:FaxNumber>021 438 5056</ns2:FaxNumber>
+		<ns2:FirstName>Camps Bay Online</ns2:FirstName>
+		<ns2:Greeting>Mr</ns2:Greeting>
+		<ns2:HomePhone xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+			xsi:nil="true" />
+		<ns2:ID>1968</ns2:ID>
+		<ns2:LastName>Camps Bay Online</ns2:LastName>
+		<ns2:Latitude>-33.92889</ns2:Latitude>
+		<ns2:LeadSource>10387</ns2:LeadSource>
+		<ns2:Longitude>18.41722</ns2:Longitude>
+		<ns2:Notes xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+			xsi:nil="true" />
+		<ns2:PostalCode></ns2:PostalCode>
+		<ns2:PrimaryEmail>office@campsbay.com</ns2:PrimaryEmail>
+		<ns2:Status>Created</ns2:Status>
+		<ns3:ArrayOfstring />
+		<ns2:Title>Mr</ns2:Title>
+		<ns2:Type xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+			xsi:nil="true" />
+		<ns2:WebSite>www.campsbay.travel</ns2:WebSite>
+		<ns2:WorkPhone>021 438 1800</ns2:WorkPhone>
+	</ns6:BookedBy>
+	<ns6:CheckIn>2012-08-10T00:00:00</ns6:CheckIn>
+	<ns6:CheckOut>2012-08-20T00:00:00</ns6:CheckOut>
+	<ns6:NumAdults>2</ns6:NumAdults>
+	<ns6:NumChildren>0</ns6:NumChildren>
+	<ns6:PrivateNotes>XML Reservation Request</ns6:PrivateNotes>
+	<ns6:PropertyID>24233</ns6:PropertyID>
+	<ns6:Renter>
+		<ns2:Address1>P.O. Box 313</ns2:Address1>
+		<ns2:Address2>Sea Point</ns2:Address2>
+		<ns2:AltID>4121</ns2:AltID>
+		<ns2:CellPhone>0828861706</ns2:CellPhone>
+		<ns2:City>Cape Town</ns2:City>
+		<ns2:Company>4121</ns2:Company>
+		<ns2:Country>ZA</ns2:Country>
+		<ns2:FaxNumber></ns2:FaxNumber>
+		<ns2:FirstName>GMPI Trust</ns2:FirstName>
+		<ns2:Greeting>Mr</ns2:Greeting>
+		<ns2:HomePhone></ns2:HomePhone>
+		<ns2:ID>4121</ns2:ID>
+		<ns2:LastName>GMPI Trust</ns2:LastName>
+		<ns2:Latitude>-33.92889</ns2:Latitude>
+		<ns2:LeadSource>5</ns2:LeadSource>
+		<ns2:Longitude>18.41722</ns2:Longitude>
+		<ns2:Notes>Tax # 0994033157</ns2:Notes>
+		<ns2:PostalCode>8060</ns2:PostalCode>
+		<ns2:PrimaryEmail>campsbayrich@gmail.com</ns2:PrimaryEmail>
+		<ns2:Status>Created</ns2:Status>
+		<ns3:ArrayOfstring />
+		<ns2:Title>Mr</ns2:Title>
+		<ns2:Type xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+			xsi:nil="true" />
+		<ns2:WebSite></ns2:WebSite>
+		<ns2:WorkPhone></ns2:WorkPhone>
+	</ns6:Renter>
+	<ns6:Statement xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+		xsi:nil="true" />
+	<ns6:Status>Provisional</ns6:Status>
+	<ns6:TotalDueNow>0.0</ns6:TotalDueNow>
+	<ns6:Type></ns6:Type>
+	<ns6:UnitID>1</ns6:UnitID>
+</ns8:booking>

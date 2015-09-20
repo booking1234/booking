@@ -1,0 +1,72 @@
+<?xml version="1.0" encoding="UTF-8" standalone="yes"?>
+<OTA_HotelSearchRS PrimaryLangID="en"
+	RetransmissionIndicator="false" SequenceNmbr="1" TransactionIdentifier="1"
+	Version="2.004" Target="Production" TimeStamp="2009-07-23T13:19:28"
+	EchoToken="OTA_HotelSearchRQ 5, CardCode=MC, 2376" xmlns="http://www.opentravel.org/OTA/2003/05">
+	<POS>
+		<Source>
+			<RequestorID ID="2376" ID_Context="RZ" />
+		</Source>
+	</POS>
+	<Success />
+	<Properties>
+		<Property BrandName="Tourinfo cc" HotelCodeContext="RZ"
+			HotelName="CBT Lodge" HotelCityCode="CPT" HotelCode="143" BrandCode="890"
+			ChainCode="5" MaxGroupRoomQuantity="0">
+			<Position AltitudeUnitOfMeasureCode="MTR" Altitude="0.0"
+				Longitude="18.3772945404053" Latitude="-33.9571902537236" />
+			<Address UseType="3">
+				<StreetNmbr>P.O.Box 32452
+					Camps Bay
+					Cape Town</StreetNmbr>
+				<PostalCode>8040</PostalCode>
+			</Address>
+			<ContactNumbers>
+				<ContactNumber PhoneNumber="+27 21 424 3353"
+					PhoneUseType="3" PhoneTechType="1" />
+				<ContactNumber PhoneNumber="+27 21 424 3355"
+					PhoneUseType="3" PhoneTechType="3" />
+				<ContactNumber PhoneNumber="+27 84 804 9902"
+					PhoneUseType="5" PhoneTechType="5" />
+			</ContactNumbers>
+			<Amenities>
+				<Amenity RoomAmenity="88" />
+			</Amenities>
+			<RateRange CurrencyCode="ZAR" RateTimeUnit="Day" FixedRate="2600.0" />
+		</Property>
+		<Property BrandName="Tourinfo cc" HotelCodeContext="RZ"
+			HotelName="CBT Palm Suite" HotelCityCode="CPT" HotelCode="144"
+			BrandCode="890" ChainCode="5" MaxGroupRoomQuantity="2">
+			<Position AltitudeUnitOfMeasureCode="MTR" Altitude="0.0"
+				Longitude="18.3773481845856" Latitude="-33.9571457582702" />
+			<Address UseType="3">
+				<StreetNmbr>P.O.Box 32452
+					Camps Bay
+					Cape Town</StreetNmbr>
+				<PostalCode>8040</PostalCode>
+			</Address>
+			<ContactNumbers>
+				<ContactNumber PhoneNumber="+27 21 424 3353"
+					PhoneUseType="3" PhoneTechType="1" />
+				<ContactNumber PhoneNumber="+27 21 424 3355"
+					PhoneUseType="3" PhoneTechType="3" />
+				<ContactNumber PhoneNumber="+27 84 804 9902"
+					PhoneUseType="5" PhoneTechType="5" />
+			</ContactNumbers>
+			<Policy CheckOutTime="10:00:00" CheckInTime="14:00:00" />
+			<Amenities>
+				<Amenity RoomAmenity="5" />
+			</Amenities>
+			<RateRange CurrencyCode="ZAR" RateTimeUnit="Day" FixedRate="1600.0" />
+		</Property>
+	</Properties>
+	<Criteria>
+		<Criterion>
+			<AcceptedPayments>
+				<AcceptedPayment>
+					<PaymentCard CardCode="MC" CardType="1" />
+				</AcceptedPayment>
+			</AcceptedPayments>
+		</Criterion>
+	</Criteria>
+</OTA_HotelSearchRS>

@@ -1,0 +1,82 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="net.cbtltd.server.api.ManagerToChannelMapper">
+
+	<cache readOnly="true" />
+
+	<resultMap id="ResultMap" type="ManagerToChannel">
+		<id column="id" jdbcType="INTEGER" property="id" />
+		<result column="property_manager_id" jdbcType="INTEGER" property="property_manager_id" />
+		<result column="channel_partner_id" jdbcType="INTEGER" property="channel_partner_id" />
+	</resultMap>
+	
+	<resultMap id="ChannelDistribution" type="ChannelDistribution">
+	
+		<result column="property_manager_id" jdbcType="VARCHAR" property="property_manager_id" />
+		<result column="channel_id" jdbcType="VARCHAR" property="channel_id" />
+		<result column="channelname" jdbcType="VARCHAR" property="channelname" />
+		<result column="channelcommission" jdbcType="DOUBLE" property="channelcommission" />
+		
+	</resultMap>
+
+	<sql id="columns">
+		id, property_manager_id, channel_partner_id
+	</sql>
+
+
+
+	<select id="listAllChannelPropertyManagers" resultMap="ResultMap">
+		select
+		id,  channel_partner_id
+		from manager_to_channel
+    </select>
+    
+    
+    <select id="propertyManagersDistributingToChannels" resultMap="ChannelDistribution">
+        select  manager_to_channel.property_manager_id as property_manager_id ,  manager_to_channel.channel_partner_id as channel_id, 
+        channel_partner.channel_name as  channelname ,  channel_partner.commission as channelcommission
+		from manager_to_channel, razor.channel_partner
+		where razor.channel_partner.id = manager_to_channel.channel_partner_id AND  channel_partner.id =  416		
+		order by channel_partner_id , manager_to_channel.property_manager_id asc;    
+    </select>
+
+
+
+    <select id="listPropertyManagersDistributedChannel" parameterType="String"  resultMap="ResultMap">
+		select * 
+		from  manager_to_channel 
+		where manager_to_channel.channel_partner_id = #{channel_partner_id}    
+    </select>
+
+    <select id="justPropertyManagersDistributedChannel" parameterType="String"  resultType="String">
+		select manager_to_channel.property_manager_id
+		from  manager_to_channel 
+		where manager_to_channel.channel_partner_id = #{channel_partner_id}    
+    </select>
+
+
+    <select id="listPropertyManagersNotDistributedChannel" parameterType="String"  resultType = "String">
+		SELECT DISTINCT product.supplierid 
+		FROM   product 
+		WHERE  product.assignedtomanager = 1 
+       AND product.state = "created" 
+       AND product.supplierid NOT IN (SELECT property_manager_id 
+                                      FROM   manager_to_channel 
+                                      WHERE 
+           manager_to_channel.channel_partner_id = #{channel_partner_id} )    
+    </select>
+
+	<select id="listPMNotDistributedToChannelString" resultType="String">
+		select distinct product.supplierid
+		from product
+		where product.supplierid  NOT in
+		<foreach item="item" index="index" collection="list" open="(" separator="," close=")">
+			#{item}
+		</foreach>
+		and product.State = 'Created'
+		and product.assignedtomanager = 1 
+		and product.supplierid is not NULL
+	</select>
+	
+	
+</mapper>

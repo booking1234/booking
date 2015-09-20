@@ -1,0 +1,498 @@
+<?xml version="1.0" encoding="UTF-8" standalone="yes"?>
+<product>
+	<id>145</id>
+	<name>Camps Bay Terrace Penthouse</name>
+	<state>Created</state>
+	<altitude>0.0</altitude>
+	<currency>ZAR</currency>
+	<language>EN</language>
+	<latitude>-33.9569677762237</latitude>
+	<locationid>58777</locationid>
+	<longitude>18.377611041069</longitude>
+	<type>Accommodation</type>
+	<unit>DAY</unit>
+	<address></address>
+	<adult>4</adult>
+	<bathroom>2</bathroom>
+	<child>0</child>
+	<code></code>
+	<infant>0</infant>
+	<ownerid>890</ownerid>
+	<person>4</person>
+	<physicaladdress></physicaladdress>
+	<quantity>1</quantity>
+	<room>2</room>
+	<supplierid>5</supplierid>
+	<tax>VAT Normal</tax>
+	<toilet>2</toilet>
+	<webaddress>http://razor-cloud.com/razor/?product=145&amp;pos=a3a2e74b809e0e87
+	</webaddress>
+	<attributes />
+	<bedroom>2</bedroom>
+	<city>Camps Bay</city>
+	<contents>Daily Servicing: Monday – Saturday except Public Holidays
+		Laundry Service
+		Concierge Service
+		All taxes
+		All Linen and Towels
+		Pool towels
+		Satellite TV
+		Toiletries
+		Wireless internet access
+	</contents>
+	<country>ZA</country>
+	<description>The Penthouse Apartment is Camps Bay Terrace’s premier
+		accommodation. Come and treat yourself to absolute luxury with
+		spectacular views of the Twelve Apostles and the Atlantic Ocean.
+		During the day the sun beats down on the terrace, and the rays glisten
+		off the sea; at night the crescent of lights around the bay creates a
+		delightful and sophisticated ambience.
+
+		The apartment is very spacious and has two bedrooms (both with en-suite
+		bathrooms), a lounge, a dining room and a kitchen. All living rooms
+		open onto a large terrace with a plunge pool. The décor is a unique
+		blend of Modern and African. Stainless steel and clean lines combine
+		with masks, carvings and other African artefacts from Zimbabwe,
+		Zambia, Mozambique, South Africa and further afield to give this
+		property a special and ethnic feel.
+
+		Both bedrooms open via sliding doors onto the terrace and have wonderful
+		views of mountain and sea, and each has a modern en-suite bathroom
+		with bath tub and stand in shower. The lounge and dining room are in
+		contemporary style and open onto the terrace overlooking the ocean.
+		The kitchen is conveniently located to service the dining room and
+		bedrooms. It is fully equipped with top quality appliances as well as
+		cutlery and crockery, enabling convenient self-catering and laundry.
+
+		The terrace has outdoor furniture, a barbeque as well as sun loungers,
+		so you can make the most of the long summer days and balmy nights.
+		Spend your day outside lounging on the terrace with a glass of wine in
+		hand and the sound of surf in your ears, or dipping into the splash
+		pool with an unrivalled view. It is a perfect spot to watch the often
+		spectacular sunsets of Camps Bay. In the winter a wood fireplace
+		supplements under floor heating to add comfort and romance even in the
+		coldest of winter storms.
+
+		You can curl up in front of the satellite TV or just collapse onto the
+		comfortable sofas to enjoy your latest book. If you’d prefer to go out
+		and be entertained, the Camps Bay beach and promenade are only four
+		minutes stroll away, with numerous restaurants, bars, live music and
+		theatre. To ensure that your stay is as relaxing as possible we will
+		service your apartment everyday except Sundays and Public Holidays,
+		and help you wherever we can with other arrangements. Come and unwind
+		in Camps Bay! We look forward to having you join us!
+	</description>
+	<images>
+		<image>http://razor-cloud.com/pictures/Product145-002.jpg</image>
+		<image>http://razor-cloud.com/pictures/Product145-004.jpg</image>
+		<image>http://razor-cloud.com/pictures/Product145-010.jpg</image>
+		<image>http://razor-cloud.com/pictures/Product145-011.jpg</image>
+		<image>http://razor-cloud.com/pictures/Product145-012.jpg</image>
+		<image>http://razor-cloud.com/pictures/Product145-013.jpg</image>
+		<image>http://razor-cloud.com/pictures/Product145-014.jpg</image>
+		<image>http://razor-cloud.com/pictures/Product145-015.jpg</image>
+		<image>http://razor-cloud.com/pictures/Product145-016.jpg</image>
+		<image>http://razor-cloud.com/pictures/Product145-017.jpg</image>
+	</images>
+	<options>Transfers/Shuttles at additional expense
+		Dinner Reservations
+		Grocery stocking at additional expense
+
+
+
+
+
+
+
+
+	</options>
+	<pricelist>
+		<prices>
+			<AUD>291.0</AUD>
+			<BGN>459.0</BGN>
+			<BRL>613.0</BRL>
+			<CAD>296.0</CAD>
+			<CHF>283.0</CHF>
+			<CNY>1898.0</CNY>
+			<CZK>5869.0</CZK>
+			<DKK>1745.0</DKK>
+			<date>2012-05-02T00:00:00+02:00</date>
+			<EUR>234.0</EUR>
+			<GBP>187.0</GBP>
+			<HKD>2341.0</HKD>
+			<HRK>1738.0</HRK>
+			<HUF>66671.0</HUF>
+			<IDR>2890944.0</IDR>
+			<INR>15867.0</INR>
+			<ISK>37329.0</ISK>
+			<JPY>23600.0</JPY>
+			<KRW>336332.0</KRW>
+			<LTL>808.0</LTL>
+			<LVL>163.0</LVL>
+			<MXN>3879.0</MXN>
+			<MYR>924.0</MYR>
+			<NOK>1725.0</NOK>
+			<NZD>363.0</NZD>
+			<PHP>12607.0</PHP>
+			<PLN>960.0</PLN>
+			<quantity>0.0</quantity>
+			<RON>1061.0</RON>
+			<RUB>9398.0</RUB>
+			<SEK>1980.0</SEK>
+			<SGD>371.0</SGD>
+			<THB>9290.0</THB>
+			<TRY>542.0</TRY>
+			<todate>2012-09-30T00:00:00+02:00</todate>
+			<USD>302.0</USD>
+			<unit>DAY</unit>
+			<ZAR>2500.0</ZAR>
+		</prices>
+		<prices>
+			<AUD>384.0</AUD>
+			<BGN>606.0</BGN>
+			<BRL>809.0</BRL>
+			<CAD>391.0</CAD>
+			<CHF>373.0</CHF>
+			<CNY>2505.0</CNY>
+			<CZK>7746.0</CZK>
+			<DKK>2303.0</DKK>
+			<date>2012-10-01T00:00:00+02:00</date>
+			<EUR>309.0</EUR>
+			<GBP>247.0</GBP>
+			<HKD>3090.0</HKD>
+			<HRK>2295.0</HRK>
+			<HUF>88006.0</HUF>
+			<IDR>3816046.0</IDR>
+			<INR>20944.0</INR>
+			<ISK>49275.0</ISK>
+			<JPY>31100.0</JPY>
+			<KRW>443958.0</KRW>
+			<LTL>1067.0</LTL>
+			<LVL>215.0</LVL>
+			<MXN>5120.0</MXN>
+			<MYR>1220.0</MYR>
+			<NOK>2278.0</NOK>
+			<NZD>479.0</NZD>
+			<PHP>16642.0</PHP>
+			<PLN>1268.0</PLN>
+			<quantity>0.0</quantity>
+			<RON>1400.0</RON>
+			<RUB>12405.0</RUB>
+			<SEK>2614.0</SEK>
+			<SGD>489.0</SGD>
+			<THB>12263.0</THB>
+			<TRY>716.0</TRY>
+			<todate>2012-12-15T00:00:00+02:00</todate>
+			<USD>399.0</USD>
+			<unit>DAY</unit>
+			<ZAR>3300.0</ZAR>
+		</prices>
+		<prices>
+			<AUD>698.0</AUD>
+			<BGN>1101.0</BGN>
+			<BRL>1470.0</BRL>
+			<CAD>711.0</CAD>
+			<CHF>679.0</CHF>
+			<CNY>4554.0</CNY>
+			<CZK>14085.0</CZK>
+			<DKK>4187.0</DKK>
+			<date>2012-12-16T00:00:00+02:00</date>
+			<EUR>562.0</EUR>
+			<GBP>449.0</GBP>
+			<HKD>5618.0</HKD>
+			<HRK>4172.0</HRK>
+			<HUF>160011.0</HUF>
+			<IDR>6938265.0</IDR>
+			<INR>38080.0</INR>
+			<ISK>89590.0</ISK>
+			<JPY>56500.0</JPY>
+			<KRW>807196.0</KRW>
+			<LTL>1940.0</LTL>
+			<LVL>392.0</LVL>
+			<MXN>9310.0</MXN>
+			<MYR>2218.0</MYR>
+			<NOK>4141.0</NOK>
+			<NZD>871.0</NZD>
+			<PHP>30258.0</PHP>
+			<PLN>2305.0</PLN>
+			<quantity>0.0</quantity>
+			<RON>2546.0</RON>
+			<RUB>22555.0</RUB>
+			<SEK>4752.0</SEK>
+			<SGD>890.0</SGD>
+			<THB>22297.0</THB>
+			<TRY>1301.0</TRY>
+			<todate>2013-01-08T00:00:00+02:00</todate>
+			<USD>725.0</USD>
+			<unit>DAY</unit>
+			<ZAR>6000.0</ZAR>
+		</prices>
+		<prices>
+			<AUD>570.0</AUD>
+			<BGN>899.0</BGN>
+			<BRL>1201.0</BRL>
+			<CAD>581.0</CAD>
+			<CHF>555.0</CHF>
+			<CNY>3719.0</CNY>
+			<CZK>11502.0</CZK>
+			<DKK>3420.0</DKK>
+			<date>2013-01-09T00:00:00+02:00</date>
+			<EUR>459.0</EUR>
+			<GBP>366.0</GBP>
+			<HKD>4588.0</HKD>
+			<HRK>3407.0</HRK>
+			<HUF>130676.0</HUF>
+			<IDR>5666250.0</IDR>
+			<INR>31099.0</INR>
+			<ISK>73165.0</ISK>
+			<JPY>46200.0</JPY>
+			<KRW>659210.0</KRW>
+			<LTL>1584.0</LTL>
+			<LVL>320.0</LVL>
+			<MXN>7603.0</MXN>
+			<MYR>1811.0</MYR>
+			<NOK>3382.0</NOK>
+			<NZD>711.0</NZD>
+			<PHP>24711.0</PHP>
+			<PLN>1882.0</PLN>
+			<quantity>0.0</quantity>
+			<RON>2079.0</RON>
+			<RUB>18420.0</RUB>
+			<SEK>3881.0</SEK>
+			<SGD>727.0</SGD>
+			<THB>18209.0</THB>
+			<TRY>1062.0</TRY>
+			<todate>2013-05-01T00:00:00+02:00</todate>
+			<USD>592.0</USD>
+			<unit>DAY</unit>
+			<ZAR>4900.0</ZAR>
+		</prices>
+		<prices>
+			<AUD>291.0</AUD>
+			<BGN>459.0</BGN>
+			<BRL>613.0</BRL>
+			<CAD>296.0</CAD>
+			<CHF>283.0</CHF>
+			<CNY>1898.0</CNY>
+			<CZK>5869.0</CZK>
+			<DKK>1745.0</DKK>
+			<date>2013-05-02T00:00:00+02:00</date>
+			<EUR>234.0</EUR>
+			<GBP>187.0</GBP>
+			<HKD>2341.0</HKD>
+			<HRK>1738.0</HRK>
+			<HUF>66671.0</HUF>
+			<IDR>2890944.0</IDR>
+			<INR>15867.0</INR>
+			<ISK>37329.0</ISK>
+			<JPY>23600.0</JPY>
+			<KRW>336332.0</KRW>
+			<LTL>808.0</LTL>
+			<LVL>163.0</LVL>
+			<MXN>3879.0</MXN>
+			<MYR>924.0</MYR>
+			<NOK>1725.0</NOK>
+			<NZD>363.0</NZD>
+			<PHP>12607.0</PHP>
+			<PLN>960.0</PLN>
+			<quantity>0.0</quantity>
+			<RON>1061.0</RON>
+			<RUB>9398.0</RUB>
+			<SEK>1980.0</SEK>
+			<SGD>371.0</SGD>
+			<THB>9290.0</THB>
+			<TRY>542.0</TRY>
+			<todate>2013-09-30T00:00:00+02:00</todate>
+			<USD>302.0</USD>
+			<unit>DAY</unit>
+			<ZAR>2500.0</ZAR>
+		</prices>
+		<prices>
+			<AUD>384.0</AUD>
+			<BGN>606.0</BGN>
+			<BRL>809.0</BRL>
+			<CAD>391.0</CAD>
+			<CHF>373.0</CHF>
+			<CNY>2505.0</CNY>
+			<CZK>7746.0</CZK>
+			<DKK>2303.0</DKK>
+			<date>2013-10-01T00:00:00+02:00</date>
+			<EUR>309.0</EUR>
+			<GBP>247.0</GBP>
+			<HKD>3090.0</HKD>
+			<HRK>2295.0</HRK>
+			<HUF>88006.0</HUF>
+			<IDR>3816046.0</IDR>
+			<INR>20944.0</INR>
+			<ISK>49275.0</ISK>
+			<JPY>31100.0</JPY>
+			<KRW>443958.0</KRW>
+			<LTL>1067.0</LTL>
+			<LVL>215.0</LVL>
+			<MXN>5120.0</MXN>
+			<MYR>1220.0</MYR>
+			<NOK>2278.0</NOK>
+			<NZD>479.0</NZD>
+			<PHP>16642.0</PHP>
+			<PLN>1268.0</PLN>
+			<quantity>0.0</quantity>
+			<RON>1400.0</RON>
+			<RUB>12405.0</RUB>
+			<SEK>2614.0</SEK>
+			<SGD>489.0</SGD>
+			<THB>12263.0</THB>
+			<TRY>716.0</TRY>
+			<todate>2013-12-15T00:00:00+02:00</todate>
+			<USD>399.0</USD>
+			<unit>DAY</unit>
+			<ZAR>3300.0</ZAR>
+		</prices>
+	</pricelist>
+	<pricetable>
+		<price>
+			<id>25107</id>
+			<name>Reservation</name>
+			<state>Created</state>
+			<currency>ZAR</currency>
+			<date>2012-05-02T00:00:00+02:00</date>
+			<minimum>5000.0</minimum>
+			<quantity>0.0</quantity>
+			<rule>Manual</rule>
+			<todate>2012-09-30T00:00:00+02:00</todate>
+			<type>Reservation</type>
+			<unit>DAY</unit>
+			<value>2500.0</value>
+		</price>
+		<price>
+			<id>25108</id>
+			<name>Reservation</name>
+			<state>Created</state>
+			<currency>ZAR</currency>
+			<date>2012-10-01T00:00:00+02:00</date>
+			<minimum>6600.0</minimum>
+			<quantity>0.0</quantity>
+			<rule>Manual</rule>
+			<todate>2012-12-15T00:00:00+02:00</todate>
+			<type>Reservation</type>
+			<unit>DAY</unit>
+			<value>3300.0</value>
+		</price>
+		<price>
+			<id>29465</id>
+			<name>Reservation</name>
+			<state>Created</state>
+			<currency>ZAR</currency>
+			<date>2012-12-16T00:00:00+02:00</date>
+			<minimum>84000.0</minimum>
+			<quantity>0.0</quantity>
+			<rule>AnyCheckIn</rule>
+			<todate>2013-01-08T00:00:00+02:00</todate>
+			<type>Reservation</type>
+			<unit>DAY</unit>
+			<value>6000.0</value>
+		</price>
+		<price>
+			<id>29466</id>
+			<name>Reservation</name>
+			<state>Created</state>
+			<currency>ZAR</currency>
+			<date>2013-01-09T00:00:00+02:00</date>
+			<minimum>9800.0</minimum>
+			<quantity>0.0</quantity>
+			<rule>AnyCheckIn</rule>
+			<todate>2013-05-01T00:00:00+02:00</todate>
+			<type>Reservation</type>
+			<unit>DAY</unit>
+			<value>4900.0</value>
+		</price>
+		<price>
+			<id>29467</id>
+			<name>Reservation</name>
+			<state>Created</state>
+			<currency>ZAR</currency>
+			<date>2013-05-02T00:00:00+02:00</date>
+			<minimum>5000.0</minimum>
+			<quantity>0.0</quantity>
+			<rule>AnyCheckIn</rule>
+			<todate>2013-09-30T00:00:00+02:00</todate>
+			<type>Reservation</type>
+			<unit>DAY</unit>
+			<value>2500.0</value>
+		</price>
+		<price>
+			<id>29468</id>
+			<name>Reservation</name>
+			<state>Created</state>
+			<currency>ZAR</currency>
+			<date>2013-10-01T00:00:00+02:00</date>
+			<minimum>6600.0</minimum>
+			<quantity>0.0</quantity>
+			<rule>AnyCheckIn</rule>
+			<todate>2013-12-15T00:00:00+02:00</todate>
+			<type>Reservation</type>
+			<unit>DAY</unit>
+			<value>3300.0</value>
+		</price>
+	</pricetable>
+	<productid>145</productid>
+	<region>WC</region>
+	<terms>Please contact us if we can help in any way. We arrange airport
+		transfers, car hire, tours, restaurant bookings or anything else to
+		make your stay with us enjoyable. Also let us know of any particular
+		requirements such as cots and high chairs for infants. We can also
+		happily pre-stock your apartment with food and drinks on your behalf.
+		If you will be celebrating a special occasion during your stay such as
+		a birthday, anniversary or honeymoon, please let us know so that we
+		can make that extra effort on your special day.
+
+		Arrival and Departure
+		Check-in time is between 14h00 and 18h00 unless otherwise arranged. Check-out
+		time is before 11h00 on the day of departure. We try to accommodate
+		other arrival and departure times, so if you have any special requests
+		please let us know. Please contact 45 minutes prior to your arrival at
+		the property on +27 21 438 6440 during office hours, or on +27 84 804
+		9902 after hours. Please be aware that there is an after-hours arrival
+		charge of R300 for any arrivals between 19h00 and 7h00.
+
+		Passports
+		South African immigration laws require all visitors' passports to have at
+		least two blank pages and to be valid at least six months from your
+		planned date of departure from South Africa. The law is rigorously
+		enforced so please check your passports without delay!
+
+		Cancellations
+		Bookings cancelled more than 90 days prior to arrival date pay a 10%
+		cancellation fee.
+		Bookings cancelled between 90 and 61 days of arrival date pay a 25%
+		cancellation fee.
+		Bookings cancelled between 60 and 31 days of arrival date pay a 50%
+		cancellation fee.
+		Bookings cancelled less than 30 days from arrival date pay a 100% cancellation
+		fee.
+
+		Refunds and waiver of cancellation policies are at the discretion of
+		management and their ability to relet the room. We advise all clients
+		to take out cancellation insurance.
+
+		All changes to bookings once confirmed, including moving from one
+		property to another, or amending dates, are deemed to be cancellation
+		of the first booking, and applicable fees must be charged.
+
+		Terms and Conditions
+		Please go to http://www.noxrentals.co.za/uploads/rentalagreement.pdf for our
+		full terms and conditions of contract. Your deposit is deemed to be
+		acceptance of the said terms and conditions. No binding contract is in
+		force until such time as a rental deposit has been made, and the
+		rental manager has vetted and accepted the payment and guest
+		information, and communicated such to the client.
+
+		BANK DETAILS:
+		NAME: NOX TOURISM
+		BANK: NEDBANK
+		ACCOUNT NUMBER: 1232064025
+		BRANCH CODE: 123209
+		BRANCH: BUSINESS SOUTHERN PENINSULA
+		SWIFT: NEDSZAJJ
+	</terms>
+	<xsl>'no_xsl'</xsl>
+</product>

@@ -1,0 +1,259 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="net.cbtltd.server.api.AssetMapper">
+
+	<cache readOnly="true"/>
+
+	<resultMap id="ResultMap" type="Asset">
+		<id column="ID" jdbcType="INTEGER" property="id" />
+		<result column="ParentID" jdbcType="INTEGER" property="parentid" />
+		<result column="OwnerID" jdbcType="INTEGER" property="ownerid" />
+		<result column="SupplierID" jdbcType="INTEGER" property="supplierid" />
+		<result column="LocationID" jdbcType="INTEGER" property="locationid" />
+		<result column="DepreciationID" jdbcType="INTEGER" property="depreciationid" />
+		<result column="Name" jdbcType="VARCHAR" property="name" />
+		<result column="State" jdbcType="VARCHAR" property="state" />
+		<result column="Type" jdbcType="VARCHAR" property="type" />
+		<result column="Code" jdbcType="VARCHAR" property="code" />
+		<result column="Place" jdbcType="VARCHAR" property="place" />
+		<result column="DateAcquired" jdbcType="DATE" property="dateacquired" />
+		<result column="DateDisposed" jdbcType="DATE" property="datedisposed" />
+		<result column="Currency" jdbcType="VARCHAR" property="currency" />
+		<result column="Unit" jdbcType="VARCHAR" property="unit" />
+		<result column="Quantity" jdbcType="INTEGER" property="quantity" />
+		<result column="Cost" jdbcType="DOUBLE" property="cost" />
+		<result column="Price" jdbcType="DOUBLE" property="price" />
+		<result column="Latitude" jdbcType="DOUBLE" property="latitude" />
+		<result column="Longitude" jdbcType="DOUBLE" property="longitude" />
+		<result column="Altitude" jdbcType="DOUBLE" property="altitude" />
+		<result column="Notes" jdbcType="VARCHAR" property="notes" />
+	</resultMap>
+
+	<sql id="columns">
+		ID, ParentID, OwnerID, SupplierID, LocationID, DepreciationID, Name,
+		State, Type, Code, Place, DateAcquired, DateDisposed,
+		Currency, Unit, Quantity, Cost, Price, Latitude, Longitude, Altitude, Notes
+	</sql>
+
+	<select id="read" parameterType="String" resultMap="ResultMap">
+		select
+		<include refid="columns" />
+		from asset
+		where ID = #{id,jdbcType=INTEGER}
+	</select>
+
+	<select id="exists" parameterType="Asset" resultMap="ResultMap">
+		select
+		<include refid="columns" />
+		from asset
+		where Name = #{name}
+			and OwnerID = #{ownerid}
+			and State not in ('Initial', 'Final')
+		limit 0, 1
+	</select>
+
+	<delete id="delete" parameterType="String">
+		delete from asset
+		where ID =
+		#{id,jdbcType=INTEGER}
+	</delete>
+
+	<insert id="create" parameterType="Asset" useGeneratedKeys="true" keyProperty="id">
+		insert into asset (
+			ParentID, OwnerID, SupplierID, LocationID, DepreciationID,
+			Name, State, Type, Code, Place, DateAcquired, DateDisposed, 
+			Currency, Unit, Quantity, Cost, Price, Latitude, Longitude, Altitude, Notes
+		)
+		values (
+			#{parentid,jdbcType=INTEGER}, 
+			#{ownerid,jdbcType=INTEGER}, 
+			#{supplierid,jdbcType=INTEGER},
+			#{locationid,jdbcType=INTEGER},
+			#{depreciationid,jdbcType=INTEGER},
+			#{name,jdbcType=VARCHAR}, 
+			#{state,jdbcType=VARCHAR},
+			#{type,jdbcType=VARCHAR}, 
+			#{code,jdbcType=VARCHAR},
+			#{place,jdbcType=VARCHAR},
+			#{dateacquired,jdbcType=DATE},
+			#{datedisposed,jdbcType=DATE}, 
+			#{currency,jdbcType=VARCHAR},
+			#{unit,jdbcType=VARCHAR},
+			#{quantity,jdbcType=INTEGER},
+			#{cost,jdbcType=DOUBLE},
+			#{price,jdbcType=DOUBLE},
+			#{latitude,jdbcType=DOUBLE},
+			#{longitude,jdbcType=DOUBLE}, 
+			#{altitude,jdbcType=DOUBLE},
+			#{notes,jdbcType=VARCHAR}
+		)
+	</insert>
+
+	<update id="update" parameterType="Asset">
+		update asset
+		<set>
+			<if test="parentid != null">
+				ParentID = #{parentid,jdbcType=INTEGER},
+			</if>
+			<if test="ownerid != null">
+				OwnerID = #{ownerid,jdbcType=INTEGER},
+			</if>
+			<if test="supplierid != null">
+				SupplierID = #{supplierid,jdbcType=INTEGER},
+			</if>
+			<if test="locationid != null">
+				LocationID = #{locationid,jdbcType=INTEGER},
+			</if>
+			<if test="depreciationid != null">
+				DepreciationID = #{depreciationid,jdbcType=INTEGER},
+			</if>
+			<if test="name != null">
+				Name = #{name,jdbcType=VARCHAR},
+			</if>
+			<if test="state != null">
+				State = #{state,jdbcType=VARCHAR},
+			</if>
+			<if test="type != null">
+				Type = #{type,jdbcType=VARCHAR},
+			</if>
+			<if test="code != null">
+				Code = #{code,jdbcType=VARCHAR},
+			</if>
+			<if test="place != null">
+				Place = #{place,jdbcType=VARCHAR},
+			</if>
+			<if test="dateacquired != null">
+				DateAcquired = #{dateacquired,jdbcType=DATE},
+			</if>
+			<if test="datedisposed != null">
+				DateDisposed = #{datedisposed,jdbcType=DATE},
+			</if>
+			<if test="currency != null">
+				Currency = #{currency,jdbcType=VARCHAR},
+			</if>
+			<if test="unit != null">
+				Unit = #{unit,jdbcType=VARCHAR},
+			</if>
+			<if test="quantity != null">
+				Quantity = #{quantity,jdbcType=INTEGER},
+			</if>
+			<if test="cost != null">
+				Cost = #{cost,jdbcType=DOUBLE},
+			</if>
+			<if test="price != null">
+				Price = #{price,jdbcType=DOUBLE},
+			</if>
+			<if test="latitude != null">
+				Latitude = #{latitude,jdbcType=DOUBLE},
+			</if>
+			<if test="longitude != null">
+				Longitude = #{longitude,jdbcType=DOUBLE},
+			</if>
+			<if test="altitude != null">
+				Altitude = #{altitude,jdbcType=DOUBLE},
+			</if>
+			<if test="notes != null">
+				Notes = #{notes,jdbcType=VARCHAR},
+			</if>
+		</set>
+		where ID = #{id,jdbcType=INTEGER}
+	</update>
+
+	<update id="updateByPrimaryKey" parameterType="Asset">
+		update asset
+		set
+		ParentID = #{parentid,jdbcType=INTEGER},
+		OwnerID = #{ownerid,jdbcType=INTEGER},
+		SupplierID = #{supplierid,jdbcType=INTEGER},
+		LocationID = #{locationid,jdbcType=INTEGER},
+		DepreciationID = #{depreciationid,jdbcType=INTEGER},
+		Name = #{name,jdbcType=VARCHAR},
+		State = #{state,jdbcType=VARCHAR},
+		Type = #{type,jdbcType=VARCHAR},
+		Code = #{code,jdbcType=VARCHAR},
+		Place = #{place,jdbcType=VARCHAR},
+		DateAcquired = #{dateacquired,jdbcType=DATE},
+		DateDisposed = #{datedisposed,jdbcType=DATE},
+		Currency = #{currency,jdbcType=VARCHAR},
+		Unit = #{unit,jdbcType=VARCHAR},
+		Quantity = #{quantity,jdbcType=INTEGER},
+		Cost = #{cost,jdbcType=DOUBLE},
+		Price = #{price,jdbcType=DOUBLE},
+		Latitude = #{latitude,jdbcType=DOUBLE},
+		Longitude = #{longitude,jdbcType=DOUBLE},
+		Altitude = #{altitude,jdbcType=DOUBLE},
+		Notes = #{notes,jdbcType=VARCHAR}
+		where ID = #{id,jdbcType=INTEGER}
+	</update>
+
+	<sql id="assetwhere">
+		where asset.ParentID = #{parentid}
+			and asset.State not in ('Initial', 'Final')
+	</sql>
+
+	<select id="count" parameterType="AssetTable" resultType="Integer">
+		select count(*)
+		from asset
+		<include refid="assetwhere" />
+	</select>
+	
+	<select id="list" parameterType="AssetTable" resultMap="ResultMap">
+		select
+		<include refid="columns" />
+		from asset
+		<include refid="assetwhere" />
+		order by ${orderby}
+		limit #{startrow}, #{numrows}
+	</select>
+
+	<select id="nameidbyid" parameterType="NameIdAction" resultType="NameId">
+		select distinct Name, ID
+		from asset
+		where ID = #{id}
+	</select>
+
+	<select id="nameidbyname" parameterType="NameIdAction" resultType="NameId">
+		select distinct Name, ID
+		from asset
+		<if test="organizationid != null">
+		join relation on Link = 'Organization Asset'
+			and LineID = ID 
+			and HeadID = #{organizationid}
+		</if>
+		<if test="type != null">
+		join relation as type on type.Link = 'Asset Type'
+			and type.HeadID = ID 
+			and type.LineID = #{type}
+		</if>
+		where Name <![CDATA[ >= ]]> #{name}
+		<if test="state == null">
+			and State = 'Created'
+		</if>
+		<if test="state != null">
+			and State in (${state})
+		</if>
+		order by Name
+		limit 0, #{numrows}
+	</select>
+
+	<select id="nameidbylocation" parameterType="NameIdAction" resultType="NameId">
+		select Name, ID
+		from asset, relation AS organizations, relation AS types
+		where organizations.HeadID = #{organizationid}
+			and organizations.Link = 'Organization Asset'
+			and organizations.LineID = ID
+			and types.HeadID = ID
+			and types.Link = 'Asset Type'
+			and types.LineID in (${type})
+			and LocationID in (${id})
+		<if test="state == null">
+			and State not in ('Initial', 'Final')
+		</if>
+		<if test="state != null">
+			and State in (${state})
+		</if>
+		order by Name
+		limit 0, #{numrows}
+	</select>
+
+</mapper>

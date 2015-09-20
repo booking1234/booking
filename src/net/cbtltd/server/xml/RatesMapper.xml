@@ -1,0 +1,24 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+
+<mapper namespace="net.cbtltd.server.api.RatesMapper">
+    
+      <resultMap id="ResultMap" type="Rates">
+    <id column="rates.ID" jdbcType="INTEGER" property="id" />
+    <id column="rates.name" jdbcType="VARCHAR" property="name" />
+      
+   </resultMap>
+    
+    
+    <select id="fetchRates" parameterType="Rates" resultMap="ResultMap">
+		SELECT
+		*
+		FROM rates
+		WHERE  rates.name = #{name}
+			   
+	</select>
+	
+    
+    
+    
+    </mapper>

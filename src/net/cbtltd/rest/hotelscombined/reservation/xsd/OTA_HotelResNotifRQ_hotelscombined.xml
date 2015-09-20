@@ -1,0 +1,168 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<OTA_HotelResNotifRQ xmlns="http://www.opentravel.org/OTA/2003/05" Version="1.0" EchoToken="aaa000" TimeStamp="2013-01-01T12:00:00Z">
+<HotelReservations>
+<HotelReservation CreateDateTime="2012-12-31T12:00:00Z" LastModifyTime="2012-12-31T12:00:00Z" ResStatus="Commit">
+<UniqueID Type="14" ID="ABC0123"/>
+<RoomStays>
+<RoomStay>
+<RoomRates>
+<RoomRate RoomTypeCode="120" RatePlanCode="100" NumberOfUnits="1"/>
+</RoomRates>
+<GuestCounts>
+<GuestCount AgeQualifyingCode="10" Count="2" ResGuestRPH="1"/>
+<GuestCount AgeQualifyingCode="8" Count="2" ResGuestRPH="1"/>
+</GuestCounts>
+<TimeSpan Start="2013-02-12" End="2013-02-15" />
+<Total AmountAfterTax="300.00" CurrencyCode="USD" DecimalPlaces="0"/>
+<BasicPropertyInfo HotelCode="1001"/>
+</RoomStay>
+<RoomStay>
+<RoomRates>
+<RoomRate RoomTypeCode="121" RatePlanCode="100" NumberOfUnits="1"/>
+</RoomRates>
+<GuestCounts>
+<GuestCount AgeQualifyingCode="10" Count="1" ResGuestRPH="2"/>
+</GuestCounts>
+<TimeSpan Start="2013-02-12" End="2013-02-15" />
+<Total AmountAfterTax="150.00" CurrencyCode="USD" DecimalPlaces="0"/>
+<BasicPropertyInfo HotelCode="1001"/>
+</RoomStay>
+</RoomStays>
+<ResGuests>
+<ResGuest PrimaryIndicator="1">
+<Profiles>
+<ProfileInfo>
+<Profile ProfileType="1" RPH="1">
+<Customer>
+<PersonName>
+<GivenName>James</GivenName>
+<Surname>Bond</Surname>
+</PersonName>
+<Telephone PhoneNumber="555-12345"/>
+<Email>james.bond@mi5.co.uk</Email>
+<Address>
+<AddressLine>Claretta House, Tower Bridge Close</AddressLine>
+<CityName>London</CityName>
+<PostalCode>EC1 2PG</PostalCode>
+<CountryName Code="UK"/>
+</Address>
+</Customer>
+</Profile>
+</ProfileInfo>
+</Profiles>
+</ResGuest>
+<ResGuest PrimaryIndicator="0">
+<Profiles>
+<ProfileInfo>
+<Profile ProfileType="1" RPH="2">
+<Customer>
+<PersonName>
+<GivenName>Auric</GivenName>
+<Surname>Goldfinger</Surname>
+</PersonName>
+</Customer>
+</Profile>
+</ProfileInfo>
+</Profiles>
+</ResGuest>
+</ResGuests>
+<ResGlobalInfo>
+<Total AmountAfterTax="450.00" CurrencyCode="USD" DecimalPlaces="0"/>
+<SpecialRequests>
+<SpecialRequest>
+<Text>The special request.</Text>
+</SpecialRequest>
+</SpecialRequests>
+<HotelReservationIDs>
+<HotelReservationID ResID_Type="14" ResID_Value="ABC0123"/>
+</HotelReservationIDs>
+</ResGlobalInfo>
+</HotelReservation>
+<HotelReservation CreateDateTime="2012-12-31T12:00:00Z" LastModifyTime="2012-12-31T12:00:00Z" ResStatus="Cancel">
+<UniqueID Type="14" ID="ABC0123"/>
+<RoomStays>
+<RoomStay>
+<RoomRates>
+<RoomRate RoomTypeCode="120" RatePlanCode="100" NumberOfUnits="1"/>
+</RoomRates>
+<GuestCounts>
+<GuestCount AgeQualifyingCode="10" Count="2" ResGuestRPH="1"/>
+</GuestCounts>
+<TimeSpan Start="2013-02-12" End="2013-02-15" />
+<Total AmountAfterTax="300.00" CurrencyCode="USD" DecimalPlaces="0"/>
+<BasicPropertyInfo HotelCode="1001"/>
+</RoomStay>
+<RoomStay>
+<RoomRates>
+<RoomRate RoomTypeCode="121" RatePlanCode="100" NumberOfUnits="1"/>
+</RoomRates>
+<GuestCounts>
+<GuestCount AgeQualifyingCode="10" Count="1" ResGuestRPH="2"/>
+</GuestCounts>
+<TimeSpan Start="2013-02-12" End="2013-02-15" />
+<Total AmountAfterTax="150.00" CurrencyCode="USD" DecimalPlaces="0"/>
+<BasicPropertyInfo HotelCode="1001"/>
+</RoomStay>
+</RoomStays>
+<ResGuests>
+<ResGuest PrimaryIndicator="1">
+<Profiles>
+<ProfileInfo>
+<Profile ProfileType="1" RPH="1">
+<Customer>
+<PersonName>
+<GivenName>James</GivenName>
+<Surname>Bond</Surname>
+</PersonName>
+<Telephone PhoneNumber="555-12345"/>
+<Email>james.bond@mi5.co.uk</Email>
+<Address>
+<AddressLine>Claretta House, Tower Bridge Close</AddressLine>
+<CityName>London</CityName>
+<PostalCode>EC1 2PG</PostalCode>
+<CountryName Code="UK"/>
+</Address>
+</Customer>
+</Profile>
+</ProfileInfo>
+</Profiles>
+</ResGuest>
+<ResGuest PrimaryIndicator="0">
+<Profiles>
+<ProfileInfo>
+<Profile ProfileType="1" RPH="2">
+<Customer>
+<PersonName>
+<GivenName>Auric</GivenName>
+<Surname>Goldfinger</Surname>
+</PersonName>
+</Customer>
+</Profile>
+</ProfileInfo>
+</Profiles>
+</ResGuest>
+</ResGuests>
+<ResGlobalInfo>
+<Total AmountAfterTax="450.00" CurrencyCode="USD" DecimalPlaces="0"/>
+<SpecialRequests>
+<SpecialRequest>
+<Text>The special request.</Text>
+</SpecialRequest>
+</SpecialRequests>
+<HotelReservationIDs>
+<HotelReservationID ResID_Type="14" ResID_Value="ABC0123"/>
+</HotelReservationIDs>
+<Guarantee>
+<GuaranteesAccepted>
+<GuaranteeAccepted>
+<PaymentCard CardType="1" CardNumber="4111111111111111" SeriesCode="123"
+ExpireDate="0817">
+<CardHolderName>James Bond</CardHolderName>
+</PaymentCard>
+</GuaranteeAccepted>
+</GuaranteesAccepted>
+</Guarantee>
+</ResGlobalInfo>
+</HotelReservation>
+</HotelReservations>
+</OTA_HotelResNotifRQ>

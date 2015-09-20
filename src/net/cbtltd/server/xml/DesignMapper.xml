@@ -1,0 +1,150 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="net.cbtltd.server.api.DesignMapper">
+
+<!-- 	<cache readOnly="true"/> -->
+
+	<resultMap id="ResultMap" type="Design">
+		<id column="ID" jdbcType="VARCHAR" property="id" />
+		<result column="Name" jdbcType="VARCHAR" property="name" />
+		<result column="State" jdbcType="VARCHAR" property="state" />
+		<result column="NameService" jdbcType="VARCHAR" property="nameservice" />
+		<result column="NameType" jdbcType="VARCHAR" property="nametype" />
+		<result column="LastDate" jdbcType="DATE" property="lastdate" />
+		<result column="Notes" jdbcType="VARCHAR" property="notes" />
+		<result column="NameLabel" jdbcType="VARCHAR" property="namelabel" />
+		<result column="EntityType" jdbcType="VARCHAR" property="entitytype" />
+		<result column="DaterangeEnabled" jdbcType="BIT" property="daterangeenabled" />
+		<result column="StatesEnabled" jdbcType="BIT" property="statesenabled" />
+		<result column="TypesEnabled" jdbcType="BIT" property="typesenabled" />
+		<result column="CurrencyEnabled" jdbcType="BIT" property="currencyenabled" />
+		<result column="AccountEnabled" jdbcType="BIT" property="accountenabled" />
+		<result column="ProcessEnabled" jdbcType="BIT" property="processenabled" />
+	</resultMap>
+
+	<sql id="columns">
+		ID, Name, State, NameService, NameType, LastDate, Notes, NameLabel, DaterangeEnabled, StatesEnabled, TypesEnabled, CurrencyEnabled, AccountEnabled, ProcessEnabled, EntityType
+	</sql>
+
+	<select id="read" parameterType="String" resultType="Design">
+		select
+		<include refid="columns" />
+		from design
+		where ID = #{id,jdbcType=VARCHAR}
+	</select>
+
+	<delete id="delete" parameterType="String">
+		delete from design
+		where ID = #{id,jdbcType=VARCHAR}
+	</delete>
+
+	<insert id="create" parameterType="Design">
+		insert into design (
+		<include refid="columns" />
+		)
+		values (
+			#{id,jdbcType=VARCHAR},
+			#{name,jdbcType=VARCHAR},
+			#{state,jdbcType=VARCHAR},
+			#{nameservice,jdbcType=VARCHAR},
+			#{nametype,jdbcType=VARCHAR},
+			#{lastdate,jdbcType=DATE},
+			#{notes,jdbcType=VARCHAR},
+			#{namelabel,jdbcType=BIT},
+			#{daterangeenabled,jdbcType=BIT},
+			#{statesenabled,jdbcType=BIT},
+			#{typesenabled,jdbcType=BIT},
+			#{currencyenabled,jdbcType=BIT}
+		)
+	</insert>
+
+	<update id="update" parameterType="Design">
+		update design
+		<set>
+			<if test="name != null">
+				Name = #{name,jdbcType=VARCHAR},
+ 			</if>
+			<if test="state != null">
+				State = #{state,jdbcType=VARCHAR},
+ 			</if>
+			<if test="nameservice != null">
+				NameService = #{nameservice,jdbcType=VARCHAR},
+ 			</if>
+			<if test="nametype != null">
+				NameType = #{nametype,jdbcType=VARCHAR},
+ 			</if>
+			<if test="lastdate != null">
+				LastDate = #{lastdate,jdbcType=DATE},
+ 			</if>
+			<if test="notes != null">
+				Notes = #{notes,jdbcType=VARCHAR},
+ 			</if>
+			<if test="namelabel != null">
+				NameLabel = #{namelabel,jdbcType=BIT},
+ 			</if>
+			<if test="daterangeenabled != null">
+				DaterangeEnabled = #{daterangeenabled,jdbcType=BIT},
+ 			</if>
+			<if test="statesenabled != null">
+				StatesEnabled = #{statesenabled,jdbcType=BIT},
+ 			</if>
+			<if test="typesenabled != null">
+				TypesEnabled = #{typesenabled,jdbcType=BIT},
+ 			</if>
+			<if test="currencyenabled != null">
+				CurrencyEnabled = #{currencyenabled,jdbcType=BIT},
+ 			</if>
+			<if test="currencyenabled != null">
+				AccountEnabled = #{accountenabled,jdbcType=BIT},
+ 			</if>
+			<if test="currencyenabled != null">
+				ProcessEnabled = #{processenabled,jdbcType=BIT},
+ 			</if>
+			<if test="nametype != null">
+				EntityType = #{entitytype,jdbcType=VARCHAR},
+ 			</if>
+		</set>
+		where ID = #{id,jdbcType=VARCHAR}
+	</update>
+
+	<update id="updateByPrimaryKey" parameterType="Design">
+		update design
+		set 
+			Name = #{name,jdbcType=VARCHAR},
+			State = #{state,jdbcType=VARCHAR},
+			NameService = #{nameservice,jdbcType=VARCHAR},
+			NameType = #{nametype,jdbcType=VARCHAR},
+			LastDate = #{lastdate,jdbcType=DATE},
+			Notes = #{notes,jdbcType=VARCHAR},
+			NameLabel = #{namelabel,jdbcType=BIT},
+			DaterangeEnabled = #{daterangeenabled,jdbcType=BIT},
+			StatesEnabled = #{statesenabled,jdbcType=BIT},
+			TypesEnabled = #{typesenabled,jdbcType=BIT},
+			CurrencyEnabled = #{currencyenabled,jdbcType=BIT},
+			AccountEnabled = #{accountenabled,jdbcType=BIT},
+			ProcessEnabled = #{processenabled,jdbcType=BIT},
+			EntityType = #{entitytype,jdbcType=VARCHAR}
+		where ID = #{id,jdbcType=VARCHAR}
+	</update>
+	
+	<select id="nameidbyid" parameterType="NameIdAction" resultType="NameId">
+		select distinct Name, ID
+		from design
+		where ID = #{id}
+	</select>
+
+	<select id="nameidbyname" parameterType="NameIdAction" resultType="NameId">
+		select distinct Name, ID
+		from design
+		where Name <![CDATA[ >= ]]> #{name}
+		<if test="state == null">
+			and State not in ('Initial', 'Final')
+		</if>
+		<if test="state != null">
+			and State in (${state})
+		</if>
+		order by Name
+		limit 0, #{numrows}
+	</select>
+
+</mapper>

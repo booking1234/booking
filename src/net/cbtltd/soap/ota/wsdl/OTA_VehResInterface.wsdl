@@ -1,0 +1,31 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<wsdl:definitions xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/"
+	xmlns:ota="http://www.opentravel.org/OTA/2003/05" xmlns:soap="http://schemas.xmlsoap.org/wsdl/soap/"
+	xmlns:http="http://schemas.xmlsoap.org/wsdl/http/" xmlns:xs="http://www.w3.org/2001/XMLSchema"
+	targetNamespace="http://www.opentravel.org/OTA/2003/05" name="VehReservationService">
+	<!-- Define data types (import OTA schemas) -->
+	<wsdl:types>
+		<xs:schema>
+			<xs:import namespace="http://www.opentravel.org/OTA/2003/05"
+				schemaLocation="http://www.opentravel.org/2008A/OTA_VehResRQ.xsd" />
+		</xs:schema>
+		<xs:schema>
+			<xs:import namespace="http://www.opentravel.org/OTA/2003/05"
+				schemaLocation="http://www.opentravel.org/2008A/OTA_VehResRS.xsd" />
+		</xs:schema>
+	</wsdl:types>
+	<!-- Define request and response messages-->
+	<wsdl:message name="VehicleReservationRequest">
+		<wsdl:part name="OTA_VehResRQ" element="ota:OTA_VehResRQ" />
+	</wsdl:message>
+	<wsdl:message name="VehicleReservationResponse">
+		<wsdl:part name="OTA_VehResRS" element="ota:OTA_VehResRS" />
+	</wsdl:message>
+	<!-- Define operation and reference messages-->
+	<wsdl:portType name="VehicleReservationPortType">
+		<wsdl:operation name="OTA_VehResRQ">
+			<wsdl:input message="ota:VehicleReservationRequest" />
+			<wsdl:output message="ota:VehicleReservationResponse" />
+		</wsdl:operation>
+	</wsdl:portType>
+</wsdl:definitions> 

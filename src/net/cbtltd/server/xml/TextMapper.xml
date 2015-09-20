@@ -1,0 +1,259 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="net.cbtltd.server.api.TextMapper">
+
+	<resultMap id="ResultMap" type="Text">
+		<id column="ID" jdbcType="VARCHAR" property="id" />
+		<id column="Language" jdbcType="VARCHAR" property="language" />
+		<result column="Name" jdbcType="VARCHAR" property="name" />
+		<result column="State" jdbcType="VARCHAR" property="state" />
+		<result column="Type" jdbcType="VARCHAR" property="type" />
+		<result column="Date" jdbcType="DATE" property="date" />
+		<result column="Notes" jdbcType="VARCHAR" property="notes" />
+		<result column="Data" jdbcType="LONGVARBINARY" property="data" />
+		<result column="version" jdbcType="TIMESTAMP" property="version" />
+	</resultMap>
+
+	<sql id="columns">
+		ID, Language, Name, State, Type, Date, Notes, Data, version
+	</sql>
+
+	<select id="read" parameterType="String" resultMap="ResultMap">
+		select
+		<include refid="columns" />
+		from text
+		where ID = #{id,jdbcType=VARCHAR}
+		and Language = 'EN'
+	</select>
+
+	<select id="exists" parameterType="Text" resultMap="ResultMap">
+		select
+		<include refid="columns" />
+		from text
+		where State = 'Created'
+		<if test="name != null">
+			and Name = #{name,jdbcType=VARCHAR}
+		</if>
+		<if test="language != null">
+			and Language = #{language,jdbcType=VARCHAR}
+		</if>
+		limit 1
+	</select>
+
+	<select id="readbyexample" parameterType="Text" resultMap="ResultMap">
+		select
+		<include refid="columns" />
+		from text
+		where ID = #{id,jdbcType=VARCHAR}
+		and Language = #{language,jdbcType=VARCHAR}
+	</select>
+	
+	<select id="readbyNameAndID" parameterType="Text" resultMap="ResultMap">
+		select
+		<include refid="columns" />
+		from text
+		where State = 'Created'
+		<if test="name != null">
+			and Name = #{name,jdbcType=VARCHAR}
+		</if>
+		and ID = #{id,jdbcType=VARCHAR}
+		
+	</select>
+
+	<select id="readallhtml" parameterType="Text" resultMap="ResultMap">
+		select
+		<include refid="columns" />
+		from text
+		where Type = 'HTML'
+			and Notes is not null
+			and Notes != ''
+			and Notes != '\n'
+			and substring(Notes, 1, 18) != 'Enter the standard'
+			and substring(Notes, 2, 19) != 'This is for general'
+	</select>
+
+	<delete id="delete" parameterType="String">
+		delete from text
+		where ID = #{id,jdbcType=VARCHAR}
+		and Language = 'EN'
+	</delete>
+
+	<delete id="deletebyexample" parameterType="Text">
+		delete from text
+		where ID = #{id,jdbcType=VARCHAR}
+		and Language = #{language,jdbcType=VARCHAR}
+	</delete>
+
+	<insert id="create" parameterType="Text">
+		insert into text (ID, Language, Name, State, Type, Date, Notes,	Data)
+		values (
+			#{id,jdbcType=VARCHAR}, 
+			#{language,jdbcType=VARCHAR}, 
+			#{name,jdbcType=VARCHAR}, 
+			#{state,jdbcType=VARCHAR}, 
+			#{type,jdbcType=VARCHAR}, 
+			#{date,jdbcType=DATE}, 
+			#{notes,jdbcType=VARCHAR}, 
+			#{data,jdbcType=LONGVARBINARY}
+		)
+	</insert>
+
+	<update id="update" parameterType="Text">
+		update text
+		<set>
+			<if test="name != null">
+				Name = #{name,jdbcType=VARCHAR},
+			</if>
+			<if test="state != null">
+				State = #{state,jdbcType=VARCHAR},
+			</if>
+			<if test="type != null">
+				Type = #{type,jdbcType=VARCHAR},
+			</if>
+			<if test="date != null">
+				Date = #{date,jdbcType=DATE},
+			</if>
+			<if test="notes != null">
+				Notes = #{notes,jdbcType=VARCHAR},
+			</if>
+			<if test="data != null">
+				Data = #{data,jdbcType=LONGVARBINARY},
+			</if>
+			<if test="version != null">
+				version = #{version,jdbcType=TIMESTAMP},
+			</if>
+		</set>
+		where ID = #{id,jdbcType=VARCHAR}
+		and Language = #{language,jdbcType=VARCHAR}
+	</update>
+
+	<update id="updateByPrimaryKey" parameterType="Text">
+		update text
+		set Name = #{name,jdbcType=VARCHAR},
+			State = #{state,jdbcType=VARCHAR},
+			Type = #{type,jdbcType=VARCHAR},
+			Date = #{date,jdbcType=DATE},
+			Notes = #{notes,jdbcType=VARCHAR},
+			Data = #{data,jdbcType=LONGVARBINARY},
+			version = #{version,jdbcType=TIMESTAMP}
+		where ID = #{id,jdbcType=VARCHAR}
+			and Language = #{language,jdbcType=VARCHAR}
+	</update>
+	
+	<update id="restore" parameterType="String">
+		update text
+		set State = 'Created'
+		where Type = 'Image'
+			and ID in
+		<foreach item="item" index="index" collection="list" open="(" separator="," close=")">
+			#{item}
+		</foreach>
+	</update>
+	
+	<update id="suspend" parameterType="Entity">
+		update text
+		set State = 'Final'
+		where Type = 'Image'
+			and ID like concat(#{entitytype}, #{id},'-%')
+	</update>
+	
+	<select id="productfilenameid" parameterType="String" resultType="NameId">
+		select LineID as Name, LineID as id
+			from relation 
+		where HeadID = #{id}
+			and Link = 'Product File'
+		order by Name
+	</select>
+
+	<select id="publicfilenameid" parameterType="String" resultType="NameId">
+		select ID as Name, ID as id
+		from text
+		where State = 'Created'
+			and Type = 'PublicFile'
+		and (Name = #{id} or Name = '0')
+		order by Name
+	</select>
+
+	<select id="imagesbynameid" parameterType="NameId" resultType="NameId">
+		select distinct Notes as name, ID
+		from text
+		where State = 'Created'
+			and id like concat(#{name}, #{id}, '-%')
+			and type = 'Image'
+		order by ID
+	</select>
+
+	<select id="imagesbyurl" parameterType="NameId" resultType="NameId">
+		select distinct name as ID, notes as name
+		from text
+		where State = 'Created'
+			and id like concat(#{name}, #{id}, '-%')
+			and type = 'Image'
+		order by ID
+	</select>
+
+	<select id="imageidsbynameid" parameterType="NameId" resultType="String">
+		select distinct ID
+		from text
+		where State = 'Created'
+			and id like concat(#{name}, #{id}, '-%')
+			and type = 'Image'
+		order by ID
+	</select>
+
+	<select id="imageidsbyurl" parameterType="NameId" resultType="String">
+		select distinct name
+		from text
+		where State = 'Created'
+			and id like concat(#{name}, #{id}, '-%')
+			and type = 'Image'
+		order by name
+	</select>
+
+	<select id="lastimage" parameterType="String" resultType="String">
+		select id from text
+		where state = 'Created'
+			and id like #{id}
+			and type = 'Image'
+		order by id desc
+		limit 1;
+	</select>
+	
+	<select id="readallbyid" parameterType="String" resultMap="ResultMap">
+		select
+		<include refid="columns" />
+		from text
+		where State = 'Created'
+		and ID like #{id,jdbcType=VARCHAR}
+		
+	</select>
+	
+	<select id="imagesAndVersionByNameId" parameterType="NameId" resultMap="ResultMap">
+		select ID, version
+		from text
+		where State = 'Created'
+			and id like concat(#{name}, #{id}, '-%')
+			and type = 'Image'
+		order by ID
+	</select>
+	
+	<select id="readByID" parameterType="String" resultMap="ResultMap">
+		select
+		<include refid="columns" />
+		from text
+		where ID = #{id,jdbcType=VARCHAR}
+	</select>
+
+		<select id="readbyNameAndIDAndLanguage" parameterType="Text" resultMap="ResultMap">
+		select
+		<include refid="columns" />
+		from text
+		where State = 'Created'
+		<if test="name != null">
+			and Name = #{name,jdbcType=VARCHAR}
+		</if>
+		and ID = #{id,jdbcType=VARCHAR} and Language='EN'
+		
+	</select>
+
+</mapper>

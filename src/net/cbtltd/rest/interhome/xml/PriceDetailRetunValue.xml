@@ -1,0 +1,93 @@
+<?xml version="1.0" encoding="UTF-8" standalone="yes"?>
+<priceDetailRetunValue xmlns="http://www.interhome.com/webservice">
+	<Ok>true</Ok>
+	<Errors />
+	<Price>1787.00</Price>
+	<Total>1787.00</Total>
+	<CurrencyCode>EUR</CurrencyCode>
+	<AdditionalServices>
+		<AdditionalServiceItem>
+			<AdditionalServiceType>BookableServiceNoCost</AdditionalServiceType>
+			<Amount>0</Amount>
+			<Code>COT</Code>
+			<Count>1</Count>
+			<Currency></Currency>
+			<Description>Cot (up to 2 years)</Description>
+			<EitherOr></EitherOr>
+			<IsDefaultService>false</IsDefaultService>
+			<IsIncluded>false</IsIncluded>
+			<IsInsurance>false</IsInsurance>
+			<IsMandatory>false</IsMandatory>
+			<PaymentInfo>Included in the price</PaymentInfo>
+			<PriceRule></PriceRule>
+			<Text>Appropriate up to 2 years (max. 3 years)</Text>
+			<Type>N2</Type>
+			<ValidFrom>2012-12-08</ValidFrom>
+			<ValidTo>2012-12-15</ValidTo>
+		</AdditionalServiceItem>
+		<AdditionalServiceItem>
+			<AdditionalServiceType>InPriceIncluded</AdditionalServiceType>
+			<Amount>0</Amount>
+			<Code>LI</Code>
+			<Count>0</Count>
+			<Currency></Currency>
+			<Description>Laundry (initial supply of bed linen and towels)
+			</Description>
+			<EitherOr></EitherOr>
+			<IsDefaultService>false</IsDefaultService>
+			<IsIncluded>true</IsIncluded>
+			<IsInsurance>false</IsInsurance>
+			<IsMandatory>true</IsMandatory>
+			<PaymentInfo>Included in the price</PaymentInfo>
+			<PriceRule></PriceRule>
+			<Text></Text>
+			<Type>Y2</Type>
+			<ValidFrom>2012-12-08</ValidFrom>
+			<ValidTo>2012-12-15</ValidTo>
+		</AdditionalServiceItem>
+		<AdditionalServiceItem>
+			<AdditionalServiceType>InPriceIncluded</AdditionalServiceType>
+			<Amount>0</Amount>
+			<Code>FC</Code>
+			<Count>0</Count>
+			<Currency></Currency>
+			<Description>Final cleaning</Description>
+			<EitherOr></EitherOr>
+			<IsDefaultService>false</IsDefaultService>
+			<IsIncluded>true</IsIncluded>
+			<IsInsurance>false</IsInsurance>
+			<IsMandatory>true</IsMandatory>
+			<PaymentInfo>Included in the price</PaymentInfo>
+			<PriceRule></PriceRule>
+			<Text></Text>
+			<Type>Y2</Type>
+			<ValidFrom>2012-12-08</ValidFrom>
+			<ValidTo>2012-12-15</ValidTo>
+		</AdditionalServiceItem>
+		<AdditionalServiceItem>
+			<AdditionalServiceType>ExtracostOnPlace</AdditionalServiceType>
+			<Amount>400.00</Amount>
+			<Code>DE</Code>
+			<Count>0</Count>
+			<Currency>EUR</Currency>
+			<Description>Breakage deposit in cash</Description>
+			<EitherOr></EitherOr>
+			<IsDefaultService>false</IsDefaultService>
+			<IsIncluded>false</IsIncluded>
+			<IsInsurance>false</IsInsurance>
+			<IsMandatory>true</IsMandatory>
+			<PaymentInfo>Payable in resort fixed price</PaymentInfo>
+			<PriceRule>U1</PriceRule>
+			<Text></Text>
+			<Type>Y4</Type>
+			<ValidFrom>2012-12-08</ValidFrom>
+			<ValidTo>2012-12-15</ValidTo>
+		</AdditionalServiceItem>
+	</AdditionalServices>
+	<ExpirationPrePayment>0001-01-01</ExpirationPrePayment>
+	<ExpirationResidue>2012-11-30</ExpirationResidue>
+	<Prepayment>0</Prepayment>
+	<SpecialCode></SpecialCode>
+	<SpecialDescription></SpecialDescription>
+	<SpecialPrice>0</SpecialPrice>
+</priceDetailRetunValue>

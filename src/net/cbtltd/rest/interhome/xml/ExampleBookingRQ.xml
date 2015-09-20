@@ -1,0 +1,45 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<SOAP-ENV:Envelope xmlns:SOAP-ENV="http://schemas.xmlsoap.org/soap/envelope/"
+	xmlns:ns1="http://www.interhome.com/webservice">
+	<SOAP-ENV:Header>
+		<ns1:ServiceAuthHeader SOAP-ENV:mustUnderstand="1">
+			<ns1:Username>CH1000768</ns1:Username>
+			<ns1:Password>RCLOUD</ns1:Password>
+		</ns1:ServiceAuthHeader>
+	</SOAP-ENV:Header>
+	<SOAP-ENV:Body>
+		<ns1:RetailerBooking>
+			<ns1:inputValue>
+				<ns1:SalesOfficeCode>2052</ns1:SalesOfficeCode>
+				<ns1:LanguageCode>EN</ns1:LanguageCode>
+				<ns1:CurrencyCode>EUR</ns1:CurrencyCode>
+				<ns1:AccommodationCode>DE2981.100.1</ns1:AccommodationCode>
+				<ns1:CheckIn>2013-04-20</ns1:CheckIn>
+				<ns1:CheckOut>2013-04-27</ns1:CheckOut>
+				<ns1:Adults>2</ns1:Adults>
+				<ns1:Babies>0</ns1:Babies>
+				<ns1:Children>0</ns1:Children>
+				<ns1:CustomerSalutationType>Mr</ns1:CustomerSalutationType>
+				<ns1:CustomerName>TEST Lname </ns1:CustomerName>
+				<ns1:CustomerFirstName>TEST Fname</ns1:CustomerFirstName>
+				<ns1:RetailerCode>
+				</ns1:RetailerCode>
+				<ns1:RetailerExtraCode>
+				</ns1:RetailerExtraCode>
+				<ns1:RetailerContact>DUMMY</ns1:RetailerContact>
+				<ns1:Comment>
+				</ns1:Comment>
+				<ns1:PaymentType>SecuredCreditCard</ns1:PaymentType>
+				<ns1:CreditCardType>MASTER</ns1:CreditCardType>
+				<ns1:CreditCardNumber>
+				</ns1:CreditCardNumber>
+				<ns1:CreditCardCvc>
+				</ns1:CreditCardCvc>
+				<ns1:CreditCardExpiry>
+				</ns1:CreditCardExpiry>
+				<ns1:CreditCardHolder>
+				</ns1:CreditCardHolder>
+			</ns1:inputValue>
+		</ns1:RetailerBooking>
+	</SOAP-ENV:Body>
+</SOAP-ENV:Envelope>

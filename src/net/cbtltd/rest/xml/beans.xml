@@ -1,0 +1,69 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<beans xmlns="http://www.springframework.org/schema/beans"
+  xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+  xmlns:jaxrs="http://cxf.apache.org/jaxrs"
+  xmlns:jaxws="http://cxf.apache.org/jaxws"
+  xsi:schemaLocation="http://www.springframework.org/schema/beans 
+	http://www.springframework.org/schema/beans/spring-beans.xsd
+	http://cxf.apache.org/jaxws 
+	http://cxf.apache.org/schemas/jaxws.xsd
+	http://cxf.apache.org/jaxrs
+	http://cxf.apache.org/schemas/jaxrs.xsd"> 
+
+ <jaxws:server id="soapServer" serviceClass="net.cbtltd.soap.ota.RazorPortType" address="/soap">
+    <jaxws:serviceBean>  
+      <bean class="net.cbtltd.soap.ota.RazorPortTypeImpl"/>   
+    </jaxws:serviceBean>  
+  </jaxws:server>
+  
+  <jaxrs:server id="restServer" address="/rest">
+  <jaxrs:serviceBeans>
+   <ref bean="accountBean" />
+   <ref bean="locationBean" />
+   <ref bean="partyBean" />
+   <ref bean="productBean" />
+   <ref bean="reservationBean" />
+   <ref bean="flipkeyBean" />
+   <ref bean="otaBean" />
+  </jaxrs:serviceBeans>
+  <jaxrs:inInterceptors>
+   <ref bean="basicAuthAuthorizationInterceptor" />
+  </jaxrs:inInterceptors>
+  <jaxrs:outInterceptors>
+   <ref bean="stylesheetInterceptor" />
+  </jaxrs:outInterceptors>
+ </jaxrs:server>
+
+ <jaxrs:server id="jsonServer" address="/json">
+  <jaxrs:serviceBeans>
+   <ref bean="accountJson" />
+   <ref bean="locationJson" />
+   <ref bean="partyJson" />
+   <ref bean="productJson" />
+   <ref bean="reservationJson" />
+   
+   <ref bean="registrationJson" />
+    <ref bean="flipKeySupplierJson" />
+  </jaxrs:serviceBeans>
+ </jaxrs:server>
+
+ <bean id="soapBean" class="net.cbtltd.soap.ota.RazorPortTypeImpl" />
+ <bean id="accountBean" class="net.cbtltd.rest.AccountRest" />
+ <bean id="locationBean" class="net.cbtltd.rest.LocationRest" />
+ <bean id="partyBean" class="net.cbtltd.rest.PartyRest" />
+ <bean id="productBean" class="net.cbtltd.rest.ProductRest" />
+ <bean id="reservationBean" class="net.cbtltd.rest.ReservationRest" />
+ <bean id="flipkeyBean" class="net.cbtltd.rest.flipkey.FlipkeyRest" />
+ <bean id="otaBean" class="net.cbtltd.rest.ota.OtaRest" />
+ 
+ <bean id="registrationJson" class="net.cbtltd.rest.RegistrationJson" />
+ 
+ <bean id="basicAuthAuthorizationInterceptor" class="net.cbtltd.rest.BasicAuthAuthorizationInterceptor" />
+ <bean id="stylesheetInterceptor" class="net.cbtltd.rest.StylesheetInterceptor" />
+ <bean id="accountJson" class="net.cbtltd.rest.AccountJson" />
+ <bean id="locationJson" class="net.cbtltd.rest.LocationJson" />
+ <bean id="partyJson" class="net.cbtltd.rest.PartyJson" />
+ <bean id="productJson" class="net.cbtltd.rest.ProductJson" />
+ <bean id="reservationJson" class="net.cbtltd.rest.ReservationJson" />
+ <bean id="flipKeySupplierJson" class="net.cbtltd.rest.flipkey.supplier.FlipKeySupplierJSONAPI" />
+</beans>

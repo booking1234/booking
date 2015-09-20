@@ -1,0 +1,633 @@
+<OTA_HotelDescriptiveInfoRS xmlns="http://www.opentravel.org/OTA/2003/05"
+	PrimaryLangID="en" RetransmissionIndicator="false" SequenceNmbr="1"
+	TransactionIdentifier="1" Version="6.004" Target="Production"
+	TimeStamp="2009-07-24T09:01:20" EchoToken="OTA_HotelDescriptiveInfoRQ 5, 143, 5">
+	<POS>
+		<Source>
+			<RequestorID ID="5" ID_Context="RZ" />
+		</Source>
+	</POS>
+	<Success />
+	<HotelDescriptiveContents AreaID="58777"
+		BrandName="Tourinfo cc" ChainName="Nox Tourism cc" HotelCodeContext="RZ"
+		HotelName="CBT Lodge" HotelCityCode="CPT" HotelCode="143" BrandCode="890"
+		ChainCode="5" Overwrite="true">
+		<HotelDescriptiveContent HotelCityCode="CPT"
+			Overwrite="true" CurrencyCode="ZAR" LanguageCode="en">
+			<HotelInfo PMSSystem="RZ">
+				<HotelName HotelShortName="CBT Lodge">CBT Lodge</HotelName>
+				<CategoryCodes>
+					<LocationCategory Code="2" />
+					<SegmentCategory Code="7" />
+					<HotelCategory Code="4" />
+					<HotelCategory Code="72" />
+					<HotelCategory Code="88" />
+					<ArchitecturalStyle Code="10" />
+					<ArchitecturalStyle Code="4" />
+					<GuestRoomInfo Code="4" />
+					<GuestRoomInfo Code="72" />
+					<GuestRoomInfo Code="88" />
+				</CategoryCodes>
+				<HotelInfoCodes>
+					<HotelInfoCode Code="4" />
+				</HotelInfoCodes>
+				<Position AltitudeUnitOfMeasureCode="3" Altitude="0.0"
+					Longitude="18.3772945404053" Latitude="-33.9571902537236" />
+				<Services>
+					<Service BusinessServiceCode="4" />
+					<Service BusinessServiceCode="72" />
+					<Service BusinessServiceCode="88" />
+					<Service MeetingRoomCode="110" />
+					<Service MeetingRoomCode="124" />
+					<Service MeetingRoomCode="129" />
+					<Service MeetingRoomCode="130" />
+					<Service MeetingRoomCode="150" />
+					<Service MeetingRoomCode="60" />
+					<Service MeetingRoomCode="67" />
+					<Service MeetingRoomCode="68" />
+					<Service ProximityCode="2" />
+				</Services>
+			</HotelInfo>
+			<FacilityInfo>
+				<GuestRooms MaxOccupancy="0">
+					<GuestRoom MaxOccupancy="0" RoomTypeName="3 Bedrooms">
+						<Amenities>
+							<Amenity RoomAmenityCode="4" />
+							<Amenity RoomAmenityCode="72" />
+							<Amenity RoomAmenityCode="88" />
+						</Amenities>
+						<Features>
+							<Feature AccessibleCode="1" />
+							<Feature AccessibleCode="104" />
+							<Feature AccessibleCode="2" />
+							<Feature AccessibleCode="53" />
+							<Feature AccessibleCode="68" />
+							<Feature ProximityCode="3" />
+							<Feature AccessibleCode="4" />
+							<Feature AccessibleCode="72" />
+							<Feature AccessibleCode="88" />
+						</Features>
+					</GuestRoom>
+				</GuestRooms>
+			</FacilityInfo>
+			<Policies>
+				<Policy Removal="false" LastUpdated="2009-07-24T09:01:22">
+					<CancelPolicy CancelPolicyIndicator="true">
+						<CancelPenalty>
+							<Deadline OffsetUnitMultiplier="30" OffsetTimeUnit="Day" />
+							<AmountPercent Percent="100" />
+							<PenaltyDescription Language="en"
+								CreateDateTime="2009-07-24T09:01:22">
+								<Text Formatted="false">Refunds and waiver of cancellation
+									policies are at the discretion of management.
+									Refunds are
+									dependent on releting of the room.
+									Guests are advised to take
+									out cancellation insurance.</Text>
+							</PenaltyDescription>
+						</CancelPenalty>
+						<CancelPenalty>
+							<Deadline OffsetUnitMultiplier="60" OffsetTimeUnit="Day" />
+							<AmountPercent Percent="50" />
+						</CancelPenalty>
+						<CancelPenalty>
+							<Deadline OffsetUnitMultiplier="90" OffsetTimeUnit="Day" />
+							<AmountPercent Percent="25" />
+						</CancelPenalty>
+					</CancelPolicy>
+				</Policy>
+				<Policy Removal="false" LastUpdated="2009-07-24T09:01:22">
+					<GuaranteePaymentPolicy>
+						<GuaranteePayment NoCardHolderInfoReqInd="false"
+							Type="31">
+							<AcceptedPayments>
+								<AcceptedPayment>
+									<Cash CashIndicator="true" />
+								</AcceptedPayment>
+								<AcceptedPayment>
+									<Cash CashIndicator="true" />
+								</AcceptedPayment>
+								<AcceptedPayment>
+									<PaymentCard CardCode="VI" CardType="5" />
+								</AcceptedPayment>
+								<AcceptedPayment>
+									<PaymentCard CardCode="VI" CardType="6" />
+								</AcceptedPayment>
+							</AcceptedPayments>
+						</GuaranteePayment>
+					</GuaranteePaymentPolicy>
+				</Policy>
+				<Policy Removal="false" LastUpdated="2009-07-24T09:01:22">
+					<PetsPolicies PetsAllowedCode="8" />
+				</Policy>
+				<Policy Removal="false" LastUpdated="2009-07-24T09:01:22">
+					<PolicyInfo InternetGuaranteeRequiredInd="false"
+						MaxChildAge="0" KidsStayFree="false" TotalGuestCount="0"
+						UsualStayFreeChildPerAdult="0" UsualStayFreeCutoffAge="0"
+						MinRecommendedGuestAge="0" MinGuestAge="0" />
+				</Policy>
+				<Policy Removal="false" LastUpdated="2009-07-24T09:01:22">
+					<StayRequirements>
+						<StayRequirement StayContext="RZ" MaxLOS="0"
+							MinLOS="0" />
+					</StayRequirements>
+				</Policy>
+			</Policies>
+			<MultimediaDescriptions>
+				<MultimediaDescription>
+					<TextItems>
+						<TextItem CopyrightOwner="Tourinfo cc"
+							CopyrightNotice="License: http://www.razor-cloud.com/License.html"
+							Title="Property Notes">
+							<Description Language="EN">Enjoy the old world charm
+								of this lovingly refurbished colonial home! The Lodge is a
+								lovely three-bedroom apartment, ideal for a group of friends or
+								a family. The three-bedroom Lodge Apartment evokes days gone by
+								with its colonial ambience and comfort and has spectacular views
+								of the Twelve Apostles and the Atlantic Ocean. Built over a
+								century ago as a beach front retreat, the Lodge has been
+								lovingly restored to its former state - rich brown mahogany sash
+								windows and shutters, golden Oregon pine floors, rustic red clay
+								tiles - all adding up to a delightful place in which to relax
+								and enjoy Cape hospitality. Furnished with lovingly collected
+								antique instruments and Africana the Lodge has a very special
+								magic. The stunning lounge is in colonial style with leather and
+								rich fabric furniture and fittings. Plate glass sash windows
+								look down on the exclusive Bakoven beach - a sheltered haven for
+								Cape Town's most selective sun seekers. The two comfortable wing
+								chairs with Ottoman are the ideal spot for soaking up the
+								afternoon sun, and the large leather sofa is ideal for curling
+								up in front of the satellite TV or sitting with a book.
+								Old-fashioned double doors open onto a paved deck with a
+								solar-heated swimming pool and barbecue. The sun deck has eight
+								sun loungers, and itâ€™s the perfect place to watch the sun set
+								into the Atlantic, with a chilled glass of wine in your hand.
+								The three bedrooms are accessed from the lounge area and have
+								views of mountain and sea, each with itâ€™s own en-suite
+								bathroom. Two rooms have queen-sized beds, and one can be made
+								up as either two single beds of one king-size bed. The one
+								bathroom has a bath with a stand in shower, and the other two
+								have showers only. The kitchen has been completely refurbished
+								recently and everything required for simple catering, right
+								through to entertaining friends has been provided for. If
+								youâ€™d prefer to eat out, the Lodge Apartment is a short stroll
+								from the Camps Bay beach and promenade, with itâ€™s array of
+								restaurants and bars. The apartment is fully serviced every day
+								except Sundays and Public Holidays. We will also do everything
+								we can to ensure that you have as relaxing a holiday as
+								possible, by helping where we can; anything from baby-sitter
+								bookings through to restaurant recommendations. Come and put
+								your feet up in new Camps Bayâ€™s most elegant old home. We look
+								forward to welcoming you!</Description>
+						</TextItem>
+						<TextItem CopyrightOwner="Tourinfo cc"
+							CopyrightNotice="License: http://www.razor-cloud.com/License.html"
+							Title="Included Items">
+							<Description Language="EN">Daily Servicing: Monday
+								â€“ Saturday except Public HolidaysConcierge ServiceCompact
+								Bouquet DSTVAll taxesAll Linen and Towels</Description>
+						</TextItem>
+						<TextItem CopyrightOwner="Tourinfo cc"
+							CopyrightNotice="License: http://www.razor-cloud.com/License.html"
+							Title="Optional Items">
+							<Description Language="EN">Laundry on request at
+								additional expenseBaby sitting on request at additional
+								expenseCatering on request at additional
+								expenseTransfers/Shuttles at additional expenseGrocery stocking
+								at additional expenseDVD Collection onrequestBreakfast on
+								request at additional expenseDinner Reservations</Description>
+						</TextItem>
+						<TextItem CopyrightOwner="Tourinfo cc"
+							CopyrightNotice="License: http://www.razor-cloud.com/License.html"
+							Title="Manager Notes">
+							<Description Language="EN">Nox Tourism was founded in
+								September 2003 by Richard Marshall. We are market leaders on
+								Cape Town's Atlantic Seaboard, and continue to innovate in terms
+								of our service to both the travel trade and to the guests that
+								stay in our villas and apartments.
+
+								All of our properties are in
+								the four or five star market, and
+								options range from one bedroom
+								apartments to seven bedroom
+								villas, from penthouse apartments to
+								beach cottages. However
+								different they may be, each property has
+								what we call tourism potential and has something unique and
+								exceptional about it, whether that be views, location, luxury or
+								a combination of these and many other factors.
+
+								We have an obsessive focus on the guest experience, and every
+								guest's needs are catered to by our dedicated team of guest
+								relations consultants, property managers and housekeepers.
+							</Description>
+						</TextItem>
+					</TextItems>
+				</MultimediaDescription>
+				<MultimediaDescription>
+					<ImageItems>
+						<ImageItem Category="16">
+							<ImageFormat CopyrightOwner="Tourinfo cc"
+								CopyrightNotice="License: http://www.razor-cloud.com/License.html"
+								Title="Thumbnail Image" FileName="Product143-000Thumb.jpg">
+								<URL>
+									C:/Developer/Workspace/Lucid/tomcat/webapps/ROOT/pictures/Product143-000Thumb.jpg
+								</URL>
+							</ImageFormat>
+							<ImageFormat CopyrightOwner="Tourinfo cc"
+								CopyrightNotice="License: http://www.razor-cloud.com/License.html"
+								Title="Fullsize Image" FileName="Product143-000.jpg">
+								<URL>
+									C:/Developer/Workspace/Lucid/tomcat/webapps/ROOT/pictures/Product143-000.jpg
+								</URL>
+							</ImageFormat>
+							<Description />
+						</ImageItem>
+						<ImageItem Category="16">
+							<ImageFormat CopyrightOwner="Tourinfo cc"
+								CopyrightNotice="License: http://www.razor-cloud.com/License.html"
+								Title="Thumbnail Image" FileName="Product143-001Thumb.jpg">
+								<URL>
+									C:/Developer/Workspace/Lucid/tomcat/webapps/ROOT/pictures/Product143-001Thumb.jpg
+								</URL>
+							</ImageFormat>
+							<ImageFormat CopyrightOwner="Tourinfo cc"
+								CopyrightNotice="License: http://www.razor-cloud.com/License.html"
+								Title="Fullsize Image" FileName="Product143-001.jpg">
+								<URL>
+									C:/Developer/Workspace/Lucid/tomcat/webapps/ROOT/pictures/Product143-001.jpg
+								</URL>
+							</ImageFormat>
+							<Description />
+						</ImageItem>
+						<ImageItem Category="16">
+							<ImageFormat CopyrightOwner="Tourinfo cc"
+								CopyrightNotice="License: http://www.razor-cloud.com/License.html"
+								Title="Thumbnail Image" FileName="Product143-002Thumb.jpg">
+								<URL>
+									C:/Developer/Workspace/Lucid/tomcat/webapps/ROOT/pictures/Product143-002Thumb.jpg
+								</URL>
+							</ImageFormat>
+							<ImageFormat CopyrightOwner="Tourinfo cc"
+								CopyrightNotice="License: http://www.razor-cloud.com/License.html"
+								Title="Fullsize Image" FileName="Product143-002.jpg">
+								<URL>
+									C:/Developer/Workspace/Lucid/tomcat/webapps/ROOT/pictures/Product143-002.jpg
+								</URL>
+							</ImageFormat>
+							<Description />
+						</ImageItem>
+						<ImageItem Category="16">
+							<ImageFormat CopyrightOwner="Tourinfo cc"
+								CopyrightNotice="License: http://www.razor-cloud.com/License.html"
+								Title="Thumbnail Image" FileName="Product143-003Thumb.jpg">
+								<URL>
+									C:/Developer/Workspace/Lucid/tomcat/webapps/ROOT/pictures/Product143-003Thumb.jpg
+								</URL>
+							</ImageFormat>
+							<ImageFormat CopyrightOwner="Tourinfo cc"
+								CopyrightNotice="License: http://www.razor-cloud.com/License.html"
+								Title="Fullsize Image" FileName="Product143-003.jpg">
+								<URL>
+									C:/Developer/Workspace/Lucid/tomcat/webapps/ROOT/pictures/Product143-003.jpg
+								</URL>
+							</ImageFormat>
+							<Description />
+						</ImageItem>
+						<ImageItem Category="16">
+							<ImageFormat CopyrightOwner="Tourinfo cc"
+								CopyrightNotice="License: http://www.razor-cloud.com/License.html"
+								Title="Thumbnail Image" FileName="Product143-004Thumb.jpg">
+								<URL>
+									C:/Developer/Workspace/Lucid/tomcat/webapps/ROOT/pictures/Product143-004Thumb.jpg
+								</URL>
+							</ImageFormat>
+							<ImageFormat CopyrightOwner="Tourinfo cc"
+								CopyrightNotice="License: http://www.razor-cloud.com/License.html"
+								Title="Fullsize Image" FileName="Product143-004.jpg">
+								<URL>
+									C:/Developer/Workspace/Lucid/tomcat/webapps/ROOT/pictures/Product143-004.jpg
+								</URL>
+							</ImageFormat>
+							<Description />
+						</ImageItem>
+						<ImageItem Category="16">
+							<ImageFormat CopyrightOwner="Tourinfo cc"
+								CopyrightNotice="License: http://www.razor-cloud.com/License.html"
+								Title="Thumbnail Image" FileName="Product143-005Thumb.jpg">
+								<URL>
+									C:/Developer/Workspace/Lucid/tomcat/webapps/ROOT/pictures/Product143-005Thumb.jpg
+								</URL>
+							</ImageFormat>
+							<ImageFormat CopyrightOwner="Tourinfo cc"
+								CopyrightNotice="License: http://www.razor-cloud.com/License.html"
+								Title="Fullsize Image" FileName="Product143-005.jpg">
+								<URL>
+									C:/Developer/Workspace/Lucid/tomcat/webapps/ROOT/pictures/Product143-005.jpg
+								</URL>
+							</ImageFormat>
+							<Description />
+						</ImageItem>
+						<ImageItem Category="16">
+							<ImageFormat CopyrightOwner="Tourinfo cc"
+								CopyrightNotice="License: http://www.razor-cloud.com/License.html"
+								Title="Thumbnail Image" FileName="Product143-006Thumb.jpg">
+								<URL>
+									C:/Developer/Workspace/Lucid/tomcat/webapps/ROOT/pictures/Product143-006Thumb.jpg
+								</URL>
+							</ImageFormat>
+							<ImageFormat CopyrightOwner="Tourinfo cc"
+								CopyrightNotice="License: http://www.razor-cloud.com/License.html"
+								Title="Fullsize Image" FileName="Product143-006.jpg">
+								<URL>
+									C:/Developer/Workspace/Lucid/tomcat/webapps/ROOT/pictures/Product143-006.jpg
+								</URL>
+							</ImageFormat>
+							<Description />
+						</ImageItem>
+						<ImageItem Category="16">
+							<ImageFormat CopyrightOwner="Tourinfo cc"
+								CopyrightNotice="License: http://www.razor-cloud.com/License.html"
+								Title="Thumbnail Image" FileName="Product143-007Thumb.jpg">
+								<URL>
+									C:/Developer/Workspace/Lucid/tomcat/webapps/ROOT/pictures/Product143-007Thumb.jpg
+								</URL>
+							</ImageFormat>
+							<ImageFormat CopyrightOwner="Tourinfo cc"
+								CopyrightNotice="License: http://www.razor-cloud.com/License.html"
+								Title="Fullsize Image" FileName="Product143-007.jpg">
+								<URL>
+									C:/Developer/Workspace/Lucid/tomcat/webapps/ROOT/pictures/Product143-007.jpg
+								</URL>
+							</ImageFormat>
+							<Description />
+						</ImageItem>
+						<ImageItem Category="16">
+							<ImageFormat CopyrightOwner="Tourinfo cc"
+								CopyrightNotice="License: http://www.razor-cloud.com/License.html"
+								Title="Thumbnail Image" FileName="Product143-008Thumb.jpg">
+								<URL>
+									C:/Developer/Workspace/Lucid/tomcat/webapps/ROOT/pictures/Product143-008Thumb.jpg
+								</URL>
+							</ImageFormat>
+							<ImageFormat CopyrightOwner="Tourinfo cc"
+								CopyrightNotice="License: http://www.razor-cloud.com/License.html"
+								Title="Fullsize Image" FileName="Product143-008.jpg">
+								<URL>
+									C:/Developer/Workspace/Lucid/tomcat/webapps/ROOT/pictures/Product143-008.jpg
+								</URL>
+							</ImageFormat>
+							<Description />
+						</ImageItem>
+						<ImageItem Category="16">
+							<ImageFormat CopyrightOwner="Tourinfo cc"
+								CopyrightNotice="License: http://www.razor-cloud.com/License.html"
+								Title="Thumbnail Image" FileName="Product143-009Thumb.jpg">
+								<URL>
+									C:/Developer/Workspace/Lucid/tomcat/webapps/ROOT/pictures/Product143-009Thumb.jpg
+								</URL>
+							</ImageFormat>
+							<ImageFormat CopyrightOwner="Tourinfo cc"
+								CopyrightNotice="License: http://www.razor-cloud.com/License.html"
+								Title="Fullsize Image" FileName="Product143-009.jpg">
+								<URL>
+									C:/Developer/Workspace/Lucid/tomcat/webapps/ROOT/pictures/Product143-009.jpg
+								</URL>
+							</ImageFormat>
+							<Description />
+						</ImageItem>
+						<ImageItem Category="16">
+							<ImageFormat CopyrightOwner="Tourinfo cc"
+								CopyrightNotice="License: http://www.razor-cloud.com/License.html"
+								Title="Thumbnail Image" FileName="Product143-010Thumb.jpg">
+								<URL>
+									C:/Developer/Workspace/Lucid/tomcat/webapps/ROOT/pictures/Product143-010Thumb.jpg
+								</URL>
+							</ImageFormat>
+							<ImageFormat CopyrightOwner="Tourinfo cc"
+								CopyrightNotice="License: http://www.razor-cloud.com/License.html"
+								Title="Fullsize Image" FileName="Product143-010.jpg">
+								<URL>
+									C:/Developer/Workspace/Lucid/tomcat/webapps/ROOT/pictures/Product143-010.jpg
+								</URL>
+							</ImageFormat>
+							<Description />
+						</ImageItem>
+						<ImageItem Category="16">
+							<ImageFormat CopyrightOwner="Tourinfo cc"
+								CopyrightNotice="License: http://www.razor-cloud.com/License.html"
+								Title="Thumbnail Image" FileName="Product143-011Thumb.jpg">
+								<URL>
+									C:/Developer/Workspace/Lucid/tomcat/webapps/ROOT/pictures/Product143-011Thumb.jpg
+								</URL>
+							</ImageFormat>
+							<ImageFormat CopyrightOwner="Tourinfo cc"
+								CopyrightNotice="License: http://www.razor-cloud.com/License.html"
+								Title="Fullsize Image" FileName="Product143-011.jpg">
+								<URL>
+									C:/Developer/Workspace/Lucid/tomcat/webapps/ROOT/pictures/Product143-011.jpg
+								</URL>
+							</ImageFormat>
+							<Description />
+						</ImageItem>
+						<ImageItem Category="16">
+							<ImageFormat CopyrightOwner="Tourinfo cc"
+								CopyrightNotice="License: http://www.razor-cloud.com/License.html"
+								Title="Thumbnail Image" FileName="Product143-012Thumb.jpg">
+								<URL>
+									C:/Developer/Workspace/Lucid/tomcat/webapps/ROOT/pictures/Product143-012Thumb.jpg
+								</URL>
+							</ImageFormat>
+							<ImageFormat CopyrightOwner="Tourinfo cc"
+								CopyrightNotice="License: http://www.razor-cloud.com/License.html"
+								Title="Fullsize Image" FileName="Product143-012.jpg">
+								<URL>
+									C:/Developer/Workspace/Lucid/tomcat/webapps/ROOT/pictures/Product143-012.jpg
+								</URL>
+							</ImageFormat>
+							<Description />
+						</ImageItem>
+						<ImageItem Category="16">
+							<ImageFormat CopyrightOwner="Tourinfo cc"
+								CopyrightNotice="License: http://www.razor-cloud.com/License.html"
+								Title="Thumbnail Image" FileName="Product143-013Thumb.jpg">
+								<URL>
+									C:/Developer/Workspace/Lucid/tomcat/webapps/ROOT/pictures/Product143-013Thumb.jpg
+								</URL>
+							</ImageFormat>
+							<ImageFormat CopyrightOwner="Tourinfo cc"
+								CopyrightNotice="License: http://www.razor-cloud.com/License.html"
+								Title="Fullsize Image" FileName="Product143-013.jpg">
+								<URL>
+									C:/Developer/Workspace/Lucid/tomcat/webapps/ROOT/pictures/Product143-013.jpg
+								</URL>
+							</ImageFormat>
+							<Description />
+						</ImageItem>
+						<ImageItem Category="16">
+							<ImageFormat CopyrightOwner="Tourinfo cc"
+								CopyrightNotice="License: http://www.razor-cloud.com/License.html"
+								Title="Thumbnail Image" FileName="Product143-014Thumb.jpg">
+								<URL>
+									C:/Developer/Workspace/Lucid/tomcat/webapps/ROOT/pictures/Product143-014Thumb.jpg
+								</URL>
+							</ImageFormat>
+							<ImageFormat CopyrightOwner="Tourinfo cc"
+								CopyrightNotice="License: http://www.razor-cloud.com/License.html"
+								Title="Fullsize Image" FileName="Product143-014.jpg">
+								<URL>
+									C:/Developer/Workspace/Lucid/tomcat/webapps/ROOT/pictures/Product143-014.jpg
+								</URL>
+							</ImageFormat>
+							<Description />
+						</ImageItem>
+						<ImageItem Category="16">
+							<ImageFormat CopyrightOwner="Tourinfo cc"
+								CopyrightNotice="License: http://www.razor-cloud.com/License.html"
+								Title="Thumbnail Image" FileName="Product143-015Thumb.jpg">
+								<URL>
+									C:/Developer/Workspace/Lucid/tomcat/webapps/ROOT/pictures/Product143-015Thumb.jpg
+								</URL>
+							</ImageFormat>
+							<ImageFormat CopyrightOwner="Tourinfo cc"
+								CopyrightNotice="License: http://www.razor-cloud.com/License.html"
+								Title="Fullsize Image" FileName="Product143-015.jpg">
+								<URL>
+									C:/Developer/Workspace/Lucid/tomcat/webapps/ROOT/pictures/Product143-015.jpg
+								</URL>
+							</ImageFormat>
+							<Description />
+						</ImageItem>
+						<ImageItem Category="16">
+							<ImageFormat CopyrightOwner="Tourinfo cc"
+								CopyrightNotice="License: http://www.razor-cloud.com/License.html"
+								Title="Thumbnail Image" FileName="Product143-016Thumb.jpg">
+								<URL>
+									C:/Developer/Workspace/Lucid/tomcat/webapps/ROOT/pictures/Product143-016Thumb.jpg
+								</URL>
+							</ImageFormat>
+							<ImageFormat CopyrightOwner="Tourinfo cc"
+								CopyrightNotice="License: http://www.razor-cloud.com/License.html"
+								Title="Fullsize Image" FileName="Product143-016.jpg">
+								<URL>
+									C:/Developer/Workspace/Lucid/tomcat/webapps/ROOT/pictures/Product143-016.jpg
+								</URL>
+							</ImageFormat>
+							<Description />
+						</ImageItem>
+						<ImageItem Category="16">
+							<ImageFormat CopyrightOwner="Tourinfo cc"
+								CopyrightNotice="License: http://www.razor-cloud.com/License.html"
+								Title="Thumbnail Image" FileName="Product143-017Thumb.jpg">
+								<URL>
+									C:/Developer/Workspace/Lucid/tomcat/webapps/ROOT/pictures/Product143-017Thumb.jpg
+								</URL>
+							</ImageFormat>
+							<ImageFormat CopyrightOwner="Tourinfo cc"
+								CopyrightNotice="License: http://www.razor-cloud.com/License.html"
+								Title="Fullsize Image" FileName="Product143-017.jpg">
+								<URL>
+									C:/Developer/Workspace/Lucid/tomcat/webapps/ROOT/pictures/Product143-017.jpg
+								</URL>
+							</ImageFormat>
+							<Description />
+						</ImageItem>
+						<ImageItem Category="16">
+							<ImageFormat CopyrightOwner="Tourinfo cc"
+								CopyrightNotice="License: http://www.razor-cloud.com/License.html"
+								Title="Thumbnail Image" FileName="Product143-018Thumb.jpg">
+								<URL>
+									C:/Developer/Workspace/Lucid/tomcat/webapps/ROOT/pictures/Product143-018Thumb.jpg
+								</URL>
+							</ImageFormat>
+							<ImageFormat CopyrightOwner="Tourinfo cc"
+								CopyrightNotice="License: http://www.razor-cloud.com/License.html"
+								Title="Fullsize Image" FileName="Product143-018.jpg">
+								<URL>
+									C:/Developer/Workspace/Lucid/tomcat/webapps/ROOT/pictures/Product143-018.jpg
+								</URL>
+							</ImageFormat>
+							<Description />
+						</ImageItem>
+						<ImageItem Category="16">
+							<ImageFormat CopyrightOwner="Tourinfo cc"
+								CopyrightNotice="License: http://www.razor-cloud.com/License.html"
+								Title="Thumbnail Image" FileName="Product143-020Thumb.jpg">
+								<URL>
+									C:/Developer/Workspace/Lucid/tomcat/webapps/ROOT/pictures/Product143-020Thumb.jpg
+								</URL>
+							</ImageFormat>
+							<ImageFormat CopyrightOwner="Tourinfo cc"
+								CopyrightNotice="License: http://www.razor-cloud.com/License.html"
+								Title="Fullsize Image" FileName="Product143-020.jpg">
+								<URL>
+									C:/Developer/Workspace/Lucid/tomcat/webapps/ROOT/pictures/Product143-020.jpg
+								</URL>
+							</ImageFormat>
+							<Description />
+						</ImageItem>
+						<ImageItem Category="16">
+							<ImageFormat CopyrightOwner="Tourinfo cc"
+								CopyrightNotice="License: http://www.razor-cloud.com/License.html"
+								Title="Thumbnail Image" FileName="Product143-021Thumb.jpg">
+								<URL>
+									C:/Developer/Workspace/Lucid/tomcat/webapps/ROOT/pictures/Product143-021Thumb.jpg
+								</URL>
+							</ImageFormat>
+							<ImageFormat CopyrightOwner="Tourinfo cc"
+								CopyrightNotice="License: http://www.razor-cloud.com/License.html"
+								Title="Fullsize Image" FileName="Product143-021.jpg">
+								<URL>
+									C:/Developer/Workspace/Lucid/tomcat/webapps/ROOT/pictures/Product143-021.jpg
+								</URL>
+							</ImageFormat>
+							<Description />
+						</ImageItem>
+						<ImageItem Category="16">
+							<ImageFormat CopyrightOwner="Tourinfo cc"
+								CopyrightNotice="License: http://www.razor-cloud.com/License.html"
+								Title="Thumbnail Image" FileName="Product143-022Thumb.jpg">
+								<URL>
+									C:/Developer/Workspace/Lucid/tomcat/webapps/ROOT/pictures/Product143-022Thumb.jpg
+								</URL>
+							</ImageFormat>
+							<ImageFormat CopyrightOwner="Tourinfo cc"
+								CopyrightNotice="License: http://www.razor-cloud.com/License.html"
+								Title="Fullsize Image" FileName="Product143-022.jpg">
+								<URL>
+									C:/Developer/Workspace/Lucid/tomcat/webapps/ROOT/pictures/Product143-022.jpg
+								</URL>
+							</ImageFormat>
+							<Description />
+						</ImageItem>
+					</ImageItems>
+				</MultimediaDescription>
+			</MultimediaDescriptions>
+			<ContactInfos>
+				<ContactInfo Removal="false" ContactProfileType="12"
+					ContactProfileID="5">
+					<Addresses>
+						<Address Type="6">
+							<PostalCode>8040</PostalCode>
+						</Address>
+					</Addresses>
+					<Phones>
+						<Phone ShareMarketInd="Yes" ShareSynchInd="Yes" PhoneNumber="+27 21 424 3353"
+							PhoneUseType="3" PhoneTechType="1" PhoneLocationType="9" />
+						<Phone ShareMarketInd="Yes" ShareSynchInd="Yes" PhoneNumber="+27 21 424 3355"
+							PhoneUseType="3" PhoneTechType="3" PhoneLocationType="9" />
+						<Phone ShareMarketInd="Yes" ShareSynchInd="Yes" PhoneNumber="+27 84 804 9902"
+							PhoneUseType="5" PhoneTechType="5" PhoneLocationType="9" />
+					</Phones>
+					<Emails>
+						<Email DefaultInd="true" EmailType="8">info@noxrentals.co.za
+						</Email>
+					</Emails>
+					<URLs>
+						<URL Type="1">www.noxrentals.co.za</URL>
+					</URLs>
+				</ContactInfo>
+			</ContactInfos>
+		</HotelDescriptiveContent>
+	</HotelDescriptiveContents>
+</OTA_HotelDescriptiveInfoRS>

@@ -1,0 +1,27 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<web-app>
+	<servlet>
+		<servlet-name>JSONService</servlet-name>
+		<description>Servlet to respond to widget JSON requests.</description>
+		<servlet-class>net.cbtltd.json.JSONService</servlet-class>
+	</servlet>
+
+	<servlet>
+		<servlet-name>JSONRPC2Servlet</servlet-name>
+		<description>Servlet to respond to JSON-RPC2 requests.</description>
+		<servlet-class>net.cbtltd.json.rpc.JSONRPC2Server</servlet-class>
+	</servlet>
+
+	<servlet-mapping>
+		<servlet-name>JSONService</servlet-name>
+		<url-pattern>/JSONService/*</url-pattern>
+	</servlet-mapping>
+
+	<servlet-mapping>
+		<servlet-name>JSONRPC2Servlet</servlet-name>
+		<url-pattern>/JSONRPC2Server/*</url-pattern>
+	</servlet-mapping>
+</web-app>
+
+

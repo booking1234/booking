@@ -1,0 +1,12 @@
+<?xml version="1.0" encoding="UTF-8" standalone="yes"?>
+<priceDetailInputValue xmlns="http://www.interhome.com/webservice">
+	<AccommodationCode>PT6800.230.1</AccommodationCode>
+	<CheckIn>2012-12-08</CheckIn>
+	<CheckOut>2012-12-15</CheckOut>
+	<SalesOfficeCode>2052</SalesOfficeCode>
+	<CurrencyCode>EUR</CurrencyCode>
+	<LanguageCode>en</LanguageCode>
+	<Adults>2</Adults>
+	<Children>0</Children>
+	<Babies>0</Babies>
+</priceDetailInputValue>

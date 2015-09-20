@@ -1,0 +1,40 @@
+<?xml version="1.0" encoding="UTF-8" standalone="yes"?>
+<OTA_ProfileCreateRQ xmlns="http://www.opentravel.org/OTA/2003/05"
+	PrimaryLangID="en" RetransmissionIndicator="false" SequenceNmbr="1"
+	TransactionIdentifier="1" Version="2.004" Target="Production"
+	TimeStamp="2009-07-21T13:06:20" EchoToken="OTA_ProfileCreateRQ 5, 5, 2376">
+	<UniqueID ID="5" ID_Context="RZ" Type="1" URL="www.noxrentals.co.za" />
+	<Profile CreateDateTime="2009-07-21T13:06:20" StatusCode="">
+		<Customer BirthDate="2002-02-07" CurrencyCode="ZAR"
+			Text="Nox Tourism was founded in September 2003 by Richard Marshall. We are market leaders on Cape Town's Atlantic Seaboard, and continue to innovate in terms of our service to both the travel trade and to the guests that stay in our villas and apartments. &#xA;&lt;div&gt;&lt;br&gt;&lt;/div&gt;&#xA;&lt;div&gt;All of our properties are in the four or five star market, and options range from one bedroom apartments to seven bedroom villas, from penthouse apartments to beach cottages. However different they may be, each property has what we call &quot;tourism potential&quot; and has something unique and exceptional about it, whether that be views, location, luxury or a combination of these and many other factors.&lt;/div&gt;&#xA;&lt;div&gt;&lt;br&gt;&lt;/div&gt;&#xA;&lt;div&gt;We have an obsessive focus on the guest experience, and every guest's needs are catered to by our dedicated team of guest relations consultants, property managers and housekeepers.&lt;/div&gt;"
+			VIP_Indicator="false">
+			<PersonName NameType="2">
+				<GivenName>Nox Tourism cc</GivenName>
+				<Surname>Nox Tourism cc</Surname>
+			</PersonName>
+			<Email DefaultInd="true" EmailType="1">info@noxrentals.co.za
+			</Email>
+		</Customer>
+		<CompanyInfo CurrencyCode="ZAR">
+			<AddressInfo UseType="6">
+				<StreetNmbr>P.O.Box 32452
+					Camps Bay
+					Cape Town</StreetNmbr>
+				<PostalCode>8040</PostalCode>
+			</AddressInfo>
+			<BusinessLocale Type="1">
+				<StreetNmbr>P.O.Box 32452
+					Camps Bay
+					Cape Town</StreetNmbr>
+				<PostalCode>8040</PostalCode>
+			</BusinessLocale>
+			<ContactPerson DefaultInd="true" Relation="10"
+				ContactType="1">
+				<PersonName NameType="1">
+					<GivenName>Nox Tourism cc</GivenName>
+					<Surname>Nox Tourism cc</Surname>
+				</PersonName>
+			</ContactPerson>
+		</CompanyInfo>
+	</Profile>
+</OTA_ProfileCreateRQ>

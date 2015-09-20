@@ -1,0 +1,876 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<report xmlns="http://www.eclipse.org/birt/2005/design" version="3.2.23" id="1">
+    <property name="createdBy">Eclipse BIRT Designer Version 3.7.2.v20120213 Build &lt;3.7.2.v20120214-1408></property>
+    <list-property name="propertyBindings">
+        <structure>
+            <property name="name">odaDriverClass</property>
+            <property name="id">36</property>
+        </structure>
+        <structure>
+            <property name="name">odaURL</property>
+            <property name="id">36</property>
+            <expression name="value" type="javascript">params["RP_Database"].value</expression>
+        </structure>
+        <structure>
+            <property name="name">odaUser</property>
+            <property name="id">36</property>
+        </structure>
+        <structure>
+            <property name="name">odaAutoCommit</property>
+            <property name="id">36</property>
+        </structure>
+        <structure>
+            <property name="name">odaIsolationMode</property>
+            <property name="id">36</property>
+        </structure>
+        <structure>
+            <property name="name">odaPassword</property>
+            <property name="id">36</property>
+        </structure>
+        <structure>
+            <property name="name">odaJndiName</property>
+            <property name="id">36</property>
+        </structure>
+        <structure>
+            <property name="name">OdaConnProfileName</property>
+            <property name="id">36</property>
+        </structure>
+        <structure>
+            <property name="name">OdaConnProfileStorePath</property>
+            <property name="id">36</property>
+        </structure>
+    </list-property>
+    <property name="units">in</property>
+    <property name="iconFile">/templates/blank_report.gif</property>
+    <property name="layoutPreference">auto layout</property>
+    <parameters>
+        <scalar-parameter name="RP_ReportID" id="288">
+            <property name="valueType">static</property>
+            <property name="dataType">string</property>
+            <property name="distinct">true</property>
+            <property name="paramType">simple</property>
+            <property name="controlType">text-box</property>
+            <structure name="format">
+                <property name="category">Unformatted</property>
+            </structure>
+        </scalar-parameter>
+        <scalar-parameter name="RP_Typelist" id="289">
+            <property name="valueType">static</property>
+            <property name="dataType">string</property>
+            <property name="distinct">true</property>
+            <property name="paramType">simple</property>
+            <property name="controlType">text-box</property>
+            <structure name="format">
+                <property name="category">Unformatted</property>
+            </structure>
+        </scalar-parameter>
+        <scalar-parameter name="RP_Organizationlist" id="290">
+            <property name="valueType">static</property>
+            <property name="dataType">string</property>
+            <property name="distinct">true</property>
+            <property name="paramType">simple</property>
+            <property name="controlType">text-box</property>
+            <structure name="format">
+                <property name="category">Unformatted</property>
+            </structure>
+        </scalar-parameter>
+        <scalar-parameter name="RP_Processlist" id="291">
+            <property name="valueType">static</property>
+            <property name="dataType">string</property>
+            <property name="distinct">true</property>
+            <property name="paramType">simple</property>
+            <property name="controlType">text-box</property>
+            <structure name="format">
+                <property name="category">Unformatted</property>
+            </structure>
+        </scalar-parameter>
+        <scalar-parameter name="RP_Eventtypelist" id="292">
+            <property name="valueType">static</property>
+            <property name="dataType">string</property>
+            <property name="distinct">true</property>
+            <property name="paramType">simple</property>
+            <property name="controlType">text-box</property>
+            <structure name="format">
+                <property name="category">Unformatted</property>
+            </structure>
+        </scalar-parameter>
+        <scalar-parameter name="RP_Database" id="690">
+            <text-property name="promptText">Database URL</text-property>
+            <property name="valueType">static</property>
+            <property name="dataType">string</property>
+            <property name="distinct">true</property>
+            <simple-property-list name="defaultValue">
+                <value type="constant">jdbc:mysql://54.197.247.82:3306/razor</value>
+            </simple-property-list>
+            <list-property name="selectionList"/>
+            <property name="paramType">simple</property>
+            <property name="controlType">text-box</property>
+            <structure name="format">
+                <property name="category">Unformatted</property>
+            </structure>
+        </scalar-parameter>
+    </parameters>
+    <data-sources>
+        <oda-data-source extensionID="org.eclipse.birt.report.data.oda.jdbc" name="Razor Cloud" id="36">
+            <list-property name="privateDriverProperties">
+                <ex-property>
+                    <name>metadataBidiFormatStr</name>
+                    <value>ILYNN</value>
+                </ex-property>
+                <ex-property>
+                    <name>disabledMetadataBidiFormatStr</name>
+                </ex-property>
+                <ex-property>
+                    <name>contentBidiFormatStr</name>
+                    <value>ILYNN</value>
+                </ex-property>
+                <ex-property>
+                    <name>disabledContentBidiFormatStr</name>
+                </ex-property>
+            </list-property>
+            <property name="odaDriverClass">com.mysql.jdbc.Driver</property>
+            <property name="odaURL">jdbc:mysql://uatdb.mybookingpal.com:3306/razor</property>
+            <property name="odaUser">root</property>
+            <encrypted-property name="odaPassword" encryptionID="base64">NGVWZldEZFA=</encrypted-property>
+        </oda-data-source>
+    </data-sources>
+    <data-sets>
+        <oda-data-set extensionID="org.eclipse.birt.report.data.oda.jdbc.JdbcSelectDataSet" name="ProductTransactions" id="166">
+            <list-property name="computedColumns">
+                <structure>
+                    <property name="name">Movement</property>
+                    <expression name="expression">row["DebitAmount"]-row["CreditAmount"]</expression>
+                    <property name="dataType">decimal</property>
+                </structure>
+            </list-property>
+            <list-property name="parameters">
+                <structure>
+                    <property name="name">DSP_ReportID</property>
+                    <property name="paramName">RP_ReportID</property>
+                    <property name="dataType">string</property>
+                    <property name="position">1</property>
+                    <property name="isInput">true</property>
+                    <property name="isOutput">false</property>
+                </structure>
+            </list-property>
+            <structure name="cachedMetaData">
+                <list-property name="resultSet">
+                    <structure>
+                        <property name="position">1</property>
+                        <property name="name">Organization</property>
+                        <property name="dataType">string</property>
+                    </structure>
+                    <structure>
+                        <property name="position">2</property>
+                        <property name="name">Product</property>
+                        <property name="dataType">string</property>
+                    </structure>
+                    <structure>
+                        <property name="position">3</property>
+                        <property name="name">Date</property>
+                        <property name="dataType">date-time</property>
+                    </structure>
+                    <structure>
+                        <property name="position">4</property>
+                        <property name="name">Process</property>
+                        <property name="dataType">string</property>
+                    </structure>
+                    <structure>
+                        <property name="position">5</property>
+                        <property name="name">Description</property>
+                        <property name="dataType">string</property>
+                    </structure>
+                    <structure>
+                        <property name="position">6</property>
+                        <property name="name">DebitAmount</property>
+                        <property name="dataType">decimal</property>
+                    </structure>
+                    <structure>
+                        <property name="position">7</property>
+                        <property name="name">CreditAmount</property>
+                        <property name="dataType">decimal</property>
+                    </structure>
+                    <structure>
+                        <property name="position">8</property>
+                        <property name="name">Currency</property>
+                        <property name="dataType">string</property>
+                    </structure>
+                    <structure>
+                        <property name="position">9</property>
+                        <property name="name">Movement</property>
+                        <property name="dataType">decimal</property>
+                    </structure>
+                </list-property>
+            </structure>
+            <method name="beforeOpen"><![CDATA[this.queryText = this.queryText + 
+" AND product.Type IN (" + params["RP_Typelist"] + ") " +
+"AND event.Process IN (" + params["RP_Processlist"] + ") " +
+"AND journal.OrganizationID IN (" + params["RP_Organizationlist"] + ") " +
+"AND event.Type IN (" + params["RP_Eventtypelist"] + ") " +
+"ORDER BY party.Name, product.Name, event.Date";
+]]></method>
+            <property name="dataSource">Razor Cloud</property>
+            <list-property name="resultSet">
+                <structure>
+                    <property name="position">1</property>
+                    <property name="name">Organization</property>
+                    <property name="nativeName">Organization</property>
+                    <property name="dataType">string</property>
+                </structure>
+                <structure>
+                    <property name="position">2</property>
+                    <property name="name">Product</property>
+                    <property name="nativeName">Product</property>
+                    <property name="dataType">string</property>
+                </structure>
+                <structure>
+                    <property name="position">3</property>
+                    <property name="name">Date</property>
+                    <property name="nativeName">Date</property>
+                    <property name="dataType">date-time</property>
+                </structure>
+                <structure>
+                    <property name="position">4</property>
+                    <property name="name">Process</property>
+                    <property name="nativeName">Process</property>
+                    <property name="dataType">string</property>
+                </structure>
+                <structure>
+                    <property name="position">5</property>
+                    <property name="name">Description</property>
+                    <property name="nativeName">Description</property>
+                    <property name="dataType">string</property>
+                </structure>
+                <structure>
+                    <property name="position">6</property>
+                    <property name="name">DebitAmount</property>
+                    <property name="nativeName">DebitAmount</property>
+                    <property name="dataType">decimal</property>
+                </structure>
+                <structure>
+                    <property name="position">7</property>
+                    <property name="name">CreditAmount</property>
+                    <property name="nativeName">CreditAmount</property>
+                    <property name="dataType">decimal</property>
+                </structure>
+                <structure>
+                    <property name="position">8</property>
+                    <property name="name">Currency</property>
+                    <property name="nativeName">Currency</property>
+                    <property name="dataType">string</property>
+                </structure>
+            </list-property>
+            <xml-property name="queryText"><![CDATA[SELECT party.Name AS Organization,
+product.Name AS Product,
+event.Date,
+CONCAT(event.Process,' ', event.Name) AS Process,
+journal.Description,
+DebitAmount, 
+CreditAmount,
+journal.Currency
+FROM report, journal
+JOIN event ON journal.eventID = event.ID
+JOIN product ON product.ID = journal.EntityID AND journal.EntityType = 'Product'
+LEFT JOIN party ON party.ID = journal.OrganizationID
+WHERE report.ID = ?
+AND product.Name >= FromName
+AND product.Name <= ToName
+AND event.Date >= FromDate 
+AND event.Date <= ToDate 
+AND event.State not in ('Initial', 'Final')
+AND journal.Currency = report.Currency
+]]></xml-property>
+        </oda-data-set>
+    </data-sets>
+    <styles>
+        <style name="crosstab-cell" id="4">
+            <property name="borderBottomColor">#CCCCCC</property>
+            <property name="borderBottomStyle">solid</property>
+            <property name="borderBottomWidth">1pt</property>
+            <property name="borderLeftColor">#CCCCCC</property>
+            <property name="borderLeftStyle">solid</property>
+            <property name="borderLeftWidth">1pt</property>
+            <property name="borderRightColor">#CCCCCC</property>
+            <property name="borderRightStyle">solid</property>
+            <property name="borderRightWidth">1pt</property>
+            <property name="borderTopColor">#CCCCCC</property>
+            <property name="borderTopStyle">solid</property>
+            <property name="borderTopWidth">1pt</property>
+        </style>
+        <style name="crosstab" id="5">
+            <property name="borderBottomColor">#CCCCCC</property>
+            <property name="borderBottomStyle">solid</property>
+            <property name="borderBottomWidth">1pt</property>
+            <property name="borderLeftColor">#CCCCCC</property>
+            <property name="borderLeftStyle">solid</property>
+            <property name="borderLeftWidth">1pt</property>
+            <property name="borderRightColor">#CCCCCC</property>
+            <property name="borderRightStyle">solid</property>
+            <property name="borderRightWidth">1pt</property>
+            <property name="borderTopColor">#CCCCCC</property>
+            <property name="borderTopStyle">solid</property>
+            <property name="borderTopWidth">1pt</property>
+        </style>
+        <style name="ReportTitle" id="7">
+            <property name="fontFamily">"Arial"</property>
+            <property name="fontSize">xx-large</property>
+            <property name="fontWeight">bolder</property>
+        </style>
+        <style name="ReportHeader" id="50">
+            <property name="backgroundColor">#C0C0C0</property>
+            <property name="fontFamily">"Arial"</property>
+            <property name="fontSize">medium</property>
+            <property name="fontWeight">bold</property>
+        </style>
+        <style name="ReportLine" id="51">
+            <property name="fontFamily">"Arial"</property>
+            <property name="paddingBottom">0pt</property>
+        </style>
+        <style name="Header" id="136">
+            <property name="fontFamily">"Arial"</property>
+            <property name="fontWeight">bold</property>
+            <property name="textUnderline">none</property>
+        </style>
+        <style name="PageFooter" id="149">
+            <property name="fontFamily">"Arial"</property>
+            <structure name="dateTimeFormat">
+                <property name="category">Short Date</property>
+                <property name="pattern">Short Date</property>
+            </structure>
+        </style>
+    </styles>
+    <page-setup>
+        <simple-master-page name="Simple MasterPage" id="2">
+            <property name="type">a4</property>
+            <property name="topMargin">10mm</property>
+            <property name="leftMargin">25mm</property>
+            <property name="bottomMargin">10mm</property>
+            <property name="rightMargin">10mm</property>
+            <property name="numberAlign">right</property>
+            <property name="headerHeight">5mm</property>
+            <property name="footerHeight">10mm</property>
+            <page-footer>
+                <text id="3">
+                    <property name="style">ReportLine</property>
+                    <property name="contentType">html</property>
+                    <text-property name="content"><![CDATA[Report <VALUE-OF>params["RP_ReportID"]</VALUE-OF>&amp;nbsp;&amp;nbsp;&amp;nbsp;<value-of>new Date()</value-of>]]></text-property>
+                </text>
+            </page-footer>
+        </simple-master-page>
+    </page-setup>
+    <body>
+        <table id="8">
+            <property name="height">1.3333333333333333in</property>
+            <property name="width">6.916666666666667in</property>
+            <property name="dataSet">ProductTransactions</property>
+            <list-property name="boundDataColumns">
+                <structure>
+                    <property name="name">Organization</property>
+                    <expression name="expression">dataSetRow["Organization"]</expression>
+                    <property name="dataType">string</property>
+                </structure>
+                <structure>
+                    <property name="name">Product</property>
+                    <expression name="expression">dataSetRow["Product"]</expression>
+                    <property name="dataType">string</property>
+                </structure>
+                <structure>
+                    <property name="name">Process</property>
+                    <expression name="expression">dataSetRow["Process"]</expression>
+                    <property name="dataType">string</property>
+                </structure>
+                <structure>
+                    <property name="name">DebitAmount</property>
+                    <expression name="expression">dataSetRow["DebitAmount"]</expression>
+                    <property name="dataType">decimal</property>
+                </structure>
+                <structure>
+                    <property name="name">CreditAmount</property>
+                    <expression name="expression">dataSetRow["CreditAmount"]</expression>
+                    <property name="dataType">decimal</property>
+                </structure>
+                <structure>
+                    <property name="name">Currency</property>
+                    <expression name="expression">dataSetRow["Currency"]</expression>
+                    <property name="dataType">string</property>
+                </structure>
+                <structure>
+                    <property name="name">Movement</property>
+                    <expression name="expression">dataSetRow["Movement"]</expression>
+                    <property name="dataType">decimal</property>
+                </structure>
+                <structure>
+                    <property name="name">PrdDrTot</property>
+                    <property name="dataType">float</property>
+                    <simple-property-list name="aggregateOn">
+                        <value>ProductGroup</value>
+                    </simple-property-list>
+                    <property name="aggregateFunction">SUM</property>
+                    <list-property name="arguments">
+                        <structure>
+                            <property name="name">Expression</property>
+                            <expression name="value" type="javascript">row["DebitAmount"]</expression>
+                        </structure>
+                    </list-property>
+                </structure>
+                <structure>
+                    <property name="name">PrdCrTot</property>
+                    <property name="dataType">float</property>
+                    <simple-property-list name="aggregateOn">
+                        <value>ProductGroup</value>
+                    </simple-property-list>
+                    <property name="aggregateFunction">SUM</property>
+                    <list-property name="arguments">
+                        <structure>
+                            <property name="name">Expression</property>
+                            <expression name="value" type="javascript">row["CreditAmount"]</expression>
+                        </structure>
+                    </list-property>
+                </structure>
+                <structure>
+                    <property name="name">PrdTot</property>
+                    <property name="dataType">float</property>
+                    <simple-property-list name="aggregateOn">
+                        <value>ProductGroup</value>
+                    </simple-property-list>
+                    <property name="aggregateFunction">SUM</property>
+                    <list-property name="arguments">
+                        <structure>
+                            <property name="name">Expression</property>
+                            <expression name="value" type="javascript">row["Movement"]</expression>
+                        </structure>
+                    </list-property>
+                </structure>
+                <structure>
+                    <property name="name">OrgDrTot</property>
+                    <property name="dataType">float</property>
+                    <simple-property-list name="aggregateOn">
+                        <value>OrganizationGroup</value>
+                    </simple-property-list>
+                    <property name="aggregateFunction">SUM</property>
+                    <list-property name="arguments">
+                        <structure>
+                            <property name="name">Expression</property>
+                            <expression name="value" type="javascript">row["DebitAmount"]</expression>
+                        </structure>
+                    </list-property>
+                </structure>
+                <structure>
+                    <property name="name">OrgCrTot</property>
+                    <property name="dataType">float</property>
+                    <simple-property-list name="aggregateOn">
+                        <value>OrganizationGroup</value>
+                    </simple-property-list>
+                    <property name="aggregateFunction">SUM</property>
+                    <list-property name="arguments">
+                        <structure>
+                            <property name="name">Expression</property>
+                            <expression name="value" type="javascript">row["CreditAmount"]</expression>
+                        </structure>
+                    </list-property>
+                </structure>
+                <structure>
+                    <property name="name">OrgTot</property>
+                    <property name="dataType">float</property>
+                    <simple-property-list name="aggregateOn">
+                        <value>OrganizationGroup</value>
+                    </simple-property-list>
+                    <property name="aggregateFunction">SUM</property>
+                    <list-property name="arguments">
+                        <structure>
+                            <property name="name">Expression</property>
+                            <expression name="value" type="javascript">row["Movement"]</expression>
+                        </structure>
+                    </list-property>
+                </structure>
+                <structure>
+                    <property name="name">RepDrTot</property>
+                    <property name="dataType">float</property>
+                    <property name="aggregateFunction">SUM</property>
+                    <list-property name="arguments">
+                        <structure>
+                            <property name="name">Expression</property>
+                            <expression name="value" type="javascript">row["DebitAmount"]</expression>
+                        </structure>
+                    </list-property>
+                </structure>
+                <structure>
+                    <property name="name">RepCrTot</property>
+                    <property name="dataType">float</property>
+                    <property name="aggregateFunction">SUM</property>
+                    <list-property name="arguments">
+                        <structure>
+                            <property name="name">Expression</property>
+                            <expression name="value" type="javascript">row["CreditAmount"]</expression>
+                        </structure>
+                    </list-property>
+                </structure>
+                <structure>
+                    <property name="name">RepTot</property>
+                    <property name="dataType">float</property>
+                    <property name="aggregateFunction">SUM</property>
+                    <list-property name="arguments">
+                        <structure>
+                            <property name="name">Expression</property>
+                            <expression name="value" type="javascript">row["Movement"]</expression>
+                        </structure>
+                    </list-property>
+                </structure>
+                <structure>
+                    <property name="name">Date</property>
+                    <text-property name="displayName">Date</text-property>
+                    <expression name="expression" type="javascript">dataSetRow["Date"]</expression>
+                    <property name="dataType">date</property>
+                </structure>
+                <structure>
+                    <property name="name">Description</property>
+                    <expression name="expression" type="javascript">dataSetRow["Description"]</expression>
+                    <property name="dataType">string</property>
+                </structure>
+            </list-property>
+            <list-property name="filter">
+                <structure>
+                    <property name="operator">not-between</property>
+                    <expression name="expr">row["Movement"]</expression>
+                    <simple-property-list name="value1">
+                        <value>-0.001</value>
+                    </simple-property-list>
+                    <expression name="value2">0.001</expression>
+                </structure>
+            </list-property>
+            <column id="30">
+                <property name="width">10mm</property>
+            </column>
+            <column id="234">
+                <property name="width">15mm</property>
+                <property name="textAlign">right</property>
+            </column>
+            <column id="31">
+                <property name="width">25mm</property>
+            </column>
+            <column id="309">
+                <property name="width">60mm</property>
+            </column>
+            <column id="32">
+                <property name="width">20mm</property>
+                <property name="textAlign">right</property>
+            </column>
+            <column id="33">
+                <property name="width">20mm</property>
+                <property name="textAlign">right</property>
+            </column>
+            <header>
+                <row id="313">
+                    <property name="style">ReportTitle</property>
+                    <property name="numberAlign">left</property>
+                    <property name="textAlign">left</property>
+                    <property name="widows">2</property>
+                    <cell id="314">
+                        <property name="colSpan">5</property>
+                        <property name="rowSpan">1</property>
+                        <label id="320">
+                            <text-property name="text">Product Transactions</text-property>
+                        </label>
+                    </cell>
+                    <cell id="319"/>
+                </row>
+                <row id="9">
+                    <property name="style">ReportHeader</property>
+                    <property name="borderTopColor">#000000</property>
+                    <property name="borderTopStyle">solid</property>
+                    <property name="borderTopWidth">medium</property>
+                    <property name="numberAlign">left</property>
+                    <property name="textAlign">left</property>
+                    <property name="widows">2</property>
+                    <cell id="10">
+                        <property name="colSpan">3</property>
+                        <property name="rowSpan">1</property>
+                        <label id="38">
+                            <text-property name="text">Organization / Product</text-property>
+                        </label>
+                    </cell>
+                    <cell id="304">
+                        <label id="310">
+                            <text-property name="text">Description</text-property>
+                        </label>
+                    </cell>
+                    <cell id="12">
+                        <label id="42">
+                            <property name="textAlign">right</property>
+                            <text-property name="text">Debit</text-property>
+                        </label>
+                    </cell>
+                    <cell id="13">
+                        <label id="44">
+                            <property name="textAlign">right</property>
+                            <text-property name="text">Credit</text-property>
+                        </label>
+                    </cell>
+                </row>
+            </header>
+            <group id="261">
+                <property name="groupName">OrganizationGroup</property>
+                <property name="interval">none</property>
+                <property name="sortDirection">asc</property>
+                <expression name="keyExpr" type="javascript">row["Organization"]</expression>
+                <structure name="toc">
+                    <expression name="expressionValue" type="javascript">row["Organization"]</expression>
+                </structure>
+                <property name="repeatHeader">true</property>
+                <property name="hideDetail">false</property>
+                <property name="pageBreakAfter">auto</property>
+                <property name="pageBreakBefore">auto</property>
+                <property name="pageBreakInside">auto</property>
+                <list-property name="sort">
+                    <structure>
+                        <expression name="key" type="javascript">row["Organization"]</expression>
+                        <property name="direction">asc</property>
+                    </structure>
+                </list-property>
+                <header>
+                    <row id="262">
+                        <property name="style">Header</property>
+                        <property name="borderTopColor">#000000</property>
+                        <property name="borderTopStyle">solid</property>
+                        <property name="borderTopWidth">medium</property>
+                        <property name="pageBreakAfter">avoid</property>
+                        <property name="pageBreakBefore">auto</property>
+                        <property name="pageBreakInside">avoid</property>
+                        <cell id="263">
+                            <property name="colSpan">3</property>
+                            <property name="rowSpan">1</property>
+                            <data id="284">
+                                <property name="resultSetColumn">Organization</property>
+                            </data>
+                        </cell>
+                        <cell id="305"/>
+                        <cell id="266">
+                            <data id="296">
+                                <structure name="numberFormat">
+                                    <property name="category">Currency</property>
+                                    <property name="pattern">#,##0.00;(#,##0.00)</property>
+                                </structure>
+                                <list-property name="visibility">
+                                    <structure>
+                                        <property name="format">all</property>
+                                        <expression name="valueExpr">row["OrgDrTot"]&lt;0.001 &amp; row["OrgDrTot"]>-0.001</expression>
+                                    </structure>
+                                </list-property>
+                                <property name="resultSetColumn">OrgDrTot</property>
+                            </data>
+                        </cell>
+                        <cell id="267">
+                            <data id="297">
+                                <structure name="numberFormat">
+                                    <property name="category">Currency</property>
+                                    <property name="pattern">#,##0.00;(#,##0.00)</property>
+                                </structure>
+                                <list-property name="visibility">
+                                    <structure>
+                                        <property name="format">all</property>
+                                        <expression name="valueExpr">row["OrgCrTot"]&lt;0.001 &amp; row["OrgCrTot"]>-0.001</expression>
+                                    </structure>
+                                </list-property>
+                                <property name="resultSetColumn">OrgCrTot</property>
+                            </data>
+                        </cell>
+                    </row>
+                </header>
+            </group>
+            <group id="210">
+                <property name="groupName">ProductGroup</property>
+                <property name="interval">none</property>
+                <property name="sortDirection">asc</property>
+                <expression name="keyExpr" type="javascript">row["Product"]</expression>
+                <structure name="toc">
+                    <expression name="expressionValue" type="javascript">row["Product"]</expression>
+                </structure>
+                <property name="repeatHeader">true</property>
+                <property name="hideDetail">false</property>
+                <property name="pageBreakAfter">auto</property>
+                <property name="pageBreakBefore">auto</property>
+                <property name="pageBreakInside">auto</property>
+                <list-property name="sort">
+                    <structure>
+                        <expression name="key" type="javascript">row["Product"]</expression>
+                        <property name="direction">asc</property>
+                    </structure>
+                </list-property>
+                <header>
+                    <row id="211">
+                        <property name="style">Header</property>
+                        <property name="borderTopColor">#000000</property>
+                        <property name="borderTopStyle">solid</property>
+                        <property name="borderTopWidth">thin</property>
+                        <property name="pageBreakAfter">avoid</property>
+                        <property name="pageBreakBefore">auto</property>
+                        <property name="pageBreakInside">avoid</property>
+                        <cell id="212">
+                            <property name="colSpan">3</property>
+                            <property name="rowSpan">1</property>
+                            <data id="285">
+                                <property name="resultSetColumn">Product</property>
+                            </data>
+                        </cell>
+                        <cell id="306"/>
+                        <cell id="214">
+                            <data id="293">
+                                <structure name="numberFormat">
+                                    <property name="category">Currency</property>
+                                    <property name="pattern">#,##0.00;(#,##0.00)</property>
+                                </structure>
+                                <list-property name="visibility">
+                                    <structure>
+                                        <property name="format">all</property>
+                                        <expression name="valueExpr">row["PrdDrTot"]&lt;0.001 &amp; row["PrdDrTot"]>-0.001</expression>
+                                    </structure>
+                                </list-property>
+                                <property name="resultSetColumn">PrdDrTot</property>
+                            </data>
+                        </cell>
+                        <cell id="215">
+                            <data id="294">
+                                <structure name="numberFormat">
+                                    <property name="category">Currency</property>
+                                    <property name="pattern">#,##0.00;(#,##0.00)</property>
+                                </structure>
+                                <list-property name="visibility">
+                                    <structure>
+                                        <property name="format">all</property>
+                                        <expression name="valueExpr">row["PrdCrTot"]&lt;0.001 &amp; row["PrdCrTot"]>-0.001</expression>
+                                    </structure>
+                                </list-property>
+                                <property name="resultSetColumn">PrdCrTot</property>
+                            </data>
+                        </cell>
+                    </row>
+                </header>
+            </group>
+            <detail>
+                <row id="16">
+                    <property name="height">4mm</property>
+                    <property name="style">ReportLine</property>
+                    <property name="textAlign">left</property>
+                    <property name="pageBreakAfter">avoid</property>
+                    <property name="pageBreakBefore">avoid</property>
+                    <property name="pageBreakInside">avoid</property>
+                    <cell id="17"/>
+                    <cell id="231">
+                        <data id="303">
+                            <structure name="dateTimeFormat">
+                                <property name="category">Custom</property>
+                                <property name="pattern">dd/MM/yyyy</property>
+                            </structure>
+                            <property name="textAlign">left</property>
+                            <property name="resultSetColumn">Date</property>
+                        </data>
+                    </cell>
+                    <cell id="18">
+                        <data id="287">
+                            <property name="resultSetColumn">Process</property>
+                        </data>
+                    </cell>
+                    <cell id="307">
+                        <data id="312">
+                            <property name="resultSetColumn">Description</property>
+                        </data>
+                    </cell>
+                    <cell id="19">
+                        <data id="138">
+                            <structure name="numberFormat">
+                                <property name="category">Currency</property>
+                                <property name="pattern">#,##0.00;(#,##0.00)</property>
+                            </structure>
+                            <property name="textAlign">right</property>
+                            <list-property name="visibility">
+                                <structure>
+                                    <property name="format">all</property>
+                                    <expression name="valueExpr">row["DebitAmount"]&lt;0.001 &amp; row["DebitAmount"]>-0.001</expression>
+                                </structure>
+                            </list-property>
+                            <method name="onPrepare"><![CDATA[this.queryText = this.queryText + 
+" WHERE report.ReportID = ? AND product.Name >= FromName AND product.Name <= ToName " +
+"AND event.Date >= FromDate AND event.Date <= ToDate AND action.Currency = report.Currency " +
+"AND product.ProductID IN (SELECT DISTINCT HeadID FROM relation WHERE Link = 'Product Type' AND LineID IN (" + params["RP_Typelist"] + ")) " +
+"AND event.Process IN (" + params["RP_Processlist"] + ") " +
+"AND action.OrganizationID IN (" + params["RP_Organizationlist"] + ") " +
+"AND event.Type IN (" + params["RP_Eventtypelist"] + ") " +
+"ORDER BY party.Name, product.Name";]]></method>
+                            <property name="resultSetColumn">DebitAmount</property>
+                        </data>
+                    </cell>
+                    <cell id="20">
+                        <data id="140">
+                            <structure name="numberFormat">
+                                <property name="category">Currency</property>
+                                <property name="pattern">#,##0.00;(#,##0.00)</property>
+                            </structure>
+                            <property name="textAlign">right</property>
+                            <list-property name="visibility">
+                                <structure>
+                                    <property name="format">all</property>
+                                    <expression name="valueExpr">row["CreditAmount"]&lt;0.001 &amp; row["CreditAmount"]>-0.001</expression>
+                                </structure>
+                            </list-property>
+                            <property name="resultSetColumn">CreditAmount</property>
+                        </data>
+                    </cell>
+                </row>
+            </detail>
+            <footer>
+                <row id="60">
+                    <property name="style">ReportHeader</property>
+                    <property name="borderBottomColor">#000000</property>
+                    <property name="borderBottomStyle">solid</property>
+                    <property name="borderBottomWidth">2px</property>
+                    <property name="borderTopColor">#000000</property>
+                    <property name="borderTopStyle">solid</property>
+                    <property name="borderTopWidth">2px</property>
+                    <cell id="61">
+                        <property name="colSpan">3</property>
+                        <property name="rowSpan">1</property>
+                        <text-data id="201">
+                            <expression name="valueExpr">"Amounts in " + row["Currency"]</expression>
+                            <property name="contentType">html</property>
+                        </text-data>
+                    </cell>
+                    <cell id="308"/>
+                    <cell id="63">
+                        <property name="textAlign">right</property>
+                        <data id="299">
+                            <structure name="numberFormat">
+                                <property name="category">Currency</property>
+                                <property name="pattern">#,##0.00;(#,##0.00)</property>
+                            </structure>
+                            <list-property name="visibility">
+                                <structure>
+                                    <property name="format">all</property>
+                                    <expression name="valueExpr">row["RepDrTot"]&lt;0.001 &amp; row["RepDrTot"]>-0.001</expression>
+                                </structure>
+                            </list-property>
+                            <property name="resultSetColumn">RepDrTot</property>
+                        </data>
+                    </cell>
+                    <cell id="64">
+                        <property name="colSpan">1</property>
+                        <property name="rowSpan">1</property>
+                        <property name="textAlign">right</property>
+                        <data id="300">
+                            <structure name="numberFormat">
+                                <property name="category">Currency</property>
+                                <property name="pattern">#,##0.00;(#,##0.00)</property>
+                            </structure>
+                            <list-property name="visibility">
+                                <structure>
+                                    <property name="format">all</property>
+                                    <expression name="valueExpr">row["RepCrTot"]&lt;0.001 &amp; row["RepCrTot"]>-0.001</expression>
+                                </structure>
+                            </list-property>
+                            <property name="resultSetColumn">RepCrTot</property>
+                        </data>
+                    </cell>
+                </row>
+            </footer>
+        </table>
+    </body>
+</report>

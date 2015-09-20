@@ -1,0 +1,128 @@
+{ "API_CALL_ID" : "20120618154634-dc12c9333f8220646a21c0351fa3018b852e4da8d16f203b76cdcc1535b78f99",
+  "API_METHOD" : "listKigoPropertyActivities",
+  "API_REPLY" : { "ACTIVITY" : [ { "ACTIVITY_CATEGORY_ID" : 1,
+            "ACTIVITY_ID" : 1,
+            "ACTIVITY_LABEL" : "Sightseeing"
+          },
+          { "ACTIVITY_CATEGORY_ID" : 1,
+            "ACTIVITY_ID" : 2,
+            "ACTIVITY_LABEL" : "Shopping"
+          },
+          { "ACTIVITY_CATEGORY_ID" : 1,
+            "ACTIVITY_ID" : 3,
+            "ACTIVITY_LABEL" : "Restaurants"
+          },
+          { "ACTIVITY_CATEGORY_ID" : 1,
+            "ACTIVITY_ID" : 4,
+            "ACTIVITY_LABEL" : "Cinemas/movie theaters"
+          },
+          { "ACTIVITY_CATEGORY_ID" : 1,
+            "ACTIVITY_ID" : 5,
+            "ACTIVITY_LABEL" : "Museums"
+          },
+          { "ACTIVITY_CATEGORY_ID" : 1,
+            "ACTIVITY_ID" : 6,
+            "ACTIVITY_LABEL" : "Theaters"
+          },
+          { "ACTIVITY_CATEGORY_ID" : 1,
+            "ACTIVITY_ID" : 7,
+            "ACTIVITY_LABEL" : "Concert halls"
+          },
+          { "ACTIVITY_CATEGORY_ID" : 1,
+            "ACTIVITY_ID" : 8,
+            "ACTIVITY_LABEL" : "Health/beauty spa"
+          },
+          { "ACTIVITY_CATEGORY_ID" : 1,
+            "ACTIVITY_ID" : 9,
+            "ACTIVITY_LABEL" : "Antique shops"
+          },
+          { "ACTIVITY_CATEGORY_ID" : 1,
+            "ACTIVITY_ID" : 10,
+            "ACTIVITY_LABEL" : "Theme park (amusement park)"
+          },
+          { "ACTIVITY_CATEGORY_ID" : 1,
+            "ACTIVITY_ID" : 11,
+            "ACTIVITY_LABEL" : "Zoo / wildlife park"
+          },
+          { "ACTIVITY_CATEGORY_ID" : 2,
+            "ACTIVITY_ID" : 12,
+            "ACTIVITY_LABEL" : "Fitness center/gym"
+          },
+          { "ACTIVITY_CATEGORY_ID" : 2,
+            "ACTIVITY_ID" : 13,
+            "ACTIVITY_LABEL" : "Golf"
+          },
+          { "ACTIVITY_CATEGORY_ID" : 2,
+            "ACTIVITY_ID" : 14,
+            "ACTIVITY_LABEL" : "Tennis"
+          },
+          { "ACTIVITY_CATEGORY_ID" : 2,
+            "ACTIVITY_ID" : 15,
+            "ACTIVITY_LABEL" : "Water sports"
+          },
+          { "ACTIVITY_CATEGORY_ID" : 2,
+            "ACTIVITY_ID" : 16,
+            "ACTIVITY_LABEL" : "Swimming"
+          },
+          { "ACTIVITY_CATEGORY_ID" : 2,
+            "ACTIVITY_ID" : 17,
+            "ACTIVITY_LABEL" : "Biking"
+          },
+          { "ACTIVITY_CATEGORY_ID" : 2,
+            "ACTIVITY_ID" : 18,
+            "ACTIVITY_LABEL" : "Mountain biking"
+          },
+          { "ACTIVITY_CATEGORY_ID" : 2,
+            "ACTIVITY_ID" : 19,
+            "ACTIVITY_LABEL" : "Winter sports"
+          },
+          { "ACTIVITY_CATEGORY_ID" : 2,
+            "ACTIVITY_ID" : 20,
+            "ACTIVITY_LABEL" : "Wild life viewing"
+          },
+          { "ACTIVITY_CATEGORY_ID" : 2,
+            "ACTIVITY_ID" : 21,
+            "ACTIVITY_LABEL" : "Hiking"
+          },
+          { "ACTIVITY_CATEGORY_ID" : 2,
+            "ACTIVITY_ID" : 22,
+            "ACTIVITY_LABEL" : "Fishing"
+          },
+          { "ACTIVITY_CATEGORY_ID" : 2,
+            "ACTIVITY_ID" : 23,
+            "ACTIVITY_LABEL" : "Hunting"
+          },
+          { "ACTIVITY_CATEGORY_ID" : 2,
+            "ACTIVITY_ID" : 24,
+            "ACTIVITY_LABEL" : "Rock climbing"
+          },
+          { "ACTIVITY_CATEGORY_ID" : 2,
+            "ACTIVITY_ID" : 25,
+            "ACTIVITY_LABEL" : "Racquet ball"
+          },
+          { "ACTIVITY_CATEGORY_ID" : 2,
+            "ACTIVITY_ID" : 26,
+            "ACTIVITY_LABEL" : "Basket ball court"
+          },
+          { "ACTIVITY_CATEGORY_ID" : 2,
+            "ACTIVITY_ID" : 27,
+            "ACTIVITY_LABEL" : "Miniature golf"
+          },
+          { "ACTIVITY_CATEGORY_ID" : 2,
+            "ACTIVITY_ID" : 28,
+            "ACTIVITY_LABEL" : "Horseback riding"
+          }
+        ],
+      "ACTIVITY_CATEGORY" : [ { "ACTIVITY_CATEGORY_ID" : 1,
+            "ACTIVITY_CATEGORY_LABEL" : "Nearby entertainment"
+          },
+          { "ACTIVITY_CATEGORY_ID" : 2,
+            "ACTIVITY_CATEGORY_LABEL" : "Nearby sports"
+          }
+        ]
+    },
+  "API_RESULT_CODE" : "E_OK",
+  "API_RESULT_TEXT" : "",
+  "API_REVISION" : 9,
+  "API_VERSION" : 1
+}

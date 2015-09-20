@@ -1,0 +1,189 @@
+<?xml version="1.0" encoding="UTF-8" standalone="yes"?>
+<OTA_HotelAvailRS PrimaryLangID="en"
+	RetransmissionIndicator="false" SequenceNmbr="1" TransactionIdentifier="1"
+	Version="5.001" Target="Production" TimeStamp="2011-06-07T15:50:04"
+	EchoToken="OTAHotelAvailRQ 145, 2011-07-10T00:00:00, 2011-07-12T00:00:00, false, a3a2e74b809e0e87"
+	xmlns:ns2="http://www.opentravel.org/OTA/2003/05">
+	<POS>
+		<Source>
+			<RequestorID ID="a3a2e74b809e0e87" ID_Context="RZ" />
+		</Source>
+	</POS>
+	<Success />
+	<RoomStays>
+		<RoomStay>
+			<RoomRates>
+				<RoomRate EffectiveDate="2011-07-10" NumberOfUnits="1"
+					RoomTypeCode="2Bedroom">
+					<Rates>
+						<Rate>
+							<Base CurrencyCode="ZAR" AmountAfterTax="2500.0" />
+							<Total CurrencyCode="ZAR" AmountAfterTax="5000.0" />
+						</Rate>
+					</Rates>
+				</RoomRate>
+			</RoomRates>
+			<TimeSpan End="2011-07-12T00:00:00" Start="2011-07-10T00:00:00" />
+			<BasicPropertyInfo AreaID="58777" HotelCodeContext="RZ"
+				HotelName="CBT Penthouse" HotelCode="145" ChainCode="5">
+				<Position AltitudeUnitOfMeasureCode="MTR" Altitude="0.0"
+					Longitude="18.377611041069" Latitude="-33.9569677762237" />
+			</BasicPropertyInfo>
+		</RoomStay>
+	</RoomStays>
+</OTA_HotelAvailRS>
+
+
+SUMMARY
+
+<?xml version="1.0" encoding="UTF-8" standalone="true"?>
+<OTA_HotelAvailRS PrimaryLangID="en"
+	RetransmissionIndicator="false" SequenceNmbr="1" TransactionIdentifier="1"
+	Version="5.001" Target="Production" TimeStamp="2011-06-07T16:03:45"
+	EchoToken="OTAHotelAvailRQ 143, 144,145,146,155, 2011-06-01T00:00:00, 2011-07-31T00:00:00, true, a3a2e74b809e0e87"
+	xmlns:ns2="http://www.opentravel.org/OTA/2003/05">
+	<POS>
+		-
+		<Source>
+			<RequestorID ID="a3a2e74b809e0e87" ID_Context="RZ" />
+		</Source>
+	</POS>
+	<Success />
+	<RoomStays>
+		<RoomStay>
+			<RoomRates>
+				<RoomRate EffectiveDate="2011-06-01" NumberOfUnits="1"
+					RoomTypeCode="3Bedroom">
+					<Rates>
+						<Rate>
+							<Base CurrencyCode="ZAR" AmountAfterTax="2950.0" />
+							<Total CurrencyCode="ZAR" AmountAfterTax="2950.0" />
+						</Rate>
+					</Rates>
+				</RoomRate>
+			</RoomRates>
+			<TimeSpan End="2011-06-01T00:00:00" Start="2011-06-01T00:00:00" />
+			<BasicPropertyInfo AreaID="58777" HotelCodeContext="RZ"
+				HotelName="CBT Lodge" HotelCode="143" ChainCode="5">
+				<Position AltitudeUnitOfMeasureCode="MTR" Altitude="0.0"
+					Longitude="18.3772945404053" Latitude="-33.9571902537236" />
+			</BasicPropertyInfo>
+		</RoomStay>
+		<RoomStay>
+			<RoomRates>
+				<RoomRate EffectiveDate="2011-06-02" NumberOfUnits="1"
+					RoomTypeCode="3Bedroom">
+					<Rates>
+						<Rate>
+							<Base CurrencyCode="ZAR" AmountAfterTax="0.0" />
+							<Total CurrencyCode="ZAR" AmountAfterTax="0.0" />
+						</Rate>
+					</Rates>
+				</RoomRate>
+			</RoomRates>
+			<TimeSpan End="2011-06-02T00:00:00" Start="2011-06-02T00:00:00" />
+			<BasicPropertyInfo AreaID="58777" HotelCodeContext="RZ"
+				HotelName="CBT Lodge" HotelCode="143" ChainCode="5">
+				<Position AltitudeUnitOfMeasureCode="MTR" Altitude="0.0"
+					Longitude="18.3772945404053" Latitude="-33.9571902537236" />
+			</BasicPropertyInfo>
+		</RoomStay>
+		<RoomStay>
+....................
+		<RoomStay>
+			<RoomRates>
+				<RoomRate EffectiveDate="2011-07-27" NumberOfUnits="1"
+					RoomTypeCode="2Bedroom">
+					<Rates>
+						<Rate>
+							<Base CurrencyCode="ZAR" AmountAfterTax="1850.0" />
+							<Total CurrencyCode="ZAR" AmountAfterTax="1850.0" />
+						</Rate>
+					</Rates>
+				</RoomRate>
+			</RoomRates>
+			<TimeSpan End="2011-07-27T00:00:00" Start="2011-07-27T00:00:00" />
+			<BasicPropertyInfo AreaID="58777" HotelCodeContext="RZ"
+				HotelName="La Plantacion" HotelCode="155" ChainCode="5">
+				<Position AltitudeUnitOfMeasureCode="MTR" Altitude="0.0"
+					Longitude="18.3817859349754" Latitude="-33.9635527777778" />
+			</BasicPropertyInfo>
+		</RoomStay>
+		<RoomStay>
+			<RoomRates>
+				<RoomRate EffectiveDate="2011-07-28" NumberOfUnits="1"
+					RoomTypeCode="2Bedroom">
+					<Rates>
+						<Rate>
+							<Base CurrencyCode="ZAR" AmountAfterTax="1850.0" />
+							<Total CurrencyCode="ZAR" AmountAfterTax="1850.0" />
+						</Rate>
+					</Rates>
+				</RoomRate>
+			</RoomRates>
+			<TimeSpan End="2011-07-28T00:00:00" Start="2011-07-28T00:00:00" />
+			<BasicPropertyInfo AreaID="58777" HotelCodeContext="RZ"
+				HotelName="La Plantacion" HotelCode="155" ChainCode="5">
+				<Position AltitudeUnitOfMeasureCode="MTR" Altitude="0.0"
+					Longitude="18.3817859349754" Latitude="-33.9635527777778" />
+			</BasicPropertyInfo>
+		</RoomStay>
+		<RoomStay>
+			<RoomRates>
+				<RoomRate EffectiveDate="2011-07-29" NumberOfUnits="1"
+					RoomTypeCode="2Bedroom">
+					<Rates>
+						<Rate>
+							<Base CurrencyCode="ZAR" AmountAfterTax="1850.0" />
+							<Total CurrencyCode="ZAR" AmountAfterTax="1850.0" />
+						</Rate>
+					</Rates>
+				</RoomRate>
+			</RoomRates>
+			<TimeSpan End="2011-07-29T00:00:00" Start="2011-07-29T00:00:00" />
+			<BasicPropertyInfo AreaID="58777" HotelCodeContext="RZ"
+				HotelName="La Plantacion" HotelCode="155" ChainCode="5">
+				<Position AltitudeUnitOfMeasureCode="MTR" Altitude="0.0"
+					Longitude="18.3817859349754" Latitude="-33.9635527777778" />
+			</BasicPropertyInfo>
+		</RoomStay>
+		<RoomStay>
+			<RoomRates>
+				<RoomRate EffectiveDate="2011-07-30" NumberOfUnits="1"
+					RoomTypeCode="2Bedroom">
+					<Rates>
+						<Rate>
+							<Base CurrencyCode="ZAR" AmountAfterTax="1850.0" />
+							<Total CurrencyCode="ZAR" AmountAfterTax="1850.0" />
+						</Rate>
+					</Rates>
+				</RoomRate>
+			</RoomRates>
+			<TimeSpan End="2011-07-30T00:00:00" Start="2011-07-30T00:00:00" />
+			<BasicPropertyInfo AreaID="58777" HotelCodeContext="RZ"
+				HotelName="La Plantacion" HotelCode="155" ChainCode="5">
+				<Position AltitudeUnitOfMeasureCode="MTR" Altitude="0.0"
+					Longitude="18.3817859349754" Latitude="-33.9635527777778" />
+			</BasicPropertyInfo>
+		</RoomStay>
+		<RoomStay>
+			<RoomRates>
+				<RoomRate EffectiveDate="2011-07-31" NumberOfUnits="1"
+					RoomTypeCode="2Bedroom">
+					<Rates>
+						<Rate>
+							<Base CurrencyCode="ZAR" AmountAfterTax="1850.0" />
+							<Total CurrencyCode="ZAR" AmountAfterTax="1850.0" />
+						</Rate>
+					</Rates>
+				</RoomRate>
+			</RoomRates>
+			<TimeSpan End="2011-07-31T00:00:00" Start="2011-07-31T00:00:00" />
+			<BasicPropertyInfo AreaID="58777" HotelCodeContext="RZ"
+				HotelName="La Plantacion" HotelCode="155" ChainCode="5">
+				<Position AltitudeUnitOfMeasureCode="MTR" Altitude="0.0"
+					Longitude="18.3817859349754" Latitude="-33.9635527777778" />
+			</BasicPropertyInfo>
+		</RoomStay>
+	</RoomStays>
+</OTA_HotelAvailRS>

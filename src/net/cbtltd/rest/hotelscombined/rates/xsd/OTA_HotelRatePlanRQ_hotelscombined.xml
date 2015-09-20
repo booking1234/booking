@@ -1,0 +1,20 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<OTA_HotelRatePlanRQ xmlns="http://www.opentravel.org/OTA/2003/05" Version="1.0"
+TimeStamp="2012-01-01T12:00:00Z" EchoToken="aaa000">
+<RatePlans>
+<RatePlan>
+<DateRange Start="2012-03-01" End="2012-03-04" />
+<HotelRef HotelCode="123"/>
+<RatePlanCandidates>
+<RatePlanCandidate RatePlanCode="456" />
+</RatePlanCandidates >
+</RatePlan>
+<RatePlan>
+<DateRange Start="2012-03-01" End="2012-03-04" />
+<HotelRef HotelCode="123"/>
+<RatePlanCandidates>
+<RatePlanCandidate RatePlanCode="456" />
+</RatePlanCandidates >
+</RatePlan>
+</RatePlans>
+</OTA_HotelRatePlanRQ >

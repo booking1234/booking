@@ -1,0 +1,42 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<DataTools.ServerProfiles version="1.0">
+	<profile autoconnect="No" desc="Connection to Razor Cloud live database"
+		id="c75dc6e0-ae1a-11e1-aa1b-d62d169f792e" name="Razor Cloud Connection"
+		providerID="org.eclipse.datatools.enablement.mysql.connectionProfile">
+		<baseproperties>
+            <property name = "org.eclipse.datatools.connectivity.db.connectionProperties" value = ""/>
+            <property name = "org.eclipse.datatools.connectivity.db.savePWD" value = "true"/>
+            <property name = "org.eclipse.datatools.connectivity.drivers.defnType" value = "org.eclipse.datatools.enablement.mysql.5_1.driverTemplate"/>
+            <property name = "jarList" value = "mysql-connector-java-5.1.20-bin.jar"/>
+            <property name = "org.eclipse.datatools.connectivity.db.username" value = "root"/>
+            <property name = "org.eclipse.datatools.connectivity.db.driverClass" value = "com.mysql.jdbc.Driver"/>
+            <property name = "org.eclipse.datatools.connectivity.db.databaseName" value = "razor"/>
+            <property name = "org.eclipse.datatools.connectivity.driverDefinitionID" value = "DriverDefn.org.eclipse.datatools.enablement.mysql.5_1.driverTemplate.MySQL JDBC Driver"/>
+            <property name = "org.eclipse.datatools.connectivity.db.password" value = "bendagasse"/>
+            <property name = "org.eclipse.datatools.connectivity.db.version" value = "5.1"/>
+            <property name = "org.eclipse.datatools.connectivity.db.URL" value = "jdbc:mysql://54.197.247.82:3306/razor"/>
+            <property name = "org.eclipse.datatools.connectivity.db.vendor" value = "MySql"/>
+
+<!-- 			<property name="odaUser" value="root" /> -->
+<!-- 			<property name="metadataBidiFormatStr" value="ILYNN" /> -->
+<!-- 			<property name="odaDriverClass" value="com.mysql.jdbc.Driver" /> -->
+<!-- 			<property name="odaJndiName" value="" /> -->
+<!-- 			<property name="odaPassword" value="bendagasse" /> -->
+<!-- 			<property name="disabledMetadataBidiFormatStr" value="" /> -->
+<!-- 			<property name="contentBidiFormatStr" value="ILYNN" /> -->
+<!-- 			<property name="odaURL" -->
+<!-- 				value="jdbc:mysql://54.197.247.82:3306/razor" /> -->
+<!-- 			<property name="disabledContentBidiFormatStr" value="" /> -->
+		</baseproperties>
+        <org.eclipse.datatools.connectivity.versionInfo>
+            <property name = "server.version" value = "5.5.2"/>
+            <property name = "technology.name.jdbc" value = "JDBC"/>
+            <property name = "server.name" value = "MySQL"/>
+            <property name = "technology.version.jdbc" value = "3.0.0"/>
+        </org.eclipse.datatools.connectivity.versionInfo>
+        <driverreference>
+            <property name = "driverName" value = "MySQL JDBC Driver"/>
+            <property name = "driverTypeID" value = "org.eclipse.datatools.enablement.mysql.5_1.driverTemplate"/>
+        </driverreference>
+	</profile>
+</DataTools.ServerProfiles>

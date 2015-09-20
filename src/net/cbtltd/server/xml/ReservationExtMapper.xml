@@ -1,0 +1,98 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="net.cbtltd.server.api.ReservationExtMapper">
+
+	<resultMap id="ResultMap" type="ReservationExt">
+		<id column="ID" jdbcType="INTEGER" property="id" />
+		<result column="AltID" jdbcType="VARCHAR" property="altid" />
+		<result column="ReservationID" jdbcType="VARCHAR" property="reservationId" />
+		<result column="PartyID" jdbcType="INTEGER" property="partyid" />
+		<result column="Addon_Type" jdbcType="VARCHAR" property="addonType" />
+		<result column="Type" jdbcType="VARCHAR" property="type" />
+		<result column="State" jdbcType="VARCHAR" property="state" />
+		<result column="Cost" jdbcType="DOUBLE" property="cost" />
+		<result column="Currency" jdbcType="VARCHAR" property="currency" />
+		<result column="version" jdbcType="TIMESTAMP" property="version" />
+		<result column="Name" jdbcType="VARCHAR" property="name" />
+	</resultMap>
+	
+	<select id="readReservationExt" parameterType="ReservationExt" resultMap="ResultMap">
+		select
+		*
+		from reservation_ext
+		where ReservationID = #{reservationId,jdbcType=INTEGER}
+		<if test="type != null">
+			and Type = #{type,jdbcType=VARCHAR}
+		</if>
+		<if test="addonType != null">
+			and Addon_Type = #{addonType,jdbcType=VARCHAR}
+		</if>
+		
+	</select>
+	
+	<insert id="create" parameterType="ReservationExt" useGeneratedKeys="true" keyProperty="id">
+		insert into reservation_ext (
+			AltID, ReservationID, PartyID, Addon_Type, State, Type, Cost, Currency,version,Name
+		)
+		values (
+			#{altid,jdbcType=VARCHAR}, 
+			#{reservationId,jdbcType=INTEGER}, 
+			#{partyid,jdbcType=INTEGER},
+			#{addonType,jdbcType=VARCHAR},
+			#{state,jdbcType=VARCHAR}, 
+			#{type,jdbcType=VARCHAR}, 
+			#{cost,jdbcType=DOUBLE}, 
+			#{currency,jdbcType=VARCHAR},
+			#{version,jdbcType=TIMESTAMP},
+			#{name,jdbcType=VARCHAR}
+		)
+	</insert>
+	
+	<update id="update" parameterType="Price">
+		update reservation_ext
+		<set>
+			<if test="altid != null">
+				AltID = #{altid,jdbcType=VARCHAR},
+			</if>
+			<if test="reservationId != null">
+				EntityID = #{entityid,jdbcType=INTEGER},
+			</if>
+			<if test="partyid != null">
+				PartyID = #{partyid,jdbcType=INTEGER},
+			</if>
+			<if test="addonType != null">
+				Name = #{addonType,jdbcType=VARCHAR},
+			</if>
+			<if test="state != null">
+				State = #{state,jdbcType=VARCHAR},
+			</if>
+			<if test="type != null">
+				Type = #{type,jdbcType=VARCHAR},
+			</if>
+			<if test="cost != null">
+				Cost = #{cost,jdbcType=DOUBLE},
+			</if>
+			<if test="currency != null">
+				Currency = #{currency,jdbcType=VARCHAR},
+			</if>
+			<if test="version != null">
+				version = #{version,jdbcType=TIMESTAMP},
+			</if>
+		</set>
+		where ID = #{id,jdbcType=INTEGER}
+	</update>
+	
+	<delete id="delete" parameterType="String">
+		delete from reservation_ext
+		where ReservationID = #{reservationId,jdbcType=INTEGER}
+	</delete>
+	
+	<select id="exists" parameterType="String" resultMap="ResultMap">
+		select
+		*
+		from reservation_ext
+		where reservationId = #{reservationId,jdbcType=VARCHAR}
+			
+	</select>
+
+</mapper>

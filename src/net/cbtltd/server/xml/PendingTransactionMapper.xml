@@ -1,0 +1,200 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<!-- pending_transaction(id INT NOT NULL auto_increment, entry_date_time DATETIME, booking_id INT, pms_confirmation_id INT, payment_gateway_id INT,
+	funds_holder INT, partial_iin INT, first_name VARCHAR, last_name VARCHAR, phone_number VARCHAR, partner_id INT, supplier_id INT, charge_date DATE,
+	charge_amount DOUBLE, currency VARCHAR, commission DOUBLE, partner_payment DOUBLE, bookingpal_payment DOUBLE, gateway_transaction_id VARCHAR, status VARCHAR,
+	autopay TINYINT(1), PRIMARY KEY USING BTREE (id)); -->
+<mapper namespace="net.cbtltd.server.api.PendingTransactionMapper">
+	<resultMap id="ResultMap" type="PendingTransaction">
+		<id column="id" jdbcType="INTEGER" property="id" />
+		<result column="entry_date_time" jdbcType="TIMESTAMP" property="entryDateTime" />
+		<result column="booking_id" jdbcType="VARCHAR" property="bookingId" />
+		<!-- <result column="pms_confirmation_id" jdbcType="VARCHAR" property="pmsConfirmationId" /> -->
+		<result column="payment_gateway_id" jdbcType="INTEGER" property="paymentGatewayId" />
+		<result column="funds_holder" jdbcType="INTEGER" property="fundsHolder" />
+		<result column="partial_iin" jdbcType="INTEGER" property="partialIin" />
+		<result column="first_name" jdbcType="VARCHAR" property="firstName" />
+		<result column="last_name" jdbcType="VARCHAR" property="lastName" />
+		<result column="phone_number" jdbcType="VARCHAR" property="phoneNumber" />
+		<result column="partner_id" jdbcType="INTEGER" property="partnerId" />
+		<result column="supplier_id" jdbcType="INTEGER" property="supplierId" />
+		<result column="charge_date" jdbcType="TIMESTAMP" property="chargeDate" />
+		<result column="charge_amount" jdbcType="DOUBLE" property="chargeAmount" />
+		<result column="currency" jdbcType="VARCHAR" property="currency" />
+		<result column="commission" jdbcType="DOUBLE" property="commission" />
+		<result column="partner_payment" jdbcType="DOUBLE" property="partnerPayment" />
+		<result column="bookingpal_payment" jdbcType="DOUBLE" property="bookingpalPayment" />
+		<result column="gateway_transaction_id" jdbcType="VARCHAR" property="gatewayTransactionId" />
+		<result column="status" jdbcType="VARCHAR" property="status" />
+		<result column="autopay" jdbcType="BOOLEAN" property="autopay" />
+		<result column="credit_card_fee" jdbcType="DOUBLE" property="creditCardFee" />
+		<result column="net_rate" jdbcType="BOOLEAN" property="netRate" />
+		<result column="pm_commission_value"  jdbcType="DOUBLE" property="pmCommissionValue" />
+		<result column="pms_payment"  jdbcType="DOUBLE" property="pmsPayment" />
+		<result column="additional_commission_value"  jdbcType="DOUBLE" property="additionalCommissionValue" />
+	</resultMap>
+
+	<sql id="columns">
+		ID, entry_date_time, booking_id, <!-- pms_confirmation_id, --> payment_gateway_id, funds_holder, partial_iin, first_name, last_name, phone_number, partner_id,
+		supplier_id, charge_date, charge_amount, currency, commission, partner_payment, bookingpal_payment, gateway_transaction_id, status, autopay,
+		net_rate, pm_commission_value, pms_payment, additional_commission_value, credit_card_fee
+	</sql>
+
+	<insert id="create" parameterType="PendingTransaction" useGeneratedKeys="true" keyProperty="id">
+		insert into pending_transaction (entry_date_time, booking_id, <!-- pms_confirmation_id,  -->payment_gateway_id, funds_holder, partial_iin, first_name, last_name,
+		phone_number, partner_id, supplier_id, charge_date, charge_amount, currency, commission, partner_payment, bookingpal_payment, gateway_transaction_id, status, 
+		autopay, net_rate, pm_commission_value, pms_payment, additional_commission_value, credit_card_fee)
+		values (#{entryDateTime,jdbcType=TIMESTAMP}, #{bookingId,jdbcType=VARCHAR}, <!-- #{pmsConfirmationId,jdbcType=VARCHAR},  -->#{paymentGatewayId,jdbcType=INTEGER},
+		#{fundsHolder,jdbcType=INTEGER}, #{partialIin,jdbcType=INTEGER}, #{firstName,jdbcType=VARCHAR}, #{lastName,jdbcType=VARCHAR}, #{phoneNumber,jdbcType=VARCHAR},
+		#{partnerId,jdbcType=INTEGER}, #{supplierId,jdbcType=INTEGER}, #{chargeDate,jdbcType=TIMESTAMP}, #{chargeAmount,jdbcType=DOUBLE}, #{currency,jdbcType=VARCHAR},
+		#{commission,jdbcType=DOUBLE}, #{partnerPayment,jdbcType=DOUBLE}, #{bookingpalPayment,jdbcType=DOUBLE}, #{gatewayTransactionId,jdbcType=VARCHAR},
+		#{status,jdbcType=VARCHAR}, #{autopay,jdbcType=BOOLEAN}, #{netRate,jdbcType=BOOLEAN}, #{pmCommissionValue,jdbcType=DOUBLE}, #{pmsPayment,jdbcType=DOUBLE},
+		#{additionalCommissionValue,jdbcType=DOUBLE}, #{creditCardFee,jdbcType=DOUBLE} )
+	</insert>
+
+	<select id="read" parameterType="int" resultMap="ResultMap">
+		select
+		<include refid="columns" />
+		from pending_transaction
+		where ID = #{id,jdbcType=INTEGER}
+	</select>
+	
+	<select id="list" resultMap="ResultMap">
+		select
+		<include refid="columns" />
+		from pending_transaction
+	</select>
+
+	<update id="update" parameterType="PendingTransaction">
+		update pending_transaction
+		<set>
+			<if test="entryDateTime != null">
+				entry_date_time = #{entryDateTime,jdbcType=TIMESTAMP},
+			</if>
+			<if test="bookingId != null">
+				booking_id = #{bookingId,jdbcType=VARCHAR}, 
+			</if>
+			<!-- <if test="pmsConfirmationId != null">
+				pms_confirmation_id = #{pmsConfirmationId,jdbcType=VARCHAR},
+			</if> -->
+			<if test="paymentGatewayId != null">
+				payment_gateway_id = #{paymentGatewayId,jdbcType=INTEGER},
+			</if>
+			<if test="fundsHolder != null">
+				funds_holder = #{fundsHolder,jdbcType=INTEGER},
+			</if>
+			<if test="partialIin != null">
+ 				partial_iin = #{partialIin,jdbcType=INTEGER},
+			</if>
+			<if test="firstName != null">
+				first_name = #{firstName,jdbcType=VARCHAR},
+			</if>
+			<if test="lastName != null">
+				last_name = #{lastName,jdbcType=VARCHAR},
+			</if>
+			<if test="phoneNumber != null">
+				phone_number = #{phoneNumber,jdbcType=VARCHAR},
+			</if>
+			<if test="partnerId != null">
+				partner_id = #{partnerId,jdbcType=INTEGER},
+			</if>
+			<if test="supplierId != null">
+				supplier_id = #{supplierId,jdbcType=INTEGER},
+			</if>
+			<if test="chargeDate != null">
+				charge_date = #{chargeDate,jdbcType=TIMESTAMP},
+			</if>
+			<if test="chargeAmount != null">
+ 				charge_amount = #{chargeAmount,jdbcType=DOUBLE},
+			</if>
+			<if test="currency != null">
+ 				currency = #{currency,jdbcType=VARCHAR},
+			</if>
+			<if test="commission != null">
+				commission = #{commission,jdbcType=DOUBLE},
+			</if>
+			<if test="partnerPayment != null">
+				partner_payment = #{partnerPayment,jdbcType=DOUBLE},
+			</if>
+			<if test="bookingpalPayment != null">
+				bookingpal_payment = #{bookingpalPayment,jdbcType=DOUBLE},
+			</if>
+			<if test="gatewayTransactionId != null">
+				gateway_transaction_id = #{gatewayTransactionId,jdbcType=VARCHAR},
+			</if>
+			<if test="status != null">
+				status = #{status,jdbcType=VARCHAR},
+			</if>
+			<if test="autopay != null">
+ 				autopay = #{autopay,jdbcType=BOOLEAN},
+			</if>
+			<if test="netRate != null">
+ 				net_rate = #{netRate,jdbcType=BOOLEAN},
+			</if>
+			<if test="pmCommissionValue != null">
+ 				pm_commission_value = #{pmCommissionValue,jdbcType=DOUBLE},
+			</if>
+			<if test="pmsPayment != null">
+ 				pms_payment = #{pmsPayment,jdbcType=DOUBLE},
+			</if>
+			<if test="additionalCommissionValue != null">
+ 				additional_commission_value = #{additionalCommissionValue,jdbcType=DOUBLE},
+			</if>
+			<if test="creditCardFee != null">
+ 				credit_card_fee = #{creditCardFee,jdbcType=DOUBLE}
+			</if>			
+		</set>
+		where ID = #{id,jdbcType=INTEGER}
+	</update>
+
+	<delete id="delete" parameterType="int">
+		delete from pending_transaction
+		where ID = #{id,jdbcType=INTEGER}
+	</delete>
+
+	<update id="updateByPrimaryKey" parameterType="PendingTransaction">
+		update pending_transaction
+		set
+		entry_date_time = #{entryDateTime,jdbcType=TIMESTAMP},
+		booking_id = #{bookingId,jdbcType=VARCHAR},
+		<!-- pms_confirmation_id = #{pmsConfirmationId,jdbcType=VARCHAR}, -->
+		payment_gateway_id = #{paymentGatewayId,jdbcType=INTEGER},
+		funds_holder = #{fundsHolder,jdbcType=INTEGER},
+		partial_iin = #{partialIin,jdbcType=INTEGER},
+		first_name = #{firstName,jdbcType=VARCHAR},
+		last_name = #{lastName,jdbcType=VARCHAR},
+		phone_number = #{phoneNumber,jdbcType=VARCHAR},
+		partner_id = #{partnerId,jdbcType=INTEGER},
+		supplier_id = #{supplierId,jdbcType=INTEGER},
+		charge_date = #{chargeDate,jdbcType=TIMESTAMP},
+		charge_amount = #{chargeAmount,jdbcType=DOUBLE},
+		currency = #{currency,jdbcType=VARCHAR},
+		commission = #{commission,jdbcType=DOUBLE},
+		partner_payment = #{partnerPayment,jdbcType=DOUBLE},
+		bookingpal_payment = #{bookingpalPayment,jdbcType=DOUBLE},
+		gateway_transaction_id = #{gatewayTransactionId,jdbcType=VARCHAR},
+		status = #{status,jdbcType=VARCHAR},
+		autopay = #{autopay,jdbcType=BOOLEAN},
+		net_rate = #{netRate,jdbcType=BOOLEAN},
+		pm_commission_value = #{pmCommissionValue,jdbcType=DOUBLE},
+		pms_payment = #{pmsPayment,jdbcType=DOUBLE},
+		additional_commission_value = #{additionalCommissionValue,jdbcType=DOUBLE},
+		credit_card_fee = #{creditCardFee,jdbcType=DOUBLE}
+	</update>
+	
+	<select id="readByReservation" parameterType="Reservation" resultMap="ResultMap">
+		select
+		<include refid="columns" />
+		from pending_transaction
+		where booking_id = #{id,jdbcType=INTEGER}
+	</select>
+	
+	<select id="readActiveTransactionsByDate" parameterType="Date" resultMap="ResultMap">
+		select
+		<include refid="columns" />
+		from pending_transaction
+		where status in (1,2)
+			and charge_date <![CDATA[ <= ]]> #{date,jdbcType=TIMESTAMP}
+	</select>
+	
+</mapper>

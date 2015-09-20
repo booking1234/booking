@@ -1,0 +1,71 @@
+<xs:schema attributeFormDefault="unqualified" elementFormDefault="qualified" targetNamespace="http://www.opentravel.org/OTA/2003/05" xmlns:xs="http://www.w3.org/2001/XMLSchema">
+  <xs:element name="OTA_HotelAvailNotifRQ">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element name="AvailStatusMessages" maxOccurs="unbounded" minOccurs="0">
+          <xs:complexType>
+            <xs:sequence>
+              <xs:element name="AvailStatusMessage" maxOccurs="unbounded" minOccurs="0">
+                <xs:complexType>
+                  <xs:sequence>
+                    <xs:element name="StatusApplicationControl">
+                      <xs:complexType>
+                        <xs:simpleContent>
+                          <xs:extension base="xs:string">
+                            <xs:attribute type="xs:string" name="Start" use="optional"/>
+                            <xs:attribute type="xs:string" name="End" use="optional"/>
+                            <xs:attribute type="xs:string" name="InvTypeCode" use="optional"/>
+                            <xs:attribute type="xs:string" name="Mon" use="optional"/>
+                            <xs:attribute type="xs:string" name="Tue" use="optional"/>
+                            <xs:attribute type="xs:string" name="Weds" use="optional"/>
+                            <xs:attribute type="xs:string" name="Thur" use="optional"/>
+                            <xs:attribute type="xs:string" name="Fri" use="optional"/>
+                            <xs:attribute type="xs:string" name="Sat" use="optional"/>
+                            <xs:attribute type="xs:string" name="Sun" use="optional"/>
+                            <xs:attribute type="xs:string" name="RatePlanCode" use="optional"/>
+                          </xs:extension>
+                        </xs:simpleContent>
+                      </xs:complexType>
+                    </xs:element>
+                    <xs:element name="LengthsOfStay" maxOccurs="unbounded" minOccurs="0">
+                      <xs:complexType>
+                        <xs:sequence>
+                          <xs:element name="LengthOfStay" maxOccurs="unbounded" minOccurs="0">
+                            <xs:complexType>
+                              <xs:simpleContent>
+                                <xs:extension base="xs:string">
+                                  <xs:attribute type="xs:string" name="MinMaxMessageType" use="optional"/>
+                                  <xs:attribute type="xs:string" name="Time" use="optional"/>
+                                  <xs:attribute type="xs:string" name="TimeUnit" use="optional"/>
+                                </xs:extension>
+                              </xs:simpleContent>
+                            </xs:complexType>
+                          </xs:element>
+                        </xs:sequence>
+                      </xs:complexType>
+                    </xs:element>
+                    <xs:element name="RestrictionStatus" minOccurs="0">
+                      <xs:complexType>
+                        <xs:simpleContent>
+                          <xs:extension base="xs:string">
+                            <xs:attribute type="xs:string" name="Status" use="optional"/>
+                            <xs:attribute type="xs:string" name="Restriction" use="optional"/>
+                          </xs:extension>
+                        </xs:simpleContent>
+                      </xs:complexType>
+                    </xs:element>
+                  </xs:sequence>
+                  <xs:attribute type="xs:string" name="BookingLimit" use="optional"/>
+                </xs:complexType>
+              </xs:element>
+            </xs:sequence>
+            <xs:attribute type="xs:string" name="HotelCode" use="optional"/>
+          </xs:complexType>
+        </xs:element>
+      </xs:sequence>
+      <xs:attribute type="xs:float" name="Version"/>
+      <xs:attribute type="xs:string" name="EchoToken"/>
+      <xs:attribute type="xs:dateTime" name="TimeStamp"/>
+    </xs:complexType>
+  </xs:element>
+</xs:schema>

@@ -1,0 +1,171 @@
+.registration img{max-width: 100%;}
+header {
+    height: 70px;
+    background: #2158ad;
+}
+
+  body, .container, .content, .row, .right_content {
+    height: 100%;
+}
+html {
+    height: 92.3%;
+}
+.registration .content .container {
+    width: 100%;
+}
+.registration .left_content {
+    padding-left: 50px;
+    padding-bottom: 50px;
+}
+.registration .right_content {
+    padding-right: 0;
+}
+.registration .right_bg {
+    position: absolute;
+    width: 40%;
+    float: right;
+    height: 100%;
+}
+.registration header h3 {
+    font-size: 20px;
+    color: #fff;
+    float: left;
+    margin-top: 22px;
+}
+.registration header h4 {
+    font-size: 16px;
+    color: #fff;
+    float: right;
+    margin-top: 25px;
+}
+.registration .header_brand {
+    float: right;
+    margin-top: 22px;
+    margin-left: 10px;
+}
+.registration .reg_form {
+    margin-top: 36px;
+}
+.registration .reg_form .form-checkbox {
+    margin: 37px 0;
+}
+.registration .reg_form label {
+    font-weight: normal;
+    margin-bottom: 10px;
+}
+.registration .reg_form .form-control {
+    height: 40px;
+    background-color: #f9f9f9;
+    border-color: #e0e0e0 ;
+}
+.registration .reg_form .reg_button {
+    float: right;
+    background: #F79032;
+    font-size: 18px;
+    color: #fff;
+    padding: 6px 35px;
+}
+/*-----*/
+.registration .reg_info {
+    background: #f9f9f9;
+    border-left: 1px solid #e0e0e0;
+    height: 100%;
+}
+.registration .reg_info .icon {
+    width: 30px;
+    height: 40px;
+    background: url('../Registration/icon.png') no-repeat 50% 50%;
+    float: left;
+    margin-right: 5px;
+}
+.registration .reg_info .reg_info_advantages {
+    padding: 37px  80px 0 46px ;
+}
+.registration .reg_info .reg_info_advantage {
+    font-weight: bolder;
+    margin-bottom: 20px;
+}
+.registration .reg_info .reg_info_heading {
+    color: #999999;
+    padding: 37px  80px 0 46px ;
+    font-size: 16px;
+}
+.registration .reg_info h4 {
+    font-size: 16px;
+    color: #999999;
+    margin-bottom: 15px;
+}
+.registration_result{
+	font-size: 30px;
+	text-align: left;
+	margin-top: 36px;
+}
+.contentTextBlue{
+	text-align: justify;
+    color: #11395E;
+    font-size: 16px;  
+}
+@media (max-width: 1200px) {
+    .registration .reg_info {
+    height: 130%;
+    }
+}
+
+#blanket {
+   background-color:#111;
+   opacity: 0.65;
+   *background:none;
+   position:absolute;
+   z-index: 9001;
+   top:0px;
+   left:0px;
+   width:100%;
+}
+
+#popUpDiv {
+	position:absolute;
+	width:400px;
+	height:500px;
+	z-index: 9002;
+}
+
+#privacyObject
+{
+	width:400px;
+	height:430px;
+	background-color:white;
+}
+
+#privacyHeader {
+	witdth:400px;
+	height:60px;
+	background: #2158ad;
+}
+
+#privacyHeader .privacyHeaderLogo {
+	float: left;
+    margin-top: 15px;
+    margin-left: 10px;
+}
+
+#privacyHeader .privacyHeaderExit {
+	float: right;
+	margin-right: 5px;
+}
+
+::-webkit-scrollbar {
+-webkit-appearance: none;
+width: 12px;
+background-color: #f0f0f0;
+}
+
+::-webkit-scrollbar-thumb {
+border-radius: 12px;
+border: 4px solid rgba(255,255,255,0);
+background-clip: content-box;
+background-color: #bfbfbf;
+}
+
+::-webkit-scrollbar-corner {
+background-color: #e6e6e6;
+}

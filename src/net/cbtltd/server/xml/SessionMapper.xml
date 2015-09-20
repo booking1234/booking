@@ -1,0 +1,213 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="net.cbtltd.server.api.SessionMapper">
+
+	<resultMap id="ResultMap" type="Session">
+		<id column="ID" jdbcType="INTEGER" property="id" />
+		<result column="ActorID" jdbcType="INTEGER" property="actorid" />
+		<result column="Login" jdbcType="DATE" property="login" />
+		<result column="Logout" jdbcType="DATE" property="logout" />
+	</resultMap>
+
+	<sql id="columns">
+		ID, ActorID, Login, Logout
+	</sql>
+
+	<select id="read" parameterType="String" resultMap="ResultMap">
+		select
+		<include refid="columns" />
+		from session
+		where ID = #{id,jdbcType=INTEGER}
+	</select>
+
+	<delete id="delete" parameterType="String">
+		delete from session
+		where ID = #{id,jdbcType=INTEGER}
+	</delete>
+
+	<insert id="create" parameterType="Session" useGeneratedKeys="true" keyProperty="id">
+		insert into session (ActorID, Login, Logout)
+		values (#{actorid,jdbcType=INTEGER}, #{login,jdbcType=DATE}, #{logout,jdbcType=DATE})
+	</insert>
+
+	<update id="update" parameterType="Session">
+		update session
+		<set>
+			<if test="actorid != null">
+				ActorID = #{actorid,jdbcType=INTEGER},
+			</if>
+			<if test="login != null">
+				Login = #{login,jdbcType=DATE},
+			</if>
+			<if test="logout != null">
+				Logout = #{logout,jdbcType=DATE},
+			</if>
+		</set>
+		where ID = #{id,jdbcType=INTEGER}
+	</update>
+
+	<update id="updateByPrimaryKey" parameterType="Session">
+		update session
+		set ActorID = #{actorid,jdbcType=INTEGER},
+		Login = #{login,jdbcType=DATE},
+		Logout = #{logout,jdbcType=DATE}
+		where ID = #{id,jdbcType=INTEGER}
+	</update>
+
+	<sql id="contractquery">
+		where contract.DoneDate is null
+			and contract.DueDate <![CDATA[ <= ]]> #{enddate}
+			and contract.OrganizationID = #{organizationid}
+			<if test="actorlist != null">
+			and contract.ActorID in (${actorlist})
+			</if>
+			and contract.Process in (${processlist})
+			and contract.State in (${statelist})
+			<if test="steplist != null">
+			and concat('Contract.', contract.State) in (${steplist})
+			</if>
+	</sql>
+
+	<sql id="eventquery">
+		where event.DoneDate is null
+			and event.DueDate <![CDATA[ <= ]]> #{enddate}
+			and event.OrganizationID = #{organizationid}
+			<if test="actorlist != null">
+			and event.ActorID in (${actorlist})
+			</if>
+			and event.Process in (${processlist})
+			and event.State in (${statelist})
+			<if test="steplist != null">
+			and concat(Process, '.', event.State) in (${steplist})
+			</if>
+	</sql>
+
+	<sql id="reservationquery">
+			where reservation.DoneDate is null
+			and reservation.DueDate <![CDATA[ <= ]]> #{enddate}
+			and reservation.OrganizationID = #{organizationid}
+			<if test="actorlist != null">
+			and reservation.ActorID in (${actorlist})
+			</if>
+			and 'Reservation' in (${processlist})
+			and reservation.State in (${statelist})
+			<if test="steplist != null">
+			and concat('Reservation.', reservation.State) in (${steplist})
+			</if>
+	</sql>
+
+	<sql id="taskquery">
+		where task.DoneDate is null
+			and task.DueDate <![CDATA[ <= ]]> #{enddate}
+			and task.OrganizationID = #{organizationid}
+			<if test="actorlist != null">
+			and task.ActorID in (${actorlist})
+			</if>
+			and 'Task' in (${processlist})
+			and task.State in (${statelist})
+			<if test="steplist != null">
+			and concat('Task.', task.State) in (${steplist})
+			</if>
+	</sql>
+
+	<select id="steps" parameterType="String" resultType="String">
+		select distinct steps.LineID 
+		from relation as roles
+			join relation as steps
+				on steps.HeadID = roles.LineID
+				and steps.Link = 'Role Step'
+		where roles.HeadID in (#{ids,jdbcType=INTEGER})
+			and roles.Link = 'Party Role'
+	</select>
+
+	<select id="organizationsbyagent" parameterType="Session" resultType="NameId">
+			select distinct party.Name, party.ID
+			from party
+			where party.ID = #{organizationid,jdbcType=INTEGER}
+		union
+			select distinct party.Name as name, party.PartyID as id
+			from contract
+				join party on party.ID = contract.OrganizationID
+			where contract.PartyID = #{organizationid,jdbcType=INTEGER}
+		order by name
+	</select>
+	
+	<select id="search" parameterType="NameIdAction" resultType="NameIdTab">
+			select distinct Name, ID, 1 as tab
+			from finance
+			where OwnerID = #{organizationid}
+				and Name like #{wildtype}
+				and State = 'Created'
+		union all
+			select distinct concat(event.Process, ' ', event.Name) as name, event.ID, 2 as tab
+			from event
+			join journal on journal.EventID = event.ID
+			left join party on party.ID = journal.EntityID and journal.EntityType = 'Party'
+			left join product on product.ID = journal.EntityID and journal.EntityType = 'Product'
+			where event.OrganizationID = #{organizationid}
+				and event.Type = 'Accounting'
+				and event.Process in ('Journal', 'Payment', 'Purchase', 'Purchase Sale', 'Receipt', 'ReservationSale', 'Sale')
+				and event.State not in ('Initial', 'Final')
+				and event.Name like #{wildtype}
+<!--				and (event.Name like #{wildtype} or party.Name like #{wildtype} or product.Name like #{wildtype})-->
+		union all
+			select distinct concat(event.Process, ' ', event.Name) as name, event.ID, 2 as tab
+			from event
+			join journal on journal.EventID = event.ID
+			left join party on party.ID = journal.EntityID and journal.EntityType = 'Party'
+			left join product on product.ID = journal.EntityID and journal.EntityType = 'Product'
+			where event.OrganizationID = #{organizationid}
+				and event.Type = 'Accounting'
+				and event.State not in ('Initial', 'Final')
+				and concat(event.Process, ' ', event.Name) like #{wildtype}
+		union all
+			select distinct Name, ID, 3 as tab
+			from relation
+				join party on party.ID = relation.LineID
+					and relation.Link = 'Organization Party'
+					and relation.HeadID = #{organizationid}
+			where State = 'Created'
+				and (Name like #{wildtype} or Emailaddress like #{wildtype})
+		union all
+			select distinct Name, ID, 3 as tab
+			from relation
+				join party on party.ID = relation.HeadID
+					and relation.Link = 'Party Type'
+					and relation.LineID = 'Organization'
+			where State = 'Created'
+				and (Name like #{wildtype} or Emailaddress like #{wildtype})
+		union all
+			select distinct Name, ID, 3 as tab
+			from relation
+				join party on party.ID = relation.HeadID
+					and relation.Link = 'Organization Party'
+					and relation.LineID = #{organizationid}
+			where State = 'Created'
+				and (Name like #{wildtype} or Emailaddress like #{wildtype})
+		union all
+			select distinct Name, ID, 4 as tab
+			from product 
+			where Name like #{wildtype}
+				and State = 'Created'
+				and Type = 'Accommodation'
+		union all
+			select distinct concat('Reservation ', reservation.Name) as name, reservation.ID, 5 as tab
+			from reservation
+			join party on party.ID = reservation.CustomerID
+			join product on product.ID = reservation.ProductID
+			where OrganizationID = #{organizationid}
+				and (reservation.Name like #{wildtype} or party.Name like #{wildtype})
+				and reservation.State not in ('Initial', 'Cancelled', 'Closed', 'Final')
+		union all
+			select distinct concat(Process, ' ', task.Name, ' ', if(party.Name is null, ' ', party.Name)) as name, task.ID, 6 as tab
+			from task
+			left join party on party.ID = task.CustomerID
+			where OrganizationID = #{organizationid}
+				and (task.Name like #{wildtype} or party.Name like #{wildtype})
+				and task.State not in ('Initial', 'Final')
+				and task.Process = 'Marketing'
+		order by name
+		limit 0, 300
+	</select>
+
+</mapper>

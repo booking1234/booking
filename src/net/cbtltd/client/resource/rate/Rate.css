@@ -1,0 +1,12 @@
+.commandBar {
+	width: 240px;
+	margin: 20px 5px;
+}
+
+.notesField {height: 70px;}
+.panelStyle {width: 960px;}
+.rateHeader {
+	width: 940px;
+	padding: 20px;
+	text-align: center;
+}

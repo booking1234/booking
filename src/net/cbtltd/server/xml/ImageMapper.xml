@@ -1,0 +1,259 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="net.cbtltd.server.api.ImageMapper">
+
+	<resultMap id="ResultMap" type="Image">
+		<id column="ID" jdbcType="INTEGER" property="id" />
+		<result column="language" jdbcType="VARCHAR" property="language" />
+		<result column="product_id" jdbcType="INTEGER" property="productId" />
+		<result column="name" jdbcType="VARCHAR" property="name" />
+		<result column="url" jdbcType="VARCHAR" property="url" />
+		<result column="old_name" jdbcType="VARCHAR" property="oldName" />
+		<result column="state" jdbcType="VARCHAR" property="state" />
+		<result column="type" jdbcType="VARCHAR" property="type" />
+		<result column="notes" jdbcType="VARCHAR" property="notes" />
+		<result column="data" jdbcType="LONGVARBINARY" property="data" />
+		<result column="standard" jdbcType="BOOLEAN" property="standard" />
+		<result column="thumbnail" jdbcType="BOOLEAN" property="thumbnail" />
+		<result column="sort" jdbcType="INTEGER" property="sort" />
+		<result column="version" jdbcType="TIMESTAMP" property="version" />
+	</resultMap>
+
+	<sql id="columns">
+		ID, language, product_id, name, url, old_name, state, type, notes, data, standard, thumbnail, sort, version
+	</sql>
+
+	<select id="read" parameterType="Integer" resultMap="ResultMap">
+		select
+		<include refid="columns" />
+		from image
+		where ID = #{id,jdbcType=INTEGER}
+	</select>
+
+	<select id="exists" parameterType="Image" resultMap="ResultMap">
+		select
+		<include refid="columns" />
+		from image
+		where State = 'Created'
+		<if test="name != null">
+			and name = #{name,jdbcType=VARCHAR}
+		</if>
+		<if test="productId != null">
+			and product_id = #{productId,jdbcType=INTEGER}
+		</if>
+		<if test="language != null">
+			and language = #{language,jdbcType=VARCHAR}
+		</if>
+		limit 1
+	</select>
+
+	<select id="readbyexample" parameterType="Image" resultMap="ResultMap">
+		select
+		<include refid="columns" />
+		from image
+		where ID = #{id,jdbcType=INTEGER}
+		and language = #{language,jdbcType=VARCHAR}
+	</select>
+	
+	<select id="readoldproducts" resultMap="ResultMap">
+		select
+		<include refid="columns" />
+		from image
+		where name=old_name
+	</select>
+	
+	<select id="readnewproducts" parameterType="RowBounds" resultMap="ResultMap">
+		select
+		<include refid="columns" />
+		from image
+		where old_name!=name
+		LIMIT #{offset},#{limit}
+	</select>
+	
+	<select id="readimagesbeginswithnull" resultMap="ResultMap">
+		select
+		<include refid="columns" />
+		from image
+		where name like 'null%'
+	</select>
+
+	<delete id="delete" parameterType="String">
+		delete from image
+		where ID = #{id,jdbcType=INTEGER}
+	</delete>
+
+	<delete id="deletebyexample" parameterType="Image">
+		delete from image
+		where name = #{name,jdbcType=VARCHAR}
+		and product_id = #{productId,jdbcType=INTEGER}
+	</delete>
+
+	<insert id="create" parameterType="Image">
+		insert into image (language, name, url, state, type, notes, data, product_id, standard, thumbnail, sort)
+		values (
+			#{language,jdbcType=VARCHAR},
+			#{name,jdbcType=VARCHAR},
+			#{url,jdbcType=VARCHAR},
+			#{state,jdbcType=VARCHAR},
+			#{type,jdbcType=VARCHAR},
+			#{notes,jdbcType=VARCHAR},
+			#{data,jdbcType=LONGVARBINARY},
+			#{productId,jdbcType=INTEGER},
+			#{standard,jdbcType=BOOLEAN},
+			#{thumbnail,jdbcType=BOOLEAN}, 
+			#{sort,jdbcType=INTEGER}
+		)
+	</insert>
+
+	<update id="update" parameterType="Image">
+		update image
+		<set>
+			<if test="name != null">
+				name = #{name,jdbcType=VARCHAR},
+			</if>
+			<if test="state != null">
+				state = #{state,jdbcType=VARCHAR},
+			</if>
+			<if test="type != null">
+				type = #{type,jdbcType=VARCHAR},
+			</if>
+			<if test="notes != null">
+				notes = #{notes,jdbcType=VARCHAR},
+			</if>
+			<if test="data != null">
+				data = #{data,jdbcType=LONGVARBINARY},
+			</if>
+			<if test="sort != null">
+				sort = #{sort,jdbcType=INTEGER},
+			</if>
+			<if test="version != null">
+				version = #{version,jdbcType=TIMESTAMP},
+			</if>
+			<if test="thumbnail != null">
+				thumbnail = #{thumbnail,jdbcType=BOOLEAN},
+			</if>
+			<if test="standard != null">
+				standard = #{standard,jdbcType=BOOLEAN},
+			</if>
+		</set>
+		where ID = #{id,jdbcType=INTEGER}
+		and Language = #{language,jdbcType=VARCHAR}
+	</update>
+
+	<update id="updateByPrimaryKey" parameterType="Image">
+		update image
+		set name = #{name,jdbcType=VARCHAR},
+			state = #{state,jdbcType=VARCHAR},
+			type = #{type,jdbcType=VARCHAR},
+			notes = #{notes,jdbcType=VARCHAR},
+			data = #{data,jdbcType=LONGVARBINARY},
+			version = #{version,jdbcType=TIMESTAMP}
+		where ID = #{id,jdbcType=INTEGER}
+	</update>
+
+	<update id="restore" parameterType="String">
+		update image
+		set State = 'Created'
+		where ID in
+		<foreach item="item" index="index" collection="list" open="(" separator="," close=")">
+			#{item}
+		</foreach>
+	</update>
+	
+	<update id="suspend" parameterType="Image">
+		update image
+		set State = 'Final'
+		where Type = 'Image'
+			and product_id = #{productId,jdbcType=VARCHAR}
+	</update>
+	
+	<select id="productfilenameid" parameterType="String" resultType="NameId">
+		select ID as Name, ID as id
+		from relation 
+			join image on ID = LineID
+			and Link = 'Product File'
+		where HeadID = #{id}
+		order by Name
+	</select>
+
+	<select id="publicfilenameid" parameterType="String" resultType="NameId">
+		select ID as Name, ID as id
+		from image
+		where State = 'Created'
+			and Type = 'PublicFile'
+		and (Name = #{id} or Name = '0')
+		order by Name
+	</select>
+
+	<select id="imagesbyproductid" parameterType="NameId" resultMap="ResultMap">
+		select
+		<include refid="columns" />
+		from image
+		where State = 'Created'
+			and product_id = #{id}
+		order by name
+	</select>
+	
+	<select id="defaultimagebyproductid" parameterType="NameId" resultMap="ResultMap">
+		select
+		<include refid="columns" />
+		from image
+		where State = 'Created'
+			and product_id = #{id}
+		order by sort
+		limit 1
+	</select>
+	
+	<select id="imagesbyproductidsortorder" parameterType="NameIdAction" resultMap="ResultMap">
+		select
+		<include refid="columns" />
+		from image
+		where State = 'Created'
+			and product_id = #{id}
+		order by sort
+		<if test="numrows != null">
+				limit  #{numrows,jdbcType=INTEGER}
+		</if>
+	</select>
+
+	<select id="imagesbyurl" parameterType="NameId" resultType="NameId">
+		select distinct name as ID, notes as name
+		from image
+		where State = 'Created'
+			and url = #{id}
+		order by ID
+	</select>
+
+	<select id="imageidsbynameid" parameterType="NameId" resultType="String">
+		select distinct ID
+		from image
+		where State = 'Created'
+			and product_id = #{id}
+		order by ID
+	</select>
+
+	<select id="imageidsbyurl" parameterType="NameId" resultType="String">
+		select distinct name
+		from image
+		where State = 'Created'
+			and product_id = #{id}
+		order by name
+	</select>
+
+	<select id="lastimage" parameterType="String" resultType="String">
+		select id from image
+		where state = 'Created'
+			and and product_id = #{id}
+		order by id desc
+		limit 1;
+	</select>
+
+
+	<select id="productidsofimages" resultType="String">
+	select distinct product_id
+	from image
+	where State = 'Created'
+	</select>
+	
+	
+</mapper>

@@ -1,0 +1,309 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="net.cbtltd.server.api.PartnerMapper">
+
+	<resultMap id="ResultMap" type="Partner">
+		<id column="ID" jdbcType="INTEGER" property="id" />
+		<result column="OrganizationID" jdbcType="INTEGER" property="organizationid" />
+		<result column="PartyID" jdbcType="INTEGER" property="partyid" />
+		<result column="PartyName" jdbcType="VARCHAR" property="partyname" />
+		<result column="State" jdbcType="VARCHAR" property="state" />
+		<result column="BookEmailAddress" jdbcType="VARCHAR" property="bookemailaddress" />
+		<result column="BookWebAddress" jdbcType="VARCHAR" property="bookwebaddress" />
+		<result column="ApiKey" jdbcType="VARCHAR" property="apikey" />
+		<result column="Currency" jdbcType="VARCHAR" property="currency" />
+		<result column="DateFormat" jdbcType="VARCHAR" property="dateformat" />
+		<result column="WebAddress" jdbcType="VARCHAR" property="webaddress" />
+		<result column="AlertCron" jdbcType="VARCHAR" property="alertcron" />
+		<result column="PriceCron" jdbcType="VARCHAR" property="pricecron" />
+		<result column="ProductCron" jdbcType="VARCHAR" property="productcron" />
+		<result column="ScheduleCron" jdbcType="VARCHAR" property="schedulecron" />
+		<result column="SpecialCron" jdbcType="VARCHAR" property="specialcron" />
+		<result column="AlertWait" jdbcType="VARCHAR" property="alertwait" />
+		<result column="PriceWait" jdbcType="VARCHAR" property="pricewait" />
+		<result column="ProductWait" jdbcType="VARCHAR" property="productwait" />
+		<result column="ScheduleWait" jdbcType="VARCHAR" property="schedulewait" />
+		<result column="SpecialWait" jdbcType="VARCHAR" property="specialwait" />
+		<result column="Abbrevation" jdbcType="VARCHAR" property="abbrevation" />
+		<result column="Commission" jdbcType="DOUBLE" property="commission" />
+		<result column="Discount" jdbcType="DOUBLE" property="discount" />
+		<result column="Subscription" jdbcType="DOUBLE" property="subscription" />
+		<result column="Transaction" jdbcType="DOUBLE" property="transaction" />
+		<result column="BookOffline" jdbcType="BIT" property="bookoffline" />
+		<result column="RegisterEmptyProperties" jdbcType="BOOLEAN" property="registeremptyproperties" />
+		<result column="SeparatePMAccounts" jdbcType="BOOLEAN" property="separatepmaccounts" />
+	</resultMap>
+
+	<sql id="columns">
+		ID, OrganizationID, PartyID, PartyName, State, BookEmailAddress, BookWebAddress, ApiKey, Currency, DateFormat, WebAddress, 
+		AlertCron, PriceCron, ProductCron, ScheduleCron, SpecialCron, AlertWait, PriceWait, ProductWait, ScheduleWait, SpecialWait, 
+		Commission, Discount, Subscription, Transaction, BookOffline, Abbrevation, RegisterEmptyProperties, SeparatePMAccounts
+	</sql>
+
+	<select id="read" parameterType="String" resultMap="ResultMap">
+		select
+		<include refid="columns" />
+		from partner
+		where ID = #{id,jdbcType=INTEGER}
+	</select>
+
+	<select id="exists" parameterType="String" resultMap="ResultMap">
+		select
+		<include refid="columns" />
+		from partner
+		where PartyID = #{partyid,jdbcType=INTEGER}
+	</select>
+
+	<delete id="delete" parameterType="String">
+		delete from partner
+		where ID =
+		#{id,jdbcType=INTEGER}
+	</delete>
+
+	<insert id="create" parameterType="Partner" useGeneratedKeys="true" keyProperty="id">
+		insert into partner (
+		OrganizationID, PartyID, PartyName, State, BookEmailAddress, BookWebAddress, ApiKey, Currency, DateFormat, WebAddress, 
+		AlertCron, PriceCron, ProductCron, ScheduleCron, SpecialCron, AlertWait, PriceWait, ProductWait, ScheduleWait, SpecialWait, 
+		Commission, Discount,  Subscription, Transaction, BookOffline, RegisterEmptyProperties, SeparatePMAccounts
+		)
+		values (
+			#{organizationid,jdbcType=INTEGER}, 
+			#{partyid,jdbcType=INTEGER},
+			#{partyname,jdbcType=VARCHAR}, 
+			#{state,jdbcType=VARCHAR},
+			#{bookemailaddress,jdbcType=VARCHAR},
+			#{bookwebaddress,jdbcType=VARCHAR},
+			#{apikey,jdbcType=VARCHAR},
+			#{currency,jdbcType=VARCHAR},
+			#{dateformat,jdbcType=VARCHAR},
+			#{webaddress,jdbcType=VARCHAR},
+			#{alertcron,jdbcType=VARCHAR},
+			#{pricecron,jdbcType=VARCHAR},
+			#{productcron,jdbcType=VARCHAR},
+			#{schedulecron,jdbcType=VARCHAR},
+			#{specialcron,jdbcType=VARCHAR},
+			#{alertwait,jdbcType=VARCHAR},
+			#{pricewait,jdbcType=VARCHAR},
+			#{productwait,jdbcType=VARCHAR},
+			#{schedulewait,jdbcType=VARCHAR},
+			#{specialwait,jdbcType=VARCHAR},
+			#{commission,jdbcType=DOUBLE},
+			#{discount,jdbcType=DOUBLE},
+			#{subscription,jdbcType=DOUBLE},
+			#{transaction,jdbcType=DOUBLE},
+			#{bookoffline,jdbcType=BIT},
+			#{registeremptyproperties,jdbcType=BOOLEAN},
+			#{separatepmaccounts,jdbcType=BOOLEAN}
+		)
+	</insert>
+
+	<update id="update" parameterType="Partner">
+		update partner
+		<set>
+			<if test="organizationid != null">
+				OrganizationID = #{organizationid,jdbcType=INTEGER},
+			</if>
+			<if test="partyid != null">
+				PartyID = #{partyid,jdbcType=INTEGER},
+			</if>
+			<if test="partyname != null">
+				PartyName = #{partyname,jdbcType=VARCHAR},
+			</if>
+			<if test="state != null">
+				State = #{state,jdbcType=VARCHAR},
+			</if>
+			<if test="bookemailaddress != null">
+				BookEmailAddress = #{bookemailaddress,jdbcType=VARCHAR},
+			</if>
+			<if test="bookwebaddress != null">
+				BookWebAddress = #{bookwebaddress,jdbcType=VARCHAR},
+			</if>
+			<if test="apikey != null">
+				ApiKey = #{apikey,jdbcType=VARCHAR},
+			</if>
+			<if test="currency != null">
+				Currency = #{currency,jdbcType=VARCHAR},
+			</if>
+			<if test="dateformat != null">
+				DateFormat = #{dateformat,jdbcType=VARCHAR},
+			</if>
+			<if test="webaddress != null">
+				WebAddress = #{webaddress,jdbcType=VARCHAR},
+			</if>
+			<if test="alertcron != null">
+				AlertCron = #{alertcron,jdbcType=VARCHAR},
+			</if>
+			<if test="pricecron != null">
+				PriceCron = #{pricecron,jdbcType=VARCHAR},
+			</if>
+			<if test="productcron != null">
+				ProductCron = #{productcron,jdbcType=VARCHAR},
+			</if>
+			<if test="schedulecron != null">
+				ScheduleCron = #{schedulecron,jdbcType=VARCHAR},
+			</if>
+			<if test="specialcron != null">
+				SpecialCron = #{specialcron,jdbcType=VARCHAR},
+			</if>
+			<if test="alertwait != null">
+				AlertWait = #{alertwait,jdbcType=VARCHAR},
+			</if>
+			<if test="pricewait != null">
+				PriceWait = #{pricewait,jdbcType=VARCHAR},
+			</if>
+			<if test="productwait != null">
+				ProductWait = #{productwait,jdbcType=VARCHAR},
+			</if>
+			<if test="schedulewait != null">
+				ScheduleWait = #{schedulewait,jdbcType=VARCHAR},
+			</if>
+			<if test="specialwait != null">
+				SpecialWait = #{specialwait,jdbcType=VARCHAR},
+			</if>
+			<if test="commission != null">
+				Commission = #{commission,jdbcType=DOUBLE},
+			</if>
+			<if test="discount != null">
+				Discount = #{discount,jdbcType=DOUBLE},
+			</if>
+			<if test="subscription != null">
+				Subscription = #{subscription,jdbcType=DOUBLE},
+			</if>
+			<if test="transaction != null">
+				Transaction = #{transaction,jdbcType=DOUBLE},
+			</if>
+			<if test="bookoffline != null">
+				BookOffline = #{bookoffline,jdbcType=BIT},
+			</if>
+			<if test="registeremptyproperties != null">
+				RegisterEmptyProperties = #{registeremptyproperties,jdbcType=BOOLEAN},
+			</if>
+			<if test="separatepmaccounts != null">
+				SeparatePMAccounts = #{separatepmaccounts,jdbcType=BOOLEAN}
+			</if>
+		</set>
+		where ID = #{id,jdbcType=INTEGER}
+	</update>
+
+	<update id="updateByPrimaryKey" parameterType="Partner">
+		update partner
+		set
+			OrganizationID = #{organizationid,jdbcType=INTEGER},
+			PartyID = #{partyid,jdbcType=INTEGER},
+			PartyName = #{partyname,jdbcType=VARCHAR},
+			State = #{state,jdbcType=VARCHAR},
+			BookEmailAddress = #{bookemailaddress,jdbcType=VARCHAR},
+			BookWebAddress = #{bookwebaddress,jdbcType=VARCHAR},
+			ApiKey = #{apikey,jdbcType=VARCHAR},
+			Currency = #{currency,jdbcType=VARCHAR},
+			DateFormat = #{dateformat,jdbcType=VARCHAR},
+			WebAddress = #{webaddress,jdbcType=VARCHAR},
+			AlertCron = #{alertcron,jdbcType=VARCHAR},
+			PriceCron = #{pricecron,jdbcType=VARCHAR},
+			ProductCron = #{productcron,jdbcType=VARCHAR},
+			ScheduleCron = #{schedulecron,jdbcType=VARCHAR},
+			SpecialCron = #{specialcron,jdbcType=VARCHAR},
+			AlertWait = #{alertwait,jdbcType=VARCHAR},
+			PriceWait = #{pricewait,jdbcType=VARCHAR},
+			ProductWait = #{productwait,jdbcType=VARCHAR},
+			ScheduleWait = #{schedulewait,jdbcType=VARCHAR},
+			SpecialWait = #{specialwait,jdbcType=VARCHAR},
+			Commission = #{commission,jdbcType=DOUBLE},
+			Discount = #{discount,jdbcType=DOUBLE},
+			Subscription = #{subscription,jdbcType=DOUBLE},
+			Transaction = #{transaction,jdbcType=DOUBLE},
+			BookOffline = #{bookoffline,jdbcType=BIT},
+			RegisterEmptyProperties = #{registeremptyproperties,jdbcType=BOOLEAN},
+			SeparatePMAccounts = #{separatepmaccounts,jdbcType=BOOLEAN}			
+		where ID = #{id,jdbcType=INTEGER}
+	</update>
+
+	<sql id="tablewhere">
+		where ID = ID
+		<if test="organizationid != null">
+			and OrganizationID = #{organizationid,jdbcType=INTEGER}
+		</if>
+		<if test="state == null">
+			and State not in ('Initial', 'Final')
+		</if>
+		<if test="state != null">
+			and State = #{state,jdbcType=VARCHAR}
+		</if>
+	</sql>
+
+	<select id="count" parameterType="PartnerTable" resultType="Integer">
+		select count(*)
+		from partner
+		<include refid="tablewhere" />
+	</select>
+
+	<select id="list" parameterType="PartnerTable" resultMap="ResultMap">
+		select
+		<include refid="columns" />
+		from partner
+		<include refid="tablewhere" />
+		order by ${orderby}
+		limit #{startrow}, #{numrows}
+	</select>
+	<!-- remove State Created -->
+	<select id="partyIDFromEmail" parameterType="String" resultType="String">
+		select PartyID
+		from partner
+		where BookEmailAddress = #{email} limit 1; 
+	</select>
+	
+	<select id="isSupportCreditCard" parameterType="String" resultType="Boolean">
+		select SupportsCreditCard
+		from partner
+		where State = 'Created'
+			and PartyID = #{id} limit 1; 
+	</select>
+
+	<select id="getPartnerPartyIDByAbbreviation" resultType="String">
+		select childPartner.PartyID 
+		from partner as childPartner
+		join partner as mainPartner ON childPartner.organizationID=mainPartner.partyID
+		where mainPartner.Abbrevation in
+		<foreach item="item" index="index" collection="array" open="("
+			separator="," close=")">
+			#{item}
+		</foreach>
+	</select>
+	
+	<!-- 
+	<select id="getPartnerPartyIDByAbbreviation" resultType="String">
+		select partner.PartyID 
+		from partner
+		where partner.Abbrevation in
+		<foreach item="item" index="index" collection="array" open="("
+			separator="," close=")">
+			#{item}
+		</foreach>
+	</select>
+	 -->
+	
+	
+	<select id="listPropertyManagementSoftware"  resultMap="ResultMap">
+		select
+		<include refid="columns" />
+		from partner
+		where partner.PartyID = partner.OrganizationID 
+	</select>
+	
+	<select id="getAllChildPartnerPartyIDByAbbreviation" resultType="String">
+		select childPartner.PartyID 
+		from partner as childPartner
+		join partner as mainPartner ON childPartner.organizationID=mainPartner.partyID
+		where mainPartner.Abbrevation = #{abbrevation} AND childPartner.organizationID != childPartner.partyID
+	</select>
+	
+	<select id="getPartnerPartyIDByApiKey" resultType="NameId">
+		select distinct partner.PartyID as name, ApiKey as id 
+		from partner
+		where partner.ApiKey in
+		<foreach item="item" index="index" collection="array" open="("
+			separator="," close=")">
+			#{item}
+		</foreach>
+	</select>
+</mapper>

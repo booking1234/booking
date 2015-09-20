@@ -1,0 +1,387 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="net.cbtltd.server.api.LeaseMapper">
+
+	<resultMap id="ResultMap" type="Lease">
+		<id column="ID" jdbcType="INTEGER" property="id" />
+		<result column="ParentID" jdbcType="INTEGER" property="parentid" />
+		<result column="OrganizationID" jdbcType="INTEGER" property="organizationid" />
+		<result column="ActorID" jdbcType="INTEGER" property="actorid" />
+		<result column="AgentID" jdbcType="INTEGER" property="agentid" />
+		<result column="CustomerID" jdbcType="INTEGER" property="customerid" />
+		<result column="ProductID" jdbcType="INTEGER" property="productid" />
+		<result column="FinanceID" jdbcType="INTEGER" property="financeid" />
+		<result column="Name" jdbcType="VARCHAR" property="name" />
+		<result column="State" jdbcType="VARCHAR" property="state" />
+		<result column="Market" jdbcType="VARCHAR" property="market" />
+		<result column="Outcome" jdbcType="VARCHAR" property="outcome" />
+		<result column="Unit" jdbcType="VARCHAR" property="unit" />
+		<result column="Date" jdbcType="DATE" property="date" />
+		<result column="FromDate" jdbcType="DATE" property="fromdate" />
+		<result column="ToDate" jdbcType="DATE" property="todate" />
+		<result column="DueDate" jdbcType="DATE" property="duedate" />
+		<result column="DoneDate" jdbcType="DATE" property="donedate" />
+		<result column="Deposit" jdbcType="DOUBLE" property="deposit" />
+		<result column="Price" jdbcType="DOUBLE" property="price" />
+		<result column="Currency" jdbcType="VARCHAR" property="currency" />
+		<result column="Notes" jdbcType="VARCHAR" property="notes" />
+		<result column="version" jdbcType="TIMESTAMP" property="version" />
+	</resultMap>
+
+	<sql id="columns">
+		ID, ParentID, OrganizationID, AgentID, CustomerID, ActorID, ProductID, FinanceID,	Name, State, Market, Outcome, Unit,
+		Date, FromDate, ToDate, DueDate, DoneDate, Deposit, Price, Currency, Notes, version
+	</sql>
+
+	<select id="read" parameterType="String" resultMap="ResultMap">
+		select
+		<include refid="columns" />
+		from lease
+		where ID = #{id,jdbcType=INTEGER}
+	</select>
+
+	<select id="exists" parameterType="Lease" resultMap="ResultMap">
+		select
+		<include refid="columns" />
+		from lease
+		where ProductID = #{productid,jdbcType=INTEGER}
+			and FromDate = #{fromdate}
+			and ToDate = #{todate}
+		limit 1
+	</select>
+
+	<select id="listbycustomerid" parameterType="Lease" resultType="Lease">
+		select
+		lease.Name, lease.FromDate, lease.ToDate, lease.Price, lease.Currency, product.Name as productname
+		from lease
+			join product
+		where lease.CustomerID = #{customerid,jdbcType=INTEGER}
+			and lease.State not in ('Initial', 'Cancelled', 'Closed', 'Final')
+			and (lease.OrganizationID = #{organizationid,jdbcType=INTEGER}
+			or lease.AgentID = #{organizationid,jdbcType=INTEGER})
+			and product.ID = lease.ProductID
+		order by lease.FromDate desc
+		limit 10
+	</select>
+	
+	<select id="readbyname" parameterType="Lease" resultMap="ResultMap">
+		select
+		<include refid="columns" />
+		from lease
+		where Name = #{name,jdbcType=VARCHAR}
+			and (OrganizationID = #{organizationid,jdbcType=INTEGER} 
+				or AgentID = #{organizationid,jdbcType=INTEGER})
+			and State not in ('Initial', 'Cancelled', 'Final')
+		limit 0, 1
+	</select>
+
+	<select id="readbyorganization" parameterType="Lease" resultMap="ResultMap">
+		select
+		<include refid="columns" />
+		from lease
+		where Name = #{name,jdbcType=VARCHAR}
+			and OrganizationID = #{organizationid,jdbcType=INTEGER}
+			and State not in ('Initial', 'Cancelled', 'Final')
+		limit 0, 1
+	</select>
+
+	<delete id="delete" parameterType="String">
+		delete from lease
+		where ID = #{id,jdbcType=INTEGER}
+	</delete>
+
+	<delete id="deletebyexample" parameterType="Lease">
+		delete from lease
+		where ProductID = #{productid}
+			and FromDate  <![CDATA[ >= ]]>  #{fromdate}
+			and ToDate <![CDATA[ <= ]]>  #{todate}
+			<if test="state != null">
+			and State = #{state,jdbcType=VARCHAR}
+			</if>
+			<if test="name != null">
+			and Name = #{name,jdbcType=VARCHAR}
+			</if>
+			<if test="name == null">
+			and Name is null
+			</if>
+	</delete>
+
+	<insert id="create" parameterType="Lease" useGeneratedKeys="true" keyProperty="id">
+		insert into lease (
+			ParentID,
+			OrganizationID, 
+			AgentID, 
+			CustomerID, 
+			ActorID, 
+			ProductID, 
+			FinanceID,
+			Name, 
+			State,
+			Market,
+			Outcome,
+			Unit, 
+			Date, 
+			FromDate, 
+			ToDate, 
+			DueDate, 
+			DoneDate, 
+			Deposit, 
+			Price, 
+			Currency,
+			Notes,
+			version
+		)
+		values (
+			#{parentid,jdbcType=INTEGER}, 
+			#{organizationid,jdbcType=INTEGER},
+			#{agentid,jdbcType=INTEGER},
+			#{customerid,jdbcType=INTEGER}, 
+			#{actorid,jdbcType=INTEGER},
+			#{productid,jdbcType=INTEGER},
+			#{financeid,jdbcType=INTEGER},
+			#{name,jdbcType=VARCHAR}, 
+			#{state,jdbcType=VARCHAR},
+			#{market,jdbcType=VARCHAR},
+			#{outcome,jdbcType=VARCHAR},
+			#{unit,jdbcType=VARCHAR}, 
+			#{date,jdbcType=DATE}, 
+			#{fromdate,jdbcType=DATE},
+			#{todate,jdbcType=DATE},
+			#{duedate,jdbcType=DATE}, 
+			#{donedate,jdbcType=DATE}, 
+			#{deposit,jdbcType=DOUBLE},
+			#{price,jdbcType=DOUBLE}, 
+			#{currency,jdbcType=VARCHAR},
+			#{notes,jdbcType=VARCHAR},
+			#{version,jdbcType=TIMESTAMP}
+		)
+	</insert>
+
+	<update id="update" parameterType="Lease">
+		update lease
+		<set>
+			<if test="parentid != null">
+				ParentID = #{parentid,jdbcType=INTEGER},
+			</if>
+			<if test="organizationid != null">
+				OrganizationID = #{organizationid,jdbcType=INTEGER},
+			</if>
+			<if test="agentid != null">
+				AgentID = #{agentid,jdbcType=INTEGER},
+			</if>
+			<if test="customerid != null">
+				CustomerID = #{customerid,jdbcType=INTEGER},
+			</if>
+			<if test="actorid != null">
+				ActorID = #{actorid,jdbcType=INTEGER},
+			</if>
+			<if test="productid != null">
+				ProductID = #{productid,jdbcType=INTEGER},
+			</if>
+			<if test="financeid != null">
+				FinanceID = #{financeid,jdbcType=INTEGER},
+			</if>
+			<if test="name != null">
+				Name = #{name,jdbcType=VARCHAR},
+			</if>
+			<if test="state != null">
+				State = #{state,jdbcType=VARCHAR},
+			</if>
+			<if test="market != null">
+				Market = #{market,jdbcType=VARCHAR},
+			</if>
+			<if test="outcome != null">
+				Outcome = #{outcome,jdbcType=VARCHAR},
+			</if>
+			<if test="unit != null">
+				Unit = #{unit,jdbcType=VARCHAR},
+			</if>
+			<if test="date != null">
+				Date = #{date,jdbcType=DATE},
+			</if>
+			<if test="fromdate != null">
+				FromDate = #{fromdate,jdbcType=DATE},
+			</if>
+			<if test="todate != null">
+				ToDate = #{todate,jdbcType=DATE},
+			</if>
+			<if test="duedate != null">
+				DueDate = #{duedate,jdbcType=DATE},
+			</if>
+			<if test="donedate != null">
+				DoneDate = #{donedate,jdbcType=DATE},
+			</if>
+			<if test="deposit != null">
+				Deposit = #{deposit,jdbcType=DOUBLE},
+			</if>
+			<if test="price != null">
+				Price = #{price,jdbcType=DOUBLE},
+			</if>
+			<if test="currency != null">
+				Currency = #{currency,jdbcType=VARCHAR},
+			</if>
+			<if test="notes != null">
+				Notes = #{notes,jdbcType=VARCHAR},
+			</if>
+			<if test="version != null">
+				version = #{version,jdbcType=TIMESTAMP},
+			</if>
+		</set>
+		where ID = #{id,jdbcType=INTEGER}
+	</update>
+
+	<update id="updateByPrimaryKey" parameterType="Lease">
+		update lease
+		set 
+			ParentID = #{parentid,jdbcType=INTEGER},
+			OrganizationID = #{organizationid,jdbcType=INTEGER},
+			AgentID = #{agentid,jdbcType=INTEGER},
+			CustomerID = #{customerid,jdbcType=INTEGER},
+			ActorID = #{actorid,jdbcType=INTEGER},
+			ProductID = #{productid,jdbcType=INTEGER},
+			FinanceID = #{financeid,jdbcType=INTEGER},
+			Name = #{name,jdbcType=VARCHAR},
+			State = #{state,jdbcType=VARCHAR},
+			Market = #{market,jdbcType=VARCHAR},
+			Outcome = #{outcome,jdbcType=VARCHAR},
+			Unit = #{unit,jdbcType=VARCHAR},
+			Date = #{date,jdbcType=DATE},
+			FromDate = #{fromdate,jdbcType=DATE},
+			ToDate = #{todate,jdbcType=DATE},
+			DueDate = #{duedate,jdbcType=DATE},
+			DoneDate = #{donedate,jdbcType=DATE},
+			Deposit = #{deposit,jdbcType=DOUBLE},
+			Price = #{price,jdbcType=DOUBLE},
+			Currency = #{currency,jdbcType=VARCHAR},
+			Notes = #{notes,jdbcType=VARCHAR},
+			version = #{version,jdbcType=TIMESTAMP}
+		where ID = #{id,jdbcType=INTEGER}
+	</update>
+
+	<select id="nameidbyid" parameterType="NameIdAction" resultType="NameId">
+		select distinct Name, ID
+		from lease
+		where ID = #{id}
+	</select>
+
+	<select id="nameidbyname" parameterType="NameIdAction" resultType="NameId">
+		select distinct Name, ID
+		from lease
+		where Name <![CDATA[ >= ]]> #{name}
+		<if test="organizationid != null">
+			and OrganizationID = #{organizationid}
+		</if>
+		<if test="state == null">
+			and State not in ('Initial', 'Final')
+		</if>
+		<if test="state != null">
+			and State in (${state})
+		</if>
+		order by Name
+		limit 0, #{numrows}
+	</select>
+
+	<select id="actornameid" parameterType="NameIdAction" resultType="NameId">
+		select distinct party.Name, party.ID
+		from lease
+		join party on party.ID = lease.ActorID
+		where party.Name <![CDATA[ >= ]]> #{name}
+		<if test="organizationid != null">
+			and lease.OrganizationID = #{organizationid}
+		</if>
+		<if test="state == null">
+			and lease.State not in ('Initial', 'Final')
+		</if>
+		<if test="state != null">
+			and State in (${state})
+		</if>
+		order by party.Name
+		limit 0, #{numrows}
+	</select>
+
+	<select id="productsatposition" parameterType="LookBook" resultType="String">
+		select distinct product.ID
+		from product
+		where product.State = 'Created'
+			and product.Type = 'Accommodation'
+			and Latitude <![CDATA[ <= ]]> #{nelatitude}
+			and Latitude <![CDATA[ >= ]]> #{swlatitude}
+			and Longitude <![CDATA[ <= ]]> #{nelongitude}
+			and Longitude <![CDATA[ >= ]]> #{swlongitude}
+			<if test="organizationid != null">
+			and SupplierID = #{organizationid}
+			</if>
+			<if test="exactperson">
+			and product.Person = #{count}
+			</if>
+			<if test="exactroom">
+			and product.Room = #{count}
+			</if>
+			<if test="minimumperson">
+			and product.Person <![CDATA[ >= ]]> #{count}
+			</if>
+			<if test="minimumroom">
+			and product.Room <![CDATA[ >= ]]> #{count}
+			</if>
+	</select>
+
+	<select id="productswithattributes" parameterType="Available" resultType="String">
+		select distinct HeadID
+		from relation
+		where Link = 'Product Attribute'
+			and LineID in (${attributelist})
+			and HeadID in (${productlist})
+		group by HeadID having count(HeadID) >= #{attributecount}
+	</select>
+
+	<sql id="fromatposition">
+		from product
+		where product.State = 'Created'
+			and product.Type = 'Rental'
+			<if test="organizationid != null">
+			and product.SupplierID = #{organizationid}
+			</if>
+			<if test="nelatitude != null">
+			and product.Latitude <![CDATA[ <= ]]> #{nelatitude}
+			</if>
+			<if test="swlatitude != null">
+			and product.Latitude <![CDATA[ >= ]]> #{swlatitude}
+			</if>
+			<if test="nelongitude != null">
+			and product.Longitude <![CDATA[ <= ]]> #{nelongitude}
+			</if>
+			<if test="swlongitude != null">
+			and product.Longitude <![CDATA[ >= ]]> #{swlongitude}
+			</if>
+			<if test="exactperson">
+			and product.Person = #{count}
+			</if>
+			<if test="exactroom">
+			and product.Room = #{count}
+			</if>
+			<if test="minimumperson">
+			and product.Person <![CDATA[ >= ]]> #{count}
+			</if>
+			<if test="minimumroom">
+			and product.Room <![CDATA[ >= ]]> #{count}
+			</if>
+			<if test="rating != null">
+			and Rating <![CDATA[ >= ]]> #{rating}
+			</if>
+	</sql>
+
+	<select id="countatposition" parameterType="Available" resultType="Integer">
+		select count(distinct product.ID)
+		<include refid="fromatposition" />
+	</select>
+	
+	<select id="availableatposition" parameterType="Available" resultType="String">
+		select distinct product.ID
+		<include refid="fromatposition" />
+		order by product.Name
+		limit #{startrow}, #{numrows}
+	</select>
+	
+</mapper>
+
+

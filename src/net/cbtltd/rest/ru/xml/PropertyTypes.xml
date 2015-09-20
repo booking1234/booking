@@ -1,0 +1,12 @@
+<?xml version="1.0" encoding="UTF-8"?>
+	<PropertyTypes>
+		<PropertyType PropertyTypeID="1">Studio</PropertyType>
+		<PropertyType PropertyTypeID="2">One Bedroom</PropertyType>
+		<PropertyType PropertyTypeID="3">Two Bedroom</PropertyType>
+		<PropertyType PropertyTypeID="4">Three Bedroom</PropertyType>
+		<PropertyType PropertyTypeID="11">Five Bedroom</PropertyType>
+		<PropertyType PropertyTypeID="12">Four Bedroom</PropertyType>
+		<PropertyType PropertyTypeID="26">Six Bedroom</PropertyType>
+		<PropertyType PropertyTypeID="27">Seven Bedroom</PropertyType>
+		<PropertyType PropertyTypeID="28">Eight Bedroom</PropertyType>
+	</PropertyTypes>

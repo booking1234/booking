@@ -1,0 +1,84 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="net.cbtltd.server.api.PaymentMethodMapper">
+	
+	<resultMap id="PaymentMethodResultMap" type="PaymentMethod">
+		<id column="id" jdbcType="INTEGER" property="id" />
+		<result column="pmid" jdbcType="INTEGER" property="pmID" />
+		<result column="type" jdbcType="VARCHAR" property="type" />		
+		<result column="payment_info" jdbcType="VARCHAR" property="paymentInfo" />	
+		<result column="entry_date_time" jdbcType="DATE" property="entryDate" />
+		<result column="amount" jdbcType="FLOAT" property="amount"/>
+		<result column="verified_date" jdbcType="DATE" property="verifiedDate"/>
+	</resultMap>
+	
+	<sql id="columns">
+		id, pmid, type, payment_info, entry_date_time, amount, verified_date
+	</sql>
+	
+	<sql id="columns_to_create">
+		pmid, type, payment_info, entry_date_time, amount, verified_date
+	</sql>
+	
+	<insert id="create" parameterType="PaymentMethod" useGeneratedKeys="true" keyProperty="id">
+		insert into payment_method (<include refid="columns_to_create" />)
+		values (#{pmID,jdbcType=INTEGER}, 
+				#{type,jdbcType=VARCHAR}, 
+				#{paymentInfo,jdbcType=VARCHAR},
+				#{entryDate,jdbcType=DATE},
+				#{amount,jdbcType=FLOAT},
+				#{verifiedDate,jdbcType=DATE}) 				
+	</insert>
+	
+	<select id="list" resultMap="PaymentMethodResultMap">
+		select
+		<include refid="columns" />
+		from payment_method
+	</select>
+	
+	<select id="read_by_pm" parameterType="Integer" resultMap="PaymentMethodResultMap">
+		select
+		<include refid="columns" />
+		from payment_method
+		where pmid = #{id,jdbcType=INTEGER}
+	</select>
+	
+	<select id="read" parameterType="Integer" resultMap="PaymentMethodResultMap">
+		select
+		<include refid="columns" />
+		from payment_method
+		where id = #{id,jdbcType=INTEGER}
+	</select>
+	
+	<update id="update" parameterType="PaymentMethod">
+		update payment_method
+		<set>
+			<if test="pmID != null">
+				pmid = #{pmID,jdbcType=INTEGER},
+			</if>			
+			<if test="type != null">
+				type = #{type,jdbcType=VARCHAR},
+			</if>			
+			<if test="paymentInfo != null">
+				payment_info = #{paymentInfo,jdbcType=VARCHAR},
+			</if>						
+			<if test="entryDate != null">
+				entry_date_time = #{entryDate,jdbcType=DATE},
+			</if>
+			<if test="amount != null">
+				amount = #{amount,jdbcType=FLOAT},
+			</if>
+			<if test="verifiedDate != null">
+				verified_date = #{verifiedDate,jdbcType=DATE}
+			</if>			
+		</set>
+		where ID = #{id,jdbcType=INTEGER}
+	</update>	
+	
+	<delete id="delete" parameterType="int">
+		delete from payment_method
+		where ID = #{id,jdbcType=INTEGER}
+	</delete>
+	
+</mapper>
+	

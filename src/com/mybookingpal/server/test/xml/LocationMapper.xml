@@ -1,0 +1,50 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="com.mybookingpal.server.test.mapper.LocationMapper">
+
+	<cache readOnly="true"/>
+
+	<resultMap id="ResultMap" type="Location">
+		<id column="ID" jdbcType="INTEGER" property="id" />
+		<result column="Code" jdbcType="VARCHAR" property="code" />
+		<result column="Name" jdbcType="VARCHAR" property="name" />
+		<result column="GName" jdbcType="VARCHAR" property="gname" />
+		<result column="State" jdbcType="VARCHAR" property="state" />
+		<result column="Country" jdbcType="VARCHAR" property="country" />
+		<result column="Region" jdbcType="VARCHAR" property="region" />
+		<result column="AdminArea_lvl_1" jdbcType="VARCHAR" property="adminarea_lvl_1" />
+		<result column="AdminArea_lvl_2" jdbcType="VARCHAR" property="adminarea_lvl_2" />
+		<result column="IATA" jdbcType="VARCHAR" property="iata" />
+		<result column="Latitude" jdbcType="DOUBLE" property="latitude" />
+		<result column="Longitude" jdbcType="DOUBLE" property="longitude" />
+		<result column="Altitude" jdbcType="DOUBLE" property="altitude" />
+		<result column="Notes" jdbcType="VARCHAR" property="notes" />
+		<result column="CodeInterhome" jdbcType="VARCHAR" property="codeinterhome" />
+		<result column="CodeRentalsUnited" jdbcType="VARCHAR" property="coderentalsunited" />
+		<result column="LocationType" jdbcType="VARCHAR" property="locationtype" />
+		<result column="ParentID" jdbcType="INTEGER" property="parentid" />
+	</resultMap>
+
+	<sql id="columns">
+		ID, Code, Name, GName, State, Country, Region, AdminArea_lvl_1, AdminArea_lvl_2, IATA, Latitude, Longitude, Altitude, Notes, CodeInterhome, CodeRentalsUnited, LocationType, ParentID
+	</sql>
+	
+	<select id="getLocations" parameterType="String" resultType="String">
+		select distinct(l.Name)
+		from location as l inner join product as p
+		on l.id=p.locationid 
+		where l.Name like #{name,jdbcType=VARCHAR} 
+			and l.State='Created' 
+			and p.State='Created'
+		order by l.name
+	</select>
+	
+	<select id="getLocationIdbyLocationName" parameterType="String" resultType="String">
+		select id from location 
+		where activeproducts = (select max(activeproducts) as maximum from location 
+			where name = #{name,jdbcType=VARCHAR}
+		 		and state = 'created')
+		 	and name = #{name,jdbcType=VARCHAR}
+		 	and state = 'created'
+	</select>
+</mapper>

@@ -1,0 +1,186 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="net.cbtltd.server.api.YieldMapper">
+
+	<resultMap id="ResultMap" type="Yield">
+		<id column="ID" jdbcType="INTEGER" property="id" />
+		<result column="EntityType" jdbcType="VARCHAR" property="entitytype" />
+		<result column="EntityID" jdbcType="INTEGER" property="entityid" />
+		<result column="Name" jdbcType="VARCHAR" property="name" />
+		<result column="State" jdbcType="VARCHAR" property="state" />
+		<result column="FromDate" jdbcType="DATE" property="fromdate" />
+		<result column="ToDate" jdbcType="DATE" property="todate" />
+		<result column="Param" jdbcType="INTEGER" property="param" />
+		<result column="Amount" jdbcType="DOUBLE" property="amount" />
+		<result column="Modifier" jdbcType="VARCHAR" property="modifier" />
+		<result column="version" jdbcType="TIMESTAMP" property="version" />
+	</resultMap>
+
+	<sql id="columns">
+		ID, EntityType, EntityID, Name, State, FromDate, ToDate, Param, Amount,	Modifier, version
+	</sql>
+
+	<select id="read" parameterType="String" resultMap="ResultMap">
+		select
+		<include refid="columns" />
+		from yield
+		where ID = #{id,jdbcType=INTEGER}
+	</select>
+
+	<select id="exists" parameterType="Yield" resultMap="ResultMap">
+		select
+		<include refid="columns" />
+		from yield
+		where EntityType = #{entitytype,jdbcType=VARCHAR}
+			and EntityID = #{entityid,jdbcType=INTEGER}
+			and FromDate = #{fromdate,jdbcType=DATE}
+			and ToDate = #{todate,jdbcType=DATE}
+			and Name = #{name,jdbcType=VARCHAR}
+			and Param = #{param,jdbcType=INTEGER}
+			and Modifier = #{modifier,jdbcType=VARCHAR}
+		limit 1
+	</select>
+
+	<select id="maximumgapfillers" parameterType="Void" resultMap="ResultMap">
+		select
+		<include refid="columns" />
+		from yield
+		where EntityType = 'Product'
+			and Name = 'Maximum Gap Filler'
+	</select>
+
+	<delete id="delete" parameterType="String">
+		delete from yield
+		where ID = #{id,jdbcType=INTEGER}
+	</delete>
+
+	<insert id="copy" parameterType="NameId" useGeneratedKeys="true" keyProperty="id">
+		insert into yield (EntityType, EntityID, Name, State, Param, Amount, Modifier, FromDate, ToDate)
+		select EntityType, #{id}, Name, State, Param, Amount, Modifier, FromDate, ToDate
+		from yield
+		where EntityID = #{name,jdbcType=INTEGER}
+	</insert>
+
+	<insert id="create" parameterType="Yield" useGeneratedKeys="true" keyProperty="id" >
+		insert into yield (
+			EntityType, EntityID, Name, State, FromDate, ToDate, Param, Amount, Modifier, version
+		)
+		values (
+			#{entitytype,jdbcType=VARCHAR}, 
+			#{entityid,jdbcType=INTEGER}, 
+			#{name,jdbcType=VARCHAR},
+			#{state,jdbcType=VARCHAR}, 
+			#{fromdate,jdbcType=DATE}, 
+			#{todate,jdbcType=DATE},
+			#{param,jdbcType=INTEGER}, 
+			#{amount,jdbcType=DOUBLE},
+			#{modifier,jdbcType=VARCHAR},
+			#{version,jdbcType=TIMESTAMP}
+		)
+	</insert>
+
+	<update id="update" parameterType="Yield">
+		update yield
+		<set>
+			<if test="entitytype != null">
+				EntityType = #{entitytype,jdbcType=VARCHAR},
+			</if>
+			<if test="entityid != null">
+				EntityID = #{entityid,jdbcType=INTEGER},
+			</if>
+			<if test="name != null">
+				Name = #{name,jdbcType=VARCHAR},
+			</if>
+			<if test="state != null">
+				State = #{state,jdbcType=VARCHAR},
+			</if>
+			<if test="fromdate != null">
+				FromDate = #{fromdate,jdbcType=DATE},
+			</if>
+			<if test="todate != null">
+				ToDate = #{todate,jdbcType=DATE},
+			</if>
+			<if test="param != null">
+				Param = #{param,jdbcType=INTEGER},
+			</if>
+			<if test="amount != null">
+				Amount = #{amount,jdbcType=DOUBLE},
+			</if>
+			<if test="modifier != null">
+				Modifier = #{modifier,jdbcType=VARCHAR},
+			</if>
+		</set>
+		where ID = #{id,jdbcType=INTEGER}
+	</update>
+
+	<update id="updateByPrimaryKey" parameterType="Yield">
+		update yield
+		set EntityType = #{entitytype,jdbcType=VARCHAR},
+		EntityID = #{entityid,jdbcType=INTEGER},
+		Name = #{name,jdbcType=VARCHAR},
+		State = #{state,jdbcType=VARCHAR},
+		FromDate = #{fromdate,jdbcType=DATE},
+		ToDate = #{todate,jdbcType=DATE},
+		Param = #{param,jdbcType=INTEGER},
+		Amount = #{amount,jdbcType=DOUBLE},
+		Modifier = #{modifier,jdbcType=VARCHAR}
+		where ID = #{id,jdbcType=INTEGER}
+	</update>
+
+	<select id="nameidbyid" parameterType="NameIdAction" resultType="NameId">
+		select distinct Name, ID
+		from yield
+		where ID = #{id}
+	</select>
+
+	<select id="nameidbyname" parameterType="NameIdAction" resultType="NameId">
+		select distinct Name, ID
+		from yield
+		where Name <![CDATA[ >= ]]> #{name}
+		<if test="state == null">
+			and State not in ('Initial', 'Final')
+		</if>
+		<if test="state != null">
+			and State in (${state})
+		</if>
+		order by Name
+		limit 0, #{numrows}
+	</select>
+
+	<select id="countbyentity" parameterType="Yield" resultType="Integer">
+		select count(ID)
+		from yield
+		where EntityType = #{entitytype}
+			and EntityID = #{entityid}
+			and State not in ('Initial', 'Final')
+	</select>
+  
+	<select id="listbyentity" parameterType="Yield" resultMap="ResultMap">
+		select
+		<include refid="columns" />
+		from yield
+		where EntityType = #{entitytype}
+			and EntityID = #{entityid}
+			and State not in ('Initial', 'Final')
+		order by EntityType, EntityID, Name
+	</select>
+	
+	<select id="readByProductState" parameterType="Yield" resultMap="ResultMap">
+		select
+		<include refid="columns" />
+		from yield
+		where EntityType = #{entitytype,jdbcType=VARCHAR}
+			and EntityID = #{entityid,jdbcType=INTEGER}
+			and State = #{state,jdbcType=VARCHAR}
+		order by FromDate	
+	</select>
+	
+	<update id="cancelYieldList" parameterType="Yield">
+		update yield set State = 'Final'
+		where ID in 
+		<foreach item="item" index="index" collection="list" open="(" separator="," close=")">
+			#{item}
+		</foreach>
+	</update>
+
+</mapper>

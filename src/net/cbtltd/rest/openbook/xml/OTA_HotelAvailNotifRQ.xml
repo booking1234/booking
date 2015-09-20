@@ -1,0 +1,412 @@
+<soap:Envelope xmlns:soap="http://schemas.xmlsoap.org/soap/envelope/">
+	<soap:Header>
+		<wsse:Security soap:mustUnderstand="1"
+			xmlns:wsse="http://docs.oasis-open.org/wss/2004/01/oasis-200401-wss-wssecurity-secext-1.0.xsd">
+			<wsse:UsernameToken>
+				<wsse:Username>ALBANY</wsse:Username>
+				<wsse:Password
+					Type="http://docs.oasis-open.org/wss/2004/01/oasis-200401-wss-username-token-profile-1.0#PasswordText">Gfdfjkiropnl7638</wsse:Password>
+			</wsse:UsernameToken>
+		</wsse:Security>
+	</soap:Header>
+	<soap:Body>
+		<OTA_HotelAvailNotifRQ EchoToken="1861375"
+			TimeStamp="2012-11-08T19:29:41-05:00" Version="1.00"
+			xmlns="http://www.opentravel.org/OTA/2003/05" xmlns:xsi="http://www.w3.org/2001/XMLSchemainstance">
+			<AvailStatusMessages HotelCode="SKYW869">
+				<AvailStatusMessage BookingLimit="1">
+					<StatusApplicationControl Start="2012-11-08"
+						End="2012-11-08" RatePlanCode="ADV" InvTypeCode="SNG"></StatusApplicationControl>
+				</AvailStatusMessage>
+				<AvailStatusMessage BookingLimit="1">
+					<StatusApplicationControl Start="2012-11-08"
+						End="2012-11-08" RatePlanCode="CELEB" InvTypeCode="SNG"></StatusApplicationControl>
+				</AvailStatusMessage>
+				<AvailStatusMessage BookingLimit="1">
+					<StatusApplicationControl Start="2012-11-08"
+						End="2012-11-08" RatePlanCode="BARALB" InvTypeCode="SNG"></StatusApplicationControl>
+				</AvailStatusMessage>
+				<AvailStatusMessage BookingLimit="1">
+					<StatusApplicationControl Start="2012-11-08"
+						End="2012-11-08" RatePlanCode="EASTER" InvTypeCode="SNG"></StatusApplicationControl>
+				</AvailStatusMessage>
+				<AvailStatusMessage BookingLimit="1">
+					<StatusApplicationControl Start="2012-11-08"
+						End="2012-11-08" RatePlanCode="HRS" InvTypeCode="SNG"></StatusApplicationControl>
+				</AvailStatusMessage>
+				<AvailStatusMessage BookingLimit="1">
+					<StatusApplicationControl Start="2012-11-08"
+						End="2012-11-08" RatePlanCode="DBBAT" InvTypeCode="SNG"></StatusApplicationControl>
+				</AvailStatusMessage>
+				<AvailStatusMessage BookingLimit="1">
+					<StatusApplicationControl Start="2012-11-08"
+						End="2012-11-08" RatePlanCode="FBWO" InvTypeCode="SNG"></StatusApplicationControl>
+				</AvailStatusMessage>
+				<AvailStatusMessage BookingLimit="0">
+					<StatusApplicationControl Start="2012-11-09"
+						End="2012-11-09" RatePlanCode="ADV" InvTypeCode="SNG"></StatusApplicationControl>
+				</AvailStatusMessage>
+				<AvailStatusMessage BookingLimit="0">
+					<StatusApplicationControl Start="2012-11-09"
+						End="2012-11-09" RatePlanCode="CELEB" InvTypeCode="SNG"></StatusApplicationControl>
+				</AvailStatusMessage>
+				<AvailStatusMessage BookingLimit="0">
+					<StatusApplicationControl Start="2012-11-09"
+						End="2012-11-09" RatePlanCode="BARALB" InvTypeCode="SNG"></StatusApplicationControl>
+				</AvailStatusMessage>
+				<AvailStatusMessage BookingLimit="0">
+					<StatusApplicationControl Start="2012-11-09"
+						End="2012-11-09" RatePlanCode="EASTER" InvTypeCode="SNG"></StatusApplicationControl>
+				</AvailStatusMessage>
+				<AvailStatusMessage BookingLimit="0">
+					<StatusApplicationControl Start="2012-11-09"
+						End="2012-11-09" RatePlanCode="HRS" InvTypeCode="SNG"></StatusApplicationControl>
+				</AvailStatusMessage>
+				<AvailStatusMessage BookingLimit="0">
+					<StatusApplicationControl Start="2012-11-09"
+						End="2012-11-09" RatePlanCode="DBBAT" InvTypeCode="SNG"></StatusApplicationControl>
+				</AvailStatusMessage>
+				<AvailStatusMessage BookingLimit="0">
+					<StatusApplicationControl Start="2012-11-09"
+						End="2012-11-09" RatePlanCode="FBWO" InvTypeCode="SNG"></StatusApplicationControl>
+				</AvailStatusMessage>
+				<AvailStatusMessage BookingLimit="1">
+					<StatusApplicationControl Start="2012-11-08"
+						End="2012-11-08" RatePlanCode="ADV" InvTypeCode="DBL"></StatusApplicationControl>
+				</AvailStatusMessage>
+				<AvailStatusMessage BookingLimit="1">
+					<StatusApplicationControl Start="2012-11-08"
+						End="2012-11-08" RatePlanCode="CELEB" InvTypeCode="DBL"></StatusApplicationControl>
+				</AvailStatusMessage>
+				<AvailStatusMessage BookingLimit="1">
+					<StatusApplicationControl Start="2012-11-08"
+						End="2012-11-08" RatePlanCode="BARALB" InvTypeCode="DBL"></StatusApplicationControl>
+				</AvailStatusMessage>
+				<AvailStatusMessage BookingLimit="1">
+					<StatusApplicationControl Start="2012-11-08"
+						End="2012-11-08" RatePlanCode="EASTER" InvTypeCode="DBL"></StatusApplicationControl>
+				</AvailStatusMessage>
+				<AvailStatusMessage BookingLimit="1">
+					<StatusApplicationControl Start="2012-11-08"
+						End="2012-11-08" RatePlanCode="HRS" InvTypeCode="DBL"></StatusApplicationControl>
+				</AvailStatusMessage>
+				<AvailStatusMessage BookingLimit="1">
+					<StatusApplicationControl Start="2012-11-08"
+						End="2012-11-08" RatePlanCode="DBBAT" InvTypeCode="DBL"></StatusApplicationControl>
+				</AvailStatusMessage>
+				<AvailStatusMessage BookingLimit="1">
+					<StatusApplicationControl Start="2012-11-08"
+						End="2012-11-08" RatePlanCode="FBWO" InvTypeCode="DBL"></StatusApplicationControl>
+				</AvailStatusMessage>
+				<AvailStatusMessage BookingLimit="2">
+					<StatusApplicationControl Start="2012-11-09"
+						End="2012-11-09" RatePlanCode="ADV" InvTypeCode="DBL"></StatusApplicationControl>
+				</AvailStatusMessage>
+				<AvailStatusMessage BookingLimit="2">
+					<StatusApplicationControl Start="2012-11-09"
+						End="2012-11-09" RatePlanCode="CELEB" InvTypeCode="DBL"></StatusApplicationControl>
+				</AvailStatusMessage>
+				<AvailStatusMessage BookingLimit="2">
+					<StatusApplicationControl Start="2012-11-09"
+						End="2012-11-09" RatePlanCode="BARALB" InvTypeCode="DBL"></StatusApplicationControl>
+				</AvailStatusMessage>
+				<AvailStatusMessage BookingLimit="2">
+					<StatusApplicationControl Start="2012-11-09"
+						End="2012-11-09" RatePlanCode="EASTER" InvTypeCode="DBL"></StatusApplicationControl>
+				</AvailStatusMessage>
+				<AvailStatusMessage BookingLimit="2">
+					<StatusApplicationControl Start="2012-11-09"
+						End="2012-11-09" RatePlanCode="HRS" InvTypeCode="DBL"></StatusApplicationControl>
+				</AvailStatusMessage>
+				<AvailStatusMessage BookingLimit="2">
+					<StatusApplicationControl Start="2012-11-09"
+						End="2012-11-09" RatePlanCode="DBBAT" InvTypeCode="DBL"></StatusApplicationControl>
+				</AvailStatusMessage>
+				<AvailStatusMessage BookingLimit="2">
+					<StatusApplicationControl Start="2012-11-09"
+						End="2012-11-09" RatePlanCode="FBWO" InvTypeCode="DBL"></StatusApplicationControl>
+				</AvailStatusMessage>
+				<AvailStatusMessage BookingLimit="1">
+					<StatusApplicationControl Start="2012-11-08"
+						End="2012-11-08" RatePlanCode="ADV" InvTypeCode="TWN"></StatusApplicationControl>
+				</AvailStatusMessage>
+				<AvailStatusMessage BookingLimit="1">
+					<StatusApplicationControl Start="2012-11-08"
+						End="2012-11-08" RatePlanCode="CELEB" InvTypeCode="TWN"></StatusApplicationControl>
+				</AvailStatusMessage>
+				<AvailStatusMessage BookingLimit="1">
+					<StatusApplicationControl Start="2012-11-08"
+						End="2012-11-08" RatePlanCode="BARALB" InvTypeCode="TWN"></StatusApplicationControl>
+				</AvailStatusMessage>
+				<AvailStatusMessage BookingLimit="1">
+					<StatusApplicationControl Start="2012-11-08"
+						End="2012-11-08" RatePlanCode="EASTER" InvTypeCode="TWN"></StatusApplicationControl>
+				</AvailStatusMessage>
+				<AvailStatusMessage BookingLimit="1">
+					<StatusApplicationControl Start="2012-11-08"
+						End="2012-11-08" RatePlanCode="HRS" InvTypeCode="TWN"></StatusApplicationControl>
+				</AvailStatusMessage>
+				<AvailStatusMessage BookingLimit="1">
+					<StatusApplicationControl Start="2012-11-08"
+						End="2012-11-08" RatePlanCode="DBBAT" InvTypeCode="TWN"></StatusApplicationControl>
+				</AvailStatusMessage>
+				<AvailStatusMessage BookingLimit="1">
+					<StatusApplicationControl Start="2012-11-08"
+						End="2012-11-08" RatePlanCode="FBWO" InvTypeCode="TWN"></StatusApplicationControl>
+				</AvailStatusMessage>
+				<AvailStatusMessage BookingLimit="0">
+					<StatusApplicationControl Start="2012-11-09"
+						End="2012-11-09" RatePlanCode="ADV" InvTypeCode="TWN"></StatusApplicationControl>
+				</AvailStatusMessage>
+				<AvailStatusMessage BookingLimit="0">
+					<StatusApplicationControl Start="2012-11-09"
+						End="2012-11-09" RatePlanCode="CELEB" InvTypeCode="TWN"></StatusApplicationControl>
+				</AvailStatusMessage>
+				<AvailStatusMessage BookingLimit="0">
+					<StatusApplicationControl Start="2012-11-09"
+						End="2012-11-09" RatePlanCode="BARALB" InvTypeCode="TWN"></StatusApplicationControl>
+				</AvailStatusMessage>
+				<AvailStatusMessage BookingLimit="0">
+					<StatusApplicationControl Start="2012-11-09"
+						End="2012-11-09" RatePlanCode="EASTER" InvTypeCode="TWN"></StatusApplicationControl>
+				</AvailStatusMessage>
+				<AvailStatusMessage BookingLimit="0">
+					<StatusApplicationControl Start="2012-11-09"
+						End="2012-11-09" RatePlanCode="HRS" InvTypeCode="TWN"></StatusApplicationControl>
+				</AvailStatusMessage>
+				<AvailStatusMessage BookingLimit="0">
+					<StatusApplicationControl Start="2012-11-09"
+						End="2012-11-09" RatePlanCode="DBBAT" InvTypeCode="TWN"></StatusApplicationControl>
+				</AvailStatusMessage>
+				<AvailStatusMessage BookingLimit="0">
+					<StatusApplicationControl Start="2012-11-09"
+						End="2012-11-09" RatePlanCode="FBWO" InvTypeCode="TWN"></StatusApplicationControl>
+				</AvailStatusMessage>
+				<AvailStatusMessage BookingLimit="0">
+					<StatusApplicationControl Start="2012-11-08"
+						End="2012-11-08" RatePlanCode="ADV" InvTypeCode="EXSG"></StatusApplicationControl>
+				</AvailStatusMessage>
+				<AvailStatusMessage BookingLimit="0">
+					<StatusApplicationControl Start="2012-11-08"
+						End="2012-11-08" RatePlanCode="CELEB" InvTypeCode="EXSG"></StatusApplicationControl>
+				</AvailStatusMessage>
+				<AvailStatusMessage BookingLimit="0">
+					<StatusApplicationControl Start="2012-11-08"
+						End="2012-11-08" RatePlanCode="BARALB" InvTypeCode="EXSG"></StatusApplicationControl>
+				</AvailStatusMessage>
+				<AvailStatusMessage BookingLimit="0">
+					<StatusApplicationControl Start="2012-11-08"
+						End="2012-11-08" RatePlanCode="EASTER" InvTypeCode="EXSG"></StatusApplicationControl>
+				</AvailStatusMessage>
+				<AvailStatusMessage BookingLimit="0">
+					<StatusApplicationControl Start="2012-11-08"
+						End="2012-11-08" RatePlanCode="HRS" InvTypeCode="EXSG"></StatusApplicationControl>
+				</AvailStatusMessage>
+				<AvailStatusMessage BookingLimit="0">
+					<StatusApplicationControl Start="2012-11-08"
+						End="2012-11-08" RatePlanCode="DBBAT" InvTypeCode="EXSG"></StatusApplicationControl>
+				</AvailStatusMessage>
+				<AvailStatusMessage BookingLimit="0">
+					<StatusApplicationControl Start="2012-11-08"
+						End="2012-11-08" RatePlanCode="FBWO" InvTypeCode="EXSG"></StatusApplicationControl>
+				</AvailStatusMessage>
+				<AvailStatusMessage BookingLimit="0">
+					<StatusApplicationControl Start="2012-11-09"
+						End="2012-11-09" RatePlanCode="ADV" InvTypeCode="EXSG"></StatusApplicationControl>
+				</AvailStatusMessage>
+				<AvailStatusMessage BookingLimit="0">
+					<StatusApplicationControl Start="2012-11-09"
+						End="2012-11-09" RatePlanCode="CELEB" InvTypeCode="EXSG"></StatusApplicationControl>
+				</AvailStatusMessage>
+				<AvailStatusMessage BookingLimit="0">
+					<StatusApplicationControl Start="2012-11-09"
+						End="2012-11-09" RatePlanCode="BARALB" InvTypeCode="EXSG"></StatusApplicationControl>
+				</AvailStatusMessage>
+				<AvailStatusMessage BookingLimit="0">
+					<StatusApplicationControl Start="2012-11-09"
+						End="2012-11-09" RatePlanCode="EASTER" InvTypeCode="EXSG"></StatusApplicationControl>
+				</AvailStatusMessage>
+				<AvailStatusMessage BookingLimit="0">
+					<StatusApplicationControl Start="2012-11-09"
+						End="2012-11-09" RatePlanCode="HRS" InvTypeCode="EXSG"></StatusApplicationControl>
+				</AvailStatusMessage>
+				<AvailStatusMessage BookingLimit="0">
+					<StatusApplicationControl Start="2012-11-09"
+						End="2012-11-09" RatePlanCode="DBBAT" InvTypeCode="EXSG"></StatusApplicationControl>
+				</AvailStatusMessage>
+				<AvailStatusMessage BookingLimit="0">
+					<StatusApplicationControl Start="2012-11-09"
+						End="2012-11-09" RatePlanCode="FBWO" InvTypeCode="EXSG"></StatusApplicationControl>
+				</AvailStatusMessage>
+				<AvailStatusMessage BookingLimit="1">
+					<StatusApplicationControl Start="2012-11-08"
+						End="2012-11-08" RatePlanCode="ADV" InvTypeCode="EXDB"></StatusApplicationControl>
+				</AvailStatusMessage>
+				<AvailStatusMessage BookingLimit="1">
+					<StatusApplicationControl Start="2012-11-08"
+						End="2012-11-08" RatePlanCode="CELEB" InvTypeCode="EXDB"></StatusApplicationControl>
+				</AvailStatusMessage>
+				<AvailStatusMessage BookingLimit="1">
+					<StatusApplicationControl Start="2012-11-08"
+						End="2012-11-08" RatePlanCode="BARALB" InvTypeCode="EXDB"></StatusApplicationControl>
+				</AvailStatusMessage>
+				<AvailStatusMessage BookingLimit="1">
+					<StatusApplicationControl Start="2012-11-08"
+						End="2012-11-08" RatePlanCode="EASTER" InvTypeCode="EXDB"></StatusApplicationControl>
+				</AvailStatusMessage>
+				<AvailStatusMessage BookingLimit="1">
+					<StatusApplicationControl Start="2012-11-08"
+						End="2012-11-08" RatePlanCode="HRS" InvTypeCode="EXDB"></StatusApplicationControl>
+				</AvailStatusMessage>
+				<AvailStatusMessage BookingLimit="1">
+					<StatusApplicationControl Start="2012-11-08"
+						End="2012-11-08" RatePlanCode="DBBAT" InvTypeCode="EXDB"></StatusApplicationControl>
+				</AvailStatusMessage>
+				<AvailStatusMessage BookingLimit="1">
+					<StatusApplicationControl Start="2012-11-08"
+						End="2012-11-08" RatePlanCode="FBWO" InvTypeCode="EXDB"></StatusApplicationControl>
+				</AvailStatusMessage>
+				<AvailStatusMessage BookingLimit="1">
+					<StatusApplicationControl Start="2012-11-09"
+						End="2012-11-09" RatePlanCode="ADV" InvTypeCode="EXDB"></StatusApplicationControl>
+				</AvailStatusMessage>
+				<AvailStatusMessage BookingLimit="1">
+					<StatusApplicationControl Start="2012-11-09"
+						End="2012-11-09" RatePlanCode="CELEB" InvTypeCode="EXDB"></StatusApplicationControl>
+				</AvailStatusMessage>
+				<AvailStatusMessage BookingLimit="1">
+					<StatusApplicationControl Start="2012-11-09"
+						End="2012-11-09" RatePlanCode="BARALB" InvTypeCode="EXDB"></StatusApplicationControl>
+				</AvailStatusMessage>
+				<AvailStatusMessage BookingLimit="1">
+					<StatusApplicationControl Start="2012-11-09"
+						End="2012-11-09" RatePlanCode="EASTER" InvTypeCode="EXDB"></StatusApplicationControl>
+				</AvailStatusMessage>
+				<AvailStatusMessage BookingLimit="1">
+					<StatusApplicationControl Start="2012-11-09"
+						End="2012-11-09" RatePlanCode="HRS" InvTypeCode="EXDB"></StatusApplicationControl>
+				</AvailStatusMessage>
+				<AvailStatusMessage BookingLimit="1">
+					<StatusApplicationControl Start="2012-11-09"
+						End="2012-11-09" RatePlanCode="DBBAT" InvTypeCode="EXDB"></StatusApplicationControl>
+				</AvailStatusMessage>
+				<AvailStatusMessage BookingLimit="1">
+					<StatusApplicationControl Start="2012-11-09"
+						End="2012-11-09" RatePlanCode="FBWO" InvTypeCode="EXDB"></StatusApplicationControl>
+				</AvailStatusMessage>
+				<AvailStatusMessage BookingLimit="1">
+					<StatusApplicationControl Start="2012-11-08"
+						End="2012-11-08" RatePlanCode="ADV" InvTypeCode="FAM"></StatusApplicationControl>
+				</AvailStatusMessage>
+				<AvailStatusMessage BookingLimit="1">
+					<StatusApplicationControl Start="2012-11-08"
+						End="2012-11-08" RatePlanCode="CELEB" InvTypeCode="FAM"></StatusApplicationControl>
+				</AvailStatusMessage>
+				<AvailStatusMessage BookingLimit="1">
+					<StatusApplicationControl Start="2012-11-08"
+						End="2012-11-08" RatePlanCode="BARALB" InvTypeCode="FAM"></StatusApplicationControl>
+				</AvailStatusMessage>
+				<AvailStatusMessage BookingLimit="1">
+					<StatusApplicationControl Start="2012-11-08"
+						End="2012-11-08" RatePlanCode="EASTER" InvTypeCode="FAM"></StatusApplicationControl>
+				</AvailStatusMessage>
+				<AvailStatusMessage BookingLimit="1">
+					<StatusApplicationControl Start="2012-11-08"
+						End="2012-11-08" RatePlanCode="HRS" InvTypeCode="FAM"></StatusApplicationControl>
+				</AvailStatusMessage>
+				<AvailStatusMessage BookingLimit="1">
+					<StatusApplicationControl Start="2012-11-08"
+						End="2012-11-08" RatePlanCode="DBBAT" InvTypeCode="FAM"></StatusApplicationControl>
+				</AvailStatusMessage>
+				<AvailStatusMessage BookingLimit="1">
+					<StatusApplicationControl Start="2012-11-08"
+						End="2012-11-08" RatePlanCode="FBWO" InvTypeCode="FAM"></StatusApplicationControl>
+				</AvailStatusMessage>
+				<AvailStatusMessage BookingLimit="1">
+					<StatusApplicationControl Start="2012-11-09"
+						End="2012-11-09" RatePlanCode="ADV" InvTypeCode="FAM"></StatusApplicationControl>
+				</AvailStatusMessage>
+				<AvailStatusMessage BookingLimit="1">
+					<StatusApplicationControl Start="2012-11-09"
+						End="2012-11-09" RatePlanCode="CELEB" InvTypeCode="FAM"></StatusApplicationControl>
+				</AvailStatusMessage>
+				<AvailStatusMessage BookingLimit="1">
+					<StatusApplicationControl Start="2012-11-09"
+						End="2012-11-09" RatePlanCode="BARALB" InvTypeCode="FAM"></StatusApplicationControl>
+				</AvailStatusMessage>
+				<AvailStatusMessage BookingLimit="1">
+					<StatusApplicationControl Start="2012-11-09"
+						End="2012-11-09" RatePlanCode="EASTER" InvTypeCode="FAM"></StatusApplicationControl>
+				</AvailStatusMessage>
+				<AvailStatusMessage BookingLimit="1">
+					<StatusApplicationControl Start="2012-11-09"
+						End="2012-11-09" RatePlanCode="HRS" InvTypeCode="FAM"></StatusApplicationControl>
+				</AvailStatusMessage>
+				<AvailStatusMessage BookingLimit="1">
+					<StatusApplicationControl Start="2012-11-09"
+						End="2012-11-09" RatePlanCode="DBBAT" InvTypeCode="FAM"></StatusApplicationControl>
+				</AvailStatusMessage>
+				<AvailStatusMessage BookingLimit="1">
+					<StatusApplicationControl Start="2012-11-09"
+						End="2012-11-09" RatePlanCode="FBWO" InvTypeCode="FAM"></StatusApplicationControl>
+				</AvailStatusMessage>
+				<AvailStatusMessage BookingLimit="1">
+					<StatusApplicationControl Start="2012-11-08"
+						End="2012-11-08" RatePlanCode="ADV" InvTypeCode="HONEY"></StatusApplicationControl>
+				</AvailStatusMessage>
+				<AvailStatusMessage BookingLimit="1">
+					<StatusApplicationControl Start="2012-11-08"
+						End="2012-11-08" RatePlanCode="CELEB" InvTypeCode="HONEY"></StatusApplicationControl>
+				</AvailStatusMessage>
+				<AvailStatusMessage BookingLimit="1">
+					<StatusApplicationControl Start="2012-11-08"
+						End="2012-11-08" RatePlanCode="BARALB" InvTypeCode="HONEY"></StatusApplicationControl>
+				</AvailStatusMessage>
+				<AvailStatusMessage BookingLimit="1">
+					<StatusApplicationControl Start="2012-11-08"
+						End="2012-11-08" RatePlanCode="EASTER" InvTypeCode="HONEY"></StatusApplicationControl>
+				</AvailStatusMessage>
+				<AvailStatusMessage BookingLimit="1">
+					<StatusApplicationControl Start="2012-11-08"
+						End="2012-11-08" RatePlanCode="HRS" InvTypeCode="HONEY"></StatusApplicationControl>
+				</AvailStatusMessage>
+				<AvailStatusMessage BookingLimit="1">
+					<StatusApplicationControl Start="2012-11-08"
+						End="2012-11-08" RatePlanCode="DBBAT" InvTypeCode="HONEY"></StatusApplicationControl>
+				</AvailStatusMessage>
+				<AvailStatusMessage BookingLimit="1">
+					<StatusApplicationControl Start="2012-11-08"
+						End="2012-11-08" RatePlanCode="FBWO" InvTypeCode="HONEY"></StatusApplicationControl>
+				</AvailStatusMessage>
+				<AvailStatusMessage BookingLimit="1">
+					<StatusApplicationControl Start="2012-11-09"
+						End="2012-11-09" RatePlanCode="ADV" InvTypeCode="HONEY"></StatusApplicationControl>
+				</AvailStatusMessage>
+				<AvailStatusMessage BookingLimit="1">
+					<StatusApplicationControl Start="2012-11-09"
+						End="2012-11-09" RatePlanCode="CELEB" InvTypeCode="HONEY"></StatusApplicationControl>
+				</AvailStatusMessage>
+				<AvailStatusMessage BookingLimit="1">
+					<StatusApplicationControl Start="2012-11-09"
+						End="2012-11-09" RatePlanCode="BARALB" InvTypeCode="HONEY"></StatusApplicationControl>
+				</AvailStatusMessage>
+				<AvailStatusMessage BookingLimit="1">
+					<StatusApplicationControl Start="2012-11-09"
+						End="2012-11-09" RatePlanCode="EASTER" InvTypeCode="HONEY"></StatusApplicationControl>
+				</AvailStatusMessage>
+				<AvailStatusMessage BookingLimit="1">
+					<StatusApplicationControl Start="2012-11-09"
+						End="2012-11-09" RatePlanCode="HRS" InvTypeCode="HONEY"></StatusApplicationControl>
+				</AvailStatusMessage>
+				<AvailStatusMessage BookingLimit="1">
+					<StatusApplicationControl Start="2012-11-09"
+						End="2012-11-09" RatePlanCode="DBBAT" InvTypeCode="HONEY"></StatusApplicationControl>
+				</AvailStatusMessage>
+				<AvailStatusMessage BookingLimit="1">
+					<StatusApplicationControl Start="2012-11-09"
+						End="2012-11-09" RatePlanCode="FBWO" InvTypeCode="HONEY"></StatusApplicationControl>
+				</AvailStatusMessage>
+			</AvailStatusMessages>
+		</OTA_HotelAvailNotifRQ>
+	</soap:Body>
+</soap:Envelope>

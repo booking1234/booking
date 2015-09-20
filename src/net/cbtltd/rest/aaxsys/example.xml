@@ -1,0 +1,550 @@
+<properties UnitCount="3">
+<UnitCode>LK-301</UnitCode>
+<property>
+<location>...</location>
+<CalendarLink>...</CalendarLink>
+<details>
+<DailyRate>157.08</DailyRate>
+<Rates>
+<Rate>
+<Label>Standard Rate</Label>
+<StartDate>9/02/14</StartDate>
+<EndDate>11/20/14</EndDate>
+<DailyRate>157.08</DailyRate>
+<MinimumStay>30</MinimumStay>
+</Rate>
+<Rate>
+<Label>Standard Rate</Label>
+<StartDate>12/01/14</StartDate>
+<EndDate>12/17/14</EndDate>
+<DailyRate>157.08</DailyRate>
+<MinimumStay>30</MinimumStay>
+</Rate>
+<Rate>
+<Label>Standard Rate</Label>
+<StartDate>1/02/14</StartDate>
+<EndDate>3/19/14</EndDate>
+<DailyRate>157.08</DailyRate>
+<MinimumStay>30</MinimumStay>
+</Rate>
+<Rate>
+<Label>Standard Rate</Label>
+<StartDate>4/21/14</StartDate>
+<EndDate>5/23/14</EndDate>
+<DailyRate>157.08</DailyRate>
+<MinimumStayLength>30</MinimumStayLength>
+</Rate>
+<Rate>
+<Label>Spring Break</Label>
+<StartDate>3/20/14</StartDate>
+<EndDate>4/20/14</EndDate>
+<DailyRate>195.20</DailyRate>
+<MinimumStay>30</MinimumStay>
+</Rate>
+<Rate>
+<Label>Summer</Label>
+<StartDate>5/24/14</StartDate>
+<EndDate>9/01/14</EndDate>
+<DailyRate>309.58</DailyRate>
+<MinimumStayLength>7</MinimumStayLength>
+</Rate>
+<Rate>
+<Label>Thanksgiving</Label>
+<StartDate>11/21/14</StartDate>
+<EndDate>11/30/14</EndDate>
+<DailyRate>195.20</DailyRate>
+<MinimumStay>30</MinimumStay>
+</Rate>
+<Rate>
+<Label>Christmas</Label>
+<StartDate>12/18/14</StartDate>
+<EndDate>1/1/15</EndDate>
+<DailyRate>195.20</DailyRate>
+<MinimumStay>30</MinimumStay>
+</Rate>
+</Rates>
+<Fees>
+<CleaningFee>0</CleaningFee>
+<DamageInsurance>39</DamageInsurance>
+<TaxRate>11.05</TaxRate>
+</Fees>
+<listing-title>LUANA KAI LK-301</listing-title>
+<num-bedrooms>2</num-bedrooms>
+<num-full-bathrooms/>
+<num-half-bathrooms/>
+<num-bathrooms>2</num-bathrooms>
+<Sleeps>4</Sleeps>
+<property-type>apartment/condo/townhouse</property-type>
+<description>
+Oceanfront condo complex equipped with outdoor pool, jacuzzi, tennis courts and putting green. This is a nicely furnished 2 bedroom 2 bath townhouse on the 3rd floor. The master bedroom is a loft overlooking the living space, and the second bedroom is on the lower level towards the back. The unit is beautifully decorated with a lovely lanai looking out to the ocean. The property itself has a delightful quiet resort feel very peaceful for enjoying all Maui has to offer. This vacation rental at Luana Kai features:
+ 
+ - Recessed Light
+ - Stainless Appliances
+ - Granite Counter Tops
+ - Air Conditioning
+ - Light walls & tile floors
+ - New contemporary furnishings
+ - Flat screen T.V.
+ - One Queen Size Bed and a King Size Bed that converts to two Single Beds
+ - Queen Sofabed
+ 
+ 
+ Prices flexible for weekly and monthly stays.
+ 
+ This is a vacation rental available nightly, weekly and monthly. 
+ 
+ Minimums/Terms/Rates
+ All rates are as accurate as possible, but your final rate must be confirmed at booking
+ 
+ Minimum stay requirements depend on each individual property and time of year
+ 
+ Seasonal rates may apply, please contact us for rates and minimum stay requirements
+ 
+ Minimum security deposit is $800
+ 
+ No smoking
+ 
+ Pets negotiable
+ 
+ Payments
+ Visa Master Card American Express Cashier Check Money Order
+</description>
+<provider-listingid>03312014-25900</provider-listingid>
+</details>
+<landing-page>...</landing-page>
+<listing-type>rental</listing-type>
+<status>for rent</status>
+<site>...</site>
+<rental-terms>...</rental-terms>
+<pictures>...</pictures>
+<agent>...</agent>
+<brokerage>...</brokerage>
+<detailed-characteristics>...</detailed-characteristics>
+</property>
+<UnitCode>LK-519</UnitCode>
+<property>
+<location>
+<unit-number>B-519</unit-number>
+<street-address>940 So. Kihei Road</street-address>
+<city-name>Kihei</city-name>
+<zipcode>95763</zipcode>
+<state-code>HI</state-code>
+<street-intersection>Hoohani Street</street-intersection>
+<neighborhood-name>Kihei</neighborhood-name>
+<display-address>yes</display-address>
+</location>
+<CalendarLink>
+http://www.aaxsys.com/cgi-bin/proclnd2?S=AMSI-SDS&PN=25917&Type=XML
+</CalendarLink>
+<details>
+<DailyRate>157.08</DailyRate>
+<Rates>
+<Rate>
+<Label>Standard Rate</Label>
+<StartDate>9/02/14</StartDate>
+<EndDate>11/20/14</EndDate>
+<DailyRate>157.08</DailyRate>
+<MinimumStay>30</MinimumStay>
+</Rate>
+<Rate>
+<Label>Standard Rate</Label>
+<StartDate>12/01/14</StartDate>
+<EndDate>12/17/14</EndDate>
+<DailyRate>157.08</DailyRate>
+<MinimumStay>30</MinimumStay>
+</Rate>
+<Rate>
+<Label>Standard Rate</Label>
+<StartDate>1/02/14</StartDate>
+<EndDate>3/19/14</EndDate>
+<DailyRate>157.08</DailyRate>
+<MinimumStay>30</MinimumStay>
+</Rate>
+<Rate>
+<Label>Standard Rate</Label>
+<StartDate>4/21/14</StartDate>
+<EndDate>5/23/14</EndDate>
+<DailyRate>157.08</DailyRate>
+<MinimumStayLength>30</MinimumStayLength>
+</Rate>
+<Rate>
+<Label>Spring Break</Label>
+<StartDate>3/20/14</StartDate>
+<EndDate>4/20/14</EndDate>
+<DailyRate>195.20</DailyRate>
+<MinimumStay>30</MinimumStay>
+</Rate>
+<Rate>
+<Label>Summer</Label>
+<StartDate>5/24/14</StartDate>
+<EndDate>9/01/14</EndDate>
+<DailyRate>309.58</DailyRate>
+<MinimumStayLength>7</MinimumStayLength>
+</Rate>
+<Rate>
+<Label>Thanksgiving</Label>
+<StartDate>11/21/14</StartDate>
+<EndDate>11/30/14</EndDate>
+<DailyRate>195.20</DailyRate>
+<MinimumStay>30</MinimumStay>
+</Rate>
+<Rate>
+<Label>Christmas</Label>
+<StartDate>12/18/14</StartDate>
+<EndDate>1/1/15</EndDate>
+<DailyRate>195.20</DailyRate>
+<MinimumStay>30</MinimumStay>
+</Rate>
+</Rates>
+<Fees>
+<CleaningFee>0</CleaningFee>
+<DamageInsurance>39</DamageInsurance>
+<TaxRate>11.05</TaxRate>
+</Fees>
+<listing-title>LUANA KAI LK-301</listing-title>
+<num-bedrooms>2</num-bedrooms>
+<num-full-bathrooms/>
+<num-half-bathrooms/>
+<num-bathrooms>2</num-bathrooms>
+<Sleeps>4</Sleeps>
+<property-type>apartment/condo/townhouse</property-type>
+<description>
+Oceanfront condo complex equipped with outdoor pool, jacuzzi, tennis courts and putting green. This is a nicely furnished 2 bedroom 2 bath townhouse on the 3rd floor. The master bedroom is a loft overlooking the living space, and the second bedroom is on the lower level towards the back. The unit is beautifully decorated with a lovely lanai looking out to the ocean. The property itself has a delightful quiet resort feel very peaceful for enjoying all Maui has to offer. This vacation rental at Luana Kai features:
+ 
+ - Recessed Light
+ - Stainless Appliances
+ - Granite Counter Tops
+ - Air Conditioning
+ - Light walls & tile floors
+ - New contemporary furnishings
+ - Flat screen T.V.
+ - One Queen Size Bed and a King Size Bed that converts to two Single Beds
+ - Queen Sofabed
+ 
+ 
+ Prices flexible for weekly and monthly stays.
+ 
+ This is a vacation rental available nightly, weekly and monthly. 
+ 
+ Minimums/Terms/Rates
+ All rates are as accurate as possible, but your final rate must be confirmed at booking
+ 
+ Minimum stay requirements depend on each individual property and time of year
+ 
+ Seasonal rates may apply, please contact us for rates and minimum stay requirements
+ 
+ Minimum security deposit is $800
+ 
+ No smoking
+ 
+ Pets negotiable
+ 
+ Payments
+ Visa Master Card American Express Cashier Check Money Order
+</description>
+<provider-listingid>03312014-25917</provider-listingid>
+</details>
+<landing-page>
+<lp-url>
+http://www.aaxsys.com/cgi-bin/proview?S=AAXSYS&P=25917&V=HIIC&AVLVendor=AMSI-SDS
+</lp-url>
+</landing-page>
+<listing-type>rental</listing-type>
+<status>for rent</status>
+<site>
+<site-url>http://www.aaxsys.com</site-url>
+<site-name>Aaxsys Furnished Rentals</site-name>
+</site>
+<rental-terms>
+<price-term>month</price-term>
+<rental-type>vacation</rental-type>
+<lease-type>daily</lease-type>
+<security-deposit>0</security-deposit>
+<credit-cards-accepted>yes</credit-cards-accepted>
+</rental-terms>
+<pictures>
+<picture>
+<picture-url>
+http://www.aaxsys.com/units/vendors/HIIC/LK-519/R01.JPG
+</picture-url>
+</picture>
+<picture>
+<picture-url>
+http://www.aaxsys.com/units/vendors/HIIC/LK-519/R02.JPG
+</picture-url>
+</picture>
+<picture>
+<picture-url>
+http://www.aaxsys.com/units/vendors/HIIC/LK-519/R03.JPG
+</picture-url>
+</picture>
+<picture>
+<picture-url>
+http://www.aaxsys.com/units/vendors/HIIC/LK-519/R04.JPG
+</picture-url>
+</picture>
+<picture>
+<picture-url>
+http://www.aaxsys.com/units/vendors/HIIC/LK-519/R05.JPG
+</picture-url>
+</picture>
+<picture>
+<picture-url>
+http://www.aaxsys.com/units/vendors/HIIC/LK-519/R06.JPG
+</picture-url>
+</picture>
+<picture>
+<picture-url>
+http://www.aaxsys.com/units/vendors/HIIC/LK-519/R07.JPG
+</picture-url>
+</picture>
+<picture>
+<picture-url>
+http://www.aaxsys.com/units/vendors/HIIC/LK-519/R08.JPG
+</picture-url>
+</picture>
+<picture>
+<picture-url>
+http://www.aaxsys.com/units/vendors/HIIC/LK-519/R09.JPG
+</picture-url>
+</picture>
+<picture>
+<picture-url>
+http://www.aaxsys.com/units/vendors/HIIC/LK-519/R10.JPG
+</picture-url>
+</picture>
+<picture>
+<picture-url>
+http://www.aaxsys.com/units/vendors/HIIC/LK-519/R11.JPG
+</picture-url>
+</picture>
+<picture>
+<picture-url>
+http://www.aaxsys.com/units/vendors/HIIC/LK-519/R12.JPG
+</picture-url>
+</picture>
+<picture>
+<picture-url>
+http://www.aaxsys.com/units/vendors/HIIC/LK-519/R13.JPG
+</picture-url>
+</picture>
+<picture>
+<picture-url>
+http://www.aaxsys.com/units/vendors/HIIC/LK-519/R14.JPG
+</picture-url>
+</picture>
+<picture>
+<picture-url>
+http://www.aaxsys.com/units/vendors/HIIC/LK-519/R15.JPG
+</picture-url>
+</picture>
+<picture>
+<picture-url>
+http://www.aaxsys.com/units/vendors/HIIC/LK-519/R16.JPG
+</picture-url>
+</picture>
+<picture>
+<picture-url>
+http://www.aaxsys.com/units/vendors/HIIC/LK-519/R17.JPG
+</picture-url>
+</picture>
+<picture>
+<picture-url>
+http://www.aaxsys.com/units/vendors/HIIC/LK-519/R18.JPG
+</picture-url>
+</picture>
+<picture>
+<picture-url>
+http://www.aaxsys.com/units/vendors/HIIC/LK-519/R19.JPG
+</picture-url>
+</picture>
+<picture>
+<picture-url>
+http://www.aaxsys.com/units/vendors/HIIC/LK-519/R20.JPG
+</picture-url>
+</picture>
+<picture>
+<picture-url>
+http://www.aaxsys.com/units/vendors/HIIC/LK-519/R21.JPG
+</picture-url>
+</picture>
+<picture>
+<picture-url>
+http://www.aaxsys.com/units/vendors/HIIC/LK-519/R22.JPG
+</picture-url>
+</picture>
+</pictures>
+<agent>
+<agent-name>Eric Bache</agent-name>
+<agent-phone>858-568-6501</agent-phone>
+<agent-email>ebache@aaxsys.com</agent-email>
+</agent>
+<brokerage>
+<brokerage-name>American Marketing Systems Inc.</brokerage-name>
+<brokerage-phone>858-488-6700</brokerage-phone>
+</brokerage>
+<detailed-characteristics>
+<amenities>
+Oven,Microwave,Dishwasher,TV,Cable,DVD,High speed internet,Washer/dryer:In Unit,Deck,Garden,Jacuzzi,Common pool,55 In. HDTV,DVR,Sauna,Tennis,Stainless Appliances,Putting Green
+</amenities>
+<appliances>
+<has-washer>yes</has-washer>
+<has-dishwasher>yes</has-dishwasher>
+<has-microwave>yes</has-microwave>
+</appliances>
+<heating-systems>
+<has-fireplace>no</has-fireplace>
+</heating-systems>
+<has-cable-satellite>yes</has-cable-satellite>
+<has-deck>yes</has-deck>
+<has-garden>yes</has-garden>
+<has-jetted-bath-tub>yes</has-jetted-bath-tub>
+<has-patio>no</has-patio>
+<has-pool>yes</has-pool>
+<has-sauna>yes</has-sauna>
+<building-has-fitness-center>no</building-has-fitness-center>
+<furnished>yes</furnished>
+</detailed-characteristics>
+</property>
+<UnitCode>92-1086</UnitCode>
+<property>
+<location>
+<unit-number>4</unit-number>
+<street-address>92-1086 Olani Street</street-address>
+<city-name>Kapolei</city-name>
+<zipcode>96707</zipcode>
+<state-code>HI</state-code>
+<street-intersection/>
+<neighborhood-name>Coconut</neighborhood-name>
+<display-address>yes</display-address>
+</location>
+<CalendarLink>
+http://www.aaxsys.com/cgi-bin/proclnd2?S=AMSI-SDS&PN=25991&Type=XML
+</CalendarLink>
+<details>
+<DailyRate>0.00</DailyRate>
+<Rates>
+<Rate>
+<Label>Standard Rate</Label>
+<StartDate>9/02/14</StartDate>
+<EndDate>11/20/14</EndDate>
+<DailyRate>0.00</DailyRate>
+<MinimumStay>30</MinimumStay>
+</Rate>
+<Rate>
+<Label>Standard Rate</Label>
+<StartDate>12/01/14</StartDate>
+<EndDate>12/17/14</EndDate>
+<DailyRate>0.00</DailyRate>
+<MinimumStay>30</MinimumStay>
+</Rate>
+<Rate>
+<Label>Standard Rate</Label>
+<StartDate>1/02/14</StartDate>
+<EndDate>3/19/14</EndDate>
+<DailyRate>0.00</DailyRate>
+<MinimumStay>30</MinimumStay>
+</Rate>
+<Rate>
+<Label>Standard Rate</Label>
+<StartDate>4/21/14</StartDate>
+<EndDate>5/23/14</EndDate>
+<DailyRate>0.00</DailyRate>
+<MinimumStayLength>30</MinimumStayLength>
+</Rate>
+<Rate>
+<Label>Spring Break</Label>
+<StartDate>3/20/14</StartDate>
+<EndDate>4/20/14</EndDate>
+<DailyRate>0.00</DailyRate>
+<MinimumStay>30</MinimumStay>
+</Rate>
+<Rate>
+<Label>Summer</Label>
+<StartDate>5/24/14</StartDate>
+<EndDate>9/01/14</EndDate>
+<DailyRate>0.00</DailyRate>
+<MinimumStayLength>7</MinimumStayLength>
+</Rate>
+<Rate>
+<Label>Thanksgiving</Label>
+<StartDate>11/21/14</StartDate>
+<EndDate>11/30/14</EndDate>
+<DailyRate>0.00</DailyRate>
+<MinimumStay>30</MinimumStay>
+</Rate>
+<Rate>
+<Label>Christmas</Label>
+<StartDate>12/18/14</StartDate>
+<EndDate>1/1/15</EndDate>
+<DailyRate>0.00</DailyRate>
+<MinimumStay>30</MinimumStay>
+</Rate>
+</Rates>
+<Fees>
+<CleaningFee>0</CleaningFee>
+<DamageInsurance>39</DamageInsurance>
+<TaxRate>11.05</TaxRate>
+</Fees>
+<listing-title/>
+<num-bedrooms>0</num-bedrooms>
+<num-full-bathrooms/>
+<num-half-bathrooms/>
+<num-bathrooms>0</num-bathrooms>
+<Sleeps/>
+<property-type>apartment/condo/townhouse</property-type>
+<description></description>
+<provider-listingid>03312014-25991</provider-listingid>
+</details>
+<landing-page>
+<lp-url>
+http://www.aaxsys.com/cgi-bin/proview?S=AAXSYS&P=25991&V=HIIC&AVLVendor=AMSI-SDS
+</lp-url>
+</landing-page>
+<listing-type>rental</listing-type>
+<status>for rent</status>
+<site>
+<site-url>http://www.aaxsys.com</site-url>
+<site-name>Aaxsys Furnished Rentals</site-name>
+</site>
+<rental-terms>
+<price-term/>
+<rental-type>vacation</rental-type>
+<lease-type>daily</lease-type>
+<security-deposit>0</security-deposit>
+<credit-cards-accepted>yes</credit-cards-accepted>
+</rental-terms>
+<pictures></pictures>
+<agent>
+<agent-name>Eric Bache</agent-name>
+<agent-phone>858-568-6501</agent-phone>
+<agent-email>ebache@aaxsys.com</agent-email>
+</agent>
+<brokerage>
+<brokerage-name>American Marketing Systems Inc.</brokerage-name>
+<brokerage-phone>858-488-6700</brokerage-phone>
+</brokerage>
+<detailed-characteristics>
+<amenities>
+Oven,Microwave,Dishwasher,TV,Cable,DVD,High speed internet,Washer/dryer:In Unit
+</amenities>
+<appliances>
+<has-washer>yes</has-washer>
+<has-dishwasher>yes</has-dishwasher>
+<has-microwave>yes</has-microwave>
+</appliances>
+<heating-systems>
+<has-fireplace>no</has-fireplace>
+</heating-systems>
+<has-cable-satellite>yes</has-cable-satellite>
+<has-deck>no</has-deck>
+<has-garden>no</has-garden>
+<has-jetted-bath-tub>no</has-jetted-bath-tub>
+<has-patio>no</has-patio>
+<has-pool>no</has-pool>
+<has-sauna>no</has-sauna>
+<building-has-fitness-center>no</building-has-fitness-center>
+<furnished>yes</furnished>
+</detailed-characteristics>
+</property>
+</properties>

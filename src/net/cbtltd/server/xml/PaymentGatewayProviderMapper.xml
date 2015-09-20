@@ -1,0 +1,82 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="net.cbtltd.server.api.PaymentGatewayProviderMapper">
+<!-- CREATE TABLE IF NOT EXISTS payment_gateway_provider (id INT NOT NULL auto_increment, name VARCHAR(100), create_date DATETIME, fee TINYINT, autopay TINYINT(1), PRIMARY KEY  USING BTREE (ID)); -->
+	<resultMap id="ResultMap" type="PaymentGatewayProvider">
+		<id column="id" jdbcType="INTEGER" property="id" />
+		<result column="name" jdbcType="VARCHAR" property="name" />
+		<result column="create_date" jdbcType="TIMESTAMP" property="createDate" />
+		<result column="fee" jdbcType="TINYINT" property="fee" />
+		<result column="autopay" jdbcType="BOOLEAN" property="autopay" />
+	</resultMap>
+
+	<sql id="columns">
+		ID, name, create_date, fee, autopay
+	</sql>
+
+	<insert id="create" parameterType="PaymentGatewayProvider" useGeneratedKeys="true" keyProperty="id">
+		insert into payment_gateway_provider (name, create_date, fee, autopay)
+		values (#{name,jdbcType=VARCHAR}, #{createDate,jdbcType=DATE}, #{fee,jdbcType=TINYINT}, #{autopay,jdbcType=BOOLEAN})
+	</insert>
+
+	<select id="read" parameterType="int" resultMap="ResultMap">
+		select
+		<include refid="columns" />
+		from payment_gateway_provider
+		where ID = #{id,jdbcType=INTEGER}
+	</select>
+	
+	<select id="readByName" parameterType="String" resultMap="ResultMap">
+		select
+		<include refid="columns" />
+		from payment_gateway_provider
+		where name like #{name,jdbcType=VARCHAR}
+	</select>
+	
+	<select id="list" resultMap="ResultMap">
+		select
+		<include refid="columns" />
+		from payment_gateway_provider
+	</select>
+	
+	<select id="nameid" resultType="NameId">
+		select distinct name, id
+		from payment_gateway_provider
+	</select>
+
+	<update id="update" parameterType="PaymentGatewayProvider">
+		update payment_gateway_provider
+		<set>
+			<if test="name != null">
+				name = #{name,jdbcType=VARCHAR},
+			</if>
+			<if test="create_date != null">
+				create_date = #{createDate,jdbcType=VARCHAR},
+			</if>
+			<if test="fee != null">
+				payment_gateway_id = #{fee,jdbcType=INTEGER},
+			</if>
+			<if test="autopay != null">
+				funds_holder = #{autopay,jdbcType=DOUBLE},
+			</if>
+		</set>
+		where ID = #{id,jdbcType=INTEGER}
+	</update>
+
+	<delete id="delete" parameterType="int">
+		delete from payment_gateway_provider
+		where ID = #{id,jdbcType=INTEGER}
+	</delete>
+
+	<update id="updateByPrimaryKey" parameterType="PaymentGatewayProvider">
+		update payment_gateway_provider
+		set name = #{name,jdbcType=VARCHAR},
+		create_date = #{createDate,jdbcType=INTEGER},
+		fee = #{fee,jdbcType=DOUBLE},
+		autopay = #{autopay,jdbcType=DATE},
+		where ID = #{id,jdbcType=INTEGER}
+	</update>
+	
+	
+	
+</mapper>

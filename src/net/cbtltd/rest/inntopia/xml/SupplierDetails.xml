@@ -1,0 +1,601 @@
+<?xml version='1.0' encoding="ISO-8859-1" ?>
+<SupplierDetails xmlns:sql="urn:schemas-microsoft-com:xml-sql">
+
+	<SearchResults>
+		<Locations>
+			<Location ID="1479217" Name="Breckenridge Private Homes"
+				City="Breckenridge" Region="CO" Country="US" />
+			<Products>
+				<Product LocationID="1479217" ProductID="48"
+					Name="Silver Run Townhome - 3 BR, 3B - shuttle, hot tub, walkable to main, base of Peak 9"
+					SuperCategoryID="1" SuperCategory="Lodging" CategoryID="1"
+					Category="Lodging" SupplierID="2388" SupplierName="Season&apos;s Dreams Vacation Homes"
+					SortRank="2" DateActive="12/19/2011" DateInActive="03/26/2012"
+					City="Breckenridge" Region="CO" Country="US">
+					<Attribute ProductId="48" Code="1" CodeDescription="Bedroom"
+						CodeType="501" CodeTypeDescription="Rooms In Unit" Value="3" />
+					<Attribute ProductId="48" Code="2" CodeDescription="Full Bathrooms(s)"
+						CodeType="501" CodeTypeDescription="Rooms In Unit" Value="3" />
+					<Attribute ProductId="48" Code="3" CodeDescription="King"
+						CodeType="6" CodeTypeDescription="Beds in Unit" Value="1" />
+					<Attribute ProductId="48" Code="3" CodeDescription="Kitchen"
+						CodeType="501" CodeTypeDescription="Rooms In Unit" Value="1" />
+					<Attribute ProductId="48" Code="3" CodeDescription="Peak 9"
+						CodeType="502" CodeTypeDescription="Neighborhood" Value="1" />
+					<Attribute ProductId="48" Code="5" CodeDescription="Queen"
+						CodeType="6" CodeTypeDescription="Beds in Unit" Value="1" />
+					<Attribute ProductId="48" Code="8" CodeDescription="Mountain"
+						CodeType="43" CodeTypeDescription="Location Category Codes" Value="1" />
+					<Attribute ProductId="48" Code="8" CodeDescription="Townhome"
+						CodeType="500" CodeTypeDescription="Unit Type" Value="1" />
+					<Attribute ProductId="48" Code="8" CodeDescription="Twin"
+						CodeType="6" CodeTypeDescription="Beds in Unit" Value="2" />
+					<Attribute ProductId="48" Code="10" CodeDescription="Resort"
+						CodeType="43" CodeTypeDescription="Location Category Codes" Value="1" />
+					<Attribute ProductId="48" Code="18" CodeDescription="Warriors Mark"
+						CodeType="502" CodeTypeDescription="Neighborhood" Value="1" />
+					<Attribute ProductId="48" Code="20" CodeDescription="Downtown"
+						CodeType="502" CodeTypeDescription="Neighborhood" Value="1" />
+					<Attribute ProductId="48" Code="22" CodeDescription="On Shuttle Route"
+						CodeType="502" CodeTypeDescription="Neighborhood" Value="1" />
+					<Attribute ProductId="48" Code="54" CodeDescription="Internet access"
+						CodeType="53" CodeTypeDescription="Unit Amenities" Value="1" />
+					<Attribute ProductId="48" Code="57" CodeDescription="Hot Tub (Private)"
+						CodeType="53" CodeTypeDescription="Unit Amenities" Value="1" />
+					<Attribute ProductId="48" Code="58" CodeDescription="King bed"
+						CodeType="53" CodeTypeDescription="Unit Amenities" Value="1" />
+					<Attribute ProductId="48" Code="59" CodeDescription="Kitchen"
+						CodeType="53" CodeTypeDescription="Unit Amenities" Value="1" />
+					<Attribute ProductId="48" Code="68" CodeDescription="Microwave"
+						CodeType="53" CodeTypeDescription="Unit Amenities" Value="1" />
+					<Attribute ProductId="48" Code="502" CodeDescription="On Shuttle Route"
+						CodeType="43" CodeTypeDescription="Location Category Codes" Value="1" />
+					<Attribute ProductId="48" Code="503" CodeDescription="Walk to town"
+						CodeType="43" CodeTypeDescription="Location Category Codes" Value="1" />
+					<Attribute ProductId="48" Code="509" CodeDescription="No Pets"
+						CodeType="53" CodeTypeDescription="Unit Amenities" Value="1" />
+					<Attribute ProductId="48" Code="520" CodeDescription="Near Downtown"
+						CodeType="53" CodeTypeDescription="Unit Amenities" Value="1" />
+					<Attribute ProductId="48" Code="531" CodeDescription="Garage"
+						CodeType="53" CodeTypeDescription="Unit Amenities" Value="1" />
+					<Attribute ProductId="48" Code="534" CodeDescription="Parking"
+						CodeType="53" CodeTypeDescription="Unit Amenities" Value="1" />
+					<Attribute ProductId="48" Code="563" CodeDescription="Laundry Services"
+						CodeType="53" CodeTypeDescription="Unit Amenities" Value="1" />
+				</Product>
+				<Product LocationID="1479217" ProductID="21"
+					Name="STARBRIGHT LODGE - 3 BDRM, 200yds to Shuttle, Mountain Views, Hiking, All Master Bedrooms, Hot Tub"
+					SuperCategoryID="1" SuperCategory="Lodging" CategoryID="1"
+					Category="Lodging" SupplierID="2388" SupplierName="Season&apos;s Dreams Vacation Homes"
+					SortRank="2" DateActive="09/18/2009" DateInActive="03/26/2012"
+					StreetAddress="172 Emmett Lode" City="Breckenridge" Region="CO"
+					Country="US">
+					<Attribute ProductId="21" Code="1" CodeDescription="Bedroom"
+						CodeType="501" CodeTypeDescription="Rooms In Unit" Value="3" />
+					<Attribute ProductId="21" Code="2" CodeDescription="Full Bathrooms(s)"
+						CodeType="501" CodeTypeDescription="Rooms In Unit" Value="3" />
+					<Attribute ProductId="21" Code="3" CodeDescription="Alarm clock"
+						CodeType="53" CodeTypeDescription="Unit Amenities" Value="1" />
+					<Attribute ProductId="21" Code="3" CodeDescription="King"
+						CodeType="6" CodeTypeDescription="Beds in Unit" Value="1" />
+					<Attribute ProductId="21" Code="3" CodeDescription="Kitchen"
+						CodeType="501" CodeTypeDescription="Rooms In Unit" Value="1" />
+					<Attribute ProductId="21" Code="4" CodeDescription="Half Bathroom(s)"
+						CodeType="501" CodeTypeDescription="Rooms In Unit" Value="1" />
+					<Attribute ProductId="21" Code="5" CodeDescription="Queen"
+						CodeType="6" CodeTypeDescription="Beds in Unit" Value="1" />
+					<Attribute ProductId="21" Code="6" CodeDescription="Sofa bed"
+						CodeType="6" CodeTypeDescription="Beds in Unit" Value="1" />
+					<Attribute ProductId="21" Code="7" CodeDescription="Deck/Balcony"
+						CodeType="53" CodeTypeDescription="Unit Amenities" Value="1" />
+					<Attribute ProductId="21" Code="7" CodeDescription="Vacation Home"
+						CodeType="500" CodeTypeDescription="Unit Type" Value="1" />
+					<Attribute ProductId="21" Code="8" CodeDescription="Barbeque grills"
+						CodeType="53" CodeTypeDescription="Unit Amenities" Value="1" />
+					<Attribute ProductId="21" Code="8" CodeDescription="Townhome"
+						CodeType="500" CodeTypeDescription="Unit Type" Value="1" />
+					<Attribute ProductId="21" Code="13" CodeDescription="Bathtub"
+						CodeType="53" CodeTypeDescription="Unit Amenities" Value="1" />
+					<Attribute ProductId="21" Code="13" CodeDescription="Resort Vacation Home"
+						CodeType="500" CodeTypeDescription="Unit Type" Value="1" />
+					<Attribute ProductId="21" Code="15"
+						CodeDescription="Bathtub/shower combination" CodeType="53"
+						CodeTypeDescription="Unit Amenities" Value="1" />
+					<Attribute ProductId="21" Code="17" CodeDescription="Boreas Pass"
+						CodeType="502" CodeTypeDescription="Neighborhood" Value="1" />
+					<Attribute ProductId="21" Code="18" CodeDescription="Cable television"
+						CodeType="53" CodeTypeDescription="Unit Amenities" Value="1" />
+					<Attribute ProductId="21" Code="19" CodeDescription="Coffee/Tea maker"
+						CodeType="53" CodeTypeDescription="Unit Amenities" Value="1" />
+					<Attribute ProductId="21" Code="20" CodeDescription="Color television"
+						CodeType="53" CodeTypeDescription="Unit Amenities" Value="1" />
+					<Attribute ProductId="21" Code="32" CodeDescription="Dishwasher"
+						CodeType="53" CodeTypeDescription="Unit Amenities" Value="1" />
+					<Attribute ProductId="21" Code="39" CodeDescription="Fire alarm"
+						CodeType="53" CodeTypeDescription="Unit Amenities" Value="1" />
+					<Attribute ProductId="21" Code="45" CodeDescription="Free local calls"
+						CodeType="53" CodeTypeDescription="Unit Amenities" Value="1" />
+					<Attribute ProductId="21" Code="46" CodeDescription="Free movies/video"
+						CodeType="53" CodeTypeDescription="Unit Amenities" Value="1" />
+					<Attribute ProductId="21" Code="47" CodeDescription="Full kitchen"
+						CodeType="53" CodeTypeDescription="Unit Amenities" Value="1" />
+					<Attribute ProductId="21" Code="50" CodeDescription="Hairdryer"
+						CodeType="53" CodeTypeDescription="Unit Amenities" Value="1" />
+					<Attribute ProductId="21" Code="51"
+						CodeDescription="High speed internet connection" CodeType="53"
+						CodeTypeDescription="Unit Amenities" Value="1" />
+					<Attribute ProductId="21" Code="57" CodeDescription="Hot Tub (Private)"
+						CodeType="53" CodeTypeDescription="Unit Amenities" Value="1" />
+					<Attribute ProductId="21" Code="58" CodeDescription="King bed"
+						CodeType="53" CodeTypeDescription="Unit Amenities" Value="1" />
+					<Attribute ProductId="21" Code="68" CodeDescription="Microwave"
+						CodeType="53" CodeTypeDescription="Unit Amenities" Value="1" />
+					<Attribute ProductId="21" Code="74" CodeDescription="Non-smoking"
+						CodeType="53" CodeTypeDescription="Unit Amenities" Value="1" />
+					<Attribute ProductId="21" Code="88" CodeDescription="Refrigerator"
+						CodeType="53" CodeTypeDescription="Unit Amenities" Value="1" />
+					<Attribute ProductId="21" Code="90"
+						CodeDescription="Remote control television" CodeType="53"
+						CodeTypeDescription="Unit Amenities" Value="1" />
+					<Attribute ProductId="21" Code="99" CodeDescription="Sitting area"
+						CodeType="53" CodeTypeDescription="Unit Amenities" Value="1" />
+					<Attribute ProductId="21" Code="100" CodeDescription="Smoke detectors"
+						CodeType="53" CodeTypeDescription="Unit Amenities" Value="1" />
+					<Attribute ProductId="21" Code="102" CodeDescription="Sofa bed"
+						CodeType="53" CodeTypeDescription="Unit Amenities" Value="1" />
+					<Attribute ProductId="21" Code="123"
+						CodeDescription="Wireless internet connection" CodeType="53"
+						CodeTypeDescription="Unit Amenities" Value="1" />
+					<Attribute ProductId="21" Code="142" CodeDescription="Shower"
+						CodeType="53" CodeTypeDescription="Unit Amenities" Value="1" />
+					<Attribute ProductId="21" Code="149" CodeDescription="Washer/dryer"
+						CodeType="53" CodeTypeDescription="Unit Amenities" Value="1" />
+					<Attribute ProductId="21" Code="505" CodeDescription="Fireplace - gas"
+						CodeType="53" CodeTypeDescription="Unit Amenities" Value="1" />
+					<Attribute ProductId="21" Code="505" CodeDescription="King or 2 Twins"
+						CodeType="6" CodeTypeDescription="Beds in Unit" Value="1" />
+					<Attribute ProductId="21" Code="516" CodeDescription="Heated Garage"
+						CodeType="53" CodeTypeDescription="Unit Amenities" Value="1" />
+					<Attribute ProductId="21" Code="535" CodeDescription="Pet Friendly"
+						CodeType="53" CodeTypeDescription="Unit Amenities" Value="1" />
+					<Attribute ProductId="21" Code="564" CodeDescription="Mountain View"
+						CodeType="53" CodeTypeDescription="Unit Amenities" Value="1" />
+					<FeesAndTaxes ProductId="21" Name="City Tax" Basis="Percentage"
+						Amount=".05775" />
+					<FeesAndTaxes ProductId="21" Name="Cleaning Fee"
+						Basis="Per Item (Quantity) ordered" Amount="185.00000" />
+				</Product>
+			</Products>
+		</Locations>
+		<Locations>
+			<Location ID="2388" Name="Season&apos;s Dreams Vacation Homes"
+				SortRank="2" City="Breckenridge" Region="CO" Country="US" />
+			<Products>
+				<Product LocationID="2388" ProductID="52"
+					Name=" Main St, 300YDS to Lifts, Hot Tub, Pool Table, Walk Everywhere"
+					SuperCategoryID="1" SuperCategory="Lodging" CategoryID="1"
+					Category="Lodging" SupplierID="2388" SupplierName="Season&apos;s Dreams Vacation Homes"
+					SortRank="2" DateActive="09/04/2012" DateInActive="12/31/2100"
+					City="Breckenridge" Region="CO" Country="US" />
+				<Product LocationID="2388" ProductID="13"
+					Name="Antler Ridge Lodge (6BR, 4B) FREE PARKING AT GONDOLA"
+					SuperCategoryID="1" SuperCategory="Lodging" CategoryID="1"
+					Category="Lodging" SupplierID="2388" SupplierName="Season&apos;s Dreams Vacation Homes"
+					SortRank="2" DateActive="11/03/2008" DateInActive="10/25/2010"
+					City="Breckenridge" Region="CO" Country="US">
+					<Attribute ProductId="13" Code="7" CodeDescription="Vacation Home"
+						CodeType="500" CodeTypeDescription="Unit Type" Value="1" />
+					<Attribute ProductId="13" Code="13" CodeDescription="Resort Vacation Home"
+						CodeType="500" CodeTypeDescription="Unit Type" Value="1" />
+					<FeesAndTaxes ProductId="13" Name="Cleaning Fee"
+						Basis="Per Item (Quantity) ordered" Amount="390.00000" />
+					<FeesAndTaxes ProductId="13" Name="State/Regional Tax"
+						Basis="Percentage" Amount=".05775" />
+				</Product>
+				<Product LocationID="2388" ProductID="44" Name="AspenGlow"
+					SuperCategoryID="1" SuperCategory="Lodging" CategoryID="1"
+					Category="Lodging" SupplierID="2388" SupplierName="Season&apos;s Dreams Vacation Homes"
+					SortRank="2" DateActive="10/25/2011" DateInActive="11/11/2011"
+					City="Breckenridge" Region="CO" Country="US" />
+				<Product LocationID="2388" ProductID="6" Name="Bear Mountain Lodge"
+					SuperCategoryID="1" SuperCategory="Lodging" CategoryID="1"
+					Category="Lodging" SupplierID="2388" SupplierName="Season&apos;s Dreams Vacation Homes"
+					SortRank="2" DateActive="10/10/2007" DateInActive="05/25/2008"
+					StreetAddress="184 Lone Hand Way" City="Breckenridge" Region="CO"
+					Country="US">
+					<Attribute ProductId="6" Code="1" CodeDescription="Bedroom"
+						CodeType="501" CodeTypeDescription="Rooms In Unit" Value="7" />
+					<Attribute ProductId="6" Code="1" CodeDescription="Peak 7"
+						CodeType="502" CodeTypeDescription="Neighborhood" Value="1" />
+					<Attribute ProductId="6" Code="2" CodeDescription="Full Bathrooms(s)"
+						CodeType="501" CodeTypeDescription="Rooms In Unit" Value="5" />
+					<Attribute ProductId="6" Code="3" CodeDescription="Alarm clock"
+						CodeType="53" CodeTypeDescription="Unit Amenities" Value="1" />
+					<Attribute ProductId="6" Code="3" CodeDescription="Kitchen"
+						CodeType="501" CodeTypeDescription="Rooms In Unit" Value="2" />
+					<Attribute ProductId="6" Code="5" CodeDescription="AM/FM radio"
+						CodeType="53" CodeTypeDescription="Unit Amenities" Value="1" />
+					<Attribute ProductId="6" Code="5" CodeDescription="Queen"
+						CodeType="6" CodeTypeDescription="Beds in Unit" Value="1" />
+					<Attribute ProductId="6" Code="6" CodeDescription="Sofa bed"
+						CodeType="6" CodeTypeDescription="Beds in Unit" Value="2" />
+					<Attribute ProductId="6" Code="7" CodeDescription="Deck/Balcony"
+						CodeType="53" CodeTypeDescription="Unit Amenities" Value="1" />
+					<Attribute ProductId="6" Code="7" CodeDescription="Vacation Home"
+						CodeType="500" CodeTypeDescription="Unit Type" Value="1" />
+					<Attribute ProductId="6" Code="8" CodeDescription="Mountain"
+						CodeType="43" CodeTypeDescription="Location Category Codes" Value="1" />
+					<Attribute ProductId="6" Code="11" CodeDescription="Bathroom amenities"
+						CodeType="53" CodeTypeDescription="Unit Amenities" Value="1" />
+					<Attribute ProductId="6" Code="13" CodeDescription="Bathtub"
+						CodeType="53" CodeTypeDescription="Unit Amenities" Value="1" />
+					<Attribute ProductId="6" Code="15"
+						CodeDescription="Bathtub/shower combination" CodeType="53"
+						CodeTypeDescription="Unit Amenities" Value="1" />
+					<Attribute ProductId="6" Code="18" CodeDescription="Cable television"
+						CodeType="53" CodeTypeDescription="Unit Amenities" Value="1" />
+					<Attribute ProductId="6" Code="19" CodeDescription="Coffee/Tea maker"
+						CodeType="53" CodeTypeDescription="Unit Amenities" Value="1" />
+					<Attribute ProductId="6" Code="20" CodeDescription="Color television"
+						CodeType="53" CodeTypeDescription="Unit Amenities" Value="1" />
+					<Attribute ProductId="6" Code="31" CodeDescription="Direct dial phone number"
+						CodeType="53" CodeTypeDescription="Unit Amenities" Value="1" />
+					<Attribute ProductId="6" Code="32" CodeDescription="Dishwasher"
+						CodeType="53" CodeTypeDescription="Unit Amenities" Value="1" />
+					<Attribute ProductId="6" Code="45" CodeDescription="Free local calls"
+						CodeType="53" CodeTypeDescription="Unit Amenities" Value="1" />
+					<Attribute ProductId="6" Code="47" CodeDescription="Full kitchen"
+						CodeType="53" CodeTypeDescription="Unit Amenities" Value="1" />
+					<Attribute ProductId="6" Code="51"
+						CodeDescription="High speed internet connection" CodeType="53"
+						CodeTypeDescription="Unit Amenities" Value="1" />
+					<Attribute ProductId="6" Code="54" CodeDescription="Internet access"
+						CodeType="53" CodeTypeDescription="Unit Amenities" Value="1" />
+					<Attribute ProductId="6" Code="55" CodeDescription="Iron"
+						CodeType="53" CodeTypeDescription="Unit Amenities" Value="1" />
+					<Attribute ProductId="6" Code="56" CodeDescription="Ironing board"
+						CodeType="53" CodeTypeDescription="Unit Amenities" Value="1" />
+					<Attribute ProductId="6" Code="57" CodeDescription="Hot Tub (Private)"
+						CodeType="53" CodeTypeDescription="Unit Amenities" Value="1" />
+					<Attribute ProductId="6" Code="58" CodeDescription="King bed"
+						CodeType="53" CodeTypeDescription="Unit Amenities" Value="1" />
+					<Attribute ProductId="6" Code="59" CodeDescription="Kitchen"
+						CodeType="53" CodeTypeDescription="Unit Amenities" Value="1" />
+					<Attribute ProductId="6" Code="60" CodeDescription="Kitchen supplies"
+						CodeType="53" CodeTypeDescription="Unit Amenities" Value="1" />
+					<Attribute ProductId="6" Code="66"
+						CodeDescription="Laundry basket/clothes hamper" CodeType="53"
+						CodeTypeDescription="Unit Amenities" Value="1" />
+					<Attribute ProductId="6" Code="67" CodeDescription="Loft"
+						CodeType="53" CodeTypeDescription="Unit Amenities" Value="1" />
+					<Attribute ProductId="6" Code="68" CodeDescription="Microwave"
+						CodeType="53" CodeTypeDescription="Unit Amenities" Value="1" />
+					<Attribute ProductId="6" Code="74" CodeDescription="Non-smoking"
+						CodeType="53" CodeTypeDescription="Unit Amenities" Value="1" />
+					<Attribute ProductId="6" Code="81" CodeDescription="Plates and bowls"
+						CodeType="53" CodeTypeDescription="Unit Amenities" Value="1" />
+					<Attribute ProductId="6" Code="82" CodeDescription="Pots and pans"
+						CodeType="53" CodeTypeDescription="Unit Amenities" Value="1" />
+					<Attribute ProductId="6" Code="85" CodeDescription="Private bathroom"
+						CodeType="53" CodeTypeDescription="Unit Amenities" Value="1" />
+					<Attribute ProductId="6" Code="86" CodeDescription="Queen bed"
+						CodeType="53" CodeTypeDescription="Unit Amenities" Value="1" />
+					<Attribute ProductId="6" Code="88" CodeDescription="Refrigerator"
+						CodeType="53" CodeTypeDescription="Unit Amenities" Value="1" />
+					<Attribute ProductId="6" Code="89"
+						CodeDescription="Refrigerator with ice maker" CodeType="53"
+						CodeTypeDescription="Unit Amenities" Value="1" />
+					<Attribute ProductId="6" Code="105" CodeDescription="Stove"
+						CodeType="53" CodeTypeDescription="Unit Amenities" Value="1" />
+					<Attribute ProductId="6" Code="107" CodeDescription="Telephone"
+						CodeType="53" CodeTypeDescription="Unit Amenities" Value="1" />
+					<Attribute ProductId="6" Code="110" CodeDescription="Toaster oven"
+						CodeType="53" CodeTypeDescription="Unit Amenities" Value="1" />
+					<Attribute ProductId="6" Code="113" CodeDescription="Twin bed"
+						CodeType="53" CodeTypeDescription="Unit Amenities" Value="1" />
+					<Attribute ProductId="6" Code="116" CodeDescription="VCR player"
+						CodeType="53" CodeTypeDescription="Unit Amenities" Value="1" />
+					<Attribute ProductId="6" Code="123"
+						CodeDescription="Wireless internet connection" CodeType="53"
+						CodeTypeDescription="Unit Amenities" Value="1" />
+					<Attribute ProductId="6" Code="129" CodeDescription="CD  player"
+						CodeType="53" CodeTypeDescription="Unit Amenities" Value="1" />
+					<Attribute ProductId="6" Code="134" CodeDescription="ESPN available"
+						CodeType="53" CodeTypeDescription="Unit Amenities" Value="1" />
+					<Attribute ProductId="6" Code="137" CodeDescription="High ceilings"
+						CodeType="53" CodeTypeDescription="Unit Amenities" Value="1" />
+					<Attribute ProductId="6" Code="142" CodeDescription="Shower"
+						CodeType="53" CodeTypeDescription="Unit Amenities" Value="1" />
+					<Attribute ProductId="6" Code="148" CodeDescription="Walk-in closet"
+						CodeType="53" CodeTypeDescription="Unit Amenities" Value="1" />
+					<Attribute ProductId="6" Code="149" CodeDescription="Washer/dryer"
+						CodeType="53" CodeTypeDescription="Unit Amenities" Value="1" />
+					<Attribute ProductId="6" Code="501" CodeDescription="DVD Player"
+						CodeType="53" CodeTypeDescription="Unit Amenities" Value="1" />
+					<Attribute ProductId="6" Code="501" CodeDescription="Twin/Twin Bunk Bed"
+						CodeType="6" CodeTypeDescription="Beds in Unit" Value="2" />
+					<Attribute ProductId="6" Code="503" CodeDescription="Twin/Twin Trundle Bed"
+						CodeType="6" CodeTypeDescription="Beds in Unit" Value="1" />
+					<Attribute ProductId="6" Code="505" CodeDescription="King or 2 Twins"
+						CodeType="6" CodeTypeDescription="Beds in Unit" Value="4" />
+					<Attribute ProductId="6" Code="509" CodeDescription="No Pets"
+						CodeType="53" CodeTypeDescription="Unit Amenities" Value="1" />
+					<Attribute ProductId="6" Code="510" CodeDescription="Jacuzzi Outdoor"
+						CodeType="53" CodeTypeDescription="Unit Amenities" Value="1" />
+					<Attribute ProductId="6" Code="515" CodeDescription="Heated Floors"
+						CodeType="53" CodeTypeDescription="Unit Amenities" Value="1" />
+					<FeesAndTaxes ProductId="6" Name="City Tax" Basis="Percentage"
+						Amount=".04900" />
+					<FeesAndTaxes ProductId="6" Name="State/Regional Tax"
+						Basis="Percentage" Amount=".05775" />
+				</Product>
+				<Product LocationID="2388" ProductID="24"
+					Name="Black Diamond Chalet - 3 Masters, Ski-in/out, Mountain Thunder Lodge"
+					SuperCategoryID="1" SuperCategory="Lodging" CategoryID="1"
+					Category="Lodging" SupplierID="2388" SupplierName="Season&apos;s Dreams Vacation Homes"
+					SortRank="2" DateActive="09/18/2009" DateInActive="11/05/2010"
+					City="Breckenridge" Region="CO" Country="US" />
+				<Product LocationID="2388" ProductID="4" Name="Cancellation Fee"
+					SuperCategoryID="10" SuperCategory="Miscellaneous" CategoryID="112"
+					Category="Cancel Fee" SupplierID="2388"
+					SupplierName="Season&apos;s Dreams Vacation Homes" SortRank="2"
+					DateActive="10/30/2005" DateInActive="06/29/2011" City="Breckenridge"
+					Region="CO" Country="US" />
+				<Product LocationID="2388" ProductID="3"
+					Name="Family Rooms with Queen/King Bed" SuperCategoryID="1"
+					SuperCategory="Lodging" CategoryID="1" Category="Lodging"
+					SupplierID="2388" SupplierName="Season&apos;s Dreams Vacation Homes"
+					SortRank="2" DateActive="10/25/2005" DateInActive="05/25/2008"
+					City="Breckenridge" Region="CO" Country="US">
+					<FeesAndTaxes ProductId="3" Name="City Tax" Basis="Percentage"
+						Amount=".10675" />
+				</Product>
+				<Product LocationID="2388" ProductID="53"
+					Name="FOUR PEAKS - 9BR,7.5B 1 block from Main St, 300YDS to Lifts, Hot Tub, Pool Table, Walk Everywhere"
+					SuperCategoryID="1" SuperCategory="Lodging" CategoryID="1"
+					Category="Lodging" SupplierID="2388" SupplierName="Season&apos;s Dreams Vacation Homes"
+					SortRank="2" DateActive="09/04/2012" DateInActive="12/31/2100"
+					City="Breckenridge" Region="CO" Country="US" />
+				<Product LocationID="2388" ProductID="32" Name="Four Peaks Inn"
+					SuperCategoryID="1" SuperCategory="Lodging" CategoryID="1"
+					Category="Lodging" SupplierID="2388" SupplierName="Season&apos;s Dreams Vacation Homes"
+					SortRank="2" DateActive="06/23/2011" DateInActive="07/07/2011"
+					City="Breckenridge" Region="CO" Country="US" />
+				<Product LocationID="2388" ProductID="34"
+					Name="Highlands Ridge Retreat - Spectacular 7300 sq ft, all Master Bedrooms, Views, Hot Tub, Pool Table"
+					SuperCategoryID="1" SuperCategory="Lodging" CategoryID="1"
+					Category="Lodging" SupplierID="2388" SupplierName="Season&apos;s Dreams Vacation Homes"
+					SortRank="2" DateActive="06/24/2011" DateInActive="06/29/2011"
+					City="Breckenridge" Region="CO" Country="US" />
+				<Product LocationID="2388" ProductID="20"
+					Name="JULE&apos;S COTTAGE (4BR, 3.5B IN TOWN ON SHUTTLE)"
+					SuperCategoryID="1" SuperCategory="Lodging" CategoryID="1"
+					Category="Lodging" SupplierID="2388" SupplierName="Season&apos;s Dreams Vacation Homes"
+					SortRank="2" DateActive="07/20/2009" DateInActive="10/25/2010"
+					City="Breckenridge" Region="CO" Country="US">
+					<FeesAndTaxes ProductId="20" Name="City Tax" Basis="Percentage"
+						Amount=".10675" />
+					<FeesAndTaxes ProductId="20" Name="Cleaning Fee"
+						Basis="Per Item (Quantity) ordered" Amount="250.00000" />
+				</Product>
+				<Product LocationID="2388" ProductID="18"
+					Name="JULE&apos;S COTTAGE 1 (4BR, 3.5B IN TOWN ON SHUTTLE)"
+					SuperCategoryID="1" SuperCategory="Lodging" CategoryID="1"
+					Category="Lodging" SupplierID="2388" SupplierName="Season&apos;s Dreams Vacation Homes"
+					SortRank="2" DateActive="10/26/2007" DateInActive="07/20/2009"
+					City="Breckenridge" Region="CO" Country="US">
+					<FeesAndTaxes ProductId="18" Name="Cleaning Fee"
+						Basis="Per Item (Quantity) ordered" Amount="250.00000" />
+					<FeesAndTaxes ProductId="18" Name="State/Regional Tax"
+						Basis="Percentage" Amount=".05775" />
+				</Product>
+				<Product LocationID="2388" ProductID="19" Name="Julies House"
+					SuperCategoryID="1" SuperCategory="Lodging" CategoryID="1"
+					Category="Lodging" SupplierID="2388" SupplierName="Season&apos;s Dreams Vacation Homes"
+					SortRank="2" DateActive="07/20/2009" DateInActive="10/25/2010"
+					City="Breckenridge" Region="CO" Country="US" />
+				<Product LocationID="2388" ProductID="1" Name="King Mini Suites"
+					SuperCategoryID="1" SuperCategory="Lodging" CategoryID="1"
+					Category="Lodging" SupplierID="2388" SupplierName="Season&apos;s Dreams Vacation Homes"
+					SortRank="2" DateActive="04/12/2002" DateInActive="05/25/2008"
+					City="Breckenridge" Region="CO" Country="US">
+					<Attribute ProductId="1" Code="2" CodeDescription="Suite"
+						CodeType="500" CodeTypeDescription="Unit Type" Value="1" />
+					<Attribute ProductId="1" Code="10" CodeDescription="Bed and Breakfast Room"
+						CodeType="500" CodeTypeDescription="Unit Type" Value="1" />
+					<Attribute ProductId="1" Code="18" CodeDescription="Cable television"
+						CodeType="53" CodeTypeDescription="Unit Amenities" Value="1" />
+					<Attribute ProductId="1" Code="20" CodeDescription="Color television"
+						CodeType="53" CodeTypeDescription="Unit Amenities" Value="1" />
+					<Attribute ProductId="1" Code="46" CodeDescription="Free movies/video"
+						CodeType="53" CodeTypeDescription="Unit Amenities" Value="1" />
+					<Attribute ProductId="1" Code="50" CodeDescription="Hairdryer"
+						CodeType="53" CodeTypeDescription="Unit Amenities" Value="1" />
+					<Attribute ProductId="1" Code="58" CodeDescription="King bed"
+						CodeType="53" CodeTypeDescription="Unit Amenities" Value="1" />
+					<Attribute ProductId="1" Code="86" CodeDescription="Queen bed"
+						CodeType="53" CodeTypeDescription="Unit Amenities" Value="1" />
+					<Attribute ProductId="1" Code="136" CodeDescription="HBO available"
+						CodeType="53" CodeTypeDescription="Unit Amenities" Value="1" />
+					<FeesAndTaxes ProductId="1" Name="State/Regional Tax"
+						Basis="Percentage" Amount=".10675" />
+				</Product>
+				<Product LocationID="2388" ProductID="17"
+					Name="MICHAEL&apos;S HAVEN (6BR - SLEEPS 20) ON FREE SHUTTLE, RIVER IN BACK YARD"
+					SuperCategoryID="1" SuperCategory="Lodging" CategoryID="1"
+					Category="Lodging" SupplierID="2388" SupplierName="Season&apos;s Dreams Vacation Homes"
+					SortRank="2" DateActive="03/03/2009" DateInActive="10/25/2010"
+					City="Breckenridge" Region="CO" Country="US">
+					<Attribute ProductId="17" Code="1" CodeDescription="Bedroom"
+						CodeType="501" CodeTypeDescription="Rooms In Unit" Value="6" />
+					<Attribute ProductId="17" Code="2" CodeDescription="Full Bathrooms(s)"
+						CodeType="501" CodeTypeDescription="Rooms In Unit" Value="5" />
+					<Attribute ProductId="17" Code="3" CodeDescription="Kitchen"
+						CodeType="501" CodeTypeDescription="Rooms In Unit" Value="1" />
+					<Attribute ProductId="17" Code="20" CodeDescription="Downtown"
+						CodeType="502" CodeTypeDescription="Neighborhood" Value="1" />
+					<Attribute ProductId="17" Code="22" CodeDescription="On Shuttle Route"
+						CodeType="502" CodeTypeDescription="Neighborhood" Value="1" />
+					<Attribute ProductId="17" Code="24" CodeDescription="Walk to Town"
+						CodeType="502" CodeTypeDescription="Neighborhood" Value="1" />
+					<FeesAndTaxes ProductId="17" Name="Cleaning Fee"
+						Basis="Per Item (Quantity) ordered" Amount="300.00000" />
+					<FeesAndTaxes ProductId="17" Name="State/Regional Tax"
+						Basis="Percentage" Amount=".05775" />
+				</Product>
+				<Product LocationID="2388" ProductID="46" Name="Mount Vista"
+					SuperCategoryID="1" SuperCategory="Lodging" CategoryID="1"
+					Category="Lodging" SupplierID="2388" SupplierName="Season&apos;s Dreams Vacation Homes"
+					SortRank="2" DateActive="11/16/2011" DateInActive="11/30/2011"
+					City="Breckenridge" Region="CO" Country="US" />
+				<Product LocationID="2388" ProductID="45" Name="Mountain Sky Lodge"
+					SuperCategoryID="1" SuperCategory="Lodging" CategoryID="1"
+					Category="Lodging" SupplierID="2388" SupplierName="Season&apos;s Dreams Vacation Homes"
+					SortRank="2" DateActive="11/16/2011" DateInActive="11/30/2011"
+					City="Breckenridge" Region="CO" Country="US" />
+				<Product LocationID="2388" ProductID="26"
+					Name="Non-refundable Deposit" SuperCategoryID="10" SuperCategory="Miscellaneous"
+					CategoryID="195" Category="Non-refundable Deposit" SupplierID="2388"
+					SupplierName="Season&apos;s Dreams Vacation Homes" SortRank="2"
+					DateActive="09/16/2010" DateInActive="12/31/2010" City="Breckenridge"
+					Region="CO" Country="US" />
+				<Product LocationID="2388" ProductID="2"
+					Name="Queen Room with en-suite" SuperCategoryID="1" SuperCategory="Lodging"
+					CategoryID="1" Category="Lodging" SupplierID="2388"
+					SupplierName="Season&apos;s Dreams Vacation Homes" SortRank="2"
+					DateActive="09/09/2005" DateInActive="05/25/2008" City="Breckenridge"
+					Region="CO" Country="US">
+					<Attribute ProductId="2" Code="1" CodeDescription="Bedroom"
+						CodeType="501" CodeTypeDescription="Rooms In Unit" Value="1" />
+					<Attribute ProductId="2" Code="2" CodeDescription="Full Bathrooms(s)"
+						CodeType="501" CodeTypeDescription="Rooms In Unit" Value="1" />
+					<Attribute ProductId="2" Code="3" CodeDescription="Alarm clock"
+						CodeType="53" CodeTypeDescription="Unit Amenities" Value="1" />
+					<Attribute ProductId="2" Code="3" CodeDescription="Peak 9"
+						CodeType="502" CodeTypeDescription="Neighborhood" Value="1" />
+					<Attribute ProductId="2" Code="4" CodeDescription="All news channel"
+						CodeType="53" CodeTypeDescription="Unit Amenities" Value="1" />
+					<Attribute ProductId="2" Code="5" CodeDescription="AM/FM radio"
+						CodeType="53" CodeTypeDescription="Unit Amenities" Value="1" />
+					<Attribute ProductId="2" Code="5" CodeDescription="Queen"
+						CodeType="6" CodeTypeDescription="Beds in Unit" Value="1" />
+					<Attribute ProductId="2" Code="6" CodeDescription="Baby listening device"
+						CodeType="53" CodeTypeDescription="Unit Amenities" Value="1" />
+					<Attribute ProductId="2" Code="8" CodeDescription="Barbeque grills"
+						CodeType="53" CodeTypeDescription="Unit Amenities" Value="1" />
+					<Attribute ProductId="2" Code="8"
+						CodeDescription="Does hotel have accessible parking?" CodeType="39"
+						CodeTypeDescription="Physically Challenged Feature Code" Value="1" />
+					<Attribute ProductId="2" Code="8" CodeDescription="Mountain"
+						CodeType="43" CodeTypeDescription="Location Category Codes" Value="1" />
+					<Attribute ProductId="2" Code="9" CodeDescription="Door width in inches"
+						CodeType="39" CodeTypeDescription="Physically Challenged Feature Code"
+						Value="1" />
+					<Attribute ProductId="2" Code="10" CodeDescription="Bed and Breakfast Room"
+						CodeType="500" CodeTypeDescription="Unit Type" Value="1" />
+					<Attribute ProductId="2" Code="11" CodeDescription="Bathroom amenities"
+						CodeType="53" CodeTypeDescription="Unit Amenities" Value="1" />
+					<Attribute ProductId="2" Code="15"
+						CodeDescription="Bathtub/shower combination" CodeType="53"
+						CodeTypeDescription="Unit Amenities" Value="1" />
+					<Attribute ProductId="2" Code="18" CodeDescription="Cable television"
+						CodeType="53" CodeTypeDescription="Unit Amenities" Value="1" />
+					<Attribute ProductId="2" Code="20" CodeDescription="Color television"
+						CodeType="53" CodeTypeDescription="Unit Amenities" Value="1" />
+					<Attribute ProductId="2" Code="21"
+						CodeDescription="Number of rooms for disabled persons equipped with standard tub"
+						CodeType="39" CodeTypeDescription="Physically Challenged Feature Code"
+						Value="1" />
+					<Attribute ProductId="2" Code="22" CodeDescription="On Shuttle Route"
+						CodeType="502" CodeTypeDescription="Neighborhood" Value="1" />
+					<Attribute ProductId="2" Code="24"
+						CodeDescription="Number of wheelchair accessible rooms" CodeType="39"
+						CodeTypeDescription="Physically Challenged Feature Code" Value="1" />
+					<Attribute ProductId="2" Code="24" CodeDescription="Walk to Town"
+						CodeType="502" CodeTypeDescription="Neighborhood" Value="1" />
+					<Attribute ProductId="2" Code="28"
+						CodeDescription="Public areas wheelchair accessible for disabled"
+						CodeType="39" CodeTypeDescription="Physically Challenged Feature Code"
+						Value="1" />
+					<Attribute ProductId="2" Code="38" CodeDescription="Grab bars in bathroom"
+						CodeType="39" CodeTypeDescription="Physically Challenged Feature Code"
+						Value="1" />
+					<Attribute ProductId="2" Code="158" CodeDescription="CNN availaible"
+						CodeType="53" CodeTypeDescription="Unit Amenities" Value="1" />
+					<Attribute ProductId="2" Code="161" CodeDescription="Handicapped Accessible"
+						CodeType="53" CodeTypeDescription="Unit Amenities" Value="1" />
+					<Attribute ProductId="2" Code="502" CodeDescription="On Shuttle Route"
+						CodeType="43" CodeTypeDescription="Location Category Codes" Value="1" />
+					<Attribute ProductId="2" Code="503" CodeDescription="Walk to town"
+						CodeType="43" CodeTypeDescription="Location Category Codes" Value="1" />
+					<FeesAndTaxes ProductId="2" Name="State/Regional Tax"
+						Basis="Percentage" Amount=".10675" />
+				</Product>
+				<Product LocationID="2388" ProductID="12"
+					Name="SILVER PICK (4BR, 4.5B - 2 BLOCKS OFF MAIN, FREE SHUTTLE)"
+					SuperCategoryID="1" SuperCategory="Lodging" CategoryID="1"
+					Category="Lodging" SupplierID="2388" SupplierName="Season&apos;s Dreams Vacation Homes"
+					SortRank="2" DateActive="10/26/2007" DateInActive="12/30/2008"
+					City="Breckenridge" Region="CO" Country="US">
+					<Attribute ProductId="12" Code="4" CodeDescription="Downtown"
+						CodeType="43" CodeTypeDescription="Location Category Codes" Value="1" />
+					<Attribute ProductId="12" Code="7" CodeDescription="Vacation Home"
+						CodeType="500" CodeTypeDescription="Unit Type" Value="1" />
+					<Attribute ProductId="12" Code="8" CodeDescription="Mountain"
+						CodeType="43" CodeTypeDescription="Location Category Codes" Value="1" />
+					<Attribute ProductId="12" Code="13" CodeDescription="Resort Vacation Home"
+						CodeType="500" CodeTypeDescription="Unit Type" Value="1" />
+					<Attribute ProductId="12" Code="502" CodeDescription="On Shuttle Route"
+						CodeType="43" CodeTypeDescription="Location Category Codes" Value="1" />
+					<Attribute ProductId="12" Code="503" CodeDescription="Walk to town"
+						CodeType="43" CodeTypeDescription="Location Category Codes" Value="1" />
+					<FeesAndTaxes ProductId="12" Name="Cleaning Fee"
+						Basis="Per Item (Quantity) ordered" Amount="250.00000" />
+					<FeesAndTaxes ProductId="12" Name="State/Regional Tax"
+						Basis="Percentage" Amount=".05775" />
+				</Product>
+				<Product LocationID="2388" ProductID="29"
+					Name="SunStone Chalet - 4 Master Bedrooms, on Shuttle near Peak 8"
+					SuperCategoryID="1" SuperCategory="Lodging" CategoryID="1"
+					Category="Lodging" SupplierID="2388" SupplierName="Season&apos;s Dreams Vacation Homes"
+					SortRank="2" DateActive="11/04/2010" DateInActive="07/07/2011"
+					City="Breckenridge" Region="CO" Country="US" />
+				<Product LocationID="2388" ProductID="39"
+					Name="SunStone Chalet - 4 Master Bedrooms, on Shuttle, Hot Tub, Wii"
+					SuperCategoryID="1" SuperCategory="Lodging" CategoryID="1"
+					Category="Lodging" SupplierID="2388" SupplierName="Season&apos;s Dreams Vacation Homes"
+					SortRank="2" DateActive="11/04/2010" DateInActive="07/10/2011"
+					City="Breckenridge" Region="CO" Country="US" />
+				<Product LocationID="2388" ProductID="31" Name="Tax"
+					SuperCategoryID="10" SuperCategory="Miscellaneous" CategoryID="150"
+					Category="Miscellaneous Fee" SupplierID="2388"
+					SupplierName="Season&apos;s Dreams Vacation Homes" SortRank="2"
+					DateActive="03/18/2011" DateInActive="07/07/2011" City="Breckenridge"
+					Region="CO" Country="US" />
+				<Product LocationID="2388" ProductID="8"
+					Name="Wild Card GRANDVIEW LODGE (9BR, 7.5B PEAK 8 600 YDS FROM LIFTS)"
+					SuperCategoryID="1" SuperCategory="Lodging" CategoryID="1"
+					Category="Lodging" SupplierID="2388" SupplierName="Season&apos;s Dreams Vacation Homes"
+					SortRank="2" DateActive="06/18/2008" DateInActive="12/10/2008"
+					City="Breckenridge" Region="CO" Country="US" />
+				<Product LocationID="2388" ProductID="9"
+					Name="Wild Card MOUNTAIN SKY LODGE (8BR, 5B IN-TOWN CUSTOM HOME - 100 YDS FROM FREE SHUTTLE)"
+					SuperCategoryID="1" SuperCategory="Lodging" CategoryID="1"
+					Category="Lodging" SupplierID="2388" SupplierName="Season&apos;s Dreams Vacation Homes"
+					SortRank="2" DateActive="06/18/2008" DateInActive="12/10/2008"
+					City="Breckenridge" Region="CO" Country="US" />
+				<Product LocationID="2388" ProductID="49" Name="Wispering Pines NOrth"
+					SuperCategoryID="1" SuperCategory="Lodging" CategoryID="1"
+					Category="Lodging" SupplierID="2388" SupplierName="Season&apos;s Dreams Vacation Homes"
+					SortRank="2" DateActive="01/16/2012" DateInActive="01/22/2012"
+					City="Breckenridge" Region="CO" Country="US" />
+				<Product LocationID="2388" ProductID="43"
+					Name="Wispering Pines North and South" SuperCategoryID="1"
+					SuperCategory="Lodging" CategoryID="1" Category="Lodging"
+					SupplierID="2388" SupplierName="Season&apos;s Dreams Vacation Homes"
+					SortRank="2" DateActive="09/28/2011" DateInActive="11/11/2011"
+					City="Breckenridge" Region="CO" Country="US" />
+			</Products>
+		</Locations>
+	</SearchResults>
+</SupplierDetails>

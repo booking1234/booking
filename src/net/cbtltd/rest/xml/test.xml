@@ -1,0 +1,61 @@
+<?xml version="1.0" encoding="UTF-8" standalone="yes"?><!-- no stylesheet -->
+<quote>
+	<alert>2012-08-01 - 2012-09-01 An annual property survey to identify
+		defects which we consider urgent or of significant importance and
+		likely to affect the quality of the property. Requires visits by
+		experts to assess repair and maintenance needs.
+	</alert>
+	<arrive>2012-08-20</arrive>
+	<bar>950.34</bar>
+	<checkin>2012-08-20</checkin>
+	<checkout>2012-08-30</checkout>
+	<commission>190.07</commission>
+	<cost>760.27</cost>
+	<currency>USD</currency>
+	<depart>2012-08-30</depart>
+	<deposit>0.0</deposit>
+	<locationid>58777</locationid>
+	<price>1429.09</price>
+	<productid>146</productid>
+	<productname>Camps Bay Terrace Suite</productname>
+	<quote>950.34</quote>
+	<quotedetail>
+		<id>25053</id>
+		<name>Reservation</name>
+		<quantity>10.0</quantity>
+		<type>Accommodation Rate</type>
+		<value>142.91</value>
+	</quotedetail>
+	<quotedetail>
+		<id>133</id>
+		<name>Length of Stay</name>
+		<quantity>1.0</quantity>
+		<type>Yield Management Rule</type>
+		<value>-71.45</value>
+	</quotedetail>
+	<quotedetail>
+		<id>104</id>
+		<name>Last Minute Lead Time</name>
+		<quantity>1.0</quantity>
+		<type>Yield Management Rule</type>
+		<value>-407.29</value>
+	</quotedetail>
+	<quotedetail>
+		<id>55</id>
+		<name>Output VAT Included in Price</name>
+		<quantity>1.0</quantity>
+		<type>Tax Included in Rate</type>
+		<value>116.71</value>
+	</quotedetail>
+	<quotedetail>
+		<id>0</id>
+		<name>Included in Price</name>
+		<quantity>1.0</quantity>
+		<type>Tax Included in Rate</type>
+		<value>-116.71</value>
+	</quotedetail>
+	<rack>1429.09</rack>
+	<sto>760.27</sto>
+	<taxrate>12.28</taxrate>
+	<xsl>'no_xsl'</xsl>
+</quote>

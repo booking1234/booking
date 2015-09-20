@@ -1,0 +1,73 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="com.mybookingpal.server.test.mapper.PriceMapper">
+
+	<resultMap id="ResultMap" type="Price">
+		<id column="price.ID" jdbcType="INTEGER" property="id" />
+		<result column="price.AltID" jdbcType="VARCHAR" property="altid" />
+		<result column="price.EntityType" jdbcType="VARCHAR" property="entitytype" />
+		<result column="price.EntityID" jdbcType="INTEGER" property="entityid" />
+		<result column="price.PartyID" jdbcType="INTEGER" property="partyid" />
+		<result column="price.SupplierID" jdbcType="INTEGER" property="supplierid" />
+		<result column="price.Name" jdbcType="VARCHAR" property="name" />
+		<result column="price.State" jdbcType="VARCHAR" property="state" />
+		<result column="price.Type" jdbcType="VARCHAR" property="type" />
+		<result column="price.Payer" jdbcType="VARCHAR" property="payer" />
+		<result column="price.Rule" jdbcType="VARCHAR" property="rule" />
+		<result column="price.Date" jdbcType="DATE" property="date" />
+		<result column="price.ToDate" jdbcType="DATE" property="todate" />
+		<result column="price.Quantity" jdbcType="DOUBLE" property="quantity" />
+		<result column="price.Unit" jdbcType="VARCHAR" property="unit" />
+		<result column="price.Value" jdbcType="DOUBLE" property="value" />
+		<result column="price.Minimum" jdbcType="DOUBLE" property="minimum" />
+		<result column="price.Factor" jdbcType="DOUBLE" property="factor" />
+		<result column="price.Cost" jdbcType="DOUBLE" property="cost" />
+		<result column="price.Available" jdbcType="INTEGER" property="available" />
+		<result column="price.Minstay" jdbcType="INTEGER" property="minStay" />
+		<result column="price.Maxtay" jdbcType="INTEGER" property="maxStay" />
+		<result column="price.Currency" jdbcType="VARCHAR" property="currency" />
+		<result column="product.Name" jdbcType="VARCHAR" property="entityname" />
+		<result column="party.Name" jdbcType="VARCHAR" property="partyname" />
+		<result column="version" jdbcType="TIMESTAMP" property="version" />
+	</resultMap>
+
+	<sql id="columns">
+		price.ID, price.AltID, price.EntityType, price.EntityID, price.PartyID, price.SupplierID, price.Name, price.State, price.Type, price.Payer, price.Rule,
+		price.Date, price.ToDate, price.Quantity, price.Unit, price.Value, price.Minimum, price.Factor, price.Cost, price.Available, price.Minstay, price.Maxstay, price.Currency,
+		price.version, product.Name as entityname, party.Name as partyname
+	</sql>
+	
+	<sql id="pricecolumns">
+		price.ID, price.AltID, price.EntityType, price.EntityID, price.PartyID, price.SupplierID, price.Name, price.State, price.Type, price.Payer, price.Rule,
+		price.Date, price.ToDate, price.Quantity, price.Unit, price.Value, price.Minimum, price.Factor, price.Cost, price.Available, price.Minstay, price.Maxstay, price.Currency,
+		price.version
+	</sql>
+	
+	<sql id="priceweekcolumns">
+		p.ID, p.AltID, p.EntityType, p.EntityID, p.PartyID, p.SupplierID, p.Name, p.State, p.Type, p.Payer, p.Rule,
+		p.Date, p.ToDate, p.Quantity, p.Unit, p.Value, p.Minimum, p.Factor, p.Cost, p.Available, p.Minstay, p.Maxstay, p.Currency,
+		p.version, tmln.start, tmln.end, tmln.week
+	</sql>
+
+	<select id="countDuplicateReservations" parameterType="String" resultMap="ResultMap">
+		select price.*, count(*) as c
+		from price
+		where price.partyid = #{id,jdbcType=INTEGER}
+			and price.state = 'Created'
+			and price.type = 'Reservation'
+		group by
+			price.date, price.todate, price.entityid
+		having c <![CDATA[ > ]]> 1
+	</select>
+
+	<select id="priceEntriesWithInvalidProductId" parameterType="String" resultMap="ResultMap">
+		select *
+		from price
+		where price.entityid not in (
+			select id
+			from product
+			where supplierid = #{id,jdbcType=INTEGER}
+			)
+			and price.partyid = #{id,jdbcType=INTEGER}
+	</select>
+</mapper>

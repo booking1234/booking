@@ -1,0 +1,119 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="net.cbtltd.server.api.PropertyManagerSupportCCMapper">
+
+	<resultMap id="ResultMap" type="net.cbtltd.shared.PropertyManagerSupportCC">
+		<id column="ID" jdbcType="INTEGER" property="id" />
+		<result column="party_id" jdbcType="INTEGER" property="partyId" />
+		<result column="MC" jdbcType="BOOLEAN" property="supportMC" />
+		<result column="VISA" jdbcType="BOOLEAN" property="supportVISA" />
+		<result column="AE" jdbcType="BOOLEAN" property="supportAE" />
+		<result column="DISCOVER" jdbcType="BOOLEAN" property="supportDISCOVER" />
+		<result column="DINERSCLUB" jdbcType="BOOLEAN" property="supportDINERSCLUB" />
+		<result column="JCB" jdbcType="BOOLEAN" property="supportJCB" />
+		<result column="none" jdbcType="BOOLEAN" property="none" />
+	</resultMap>
+		
+	<sql id="columns">
+		id, party_id, MC, VISA, AE, DISCOVER, DINERSCLUB, JCB, none
+	</sql>
+	
+	<insert id="create" parameterType="net.cbtltd.shared.PropertyManagerSupportCC" useGeneratedKeys="true" keyProperty="id">
+		insert into property_manager_support_cc (
+			party_id, MC, VISA, AE, DISCOVER, DINERSCLUB, JCB, none
+		)
+		values (
+			#{partyId,jdbcType=INTEGER},
+			#{supportMC,jdbcType=BOOLEAN},
+			#{supportVISA,jdbcType=BOOLEAN},
+			#{supportAE,jdbcType=BOOLEAN},
+			#{supportDISCOVER,jdbcType=BOOLEAN},
+			#{supportDINERSCLUB,jdbcType=BOOLEAN},
+			#{supportJCB,jdbcType=BOOLEAN},
+			#{none,jdbcType=BOOLEAN}
+		)
+	</insert>
+	
+	<select id="readbypartyid" parameterType="INTEGER" resultMap="ResultMap">
+		select
+		<include refid="columns" />
+		from property_manager_support_cc
+		where party_id = #{id,jdbcType=INTEGER}
+	</select>
+	
+	<select id="list" resultMap="ResultMap">
+		select distinct
+		<include refid="columns" />
+		from property_manager_support_cc
+	</select>
+	
+	<update id="updatebypartyid" parameterType="PropertyManagerSupportCC">
+		update property_manager_support_cc
+		<set>		
+			<if test="supportMC != null">
+				MC = #{supportMC,jdbcType=BOOLEAN},
+			</if>
+			<if test="supportVISA != null">
+				VISA = #{supportVISA,jdbcType=BOOLEAN},
+			</if>
+			<if test="supportAE != null">
+				AE = #{supportAE,jdbcType=BOOLEAN},
+			</if>
+			<if test="supportDISCOVER != null">
+				DISCOVER = #{supportDISCOVER,jdbcType=BOOLEAN},
+			</if>
+			<if test="supportDINERSCLUB != null">
+				DINERSCLUB = #{supportDINERSCLUB,jdbcType=BOOLEAN},
+			</if>
+			<if test="supportJCB != null">
+				JCB = #{supportJCB,jdbcType=BOOLEAN},
+			</if>
+			<if test="none != null">
+				none = #{none,jdbcType=BOOLEAN},
+			</if>
+		</set>
+			where party_id = #{partyId,jdbcType=INTEGER}
+	</update>
+	
+	<update id="update" parameterType="PropertyManagerSupportCC">
+		update property_manager_support_cc
+		<set>		
+			<if test="partyId != null">
+				party_id = #{partyId,jdbcType=BOOLEAN},
+			</if>
+			<if test="supportMC != null">
+				MC = #{supportMC,jdbcType=BOOLEAN},
+			</if>
+			<if test="supportVISA != null">
+				VISA = #{supportVISA,jdbcType=BOOLEAN},
+			</if>
+			<if test="supportAE != null">
+				AE = #{supportAE,jdbcType=BOOLEAN},
+			</if>
+			<if test="supportDISCOVER != null">
+				DISCOVER = #{supportDISCOVER,jdbcType=BOOLEAN},
+			</if>
+			<if test="supportDINERSCLUB != null">
+				DINERSCLUB = #{supportDINERSCLUB,jdbcType=BOOLEAN},
+			</if>
+			<if test="supportJCB != null">
+				JCB = #{supportJCB,jdbcType=BOOLEAN},
+			</if>
+			<if test="none != null">
+				none = #{none,jdbcType=BOOLEAN},
+			</if>		
+		</set>
+		where id = #{id,jdbcType=INTEGER}
+	</update>
+		
+	<delete id="delete" parameterType="INTEGER" >
+		delete from property_manager_support_cc
+		where id = #{id,jdbcType=INTEGER}
+	</delete>
+	
+	<delete id="deletebypartyid" parameterType="INTEGER" >
+		delete from property_manager_support_cc
+		where party_id = #{id,jdbcType=INTEGER}
+	</delete>
+		
+</mapper>

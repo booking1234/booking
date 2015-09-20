@@ -1,0 +1,10 @@
+**/.svn/
+war/
+bin/
+.settings/
+.metadata/
+
+.gwt/
+
+gwt-unitCache/**
+*.log

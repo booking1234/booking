@@ -1,0 +1,1605 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<report xmlns="http://www.eclipse.org/birt/2005/design" version="3.2.23" id="1">
+    <property name="createdBy">Eclipse BIRT Designer Version 3.7.2.v20120213 Build &lt;3.7.2.v20120214-1408></property>
+    <list-property name="propertyBindings">
+        <structure>
+            <property name="name">odaDriverClass</property>
+            <property name="id">36</property>
+        </structure>
+        <structure>
+            <property name="name">odaURL</property>
+            <property name="id">36</property>
+            <expression name="value" type="javascript">params["RP_Database"].value</expression>
+        </structure>
+        <structure>
+            <property name="name">odaUser</property>
+            <property name="id">36</property>
+        </structure>
+        <structure>
+            <property name="name">odaAutoCommit</property>
+            <property name="id">36</property>
+        </structure>
+        <structure>
+            <property name="name">odaIsolationMode</property>
+            <property name="id">36</property>
+        </structure>
+        <structure>
+            <property name="name">odaPassword</property>
+            <property name="id">36</property>
+        </structure>
+        <structure>
+            <property name="name">odaJndiName</property>
+            <property name="id">36</property>
+        </structure>
+        <structure>
+            <property name="name">OdaConnProfileName</property>
+            <property name="id">36</property>
+        </structure>
+        <structure>
+            <property name="name">OdaConnProfileStorePath</property>
+            <property name="id">36</property>
+        </structure>
+    </list-property>
+    <property name="units">in</property>
+    <property name="iconFile">/templates/blank_report.gif</property>
+    <property name="layoutPreference">auto layout</property>
+    <parameters>
+        <scalar-parameter name="RP_ReportID" id="52">
+            <text-property name="helpText">Enter the ID of the report</text-property>
+            <text-property name="promptText">Report ID</text-property>
+            <property name="valueType">static</property>
+            <property name="isRequired">true</property>
+            <property name="dataType">string</property>
+            <property name="distinct">true</property>
+            <property name="paramType">simple</property>
+            <property name="concealValue">false</property>
+            <property name="controlType">text-box</property>
+            <property name="autoSuggestThreshold">1</property>
+            <structure name="format">
+                <property name="category">Unformatted</property>
+            </structure>
+        </scalar-parameter>
+        <scalar-parameter name="RP_Database" id="690">
+            <text-property name="promptText">Database URL</text-property>
+            <property name="valueType">static</property>
+            <property name="dataType">string</property>
+            <property name="distinct">true</property>
+            <simple-property-list name="defaultValue">
+                <value type="constant">jdbc:mysql://54.197.247.82:3306/razor</value>
+            </simple-property-list>
+            <list-property name="selectionList"/>
+            <property name="paramType">simple</property>
+            <property name="controlType">text-box</property>
+            <structure name="format">
+                <property name="category">Unformatted</property>
+            </structure>
+        </scalar-parameter>
+    </parameters>
+    <data-sources>
+        <oda-data-source extensionID="org.eclipse.birt.report.data.oda.jdbc" name="Razor Cloud" id="36">
+            <list-property name="privateDriverProperties">
+                <ex-property>
+                    <name>contentBidiFormatStr</name>
+                    <value>ILYNN</value>
+                </ex-property>
+                <ex-property>
+                    <name>metadataBidiFormatStr</name>
+                    <value>ILYNN</value>
+                </ex-property>
+                <ex-property>
+                    <name>disabledMetadataBidiFormatStr</name>
+                </ex-property>
+                <ex-property>
+                    <name>disabledContentBidiFormatStr</name>
+                </ex-property>
+            </list-property>
+            <property name="odaDriverClass">com.mysql.jdbc.Driver</property>
+            <property name="odaURL">jdbc:mysql://uatdb.mybookingpal.com:3306/razor</property>
+            <property name="odaUser">root</property>
+            <encrypted-property name="odaPassword" encryptionID="base64">NGVWZldEZFA=</encrypted-property>
+        </oda-data-source>
+    </data-sources>
+    <data-sets>
+        <oda-data-set extensionID="org.eclipse.birt.report.data.oda.jdbc.JdbcSelectDataSet" name="Journal" id="74">
+            <list-property name="parameters">
+                <structure>
+                    <property name="name">DSP_ReportID</property>
+                    <property name="paramName">RP_ReportID</property>
+                    <property name="dataType">integer</property>
+                    <property name="position">1</property>
+                    <property name="isInput">true</property>
+                    <property name="isOutput">false</property>
+                </structure>
+            </list-property>
+            <structure name="cachedMetaData">
+                <list-property name="resultSet">
+                    <structure>
+                        <property name="position">1</property>
+                        <property name="name">Account</property>
+                        <property name="dataType">string</property>
+                    </structure>
+                    <structure>
+                        <property name="position">2</property>
+                        <property name="name">Owner</property>
+                        <property name="dataType">string</property>
+                    </structure>
+                    <structure>
+                        <property name="position">3</property>
+                        <property name="name">Actor</property>
+                        <property name="dataType">string</property>
+                    </structure>
+                    <structure>
+                        <property name="position">4</property>
+                        <property name="name">Organization</property>
+                        <property name="dataType">string</property>
+                    </structure>
+                    <structure>
+                        <property name="position">5</property>
+                        <property name="name">Event</property>
+                        <property name="dataType">string</property>
+                    </structure>
+                    <structure>
+                        <property name="position">6</property>
+                        <property name="name">Process</property>
+                        <property name="dataType">string</property>
+                    </structure>
+                    <structure>
+                        <property name="position">7</property>
+                        <property name="name">State</property>
+                        <property name="dataType">string</property>
+                    </structure>
+                    <structure>
+                        <property name="position">8</property>
+                        <property name="name">Date</property>
+                        <property name="dataType">date-time</property>
+                    </structure>
+                    <structure>
+                        <property name="position">9</property>
+                        <property name="name">DueDate</property>
+                        <property name="dataType">date-time</property>
+                    </structure>
+                    <structure>
+                        <property name="position">10</property>
+                        <property name="name">DoneDate</property>
+                        <property name="dataType">date-time</property>
+                    </structure>
+                    <structure>
+                        <property name="position">11</property>
+                        <property name="name">Activity</property>
+                        <property name="dataType">string</property>
+                    </structure>
+                    <structure>
+                        <property name="position">12</property>
+                        <property name="name">Reservation</property>
+                        <property name="dataType">string</property>
+                    </structure>
+                    <structure>
+                        <property name="position">13</property>
+                        <property name="name">Description</property>
+                        <property name="dataType">string</property>
+                    </structure>
+                    <structure>
+                        <property name="position">14</property>
+                        <property name="name">CreditAmount</property>
+                        <property name="dataType">decimal</property>
+                    </structure>
+                    <structure>
+                        <property name="position">15</property>
+                        <property name="name">DebitAmount</property>
+                        <property name="dataType">decimal</property>
+                    </structure>
+                    <structure>
+                        <property name="position">16</property>
+                        <property name="name">Currency</property>
+                        <property name="dataType">string</property>
+                    </structure>
+                    <structure>
+                        <property name="position">17</property>
+                        <property name="name">Subaccount</property>
+                        <property name="dataType">string</property>
+                    </structure>
+                </list-property>
+            </structure>
+            <property name="dataSource">Razor Cloud</property>
+            <list-property name="resultSet">
+                <structure>
+                    <property name="position">1</property>
+                    <property name="name">Account</property>
+                    <property name="nativeName">Account</property>
+                    <property name="dataType">string</property>
+                </structure>
+                <structure>
+                    <property name="position">2</property>
+                    <property name="name">Owner</property>
+                    <property name="nativeName">Owner</property>
+                    <property name="dataType">string</property>
+                </structure>
+                <structure>
+                    <property name="position">3</property>
+                    <property name="name">Actor</property>
+                    <property name="nativeName">Actor</property>
+                    <property name="dataType">string</property>
+                </structure>
+                <structure>
+                    <property name="position">4</property>
+                    <property name="name">Organization</property>
+                    <property name="nativeName">Organization</property>
+                    <property name="dataType">string</property>
+                </structure>
+                <structure>
+                    <property name="position">5</property>
+                    <property name="name">Event</property>
+                    <property name="nativeName">Event</property>
+                    <property name="dataType">string</property>
+                </structure>
+                <structure>
+                    <property name="position">6</property>
+                    <property name="name">Process</property>
+                    <property name="nativeName">Process</property>
+                    <property name="dataType">string</property>
+                </structure>
+                <structure>
+                    <property name="position">7</property>
+                    <property name="name">State</property>
+                    <property name="nativeName">State</property>
+                    <property name="dataType">string</property>
+                </structure>
+                <structure>
+                    <property name="position">8</property>
+                    <property name="name">Date</property>
+                    <property name="nativeName">Date</property>
+                    <property name="dataType">date-time</property>
+                </structure>
+                <structure>
+                    <property name="position">9</property>
+                    <property name="name">DueDate</property>
+                    <property name="nativeName">DueDate</property>
+                    <property name="dataType">date-time</property>
+                </structure>
+                <structure>
+                    <property name="position">10</property>
+                    <property name="name">DoneDate</property>
+                    <property name="nativeName">DoneDate</property>
+                    <property name="dataType">date-time</property>
+                </structure>
+                <structure>
+                    <property name="position">11</property>
+                    <property name="name">Activity</property>
+                    <property name="nativeName">Activity</property>
+                    <property name="dataType">string</property>
+                </structure>
+                <structure>
+                    <property name="position">12</property>
+                    <property name="name">Reservation</property>
+                    <property name="nativeName">Reservation</property>
+                    <property name="dataType">string</property>
+                </structure>
+                <structure>
+                    <property name="position">13</property>
+                    <property name="name">Description</property>
+                    <property name="nativeName">Description</property>
+                    <property name="dataType">string</property>
+                </structure>
+                <structure>
+                    <property name="position">14</property>
+                    <property name="name">CreditAmount</property>
+                    <property name="nativeName">CreditAmount</property>
+                    <property name="dataType">decimal</property>
+                </structure>
+                <structure>
+                    <property name="position">15</property>
+                    <property name="name">DebitAmount</property>
+                    <property name="nativeName">DebitAmount</property>
+                    <property name="dataType">decimal</property>
+                </structure>
+                <structure>
+                    <property name="position">16</property>
+                    <property name="name">Currency</property>
+                    <property name="nativeName">Currency</property>
+                    <property name="dataType">string</property>
+                </structure>
+                <structure>
+                    <property name="position">17</property>
+                    <property name="name">Subaccount</property>
+                    <property name="nativeName">Subaccount</property>
+                    <property name="dataType">string</property>
+                </structure>
+            </list-property>
+            <xml-property name="queryText"><![CDATA[SELECT DISTINCTROW
+account.Name AS Account, 
+owner.Name AS Owner, 
+actor.Name AS Actor, 
+organization.Name AS Organization, 
+event.Name AS Event, 
+event.Process, 
+event.State, 
+event.Date, 
+event.DueDate, 
+event.DoneDate,
+event.Activity, 
+reservation.Name as Reservation,
+journal.Description,
+CreditAmount, 
+DebitAmount, 
+journal.Currency,
+(CASE 
+WHEN EntityType = 'Asset' THEN asset.Name
+WHEN EntityType = 'Party' THEN party.Name
+WHEN EntityType = 'Product' THEN product.Name 
+WHEN EntityType = 'Finance' THEN finance.Name 
+END) AS Subaccount
+FROM report, journal
+JOIN event ON event.ID = journal.EventID
+JOIN account ON account.ID = journal.AccountID
+JOIN party AS actor ON actor.ID = event.ActorID
+JOIN party AS owner ON owner.ID = event.OrganizationID
+JOIN party AS organization ON organization.ID = journal.OrganizationID
+LEFT JOIN asset on asset.ID = EntityID and Entitytype = 'Asset'
+LEFT JOIN party on party.ID = EntityID and Entitytype = 'Party'
+LEFT JOIN product on product.ID = EntityID and Entitytype = 'Product'
+LEFT JOIN finance on finance.ID = EntityID and Entitytype = 'Finance'
+LEFT JOIN reservation on reservation.ID = event.ParentID and Activity = 'Reservation'
+WHERE report.ID = ?
+AND event.Name >= report.FromName
+AND event.Name <= report.ToName
+AND (report.FromDate is null OR event.Date >= report.FromDate)
+AND (report.ToDate is null OR event.Date <= report.ToDate)
+AND journal.OrganizationID = report.OrganizationID
+AND ((report.Process is null and event.Process = 'Journal') or report.Process = event.Process)
+ORDER BY event.Name, journal.ID]]></xml-property>
+            <xml-property name="designerValues"><![CDATA[<?xml version="1.0" encoding="UTF-8"?>
+<model:DesignValues xmlns:design="http://www.eclipse.org/datatools/connectivity/oda/design" xmlns:model="http://www.eclipse.org/birt/report/model/adapter/odaModel">
+  <Version>1.0</Version>
+  <design:ResultSets derivedMetaData="true">
+    <design:resultSetDefinitions>
+      <design:resultSetColumns>
+        <design:resultColumnDefinitions>
+          <design:attributes>
+            <design:name>ActionID</design:name>
+            <design:position>1</design:position>
+            <design:nativeDataTypeCode>4</design:nativeDataTypeCode>
+            <design:precision>10</design:precision>
+            <design:scale>0</design:scale>
+            <design:nullability>NotNullable</design:nullability>
+            <design:uiHints>
+              <design:displayName>ActionID</design:displayName>
+            </design:uiHints>
+          </design:attributes>
+          <design:usageHints>
+            <design:label>ActionID</design:label>
+            <design:formattingHints>
+              <design:displaySize>10</design:displaySize>
+            </design:formattingHints>
+          </design:usageHints>
+        </design:resultColumnDefinitions>
+        <design:resultColumnDefinitions>
+          <design:attributes>
+            <design:name>EventID</design:name>
+            <design:position>2</design:position>
+            <design:nativeDataTypeCode>4</design:nativeDataTypeCode>
+            <design:precision>10</design:precision>
+            <design:scale>0</design:scale>
+            <design:nullability>Nullable</design:nullability>
+            <design:uiHints>
+              <design:displayName>EventID</design:displayName>
+            </design:uiHints>
+          </design:attributes>
+          <design:usageHints>
+            <design:label>EventID</design:label>
+            <design:formattingHints>
+              <design:displaySize>10</design:displaySize>
+            </design:formattingHints>
+          </design:usageHints>
+        </design:resultColumnDefinitions>
+        <design:resultColumnDefinitions>
+          <design:attributes>
+            <design:name>MatchID</design:name>
+            <design:position>3</design:position>
+            <design:nativeDataTypeCode>4</design:nativeDataTypeCode>
+            <design:precision>10</design:precision>
+            <design:scale>0</design:scale>
+            <design:nullability>Nullable</design:nullability>
+            <design:uiHints>
+              <design:displayName>MatchID</design:displayName>
+            </design:uiHints>
+          </design:attributes>
+          <design:usageHints>
+            <design:label>MatchID</design:label>
+            <design:formattingHints>
+              <design:displaySize>10</design:displaySize>
+            </design:formattingHints>
+          </design:usageHints>
+        </design:resultColumnDefinitions>
+        <design:resultColumnDefinitions>
+          <design:attributes>
+            <design:name>LocationID</design:name>
+            <design:position>4</design:position>
+            <design:nativeDataTypeCode>4</design:nativeDataTypeCode>
+            <design:precision>10</design:precision>
+            <design:scale>0</design:scale>
+            <design:nullability>Nullable</design:nullability>
+            <design:uiHints>
+              <design:displayName>LocationID</design:displayName>
+            </design:uiHints>
+          </design:attributes>
+          <design:usageHints>
+            <design:label>LocationID</design:label>
+            <design:formattingHints>
+              <design:displaySize>10</design:displaySize>
+            </design:formattingHints>
+          </design:usageHints>
+        </design:resultColumnDefinitions>
+        <design:resultColumnDefinitions>
+          <design:attributes>
+            <design:name>AccountID</design:name>
+            <design:position>5</design:position>
+            <design:nativeDataTypeCode>4</design:nativeDataTypeCode>
+            <design:precision>10</design:precision>
+            <design:scale>0</design:scale>
+            <design:nullability>Nullable</design:nullability>
+            <design:uiHints>
+              <design:displayName>AccountID</design:displayName>
+            </design:uiHints>
+          </design:attributes>
+          <design:usageHints>
+            <design:label>AccountID</design:label>
+            <design:formattingHints>
+              <design:displaySize>10</design:displaySize>
+            </design:formattingHints>
+          </design:usageHints>
+        </design:resultColumnDefinitions>
+        <design:resultColumnDefinitions>
+          <design:attributes>
+            <design:name>Unit</design:name>
+            <design:position>9</design:position>
+            <design:nativeDataTypeCode>12</design:nativeDataTypeCode>
+            <design:precision>3</design:precision>
+            <design:scale>0</design:scale>
+            <design:nullability>Nullable</design:nullability>
+            <design:uiHints>
+              <design:displayName>Unit</design:displayName>
+            </design:uiHints>
+          </design:attributes>
+          <design:usageHints>
+            <design:label>Unit</design:label>
+            <design:formattingHints>
+              <design:displaySize>3</design:displaySize>
+            </design:formattingHints>
+          </design:usageHints>
+        </design:resultColumnDefinitions>
+        <design:resultColumnDefinitions>
+          <design:attributes>
+            <design:name>CreditAmount</design:name>
+            <design:position>10</design:position>
+            <design:nativeDataTypeCode>8</design:nativeDataTypeCode>
+            <design:precision>18</design:precision>
+            <design:scale>2</design:scale>
+            <design:nullability>Nullable</design:nullability>
+            <design:uiHints>
+              <design:displayName>CreditAmount</design:displayName>
+            </design:uiHints>
+          </design:attributes>
+          <design:usageHints>
+            <design:label>CreditAmount</design:label>
+            <design:formattingHints>
+              <design:displaySize>18</design:displaySize>
+            </design:formattingHints>
+          </design:usageHints>
+        </design:resultColumnDefinitions>
+        <design:resultColumnDefinitions>
+          <design:attributes>
+            <design:name>DebitAmount</design:name>
+            <design:position>11</design:position>
+            <design:nativeDataTypeCode>8</design:nativeDataTypeCode>
+            <design:precision>18</design:precision>
+            <design:scale>2</design:scale>
+            <design:nullability>Nullable</design:nullability>
+            <design:uiHints>
+              <design:displayName>DebitAmount</design:displayName>
+            </design:uiHints>
+          </design:attributes>
+          <design:usageHints>
+            <design:label>DebitAmount</design:label>
+            <design:formattingHints>
+              <design:displaySize>18</design:displaySize>
+            </design:formattingHints>
+          </design:usageHints>
+        </design:resultColumnDefinitions>
+        <design:resultColumnDefinitions>
+          <design:attributes>
+            <design:name>Currency</design:name>
+            <design:position>12</design:position>
+            <design:nativeDataTypeCode>12</design:nativeDataTypeCode>
+            <design:precision>3</design:precision>
+            <design:scale>0</design:scale>
+            <design:nullability>Nullable</design:nullability>
+            <design:uiHints>
+              <design:displayName>Currency</design:displayName>
+            </design:uiHints>
+          </design:attributes>
+          <design:usageHints>
+            <design:label>Currency</design:label>
+            <design:formattingHints>
+              <design:displaySize>3</design:displaySize>
+            </design:formattingHints>
+          </design:usageHints>
+        </design:resultColumnDefinitions>
+        <design:resultColumnDefinitions>
+          <design:attributes>
+            <design:name>OrganizationID</design:name>
+            <design:position>13</design:position>
+            <design:nativeDataTypeCode>4</design:nativeDataTypeCode>
+            <design:precision>10</design:precision>
+            <design:scale>0</design:scale>
+            <design:nullability>Nullable</design:nullability>
+            <design:uiHints>
+              <design:displayName>OrganizationID</design:displayName>
+            </design:uiHints>
+          </design:attributes>
+          <design:usageHints>
+            <design:label>OrganizationID</design:label>
+            <design:formattingHints>
+              <design:displaySize>10</design:displaySize>
+            </design:formattingHints>
+          </design:usageHints>
+        </design:resultColumnDefinitions>
+        <design:resultColumnDefinitions>
+          <design:attributes>
+            <design:name>Date</design:name>
+            <design:position>14</design:position>
+            <design:nativeDataTypeCode>93</design:nativeDataTypeCode>
+            <design:precision>19</design:precision>
+            <design:scale>0</design:scale>
+            <design:nullability>Nullable</design:nullability>
+            <design:uiHints>
+              <design:displayName>Date</design:displayName>
+            </design:uiHints>
+          </design:attributes>
+          <design:usageHints>
+            <design:label>Date</design:label>
+            <design:formattingHints>
+              <design:displaySize>19</design:displaySize>
+            </design:formattingHints>
+          </design:usageHints>
+        </design:resultColumnDefinitions>
+        <design:resultColumnDefinitions>
+          <design:attributes>
+            <design:name>Process</design:name>
+            <design:position>15</design:position>
+            <design:nativeDataTypeCode>12</design:nativeDataTypeCode>
+            <design:precision>30</design:precision>
+            <design:scale>0</design:scale>
+            <design:nullability>Nullable</design:nullability>
+            <design:uiHints>
+              <design:displayName>Process</design:displayName>
+            </design:uiHints>
+          </design:attributes>
+          <design:usageHints>
+            <design:label>Process</design:label>
+            <design:formattingHints>
+              <design:displaySize>30</design:displaySize>
+            </design:formattingHints>
+          </design:usageHints>
+        </design:resultColumnDefinitions>
+        <design:resultColumnDefinitions>
+          <design:attributes>
+            <design:name>Name</design:name>
+            <design:position>16</design:position>
+            <design:nativeDataTypeCode>12</design:nativeDataTypeCode>
+            <design:precision>30</design:precision>
+            <design:scale>0</design:scale>
+            <design:nullability>Nullable</design:nullability>
+            <design:uiHints>
+              <design:displayName>Name</design:displayName>
+            </design:uiHints>
+          </design:attributes>
+          <design:usageHints>
+            <design:label>Name</design:label>
+            <design:formattingHints>
+              <design:displaySize>30</design:displaySize>
+            </design:formattingHints>
+          </design:usageHints>
+        </design:resultColumnDefinitions>
+        <design:resultColumnDefinitions>
+          <design:attributes>
+            <design:name>Amount</design:name>
+            <design:position>17</design:position>
+            <design:nativeDataTypeCode>8</design:nativeDataTypeCode>
+            <design:precision>19</design:precision>
+            <design:scale>2</design:scale>
+            <design:nullability>Nullable</design:nullability>
+            <design:uiHints>
+              <design:displayName>Amount</design:displayName>
+            </design:uiHints>
+          </design:attributes>
+          <design:usageHints>
+            <design:label>Amount</design:label>
+            <design:formattingHints>
+              <design:displaySize>19</design:displaySize>
+            </design:formattingHints>
+          </design:usageHints>
+        </design:resultColumnDefinitions>
+        <design:resultColumnDefinitions>
+          <design:attributes>
+            <design:name>Name</design:name>
+            <design:position>18</design:position>
+            <design:nativeDataTypeCode>12</design:nativeDataTypeCode>
+            <design:precision>30</design:precision>
+            <design:scale>0</design:scale>
+            <design:nullability>Nullable</design:nullability>
+            <design:uiHints>
+              <design:displayName>Name</design:displayName>
+            </design:uiHints>
+          </design:attributes>
+          <design:usageHints>
+            <design:label>Name</design:label>
+            <design:formattingHints>
+              <design:displaySize>30</design:displaySize>
+            </design:formattingHints>
+          </design:usageHints>
+        </design:resultColumnDefinitions>
+        <design:resultColumnDefinitions>
+          <design:attributes>
+            <design:name>FromName</design:name>
+            <design:position>19</design:position>
+            <design:nativeDataTypeCode>12</design:nativeDataTypeCode>
+            <design:precision>45</design:precision>
+            <design:scale>0</design:scale>
+            <design:nullability>Nullable</design:nullability>
+            <design:uiHints>
+              <design:displayName>FromName</design:displayName>
+            </design:uiHints>
+          </design:attributes>
+          <design:usageHints>
+            <design:label>FromName</design:label>
+            <design:formattingHints>
+              <design:displaySize>45</design:displaySize>
+            </design:formattingHints>
+          </design:usageHints>
+        </design:resultColumnDefinitions>
+        <design:resultColumnDefinitions>
+          <design:attributes>
+            <design:name>ToName</design:name>
+            <design:position>20</design:position>
+            <design:nativeDataTypeCode>12</design:nativeDataTypeCode>
+            <design:precision>45</design:precision>
+            <design:scale>0</design:scale>
+            <design:nullability>Nullable</design:nullability>
+            <design:uiHints>
+              <design:displayName>ToName</design:displayName>
+            </design:uiHints>
+          </design:attributes>
+          <design:usageHints>
+            <design:label>ToName</design:label>
+            <design:formattingHints>
+              <design:displaySize>45</design:displaySize>
+            </design:formattingHints>
+          </design:usageHints>
+        </design:resultColumnDefinitions>
+        <design:resultColumnDefinitions>
+          <design:attributes>
+            <design:name>FromDate</design:name>
+            <design:position>21</design:position>
+            <design:nativeDataTypeCode>93</design:nativeDataTypeCode>
+            <design:precision>19</design:precision>
+            <design:scale>0</design:scale>
+            <design:nullability>Nullable</design:nullability>
+            <design:uiHints>
+              <design:displayName>FromDate</design:displayName>
+            </design:uiHints>
+          </design:attributes>
+          <design:usageHints>
+            <design:label>FromDate</design:label>
+            <design:formattingHints>
+              <design:displaySize>19</design:displaySize>
+            </design:formattingHints>
+          </design:usageHints>
+        </design:resultColumnDefinitions>
+        <design:resultColumnDefinitions>
+          <design:attributes>
+            <design:name>ToDate</design:name>
+            <design:position>22</design:position>
+            <design:nativeDataTypeCode>93</design:nativeDataTypeCode>
+            <design:precision>19</design:precision>
+            <design:scale>0</design:scale>
+            <design:nullability>Nullable</design:nullability>
+            <design:uiHints>
+              <design:displayName>ToDate</design:displayName>
+            </design:uiHints>
+          </design:attributes>
+          <design:usageHints>
+            <design:label>ToDate</design:label>
+            <design:formattingHints>
+              <design:displaySize>19</design:displaySize>
+            </design:formattingHints>
+          </design:usageHints>
+        </design:resultColumnDefinitions>
+        <design:resultColumnDefinitions>
+          <design:attributes>
+            <design:name>ReportID</design:name>
+            <design:position>23</design:position>
+            <design:nativeDataTypeCode>4</design:nativeDataTypeCode>
+            <design:precision>10</design:precision>
+            <design:scale>0</design:scale>
+            <design:nullability>NotNullable</design:nullability>
+            <design:uiHints>
+              <design:displayName>ReportID</design:displayName>
+            </design:uiHints>
+          </design:attributes>
+          <design:usageHints>
+            <design:label>ReportID</design:label>
+            <design:formattingHints>
+              <design:displaySize>10</design:displaySize>
+            </design:formattingHints>
+          </design:usageHints>
+        </design:resultColumnDefinitions>
+      </design:resultSetColumns>
+    </design:resultSetDefinitions>
+  </design:ResultSets>
+</model:DesignValues>]]></xml-property>
+        </oda-data-set>
+    </data-sets>
+    <styles>
+        <style name="crosstab-cell" id="4">
+            <property name="borderBottomColor">#CCCCCC</property>
+            <property name="borderBottomStyle">solid</property>
+            <property name="borderBottomWidth">1pt</property>
+            <property name="borderLeftColor">#CCCCCC</property>
+            <property name="borderLeftStyle">solid</property>
+            <property name="borderLeftWidth">1pt</property>
+            <property name="borderRightColor">#CCCCCC</property>
+            <property name="borderRightStyle">solid</property>
+            <property name="borderRightWidth">1pt</property>
+            <property name="borderTopColor">#CCCCCC</property>
+            <property name="borderTopStyle">solid</property>
+            <property name="borderTopWidth">1pt</property>
+        </style>
+        <style name="crosstab" id="5">
+            <property name="borderBottomColor">#CCCCCC</property>
+            <property name="borderBottomStyle">solid</property>
+            <property name="borderBottomWidth">1pt</property>
+            <property name="borderLeftColor">#CCCCCC</property>
+            <property name="borderLeftStyle">solid</property>
+            <property name="borderLeftWidth">1pt</property>
+            <property name="borderRightColor">#CCCCCC</property>
+            <property name="borderRightStyle">solid</property>
+            <property name="borderRightWidth">1pt</property>
+            <property name="borderTopColor">#CCCCCC</property>
+            <property name="borderTopStyle">solid</property>
+            <property name="borderTopWidth">1pt</property>
+        </style>
+        <style name="ReportTitle" id="7">
+            <property name="fontFamily">"Arial"</property>
+            <property name="fontSize">xx-large</property>
+            <property name="fontWeight">bolder</property>
+        </style>
+        <style name="ReportHeader" id="50">
+            <property name="backgroundColor">#C0C0C0</property>
+            <property name="fontFamily">"Arial"</property>
+            <property name="fontSize">medium</property>
+            <property name="fontWeight">bold</property>
+        </style>
+        <style name="ReportLine" id="51">
+            <property name="fontFamily">"Arial"</property>
+            <property name="paddingBottom">0pt</property>
+        </style>
+        <style name="Header" id="136">
+            <property name="fontFamily">"Arial"</property>
+            <property name="fontWeight">bold</property>
+            <property name="textUnderline">none</property>
+        </style>
+        <style name="PageFooter" id="149">
+            <property name="fontFamily">"Arial"</property>
+            <structure name="dateTimeFormat">
+                <property name="category">Short Date</property>
+                <property name="pattern">Short Date</property>
+            </structure>
+        </style>
+    </styles>
+    <page-setup>
+        <simple-master-page name="Simple MasterPage" id="2">
+            <property name="type">a4</property>
+            <property name="orientation">landscape</property>
+            <property name="topMargin">15mm</property>
+            <property name="leftMargin">15mm</property>
+            <property name="bottomMargin">15mm</property>
+            <property name="rightMargin">15mm</property>
+            <property name="numberAlign">right</property>
+            <property name="headerHeight">5mm</property>
+            <property name="footerHeight">0mm</property>
+            <page-footer>
+                <text id="3">
+                    <property name="style">PageFooter</property>
+                    <property name="contentType">html</property>
+                    <text-property name="content"><![CDATA[<value-of>new Date()</value-of>]]></text-property>
+                </text>
+            </page-footer>
+        </simple-master-page>
+    </page-setup>
+    <body>
+        <table id="8">
+            <property name="height">2.5625in</property>
+            <property name="width">10.291666666666666in</property>
+            <property name="dataSet">Journal</property>
+            <list-property name="boundDataColumns">
+                <structure>
+                    <property name="name">Account</property>
+                    <expression name="expression">dataSetRow["Account"]</expression>
+                    <property name="dataType">string</property>
+                </structure>
+                <structure>
+                    <property name="name">Event</property>
+                    <expression name="expression">dataSetRow["Event"]</expression>
+                    <property name="dataType">string</property>
+                </structure>
+                <structure>
+                    <property name="name">Organization</property>
+                    <expression name="expression">dataSetRow["Organization"]</expression>
+                    <property name="dataType">string</property>
+                </structure>
+                <structure>
+                    <property name="name">CreditAmount</property>
+                    <expression name="expression">dataSetRow["CreditAmount"]</expression>
+                    <property name="dataType">float</property>
+                </structure>
+                <structure>
+                    <property name="name">DebitAmount</property>
+                    <expression name="expression">dataSetRow["DebitAmount"]</expression>
+                    <property name="dataType">float</property>
+                </structure>
+                <structure>
+                    <property name="name">Currency</property>
+                    <expression name="expression">"Totals in " + dataSetRow["Currency"]</expression>
+                    <property name="dataType">string</property>
+                </structure>
+                <structure>
+                    <property name="name">Folio</property>
+                    <expression name="expression" type="javascript">"Journal " + dataSetRow["Event"]</expression>
+                    <property name="dataType">string</property>
+                </structure>
+                <structure>
+                    <property name="name">Process</property>
+                    <text-property name="displayName">Process</text-property>
+                    <expression name="expression">dataSetRow["Process"]</expression>
+                    <property name="dataType">string</property>
+                </structure>
+                <structure>
+                    <property name="name">Actor</property>
+                    <text-property name="displayName">Actor</text-property>
+                    <expression name="expression">dataSetRow["Actor"]</expression>
+                    <property name="dataType">string</property>
+                </structure>
+                <structure>
+                    <property name="name">DueDate</property>
+                    <text-property name="displayName">DueDate</text-property>
+                    <expression name="expression">dataSetRow["DueDate"]</expression>
+                    <property name="dataType">date-time</property>
+                </structure>
+                <structure>
+                    <property name="name">DoneDate</property>
+                    <text-property name="displayName">DoneDate</text-property>
+                    <expression name="expression">dataSetRow["DoneDate"]</expression>
+                    <property name="dataType">date-time</property>
+                </structure>
+                <structure>
+                    <property name="name">Date</property>
+                    <expression name="expression">dataSetRow["Date"]</expression>
+                    <property name="dataType">date-time</property>
+                </structure>
+                <structure>
+                    <property name="name">Subaccount</property>
+                    <text-property name="displayName">Subaccount</text-property>
+                    <expression name="expression">dataSetRow["Subaccount"]</expression>
+                    <property name="dataType">string</property>
+                </structure>
+                <structure>
+                    <property name="name">DrTot</property>
+                    <property name="dataType">float</property>
+                    <simple-property-list name="aggregateOn">
+                        <value>EventGroup</value>
+                    </simple-property-list>
+                    <property name="aggregateFunction">SUM</property>
+                    <list-property name="arguments">
+                        <structure>
+                            <property name="name">Expression</property>
+                            <expression name="value">dataSetRow["DebitAmount"]</expression>
+                        </structure>
+                    </list-property>
+                </structure>
+                <structure>
+                    <property name="name">CrTot</property>
+                    <property name="dataType">float</property>
+                    <simple-property-list name="aggregateOn">
+                        <value>EventGroup</value>
+                    </simple-property-list>
+                    <property name="aggregateFunction">SUM</property>
+                    <list-property name="arguments">
+                        <structure>
+                            <property name="name">Expression</property>
+                            <expression name="value">dataSetRow["CreditAmount"]</expression>
+                        </structure>
+                    </list-property>
+                </structure>
+                <structure>
+                    <property name="name">State</property>
+                    <text-property name="displayName">State</text-property>
+                    <expression name="expression">dataSetRow["State"]</expression>
+                    <property name="dataType">string</property>
+                </structure>
+                <structure>
+                    <property name="name">Owner</property>
+                    <text-property name="displayName">Owner</text-property>
+                    <expression name="expression">dataSetRow["Owner"]</expression>
+                    <property name="dataType">string</property>
+                </structure>
+                <structure>
+                    <property name="name">Description</property>
+                    <text-property name="displayName">Description</text-property>
+                    <expression name="expression">dataSetRow["Description"]</expression>
+                    <property name="dataType">string</property>
+                </structure>
+                <structure>
+                    <property name="name">Reservation</property>
+                    <text-property name="displayName">Reservation</text-property>
+                    <expression name="expression" type="javascript">dataSetRow["Reservation"]</expression>
+                    <property name="dataType">string</property>
+                </structure>
+            </list-property>
+            <column id="30">
+                <property name="width">1.2395833333333333in</property>
+            </column>
+            <column id="415">
+                <property name="width">1.40625in</property>
+            </column>
+            <column id="32">
+                <property name="width">1.3333333333333333in</property>
+            </column>
+            <column id="33">
+                <property name="width">1.5416666666666667in</property>
+            </column>
+            <column id="428">
+                <property name="width">1.1145833333333333in</property>
+            </column>
+            <column id="497">
+                <property name="width">1.6354166666666667in</property>
+            </column>
+            <column id="34">
+                <property name="width">20mm</property>
+            </column>
+            <column id="35">
+                <property name="width">20mm</property>
+            </column>
+            <group id="167">
+                <property name="groupName">EventGroup</property>
+                <property name="interval">none</property>
+                <property name="sortDirection">asc</property>
+                <expression name="keyExpr" type="javascript">row["Folio"]</expression>
+                <structure name="toc">
+                    <expression name="expressionValue" type="javascript">row["Folio"]</expression>
+                </structure>
+                <property name="repeatHeader">false</property>
+                <property name="hideDetail">false</property>
+                <property name="pageBreakAfter">auto</property>
+                <property name="pageBreakBefore">auto</property>
+                <property name="pageBreakInside">auto</property>
+                <header>
+                    <row id="341">
+                        <property name="style">Header</property>
+                        <cell id="342">
+                            <property name="colSpan">3</property>
+                            <property name="rowSpan">1</property>
+                            <data id="331">
+                                <property name="fontSize">x-large</property>
+                                <property name="resultSetColumn">Folio</property>
+                            </data>
+                        </cell>
+                        <cell id="483"/>
+                        <cell id="422"/>
+                        <cell id="491">
+                            <label id="351">
+                                <property name="style">Header</property>
+                                <property name="fontSize">large</property>
+                                <property name="fontWeight">bold</property>
+                                <property name="textAlign">right</property>
+                                <text-property name="text">Date</text-property>
+                            </label>
+                        </cell>
+                        <cell id="346">
+                            <property name="colSpan">2</property>
+                            <property name="rowSpan">1</property>
+                            <property name="textAlign">right</property>
+                            <data id="329">
+                                <property name="style">Header</property>
+                                <property name="fontSize">large</property>
+                                <structure name="dateTimeFormat">
+                                    <property name="category">Custom</property>
+                                    <property name="pattern">dd/MM/yyyy</property>
+                                </structure>
+                                <property name="textAlign">left</property>
+                                <property name="resultSetColumn">Date</property>
+                            </data>
+                        </cell>
+                    </row>
+                    <row id="217">
+                        <property name="style">Header</property>
+                        <cell id="211">
+                            <property name="colSpan">1</property>
+                            <property name="rowSpan">1</property>
+                            <label id="486">
+                                <property name="style">Header</property>
+                                <property name="backgroundAttachment">scroll</property>
+                                <property name="backgroundPositionX">0%</property>
+                                <property name="backgroundPositionY">0%</property>
+                                <property name="backgroundRepeat">repeat</property>
+                                <property name="fontFamily">"Arial"</property>
+                                <property name="fontSize">medium</property>
+                                <property name="fontWeight">bold</property>
+                                <property name="fontStyle">normal</property>
+                                <property name="fontVariant">normal</property>
+                                <property name="color">black</property>
+                                <property name="textLineThrough">none</property>
+                                <property name="textOverline">none</property>
+                                <property name="textUnderline">none</property>
+                                <property name="borderBottomColor">black</property>
+                                <property name="borderBottomStyle">none</property>
+                                <property name="borderBottomWidth">medium</property>
+                                <property name="borderLeftColor">black</property>
+                                <property name="borderLeftStyle">none</property>
+                                <property name="borderLeftWidth">medium</property>
+                                <property name="borderRightColor">black</property>
+                                <property name="borderRightStyle">none</property>
+                                <property name="borderRightWidth">medium</property>
+                                <property name="borderTopColor">black</property>
+                                <property name="borderTopStyle">none</property>
+                                <property name="borderTopWidth">medium</property>
+                                <property name="marginTop">0pt</property>
+                                <property name="marginLeft">0pt</property>
+                                <property name="marginBottom">0pt</property>
+                                <property name="marginRight">0pt</property>
+                                <property name="paddingTop">1pt</property>
+                                <property name="paddingLeft">1pt</property>
+                                <property name="paddingBottom">1pt</property>
+                                <property name="paddingRight">1pt</property>
+                                <property name="textAlign">left</property>
+                                <property name="letterSpacing">normal</property>
+                                <property name="lineHeight">normal</property>
+                                <property name="orphans">2</property>
+                                <property name="textTransform">none</property>
+                                <property name="whiteSpace">normal</property>
+                                <property name="widows">2</property>
+                                <property name="wordSpacing">normal</property>
+                                <property name="display">block</property>
+                                <property name="pageBreakAfter">auto</property>
+                                <property name="pageBreakBefore">auto</property>
+                                <property name="pageBreakInside">auto</property>
+                                <property name="showIfBlank">false</property>
+                                <property name="canShrink">false</property>
+                                <property name="overflow">hidden</property>
+                                <text-property name="text">Organization</text-property>
+                            </label>
+                        </cell>
+                        <cell id="417">
+                            <property name="colSpan">1</property>
+                            <property name="rowSpan">1</property>
+                            <data id="487">
+                                <property name="backgroundAttachment">scroll</property>
+                                <property name="backgroundPositionX">0%</property>
+                                <property name="backgroundPositionY">0%</property>
+                                <property name="backgroundRepeat">repeat</property>
+                                <property name="fontFamily">"Arial"</property>
+                                <property name="fontSize">medium</property>
+                                <property name="fontWeight">bold</property>
+                                <property name="fontStyle">normal</property>
+                                <property name="fontVariant">normal</property>
+                                <property name="color">black</property>
+                                <property name="textLineThrough">none</property>
+                                <property name="textOverline">none</property>
+                                <property name="textUnderline">none</property>
+                                <property name="borderBottomColor">black</property>
+                                <property name="borderBottomStyle">none</property>
+                                <property name="borderBottomWidth">medium</property>
+                                <property name="borderLeftColor">black</property>
+                                <property name="borderLeftStyle">none</property>
+                                <property name="borderLeftWidth">medium</property>
+                                <property name="borderRightColor">black</property>
+                                <property name="borderRightStyle">none</property>
+                                <property name="borderRightWidth">medium</property>
+                                <property name="borderTopColor">black</property>
+                                <property name="borderTopStyle">none</property>
+                                <property name="borderTopWidth">medium</property>
+                                <property name="marginTop">0pt</property>
+                                <property name="marginLeft">0pt</property>
+                                <property name="marginBottom">0pt</property>
+                                <property name="marginRight">0pt</property>
+                                <property name="paddingTop">1pt</property>
+                                <property name="paddingLeft">1pt</property>
+                                <property name="paddingBottom">1pt</property>
+                                <property name="paddingRight">1pt</property>
+                                <property name="textAlign">left</property>
+                                <property name="letterSpacing">normal</property>
+                                <property name="lineHeight">normal</property>
+                                <property name="orphans">2</property>
+                                <property name="textTransform">none</property>
+                                <property name="whiteSpace">normal</property>
+                                <property name="widows">2</property>
+                                <property name="wordSpacing">normal</property>
+                                <property name="display">block</property>
+                                <property name="pageBreakAfter">auto</property>
+                                <property name="pageBreakBefore">auto</property>
+                                <property name="pageBreakInside">auto</property>
+                                <property name="showIfBlank">false</property>
+                                <property name="canShrink">false</property>
+                                <property name="overflow">hidden</property>
+                                <property name="resultSetColumn">Owner</property>
+                            </data>
+                        </cell>
+                        <cell id="480">
+                            <label id="484">
+                                <property name="style">Header</property>
+                                <property name="backgroundAttachment">scroll</property>
+                                <property name="backgroundPositionX">0%</property>
+                                <property name="backgroundPositionY">0%</property>
+                                <property name="backgroundRepeat">repeat</property>
+                                <property name="fontFamily">"Arial"</property>
+                                <property name="fontSize">medium</property>
+                                <property name="fontWeight">bold</property>
+                                <property name="fontStyle">normal</property>
+                                <property name="fontVariant">normal</property>
+                                <property name="color">black</property>
+                                <property name="textLineThrough">none</property>
+                                <property name="textOverline">none</property>
+                                <property name="textUnderline">none</property>
+                                <property name="borderBottomColor">black</property>
+                                <property name="borderBottomStyle">none</property>
+                                <property name="borderBottomWidth">medium</property>
+                                <property name="borderLeftColor">black</property>
+                                <property name="borderLeftStyle">none</property>
+                                <property name="borderLeftWidth">medium</property>
+                                <property name="borderRightColor">black</property>
+                                <property name="borderRightStyle">none</property>
+                                <property name="borderRightWidth">medium</property>
+                                <property name="borderTopColor">black</property>
+                                <property name="borderTopStyle">none</property>
+                                <property name="borderTopWidth">medium</property>
+                                <property name="marginTop">0pt</property>
+                                <property name="marginLeft">0pt</property>
+                                <property name="marginBottom">0pt</property>
+                                <property name="marginRight">0pt</property>
+                                <property name="paddingTop">1pt</property>
+                                <property name="paddingLeft">1pt</property>
+                                <property name="paddingBottom">1pt</property>
+                                <property name="paddingRight">1pt</property>
+                                <property name="textAlign">left</property>
+                                <property name="letterSpacing">normal</property>
+                                <property name="lineHeight">normal</property>
+                                <property name="orphans">2</property>
+                                <property name="textTransform">none</property>
+                                <property name="whiteSpace">normal</property>
+                                <property name="widows">2</property>
+                                <property name="wordSpacing">normal</property>
+                                <property name="display">block</property>
+                                <property name="pageBreakAfter">auto</property>
+                                <property name="pageBreakBefore">auto</property>
+                                <property name="pageBreakInside">auto</property>
+                                <property name="showIfBlank">false</property>
+                                <property name="canShrink">false</property>
+                                <property name="overflow">hidden</property>
+                                <text-property name="text">User Name</text-property>
+                            </label>
+                        </cell>
+                        <cell id="481">
+                            <data id="457">
+                                <property name="backgroundAttachment">scroll</property>
+                                <property name="backgroundPositionX">0%</property>
+                                <property name="backgroundPositionY">0%</property>
+                                <property name="backgroundRepeat">repeat</property>
+                                <property name="fontFamily">"Arial"</property>
+                                <property name="fontSize">medium</property>
+                                <property name="fontWeight">bold</property>
+                                <property name="fontStyle">normal</property>
+                                <property name="fontVariant">normal</property>
+                                <property name="color">black</property>
+                                <property name="textLineThrough">none</property>
+                                <property name="textOverline">none</property>
+                                <property name="textUnderline">none</property>
+                                <property name="borderBottomColor">black</property>
+                                <property name="borderBottomStyle">none</property>
+                                <property name="borderBottomWidth">medium</property>
+                                <property name="borderLeftColor">black</property>
+                                <property name="borderLeftStyle">none</property>
+                                <property name="borderLeftWidth">medium</property>
+                                <property name="borderRightColor">black</property>
+                                <property name="borderRightStyle">none</property>
+                                <property name="borderRightWidth">medium</property>
+                                <property name="borderTopColor">black</property>
+                                <property name="borderTopStyle">none</property>
+                                <property name="borderTopWidth">medium</property>
+                                <property name="marginTop">0pt</property>
+                                <property name="marginLeft">0pt</property>
+                                <property name="marginBottom">0pt</property>
+                                <property name="marginRight">0pt</property>
+                                <property name="paddingTop">1pt</property>
+                                <property name="paddingLeft">1pt</property>
+                                <property name="paddingBottom">1pt</property>
+                                <property name="paddingRight">1pt</property>
+                                <property name="textAlign">left</property>
+                                <property name="letterSpacing">normal</property>
+                                <property name="lineHeight">normal</property>
+                                <property name="orphans">2</property>
+                                <property name="textTransform">none</property>
+                                <property name="whiteSpace">normal</property>
+                                <property name="widows">2</property>
+                                <property name="wordSpacing">normal</property>
+                                <property name="display">block</property>
+                                <property name="pageBreakAfter">auto</property>
+                                <property name="pageBreakBefore">auto</property>
+                                <property name="pageBreakInside">auto</property>
+                                <property name="showIfBlank">false</property>
+                                <property name="canShrink">false</property>
+                                <property name="overflow">hidden</property>
+                                <property name="resultSetColumn">Actor</property>
+                            </data>
+                        </cell>
+                        <cell id="423">
+                            <label id="504">
+                                <property name="style">Header</property>
+                                <property name="backgroundAttachment">scroll</property>
+                                <property name="backgroundPositionX">0%</property>
+                                <property name="backgroundPositionY">0%</property>
+                                <property name="backgroundRepeat">repeat</property>
+                                <property name="fontFamily">"Arial"</property>
+                                <property name="fontSize">medium</property>
+                                <property name="fontWeight">bold</property>
+                                <property name="fontStyle">normal</property>
+                                <property name="fontVariant">normal</property>
+                                <property name="color">black</property>
+                                <property name="textLineThrough">none</property>
+                                <property name="textOverline">none</property>
+                                <property name="textUnderline">none</property>
+                                <property name="borderBottomColor">black</property>
+                                <property name="borderBottomStyle">none</property>
+                                <property name="borderBottomWidth">medium</property>
+                                <property name="borderLeftColor">black</property>
+                                <property name="borderLeftStyle">none</property>
+                                <property name="borderLeftWidth">medium</property>
+                                <property name="borderRightColor">black</property>
+                                <property name="borderRightStyle">none</property>
+                                <property name="borderRightWidth">medium</property>
+                                <property name="borderTopColor">black</property>
+                                <property name="borderTopStyle">none</property>
+                                <property name="borderTopWidth">medium</property>
+                                <property name="marginTop">0pt</property>
+                                <property name="marginLeft">0pt</property>
+                                <property name="marginBottom">0pt</property>
+                                <property name="marginRight">0pt</property>
+                                <property name="paddingTop">1pt</property>
+                                <property name="paddingLeft">1pt</property>
+                                <property name="paddingBottom">1pt</property>
+                                <property name="paddingRight">1pt</property>
+                                <property name="textAlign">left</property>
+                                <property name="letterSpacing">normal</property>
+                                <property name="lineHeight">normal</property>
+                                <property name="orphans">2</property>
+                                <property name="textTransform">none</property>
+                                <property name="whiteSpace">normal</property>
+                                <property name="widows">2</property>
+                                <property name="wordSpacing">normal</property>
+                                <property name="display">block</property>
+                                <property name="pageBreakAfter">auto</property>
+                                <property name="pageBreakBefore">auto</property>
+                                <property name="pageBreakInside">auto</property>
+                                <property name="showIfBlank">false</property>
+                                <property name="canShrink">false</property>
+                                <property name="overflow">hidden</property>
+                                <list-property name="visibility">
+                                    <structure>
+                                        <property name="format">all</property>
+                                        <expression name="valueExpr" type="javascript">row["Reservation"] == null</expression>
+                                    </structure>
+                                </list-property>
+                                <text-property name="text">Reservation</text-property>
+                            </label>
+                        </cell>
+                        <cell id="501">
+                            <property name="textAlign">right</property>
+                            <data id="503">
+                                <property name="whiteSpace">nowrap</property>
+                                <property name="resultSetColumn">Reservation</property>
+                            </data>
+                        </cell>
+                        <cell id="492"/>
+                        <cell id="476">
+                            <property name="textAlign">right</property>
+                        </cell>
+                    </row>
+                    <row id="286">
+                        <property name="style">ReportHeader</property>
+                        <property name="borderTopColor">#000000</property>
+                        <property name="borderTopStyle">solid</property>
+                        <property name="borderTopWidth">1px</property>
+                        <cell id="287">
+                            <label id="369">
+                                <property name="textAlign">left</property>
+                                <text-property name="text">Account</text-property>
+                            </label>
+                        </cell>
+                        <cell id="412">
+                            <label id="435">
+                                <property name="textAlign">left</property>
+                                <text-property name="text">Subledger</text-property>
+                            </label>
+                        </cell>
+                        <cell id="289">
+                            <label id="436">
+                                <property name="textAlign">left</property>
+                                <text-property name="text">Subaccount</text-property>
+                            </label>
+                        </cell>
+                        <cell id="290">
+                            <label id="437">
+                                <property name="textAlign">left</property>
+                                <text-property name="text">Organization</text-property>
+                            </label>
+                        </cell>
+                        <cell id="425">
+                            <property name="colSpan">2</property>
+                            <property name="rowSpan">1</property>
+                            <label id="498">
+                                <property name="textAlign">left</property>
+                                <text-property name="text">Description</text-property>
+                            </label>
+                        </cell>
+                        <cell id="429">
+                            <label id="40">
+                                <property name="textAlign">right</property>
+                                <text-property name="text">Debit</text-property>
+                            </label>
+                        </cell>
+                        <cell id="430">
+                            <label id="433">
+                                <property name="textAlign">right</property>
+                                <text-property name="text">Credit</text-property>
+                            </label>
+                        </cell>
+                    </row>
+                </header>
+                <footer>
+                    <row id="175">
+                        <property name="style">ReportHeader</property>
+                        <property name="borderBottomColor">#000000</property>
+                        <property name="borderBottomStyle">solid</property>
+                        <property name="borderBottomWidth">medium</property>
+                        <property name="pageBreakAfter">always</property>
+                        <property name="pageBreakInside">avoid</property>
+                        <cell id="176"/>
+                        <cell id="414"/>
+                        <cell id="178"/>
+                        <cell id="179"/>
+                        <cell id="427">
+                            <property name="colSpan">1</property>
+                            <property name="rowSpan">1</property>
+                        </cell>
+                        <cell id="500">
+                            <data id="474">
+                                <property name="textAlign">right</property>
+                                <property name="resultSetColumn">Currency</property>
+                            </data>
+                        </cell>
+                        <cell id="180">
+                            <property name="textAlign">right</property>
+                            <data id="472">
+                                <structure name="numberFormat">
+                                    <property name="category">Currency</property>
+                                    <property name="pattern">#,##0.00;(#,##0.00)</property>
+                                </structure>
+                                <property name="resultSetColumn">DrTot</property>
+                            </data>
+                        </cell>
+                        <cell id="181">
+                            <property name="textAlign">right</property>
+                            <data id="473">
+                                <structure name="numberFormat">
+                                    <property name="category">Currency</property>
+                                    <property name="pattern">#,##0.00;(#,##0.00)</property>
+                                </structure>
+                                <property name="resultSetColumn">CrTot</property>
+                            </data>
+                        </cell>
+                    </row>
+                </footer>
+            </group>
+            <detail>
+                <row id="16">
+                    <property name="height">4mm</property>
+                    <property name="style">ReportLine</property>
+                    <property name="textAlign">left</property>
+                    <property name="pageBreakAfter">avoid</property>
+                    <cell id="17">
+                        <property name="colSpan">1</property>
+                        <property name="rowSpan">1</property>
+                        <data id="462">
+                            <property name="resultSetColumn">Account</property>
+                        </data>
+                    </cell>
+                    <cell id="418">
+                        <data id="463">
+                            <property name="resultSetColumn">Account</property>
+                        </data>
+                    </cell>
+                    <cell id="19">
+                        <property name="colSpan">1</property>
+                        <property name="rowSpan">1</property>
+                        <data id="470">
+                            <property name="resultSetColumn">Subaccount</property>
+                        </data>
+                    </cell>
+                    <cell id="334">
+                        <data id="464">
+                            <property name="resultSetColumn">Organization</property>
+                        </data>
+                    </cell>
+                    <cell id="426">
+                        <property name="colSpan">2</property>
+                        <property name="rowSpan">1</property>
+                        <data id="499">
+                            <property name="resultSetColumn">Description</property>
+                        </data>
+                    </cell>
+                    <cell id="431">
+                        <data id="468">
+                            <structure name="numberFormat">
+                                <property name="category">Currency</property>
+                                <property name="pattern">#,##0.00;(#,##0.00)</property>
+                            </structure>
+                            <property name="textAlign">right</property>
+                            <property name="resultSetColumn">DebitAmount</property>
+                        </data>
+                    </cell>
+                    <cell id="432">
+                        <data id="469">
+                            <structure name="numberFormat">
+                                <property name="category">Currency</property>
+                                <property name="pattern">#,##0.00;(#,##0.00)</property>
+                            </structure>
+                            <property name="textAlign">right</property>
+                            <property name="resultSetColumn">CreditAmount</property>
+                        </data>
+                    </cell>
+                </row>
+            </detail>
+        </table>
+    </body>
+    <list-property name="images">
+        <structure>
+            <property name="name">NOX LHD_Header.png</property>
+            <property name="data">
+                iVBORw0KGgoAAAANSUhEUgAAAHgAAACECAIAAADUVnjnAAAACXBIWXMAAC4jAAAuIwF4pT92AAAABGdB
+                TUEAALGOfPtRkwAAACBjSFJNAAB6JQAAgIMAAPn/AACA6QAAdTAAAOpgAAA6mAAAF2+SX8VGAAAc+klE
+                QVR42mLU0dF59OgRExMTwyigJQAIIJZPYDAaELQGAAHEwsjICKQg5CigHQAIoNESg04AIIBGA5pOACCA
+                RgOaTgAggEYDmk4AIIBGA5pOACCARgOaTgAggEYDmk4AIIBGA5pOACCARgOaTgAggEYDmk4AIIBGA5pO
+                ACCARgOaTgAggEYDmk4AIIBGA5pOACCARgOaTgAggEYDmk4AIIBGA5pOACCARgOaTgAggEYDmk4AIIBG
+                A5pOACCARgOaTgAggEYDmk4AIIBGA5pOACCARgOaTgAggEYDmk4AIIBGA5pOACCARgOaTgAggEYDmk4A
+                IIBGA5pOACCARgOaTgAggEYDmk4AIIBGA5pOACCARgOaTgAggEYDmk4AIIBGA5pOACCARgOaTgAggEYD
+                mk4AIIBGA5pOACCARgOaTgAggEYDmk4AIIBGA5pOACCARgOaTgAggEYDmk4AIIBGA5pOACCARgOaTgAg
+                gEYDmk4AIIBGA5pOACCARgOaTgAggEYDmk4AIIBGA5pOACCARgOaTgAggEYDmk4AIIBGA5pOACCARgOa
+                TgAggEYDmk4AIIBGA5pOACCARgOaTgAggEYDmk4AIIBGA5pOACCARgOaTgAggEYDmk4AIIBGA5pOACCA
+                RgOaTgAggEYDmk4AIIBGA5pOACCARgOaTgAggEYDmk4AIIBGA5pOACCARgOaTgAggEYDmk4AIIBGA5pO
+                ACCARgOaTgAggEYDmk4AIIBGA5pOACCAWIaQW////4/MpeTaKWSj6HN9FUAAsQz+oEQWZGZmBnL//fsH
+                Fyc+mNAMBxoFJP/+/UtkoKNpB5UGTEyYgrgUAwTQ4ApoLi4uPz8/NjY2oIcfPXp04MABoIuFhIQsLS3N
+                zc21tbXFxcWBIh8+fLhx48a5c+eOHDny+PFjgmENVACJG11dXTMzM00w4OfnB4bU+/fvb968efv27TNg
+                ADQca/ABRWRlZd3c3H7//g0RuXDhwqVLl3BZzcLC4uvry8fHB9TIysoKdC1AADHIy8tDnDLgAOgMYDh+
+                /vz5Pxhs3LgRKKKlpQUMhf84wP37901NTfG7H+JzMTGxdevW/fjxA5dRv379Wrt2LTBSsZoGFBQVFb17
+                9y5c/ZMnTxQVFXEpbmhogKsE+gjoSIAAGlwBDQyON2/eQNy3ZMkSY2NjSCrDA168eOHo6IjHC0ApW1tb
+                SOYgCIDW2dvb4wo+YMZ68OABXPHChQsxVQJFjIyMvn//DlHz9evXwMBAoCBAAA26gH79+jXEicePHwcW
+                CxA2sBjp7u6OjY0FOjo1NRUt1IAFCLyIwDQTGFtoCfn69evV1dXh4eEhISG1tbVALrLsu3fv1NTUcJkW
+                FBQEVwksRoCFCbJKIJudnf3QoUNwNZMnT4a4DSCABm9A//nzB0h++fKlq6sLkkmRy9yCggKIAkiRraCg
+                gDVx8fLybtq0Ce5tYHaprKwUERFBNg1YWGdlZT18+BCu7MSJE8ASGauBwFoEWMLAVQLLdw0NDbhKYHE8
+                adIkuOy+ffskJCQgsgABNHgDGgIqKiqQwxe52J0zZw5cWUJCAtZwaW9vh7RSgOTPnz99fHww0z5ERF9f
+                //nz53DFwPDClaiBdfWuXbvgKjdv3gx3obe3N9xJwJgTFBSEGwIQQIM6oHfv3s3JyYmnxATWYBCVvb29
+                mMEHTE3AEhwSIsBsDswEuEoYiPr09HS41cAWBbAQwGW1tbX1t2/fICqBDGADAygoJycHzArw7AjMJcja
+                AQJo8AY0MGjwtCiA4sAWArDshihevXo1ZqpHTl9nz57FE8pwA1++fAkPKSsrKzy25+TkILcrnJycgAUF
+                XKSqqgrNOoAAGrxd8KdPn167dg2PAmBfA96qxdqeRS7ZgY1u/P0RoBSwGoSXA8DujLOzMx7bp0yZMn/+
+                fAibh4cH2Eays7ODcI8dOwasV9CsAwigwRvQwIoLWDLg74bAfYK1h6aurg5nw1M0fgCs6OBsYPkANB+r
+                yRB7gfUqsFiHiEhKSkK6mm/fvgUWQcAMgRapAAE0eAMa0pejpCsP7P7ARYDtX2I0ApUB24IQNrBxAmxF
+                4IlmYDlTVFQEbCnDBYE5LDs7+8qVK5hZByCAhvPonYCAADzOgMUoMVqApQf8Onpg0xDYwMCvHlg33Llz
+                B84FJmR4aYYGAAJoOAc0cp4gcuyJCQzg2nGNGUEAMBomTJgAbBfCRYBtpFmzZgE7opgaAQJoOAc0sLiE
+                B5+wsDAxWoClDTwffPz4Edj0xlM6eXp6AtseaOJAi4Chj1ltAATQ8AxoSPoFdhngIpqamsRoNDAwYGGB
+                jmjev38fWBTgCmUlJaW6ujoIF9iUBhbWwKY3hGtkZARs3sFzBgQABNBwTtG3b99GDkFi6s/IyEi4yIED
+                B7CWOUCVwCJi1apVwACFiACbH/39/SkpKV++fIGItLa2Qro/cF0AATScA/rWrVtwr5qbmwN7Q/jLXDU1
+                NWDxCmEDq8S9e/fiUhkbG2tsbAxhnzlzZsaMGUDG6dOnOzs74Wry8vKA7Ra4jQABNHh7hqdOnYK0rnAp
+                Bham9+7dw9Mz5ODguHjxIry3tnLlSog4rjHryZMnwxVDkjPW8RMbGxv4oDmwbIEP0kIaKpDYhYCtW7fC
+                vQAQQMMzoJmAkBGUWQMCAoHZGe7znp4ebm5urBMiZWVlkGktCMjIyMAayqKiolevXoWHMrDQQItdNze3
+                V69ewc2BKwAIoGEa0KCaiBFSqdXX16MN7QcGBsIbyMBU7+/vv3//fmQ1wAIXayjDhwMh4ODBg1jHArOy
+                suBqgE0XVVVVoCBAAA3TooOJkYNbgIODB9Ji2717N9pMyrlz51asWLFs2TIgA01q586dkFSPaWNISAg8
+                fwBLD2AMYVUmISGBPJlw6NAhaWlpgAAadHOGwCQAcd+FC+cJBvSTJ08gijds2IA2AKLqGqBgbAMXBLa3
+                iJnKArYWsA7MAkV0dHQgXRgISE5OxuM2oGJgKx6ueOPGjQABNLhmwYGl3s0bN4RBU90Md+/cY/hPoOMH
+                rHmAbVjIlDn62B4T639wixgyMNTW1gZUExAQAGyTSUpKAksMuMpfv34Bs9H58+eBteWSJUuwNumARRGw
+                e/LgwQNgDxvIvnLlyrx58/C04oEKamtrCwoKIK0OYKMbIIAYgSka2LCnzyISYjoa7Gzsopp6v3/+enf3
+                2q9fvxnwBDZIMRvE5cBARx7qA3Uo3EL+fnj98NRBtMUhXFxcwEIT2H+B9ADfv38PbG4Di6APHz7g6awD
+                BXl4eODjGEC7gDUn/kCDNLfh8QQQQPhSNCOKLyGG/scpT0QwYpiAxXHff3z/9uPXr5+/gN1fYNMBv2r4
+                SBvB0Qx4cANzwEUwwKUGl8Pgg03ED558//4dzgYIQKkVpAAMgzCj3f9fbDItY4d2bOxaYpA0lEYcT3rA
+                1fOYgNd/h5c0GgYCdI1+qSL7fNMhYBxAFtaIO3IBR3Gm5aI6zDXFdHk5xNSRF2JMA2rWOoIo1IRVRfNs
+                LYeMdS98SSRRxKZ8mKtB/umB35tjC/4UgBJz2UEQBqIopQ8qGAksNPERiOj//5AGIxEXoiBFQUKpgySu
+                dEF3XTSZe2bmdjI/QEM0bGyD71dlDoOSs/AMZ4raJt3v6lKAYADYKslM010GmHGJSIeheor4UBa5pjdw
+                AzL96sywXayTR5oojGfehpqTRiMdYFmL87FIL/C4c2dIJOXOaqsQtudeU7eISILZS9yLOPqGLFVL2cjx
+                15RbUAzoo6e8JdkpRB3Hv00GqsFeMLdcP2CUQQH131aVXbMoVJAkXRvYoMPOWwAxA4sqYEWPHPzAZCSi
+                rsvGxf3z6xfd0CROUbGPD+99f/vyz7evoGlOJmCSYhBV1FJ38fj5+/fnVy++vX3x/+9vAXkVeXOrz2/e
+                //r0Hujof6B0AqqFxI1teCQlv714pucTzS4k9OHFkx+vn/z59Y1dQlrOwub7t7ff3r1nBuUVBmZ2DiF5
+                JSYufi5BUUY2dgaGn2zcIgx/fwOtBgcAyDQeMQl179B/zCxAA3+8ef3r23dWdnYpUwtOQdGPj+4wIKUh
+                QWUtYNx/fPoQXmjwiUppeoX//f3/88unX9+++f3tGzsbp5SulYCG9vsHt/79+U3TigoggLA070AtQS1j
+                cQ1DJTtnOVNbYAhAyxMGaHdLQFZJPzxeSF4DbcREQFbZIDJNRFkHlNCYoEZJmzuoegbpeIcrWbrBExd0
+                ZF1C2iw2UUhZHaKeATbuIqyhK6iogVQagXogoHpMQNgiLFFS1wRWXjBBTGLl5DaMTJfUNUVu3gErQ3kz
+                e+gQMwMDJ4+AYXSutI45ernBwqHuG6blF83CAqpXmYG9HNo0XgECCPug0p9fP6VNbIDFyqPTh4H5FeR0
+                YNkISlL/2LkEpYytrm5a8+7hDbgpkHz44fHdW9vXi2ppMbOx/Ydlw7+/fwFD7cWdq/eO72KEllxQXZ9f
+                PL2+76CKrRczBwewbIWaAuwQM7MzMSNa0OCVo6BYEFHSuHn21PPLZ6ChCSoqQOD39683dm8RllMCCWIp
+                pEEm8Mspvr5z+dmVk8yg5MIKNQGYO//8vLl5FSMrG7+ULFAvIrapDQACCLu5zGzszALcDy+cQUmB4BpM
+                1szq19vXf75/ZUbPZ6BE/P3D64+PHgrIqzP8g7dAmf/+/vf+1lUmjPoByPn89N7n9295RKUY8I6rAcOP
+                mZmVmZf/y7MHWP3w++O771+/MbOy/cfR3PnHzPjj9Uugyv/gdAEV/w90MzNQ8N39W2w8vODK/Q+Nig+A
+                AMIR0Kwsb66d+/npI6SsYAC7DxgWXLz8AvJKD88dBWZacCJDQf/Bin+9fi6uoQevxZlYWH6+eQ6sfBiY
+                mLHUUAwMX188BdZsBAaLQQ5g//T0IbAFC8pc4LACN1f+Q6apGX//AraT/jNhDSVQuDL/+C6gpARqcvz/
+                +x+kC+hWYFsD6OB/QOrd3avvnz4CRQHN6kOAAMIe0P///v3+4g28EQZPF5wCIp9ePvv99cs/kB//gRpL
+                yOgf0A8Mn9+9YefiYOfggqZRYNb+/AHiXxyLtv8wMP4nFNCMf/99e3fn6r+/f0AVGzBQgS74B80GbJyc
+                EkYWPOIyDL//YG0CA3PX+2ePuAWEFSwcuUXFQa1XYBsE7IX/4Obd748ffn58R9NmB0AAYe+wAH3yGzqL
+                8x+Wy8CFATvrn39/BGTkmRlZ/4P8itkEBzb2OJh5RVm4eH7++AYxANeEEGqTGq8KYIb6/xfoAKDh/JIS
+                /KJSrBy8TJycrBxsjFyc7Kwc318/+fLuBajO/Iu9Sfvj69fL65eJ6+hreoT+/fPn7aPb7x89+PL8yb8/
+                P5n+A6t7YCue4T8tm3cAAcSCu72NHoSgnu5/Bj4xKTZQ/4CdgfHPP4wg+sf4j4WB6f2j+79/fMe1+oSs
+                vjnIJGA7R0hVk5WN6c+Pn3+/f//97tPXv3++A7t6r1//+vRKwdKJkZmZ4Tf2Di4TqCH95/nFs6+uXROQ
+                URBWVJDSM/yhpP770+efnz58fnDz799fwPqEEdJPokFAAwQQjhTNiN5f/g/tXLG9u3nj0en9hHvfjAyM
+                DFSrV4C5X1RVV97I8tKWZb++fsEMSTYWll9MDHjiFSQFbmiA2uX3rwMRqMzh4GTjF1GxdmOxcji/ev6/
+                n1+Z/wN7oX9pkaIBAoiJlCTF8O/nF14RMWizGlQnoSOgIAcHp6iiMo6WFnmhDOwtskiZWD28fAIYyoyY
+                Y5jAxMrEyszBgxLQSLEM7Jryisugz2MB2yo/fnx9+fjCuvkfnj0VV9GAxAaNig6AACI6oEGpnPn7h7ec
+                YpJsXLzgeogJ7BsEArdMGAREpSX1LLEU4BQAdi4uZhbGd3fuMmEWauCsziUkJiAmCazDGbEkEQZg01Bc
+                14CRhRk1JsAdIdA8zL8Hx3cA245M4FqXgTZhDRBATNB4BqVFKII6HlUc1OJkZPjx5fPnty+ltQ0hDT6o
+                LHiCDty2A6/TFhZ7fusa2COg9tx/pv9AxAhudCDbgrCL6S+kXQsXYQT1yP8zImxnhEQ0E6j1BtUIbJkx
+                /4c0K4GNOiZpfbP/TBAXw73w5x/TP3BSYvrz5yewWGdhYQe16ZghuRFqMiO4TQh0KnjkBDJCw4jpTsoR
+                QAAx/Qc1mECDRHAEci2wnfaXEU0chBj+3du3kUtWnpWdH9iYgwqCGYz/gM27f9wySrzyKu+un2cE64U0
+                YP7+A9cxoPmJv2gIZBewdfcHYRe4J/ebkYnlP0wE2Bj4+fnj399/+eSVwM0ykOBfIGIAts5BDXQRVV1g
+                on13+zaobfL/H8QQ0GAguLAFKf739+ent6LaRqCG3p9///8hGQJiMAgraTH8+PwXVHb8wXQkVRBAALGw
+                8gmx8X5hRlpWA3QGsHHG9JeBg5efEaOXAXT1pycP1LyDnp0+9P3jO2hnj/E/819mdlFxOVun11fOsvAK
+                sjD+/wfe3cfOzs3CwsEONIqZGbO5DAwCJk5utp+/OXgFIAMaoGYvE4OkutaP188giQDS3nxz+5qcgenf
+                D29+fP8O7cf//w8sT7jlNESUVR+e3CeirsMpKPrv5w8G8EAdI7Bzy8nFzivADPTC//9f371XdnVg+Pvn
+                3Z2b/0BDWNDKHtgz5JdXltezvnlwMzufEDiD/6NFSQ0QgDazu2EYhIGwMSGFtKrUzTpSR+iUea1UCZW/
+                4NiESJHy3AUMHPjjDtTz9Z4/X8ONKDLsnxG8AtEpEeKJ1XyMsr492GpDioe3VVTWUckUPBjLnbLBh3CU
+                wjXQdm2dzYA2KMjPHb7UanFWTKFFjR6hKRflruKmy9KpRsIzmu4UPeuLlxHKHq6lhNM8hxrbuLKjMAza
+                WfA/gq5kSyuIk1tCqCkzxJsGf3HTqwC0WUEOgCAMYxAYKjH+/6VGI9gNIeHA0TtpyLqNtmBxMfFirdX5
+                dqYVW3SGCTNm86OhIq9jjp0xwpQOFRzfm0XqvogSzbwKDghWGMhEXQIPxHA1clAQXXlqWa5TbP62SyNy
+                g6ybizyVYGSDFEn9cb07lxg7rIpUtA048M7zr790rwBiAZVp4K4zeg/5P3icHf9itf9/sfbf/2PMV/xH
+                UomIBESAYWsJ/kNvuPwHt+/hSqFc8B6LP79+s7OxQEeyQLUvqP79y/ST8fdvBmY2aN76D80bWIwFDZn8
+                RbiHUIMT7GQGkoavAQIwau1KCIQw8G70Rhtvxs7O3p+w9k/8/0KSXQhuGM/6CiogJCGPTWAvvBPfXmUP
+                AbQqy1CIkA9PHWQ+jDK1InHFI/Pa8hdPdiNkmOn+8+b/U4GzNY2BF6fC2kAT5ZHstUniQilqtHcKpEBm
+                HRrhIJBWKoyhBaIDKJzkudf18rjfUBA5FR5hotMP63J8v57n5aQS1qoYp6n8G0hjE0oUyNrNRzqeu1uj
+                Dv298/4VOZtKUPDjNqD2Ij6rpFAQi70K/AogZi1n708/fjEzgptguOISlAiY/c303358766v9fPfHy1p
+                YdDuMFYOJw35Tz++WWuqPnn3wUpN7u6bz/qKMq8/fjRUlHn//bu8iBAwwL7/BJUzwNYJHzd7hLVeoKk2
+                LxfXzafPGP4wuesqJzgYc7Oz3Hr4joWNwVZb+fGzN1aq8u+/fmFnYvEwVDFQknnw7CULK2Ocs6W5qvz1
+                By++//xpJC/jb6Tlb6Lz5svH+y/fB5gapLqZX3r+4unrD+bK8glOpuKC/DcePufmZI12NN958c7P3z8C
+                DbWCrfT+/P/z5OUncLMTlBy//PplpSKT6mwpLcp758mLH3/+uOhpxNubsDL/vv3yLTMTG9jnoIFCbws9
+                d30NB02Vx2/ev/z8zlFbMdrGhJeT686Tz+Bm7V+C2QAggIiMEMYfv36riAh5m+n7WOo66Sq5GmkBk9Xv
+                b9+ddTWcDbXt9ZSM5CUMVVW+fPuuKMSnKCroZ2mgKSWsJSUGaoNDm7X/RbnZLDXUt525oiIhwsTCJi8l
+                7mGut/bMeUt1NTtdhXdffgFro4pgF3V5sc9ff3Kxsye42n//++81KCLVxHl5RHlYg+wMPvz4ZqGuIC0p
+                cvXRY08TA2DD9/3nLw9fv33z8TsrE5OiMM+z12/1ZEU4OdmAgQRMoL///xbhZrfRVfv27aeauORfZub/
+                4Kro999/KoJ87oZam05f5eHk4uPkVpKUdDVS33nhiq+luZmKIjB6oOPs///fuP/094/vwPj7/PUbFxOz
+                jKjI8w+vLLXkmLh//GX6Q0wfByCAiAtoYPQz/1tz6pS1turOszek+QXff/tx4/nLVx/fHL97z1RF4fSN
+                +8FmOsdu3mZi/vPg3ZtYB7O/v/94G+uKCXC9+fIN7CtgacDMxsj86NmbY9dePnvzDhjQUsJcN5482XD8
+                xst371QUFH7+ZXrw8oOHkd6vb3+//WBgY2W98+jp5sPngCWvMBf3y3efbr/6/Ov7T1YWZmB7/uytZ4eu
+                3gI345heff92++nzx8/f8rFzSIoIPPr44+mbN4xMwOY7sGUHqhC//fy98tjpL39+iPPzAqtSYNsZVGD9
+                +y8tJvD7//89F67tOHP11///MkKCNx88W3Xo4uOXL1RlpYBFEGjVI7AV/4f50+evwJZY4YJNLz7/5OHj
+                kRAUuPf2+/t3wNYaA5FtQYAAjJhPTsJAFIcZOkM7tpVakKoxbUzcmIjRxB3pgoUbPYCJexcmLjyPR/AW
+                blmwIEIETENKrZWGCtgp/es4R+AGv7z88n3vvQ0bTYWyYAXzie10h9PPYNEZ2wggiHDPnkzdb3dGcsD1
+                PxwFyPYs0OtKd2RVMfZJSuL0SFPbJ0aRZ3lOwzRGmCY0g7QYOb4myvdXJpvpa2+wzaMzQ3t6fpFEobaL
+                kiJbkrgCMc+Vh1/ePFyGZOX+LGDBrbKEQZIFiKI1LAMSx7qiHu/vUMAYyCXhWqrwksB4TQPClAKq0lbT
+                MCzbD3+XTBx7VaHdNNj+0ve8ICK35vmdecljbjB1G6r8eN3iK3zn7R1QeKE3aiIHS8XDjVkXcev04LAu
+                iiWI//IoIogdCBCVNvtB/QtAiNklNQzDQDi2bMVOmqQzncLBOBNH4IQ8MLzQNG1jOf4RSt8ZrrBa6duV
+                env/+LzcUMMz3v2pu+z/psuhauL9Txlkvvv9Em+xr/DkHVKTJMom3UzKPGpF4LVa8aNDJWL9UEJdOsUz
+                K6dBio8QES28TuO8hHskb0C3aX6k3rpG0mZJcprXbI2Ah+E8drLEX8tiFDjxNGsBoeTqq9r7yNFBqEAh
+                jdb3HVJeaWNKjH4ndOI8ODy59nKNa03OFNv6ObDKBQ28HPv5FmnNxWi05TyN3/OdElmNg7WBhe568JnZ
+                eNNeI1Hcug56cwgpxK3Z9ufD/2L/CsCoueUwDMJAED9a9f6nrUgMmTUHaH8BJQhke9bs/wetgniIdBTx
+                52Gz0VSFQG9CiwxJfphKyqhxSGGHDwZv6qDDK4nYFEYRzg3hxDVau4ybCUuhgBDC5dpRMyLX+Nr6SHqI
+                vO6msvQdOy6NRdtl9DVIhNlQwyLuUYiactl9vFEzTdprCspW7ndYwQrcU68HnGDA4nevldatBzjP/TTM
+                7Hh/ZLCQTIrzLhqjLnYBRPk6Csf37+zxCMComeQACAJBkEXi/79LBJyuhnj1hqABhhh6+xtynIDGYvFf
+                tR22rZNJTuyidi49rUCOhdYUzQ5JS9pKWtbe4EXLIF3pmWulI5vh+S1T9fikoS4ZsLaPNypzhLVNgFEV
+                mYwG8ZkGFOUw7Fx1VWminUl6+PkyU0xTzFtmuKuKwAQ23yks3P+Bi1p2XzzGIellSNBfMP0KIDJWk1I6
+                DvAfu2n/sSr8T0A7w3+c2hHVFCMBjzASbT4jEoeRpLAACDAAuXj6XF4X9DoAAAAASUVORK5CYII=
+            </property>
+        </structure>
+    </list-property>
+</report>

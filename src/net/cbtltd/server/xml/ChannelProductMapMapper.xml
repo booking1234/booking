@@ -1,0 +1,77 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="net.cbtltd.server.api.ChannelProductMapMapper">
+
+	<resultMap id="ResultMap" type="ChannelProductMap">
+		<id column="ID" jdbcType="INTEGER" property="id" />
+		<result column="ProductID" jdbcType="VARCHAR" property="productId" />
+		<result column="Channel_ProductID" jdbcType="VARCHAR" property="channelProductId" />
+		<result column="Channel_RoomID" jdbcType="VARCHAR" property="channelRoomId" />
+		<result column="Channel_ID" jdbcType="INTEGER" property="channelId" />
+		<result column="Channel_RateID" jdbcType="VARCHAR" property="channelRateId" />
+	</resultMap>
+	
+	<select id="readBPProduct" parameterType="ChannelProductMap" resultMap="ResultMap">
+		select
+		*
+		from channel_product_map
+		where channel_Id = #{channelId,jdbcType=INTEGER}
+		and Channel_ProductID = #{channelProductId,jdbcType=VARCHAR}
+		<if test="channelRoomId != null">
+			and Channel_RoomID = #{channelRoomId,jdbcType=VARCHAR}
+		</if>
+		<if test="channelRoomId == null">
+			limit 0,1
+		</if>
+		
+	</select>
+	
+	<select id="readAllBPProduct" parameterType="ChannelProductMap" resultMap="ResultMap">
+		select
+		*
+		from channel_product_map
+		where Channel_ID = #{channelId,jdbcType=INTEGER}
+		
+	</select>
+	
+	<select id="findByBPProductID" parameterType="String" resultMap="ResultMap">
+		select
+		*
+		from channel_product_map
+		where ProductID = #{productId,jdbcType=VARCHAR}
+	</select>
+	
+	<select id="findByBPProductAndChannelId" parameterType="ChannelProductMap" resultMap="ResultMap">
+		select
+		*
+		from channel_product_map
+		where Channel_ID = #{channelId,jdbcType=INTEGER}
+			and ProductID = #{productId,jdbcType=VARCHAR}
+	</select>
+	
+	<select id="readProductIDs" parameterType="Integer" resultType="Integer">
+		select ProductID
+		from channel_product_map
+		where Channel_ID = #{channelId,jdbcType=INTEGER}
+	</select>
+	
+	<select id="readChannelProductID" parameterType="ChannelProductMap" resultType="Integer">
+		select Channel_ProductID
+		from channel_product_map
+		where Channel_ID = #{channelId,jdbcType=INTEGER}
+			and ProductID = #{productId,jdbcType=VARCHAR}
+	</select>
+	
+	<insert id="createProductMap" parameterType="ChannelProductMap" >
+		insert into price (
+			ProductID, Channel_ProductID, Channel_RoomID, Channel_ID
+		)
+		values (
+			#{productId,jdbcType=VARCHAR},
+			#{channelProductId,jdbcType=VARCHAR},
+			#{channelRoomId,jdbcType=VARCHAR},
+			#{channelId,jdbcType=INTEGER}
+		)
+	</insert>
+
+</mapper>

@@ -1,0 +1,2236 @@
+/*
+(c)2009 CBT Ltd
+You may use this css and any derivative product to format data served
+by any Lucid or other FlitePlan application or web service.
+
+In GWT, each class of widget has an associated style name that binds it to a CSS rule. Furthermore, 
+you can assign an id to a particular component to create a CSS rule that applies just to that one component. 
+By default, the class name for each component is gwt-<classname>.
+For example, the Button widget has a default style of gwt-Button.
+In order to give all buttons a larger font, you could put the following rule in your application's CSS file:
+  .gwt-Button { font-size: 150%; }
+All of the widgets created with the GWT toolkit will have a default class name, but a widget's style name 
+can be set using setStyleName(). Static elements can have their class set in the HTML source code for your application.
+
+Color Picker: http://www.w3schools.com/tags/ref_colorpicker.asp
+RGB to Hex: http://www.javascripter.net/faq/rgbtohex.htm
+Color Invertor: http://janim.net/free-online-tools/inverse-color/inverse-color-generator.php
+CSS3 Color Gradients http://css-tricks.com/5700-css3-gradients/
+CSS3 Gradient Generator http://www.colorzilla.com/gradient-editor/
+*/ 
+/* Definitions */
+@def formBackground #F3F3F3;
+@def formBorder 1px solid gray;
+@def fieldBorder 1px indent gray;
+@def fieldPopup 2px solid gray;
+@def fontFamily Verdana, Arial;
+@def labelColor gray;
+@def labelShadow 1px 1px 0 #DDDDFF;
+@def even #ffffff;
+@def odd #f3f7fb;
+@def selected #628cd5;
+@def formButton #ee0707;
+
+
+/* GWT Standard CSS 
+@external .gwt-CheckBox;
+.gwt-CheckBox {margin-left: 0;}
+
+@external .gwt-DisclosurePanel, .gwt-DisclosurePanel-open, .gwt-DisclosurePanel-closed, .gwt-DisclosurePanel .header, .gwt-DisclosurePanel .content;
+.gwt-DisclosurePanel {
+	border: 0;
+	margin: 0;
+}
+
+.gwt-DisclosurePanel-open { }
+.gwt-DisclosurePanel-closed {border: 0;}
+.gwt-DisclosurePanel .header a, .gwt-DisclosurePanel .header td {
+	text-decoration: none;
+	cursor: pointer;
+	cursor: hand;
+}
+
+.gwt-DisclosurePanel .content {
+	padding: 0;
+	margin-left: 6px;
+}
+
+@external .gwt-PopupPanelGlass;
+.gwt-PopupPanelGlass {
+  background-color: #000;
+  opacity: 0.3;
+  filter: literal("alpha(opacity=30)");
+  z-index: 2;
+}
+
+@external .gwt-SplitLayoutPanel, .gwt-SplitLayoutPanel-HDragger, .gwt-SplitLayoutPanel-VDragger;
+.gwt-SplitLayoutPanel {}
+.gwt-SplitLayoutPanel-HDragger {cursor: col-resize;}
+.gwt-SplitLayoutPanel-VDragger {cursor: row-resize;}
+
+@external .gwt-StackLayoutPanel, .gwt-StackLayoutPanelHeader, .gwt-StackLayoutPanelContent, .gwt-StackLayoutPanelHeader-hovering;
+.gwt-StackLayoutPanel {
+	margin: 5px;
+	border: fieldPopup;
+}
+
+.gwt-StackLayoutPanel .gwt-StackLayoutPanelHeader {
+	background-color: #90A6C6; 
+	background-image: -webkit-linear-gradient(top, #CADEFA, #90A6C6);
+	background-image: -moz-linear-gradient(top, #CADEFA, #90A6C6);
+	background-image: -ms-linear-gradient(top, #CADEFA, #90A6C6);
+	background-image: -o-linear-gradient(top, #CADEFA, #90A6C6);
+	color: labelColor;
+	padding: 2px;
+	cursor: pointer;
+	cursor: hand;
+}
+
+.gwt-StackLayoutPanel .gwt-StackLayoutPanelHeader-hovering {}
+
+.gwt-StackLayoutPanel .gwt-StackLayoutPanelContent {
+	width: 100%;
+	height: 100%;
+	background-color: #F3F3F3;
+	padding: 0;
+}
+
+@external .gwt-StackPanel, .gwt-StackPanelItem, .gwt-StackPanelItem-hover, .gwt-StackPanelItem-selected;
+.gwt-StackPanel {}
+
+.gwt-StackPanelItem {
+	margin-top: 10px;
+	font-weight: bold;
+	cursor: pointer;
+	cursor: hand;
+}
+
+.gwt-StackPanelItem-selected, .gwt-StackPanelItem-hover {font-style: italic;}
+
+@external .gwt-SuggestBox, .gwt-SuggestBoxPopup, .gwt-gwt-SuggestBoxPopup .item, .gwt-SuggestBoxPopup .item-selected;
+.gwt-SuggestBox {}
+
+.gwt-SuggestBoxPopup {
+	margin-left: 5px;
+	border: fieldPopup;
+	background: white;
+	font-family: fontFamily;
+	-webkit-box-shadow:0 0 20px #000;
+	-moz-box-shadow: 0 0 20px #000;
+	box-shadow:0 0 20px #000;
+	position: relative;
+	z-index: 20;
+}
+.gwt-SuggestBoxPopup .item {
+	padding: 2px 6px;
+	color: #424242;
+	cursor: default;
+}
+.gwt-SuggestBoxPopup .item-selected {background: #b7d6f6;}
+
+@external .gwt-TabLayoutPanel, .gwt-TabLayoutPanelTabs, .gwt-TabLayoutPanelTab, .gwt-TabLayoutPanelTabInner, .gwt-TabLayoutPanelTab-selected, .gwt-TabLayoutPanelTab-disabled;
+.gwt-TabLayoutPanel {
+	margin: 10px;
+	padding: 10px;
+	color: labelColor;
+}
+
+.gwt-TabLayoutPanel .gwt-TabLayoutPanelTabs {width: 100%;}
+
+.gwt-TabLayoutPanel .gwt-TabLayoutPanelTab {
+	cursor: pointer;
+	cursor: hand;
+}
+
+.gwt-TabLayoutPanel .gwt-TabLayoutPanelTab:hover {
+	font-weight: bold;
+}
+
+.gwt-TabLayoutPanel .gwt-TabLayoutPanelTabInner {
+	font-size: 150%;
+	text-align: center;
+	text-shadow: labelShadow;
+	padding: 5px 20px;
+}
+
+.gwt-TabLayoutPanelTabs .gwt-TabLayoutPanelTab-selected {
+	background-color: #90A6C6; 
+	background-image: -webkit-linear-gradient(top, #CADEFA, #90A6C6);
+	background-image: -moz-linear-gradient(top, #CADEFA, #90A6C6);
+	background-image: -ms-linear-gradient(top, #CADEFA, #90A6C6);
+	background-image: -o-linear-gradient(top, #CADEFA, #90A6C6);
+	color: white;
+	cursor: default;
+}
+
+.gwt-TabLayoutPanelTabs .gwt-TabLayoutPanelTab-disabled {}
+
+@external .gwt-Button, .gwt-Button:active, .gwt-Button:hover, .gwt-ToggleButton-up, .gwt-ToggleButton-up-hovering, .gwt-ToggleButton-up-disabled, .gwt-ToggleButton-down, .gwt-ToggleButton-down-hovering, .gwt-ToggleButton-down-disabled, .gwt-ToggleButton-up, .gwt-ToggleButton-up-hovering, .gwt-ToggleButton-up-disabled;
+.gwt-Button, .gwt-Button:active, .gwt-Button:hover, .gwt-ToggleButton-up, .gwt-ToggleButton-up-hovering, .gwt-ToggleButton-up-disabled, .gwt-ToggleButton-down, .gwt-ToggleButton-down-hovering, .gwt-ToggleButton-down-disabled {
+	margin: 1px;
+	padding: 1px;
+	text-align: center;
+	color: black;
+	-webkit-border-radius: 3px;
+	-moz-border-radius: 3px;
+	border-radius: 3px;
+	-webkit-box-shadow:0 0 3px #666;
+	-moz-box-shadow: 0 0 3px #666; 
+	box-shadow:0 0 3px #666;
+	cursor: pointer;
+	cursor: hand;
+}
+
+.gwt-Button, .gwt-ToggleButton-up, .gwt-ToggleButton-down-hovering {
+	background-color: #E1E1E1; 
+	background-image: -webkit-linear-gradient(top, #FFFFFF, #E1E1E1);
+	background-image: -moz-linear-gradient(top, #FFFFFF, #E1E1E1);
+	background-image: -ms-linear-gradient(top, #FFFFFF, #E1E1E1);
+	background-image: -o-linear-gradient(top, #FFFFFF, #E1E1E1);
+}
+
+.gwt-Button:active, .gwt-Button:hover, .gwt-ToggleButton-down, .gwt-ToggleButton-up-hovering {
+	background-color: #FFFFFF; 
+	background-image: -webkit-linear-gradient(top, #E1E1E1, #FFFFFF);
+	background-image: -moz-linear-gradient(top, #E1E1E1, #FFFFFF);
+	background-image: -ms-linear-gradient(top, #E1E1E1, #FFFFFF);
+	background-image: -o-linear-gradient(top, #E1E1E1, #FFFFFF);
+}
+
+.gwt-ToggleButton-up-disabled {}
+
+.gwt-ToggleButton-down-disabled {}
+
+@external .gwt-TimePicker, .gwt-TimePicker .textBox;
+
+.gwt-TimePicker {
+	padding: 1px;
+}
+
+.gwt-TimePicker .textBox {
+	border: 0px;
+	width: 22px;
+	text-align: center;
+	font-family: sans-serif;
+	font-weight: bold;
+	font-size: 11px;
+	color: #506374;
+	border: 1px solid #7F9DB9;
+	background: url('%background%') repeat-x;
+}
+
+@external .gwt-VolumeSlider, .gwt-VolumeSlider .decreaseArrow, .gwt-VolumeSlider .increaseArrow, .gwt-ProgressBar-shell, .gwt-ProgressBar-bar, .gwt-ProgressBar-text;
+
+.gwt-VolumeSlider .gwt-ProgressBar-shell {
+	border: 1px solid #faf9f7;
+	border-right: 1px solid #848280;
+	border-bottom: 1px solid #848280;
+	background-color: #AAAAAA;
+	width: 50%;
+	height: 12pt;
+}
+
+.gwt-VolumeSlider .gwt-ProgressBar-shell .gwt-ProgressBar-bar {
+	background-color: #67A7E3;
+}
+
+.gwt-VolumeSlider .gwt-ProgressBar-shell .gwt-ProgressBar-text {
+	padding: 0px;
+	margin: 0px;
+	color: white;
+}
+
+.gwt-VolumeSlider .decreaseArrow {
+	margin: 4px;
+}
+
+.gwt-VolumeSlider .increaseArrow {
+	margin: 4px;
+}
+*/
+
+/* FlitePlan Styles */
+.aboutStyle {width: 300px;}
+
+.cbtAbstractCentered {
+    display:block;
+    position:absolute;
+    top:35%;
+    left:40%;
+    width:350px;
+	text-align:center;
+	padding: 20px; 
+	border: 1px solid #666;
+	-webkit-box-shadow: 0 0 20px #000;
+	-moz-box-shadow: 0 0 20px #000;
+	box-shadow:0 0 20px #000;
+}
+
+.cbtAbstractCommand {
+	width: 100%;
+	margin-top: 10px;
+	border-top: 1px solid #ddd;
+	padding-top: 5px;
+}
+
+.cbtAbstractControl {
+	height: 730px;
+	margin: 10px;
+	margin-bottom: 0;
+	padding: 5px;
+	color:	#666;
+	border:	2px solid white;
+	-webkit-border-radius: 6px;
+	-moz-border-radius: 6px;
+	border-radius: 6px;
+	-webkit-box-shadow:0 0 6px #666; 
+	-moz-box-shadow: 0 0 6px #666; 
+	box-shadow:0 0 6px #666;
+	background-color: #E1E1E1; 
+	background-image: -webkit-linear-gradient(top, #FFFFFF, #E1E1E1); /* Safari 5.1+, Mobile Safari, Chrome 10+ */
+	background-image: -moz-linear-gradient(top, #FFFFFF, #E1E1E1);   /* Firefox 3.6+ */
+	background-image: -ms-linear-gradient(top, #FFFFFF, #E1E1E1); /* IE 10+ */
+	background-image: -o-linear-gradient(top, #FFFFFF, #E1E1E1); /* Opera 11.10+ */
+}
+
+.cbtAbstractCursor {
+	cursor: pointer;
+	cursor: hand;
+}
+
+.cbtAbstractField {margin: 0 2px;}
+
+.cbtAbstractFieldLock {
+	float: left;
+	margin-top: 2px;
+	margin-left: 2px;
+}
+
+.cbtAbstractForm {
+	margin: 5px;
+	padding: 20px; 
+	background: white; 
+	position:relative; 
+	border: 1px solid #666;
+    display: block;
+    margin-left: auto;
+    margin-right: auto;
+}
+
+.cbtAbstractLabel {margin: 0 2px; color: labelColor;}
+
+.cbtAbstractLoading {z-index: 120;}
+
+.cbtAbstractPointer {
+	cursor: pointer;
+	cursor: hand;
+}
+
+.cbtAbstractPopup {
+	padding: 20px; 
+	background: white; 
+	border: 1px solid #666;
+	-webkit-box-shadow:0 0 20px #000;
+	-moz-box-shadow: 0 0 20px #000;
+	box-shadow:0 0 20px #000;
+	position:relative; 
+	z-index: 12;
+}
+
+@sprite .cbtAbstractPopupClose {
+	gwt-image: 'cross';
+	position: absolute;
+	top: 5px;
+	right: 5px;
+}
+
+.cbtAbstractPopupLabel {
+	width: 280px;
+	color: #006699;
+	font-size: 120%;
+	font-weight: bold;
+	border-bottom: 1px solid #ddd;
+	margin-bottom: 5px;
+}
+
+.cbtAbstractPopupClose:hover {
+	color: red; 
+	background-position: top right;
+}
+
+@sprite .cbtAbstractShadow {
+	gwt-image: 'shadow_control';
+	height: 20px;
+	width: 100%; 
+}
+
+.cbtAbstractStack {}
+.cbtAbstractText {}
+
+.cbtAbstractTextAudio {
+	float: right;
+	margin: 2px;
+	padding: 0;
+	border: 1px solid #CFCFCF;
+	background: white;
+	font-size: 0;
+	z-index: 10;
+}
+
+.cbtAbstractTextLabel {
+	float: left;
+	padding: 2px;
+	color: labelColor;
+	cursor: pointer;
+	cursor: hand;
+}
+
+.cbtAbstractTextType {
+	float: right;
+	margin-top: 2px;
+	margin-left: 4px;
+	z-index: 10;
+}
+
+.cbtAbstractTextUp {margin-top: 2px;}
+.cbtAlignRight {text-align:right;}
+.cbtAbstractWidth {width: 100%;}
+
+/* AttributeGrid */
+.cbtAttributeGrid {margin: 4px;}
+.cbtAttributeGridField {height: 200px;}
+
+/* ChartField */
+.cbtChartField {
+	padding: 1px;
+	text-align: center;
+}
+
+/* CheckField */
+.cbtCheckField {
+	margin: 4px 0;
+	color: labelColor;
+}
+
+/* MediaControl */
+.cbtControl {}
+
+/* CommandBar */
+.cbtCommandBar {
+	height: 40px;
+	width: 100%;
+	padding: 10px;
+}
+
+.cbtCommandBarPopup {width: 500px;}
+
+.cbtCommand {
+	text-align: center;
+	text-transform: uppercase; 
+	text-shadow: 1px 1px white;
+	font-size: 110%;
+	font-weight: bold;
+	white-space: nowrap;
+	padding-top: 6px;
+	cursor: pointer;
+	cursor: hand;
+}
+
+.cbtCommand:active {color: #006699;}
+.cbtCommand:hover {color: #006699;}
+.cbtCommandSelected {color: #006699;}
+
+.cbtCommand[ disabled ] {
+  border: 1px outset #ccc;
+  cursor: default;
+  opacity: .5;
+  zoom: 1;
+}
+
+
+.cbtCommandBegin {border-left: 2px solid gray; padding: 6px;}
+.cbtCommandEnd {border-right: 2px solid gray; padding: 6px; margin-right: 6px;}
+
+.cbtCommandButton, .cbtCommandButton:active, .cbtCommandButton:hover {
+	min-height: 40px;
+	min-width: 100px;
+	margin: 1px 2px;
+	padding: 1px 2px;
+	white-space: nowrap;
+	text-transform: uppercase; 
+	font-size: 80%;
+	font-weight: bold;
+	color: white;
+	text-shadow: 1px 1px black;
+	-webkit-border-radius: 10px;
+	-moz-border-radius: 10px;
+	border-radius: 10px;
+	-webkit-box-shadow:0 0 3px #666; 
+	-moz-box-shadow: 0 0 3px #666; 
+	box-shadow:0 0 3px #666;
+	cursor: pointer;
+	cursor: hand;
+}
+
+.cbtCommandButton:disabled, .cbtCommandButtonFour:disabled, .cbtCommandButtonTwo:disabled {color: grey;} 
+.cbtCommandButtonFour, .cbtCommandButtonFour:active, .cbtCommandButtonFour:hover  {min-width: 72px;}
+.cbtCommandButtonTwo, .cbtCommandButtonTwo:active, .cbtCommandButtonTwo:hover  {min-width: 144px;}
+
+.cbtCommandFooter {
+	position: fixed; 
+	bottom: 0;
+	width: 100%; 
+	height: 100%; 
+	color: gray; 
+}
+
+.cbtCommandHyperlink {
+	padding: 0;
+	margin: 0 10px;
+	margin-top: 7px;
+	padding-left: 12px;
+	border-left: 1px solid #006699;
+	text-shadow: 1px 1px white;
+}
+.cbtCommandHyperlink a{color:#999}
+.cbtCommandHyperlink:hover {color: #006699;}
+
+.cbtCommandImage {
+	width: 60px;
+}
+
+@sprite .cbtCommandLogo {
+	gwt-image: 'logo';
+	text-indent:-999em; 
+	margin-right: 6px;
+}
+
+.cbtCommandProgress {
+	float: left;
+	margin: 5px 10px;
+}
+
+.cbtCommandRank {
+	float: left;
+	margin: 3px 10px;
+}
+
+.cbtCommandRight {float: right;}
+
+.cbtCommandReport, .cbtCommandReport:active, .cbtCommandReport:hover {
+	float: right;
+	margin: 5px;
+	color: blue;
+/* 	font-weight: bold; */
+	text-decoration: underline;
+	text-transform: uppercase; 
+	cursor: pointer;
+	cursor: hand;
+}
+
+.cbtCommandReport:active {color: #006699;}
+.cbtCommandReport:hover {color: #006699;}
+
+.cbtCommandSearch {
+	position: relative;
+	float: right;
+	margin-top: 3px;
+	margin-right: 10px;
+	min-width: 200px;
+	cursor: pointer;
+	cursor: hand;
+}
+
+.cbtCommandSearchField {
+	position: absolute;
+	top: 3px;
+	left: 12px;
+	border: 0;
+	padding: 0;
+	cursor: normal;
+}
+
+.cbtCommandSearchLoading {
+	position: absolute;
+	top: 5px;
+	left: 30px;
+	border: 0;
+	padding: 0;
+	background-color: white;
+}
+
+.cbtCommandSearchResult {
+	font-weight: bold;
+	cursor: pointer;
+	cursor: hand;
+}
+
+.cbtCommandSearchScroll {
+	max-height: 700px;
+	width: 300px;
+}
+
+.cbtCommandUser {
+	float: left;
+	margin: 3px 10px;
+	font-weight: bold;
+}
+/* .cbtCopyright {margin: 6px;} */
+.cbtTitleStyle {
+	color: #006699;
+	font-size: 140%;
+	font-weight: bold;
+	text-align: center;
+	margin-bottom: 0;
+}
+
+/* DateField */
+.cbtDateField {margin: 0 2px;}
+
+.cbtDateFieldField {
+	width: 147px;
+	margin: 1px;
+	padding: 1px;
+	font-size: 100%;
+	border: fieldBorder;
+}
+
+.cbtDateFieldLabel {
+	color: labelColor;
+	cursor: pointer;
+	cursor: hand;
+}
+.cbtDateFieldSecure {}
+
+.cbtDateFieldUnit {
+	width: 95px;
+	font-size: 100%;
+	border: fieldBorder;
+}
+
+/* DatePicker */
+.cbtDatePicker {
+	font-family: fontFamily;
+	font-size: 95%;
+	color: labelColor;
+	background-color: white;
+	border: fieldPopup;
+	cursor: default;
+	-webkit-box-shadow:0 0 20px #000;
+	-moz-box-shadow: 0 0 20px #000;
+	box-shadow:0 0 20px #000;
+	position: relative;
+	z-index: 20;
+}
+
+.cbtDatePicker td,.cbtDatePickerMonthSelector td:focus {outline: none}
+
+.cbtDatePickerDays {
+	width: 100%;
+	background: white;
+}
+
+.cbtDatePickerDay,.cbtDatePickerWeekdayLabel,.cbtDatePickerWeekendLabel	{
+	text-align: center;
+	padding: 4px;
+	outline: none;
+}
+
+.cbtDatePickerWeekdayLabel,.cbtDatePickerWeekendLabel {
+	background: #C3D9FF;
+	padding: 0px 2px 2px;
+	cursor: default;
+}
+
+.cbtDatePickerDay {
+	padding: 2px;
+	cursor: pointer;
+	cursor: hand;
+}
+
+.cbtDatePickerDayIsToday {border: 1px solid black;}
+.cbtDatePickerDayIsWeekend {background: #EEEEEE;}
+.cbtDatePickerDayIsFiller {color: #888888;}
+.cbtDatePickerDayIsValue {background: #aaccee;}
+
+.cbtDatePickerDayIsDisabled {
+	color: #AAAAAA;
+	font-style: italic;
+}
+
+.cbtDatePickerDayIsHighlighted {background: #F0E68C;}
+.cbtDatePickerDayIsValueAndHighlighted {background: #bbddd9;}
+
+.cbtDatePickerMonthSelector {
+	background: #C3D9FF;
+	width: 100%;
+}
+
+td.cbtDatePickerMonth {
+	text-align: center;
+	vertical-align: center;
+	white-space: nowrap;
+	font-weight: bold;
+}
+
+.cbtDatePickerPreviousButton,.cbtDatePickerNextButton {
+	cursor: hand;
+	cursor: pointer;
+	font-weight: bold;
+}
+
+/* DateWidget */
+.cbtDateWidget {
+	color: #112ABB;
+	width: 450px;
+}
+
+.cbtDateWidgetWeekLine {
+	margin-top: 5px;
+	color: labelColor;
+	font-size: 110%;
+	font-weight: bold;
+	text-shadow: labelShadow;
+	width: 450px;
+	text-align: center;
+}
+
+.cbtDateWidgetDayGrid {
+	margin-bottom: 3px;
+	border: fieldPopup; 
+	background-color : #FFFFFF;
+	width: 450px;
+	text-align: center;
+	font-size: 110%;
+	border-collapse: collapse;;
+	cursor: pointer;
+	cursor: hand;
+}
+.cbtDateWidgetCurrentMonthSelected {
+	background-color: #75A9ff;
+	color:#000000;
+}
+.cbtDateWidgetInitial {
+	background-color: green;
+	color: green;
+}
+.cbtDateWidgetNotAvailable {
+	background-color: #FFA500;
+	color: black;
+}
+.cbtDateWidgetSelected{
+	background-color: #75A9ff;
+	color:#aaa;
+}
+.cbtDateWidgetWeekEnd {
+	color:#aaa;
+	background-color: #eee;
+}
+.cbtDateWidgetCurrentMonthWeekEnd {
+	background-color: #eee;
+	color: #000000;
+}
+.cbtDateWidgetOtherDay {color:#aaa;}
+.cbtDateWidgetCurrentMonthOtherDay {color: #000000;}
+.cbtDateWidgetDayGrid tr {height: 40px;}
+.cbtDateWidgetPast{color: gray;}
+
+/* FileField */
+.cbtFileField {}
+.cbtFileFieldField {border: fieldBorder;}
+.cbtFileFieldLabelPopup {color: labelColor;}
+
+.cbtFileFieldLabelSetup {
+	color: labelColor;
+	text-decoration: underline;
+	cursor: pointer;
+	cursor: hand;
+}
+
+.cbtFileFieldSetup {
+	background-color: #F3F3F3;
+	border: fieldPopup;
+}
+
+.cbtFileFieldSetupLabel {color: labelColor;}
+
+.cbtFileFieldSetupField {
+	padding: 1px;
+	border: fieldBorder;
+}
+
+.cbtFileFieldSetupDescription {
+	height: 90px;
+	padding: 1px;
+	border: fieldBorder;
+}
+
+.cbtFileFieldSetupFile {
+	padding: 1px;
+	border: fieldBorder;
+}
+
+.cbtFileFieldSetupButton {
+	padding: 1px 1px;
+	font-size: 80%;
+}
+
+.cbtFileFieldSetupDirectory {
+	padding: 1px;
+	border: fieldBorder;
+}
+
+/* GradientColors */
+.cbtGradientBar {
+	background-color: #B6B6B6; 
+	background-image: -webkit-linear-gradient(top, #E4E4E4, #B6B6B6); /* Safari 5.1+, Mobile Safari, Chrome 10+ */
+	background-image: -moz-linear-gradient(top, #E4E4E4, #B6B6B6);   /* Firefox 3.6+ */
+	background-image: -ms-linear-gradient(top, #E4E4E4, #B6B6B6); /* IE 10+ */
+	background-image: -o-linear-gradient(top, #E4E4E4, #B6B6B6); /* Opera 11.10+ */
+}
+
+.cbtGradientBase {
+	background-color: #E1E1E1; 
+	background-image: -webkit-linear-gradient(top, #FFFFFF, #E1E1E1); /* Safari 5.1+, Mobile Safari, Chrome 10+ */
+	background-image: -moz-linear-gradient(top, #FFFFFF, #E1E1E1);   /* Firefox 3.6+ */
+	background-image: -ms-linear-gradient(top, #FFFFFF, #E1E1E1); /* IE 10+ */
+	background-image: -o-linear-gradient(top, #FFFFFF, #E1E1E1); /* Opera 11.10+ */
+}
+
+.cbtGradientBase:active, .cbtGradientBase:hover {
+	background-color: #FFFFFF; 
+	background-image: -webkit-linear-gradient(top, #E1E1E1, #FFFFFF); /* Safari 5.1+, Mobile Safari, Chrome 10+ */
+	background-image: -moz-linear-gradient(top, #E1E1E1, #FFFFFF);   /* Firefox 3.6+ */
+	background-image: -ms-linear-gradient(top, #E1E1E1, #FFFFFF); /* IE 10+ */
+	background-image: -o-linear-gradient(top, #E1E1E1, #FFFFFF); /* Opera 11.10+ */
+}
+
+.cbtGradientBlue {
+	background-color: #0000FF;
+	background-image: -webkit-linear-gradient(top, #6666FF, #0000FF); /* Safari 5.1+, Mobile Safari, Chrome 10+ */
+	background-image: -moz-linear-gradient(top, #6666FF, #0000FF);   /* Firefox 3.6+ */
+	background-image: -ms-linear-gradient(top, #6666FF, #0000FF); /* IE 10+ */
+	background-image: -o-linear-gradient(top, #6666FF, #0000FF); /* Opera 11.10+ */
+}
+
+.cbtGradientBlue:active, .cbtGradientBlue:hover {
+	background-color: #6666FF; 
+	background-image: -webkit-linear-gradient(top, #0000FF, #6666FF); /* Safari 5.1+, Mobile Safari, Chrome 10+ */
+	background-image: -moz-linear-gradient(top, #0000FF, #6666FF);   /* Firefox 3.6+ */
+	background-image: -ms-linear-gradient(top, #0000FF, #6666FF); /* IE 10+ */
+	background-image: -o-linear-gradient(top, #0000FF, #6666FF); /* Opera 11.10+ */
+}
+
+.cbtGradientGreen {
+	background-color: #06C203;
+	background-image: -webkit-linear-gradient(top, #0BF409, #06C203); /* Safari 5.1+, Mobile Safari, Chrome 10+ */
+	background-image: -moz-linear-gradient(top, #0BF409, #06C203);   /* Firefox 3.6+ */
+	background-image: -ms-linear-gradient(top, #0BF409, #06C203); /* IE 10+ */
+	background-image: -o-linear-gradient(top, #0BF409, #06C203); /* Opera 11.10+ */
+}
+
+.cbtGradientGreen:active, .cbtGradientGreen:hover {
+	background-color: #0BF409;
+	background-image: -webkit-linear-gradient(top, #06C203, #0BF409); /* Safari 5.1+, Mobile Safari, Chrome 10+ */
+	background-image: -moz-linear-gradient(top, #06C203, #0BF409);   /* Firefox 3.6+ */
+	background-image: -ms-linear-gradient(top, #06C203, #0BF409); /* IE 10+ */
+	background-image: -o-linear-gradient(top, #06C203, #0BF409); /* Opera 11.10+ */
+}
+
+.cbtGradientHead {
+	background-color: #90A6C6; 
+	background-image: -webkit-linear-gradient(top, #CADEFA, #90A6C6); /* Safari 5.1+, Mobile Safari, Chrome 10+ */
+	background-image: -moz-linear-gradient(top, #CADEFA, #90A6C6);   /* Firefox 3.6+ */
+	background-image: -ms-linear-gradient(top, #CADEFA, #90A6C6); /* IE 10+ */
+	background-image: -o-linear-gradient(top, #CADEFA, #90A6C6); /* Opera 11.10+ */
+}
+
+.cbtGradientRed {
+	background-color: #CC0000; 
+	background-image: -webkit-linear-gradient(top, #FF1919, #CC0000); /* Safari 5.1+, Mobile Safari, Chrome 10+ */
+	background-image: -moz-linear-gradient(top, #FF1919, #CC0000);   /* Firefox 3.6+ */
+	background-image: -ms-linear-gradient(top, #FF1919, #CC0000); /* IE 10+ */
+	background-image: -o-linear-gradient(top, #FF1919, #CC0000); /* Opera 11.10+ */
+}
+
+.cbtGradientRed:active, .cbtGradientRed:hover {
+	background-color: #FF1919; 
+	background-image: -webkit-linear-gradient(top, #CC0000, #FF1919); /* Safari 5.1+, Mobile Safari, Chrome 10+ */
+	background-image: -moz-linear-gradient(top, #CC0000, #FF1919);   /* Firefox 3.6+ */
+	background-image: -ms-linear-gradient(top, #CC0000, #FF1919); /* IE 10+ */
+	background-image: -o-linear-gradient(top, #CC0000, #FF1919); /* Opera 11.10+ */
+}
+
+/* GridField */
+.cbtGridField {
+	border-collapse: collapse;
+	table-layout: automatic;
+	caption-side: top;
+}
+
+.cbtGridFieldField {
+	padding: 1px;
+	border-width: 0;
+}
+
+.cbtGridFieldLabel {
+	color: labelColor;
+	cursor: pointer;
+	cursor: hand;
+}
+
+.cbtGridFieldHeaderRow {
+	padding: 1px 10px;
+	color: labelColor;
+	text-shadow: labelShadow;
+	white-space: nowrap;
+}
+
+.cbtGridFieldEvenCol {}
+.cbtGridFieldOddCol {}
+.cbtGridFieldEvenRow {height: 20px;}
+.cbtGridFieldOddRow {height: 20px;}
+
+.cbtGridFieldSelected {
+	height: auto;
+	overflow: auto;
+}
+
+/* ImageField */
+.cbtImageField {
+	border: fieldBorder;
+}
+
+.cbtImageFieldField {}
+
+.cbtImageFieldLabel {
+	color: labelColor;
+	cursor: pointer;
+	cursor: hand;
+}
+
+.cbtImageFieldPopup {
+	height: 800px;
+	width: 1200px;
+	position: relative;
+	z-index: 9;	
+}
+
+/* ImageGallery */
+.cbtImageGallery {}
+
+.cbtImageGalleryEmpty {
+	margin-top: 10px;
+	border: fieldBorder;
+	padding: 80px;
+	text-align: center;
+	vertical-align: middle;
+	font-size: 120%;
+	background: white;
+}
+.cbtImageGalleryField {}
+
+.cbtImageGalleryImage {
+	margin: 1px 2px;
+	border: 2px solid gray;
+}
+
+.cbtImageGalleryLabelPopup {
+	color: labelColor;
+	font-style: fontFamily;
+}
+
+.cbtImageGalleryPopup {border: fieldPopup;}
+
+.cbtImageGalleryPopupDescription {
+	color: fieldBorder;
+}
+
+.cbtImageGalleryLabelSetup {
+	color: labelColor;
+	cursor: pointer;
+	cursor: hand;
+}
+
+.cbtImageGallerySetup {
+	padding: 1px;
+	border: fieldPopup;
+	background-color: #F3F3F3;
+	font-style: fontFamily;
+}
+
+.cbtImageGallerySetupLabel {color: labelColor;}
+
+.cbtImageGallerySetupField {
+	height: 18px;
+	width: 150px;
+	border: fieldBorder;
+}
+
+.cbtImageGallerySetupDescription {
+	height: 100px;
+	width: 300px;
+	border: fieldBorder;
+}
+
+.cbtImageGallerySetupUpload {width: 220px;}
+
+/* InfoButton */
+.cbtInfoButton {}
+
+/* LabelField */
+.cbtLabelFieldField {
+	white-space: pre-wrap;
+	color: labelColor;
+}
+
+/* ListField */
+.cbtListField {margin: 2px;}
+
+.cbtListFieldButton {
+	cursor: pointer;
+	cursor: hand;
+}
+
+.cbtListFieldField {
+	width: 305px;
+	font-size: 100%;
+	border: fieldBorder;
+}
+.cbtListFieldHalf {width: 150px;}
+.cbtListFieldSecure {width: 282px;}
+.cbtListFieldLabel {
+	color: labelColor;
+	cursor: pointer;
+	cursor: hand;
+}
+
+.cbtListFieldCCmonth {
+	margin-top: 2px;
+	width: 100px;
+	border: fieldBorder;
+}
+
+.cbtListFieldCCyear {
+	margin-top: 2px;
+	width: 100px;
+	border: fieldBorder;
+}
+
+/* ListsField */
+.cbtListsField {}
+
+.cbtListsFieldField {
+	padding: 1px;
+	border: fieldBorder;
+}
+
+.cbtListsFieldHalf {width: 150px;}
+.cbtListsFieldSecure {}
+
+.cbtListsFieldPopup {
+	padding: 1px;
+	border: fieldPopup;
+	background-color: #F3F3F3;
+}
+
+.cbtListsFieldLabel {
+	color: labelColor;
+	cursor: pointer;
+	cursor: hand;
+}
+
+.cbtListsFieldPopupLabel {
+	color: fieldBorder;
+	font-style: fontFamily;
+}
+
+.cbtListsFieldPopupField {}
+
+/* LocationField */
+.cbtLocationField {float: left;}
+.cbtLocationFieldButton {min-width: 80px; font-size: 100%;}
+
+.cbtLocationFieldField {
+	margin-right: 4px;
+	padding: 1px;
+	border: fieldBorder;
+	font-size: 100%;
+}
+
+.cbtLocationFieldLabel {
+	margin-right: 4px;
+	color: labelColor;
+	cursor: pointer;
+	cursor: hand;
+}
+
+/* MapField */
+.cbtMapField {margin: 2px;}
+
+.cbtMapFieldEmpty {
+	margin-top: 10px;
+	border: fieldBorder;
+	padding: 40px;
+	text-align: center;
+	vertical-align: middle;
+	font-size: 120%;
+	background: white;
+}
+
+.cbtMapFieldField {
+	cursor: pointer;
+	cursor: hand;
+}
+
+.cbtMapFieldPanorama {
+/*	position: relative;*/
+}
+
+.cbtMapFieldPanoramaCancel {
+	top:2px;
+	right:20px;
+	cursor: pointer;
+	cursor: hand;
+	position: relative;
+	z-index: 9;
+}
+
+.cbtMapFieldTitle {
+	padding: 4px;
+	background: white;
+/* 	bottom:5px; */
+	top:15px;
+	left:75px;
+	position:absolute;
+	z-index: 9;
+}
+
+.cbtMapFieldLatLng {
+	width: 100px;
+	margin: 2px 10px;
+	padding: 1px;
+	border: fieldBorder;
+}
+
+.cbtMapFieldLabel {padding: 1px;}
+
+/* Message */
+.cbtMessage {
+	width: 250px;
+	padding: 10px;
+	text-align: center;
+	font-size: 12pt;
+	color: red;
+	background: white;
+}
+
+@sprite .cbtMessageBottom {
+	gwt-image: 'messageBottom';
+	position: relative;
+	display: block;
+	width: 322px;
+}
+
+.cbtMessageButton {width: 80px;}
+.cbtMessageLevelError {color: red;}
+.cbtMessageLevelTerse {color: orange;}
+.cbtMessageLevelVerbose {color: blue;}
+.cbtMessageLevelDebug {color: green;}
+
+@sprite .cbtMessageMiddle {
+	gwt-image: 'messageMiddle';
+	display: block;
+	padding: 5px 28px 0px;
+}
+
+.cbtMessagePopup {
+	position: relative;
+	z-index: 99;
+}
+
+@sprite .cbtMessageTop {
+	gwt-image: 'messageTop';
+	display: block; 
+	width: 322px;
+	height: 20px;
+	padding-bottom: 12px;
+}
+
+.cbtMessageWrap {border: 1px solid #ccc;}
+
+/* MultilistField */
+.cbtMultilistField {}
+
+.cbtMultilistFieldButton {
+	float: right;
+	width: 20px;
+	height: 20px;
+	padding: 2px 1px;
+	font-family: "courier new", courier;
+	font-size: 6pt;
+	text-align: center;
+}
+
+.cbtMultilistFieldNull {
+	width: 0px;
+	color: transparent;
+}
+
+.cbtMultilistFieldGrid {	
+	height: 200px;
+	border: fieldBorder;
+}
+
+.cbtMultilistFieldValue:hover {
+	font-weight: bold;
+	cursor: pointer;
+	cursor: hand;
+}
+
+.cbtMultilistFieldLabel {
+	width: 100%;
+	color: labelColor;
+}
+
+/* Navigator */
+.cbtNavigator {
+	margin-top: 5px;
+	border: fieldPopup;
+	padding: 2px;
+	-webkit-border-radius: 3px;
+	-moz-border-radius: 3px;
+	border-radius: 3px;
+}
+
+.cbtNavigatorLabel {
+	color: labelColor;
+	font-weight: bold;
+	text-aligh: center;
+}
+
+.cbtNavigatorButton {
+	cursor: pointer;
+	cursor: hand;
+}
+
+/* NumberField */
+.cbtNumberField {}
+
+.cbtNumberFieldField {
+	margin-top: 2px;
+	padding: 2px 2px 1px;
+	width: 146px;
+	border: fieldBorder;
+}
+
+.cbtNumberFieldSecure {}
+.cbtNumberFieldLabel {color: labelColor;}
+.cbtNumberFieldUnit {
+	margin: 0;
+	padding: 0;
+	width: 150px;
+}
+
+/* PasswordField */
+.cbtPasswordField {}
+
+.cbtPasswordFieldField {
+	float: left;
+	width: 300px;
+	border: fieldBorder;
+	font-size: 100%;
+}
+
+.cbtPasswordFieldSecure {width: 278px;}
+.cbtPasswordFieldLabel {
+	color: labelColor;
+	cursor: pointer;
+	cursor: hand;
+}
+
+/* ProgressBar */
+@sprite .cbtProgressBar {gwt-image: 'progressBar';}
+
+.cbtProgressBarBar {}
+
+.cbtProgressBarHi {background-color: green;} 
+.cbtProgressBarHm {background-color: yellow;}
+.cbtProgressBarLm {background-color: orange;} 
+.cbtProgressBarLo {background-color: red;}
+.cbtProgressTextHi {
+	color: white;
+	padding: 1px;
+	margin: 0;
+	font-size: 75%;
+}
+.cbtProgressTextHm {
+	color: black;
+	padding: 1px;
+	margin: 0;
+	font-size: 75%;
+}
+.cbtProgressTextLm {
+	color: black;
+	padding: 1px;
+	margin: 0;
+	font-size: 75%;
+}
+.cbtProgressTextLo {
+	color: black;
+	padding: 1px;
+	margin: 0;
+	font-size: 75%;
+}
+
+/* RatingField */
+.cbtRatingField {}
+.cbtRatingFieldField {
+	min-width: 200px;
+	border: 1px solid #BBBBBB;
+	padding: 2px;
+	-webkit-border-radius: 3px;
+	-moz-border-radius: 3px;
+	border-radius: 3px;
+}
+.cbtRatingFieldLabel {
+	color: labelColor;
+	cursor: pointer;
+	cursor: hand;
+}
+
+/* RichTextField */
+.cbtRichTextFieldField {
+	width: 300px;
+	height: 60px;
+	padding: 1px;
+	border: fieldBorder;
+}
+
+/* RouteField */
+.cbtRouteField {margin: 2px;}
+.cbtRouteFieldField {
+	width: 300px;
+	font-size: 100%;
+	padding: 1px;
+	border: fieldBorder;
+}
+.cbtRouteFieldLabel {
+	margin-top: 2px;
+	color: labelColor;
+	cursor: pointer;
+	cursor: hand;
+}
+.cbtRouteFieldMap {
+	height: 200px;
+	width: 300px;
+}
+
+/* SelectorField */
+.cbtSelectorField {
+	margin: 0 2px;
+	cursor: pointer;
+	cursor: hand;
+}
+
+.cbtSelectorFieldNull {
+	font-size: 3px;
+	width: 42px;
+	color:transparent;
+}
+
+.cbtSelectorFieldField {}
+
+.cbtSelectorFieldKey {
+	width: 300px;
+	white-space: nowrap;
+	color: labelColor;
+	font-weight: bold;
+}
+
+.cbtSelectorFieldValue {
+	width: 290px;
+	white-space: nowrap;
+}
+
+.cbtSelectorFieldValue:hover {}
+
+.cbtSelectorFieldLabel {
+	color: labelColor;
+	cursor: pointer;
+	cursor: hand;
+}
+
+/* ShuttleField */
+.cbtShuttleField {
+}
+
+.cbtShuttleFieldAvailable {
+	width: 136px;
+	height: 150px;
+	border: fieldBorder;
+	font-size: 90%;
+}
+
+.cbtShuttleFieldSelected {
+	width: 136px;
+	height: 150px;
+	border: fieldBorder;
+	font-size: 90%;
+}
+
+.cbtShuttleFieldButton {
+	width: 20px;
+	font-family: "courier new", courier;
+	font-size: 6pt;
+}
+
+.cbtShuttleFieldLabel {
+	color: labelColor;
+	cursor: pointer;
+	cursor: hand;
+}
+
+/* SliderField */
+.cbtSliderField {}
+
+.cbtSliderFieldField {
+	min-width: 200px;
+	border: 1px solid #BBBBBB;
+	padding: 2px;
+	-webkit-border-radius: 3px;
+	-moz-border-radius: 3px;
+	border-radius: 3px;
+}
+
+.cbtSliderFieldLabel {
+	color: labelColor;
+	cursor: pointer;
+	cursor: hand;
+}
+
+.cbtSliderFieldMax {
+	margin-left: 10px;
+	color: labelColor;
+}
+
+.cbtSliderFieldMin {
+	padding-right: 10px;
+	color: labelColor;
+}
+
+.cbtSliderFieldSlider {
+	height: 10px;
+	width: 200px;
+	padding: 1px;
+}
+
+.cbtSliderFieldUnit {
+	color: labelColor;
+	white-space: nowrap;
+}
+
+/* StackField */
+.cbtStackField {white-space: nowrap;}
+
+.cbtStackFieldField {
+	width: 300px;
+	font-size: 90%;
+	color: labelColor;
+	border: fieldBorder;
+}
+
+.cbtStackFieldLabel {
+	color: labelColor;
+/* 	font-weight: bold; */
+}
+
+/* SpinnerField */
+.cbtSpinnerField {}
+
+.cbtSpinnerFieldArrowDown {}
+
+.cbtSpinnerFieldArrowUp {
+/* 	margin-top: 1px; */
+	margin-bottom: 3px;
+}
+
+.cbtSpinnerFieldArrows {
+	font-size: 0; /* BLOODY BUG */
+}
+
+.cbtSpinnerFieldField {
+	margin-top: 0;
+	margin-right: 4px;
+	width: 20px;
+	font-size: 90%;
+	text-align: right;
+}
+
+.cbtSpinnerFieldLabel {
+	color: labelColor;
+	cursor: pointer;
+	cursor: hand;
+}
+
+/* SuggestField */
+.cbtSuggestField {margin: 0 2px;}
+
+.cbtSuggestFieldField {
+	width: 300px;
+	font-size: 100%;
+	padding: 1px;
+	border: fieldBorder;
+}
+
+.cbtSuggestFieldHalf {width: 150px;}
+.cbtSuggestFieldSecure {width: 275px;}
+
+.cbtSuggestFieldLabel {
+	color: labelColor;
+	cursor: pointer;
+	cursor: hand;
+}
+
+.cbtSuggestFieldPopup {
+	font-family: fontFamily;
+	color: labelColor;
+	background-color: white;
+	border: fieldPopup;
+	cursor: default;
+	-webkit-box-shadow:0 0 20px #000;
+	-moz-box-shadow: 0 0 20px #000;
+	box-shadow:0 0 20px #000;
+	position: relative;
+	z-index: 20;
+}
+
+.cbtSuggestFieldPopupButton {
+	margin: 1px;
+	border: 1px;
+	padding: 1px;
+}
+
+/* ScheduleTable */
+.cbtScheduleFieldTable {
+	width: 1000px; 
+	table-layout: fixed;
+}
+
+.cbtScheduleFieldColumn {
+	display: inline-block;
+	white-space: nowrap;
+	cursor: pointer;
+	cursor: hand;
+	overflow: hidden;
+	text-overflow: ellipsis;
+	padding: 0;
+	margin: 0;
+}
+
+.cbtScheduleFieldSunday {
+	background: #C0C0C0;
+	opacity: 0.2;
+}
+
+/* TableField */
+.cbtTableField {
+	margin: 2px;
+}
+
+.cbtTableFieldNavigator {
+	margin: 0;
+	bottom: 25px;
+	left: 2px;
+	position: relative;
+	z-index: 9;
+}
+
+.cbtTableFieldEmpty {
+	max-width: 800px;
+	border: fieldBorder;
+	padding: 20px;
+	text-align: center;
+	vertical-align: middle;
+	font-size: 110%;
+}
+
+.cbtTableFieldEmptyHyperlink {
+	margin: 10px;
+	text-decoration: underline;	
+	cursor: pointer;
+	cursor: hand;
+}
+
+.cbtTableFieldLabel {
+	margin-top: 8px;
+	color: labelColor;
+	cursor: pointer;
+	cursor: hand;
+}
+
+.cbtTableFieldChangeButton {
+	float: left;
+	width: 60px;
+	padding: 1px;
+	font-size: 80%;
+}
+
+.cbtTableFieldCreateButton {
+	float: left;
+	width: 62px;
+	padding: 1px;
+	margin-left: 3px;
+	font-size: 85%;
+}
+
+/* TextField */
+.cbtTextField {margin: 0 2px;}
+
+.cbtTextFieldField {
+	width: 300px;
+	font-size: 100%;
+	padding: 1px;
+	border: fieldBorder;
+}
+
+.cbtTextFieldHalf {width: 150px;}
+
+.cbtTextFieldSecure {
+	float: left;
+	width: 282px;
+}
+
+.cbtTextFieldLabel {
+	margin-top: 2px;
+	color: labelColor;
+	cursor: pointer;
+	cursor: hand;
+}
+
+.cbtTextFieldCCcode {
+	margin-top: 2px;
+	width: 45px;
+}
+
+/* TextAreaField */
+.cbtTextAreaFieldField {
+	height: 60px;
+	width: 300px;
+	color: black;
+	white-space: pre-wrap;
+	padding: 1px;
+	border: fieldBorder;
+}
+
+/* TextsField */
+.cbtTextsField {}
+
+.cbtTextsFieldField {
+	padding: 1px;
+	border: fieldBorder;
+}
+
+.cbtTextsFieldLabel {color: labelColor;}
+.cbtTextsFieldPopup {}
+.cbtTextsFieldPopupButton {}
+
+/* TimeField */
+.cbtTimeField {}
+
+.cbtTimeFieldField {
+	width: 150px;
+	margin: 2px 1px;
+	padding: 1px;
+	border: fieldBorder;
+}
+
+.cbtTimeFieldLabel {
+	color: labelColor;
+	cursor: pointer;
+	cursor: hand;
+}
+
+/* ToggleField */
+.cbtToggleField {margin: 0 2px;}
+.cbtToggleFieldField {}
+
+.cbtToggleFieldLabel {
+	color: labelColor;
+	cursor: pointer;
+	cursor: hand;
+}
+
+/* TreeField */
+.cbtTreeField {}
+
+.cbtUnderline {text-decoration: underline;}
+
+/* VisualizationField */
+.cbtVisualizationField {background-color: #F3F3F3;}
+.cbtVisualizationFieldLoading {width: 100%;}
+
+/* VshuttleField */
+.cbtVshuttleField {}
+.cbtVshuttleFieldButton {width: 20px; font-size: 60%}
+.cbtVshuttleFieldButtons {margin: 2px;}
+
+.cbtVshuttleFieldLabel {
+	color: labelColor;
+	cursor: pointer;
+	cursor: hand;
+}
+
+.cbtVshuttleFieldAvailable {
+	width: 200px;
+	margin: 0;
+	padding: 0;
+}
+
+.cbtVshuttleFieldSecure {}
+
+.cbtVshuttleFieldSelected {
+	height: 200px;
+	width: 200px;
+	margin: 0;
+	padding: 0;
+}
+
+/* WindowButton */
+.cbtWindowButton {
+	color: blue;
+	margin: 0;
+	padding: 2px;
+	font-size: 80%;
+	cursor: pointer;
+	cursor: hand;
+	background: url("images/hborder.png") repeat-x 0px -27px;
+}
+
+/* .uservoiceLink {margin: 5px; float: right;} */
+/* .uservoiceLink a{color:#999} */
+/* .uservoiceLink:hover{ */
+/* 	color: #006699; */
+/* 	font-style: italic; */
+/* } */
+
+
+/*
+CSS declarations always ends with a semicolon, and declaration groups are surrounded by curly brackets
+p {color:red;text-align:center;}
+The id selector is used to specify a style for a single, unique element, defined with a "#".
+#para1{text-align:center;color:red;} 
+
+The class selector is used to specify a style for a group of elements, defined with a "."
+.center {text-align:center;}
+
+Grouping Selectors: There are often elements with the same style
+ h1{color:green;}
+ h2{color:green;}
+ p{color:green;}
+can be grouped as:
+ h1,h2,p{color:green;}
+or nested as:
+ p{color:blue;text-align:center;}
+  .marked{background-color:blue;}
+  .marked p{color:white;}
+  
+Attribute Selectors: Styles all elements with a specific attribute
+ [title]{color:blue;} 
+ [title~=hello] { color:blue; } Styles all elements with a title attribute that contains a specified value, even if it has space separated values
+ [lang|=en] { color:blue; } Styles all elements with a lang attribute that contains a specified value, even if it has hyphen ( - ) separated values
+
+Pseudo Classes can be applied to any CSS property (e.g. color, font-family, background-color).
+ a:hover {text-decoration:underline;}
+  :active  Adds a style to an element that is activated (clicked)
+  :first-child Adds a style to an element that is the first child of another element
+  :focus Adds a style to an element that has keyboard input focus
+  :hover Adds a style to an element when you mouse over it
+  :lang Adds a style to an element with a specific lang attribute 
+  :link Adds a style to an unvisited link
+  :visited Adds a style to a visited link
+
+Pseudo Elements are used to add special effects to some selectors
+ p:first-line{color:#ff0000;font-variant:small-caps;}
+  :after  Adds content after an element 
+  :before Adds content before an element
+  :first-letter Adds a style to the first character of a text
+  :first-line Adds a style to the first line of a text
+
+This syntax creates IE6 specific style rules:
+ html>bodygwt-Widget {
+ Rule applies to all browsers (including IE7), except IE6
+ }
+ htmlgwt-Widget {
+ Rule applied to IE6 only (not to IE7)
+ }
+
+External style sheet is ideal when the style is applied to many pages.
+ <head>
+  <link rel="stylesheet" type="text/css" href="mystyle.css" />
+ </head>
+ 
+Internal style sheet should be used when a single document has a unique style.
+ <head>
+  <style type="text/css">
+   hr {color:sienna;}
+   p {margin-left:20px;}
+   body {background-image:url("images/back40.gif");}
+  </style>
+ </head>
+ 
+Inline style loses many of the advantages of style sheets by mixing content with presentation.
+ <p style="color:sienna;margin-left:20px">This is a paragraph.</p>
+
+Cascading Order
+ Browser default
+ External style sheet
+ Internal style sheet (in the head section)
+ Inline style (inside an HTML element)
+If the link to the external style sheet is placed after the internal style sheet in HTML <head>, the external style sheet will override the internal style sheet.
+
+inherit  Specifies that the value of the property should be inherited from the parent element
+
+Dimension:
+ height:100px;
+ max-height:100px;
+ max-width:100px;
+ min-height:100px;
+ min-width:100px;
+ width:100px;
+
+Unit:
+ %  	percentage
+ in 	inch
+ cm 	centimeter
+ mm 	millimeter
+ em 	2em means 2 times the size of the current font. It can adapt automatically to the font that the reader uses
+ ex 	one ex is the x-height of a font (usually about half the font-size)
+ pt 	point (1 pt is the same as 1/72 inch)
+ pc 	pica (1 pc is the same as 12 points)
+ px 	pixel (a dot on the computer screen)
+ 
+Color: http://www.w3schools.com/css/css_colors.asp
+ color:red; Color name http://www.w3schools.com/HTML/htmlcolornames.asp
+ color:rgb(255,0,0); RGB value
+ color:rgb(100%, 0%, 0%); RGB percentage value
+ color:#ff0000; Hex value
+ color:transparent;
+ 
+Background:
+ background-color:blue; Sets the background color of an element
+ background-image:url('paper.gif'); Sets the background image for an element
+  url(URL)
+  none
+ background-repeat:no-repeat; Sets if/how a background image will be repeated
+  repeat
+  repeat-x The image is repeated only horizontally
+  repeat-y The image is repeated only vertically
+  no-repeat
+ background-attachment:inherit; Sets whether a background image is fixed or scrolls with the rest of the page
+  scroll
+  fixed
+ background-position:right top; Sets the starting position of a background image
+  left top
+  left center
+  left bottom
+  right top
+  right center
+  right bottom
+  center top
+  center center
+  center bottom
+  x% y%
+  xpos ypos
+ background:#ffffff url('img_tree.png') no-repeat right top; The shorthand property for the background properties
+  background-color
+  background-image
+  background-repeat
+  background-attachment
+  background-position
+
+Box Model: Essentially a box that wraps around HTML elements, and it consists of: margins, borders, padding, and the actual content.
+Set the width and height of the content area, and add the padding, border and margin for the total width (300px)
+width:250px;
+padding:10px;
+border:5px solid gray;
+margin:10px; 
+
+Margins are the spaces outside the border, between the border and the other elements next to this object. 
+margin-bottom:5px; Sets the bottom margin of an element
+margin-left:10%; Sets the left margin of an element
+margin-right:3px; Sets the right margin of an element
+margin-top:3%; Sets the top margin of an element
+margin: 5px 10px 3px 4px; Shorthand for setting the margin properties in one declaration
+ margin-top
+ margin-right
+ margin-bottom
+ margin-left
+ auto
+ length
+ %
+
+Padding is the space inside the border between the border and the actual image or cell contents. 
+padding-bottom:1px; Sets the bottom padding of an element
+padding-left:2px; Sets the left padding of an element
+padding-right:5%; Sets the right padding of an element
+padding-top:10px; Sets the top padding of an element
+padding: 1px 2px 1% 10px; Shorthand property for setting all the padding properties in one declaration
+ padding-top
+ padding-right
+ padding-bottom
+ padding-left
+ 
+Border:
+border-style:solid;
+ dotted: Defines a dotted border
+ dashed: Defines a dashed border
+ solid: Defines a solid border
+ double: Defines two borders. The width of the two borders are the same as the border-width value
+ groove: Defines a 3D grooved border. The effect depends on the border-color value
+ ridge: Defines a 3D ridged border. The effect depends on the border-color value
+ inset: Defines a 3D inset border. The effect depends on the border-color value
+ outset: Defines a 3D outset border. The effect depends on the border-color value
+
+border-width:5px; Note: The "border-width" property does not work if it is used alone. Use the "border-style" property to set the borders first.
+
+border-color:red;
+
+border-top-style:dotted;
+border-right-style:solid;
+border-bottom-style:dotted;
+border-left-style:solid;
+border-style:dotted solid; Can also be set with a single property.
+
+border-style:dotted solid double dashed; The border-style property can have from one to four values.
+ top border is dotted
+ right border is solid
+ bottom border is double
+ left border is dashed
+
+border:5px solid red; The shorthand property for the border properties
+border-left:5px solid red; When using the border property, the order of the values are:
+ border-width
+ border-style
+ border-color
+
+Outline: Drawn around elements, outside the border edge, to make them stand out
+outline-color:red; Sets the color of an outline 
+ color_name
+ hex_number
+ rgb_number
+ invert
+
+outline-style:dotted; Sets the style of an outline
+ none
+ dotted
+ dashed
+ solid
+ double
+ groove
+ ridge
+ inset
+ outset
+
+outline-width:thin; Sets the width of an outline
+ thin
+ medium
+ thick
+ length
+
+outline:red dotted thin; Sets all the outline properties in one declaration
+ outline-color
+ outline-style
+ outline-width
+ 
+Font: http://www.w3schools.com/css/css_websafe_fonts.asp
+ font-family:"Times New Roman", Times, serif; If the name of a font family is more than one word, it must be in quotation marks, like font-family: "Times New Roman".
+  Serif: Times New Roman, Georgia; Have small lines at the ends on some characters
+  Sans-serif: Arial, Verdana; Without the lines at the ends of characters
+  Monospace: Courier New, Lucida Console; Characters have the same width
+  
+ font-style:normal;
+  normal - The text is shown normally
+  italic - The text is shown in italics
+  oblique - The text is "leaning" (oblique is very similar to italic, but less supported)
+  
+ font-size:40px; Specifies the font size of text, can be an absolute, or relative size.
+  xx-small
+  x-small
+  small
+  medium
+  large
+  x-large
+  xx-large
+  smaller
+  larger
+  length
+  % 
+ 
+ font-variant:normal; Specifies whether or not a text should be displayed in a small-caps font
+  normal
+  small-caps 
+  
+ font-weight:bold; Specifies the weight of a font
+  normal
+  bold
+  bolder
+  lighter
+  100
+  200
+  300
+  400
+  500
+  600
+  700
+  800
+  900
+  
+ font:	Sets all the font properties in one declaration
+  font-style
+  font-variant
+  font-weight
+  font-size/line-height
+  font-family
+  caption
+  icon
+  menu
+  message-box
+  small-caption
+  status-bar
+
+Image:
+ Sprite is a collection of images put into a single image
+  background:url(img_navsprites.gif) 0 0;
+  width:46px;height:44px; Defines the portion of the image to use
+  
+  Example navigation bar using a single image:
+   #navlist{position:relative;}
+   #navlist li{margin:0;padding:0;list-style:none;position:absolute;top:0;}
+   #navlist li, #navlist a{height:44px;display:block;}
+   #home{left:0px;width:46px;}
+   #home{background:url('img_navsprites.gif') 0 0;}
+   #prev{left:63px;width:43px;}
+   #prev{background:url('img_navsprites.gif') -47px 0;}
+   #next{left:129px;width:43px;}
+   #next{background:url('img_navsprites.gif') -91px 0;}
+
+  Example navigation bar using a single image with hover:
+   #home a:hover{background: url('img_navsprites_hover.gif') 0 -45px;}
+   #prev a:hover{background: url('img_navsprites_hover.gif') -47px -45px;}
+   #next a:hover{background: url('img_navsprites_hover.gif') -91px -45px;}
+
+ Transparency: use the property opacity:x for transparency where 0 < x <= 1
+  opacity:0.4;
+  filter:alpha(opacity=40);
+
+ Example to highlight image on mouseover:
+  <img src="klematis.jpg" style="opacity:0.4;filter:alpha(opacity=40)"
+  onmouseover="this.style.opacity=1;this.filters.alpha.opacity=100"
+  onmouseout="this.style.opacity=0.4;this.filters.alpha.opacity=40" />
+
+ Example to create transparent text box:
+  .transbox {
+   width:400px;
+   height:180px;
+   margin:30px 50px;
+   background-color:#ffffff;
+   border:1px solid black;
+   filter:alpha(opacity=60);
+   opacity:0.6;
+  }
+  
+Lists:
+ list-style-type: circle; Unordered types
+  none 
+  disc (default filled circle)
+  circle
+  square
+  
+ list-style-type: number; Orderd types
+  armenian  	The marker is traditional Armenian numbering
+  decimal 	The marker is a number
+  decimal-leading-zero 	The marker is a number padded by initial zeros (01, 02, 03, etc.)
+  georgian 	The marker is traditional Georgian numbering (an, ban, gan, etc.)
+  lower-alpha 	The marker is lower-alpha (a, b, c, d, e, etc.)
+  lower-greek 	The marker is lower-greek (alpha, beta, gamma, etc.)
+  lower-latin 	The marker is lower-latin (a, b, c, d, e, etc.)
+  lower-roman 	The marker is lower-roman (i, ii, iii, iv, v, etc.)
+  upper-alpha 	The marker is upper-alpha (A, B, C, D, E, etc.) 
+  upper-latin 	The marker is upper-latin (A, B, C, D, E, etc.)
+  upper-roman 	The marker is upper-roman (I, II, III, IV, V, etc.)
+  
+ list-style-image: url('sqpurple.gif'); Image type
+
+ list-style-position:inside; Specifies if the list-item markers should appear inside or outside the content flow
+  inside
+  outside
+  
+ list-style:circle inside 'sqpurple.gif'; Sets all the properties for a list in one declaration
+  list-style-type
+  list-style-position
+  list-style-image
+
+Position:
+ Alignment: Setting the left and right margins to auto specifies that they should split the available margin equally which results in a centered element
+  margin-left:auto;
+  margin-right:auto;
+  width:70%;
+
+ Alignment using absolute positioning  
+  position:absolute;
+  right:0px;
+  width:300px;
+  
+ Float elements horizontally to move as far to the left or right as possible
+  float:left;
+   left
+   right
+   none
+  clear:both; Specifies which sides of an element other floating elements are not allowed
+   left
+   right
+   both
+   none
+ 
+ Static: HTML elements are positioned static by default. A static positioned element is always positioned according to the normal flow of the page.
+
+ Fixed: Positioned relative to the browser window (will not move even if the window is scrolled)
+  position:fixed;
+  top:30px;
+  right:5px;
+
+ Relative: Positioned relative to its normal position
+  position:relative;
+  left:-20px;
+ 
+ Absolute: Positioned relative to the first parent element that has a position other than static. If no such element is found, the containing block is <html>
+  position:relative;
+  left:100px;
+  top:150px;
+  
+ Overlapping: Positioned outside the normal flow, elements can overlap other elements
+  position:absolute;
+  left:0px;
+  top:0px;
+  z-index:-1
+ 
+ bottom:auto; Sets the bottom margin edge for a positioned box
+ left:10px; Sets the left margin edge for a positioned box
+ right:10%; Sets the right margin edge for a positioned box
+ top:10px; Sets the top margin edge for a positioned box
+  auto
+  length
+  %
+
+ clipauto; Clips an absolutely positioned element
+  shape
+  auto
+
+ cursor:crosshair; Specifies the type of cursor to be displayed
+  url
+  auto
+  crosshair
+  default
+  pointer
+  move
+  e-resize
+  ne-resize
+  nw-resize
+  n-resize
+  se-resize
+  sw-resize
+  s-resize
+  w-resize
+  text
+  wait
+  help
+  
+ overflow:hidden; Specifies what happens if content overflows an element's box
+  auto
+  hidden
+  scroll
+  visible
+
+ position:fixed; Specifies the type of positioning for an element
+  absolute
+  fixed
+  relative
+  static
+
+ z-index:auto; Sets the stack order of an element
+  number
+  auto
+
+Tables:
+
+ table, th, td {border: 1px solid black;} Specifies a black border for table, th, and td elements
+ table{border-collapse:collapse;} Sets whether the table borders are collapsed into a single border or separated
+ table{width:100%;} Sets the width of the table to 100%
+ th{height:50px;} Sets the height of the th elements to 50px
+ td{text-align:right;} Sets the horizontal alignment
+  left
+  right
+  center
+ td{vertical-align:bottom;} Sets the vertical alignment
+  top
+  bottom
+  middle
+ th{background-color:green;color:white;} Sets the colors
+ 
+Text:
+ color:blue;
+ direction:rtl; Alternatively ltr
+ line-height:normal; Sets the distance between lines
+  normal
+  number
+  length
+  %
+ letter-spacing: Increase or decrease the space between characters
+  normal
+  length
+ text-align:center; Aligns the text in an element
+  left
+  right
+  center
+  justify
+ text-decoration:underline; Adds decoration to text
+  none
+  underline
+  overline
+  line-through
+  blink
+ text-indent:10px; Indents the first line of text in an element
+  length
+  %
+ text-shadow:blue;
+  none
+  color
+  length
+ text-transform:capitalize;  Controls the letters in an element
+  none
+  capitalize
+  uppercase
+  lowercase
+ vertical-align:baseline; Sets the vertical alignment of an element 
+  baseline
+  sub
+  super
+  top
+  text-top
+  middle
+  bottom
+  text-bottom
+  length
+  %	
+ white-space: pre; http://www.w3schools.com/CSS/prtextwhite-space.asp
+  normal   Sequences of whitespace will collapse into a single whitespace. Text will wrap when necessary. This is default.
+  nowrap   Sequences of whitespace will collapse into a single whitespace. Text will never wrap to the next line. 
+           The text continues on the same line until a <br /> tag is encountered. 
+  pre      Whitespace is preserved by the browser. Text will only wrap on line breaks Acts like the <pre> tag in HTML. 
+  pre-line Sequences of whitespace will collapse into a single whitespace. Text will wrap when necessary, and on line breaks. 
+  pre-wrap Whitespace is preserved by the browser. Text will wrap when necessary, and on line breaks.
+ word-spacing:normal; Increase or decrease the space between words 
+  normal
+  length	
+ */

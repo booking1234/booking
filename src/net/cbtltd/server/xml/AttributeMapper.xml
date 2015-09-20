@@ -1,0 +1,153 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="net.cbtltd.server.api.AttributeMapper">
+
+<!-- 	<cache readOnly="true"/> -->
+
+	<resultMap id="ResultMap" type="net.cbtltd.shared.Attribute">
+		<id column="ID" jdbcType="INTEGER" property="id" />
+		<id column="List" jdbcType="VARCHAR" property="list" />
+		<result column="Name" jdbcType="VARCHAR" property="name" />
+		<result column="Type" jdbcType="VARCHAR" property="type" />
+		<result column="Definition" jdbcType="VARCHAR" property="definition" />
+		<result column="Date" jdbcType="DATE" property="date" />
+		<result column="version" jdbcType="DATE" property="version" />
+	</resultMap>
+	
+	<sql id="columns">
+		ID, List, Name, Type, Definition, Date, version
+	</sql>
+	
+	<select id="read" parameterType="Attribute" resultMap="ResultMap">
+		select
+		<include refid="columns" />
+		from attribute
+		where ID = #{id,jdbcType=INTEGER}
+		and List = #{list,jdbcType=VARCHAR}
+	</select>
+	
+	<select id="readAttribute" resultType="String" >
+    SELECT name from attribute  WHERE concat(list,id) in
+		 <foreach item="item" index="index" collection="list" open="(" separator="," close=")">
+					#{item}
+		</foreach> 
+        
+</select>
+	
+	<delete id="delete" parameterType="Attribute">
+		delete from attribute
+		where ID = #{ID,jdbcType=INTEGER}
+		and List = #{list,jdbcType=VARCHAR}
+	</delete>
+	
+	<insert id="insert" parameterType="Attribute">
+		insert into attribute (ID, List, Name, Type, Definition, Date, version)
+		values (
+			#{id,jdbcType=INTEGER}, #{list,jdbcType=VARCHAR},#{name,jdbcType=VARCHAR}, #{type,jdbcType=VARCHAR},
+			#{definition,jdbcType=VARCHAR}, #{date,jdbcType=DATE}, #{version,jdbcType=DATE}
+		)
+	</insert>
+	
+	<update id="update" parameterType="Attribute">
+		update attribute
+		<set>
+			<if test="name != null">
+				Name = #{name,jdbcType=VARCHAR},
+			</if>
+			<if test="type != null">
+				Type = #{type,jdbcType=VARCHAR},
+			</if>
+			<if test="definition != null">
+				Definition = #{definition,jdbcType=VARCHAR},
+			</if>
+			<if test="date != null">
+				Date = #{date,jdbcType=DATE},
+			</if>
+			<if test="version != null">
+				version = #{version,jdbcType=DATE},
+			</if>
+		</set>
+		where ID = #{id,jdbcType=INTEGER}
+		and List = #{list,jdbcType=VARCHAR}
+	</update>
+	
+	<update id="updateByPrimaryKey" parameterType="Attribute">
+		update attribute
+		set Name = #{name,jdbcType=VARCHAR},
+		Type = #{type,jdbcType=VARCHAR},
+		Definition = #{definition,jdbcType=VARCHAR},
+		Date = #{date,jdbcType=DATE},
+		version = #{version,jdbcType=DATE}
+		where ID = #{id,jdbcType=INTEGER}
+		and List = #{list,jdbcType=VARCHAR}
+	</update>
+
+	<select id="razorlist" parameterType="Void" resultType="NameId">
+		select Name, if(ID = 0, List, concat(List, ID)) as id
+		from attribute
+		where Type = 'RZ'
+		order by ID
+	</select>
+	
+	<select id="list" parameterType="Void" resultType="NameId">
+		select Name, if(ID = 0, List, concat(List, ID)) as id
+		from attribute
+		order by ID
+	</select>
+	
+	<select id="valuelist" parameterType="AttributeMapAction" resultType="NameId">
+		select Name, ID
+		from attribute
+		where List = #{list,jdbcType=VARCHAR}
+		and Type = #{type}
+		and ID <![CDATA[ <> ]]> '0'
+	</select>
+	
+	<select id="pctListValue" parameterType="Attribute" resultType="NameId">
+		select Name, ID, List
+		from attribute
+		where List = 'PCT'
+		and ID = #{id,jdbcType=INTEGER}
+	</select>
+	
+<!-- 	<select id="valuemap" parameterType="AttributeMapAction" resultMap="ResultMap"> -->
+<!-- 		select -->
+<!-- 		<include refid="columns" /> -->
+<!-- 		from attribute -->
+<!-- 		where List in (${list}) -->
+<!-- 		and Type = #{type} -->
+<!-- 		order by list, id -->
+<!-- 	</select> -->
+
+	<select id="valuemap" parameterType="AttributeMapAction" resultMap="ResultMap">
+		select
+		<include refid="columns" />
+		from attribute
+		where Type = #{type}
+		<if test="keys != null">
+			and List in
+			<foreach item="item" index="index" collection="keys" open="(" separator="," close=")">
+				#{item}
+			</foreach>
+		</if>
+		order by List, ID
+	</select>
+	
+	<select id="nameidbyid" parameterType="NameIdAction" resultType="NameId">
+		select distinct LineID as Name, LineID as ID
+		from relation
+		where Link = #{type}
+			and HeadID = #{state}
+			and LineID = #{id}
+	</select>
+
+	<select id="nameidbyname" parameterType="NameIdAction" resultType="NameId">
+		select distinct LineID as Name, LineID as ID
+		from relation
+		where LineID <![CDATA[ >= ]]> #{name}
+			and Link = #{type}
+			and HeadID = #{state}
+		order by Name
+		limit 0, #{numrows}
+	</select>
+</mapper>

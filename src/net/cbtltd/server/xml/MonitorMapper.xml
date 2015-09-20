@@ -1,0 +1,84 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="net.cbtltd.server.api.MonitorMapper">
+
+	<cache readOnly="true"/>
+
+	<resultMap id="ResultMap" type="Monitor">
+		<id column="ID" jdbcType="INTEGER" property="id" />
+		<result column="Name" jdbcType="VARCHAR" property="name" />
+		<result column="Count" jdbcType="INTEGER" property="count" />
+		<result column="Duration" jdbcType="DOUBLE" property="duration" />
+		<result column="Date" jdbcType="TIMESTAMP" property="date" />
+	</resultMap>
+
+	<sql id="columns">
+		ID, Name, Count, Duration, Date
+	</sql>
+
+	<select id="read" parameterType="String" resultMap="ResultMap">
+		select
+		<include refid="columns" />
+		from monitor
+		where ID = #{id,jdbcType=INTEGER}
+	</select>
+
+	<delete id="delete" parameterType="String">
+		delete from monitor
+		where ID = #{id,jdbcType=INTEGER}
+	</delete>
+
+	<insert id="create" parameterType="Monitor" useGeneratedKeys="true" keyProperty="id">
+		insert into monitor (Name, Count, Duration, Date)
+		values (#{name,jdbcType=VARCHAR}, #{count,jdbcType=INTEGER}, #{duration,jdbcType=DOUBLE}, #{date,jdbcType=DATE})
+	</insert>
+
+	<update id="update" parameterType="Monitor">
+		update monitor
+		<set>
+			<if test="name != null">
+				Name = #{name,jdbcType=VARCHAR},
+			</if>
+			<if test="count != null">
+				Count = #{count,jdbcType=INTEGER},
+			</if>
+			<if test="duration != null">
+				Duration = #{duration,jdbcType=DOUBLE},
+			</if>
+			<if test="date != null">
+				Date = #{date,jdbcType=DATE},
+			</if>
+		</set>
+		where ID = #{id,jdbcType=INTEGER}
+	</update>
+
+	<update id="updateByPrimaryKey" parameterType="Monitor">
+		update monitor
+		set Name = #{name,jdbcType=VARCHAR},
+		Count = #{count,jdbcType=INTEGER},
+		Duration = #{duration,jdbcType=DOUBLE},
+		Date = #{date,jdbcType=DATE}
+		where ID = #{id,jdbcType=INTEGER}
+	</update>
+	
+<!--	<select id="nameidbyid" parameterType="NameIdAction" resultType="NameId">-->
+<!--		select distinct Name, ID-->
+<!--		from monitor-->
+<!--		where ID = #{id}-->
+<!--	</select>-->
+<!---->
+<!--	<select id="nameidbyname" parameterType="NameIdAction" resultType="NameId">-->
+<!--		select distinct Name, ID-->
+<!--		from monitor-->
+<!--		where Name <![CDATA[ >= ]]> #{name}-->
+<!--		<if test="state == null">-->
+<!--			and Frequency not in ('Initial', 'Final')-->
+<!--		</if>-->
+<!--		<if test="state != null">-->
+<!--			and Frequency in (${state})-->
+<!--		</if>-->
+<!--		order by Name-->
+<!--		limit 0, #{numrows}-->
+<!--	</select>-->
+	
+</mapper>

@@ -1,0 +1,58 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="net.cbtltd.server.api.CurrencyrateMapper">
+
+	<resultMap id="ResultMap" type="Currencyrate">
+		<id column="Date" jdbcType="DATE" property="date" />
+		<id column="ID" jdbcType="VARCHAR" property="id" />
+		<id column="ToID" jdbcType="VARCHAR" property="toid" />
+		<result column="Rate" jdbcType="DOUBLE" property="rate" />
+	</resultMap>
+
+	<sql id="columns">
+		Date, ID, ToID, Rate
+	</sql>
+
+	<select id="readbyexample" parameterType="Currencyrate" resultMap="ResultMap">
+		select
+		<include refid="columns" />
+		from currencyrate
+			where Date = #{date,jdbcType=DATE}
+			and ID = #{id,jdbcType=VARCHAR}
+			and ToID = #{toid,jdbcType=VARCHAR}
+	</select>
+
+<!--	<select id="readinverse" parameterType="Currencyrate" resultMap="ResultMap">-->
+<!--		select ToID as id, ID as toid, date, 1.0/Rate as rate-->
+<!--		from currencyrate-->
+<!--		where Date = #{date,jdbcType=DATE}-->
+<!--		and ID = #{toid,jdbcType=VARCHAR}-->
+<!--		and ToID = #{id,jdbcType=VARCHAR}-->
+<!--	</select>-->
+	
+	<delete id="delete" parameterType="Currencyrate">
+		delete from currencyrate
+		where Date = #{date,jdbcType=DATE}
+		and ID = #{id,jdbcType=VARCHAR}
+		and ToID = #{toid,jdbcType=VARCHAR}
+	</delete>
+
+	<insert id="create" parameterType="Currencyrate">
+		insert into currencyrate (Date, ID, ToID, Rate)
+		values (
+			#{date,jdbcType=DATE}, 
+			#{id,jdbcType=VARCHAR},
+			#{toid,jdbcType=VARCHAR}, 
+			#{rate,jdbcType=DOUBLE}
+		)
+	</insert>
+
+	<update id="update" parameterType="Currencyrate">
+		update currencyrate
+		set Rate = #{rate,jdbcType=DOUBLE}
+		where Date = #{date,jdbcType=DATE}
+			and ID = #{id,jdbcType=VARCHAR}
+			and ToID = #{toid,jdbcType=VARCHAR}
+	</update>
+
+</mapper>

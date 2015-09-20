@@ -1,0 +1,44 @@
+<xs:schema attributeFormDefault="unqualified" elementFormDefault="qualified" targetNamespace="http://www.opentravel.org/OTA/2003/05" xmlns:xs="http://www.w3.org/2001/XMLSchema">
+  <xs:element name="OTA_HotelAvailRQ">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element name="AvailRequestSegments">
+          <xs:complexType>
+            <xs:sequence>
+              <xs:element name="AvailRequestSegment" maxOccurs="unbounded" minOccurs="0">
+                <xs:complexType>
+                  <xs:sequence>
+                    <xs:element name="HotelSearchCriteria">
+                      <xs:complexType>
+                        <xs:sequence>
+                          <xs:element name="Criterion">
+                            <xs:complexType>
+                              <xs:sequence>
+                                <xs:element name="HotelRef">
+                                  <xs:complexType>
+                                    <xs:simpleContent>
+                                      <xs:extension base="xs:string">
+                                        <xs:attribute type="xs:string" name="HotelCode" use="optional"/>
+                                      </xs:extension>
+                                    </xs:simpleContent>
+                                  </xs:complexType>
+                                </xs:element>
+                              </xs:sequence>
+                            </xs:complexType>
+                          </xs:element>
+                        </xs:sequence>
+                      </xs:complexType>
+                    </xs:element>
+                  </xs:sequence>
+                </xs:complexType>
+              </xs:element>
+            </xs:sequence>
+          </xs:complexType>
+        </xs:element>
+      </xs:sequence>
+      <xs:attribute type="xs:float" name="Version"/>
+      <xs:attribute type="xs:string" name="TimeStamp"/>
+      <xs:attribute type="xs:string" name="EchoToken"/>
+    </xs:complexType>
+  </xs:element>
+</xs:schema>

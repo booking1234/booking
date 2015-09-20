@@ -1,0 +1,451 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="net.cbtltd.server.api.LocationMapper">
+
+	<cache readOnly="true"/>
+
+	<resultMap id="ResultMap" type="Location">
+		<id column="ID" jdbcType="INTEGER" property="id" />
+		<result column="Code" jdbcType="VARCHAR" property="code" />
+		<result column="Name" jdbcType="VARCHAR" property="name" />
+		<result column="GName" jdbcType="VARCHAR" property="gname" />
+		<result column="State" jdbcType="VARCHAR" property="state" />
+		<result column="Country" jdbcType="VARCHAR" property="country" />
+		<result column="Region" jdbcType="VARCHAR" property="region" />
+		<result column="AdminArea_lvl_1" jdbcType="VARCHAR" property="adminarea_lvl_1" />
+		<result column="AdminArea_lvl_2" jdbcType="VARCHAR" property="adminarea_lvl_2" />
+		<result column="IATA" jdbcType="VARCHAR" property="iata" />
+		<result column="Latitude" jdbcType="DOUBLE" property="latitude" />
+		<result column="Longitude" jdbcType="DOUBLE" property="longitude" />
+		<result column="Altitude" jdbcType="DOUBLE" property="altitude" />
+		<result column="Notes" jdbcType="VARCHAR" property="notes" />
+		<result column="CodeInterhome" jdbcType="VARCHAR" property="codeinterhome" />
+		<result column="CodeRentalsUnited" jdbcType="VARCHAR" property="coderentalsunited" />
+		<result column="LocationType" jdbcType="VARCHAR" property="locationtype" />
+		<result column="ParentID" jdbcType="INTEGER" property="parentid" />
+	</resultMap>
+
+	<sql id="columns">
+		ID, Code, Name, GName, State, Country, Region, AdminArea_lvl_1, AdminArea_lvl_2, IATA, Latitude, Longitude, Altitude, Notes, CodeInterhome, CodeRentalsUnited, LocationType, ParentID
+	</sql>
+
+	<select id="read" parameterType="Location" resultMap="ResultMap">
+		select
+		<include refid="columns" />
+		from location
+		where ID = #{id,jdbcType=INTEGER}
+	</select>
+
+	<select id="name" parameterType="Location" resultMap="ResultMap">
+		select
+		<include refid="columns" />
+		from location
+	    where Country = #{country}
+			and name like concat('%', #{name}, '%')
+	    limit 1
+	</select>
+
+	<select id="exists" parameterType="Location" resultMap="ResultMap">
+		select
+		<include refid="columns" />
+		from location
+	    where Country = #{country}
+			<if test="region != null">
+			and Region = #{region}
+			</if>
+			<if test="name != null">
+			and Name = #{name}
+			</if>
+			<if test="gname != null">
+			or GName = #{gname}
+			</if>
+			<if test="state != null">
+			and State = #{state}
+			</if>
+		order by location.ID
+	    limit 1
+	</select>
+	
+	<select id="googleExists" parameterType="Location" resultMap="ResultMap">
+		select
+		<include refid="columns" />
+		from location
+	    where Country = #{country}
+			<if test="gname != null">
+			and GName = #{gname}
+			</if>
+			<if test="adminarea_lvl_1 != null">
+			and AdminArea_lvl_1 = #{adminarea_lvl_1}
+			</if>
+			<if test="adminarea_lvl_2 != null">
+			and AdminArea_lvl_2 = #{adminarea_lvl_2}
+			</if>
+			<if test="state != null">
+			and State = #{state}
+			</if>
+		order by location.ID
+	</select>
+
+	<select id="pmssearch" parameterType="Location" resultMap="ResultMap">
+		select
+		<include refid="columns" />
+		from location
+	    where Country = #{country}
+			<if test="name != null">
+			and Name = #{name}
+			</if>
+			<if test="state != null">
+			and State = #{state}
+			</if>
+		order by location.ID asc
+		limit 1
+	</select>
+	
+	<select id="interhomeSearch" parameterType="Location" resultMap="ResultMap">
+		select
+		<include refid="columns" />
+		from location
+	    where CodeInterhome = #{codeinterhome}
+			<if test="state != null">
+			and State = #{state}
+			</if>
+		order by location.ID asc
+		limit 1
+	</select>
+	
+	<select id="rentalsunitedSearch" parameterType="Location" resultMap="ResultMap">
+		select
+		<include refid="columns" />
+		from location
+	    where CodeRentalsUnited = #{coderentalsunited}
+			<if test="state != null">
+			and State = #{state}
+			</if>
+		order by location.ID asc
+		limit 1
+	</select>
+
+	<delete id="delete" parameterType="Location">
+		delete from location
+		where ID = #{id,jdbcType=INTEGER}
+	</delete>
+
+	<insert id="create" parameterType="Location" useGeneratedKeys="true" keyProperty="id">
+		insert into location (
+			Code, Name, GName, State, Country, Region, AdminArea_lvl_1, AdminArea_lvl_2, IATA, Latitude, Longitude, Altitude, Notes, CodeInterhome, CodeRentalsUnited, DateCreated, LocationType, ParentID
+		)
+		values (
+			#{code,jdbcType=VARCHAR},
+			#{name,jdbcType=VARCHAR},
+			#{gname,jdbcType=VARCHAR},
+			#{state,jdbcType=VARCHAR},
+			#{country,jdbcType=VARCHAR},
+			#{region,jdbcType=VARCHAR},
+			#{adminarea_lvl_1,jdbcType=VARCHAR},
+			#{adminarea_lvl_2,jdbcType=VARCHAR},
+			#{iata,jdbcType=VARCHAR},
+			#{latitude,jdbcType=DOUBLE},
+			#{longitude,jdbcType=DOUBLE},
+			#{altitude,jdbcType=DOUBLE},
+			#{notes,jdbcType=VARCHAR},
+			#{codeinterhome,jdbcType=VARCHAR},
+			#{coderentalsunited,jdbcType=VARCHAR},
+			NULL,
+			#{locationtype,jdbcType=VARCHAR},
+			#{parentid,jdbcType=INTEGER}
+		)
+	</insert>
+
+	<update id="update" parameterType="Location">
+		update location
+		<set>
+			<if test="code != null">
+				Code = #{code,jdbcType=VARCHAR},
+			</if>
+			<if test="name != null">
+				Name = #{name,jdbcType=VARCHAR},
+			</if>
+			<if test="gname != null">
+				GName = #{gname,jdbcType=VARCHAR},
+			</if>
+			<if test="state != null">
+				State = #{state,jdbcType=VARCHAR},
+			</if>
+			<if test="country != null">
+				Country = #{country,jdbcType=VARCHAR},
+			</if>
+			<if test="region != null">
+				Region = #{region,jdbcType=VARCHAR},
+			</if>
+			<if test="adminarea_lvl_1 != null">
+				AdminArea_lvl_1 = #{adminarea_lvl_1,jdbcType=VARCHAR},
+			</if>
+			<if test="adminarea_lvl_2 != null">
+				AdminArea_lvl_2 = #{adminarea_lvl_2,jdbcType=VARCHAR},
+			</if>
+			<if test="iata != null">
+				IATA = #{iata,jdbcType=VARCHAR},
+			</if>
+			<if test="latitude != null">
+				Latitude = #{latitude,jdbcType=DOUBLE},
+			</if>
+			<if test="longitude != null">
+				Longitude = #{longitude,jdbcType=DOUBLE},
+			</if>
+			<if test="altitude != null">
+				Altitude = #{altitude,jdbcType=DOUBLE},
+			</if>
+			<if test="notes != null">
+				Notes = #{notes,jdbcType=VARCHAR},
+			</if>
+			<if test="codeinterhome != null">
+				CodeInterhome = #{codeinterhome,jdbcType=VARCHAR},
+			</if>
+			<if test="coderentalsunited != null">
+				CodeRentalsUnited = #{coderentalsunited,jdbcType=VARCHAR},
+			</if>
+			<if test="locationtype != null">
+				LocationType = #{locationtype,jdbcType=VARCHAR},
+			</if>
+			<if test="parentid != null">
+				ParentID = #{parentid,jdbcType=INTEGER},
+			</if>
+		</set>
+		where ID = #{id,jdbcType=INTEGER}
+	</update>
+
+	<update id="updateByPrimaryKey" parameterType="Location">
+		update location
+		set Code = #{code,jdbcType=VARCHAR},
+			Name = #{name,jdbcType=VARCHAR},
+			GName = #{gname,jdbcType=VARCHAR},
+			State = #{state,jdbcType=VARCHAR},
+			Country = #{country,jdbcType=VARCHAR},
+			Region = #{region,jdbcType=VARCHAR},
+			AdminArea_lvl_1 = #{adminarea_lvl_1,jdbcType=VARCHAR},
+			AdminArea_lvl_2 = #{adminarea_lvl_2,jdbcType=VARCHAR},
+			IATA = #{iata,jdbcType=VARCHAR},
+			Latitude = #{latitude,jdbcType=DOUBLE},
+			Longitude = #{longitude,jdbcType=DOUBLE},
+			Altitude = #{altitude,jdbcType=DOUBLE},
+			Notes = #{notes,jdbcType=VARCHAR},
+			CodeInterhome = #{codeinterhome,jdbcType=VARCHAR},
+			CodeRentalsUnited = #{coderentalsunited,jdbcType=VARCHAR},
+			LocationType = #{locationtype,jdbcType=VARCHAR},
+			ParentID = #{parentid,jdbcType=INTEGER},
+		where ID = #{id,jdbcType=INTEGER}
+	</update>
+	
+	<select id="nameidbyid" parameterType="NameIdAction" resultType="NameId">
+		select distinct Name, ID
+		from location
+		where ID = #{id}
+	</select>
+
+	<select id="nameidbyname" parameterType="NameIdAction" resultType="NameId">
+		select distinct concat(location.Name, ' ', if(region.ID = 'ALL', '', region.Name), " ", country.Name) as name, location.ID as id
+		from location
+			left join country on country.ID = location.Country
+			left join region on region.ID = location.Region 
+				and region.Country = location.Country
+<!--		<if test="organizationid != null">-->
+<!--		join relation on Link = 'Organization Location'-->
+<!--			and LineID = ID -->
+<!--			and HeadID = #{organizationid}-->
+<!--		</if>-->
+		where location.Name <![CDATA[ >= ]]> #{name}
+		<if test="type != null">
+			and location.Type = #{type}
+		</if>
+		<if test="state == null">
+			and location.State not in ('Initial', 'Final')
+		</if>
+		<if test="state != null">
+			and location.State in (${state})
+		</if>
+		order by location.Name
+		limit 0, #{numrows}
+	</select>
+
+	<select id="countrynameid" parameterType="NameIdAction" resultType="NameId">
+		select distinct Name, ID
+		from country
+		<if test="organizationid != null">
+			join relation on Link = 'Organization Country' and HeadID = #{organizationid}
+		</if>
+		where Name <![CDATA[ >= ]]> #{name}
+		order by Name
+		limit 0, #{numrows}
+	</select>
+
+	<select id="regionnameid" parameterType="NameIdAction" resultType="NameId">
+		select distinct Name, ID
+    	from region
+		where Name <![CDATA[ >= ]]> #{name}
+			<if test="type != null">
+			and Country = #{type} 
+			</if>
+		order by Name
+		limit 0, #{numrows}
+	</select>
+
+	<select id="nameidbycountry" parameterType="NameIdAction" resultType="NameId">
+		select distinct Name, ID
+	    from location
+		where Name <![CDATA[ >= ]]> #{name}
+			<if test="type != null">
+			and Country = #{type} 
+			</if>
+		order by Name
+		limit 0, #{numrows}
+	</select>
+
+	<select id="nameidbycountryregion" parameterType="NameIdAction" resultType="NameId">
+		select distinct Name, ID
+	    from location
+		where location.Country = #{type} 
+			and location.Region = #{name}
+		order by location.Name
+		limit 0, #{numrows}
+	</select>
+
+<!--	<select id="nameidbycountryregion" parameterType="NameIdAction" resultType="NameId">-->
+<!--	 	select distinct concat(Name, ' ', Country, ' ', Region) as name, ID-->
+<!--		from location-->
+<!--			where Name <![CDATA[ >= ]]> #{name}-->
+<!--			<if test="type != null">-->
+<!--			 Type is the country -->
+<!--				and Country in (${type}) -->
+<!--			</if>-->
+<!--			order by Name-->
+<!--			limit 0, #{numrows}-->
+<!--	</select>-->
+
+	<select id="nameidnearby" parameterType="NameIdNearby" resultType="NameId">
+		select distinct Name, ID
+	    from location
+			where latitude <![CDATA[ <= ]]> #{nelatitude}
+			and latitude <![CDATA[ >= ]]> #{swlatitude}
+			and longitude <![CDATA[ <= ]]> #{nelongitude}
+			and longitude <![CDATA[ >= ]]> #{swlongitude}
+			order by Name
+	</select>
+
+	<select id="position" parameterType="LocationPosition" resultType="Position">
+		select Latitude, Longitude, Altitude
+		from location
+		where LocationID = #{id}
+	</select>
+
+<!-- REST SQL queries-->
+	<select id="restread" parameterType="String" resultType="net.cbtltd.rest.Location">
+		select ID, Country, Code, Name, Region as subdivision, IATA, Latitude, Longitude, Altitude
+		from location
+		where ID = #{id}
+	</select>
+
+	<select id="restreads" resultType="net.cbtltd.rest.Location">
+		select ID, Country, Code, Name, Region as subdivision, IATA, Latitude, Longitude, Altitude
+		from location
+		where ID in
+		<foreach item="item" index="index" collection="array" open="(" separator="," close=")">
+			#{item}
+		</foreach>
+	</select>
+
+	<select id="nearby" parameterType="Area" resultType="String">
+		select distinct ID
+		from location 
+		where latitude <![CDATA[ <= ]]> #{nelatitude}
+			and latitude <![CDATA[ >= ]]> #{swlatitude}
+			and longitude <![CDATA[ <= ]]> #{nelongitude}
+			and longitude <![CDATA[ >= ]]> #{swlongitude}
+	</select>
+	
+	<select id="readByGName" parameterType="Location" resultMap="ResultMap">
+		select
+		<include refid="columns" />
+		from location
+		where GName IS NULL	
+			and State = 'Created'
+		order by Country, Name, ID asc
+		limit 10000
+	</select>
+	
+	<select id="readByUSA" parameterType="Location" resultMap="ResultMap">
+		select
+		<include refid="columns" />
+		from location
+		where country = 'US'
+			and State = 'Suspended'
+		order by Country, Name, ID asc
+		limit 10000
+	</select>
+	
+	
+	<select id="countByName" parameterType="String" resultType="Integer">
+		select count(*)
+		from location
+		where State = 'Created'
+			and Name = #{name,jdbcType=VARCHAR}
+			and Country = #{country,jdbcType=VARCHAR}
+		order by ID asc
+	</select>
+
+
+	<select id="activeLocations"  resultMap="ResultMap">
+	select distinct location.id, location.Name, location.Country,
+		location.AdminArea_lvl_1, location.AdminArea_lvl_2, location.Latitude ,location.Longitude
+	from location , product
+	where location.State = "Created"
+		and location.ID = product.LocationID
+		and product.State = "Created" ;
+	</select>
+	
+	<select id="getUnUpdatedEntries" resultMap="ResultMap">
+	select 
+	<include refid="columns" />
+	from location 
+	where (LocationType = '' or LocationType is null)
+		and gname is not null
+		and name is not null
+		and (ParentID = 0 or ParentID is null)
+		and version > DATE(NOW()) - 1
+		and state = 'Created'
+	</select>
+	
+	<select id="getSearchLocations" parameterType="NameId" resultMap="ResultMap">
+		select DISTINCT l.id, l.name, c.Name as country, if( l.Country = "US", concat(l.Region, ", ") , "" ) as state
+		from location as l
+			inner join country as c ON (l.Country = c.ID)
+			inner join product on product.LocationID = l.ID and product.State = "Created" 
+			inner join manager_to_channel as mtc on mtc.property_manager_id = product.SupplierID
+		where l.ActiveProducts > 0 AND 
+			l.Name like CONCAT(#{name}, '%') AND
+			l.State = "Created" AND
+			l.LocationType = "locality" and
+			mtc.channel_partner_id = #{id}
+		ORDER BY
+			l.ActiveProducts DESC,
+			l.Name ASC
+		LIMIT   8
+	</select>
+	
+	<select id="getSearchSublocations" parameterType="NameId" resultMap="ResultMap">
+		select DISTINCT l.id, l.LocationType, l.name, c.Name as country, if( l.Country = "US", concat(l.Region, ", ") , "" ) as state, l.ActiveProducts
+			from location as l	
+				join country as c ON (l.Country = c.ID)
+				join product on product.LocationID = l.ID and product.State = "Created" 
+				join manager_to_channel as mtc on mtc.property_manager_id = product.SupplierID
+			where l.ActiveProducts > 0 AND 
+				l.State = "Created" AND
+				l.LocationType in ("sublocality", "locality") AND
+				l.Name like CONCAT (#{name}, '%') AND
+				mtc.channel_partner_id = #{id}
+		ORDER BY
+			ActiveProducts DESC,
+			name ASC
+		LIMIT   8
+	</select>
+	
+</mapper>

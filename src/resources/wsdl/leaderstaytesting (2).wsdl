@@ -1,0 +1,633 @@
+<?xml version="1.0" encoding="ISO-8859-1"?>
+<definitions xmlns:SOAP-ENV="http://schemas.xmlsoap.org/soap/envelope/" 
+xmlns:xsd="http://www.w3.org/2001/XMLSchema" 
+xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" 
+xmlns:tns="urn:leaderstay" 
+xmlns:soap="http://schemas.xmlsoap.org/wsdl/soap/" 
+xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/" 
+xmlns="http://schemas.xmlsoap.org/wsdl/" targetNamespace="urn:leaderstay">
+<types>
+<xsd:schema targetNamespace="urn:leaderstay"
+>
+ <xsd:import namespace="http://schemas.xmlsoap.org/soap/encoding/" />
+ <xsd:import namespace="http://schemas.xmlsoap.org/wsdl/" />
+ <xsd:complexType name="reserveparameters">
+  <xsd:all>
+   <xsd:element name="id" type="xsd:string"/>
+   <xsd:element name="code" type="xsd:string"/>
+   <xsd:element name="firstname" type="xsd:string"/>
+   <xsd:element name="lastname" type="xsd:string"/>
+   <xsd:element name="email" type="xsd:string"/>
+   <xsd:element name="telnumber" type="xsd:string"/>
+   <xsd:element name="countryofresidence" type="xsd:string"/>
+   <xsd:element name="propertycode" type="xsd:int"/>
+   <xsd:element name="checkindate" type="xsd:date"/>
+   <xsd:element name="checkintime" type="xsd:string"/>
+   <xsd:element name="checkouttime" type="xsd:string"/>
+   <xsd:element name="numberofnights" type="xsd:int"/>
+   <xsd:element name="persons" type="xsd:string"/>
+   <xsd:element name="flightno" type="xsd:string"/>
+   <xsd:element name="airport" type="xsd:string"/>
+   <xsd:element name="asksuitability" type="xsd:string"/>
+   <xsd:element name="notes" type="xsd:string"/>
+   <xsd:element name="price" type="xsd:double"/>
+   <xsd:element name="dateformat" type="xsd:string"/>
+  </xsd:all>
+ </xsd:complexType>
+ <xsd:complexType name="amendparameters">
+  <xsd:all>
+   <xsd:element name="id" type="xsd:string"/>
+   <xsd:element name="old_code" type="xsd:string"/>
+   <xsd:element name="old_LScode" type="xsd:string"/>
+   <xsd:element name="code" type="xsd:string"/>
+   <xsd:element name="firstname" type="xsd:string"/>
+   <xsd:element name="lastname" type="xsd:string"/>
+   <xsd:element name="email" type="xsd:string"/>
+   <xsd:element name="telnumber" type="xsd:string"/>
+   <xsd:element name="countryofresidence" type="xsd:string"/>
+   <xsd:element name="checkindate" type="xsd:date"/>
+   <xsd:element name="checkintime" type="xsd:string"/>
+   <xsd:element name="checkouttime" type="xsd:string"/>
+   <xsd:element name="numberofnights" type="xsd:int"/>
+   <xsd:element name="persons" type="xsd:string"/>
+   <xsd:element name="flightno" type="xsd:string"/>
+   <xsd:element name="airport" type="xsd:string"/>
+   <xsd:element name="asksuitability" type="xsd:string"/>
+   <xsd:element name="notes" type="xsd:string"/>
+   <xsd:element name="price" type="xsd:double"/>
+   <xsd:element name="dateformat" type="xsd:string"/>
+  </xsd:all>
+ </xsd:complexType>
+ <xsd:complexType name="cancelparameters">
+  <xsd:all>
+   <xsd:element name="id" type="xsd:string"/>
+   <xsd:element name="code" type="xsd:string"/>
+   <xsd:element name="LScode" type="xsd:string"/>
+  </xsd:all>
+ </xsd:complexType>
+ <xsd:complexType name="infoparameters">
+  <xsd:all>
+   <xsd:element name="id" type="xsd:string"/>
+   <xsd:element name="villaid" type="xsd:string"/>
+   <xsd:element name="check" type="xsd:int"/>
+   <xsd:element name="getIds" type="xsd:int"/>
+  </xsd:all>
+ </xsd:complexType>
+ <xsd:complexType name="yearavailabilityparameters">
+  <xsd:all>
+   <xsd:element name="id" type="xsd:string"/>
+   <xsd:element name="propertycode" type="xsd:int"/>
+   <xsd:element name="year" type="xsd:int"/>
+  </xsd:all>
+ </xsd:complexType>
+ <xsd:complexType name="pricecatalogueparameters">
+  <xsd:all>
+   <xsd:element name="id" type="xsd:string"/>
+   <xsd:element name="propertycode" type="xsd:int"/>
+  </xsd:all>
+ </xsd:complexType>
+ <xsd:complexType name="priceavailabilityparameters">
+  <xsd:all>
+   <xsd:element name="id" type="xsd:string"/>
+   <xsd:element name="propertycode" type="xsd:int"/>
+   <xsd:element name="checkindate" type="xsd:date"/>
+   <xsd:element name="checkintime" type="xsd:string"/>
+   <xsd:element name="checkouttime" type="xsd:string"/>
+   <xsd:element name="numberofnights" type="xsd:int"/>
+   <xsd:element name="persons" type="xsd:string"/>
+   <xsd:element name="dateformat" type="xsd:string"/>
+  </xsd:all>
+ </xsd:complexType>
+ <xsd:complexType name="priceavailabilitylistparameters">
+  <xsd:all>
+   <xsd:element name="id" type="xsd:string"/>
+   <xsd:element name="checkindate" type="xsd:date"/>
+   <xsd:element name="numberofnights" type="xsd:int"/>
+   <xsd:element name="persons" type="xsd:string"/>
+   <xsd:element name="dateformat" type="xsd:string"/>
+  </xsd:all>
+ </xsd:complexType>
+ <xsd:complexType name="infoavailabilitylistparameters">
+  <xsd:all>
+   <xsd:element name="id" type="xsd:string"/>
+   <xsd:element name="country" type="xsd:int"/>
+   <xsd:element name="region" type="xsd:int"/>
+   <xsd:element name="area" type="xsd:int"/>
+   <xsd:element name="checkindate" type="xsd:date"/>
+   <xsd:element name="nightsno" type="xsd:int"/>
+   <xsd:element name="personsno" type="xsd:int"/>
+   <xsd:element name="pool" type="xsd:int"/>
+   <xsd:element name="internet" type="xsd:int"/>
+   <xsd:element name="sortby" type="xsd:string"/>
+   <xsd:element name="limit_from" type="xsd:int"/>
+   <xsd:element name="limit_amount" type="xsd:int"/>
+   <xsd:element name="price_per_day" type="xsd:double"/>
+   <xsd:element name="price_diversion" type="xsd:double"/>
+   <xsd:element name="dateformat" type="xsd:string"/>
+  </xsd:all>
+ </xsd:complexType>
+ <xsd:complexType name="priceavailabilitylistparameters2">
+  <xsd:all>
+   <xsd:element name="id" type="xsd:string"/>
+   <xsd:element name="checkindate" type="xsd:date"/>
+   <xsd:element name="numberofnights" type="xsd:int"/>
+   <xsd:element name="persons" type="xsd:string"/>
+   <xsd:element name="price_per_day" type="xsd:double"/>
+   <xsd:element name="price_diversion" type="xsd:double"/>
+   <xsd:element name="dateformat" type="xsd:string"/>
+  </xsd:all>
+ </xsd:complexType>
+ <xsd:complexType name="areaStructureparameters">
+  <xsd:all>
+   <xsd:element name="id" type="xsd:string"/>
+  </xsd:all>
+ </xsd:complexType>
+ <xsd:complexType name="distanceStructureparameters">
+  <xsd:all>
+   <xsd:element name="kind" type="xsd:string"/>
+   <xsd:element name="km" type="xsd:double"/>
+  </xsd:all>
+ </xsd:complexType>
+ <xsd:complexType name="hashparameters">
+  <xsd:all>
+   <xsd:element name="id" type="xsd:string"/>
+  </xsd:all>
+ </xsd:complexType>
+ <xsd:complexType name="googleCoordinate">
+  <xsd:all>
+   <xsd:element name="latitude" type="xsd:double"/>
+   <xsd:element name="longitude" type="xsd:double"/>
+   <xsd:element name="is_accurate" type="xsd:int"/>
+  </xsd:all>
+ </xsd:complexType>
+ <xsd:complexType name="image_attr">
+  <xsd:all>
+   <xsd:element name="path" type="xsd:string"/>
+   <xsd:element name="priority" type="xsd:int"/>
+  </xsd:all>
+ </xsd:complexType>
+ <xsd:complexType name="imageT">
+    <xsd:sequence>
+      <xsd:element minOccurs="0" maxOccurs="unbounded" name="String" type="tns:image_attr"/>
+    </xsd:sequence>
+ </xsd:complexType>
+ <xsd:complexType name="rooms_attr">
+  <xsd:all>
+   <xsd:element name="name" type="xsd:string"/>
+   <xsd:element name="quantity" type="xsd:int"/>
+  </xsd:all>
+ </xsd:complexType>
+ <xsd:complexType name="roomsT">
+    <xsd:sequence>
+      <xsd:element minOccurs="0" maxOccurs="unbounded" name="String" type="tns:rooms_attr"/>
+    </xsd:sequence>
+ </xsd:complexType>
+ <xsd:complexType name="pool_attr">
+  <xsd:all>
+   <xsd:element name="name" type="xsd:string"/>
+   <xsd:element name="quantity" type="xsd:int"/>
+   <xsd:element name="heated" type="xsd:int"/>
+   <xsd:element name="size" type="xsd:double"/>
+  </xsd:all>
+ </xsd:complexType>
+ <xsd:complexType name="poolT">
+    <xsd:sequence>
+      <xsd:element minOccurs="0" maxOccurs="unbounded" name="String" type="tns:pool_attr"/>
+    </xsd:sequence>
+ </xsd:complexType>
+ <xsd:complexType name="distances_attr">
+  <xsd:all>
+   <xsd:element name="kind" type="xsd:string"/>
+   <xsd:element name="name" type="xsd:string"/>
+   <xsd:element name="km" type="xsd:double"/>
+  </xsd:all>
+ </xsd:complexType>
+ <xsd:complexType name="distancesT">
+    <xsd:sequence>
+      <xsd:element minOccurs="0" maxOccurs="unbounded" name="String" type="tns:distances_attr"/>
+    </xsd:sequence>
+ </xsd:complexType>
+ <xsd:complexType name="itembathroom_attr">
+  <xsd:all>
+   <xsd:element name="name" type="xsd:string"/>
+   <xsd:element name="room" type="xsd:string"/>
+  </xsd:all>
+ </xsd:complexType>
+ <xsd:complexType name="itemroom_attr">
+  <xsd:all>
+   <xsd:element name="name" type="xsd:string"/>
+   <xsd:element name="room" type="xsd:string"/>
+   <xsd:element name="quantity" type="xsd:int"/>
+  </xsd:all>
+ </xsd:complexType>
+ <xsd:complexType name="bedT">
+    <xsd:sequence>
+      <xsd:element minOccurs="0" maxOccurs="unbounded" name="String" type="tns:itemroom_attr"/>
+    </xsd:sequence>
+ </xsd:complexType>
+ <xsd:complexType name="bathroom_facilitiesT">
+    <xsd:sequence>
+      <xsd:element minOccurs="0" maxOccurs="unbounded" name="String" type="tns:itembathroom_attr"/>
+    </xsd:sequence>
+ </xsd:complexType>
+ <xsd:complexType name="checklist_attr">
+  <xsd:all>
+   <xsd:element name="name" type="xsd:string"/>
+  </xsd:all>
+ </xsd:complexType>
+ <xsd:complexType name="extralist_attr">
+  <xsd:all>
+   <xsd:element name="name" type="xsd:string"/>
+   <xsd:element name="price" type="xsd:double"/>
+   <xsd:element name="currency" type="xsd:string"/>
+  </xsd:all>
+ </xsd:complexType>
+ <xsd:complexType name="checklistT">
+    <xsd:sequence>
+      <xsd:element minOccurs="0" maxOccurs="unbounded" name="String" type="tns:checklist_attr"/>
+    </xsd:sequence>
+ </xsd:complexType>
+ <xsd:complexType name="extralistT">
+    <xsd:sequence>
+      <xsd:element minOccurs="0" maxOccurs="unbounded" name="String" type="tns:extralist_attr"/>
+    </xsd:sequence>
+ </xsd:complexType>
+ <xsd:complexType name="propertiesInfo">
+  <xsd:all>
+   <xsd:element name="villaid" type="xsd:string"/>
+   <xsd:element name="hash_key" type="xsd:string"/>
+   <xsd:element name="name" type="xsd:string"/>
+   <xsd:element name="is_on_request" type="xsd:int"/>
+   <xsd:element name="country" type="xsd:string"/>
+   <xsd:element name="region" type="xsd:string"/>
+   <xsd:element name="area" type="xsd:string"/>
+   <xsd:element name="street_address" type="xsd:string"/>
+   <xsd:element name="property_type" type="xsd:string"/>
+   <xsd:element name="built" type="xsd:int"/>
+   <xsd:element name="renovated" type="xsd:int"/>
+   <xsd:element name="size_SQM" type="xsd:double"/>
+   <xsd:element name="max_persons" type="xsd:string"/>
+   <xsd:element name="floors_no" type="xsd:int"/>
+   <xsd:element name="grounds_SQM" type="xsd:double"/>
+   <xsd:element name="view" type="xsd:string"/>
+   <xsd:element name="change_of_sheets" type="xsd:string"/>
+   <xsd:element name="checkin_time" type="xsd:string"/>
+   <xsd:element name="checkout_time" type="xsd:string"/>
+   <xsd:element name="amenitiesList" type="tns:checklistT"/>
+   <xsd:element name="attractionsList" type="tns:checklistT"/>
+   <xsd:element name="bathroom_facilitiesList" type="tns:bathroom_facilitiesT"/>
+   <xsd:element name="bedList" type="tns:bedT"/>
+   <xsd:element name="distancesList" type="tns:distancesT"/>
+   <xsd:element name="internetList" type="tns:checklistT"/>
+   <xsd:element name="kitchen_amenitiesList" type="tns:checklistT"/>
+   <xsd:element name="leisure_activitiesList" type="tns:checklistT"/>
+   <xsd:element name="local_area_activitiesList" type="tns:checklistT"/>
+   <xsd:element name="location_typeList" type="tns:checklistT"/>
+   <xsd:element name="nearby_attraction_facilitiesList" type="tns:checklistT"/>
+   <xsd:element name="outside_amenitiesList" type="tns:checklistT"/>
+   <xsd:element name="poolList" type="tns:poolT"/>
+   <xsd:element name="roomsList" type="tns:roomsT"/>
+   <xsd:element name="roomsacList" type="tns:checklistT"/>
+   <xsd:element name="stuffList" type="tns:checklistT"/>
+   <xsd:element name="suitabilityList" type="tns:roomsT"/>
+   <xsd:element name="imageList" type="tns:imageT"/>
+   <xsd:element name="extraList" type="tns:extralistT"/>
+   <xsd:element name="terms" type="xsd:string"/>
+   <xsd:element name="description" type="xsd:string"/>
+   <xsd:element name="instructions" type="xsd:string"/>
+   <xsd:element name="googleCoordinates" type="tns:googleCoordinate"/>
+  </xsd:all>
+ </xsd:complexType>
+ <xsd:complexType name="country_attr">
+  <xsd:all>
+   <xsd:element name="id" type="xsd:int"/>
+   <xsd:element name="name" type="xsd:string"/>
+  </xsd:all>
+ </xsd:complexType>
+ <xsd:complexType name="region_attr">
+  <xsd:all>
+   <xsd:element name="id" type="xsd:int"/>
+   <xsd:element name="name" type="xsd:string"/>
+   <xsd:element name="country_id" type="xsd:int"/>
+  </xsd:all>
+ </xsd:complexType>
+ <xsd:complexType name="area_attr">
+  <xsd:all>
+   <xsd:element name="id" type="xsd:int"/>
+   <xsd:element name="name" type="xsd:string"/>
+   <xsd:element name="region_id" type="xsd:int"/>
+  </xsd:all>
+ </xsd:complexType>
+ <xsd:complexType name="countryListT">
+    <xsd:sequence>
+      <xsd:element minOccurs="0" maxOccurs="unbounded" name="String" type="tns:country_attr"/>
+    </xsd:sequence>
+ </xsd:complexType>
+ <xsd:complexType name="regionListT">
+    <xsd:sequence>
+      <xsd:element minOccurs="0" maxOccurs="unbounded" name="String" type="tns:region_attr"/>
+    </xsd:sequence>
+ </xsd:complexType>
+ <xsd:complexType name="areaListT">
+    <xsd:sequence>
+      <xsd:element minOccurs="0" maxOccurs="unbounded" name="String" type="tns:area_attr"/>
+    </xsd:sequence>
+ </xsd:complexType>
+ <xsd:complexType name="infoitemsT">
+    <xsd:sequence>
+      <xsd:element minOccurs="0" maxOccurs="unbounded" name="String" type="tns:areaStructureparameters"/>
+    </xsd:sequence>
+ </xsd:complexType>
+ <xsd:complexType name="distancesinfoT">
+    <xsd:sequence>
+      <xsd:element minOccurs="0" maxOccurs="unbounded" name="String" type="tns:distanceStructureparametersT"/>
+    </xsd:sequence>
+ </xsd:complexType>
+ <xsd:complexType name="distanceStructureparametersT">
+    <xsd:sequence>
+      <xsd:element minOccurs="0" maxOccurs="unbounded" name="String" type="tns:distanceStructureparameters"/>
+    </xsd:sequence>
+ </xsd:complexType>
+ <xsd:complexType name="returnpropertiesInfoList">
+    <xsd:sequence>
+      <xsd:element minOccurs="0" maxOccurs="unbounded" name="String" type="tns:propertiesInfo"/>
+    </xsd:sequence>
+ </xsd:complexType>
+ <xsd:complexType name="returnreserveparameters">
+  <xsd:all>
+   <xsd:element name="result" type="xsd:string"/>
+   <xsd:element name="confirmationnumber" type="xsd:string"/>
+  </xsd:all>
+ </xsd:complexType>
+ <xsd:complexType name="returnamendparameters">
+  <xsd:all>
+   <xsd:element name="result" type="xsd:string"/>
+   <xsd:element name="confirmationnumber" type="xsd:string"/>
+  </xsd:all>
+ </xsd:complexType>
+ <xsd:complexType name="returncancelparameters">
+  <xsd:all>
+   <xsd:element name="result" type="xsd:string"/>
+   <xsd:element name="confirmationnumber" type="xsd:string"/>
+  </xsd:all>
+ </xsd:complexType>
+ <xsd:complexType name="returnyearavailability">
+  <xsd:all>
+   <xsd:element name="availabilitystring" type="xsd:string"/>
+   <xsd:element name="msg" type="xsd:string"/>
+  </xsd:all>
+ </xsd:complexType>
+ <xsd:complexType name="returnpricecatalogueList">
+    <xsd:sequence>
+      <xsd:element minOccurs="0" maxOccurs="unbounded" name="String" type="tns:returnpricecatalogue"/>
+    </xsd:sequence>
+ </xsd:complexType>
+ <xsd:complexType name="returnpricecatalogue">
+  <xsd:all>
+   <xsd:element name="price" type="xsd:double"/>
+   <xsd:element name="sfrom" type="xsd:string"/>
+   <xsd:element name="sto" type="xsd:string"/>
+   <xsd:element name="pax" type="xsd:int"/>
+   <xsd:element name="min_stay" type="xsd:int"/>
+  </xsd:all>
+ </xsd:complexType>
+ <xsd:complexType name="returnpriceavailability">
+  <xsd:all>
+   <xsd:element name="is_available" type="xsd:int"/>
+   <xsd:element name="price" type="xsd:double"/>
+   <xsd:element name="currency" type="xsd:string"/>
+   <xsd:element name="msg" type="xsd:string"/>
+  </xsd:all>
+ </xsd:complexType>
+ <xsd:complexType name="returnpriceavailabilitylistT">
+  <xsd:all>
+   <xsd:element name="villaid" type="xsd:int"/>
+   <xsd:element name="price" type="xsd:double"/>
+   <xsd:element name="currency" type="xsd:string"/>
+  </xsd:all>
+ </xsd:complexType>
+ <xsd:complexType name="returninfoavailabilitylist">
+  <xsd:all>
+   <xsd:element name="villaid" type="xsd:int"/>
+   <xsd:element name="vname" type="xsd:string"/>
+   <xsd:element name="is_on_request" type="xsd:int"/>
+   <xsd:element name="region" type="xsd:string"/>
+   <xsd:element name="area" type="xsd:string"/>
+   <xsd:element name="description" type="xsd:string"/>
+   <xsd:element name="image" type="xsd:string"/>
+   <xsd:element name="persons" type="xsd:string"/>
+   <xsd:element name="bedroom_no" type="xsd:int"/>
+   <xsd:element name="bathroom_no" type="xsd:int"/>
+   <xsd:element name="distancename" type="xsd:string"/>
+   <xsd:element name="distancekm" type="xsd:double"/>
+   <xsd:element name="price" type="xsd:double"/>
+   <xsd:element name="currency" type="xsd:string"/>
+  </xsd:all>
+ </xsd:complexType>
+ <xsd:complexType name="returnpriceavailabilitylist">
+    <xsd:sequence>
+      <xsd:element minOccurs="0" maxOccurs="unbounded" name="String" type="tns:returnpriceavailabilitylistT"/>
+    </xsd:sequence>
+ </xsd:complexType>
+ <xsd:complexType name="returninfoavailabilitylistT">
+    <xsd:sequence>
+      <xsd:element minOccurs="0" maxOccurs="unbounded" name="String" type="tns:returninfoavailabilitylist"/>
+    </xsd:sequence>
+ </xsd:complexType>
+ <xsd:complexType name="areaStructurelist">
+  <xsd:all>
+   <xsd:element name="countryList" type="tns:countryListT"/>
+   <xsd:element name="regionList" type="tns:regionListT"/>
+   <xsd:element name="areaList" type="tns:areaListT"/>
+  </xsd:all>
+ </xsd:complexType>
+ <xsd:complexType name="hashoutput">
+  <xsd:all>
+   <xsd:element name="hash" type="xsd:string"/>
+  </xsd:all>
+ </xsd:complexType>
+</xsd:schema>
+</types>
+<message name="reserveRequest">
+  <part name="parameters" type="tns:reserveparameters" /></message>
+<message name="reserveResponse">
+  <part name="return" type="tns:returnreserveparameters" /></message>
+<message name="amendRequest">
+  <part name="parameters" type="tns:amendparameters" /></message>
+<message name="amendResponse">
+  <part name="return" type="tns:returnamendparameters" /></message>
+<message name="cancelRequest">
+  <part name="parameters" type="tns:cancelparameters" /></message>
+<message name="cancelResponse">
+  <part name="return" type="tns:returncancelparameters" /></message>
+<message name="getAvailableInfoRequest">
+  <part name="parameters" type="tns:infoparameters" /></message>
+<message name="getAvailableInfoResponse">
+  <part name="return" type="tns:returnpropertiesInfoList" /></message>
+<message name="getYearAvailabilityRequest">
+  <part name="parameters" type="tns:yearavailabilityparameters" /></message>
+<message name="getYearAvailabilityResponse">
+  <part name="return" type="tns:returnyearavailability" /></message>
+<message name="getPriceCatalogueRequest">
+  <part name="parameters" type="tns:pricecatalogueparameters" /></message>
+<message name="getPriceCatalogueResponse">
+  <part name="return" type="tns:returnpricecatalogueList" /></message>
+<message name="getPriceAvailabilityRequest">
+  <part name="parameters" type="tns:priceavailabilityparameters" /></message>
+<message name="getPriceAvailabilityResponse">
+  <part name="return" type="tns:returnpriceavailability" /></message>
+<message name="getPriceAvailabilityListRequest">
+  <part name="parameters" type="tns:priceavailabilitylistparameters" /></message>
+<message name="getPriceAvailabilityListResponse">
+  <part name="return" type="tns:returnpriceavailabilitylist" /></message>
+<message name="getPriceAvailabilityList2Request">
+  <part name="parameters" type="tns:priceavailabilitylistparameters2" /></message>
+<message name="getPriceAvailabilityList2Response">
+  <part name="return" type="tns:returnpriceavailabilitylist" /></message>
+<message name="getInfoAvailabilityListRequest">
+  <part name="parameters" type="tns:infoavailabilitylistparameters" /></message>
+<message name="getInfoAvailabilityListResponse">
+  <part name="return" type="tns:returninfoavailabilitylistT" /></message>
+<message name="getAreaStructureRequest">
+  <part name="parameters" type="tns:areaStructureparameters" /></message>
+<message name="getAreaStructureResponse">
+  <part name="return" type="tns:areaStructurelist" /></message>
+<message name="getGlobalHashRequest">
+  <part name="parameters" type="tns:hashparameters" /></message>
+<message name="getGlobalHashResponse">
+  <part name="return" type="tns:hashoutput" /></message>
+<portType name="leaderstayPortType">
+  <operation name="reserve">
+    <documentation>initiates a reservation</documentation>
+    <input message="tns:reserveRequest"/>
+    <output message="tns:reserveResponse"/>
+  </operation>
+  <operation name="amend">
+    <documentation>amends a reservation</documentation>
+    <input message="tns:amendRequest"/>
+    <output message="tns:amendResponse"/>
+  </operation>
+  <operation name="cancel">
+    <documentation>cancel a reservation</documentation>
+    <input message="tns:cancelRequest"/>
+    <output message="tns:cancelResponse"/>
+  </operation>
+  <operation name="getAvailableInfo">
+    <documentation>.</documentation>
+    <input message="tns:getAvailableInfoRequest"/>
+    <output message="tns:getAvailableInfoResponse"/>
+  </operation>
+  <operation name="getYearAvailability">
+    <documentation>.</documentation>
+    <input message="tns:getYearAvailabilityRequest"/>
+    <output message="tns:getYearAvailabilityResponse"/>
+  </operation>
+  <operation name="getPriceCatalogue">
+    <documentation>.</documentation>
+    <input message="tns:getPriceCatalogueRequest"/>
+    <output message="tns:getPriceCatalogueResponse"/>
+  </operation>
+  <operation name="getPriceAvailability">
+    <documentation>.</documentation>
+    <input message="tns:getPriceAvailabilityRequest"/>
+    <output message="tns:getPriceAvailabilityResponse"/>
+  </operation>
+  <operation name="getPriceAvailabilityList">
+    <documentation>.</documentation>
+    <input message="tns:getPriceAvailabilityListRequest"/>
+    <output message="tns:getPriceAvailabilityListResponse"/>
+  </operation>
+  <operation name="getPriceAvailabilityList2">
+    <documentation>.</documentation>
+    <input message="tns:getPriceAvailabilityList2Request"/>
+    <output message="tns:getPriceAvailabilityList2Response"/>
+  </operation>
+  <operation name="getInfoAvailabilityList">
+    <documentation>.</documentation>
+    <input message="tns:getInfoAvailabilityListRequest"/>
+    <output message="tns:getInfoAvailabilityListResponse"/>
+  </operation>
+  <operation name="getAreaStructure">
+    <documentation>.</documentation>
+    <input message="tns:getAreaStructureRequest"/>
+    <output message="tns:getAreaStructureResponse"/>
+  </operation>
+  <operation name="getGlobalHash">
+    <documentation>.</documentation>
+    <input message="tns:getGlobalHashRequest"/>
+    <output message="tns:getGlobalHashResponse"/>
+  </operation>
+</portType>
+<binding name="leaderstayBinding" type="tns:leaderstayPortType">
+  <soap:binding style="rpc" transport="http://schemas.xmlsoap.org/soap/http"/>
+  <operation name="reserve">
+    <soap:operation soapAction="urn:leaderstay#reserve" style="rpc"/>
+    <input><soap:body use="literal" namespace="urn:leaderstay" encodingStyle="http://schemas.xmlsoap.org/soap/encoding/"/></input>
+    <output><soap:body use="literal" namespace="urn:leaderstay" encodingStyle="http://schemas.xmlsoap.org/soap/encoding/"/></output>
+  </operation>
+  <operation name="amend">
+    <soap:operation soapAction="urn:leaderstay#amend" style="rpc"/>
+    <input><soap:body use="literal" namespace="urn:leaderstay" encodingStyle="http://schemas.xmlsoap.org/soap/encoding/"/></input>
+    <output><soap:body use="literal" namespace="urn:leaderstay" encodingStyle="http://schemas.xmlsoap.org/soap/encoding/"/></output>
+  </operation>
+  <operation name="cancel">
+    <soap:operation soapAction="urn:leaderstay#cancel" style="rpc"/>
+    <input><soap:body use="literal" namespace="urn:leaderstay" encodingStyle="http://schemas.xmlsoap.org/soap/encoding/"/></input>
+    <output><soap:body use="literal" namespace="urn:leaderstay" encodingStyle="http://schemas.xmlsoap.org/soap/encoding/"/></output>
+  </operation>
+  <operation name="getAvailableInfo">
+    <soap:operation soapAction="urn:leaderstay#getAvailableInfo" style="rpc"/>
+    <input><soap:body use="literal" namespace="urn:leaderstay" encodingStyle="http://schemas.xmlsoap.org/soap/encoding/"/></input>
+    <output><soap:body use="literal" namespace="urn:leaderstay" encodingStyle="http://schemas.xmlsoap.org/soap/encoding/"/></output>
+  </operation>
+  <operation name="getYearAvailability">
+    <soap:operation soapAction="urn:leaderstay#getYearAvailability" style="rpc"/>
+    <input><soap:body use="literal" namespace="urn:leaderstay" encodingStyle="http://schemas.xmlsoap.org/soap/encoding/"/></input>
+    <output><soap:body use="literal" namespace="urn:leaderstay" encodingStyle="http://schemas.xmlsoap.org/soap/encoding/"/></output>
+  </operation>
+  <operation name="getPriceCatalogue">
+    <soap:operation soapAction="urn:leaderstay#getPriceCatalogue" style="rpc"/>
+    <input><soap:body use="literal" namespace="urn:leaderstay" encodingStyle="http://schemas.xmlsoap.org/soap/encoding/"/></input>
+    <output><soap:body use="literal" namespace="urn:leaderstay" encodingStyle="http://schemas.xmlsoap.org/soap/encoding/"/></output>
+  </operation>
+  <operation name="getPriceAvailability">
+    <soap:operation soapAction="urn:leaderstay#getPriceAvailability" style="rpc"/>
+    <input><soap:body use="literal" namespace="urn:leaderstay" encodingStyle="http://schemas.xmlsoap.org/soap/encoding/"/></input>
+    <output><soap:body use="literal" namespace="urn:leaderstay" encodingStyle="http://schemas.xmlsoap.org/soap/encoding/"/></output>
+  </operation>
+  <operation name="getPriceAvailabilityList">
+    <soap:operation soapAction="urn:leaderstay#getPriceAvailabilityList" style="rpc"/>
+    <input><soap:body use="literal" namespace="urn:leaderstay" encodingStyle="http://schemas.xmlsoap.org/soap/encoding/"/></input>
+    <output><soap:body use="literal" namespace="urn:leaderstay" encodingStyle="http://schemas.xmlsoap.org/soap/encoding/"/></output>
+  </operation>
+  <operation name="getPriceAvailabilityList2">
+    <soap:operation soapAction="urn:leaderstay#getPriceAvailabilityList2" style="rpc"/>
+    <input><soap:body use="literal" namespace="urn:leaderstay" encodingStyle="http://schemas.xmlsoap.org/soap/encoding/"/></input>
+    <output><soap:body use="literal" namespace="urn:leaderstay" encodingStyle="http://schemas.xmlsoap.org/soap/encoding/"/></output>
+  </operation>
+  <operation name="getInfoAvailabilityList">
+    <soap:operation soapAction="urn:leaderstay#getInfoAvailabilityList" style="rpc"/>
+    <input><soap:body use="literal" namespace="urn:leaderstay" encodingStyle="http://schemas.xmlsoap.org/soap/encoding/"/></input>
+    <output><soap:body use="literal" namespace="urn:leaderstay" encodingStyle="http://schemas.xmlsoap.org/soap/encoding/"/></output>
+  </operation>
+  <operation name="getAreaStructure">
+    <soap:operation soapAction="urn:leaderstay#getAreaStructure" style="rpc"/>
+    <input><soap:body use="literal" namespace="urn:leaderstay" encodingStyle="http://schemas.xmlsoap.org/soap/encoding/"/></input>
+    <output><soap:body use="literal" namespace="urn:leaderstay" encodingStyle="http://schemas.xmlsoap.org/soap/encoding/"/></output>
+  </operation>
+  <operation name="getGlobalHash">
+    <soap:operation soapAction="urn:leaderstay#getGlobalHash" style="rpc"/>
+    <input><soap:body use="literal" namespace="urn:leaderstay" encodingStyle="http://schemas.xmlsoap.org/soap/encoding/"/></input>
+    <output><soap:body use="literal" namespace="urn:leaderstay" encodingStyle="http://schemas.xmlsoap.org/soap/encoding/"/></output>
+  </operation>
+</binding>
+<service name="leaderstay">
+  <port name="leaderstayPort" binding="tns:leaderstayBinding">
+    <soap:address location="http://leaderstay.com/testing/leaderstay.php"/>
+  </port>
+</service>
+</definitions>
+
+
+
+

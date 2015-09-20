@@ -1,0 +1,172 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="net.cbtltd.server.api.AlertMapper">
+
+	<resultMap id="ResultMap" type="Alert">
+		<id column="ID" jdbcType="INTEGER" property="id" />
+		<result column="EntityType" jdbcType="VARCHAR" property="entitytype" />
+		<result column="EntityID" jdbcType="INTEGER" property="entityid" />
+		<result column="Name" jdbcType="VARCHAR" property="name" />
+		<result column="Language" jdbcType="VARCHAR" property="language" />
+		<result column="FromDate" jdbcType="DATE" property="fromdate" />
+		<result column="ToDate" jdbcType="DATE" property="todate" />
+	</resultMap>
+
+	<sql id="columns">
+		ID, EntityType, EntityID, Name, Language, FromDate, ToDate
+	</sql>
+
+	<select id="read" parameterType="String" resultMap="ResultMap">
+		select
+		<include refid="columns" />
+		from alert
+		where ID = #{id,jdbcType=INTEGER}
+	</select>
+
+	<select id="exists" parameterType="Alert" resultMap="ResultMap">
+		select
+		<include refid="columns" />
+		from alert
+		where EntityType = #{entitytype,jdbcType=VARCHAR}
+			and EntityID = #{entityid,jdbcType=INTEGER}
+			<if test="language != null">
+			and Language = #{language,jdbcType=VARCHAR}
+			</if>
+			<if test="fromdate != null">
+			and FromDate <![CDATA[ <= ]]> #{todate,jdbcType=DATE}
+			</if>
+			<if test="todate != null">
+			and ToDate <![CDATA[ >= ]]> #{fromdate,jdbcType=DATE}
+			</if>
+			order by FromDate, ToDate
+			limit 1
+	</select>
+
+	<select id="duplicate" parameterType="Alert" resultMap="ResultMap">
+		select
+		<include refid="columns" />
+		from alert
+		where EntityType = #{entitytype,jdbcType=VARCHAR}
+			and EntityID = #{entityid,jdbcType=INTEGER}
+			and Language = #{language,jdbcType=VARCHAR}
+			and FromDate = #{fromdate,jdbcType=DATE}
+			and ToDate = #{todate,jdbcType=DATE}
+		limit 1
+	</select>
+
+	<delete id="delete" parameterType="String">
+		delete from alert
+		where ID = #{id,jdbcType=INTEGER}
+	</delete>
+
+	<insert id="create" parameterType="Alert" useGeneratedKeys="true" keyProperty="id">
+		insert into alert (
+			EntityType, EntityID, Name, Language, FromDate, ToDate
+		)
+		values (
+			#{entitytype,jdbcType=VARCHAR},
+			#{entityid,jdbcType=INTEGER}, 
+			#{name,jdbcType=VARCHAR}, 
+			#{language,jdbcType=VARCHAR}, 
+			#{fromdate,jdbcType=DATE},
+			#{todate,jdbcType=DATE}
+		)
+	</insert>
+
+	<update id="update" parameterType="Alert">
+		update alert
+		<set>
+			<if test="entitytype != null">
+				EntityType = #{entitytype,jdbcType=VARCHAR},
+			</if>
+			<if test="entityid != null">
+				EntityID = #{entityid,jdbcType=INTEGER},
+			</if>
+			<if test="name != null">
+				Name = #{name,jdbcType=VARCHAR},
+			</if>
+			<if test="language != null">
+				Language = #{language,jdbcType=VARCHAR},
+			</if>
+			<if test="fromdate != null">
+				FromDate = #{fromdate,jdbcType=DATE},
+			</if>
+			<if test="todate != null">
+				ToDate = #{todate,jdbcType=DATE},
+			</if>
+		</set>
+		where ID = #{id,jdbcType=INTEGER}
+	</update>
+
+	<update id="updateByPrimaryKey" parameterType="Alert">
+		update alert
+		set
+			EntityType = #{entitytype,jdbcType=VARCHAR},
+			EntityID = #{entityid,jdbcType=INTEGER},
+			Name = #{name,jdbcType=VARCHAR},
+			Language = #{language,jdbcType=VARCHAR},
+			FromDate = #{fromdate,jdbcType=DATE},
+			ToDate = #{todate,jdbcType=DATE}
+		where ID = #{id,jdbcType=INTEGER}
+	</update>
+
+	<sql id="tablewhere">
+		where EntityType = #{entitytype,jdbcType=VARCHAR}
+			and EntityID = #{entityid,jdbcType=INTEGER}
+			<if test="language != null">
+			and Language = #{language,jdbcType=VARCHAR}
+			</if>
+			<if test="fromdate != null">
+			and FromDate <![CDATA[ >= ]]> #{fromdate,jdbcType=DATE}
+			</if>
+			<if test="todate != null">
+			and ToDate <![CDATA[ <= ]]> #{todate,jdbcType=DATE}
+			</if>
+	</sql>
+
+	<select id="count" parameterType="AlertTable" resultType="Integer">
+		select count(*)
+		from alert
+		<include refid="tablewhere" />
+	</select>
+	
+	<select id="list" parameterType="AlertTable" resultMap="ResultMap">
+		select
+		<include refid="columns" />
+		from alert
+		<include refid="tablewhere" />
+		order by ${orderby}
+		limit #{startrow}, #{numrows}
+	</select>
+	
+	<select id="nameidbyid" parameterType="NameIdAction" resultType="NameId">
+		select distinct Name, ID
+		from alert
+		where ID = #{id}
+	</select>
+
+	<select id="nameidbyname" parameterType="NameIdAction" resultType="NameId">
+		select distinct Name, ID
+		from alert
+		<if test="organizationid != null">
+		join relation on Link = 'Organization Alert'
+			and LineID = ID 
+			and HeadID = #{organizationid}
+		</if>
+		<if test="type != null">
+		join relation as type on type.Link = 'Alert Type'
+			and type.HeadID = ID 
+			and type.LineID = #{type}
+		</if>
+		where Name <![CDATA[ >= ]]> #{name}
+		<if test="entitytype == null">
+			and EntityType = 'Created'
+		</if>
+		<if test="entitytype != null">
+			and EntityType in (${entitytype})
+		</if>
+		order by Name
+		limit 0, #{numrows}
+	</select>
+
+</mapper>

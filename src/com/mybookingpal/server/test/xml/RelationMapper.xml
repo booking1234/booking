@@ -1,0 +1,27 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE mapper
+PUBLIC "-//ibatis.apache.org//DTD Mapper 3.0//EN"
+"http://ibatis.apache.org/dtd/ibatis-3-mapper.dtd">
+<mapper namespace="com.mybookingpal.server.test.mapper.RelationMapper">
+
+	<resultMap id="ResultMap" type="Relation">
+		<result column="Link" property="link" jdbcType="VARCHAR" />
+		<result column="HeadID" property="headid" jdbcType="VARCHAR" />
+		<result column="LineID" property="lineid" jdbcType="VARCHAR" />
+	</resultMap>
+
+	<sql id="columns">distinct link, headid, lineid</sql>
+
+	<select id="attributeCountLT4ForPropertiesbySupplierId" parameterType="String" resultMap="ResultMap">
+		select relation.headid, count(*) as c
+		from relation
+		where headid in (
+			select product.id
+				from product
+				where product.supplierid = #{id,jdbcType=INTEGER}
+			)
+			and relation.link = 'Product Attribute' 
+		group by headid
+		having c <![CDATA[ <= ]]> 3 order by c
+	</select>
+</mapper>

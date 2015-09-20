@@ -1,0 +1,64 @@
+.actorEmpty {width: 550px;}
+.actorStyle {}
+.contractEmpty {width: 550px;}
+
+.contracttextField {
+	height: 500px;
+	width: 795px;
+	white-space: pre-wrap;
+	color: gray;
+	background: white;
+	border: 0;
+}
+
+.countryStyle {width: 150px;}
+.availableStyle {width: 200px;}
+.currencyStyle {width: 150px;}
+.depositLabel {margin-top: 10px;}
+.depositType {width: 130px;}
+.descriptionField {
+	height: 370px;
+	width: 795px;
+	white-space: pre-wrap;
+	color: gray;
+	background: white;
+	border: 0;
+}
+
+.financeEmpty {width: 550px;}
+
+.headerLabel {
+	font-size: 120%;
+	font-weight: bold;
+	color: gray;
+}
+
+.imageField {
+	height: 100px;
+	width: 795px;
+	cursor: pointer;
+	cursor: hand;
+}
+.jurisdictionField {width: 150px;}
+.jurisdictionLabel {width: 300px;}
+.languageStyle {width: 150px;}
+.localeLabel {font-weight: bold;}
+.localeText {width: 200px;}
+.organizationField {}
+.organizationtextStyle {
+	height: 380px;
+	width: 400px;
+}
+.partytypesStyle {width: 200px;}
+.stackStyle {
+	height: 730px;
+	width: 800px;
+	margin-top: 10px;
+}
+.urlStyle {width: 300px;}
+.sessionStyle {}
+.workflowDatename {width: 150px;}
+.workflowDuration {width: 80px;}
+.workflowState {width: 450px;}
+.workflowStyle {}
+.workflowWhen {width: 100px;}

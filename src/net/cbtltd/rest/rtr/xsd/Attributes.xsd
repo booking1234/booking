@@ -1,0 +1,453 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!-- edited with XMLSPY v5 rel. 4 U (http://www.xmlspy.com) by Jim Anderson -->
+<xs:schema xmlns:xs="http://www.w3.org/2001/XMLSchema" elementFormDefault="qualified" attributeFormDefault="unqualified">
+	<xs:attribute name="BrokerID" type="xs:integer"/>
+	<xs:attribute name="CheckInDate" type="xs:date"/>
+	<xs:attribute name="CheckOutDate" type="xs:date"/>
+	<xs:attribute name="City" type="xs:string"/>
+	<xs:attribute name="Country" type="xs:string"/>
+	<xs:element name="PropertyDetails">
+		<xs:complexType>
+			<xs:sequence>
+				<xs:element name="PropertyName" type="xs:string" minOccurs="0">
+					<xs:annotation>
+						<xs:documentation>The name of the property if supplied by the broker.</xs:documentation>
+					</xs:annotation>
+				</xs:element>
+				<xs:element name="Description" type="xs:string" minOccurs="0">
+					<xs:annotation>
+						<xs:documentation>A description of the property.</xs:documentation>
+					</xs:annotation>
+				</xs:element>
+				<xs:element name="PropertyType" minOccurs="0">
+					<xs:annotation>
+						<xs:documentation>See the enumeration for valid property types</xs:documentation>
+					</xs:annotation>
+					<xs:simpleType>
+						<xs:restriction base="xs:string">
+							<xs:enumeration value="House"/>
+							<xs:enumeration value="Duplex"/>
+							<xs:enumeration value="Condo/Townhome"/>
+							<xs:enumeration value="Apartment"/>
+							<xs:enumeration value="Twin"/>
+							<xs:enumeration value="Cottage"/>
+							<xs:enumeration value="Quad"/>
+							<xs:enumeration value="Villa"/>
+							<xs:enumeration value="Multi-Unit House"/>
+							<xs:enumeration value="Room"/>
+							<xs:enumeration value="Studio Apartment"/>
+							<xs:enumeration value="Hotel Room-Suite"/>
+							<xs:enumeration value="Contemporary"/>
+							<xs:enumeration value="Ranch"/>
+							<xs:enumeration value="Chalet"/>
+							<xs:enumeration value="Manufactured Home"/>
+							<xs:enumeration value="Cape"/>
+							<xs:enumeration value="Post and Beam"/>
+							<xs:enumeration value="Resort Home"/>
+							<xs:enumeration value="Casita"/>
+							<xs:enumeration value="Cabin"/>
+							<xs:enumeration value="Other"/>
+							<xs:enumeration value="Twin/Side by Side"/>
+						</xs:restriction>
+					</xs:simpleType>
+				</xs:element>
+				<xs:element name="Street" type="xs:string" minOccurs="0">
+					<xs:annotation>
+						<xs:documentation>The street/address of the property</xs:documentation>
+					</xs:annotation>
+				</xs:element>
+				<xs:element name="City" type="xs:string" minOccurs="0">
+					<xs:annotation>
+						<xs:documentation>The city of the property</xs:documentation>
+					</xs:annotation>
+				</xs:element>
+				<xs:element name="State" type="xs:string" minOccurs="0">
+					<xs:annotation>
+						<xs:documentation>The state of the property</xs:documentation>
+					</xs:annotation>
+				</xs:element>
+				<xs:element name="Zip" type="xs:string" minOccurs="0">
+					<xs:annotation>
+						<xs:documentation>The zip code of the property</xs:documentation>
+					</xs:annotation>
+				</xs:element>
+				<xs:element name="Country" minOccurs="0">
+					<xs:annotation>
+						<xs:documentation>The country of the property</xs:documentation>
+					</xs:annotation>
+					<xs:simpleType>
+						<xs:restriction base="xs:string">
+							<xs:minLength value="0"/>
+							<xs:maxLength value="3"/>
+						</xs:restriction>
+					</xs:simpleType>
+				</xs:element>
+				<xs:element name="Unit" type="xs:string" minOccurs="0">
+					<xs:annotation>
+						<xs:documentation>The unit number if applicable</xs:documentation>
+					</xs:annotation>
+				</xs:element>
+				<xs:element name="Floor" type="xs:string" minOccurs="0">
+					<xs:annotation>
+						<xs:documentation>The floor if applicable</xs:documentation>
+					</xs:annotation>
+				</xs:element>
+				<xs:element name="OccupancyLimit" type="xs:integer" minOccurs="0">
+					<xs:annotation>
+						<xs:documentation>The occupancy limit of the property</xs:documentation>
+					</xs:annotation>
+				</xs:element>
+				<xs:element name="TotalSleeps" type="xs:integer" minOccurs="0">
+					<xs:annotation>
+						<xs:documentation>The total number of people the property will sleep</xs:documentation>
+					</xs:annotation>
+				</xs:element>
+				<xs:element name="Smoking" type="xs:boolean" minOccurs="0">
+					<xs:annotation>
+						<xs:documentation>Indicates if smoking is allowed.  True=Smoking Allowed, False=Smoking not allowed</xs:documentation>
+					</xs:annotation>
+				</xs:element>
+				<xs:element name="BedRooms" type="xs:integer" minOccurs="0">
+					<xs:annotation>
+						<xs:documentation>The number of bedrooms the property has.</xs:documentation>
+					</xs:annotation>
+				</xs:element>
+				<xs:element name="Baths" type="xs:integer" minOccurs="0">
+					<xs:annotation>
+						<xs:documentation>Then number of full Baths the property has</xs:documentation>
+					</xs:annotation>
+				</xs:element>
+				<xs:element name="HalfBaths" type="xs:integer" minOccurs="0">
+					<xs:annotation>
+						<xs:documentation>Then number of half Baths the property has</xs:documentation>
+					</xs:annotation>
+				</xs:element>
+				<xs:element name="ThreeQuarterBaths" type="xs:integer" minOccurs="0">
+					<xs:annotation>
+						<xs:documentation>Then number of 3/4 Baths the property has</xs:documentation>
+					</xs:annotation>
+				</xs:element>
+				<xs:element name="FeeDescription" type="xs:string" minOccurs="0">
+					<xs:annotation>
+						<xs:documentation>A description of any fees associated with the property</xs:documentation>
+					</xs:annotation>
+				</xs:element>
+				<xs:element name="RateDescription" type="xs:string" minOccurs="0">
+					<xs:annotation>
+						<xs:documentation>A description of the rates associated with the property</xs:documentation>
+					</xs:annotation>
+				</xs:element>
+				<xs:element name="Amenities" minOccurs="0">
+					<xs:complexType>
+						<xs:sequence>
+							<xs:element name="Amenity" minOccurs="0" maxOccurs="unbounded">
+								<xs:annotation>
+									<xs:documentation>The Description attribute should always be used.  The Value attribute is for amenities which require a numeric value, like Number of TVs.</xs:documentation>
+								</xs:annotation>
+								<xs:complexType>
+									<xs:attribute name="ID" type="xs:integer" use="required"/>
+									<xs:attribute name="Type" type="xs:string" use="optional"/>
+									<xs:attribute name="Label" type="xs:string" use="optional"/>
+									<xs:attribute name="Value" type="xs:string" use="required"/>
+									<xs:attribute name="Description" type="xs:string" use="optional"/>
+								</xs:complexType>
+							</xs:element>
+						</xs:sequence>
+					</xs:complexType>
+				</xs:element>
+				<xs:element name="LocationCode" minOccurs="0">
+					<xs:annotation>
+						<xs:documentation>RTR Assigned values.  Usually used by brokers using RTR who want information to customize their own site.</xs:documentation>
+					</xs:annotation>
+					<xs:complexType>
+						<xs:simpleContent>
+							<xs:extension base="xs:string">
+								<xs:attribute name="ID" type="xs:integer" use="required"/>
+							</xs:extension>
+						</xs:simpleContent>
+					</xs:complexType>
+				</xs:element>
+				<xs:element name="StreetCode" minOccurs="0">
+					<xs:annotation>
+						<xs:documentation>RTR Assigned values.  Usually used by brokers using RTR who want information to customize their own site.</xs:documentation>
+					</xs:annotation>
+					<xs:complexType>
+						<xs:simpleContent>
+							<xs:extension base="xs:string">
+								<xs:attribute name="ID" type="xs:integer" use="required"/>
+							</xs:extension>
+						</xs:simpleContent>
+					</xs:complexType>
+				</xs:element>
+				<xs:element name="CondoCode" minOccurs="0">
+					<xs:annotation>
+						<xs:documentation>RTR Assigned values.  Usually used by brokers using RTR who want information to customize their own site.</xs:documentation>
+					</xs:annotation>
+					<xs:complexType>
+						<xs:simpleContent>
+							<xs:extension base="xs:string">
+								<xs:attribute name="ID" type="xs:integer" use="required"/>
+							</xs:extension>
+						</xs:simpleContent>
+					</xs:complexType>
+				</xs:element>
+				<xs:element name="LocationOther" minOccurs="0">
+					<xs:annotation>
+						<xs:documentation>RTR Assigned values.  Usually used by brokers using RTR who want information to customize their own site.</xs:documentation>
+					</xs:annotation>
+					<xs:complexType>
+						<xs:simpleContent>
+							<xs:extension base="xs:string">
+								<xs:attribute name="ID" type="xs:integer" use="required"/>
+							</xs:extension>
+						</xs:simpleContent>
+					</xs:complexType>
+				</xs:element>
+				<xs:element name="Geography" minOccurs="0">
+					<xs:annotation>
+						<xs:documentation>The RTR specific geography name assigned to the property based on it's location</xs:documentation>
+					</xs:annotation>
+					<xs:complexType>
+						<xs:simpleContent>
+							<xs:extension base="xs:string">
+								<xs:attribute name="ID" type="xs:integer" use="required"/>
+							</xs:extension>
+						</xs:simpleContent>
+					</xs:complexType>
+				</xs:element>
+				<xs:element name="PropertyURL" minOccurs="0">
+					<xs:annotation>
+						<xs:documentation>RTR generated link for the property</xs:documentation>
+					</xs:annotation>
+					<xs:complexType>
+						<xs:simpleContent>
+							<xs:extension base="xs:anyURI">
+								<xs:attribute name="PropertyURLSource" use="required"/>
+							</xs:extension>
+						</xs:simpleContent>
+					</xs:complexType>
+				</xs:element>
+				<xs:element name="DrivingDirections" type="xs:string" minOccurs="0">
+					<xs:annotation>
+						<xs:documentation>Directions to the property.  This will be sent when a lease is generated.</xs:documentation>
+					</xs:annotation>
+				</xs:element>
+				<xs:element name="Photos" minOccurs="0">
+					<xs:annotation>
+						<xs:documentation>The attribute PhotoSource should be set to 'External' if the photo is located on a server external to the RTR system.  If the property is actively maintained in the RTR system, including photos, then the PhotoSource will be set to 'Internal'.</xs:documentation>
+					</xs:annotation>
+					<xs:complexType>
+						<xs:sequence>
+							<xs:element name="Image" minOccurs="0" maxOccurs="unbounded">
+								<xs:annotation>
+									<xs:documentation>Thumbnail: Size requirement: 125 x 96 px
+
+Large: Size requirement: 345 x 259 px</xs:documentation>
+								</xs:annotation>
+								<xs:complexType>
+									<xs:simpleContent>
+										<xs:extension base="xs:string">
+											<xs:attribute name="ID" type="xs:integer" use="required"/>
+											<xs:attribute name="Caption" type="xs:string" use="optional"/>
+										</xs:extension>
+									</xs:simpleContent>
+								</xs:complexType>
+							</xs:element>
+						</xs:sequence>
+						<xs:attribute name="PhotoSource" use="required"/>
+					</xs:complexType>
+				</xs:element>
+				<xs:element name="Activities" minOccurs="0">
+					<xs:annotation>
+						<xs:documentation>Activities that can be found on site and nearby </xs:documentation>
+					</xs:annotation>
+					<xs:complexType>
+						<xs:sequence>
+							<xs:element name="Activity" minOccurs="0" maxOccurs="unbounded">
+								<xs:annotation>
+									<xs:documentation>May contain data not included in the spec.  Only data contatined in the spec wil be searchable</xs:documentation>
+								</xs:annotation>
+								<xs:complexType>
+									<xs:simpleContent>
+										<xs:extension base="xs:string">
+											<xs:attribute name="Name" type="xs:string" use="required"/>
+											<xs:attribute name="Description" type="xs:string" use="optional"/>
+											<xs:attribute name="ID" type="xs:integer" use="optional"/>
+										</xs:extension>
+									</xs:simpleContent>
+								</xs:complexType>
+							</xs:element>
+						</xs:sequence>
+					</xs:complexType>
+				</xs:element>
+				<xs:element name="Views" minOccurs="0">
+					<xs:annotation>
+						<xs:documentation>The view the property may have</xs:documentation>
+					</xs:annotation>
+					<xs:complexType>
+						<xs:sequence>
+							<xs:element name="View" minOccurs="0" maxOccurs="unbounded">
+								<xs:annotation>
+									<xs:documentation>Specific lilst of views</xs:documentation>
+								</xs:annotation>
+								<xs:complexType>
+									<xs:attribute name="Name" type="xs:string" use="required"/>
+									<xs:attribute name="Description" type="xs:string" use="optional"/>
+									<xs:attribute name="ID" type="xs:integer" use="optional"/>
+								</xs:complexType>
+							</xs:element>
+						</xs:sequence>
+					</xs:complexType>
+				</xs:element>
+				<xs:element name="Deposits" minOccurs="0">
+					<xs:annotation>
+						<xs:documentation>Deposits on the property</xs:documentation>
+					</xs:annotation>
+					<xs:complexType>
+						<xs:sequence>
+							<xs:element name="Deposit" minOccurs="0" maxOccurs="unbounded">
+								<xs:annotation>
+									<xs:documentation>Specific lilst of views</xs:documentation>
+								</xs:annotation>
+								<xs:complexType>
+									<xs:attribute name="Name" type="xs:string" use="optional"/>
+									<xs:attribute name="Amount" type="xs:decimal" use="optional"/>
+								</xs:complexType>
+							</xs:element>
+						</xs:sequence>
+					</xs:complexType>
+				</xs:element>
+				<xs:element name="PropertyRating" minOccurs="0">
+					<xs:annotation>
+						<xs:documentation>The rating of the property</xs:documentation>
+					</xs:annotation>
+					<xs:complexType>
+						<xs:simpleContent>
+							<xs:extension base="xs:anyURI"/>
+						</xs:simpleContent>
+					</xs:complexType>
+				</xs:element>
+			</xs:sequence>
+			<xs:attribute name="PropertyID"/>
+			<xs:attribute name="PropertyReferenceID"/>
+			<xs:attribute name="ExternalReferenceID"/>
+		</xs:complexType>
+	</xs:element>
+	<xs:attribute name="Email" type="xs:string"/>
+	<xs:attribute name="ExternalReferenceID" type="xs:string"/>
+	<xs:attribute name="FirstName" type="xs:string"/>
+	<xs:attribute name="GuestCount" type="xs:integer"/>
+	<xs:attribute name="LastName" type="xs:string"/>
+	<xs:element name="Lease">
+		<xs:complexType>
+			<xs:sequence>
+				<xs:element name="PaymentSchedule" minOccurs="0" maxOccurs="unbounded">
+					<xs:complexType>
+						<xs:attribute name="Description" type="xs:string" use="required"/>
+						<xs:attribute name="DueDate" type="xs:date" use="optional"/>
+						<xs:attribute name="AmountDue" type="xs:decimal" use="required"/>
+					</xs:complexType>
+				</xs:element>
+			</xs:sequence>
+			<xs:attribute ref="LeaseID" use="required"/>
+			<xs:attribute name="PropertyReferenceID" type="xs:integer" use="optional"/>
+			<xs:attribute name="PropertyID" type="xs:string" use="optional"/>
+			<xs:attribute ref="GuestCount" use="optional"/>
+			<xs:attribute ref="CheckInDate" use="required"/>
+			<xs:attribute ref="CheckOutDate" use="required"/>
+			<xs:attribute name="BookDate" type="xs:string" use="optional"/>
+			<xs:attribute name="Status" type="xs:string" use="optional"/>
+			<xs:attribute name="Type" type="xs:string" use="optional"/>
+			<xs:attribute name="Active" type="xs:string" use="optional"/>
+		</xs:complexType>
+	</xs:element>
+	<xs:attribute name="LeaseID" type="xs:integer"/>
+	<xs:element name="LeaseID" type="xs:integer"/>
+	<xs:element name="PaymentInfo">
+		<xs:annotation>
+			<xs:documentation>
+
+</xs:documentation>
+		</xs:annotation>
+		<xs:complexType>
+			<xs:attribute name="CardHolderName" type="xs:string" use="required"/>
+			<xs:attribute name="CardType" use="required">
+				<xs:annotation>
+					<xs:documentation>American Express: AX
+MasterCard:  MC
+Diners Club: DC
+Discover:  DS
+Visa: VI</xs:documentation>
+				</xs:annotation>
+			</xs:attribute>
+			<xs:attribute name="CardNumber" use="required"/>
+			<xs:attribute name="ExpMonth" use="required">
+				<xs:annotation>
+					<xs:documentation>MMYY  (0512 for May 2012)</xs:documentation>
+				</xs:annotation>
+			</xs:attribute>
+			<xs:attribute name="ExpYear" use="required"/>
+			<xs:attribute name="AmountCharged" use="required"/>
+		</xs:complexType>
+	</xs:element>
+	<xs:attribute name="Phone" type="xs:string"/>
+	<xs:attribute name="PropertyID" type="xs:integer"/>
+	<xs:attribute name="PropertyReferenceID" type="xs:integer"/>
+	<xs:attribute name="ReferenceID" type="xs:integer"/>
+	<xs:element name="ReferenceID" type="xs:integer"/>
+	<xs:element name="PropertyManager">
+		<xs:complexType>
+			<xs:attribute name="ID" type="xs:integer" use="required"/>
+			<xs:attribute name="Name" type="xs:string" use="required"/>
+			<xs:attribute name="Office" type="xs:string" use="optional"/>
+			<xs:attribute ref="Street"/>
+			<xs:attribute ref="City"/>
+			<xs:attribute ref="State-Province"/>
+			<xs:attribute ref="Zip"/>
+			<xs:attribute ref="Country"/>
+			<xs:attribute name="Phone1" type="xs:string" use="optional"/>
+			<xs:attribute name="Phone2" type="xs:string" use="optional"/>
+			<xs:attribute name="Fax" type="xs:string" use="optional"/>
+			<xs:attribute name="Email" type="xs:string" use="optional"/>
+			<xs:attribute name="WebSite" type="xs:string" use="optional"/>
+		</xs:complexType>
+	</xs:element>
+	<xs:attribute name="State-Province" type="xs:string"/>
+	<xs:attribute name="Status" type="xs:string"/>
+	<xs:attribute name="Street" type="xs:string"/>
+	<xs:element name="Tenant">
+		<xs:complexType>
+			<xs:attribute name="ID" type="xs:integer" use="required"/>
+			<xs:attribute ref="TenantID"/>
+			<xs:attribute ref="FirstName"/>
+			<xs:attribute ref="LastName"/>
+			<xs:attribute ref="Street"/>
+			<xs:attribute ref="City"/>
+			<xs:attribute ref="State-Province"/>
+			<xs:attribute ref="Zip"/>
+			<xs:attribute ref="Country">
+				<xs:annotation>
+					<xs:documentation>ISO 3 Character.  i.e. USA, CAN, MEX, etc.</xs:documentation>
+				</xs:annotation>
+			</xs:attribute>
+			<xs:attribute ref="Phone"/>
+			<xs:attribute ref="Email"/>
+			<xs:attribute name="ExternalTenantID" type="xs:string" use="optional"/>
+		</xs:complexType>
+	</xs:element>
+	<xs:attribute name="TenantID" type="xs:integer"/>
+	<xs:element name="TenantID"/>
+	<xs:attribute name="Zip" type="xs:string"/>
+	<xs:element name="Errors">
+		<xs:complexType>
+			<xs:sequence>
+				<xs:element name="Error" maxOccurs="unbounded">
+					<xs:complexType>
+						<xs:attribute name="ErrorCode" type="xs:integer"/>
+						<xs:attribute name="ErrorText" type="xs:string"/>
+					</xs:complexType>
+				</xs:element>
+			</xs:sequence>
+		</xs:complexType>
+	</xs:element>
+</xs:schema>

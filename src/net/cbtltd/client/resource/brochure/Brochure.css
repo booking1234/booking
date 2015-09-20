@@ -1,0 +1,206 @@
+.attributeField {width: 190px;}
+.attributeLabel {color: black; font-weight: bold;}
+.attributeScroll {
+	height: 330px;
+	width: 220px;
+}
+
+.availableDate {
+	padding: 2px 5px;
+	color: labelColor;
+}
+
+.availableNormal {background-color: white;}
+.availablePrice {
+	float: right;
+	margin-top: 2px;
+	padding: 1px;
+	color: labelColor;
+}
+
+.availableProduct {
+	margin-top: 2px;
+	padding: 1px;
+	padding-right: 10px;
+	color: labelColor;
+	font-weight: bold;
+	cursor: pointer;
+	cursor: hand;
+}
+
+.availableRemove {float: right;}
+.availableStyle {
+	height: 260px;
+	width: 300px;
+	margin-top: 5px;
+	border: 1px solid gray;
+	padding: 5px;
+}
+
+.bookButton {float: right;}
+.bookcancelButton {float: right;}
+.bookDate {color: labelColor;}
+
+.bookProduct {
+	color: labelColor;
+	font-weight: bold;
+}
+
+.columnchartStyle {
+	height: 360px;
+	width: 540px;
+	is3D: true;
+}
+
+.contentsField {
+	margin-left: 6px;
+	margin-right: 6px;
+	height: 270px;
+	width: 200px;
+	white-space: pre-line;
+	color: labelColor;
+}
+
+.contentsLabel {color: black; font-weight: bold;}
+
+.controlStyle {
+	height: 670px;
+	margin: 10px;
+	margin-top: 0;
+	padding: 20px; 
+	background: white; 
+	position:relative; 
+	border: 1px solid #666;
+}
+
+.currencyField {
+/* 	float: left; */
+/* 	width: 100px;  */
+	margin-top: 4px;
+/* 	margin-right: 2px; */
+}
+.currencyLabel {
+	margin-top: 4px;
+	width: 100px;
+	color: labelColor;
+}
+
+.descriptionStyle {
+	float: left;
+	height: 310px;
+	width: 450px;
+	border: 1px solid gray;
+	color: labelColor;
+	background: priceRegion;
+}
+
+.fromtextField {width: 350px;}
+
+.guestcommentField {
+	width: 600px;
+	padding: 15px;
+	white-space: normal;
+}
+
+.guestcommentLabel {
+	font-weight: bold;
+	width: 600px;
+}
+
+.headerStyle {
+	height: 24px;
+	margin-top: 0;
+	margin-left: 3px;
+	margin-right: 5px;
+	padding: 6px;
+	color: labelColor;
+	text-shadow: labelShadow;
+}
+
+.hyperlink {
+	float: right;
+	margin-left: 5px;
+	margin-right: 5px;
+	cursor: pointer;
+	cursor: hand;
+	padding-left: 3px;
+	border-left: 1px solid #006699;
+	text-shadow: 1px 1px white;
+}
+.hyperlink a{color:#999}
+.hyperlink:hover {
+	color: #006699;
+/* 	font-style: italic; */
+}
+
+.imageStyle {
+	height: 305px;
+	width: 450px;
+	margin: 0;
+	margin-top: 8px;
+	padding: 0;
+}
+
+.linechartStyle {
+	height: 360px;
+	width: 540px;
+}
+
+.mapStyle {
+	height: 310px;
+	width: 450px;
+}
+
+.nameStyle {
+	float: left;
+	font-size: 120%;
+	font-weight: bold;
+	color: blue;
+	margin-top: 1px;
+}
+.notesField {
+	height: 120px;
+	width: 300px;
+	margin-bottom: 5px;
+}
+
+.priceStyle {padding: 10px;}
+
+.priceunitLabel {
+	margin: 4px;
+	color: labelColor;
+}
+
+.priceunitField {
+/* 	float: left; */
+	width: 300px;
+	margin-top: 4px;
+	margin-left: 2px;
+	margin-right: 2px;
+}
+
+.ratingStyle {
+	float: left;
+	margin-top: 2px;
+	margin-left: 20px;
+}
+
+.removeButton {}
+
+.termsStyle {
+	width: 600px;
+	white-space: pre-wrap;
+}
+.reviewPanel {max-height: 500px;}
+
+.routeMap {
+	height: 200px;
+	width: 350px;
+}
+.routePanel {}
+.routeSteps {
+	height: 400px;
+	width: 350px;
+}
+.titleStyle {margin-top: 4px;}
+.urlField {width: 400px;}

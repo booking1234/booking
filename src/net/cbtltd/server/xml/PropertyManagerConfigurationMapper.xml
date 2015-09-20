@@ -1,0 +1,92 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="net.cbtltd.server.api.PropertyManagerConfigurationMapper">
+
+	<resultMap id="ResultMap" type="PropertyManagerConfiguration">
+		<id column="ID" jdbcType="INTEGER" property="id" />
+		<result column="validation" jdbcType="INTEGER" property="validation" />
+		<result column="initialization" jdbcType="INTEGER" property="initialization" />
+		<result column="price" jdbcType="INTEGER" property="price" />
+		<result column="availability" jdbcType="INTEGER" property="availability" />
+		<result column="payment" jdbcType="INTEGER" property="payment" />
+		<result column="partner_reservation" jdbcType="INTEGER" property="partnerReservation" />
+		<result column="verify_and_cancel" jdbcType="INTEGER" property="verifyAndCancel" />
+		<result column="payment_transaction" jdbcType="INTEGER" property="paymentTransaction" />
+		<result column="format" jdbcType="INTEGER" property="format" />
+		<result column="send_admin_email" jdbcType="INTEGER" property="sendAdminEmail" />
+	</resultMap>
+
+	<sql id="columns">
+		id, validation, initialization, price, availability, payment, partner_reservation, verify_and_cancel, payment_transaction,
+		format, send_admin_email
+	</sql>
+	
+	<insert id="create" parameterType="PropertyManagerConfiguration" useGeneratedKeys="true" keyProperty="id">
+		insert into property_manager_configuration (
+			validation, initialization, price, availability, payment, partner_reservation, verify_and_cancel, payment_transaction,
+		format, send_admin_email
+		)
+		values (
+			#{validation,jdbcType=INTEGER},
+			#{initialization,jdbcType=INTEGER},
+			#{price,jdbcType=INTEGER},
+			#{availability,jdbcType=INTEGER},
+			#{payment,jdbcType=INTEGER},
+			#{partnerReservation,jdbcType=INTEGER},
+			#{verifyAndCancel,jdbcType=INTEGER},
+			#{paymentTransaction,jdbcType=INTEGER},
+			#{format,jdbcType=INTEGER},
+			#{sendAdminEmail,jdbcType=INTEGER}
+		)
+	</insert>
+	
+	<select id="read" parameterType="INTEGER" resultMap="ResultMap">
+		select
+		<include refid="columns" />
+		from property_manager_configuration
+		where id = #{id,jdbcType=INTEGER}
+	</select>
+	
+	<update id="update" parameterType="PropertyManagerConfiguration">
+		update property_manager_configuration
+		<set>		
+			<if test="validation != null">
+				validation = #{validation,jdbcType=INTEGER},
+			</if>		
+			<if test="initialization != null">
+				initialization = #{initialization,jdbcType=INTEGER},
+			</if>		
+			<if test="price != null">
+				price = #{price,jdbcType=INTEGER},
+			</if>		
+			<if test="availability != null">
+				availability = #{availability,jdbcType=INTEGER},
+			</if>		
+			<if test="payment != null">
+				payment = #{payment,jdbcType=INTEGER},
+			</if>		
+			<if test="partnerReservation != null">
+				partner_reservation = #{partnerReservation,jdbcType=INTEGER},
+			</if>		
+			<if test="verifyAndCancel != null">
+				verify_and_cancel = #{verifyAndCancel,jdbcType=INTEGER},
+			</if>		
+			<if test="paymentTransaction != null">
+				payment_transaction = #{paymentTransaction,jdbcType=INTEGER},
+			</if>		
+			<if test="format != null">
+				format = #{format,jdbcType=INTEGER},
+			</if>		
+			<if test="sendAdminEmail != null">
+				send_admin_email = #{sendAdminEmail,jdbcType=INTEGER}
+			</if>
+		</set>
+		where id = #{id,jdbcType=INTEGER}
+	</update>
+		
+	<delete id="delete" parameterType="INTEGER" >
+		delete from property_manager_configuration
+		where id = #{id,jdbcType=INTEGER}
+	</delete>
+		
+</mapper>

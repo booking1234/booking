@@ -1,0 +1,104 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<module rename-to='razor'>
+
+	<!-- Inherit the core Web Toolkit stuff. -->
+	<inherits name='com.google.gwt.user.User'/>
+    <inherits name='com.google.gwt.i18n.I18N'/>
+<!-- 	<inherits name="com.google.gwt.maps.GoogleMaps"/> -->
+<!-- 	<inherits name="com.google.maps.gwt.GoogleMaps"/> -->
+	<inherits name='com.google.gwt.maps.Maps' />
+	<inherits name="com.google.gwt.visualization.Visualization"/>
+	<inherits name="com.google.gwt.resources.Resources" />
+	<inherits name='com.google.gwt.json.JSON'/>   <!-- Include for jQuery library -->
+	<inherits name='com.google.gwt.jsonp.Jsonp' /> <!--	Include for JsonpRequestBuilder -->
+	<inherits name='com.google.gwt.http.HTTP'/>
+	<inherits name='com.google.gwt.language.Language' />
+<!-- 	<inherits name="com.capsula.gwt.reversegeocoder.ReverseGeocoder" /> -->
+	<inherits name="com.allen_sauer.gwt.log.gwt-log-OFF" />
+	<inherits name='com.allen_sauer.gwt.voices.gwt-voices'/>
+  	<stylesheet src="jquery-ui.css"/>
+  	<!-- use DEBUG for development and OFF for production http://code.google.com/p/gwt-log/wiki/GettingStarted
+	<inherits name="com.allen_sauer.gwt.log.gwt-log-DEBUG" />
+	<inherits name="com.allen_sauer.gwt.log.gwt-log-OFF" />
+	<inherits name="com.google.gwt.media.dom.DOM"/>
+	<inherits name='com.google.gwt.language.Language' />
+ 	<inherits name='com.bradrydzewski.gwt.calendar.Calendar' />
+	<inherits name='com.bradrydzewski.gwt.calendar.theme.google.Google' />
+	<inherits name="com.google.gwt.logging.Logging"/>
+	<inherits name="com.googlecode.gwt.math.Math"/> 
+	<collapse-all-properties />
+ 	-->	
+
+	<!-- 	Inherit the default GWT style sheet. 
+	You can change the theme of your GWT application by uncommenting any one of the following lines.
+	Use public/gwt/standard/standard.css as basis for theme
+	<inherits name='com.google.gwt.user.theme.standard.Standard'/>
+	<inherits name="com.google.gwt.user.theme.chrome.Chrome"/>
+	<inherits name="com.google.gwt.user.theme.dark.Dark"/>
+	<inherits name='com.google.gwt.user.theme.standard.StandardResources'/>
+	-->
+ 	<!-- Google Maps API
+ 	Google API key console at https://code.google.com/apis/console/?pli=1#project:676633367220:access
+    If you want to deploy this application outside of localhost, you must obtain a Google Maps API key at: http://www.google.com/apis/maps/signup.html
+ 	cbtltd.dnsalias.net <script src="http://maps.google.com/maps?gwt=1&amp;file=api&amp;v=2&amp;key=ABQIAAAA30LJM-VtBK-8CmbP2eic4RSV99DeO6lWM07dAQ4uZVdil5Sg6BR4lI-UzLpK9BC07Jke-B74BQX8Fw" />
+	<script src="http://maps.google.com/maps?gwt=1&amp;file=api&amp;v=2&amp;key=ABQIAAAA30LJM-VtBK-8CmbP2eic4RTf7B8Hz92uOSGpB3j3J64rWpwdFRRtnzeji201m8XeOjxG-9pkasreJg" />
+	razorpms.com 		<script src="http://maps.google.com/maps?gwt=1&amp;file=api&amp;v=2&amp;key=ABQIAAAA30LJM-VtBK-8CmbP2eic4RSJEZUrn5hn03v_ZFGTibdHeBF_YRQxbla8GNSvPLCORl_tNH11ByG0tA" />
+	razor-cloud.com 	<script src="http://maps.google.com/maps?gwt=1&amp;file=api&amp;v=2&amp;sensor=false&amp;key=AIzaSyDkdwL3blntxliu3Dpx1FGhXzKVwuMKkyA" />
+	thenavisway.com		<script src="http://maps.google.com/maps?file=api&amp;v=2&amp;sensor=false&amp;key=ABQIAAAAhd7UB7sCrLadhxsQNW3qUxRkczSUVfgyC03jpEgciKOecd3yPxQaN_5OB81aQ67_xwEOqTDNnZlpDg" />
+	<script src="https://www.google.com/jsapi?key=AIzaSyDkdwL3blntxliu3Dpx1FGhXzKVwuMKkyA" />
+	<script src="http://maps.google.com/maps?gwt=1&amp;file=api&amp;v=2&amp;key=ABQIAAAA30LJM-VtBK-8CmbP2eic4RTf7B8Hz92uOSGpB3j3J64rWpwdFRRtnzeji201m8XeOjxG-9pkasreJg" />
+ 	-->
+
+ 	<extend-property name="locale" values="en"/>
+	<!-- GWT locales
+  	<extend-property name="locale" values="en"/>
+    <extend-property name="locale" values="de_DE" />
+    <extend-property name="locale" values="en_UK" />
+    <extend-property name="locale" values="fr_FR" />
+    <extend-property name="locale" values="hr_HR" />
+    <extend-property name="locale" values="hu_HU" />
+    <extend-property name="locale" values="it_IT" />
+    <extend-property name="locale" values="pt_PT" />
+    <extend-property name="locale" values="pl_PL" />
+    <extend-property name="locale" values="nl_NL" />
+     -->
+     
+	<!-- User Agent (browsers)
+    <set-property name="user.agent" value="ie8" />
+	<set-property name="user.agent" value="gecko" />
+    <set-property name="user.agent" value="gecko1_8" />
+    <set-property name="user.agent" value="safari" />
+    <set-property name="user.agent" value="opera" />
+	 -->
+	 
+	 <!-- Remove to obfuscate the CSS after debugging with Firebug
+	<set-configuration-property name="CssResource.style" value="pretty" />
+	-->
+
+	 <!--
+	   Enable experimental WindowLogger, which logs messages to a separate
+	   pop up window. There are currently a couple of restrictions:
+	
+	   1. When Firefox is configured to open new Windows as new tabs, WindowLogger does not work
+	   2. In GWT Development Mode, the windows are not automatically closed
+	   3. You'll probably want to disable the default `DivLogger` as well:
+	<set-property name="log_WindowLogger" value="ENABLED" />
+	<set-property name="log_DivLogger" value="DISABLED" />
+	 -->
+  
+	<!-- Specify the application or widget entry point classes.
+	<entry-point class='net.cbtltd.client.Razor'/>
+	<entry-point class='net.cbtltd.client.widget.RazorWidget'/>
+	<entry-point class='net.cbtltd.trial.test.AutoRazor'/>
+	-->
+	<entry-point class='net.cbtltd.client.Razor'/>
+
+  <!-- Specify the paths for translatable code -->
+  <source path='client'/>
+  <source path='shared'/>
+  <source path='trial'/>
+  
+  <add-linker name="xsiframe"/>
+<set-configuration-property name="devModeRedirectEnabled" value="true"/>
+
+</module>

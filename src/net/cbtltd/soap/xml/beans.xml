@@ -1,0 +1,40 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<beans xmlns="http://www.springframework.org/schema/beans"
+	xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:jaxrs="http://cxf.apache.org/jaxrs"
+	xmlns:jaxws="http://cxf.apache.org/jaxws"
+	xsi:schemaLocation="http://www.springframework.org/schema/beans 
+	http://www.springframework.org/schema/beans/spring-beans.xsd
+	http://cxf.apache.org/jaxws 
+	http://cxf.apache.org/schemas/jaxws.xsd
+	http://cxf.apache.org/jaxrs
+	http://cxf.apache.org/schemas/jaxrs.xsd">
+
+	<import resource="classpath:META-INF/cxf/cxf.xml" />
+	<import resource="classpath:META-INF/cxf/cxf-extension-soap.xml" />
+
+	<jaxws:server id="soapServer" serviceClass="net.cbtltd.soap.ota.RazorPortType"
+		address="/soap">
+		<jaxws:serviceBean>
+			<ref bean="soapBean" />
+		</jaxws:serviceBean>
+	</jaxws:server>
+
+	<jaxrs:server id="restServer" address="/rest">
+		<jaxrs:serviceBeans>
+			<ref bean="locationBean" />
+			<ref bean="productBean" />
+			<ref bean="reservationBean" />
+			<ref bean="flipkeyBean" />
+			<ref bean="otaBean" />
+		</jaxrs:serviceBeans>
+		<!--jaxrs:outInterceptors> <ref bean="stylesheetInterceptor"/> </jaxrs:outInterceptors -->
+	</jaxrs:server>
+
+	<bean id="soapBean" class="net.cbtltd.soap.ota.RazorPortTypeImpl" />
+	<bean id="locationBean" class="net.cbtltd.rest.LocationRest" />
+	<bean id="productBean" class="net.cbtltd.rest.ProductRest" />
+	<bean id="reservationBean" class="net.cbtltd.rest.ReservationRest" />
+	<bean id="flipkeyBean" class="net.cbtltd.rest.flipkey.FlipkeyRest" />
+	<bean id="otaBean" class="net.cbtltd.rest.ota.OtaRest" />
+	<bean id="stylesheetInterceptor" class="net.cbtltd.rest.StylesheetInterceptor" />
+</beans>

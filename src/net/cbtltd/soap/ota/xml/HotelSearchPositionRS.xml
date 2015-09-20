@@ -1,0 +1,1482 @@
+<?xml version="1.0" encoding="UTF-8" standalone="yes"?>
+<OTA_HotelSearchRS PrimaryLangID="en"
+	RetransmissionIndicator="false" SequenceNmbr="1" TransactionIdentifier="1"
+	Version="2.004" Target="Production" TimeStamp="2009-07-21T21:41:52"
+	EchoToken="OTA_HotelSearchRQ 5, Latitude=-33.95,Longitude=18.37,Radius=1, 2376"
+	xmlns="http://www.opentravel.org/OTA/2003/05">
+	<POS>
+		<Source>
+			<RequestorID ID="2376" ID_Context="RZ" />
+		</Source>
+	</POS>
+	<Success />
+	<Properties>
+		<Property BrandName="100 Geneva Drive Partnership"
+			HotelCodeContext="RZ" HotelName="100 Geneva Drive" HotelCityCode="CPT"
+			HotelCode="121" BrandCode="6729" ChainCode="5" MaxGroupRoomQuantity="0">
+			<Position AltitudeUnitOfMeasureCode="MTR" Altitude="0.0"
+				Longitude="18.3884769102589" Latitude="-33.9487332161371" />
+			<Address UseType="3">
+				<StreetNmbr>P.O.Box 32452
+					Camps Bay
+					Cape Town</StreetNmbr>
+				<PostalCode>8040</PostalCode>
+			</Address>
+			<ContactNumbers>
+				<ContactNumber PhoneNumber="+27 21 424 3353"
+					PhoneUseType="3" PhoneTechType="1" />
+				<ContactNumber PhoneNumber="+27 21 424 3355"
+					PhoneUseType="3" PhoneTechType="3" />
+				<ContactNumber PhoneNumber="+27 84 804 9902"
+					PhoneUseType="5" PhoneTechType="5" />
+			</ContactNumbers>
+			<RateRange CurrencyCode="ZAR" RateTimeUnit="Day" FixedRate="3500.0" />
+		</Property>
+		<Property BrandName="Alpine Development Trust"
+			HotelCodeContext="RZ" HotelName="270 Degrees" HotelCityCode="CPT"
+			HotelCode="125" BrandCode="6844" ChainCode="5" MaxGroupRoomQuantity="0">
+			<Position AltitudeUnitOfMeasureCode="MTR" Altitude="0.0"
+				Longitude="18.3836460113525" Latitude="-33.9559087753487" />
+			<Address UseType="3">
+				<StreetNmbr>P.O.Box 32452
+					Camps Bay
+					Cape Town</StreetNmbr>
+				<PostalCode>8040</PostalCode>
+			</Address>
+			<ContactNumbers>
+				<ContactNumber PhoneNumber="+27 21 424 3353"
+					PhoneUseType="3" PhoneTechType="1" />
+				<ContactNumber PhoneNumber="+27 21 424 3355"
+					PhoneUseType="3" PhoneTechType="3" />
+				<ContactNumber PhoneNumber="+27 84 804 9902"
+					PhoneUseType="5" PhoneTechType="5" />
+			</ContactNumbers>
+			<RateRange CurrencyCode="ZAR" RateTimeUnit="Day" FixedRate="1350.0" />
+		</Property>
+		<Property BrandName="Ndiomu, Didi" HotelCodeContext="RZ"
+			HotelName="Abaco Villa" HotelCityCode="CPT" HotelCode="126"
+			BrandCode="1941" ChainCode="5" MaxGroupRoomQuantity="0">
+			<Position AltitudeUnitOfMeasureCode="MTR" Altitude="0.0"
+				Longitude="18.3880019187927" Latitude="-33.9546806737949" />
+			<Address UseType="3">
+				<StreetNmbr>P.O.Box 32452
+					Camps Bay
+					Cape Town</StreetNmbr>
+				<PostalCode>8040</PostalCode>
+			</Address>
+			<ContactNumbers>
+				<ContactNumber PhoneNumber="+27 21 424 3353"
+					PhoneUseType="3" PhoneTechType="1" />
+				<ContactNumber PhoneNumber="+27 21 424 3355"
+					PhoneUseType="3" PhoneTechType="3" />
+				<ContactNumber PhoneNumber="+27 84 804 9902"
+					PhoneUseType="5" PhoneTechType="5" />
+			</ContactNumbers>
+			<RateRange CurrencyCode="ZAR" RateTimeUnit="Day" FixedRate="4000.0" />
+		</Property>
+		<Property BrandName="Voigt, Wayne" HotelCodeContext="RZ"
+			HotelName="Amber Haven" HotelCityCode="CPT" HotelCode="129"
+			BrandCode="2735" ChainCode="5" MaxGroupRoomQuantity="0">
+			<Position AltitudeUnitOfMeasureCode="MTR" Altitude="0.0"
+				Longitude="18.375276302868" Latitude="-33.9621784051249" />
+			<Address UseType="3">
+				<StreetNmbr>P.O.Box 32452
+					Camps Bay
+					Cape Town</StreetNmbr>
+				<PostalCode>8040</PostalCode>
+			</Address>
+			<ContactNumbers>
+				<ContactNumber PhoneNumber="+27 21 424 3353"
+					PhoneUseType="3" PhoneTechType="1" />
+				<ContactNumber PhoneNumber="+27 21 424 3355"
+					PhoneUseType="3" PhoneTechType="3" />
+				<ContactNumber PhoneNumber="+27 84 804 9902"
+					PhoneUseType="5" PhoneTechType="5" />
+			</ContactNumbers>
+			<RateRange CurrencyCode="ZAR" RateTimeUnit="Day" FixedRate="2500.0" />
+		</Property>
+		<Property BrandName="Voigt, Wayne" HotelCodeContext="RZ"
+			HotelName="Amber Haven Studio" HotelCityCode="CPT" HotelCode="130"
+			BrandCode="2735" ChainCode="5" MaxGroupRoomQuantity="0">
+			<Position AltitudeUnitOfMeasureCode="MTR" Altitude="0.0"
+				Longitude="18.375276302868" Latitude="-33.9621784051249" />
+			<Address UseType="3">
+				<StreetNmbr>P.O.Box 32452
+					Camps Bay
+					Cape Town</StreetNmbr>
+				<PostalCode>8040</PostalCode>
+			</Address>
+			<ContactNumbers>
+				<ContactNumber PhoneNumber="+27 21 424 3353"
+					PhoneUseType="3" PhoneTechType="1" />
+				<ContactNumber PhoneNumber="+27 21 424 3355"
+					PhoneUseType="3" PhoneTechType="3" />
+				<ContactNumber PhoneNumber="+27 84 804 9902"
+					PhoneUseType="5" PhoneTechType="5" />
+			</ContactNumbers>
+			<RateRange CurrencyCode="ZAR" RateTimeUnit="Day" FixedRate="930.0" />
+		</Property>
+		<Property BrandName="South Vale Investments"
+			HotelCodeContext="RZ" HotelName="Anfield" HotelCityCode="CPT"
+			HotelCode="131" BrandCode="3850" ChainCode="5" MaxGroupRoomQuantity="0">
+			<Position AltitudeUnitOfMeasureCode="MTR" Altitude="0.0"
+				Longitude="18.3773803710938" Latitude="-33.952971981277" />
+			<Address UseType="3">
+				<StreetNmbr>P.O.Box 32452
+					Camps Bay
+					Cape Town</StreetNmbr>
+				<PostalCode>8040</PostalCode>
+			</Address>
+			<ContactNumbers>
+				<ContactNumber PhoneNumber="+27 21 424 3353"
+					PhoneUseType="3" PhoneTechType="1" />
+				<ContactNumber PhoneNumber="+27 21 424 3355"
+					PhoneUseType="3" PhoneTechType="3" />
+				<ContactNumber PhoneNumber="+27 84 804 9902"
+					PhoneUseType="5" PhoneTechType="5" />
+			</ContactNumbers>
+			<RateRange CurrencyCode="ZAR" RateTimeUnit="Day" FixedRate="2300.0" />
+		</Property>
+		<Property BrandName="GMPI Trust" HotelCodeContext="RZ"
+			HotelName="Atlantic Spray" HotelCityCode="CPT" HotelCode="133"
+			BrandCode="4121" ChainCode="5" MaxGroupRoomQuantity="0">
+			<Position AltitudeUnitOfMeasureCode="MTR" Altitude="0.0"
+				Longitude="18.4023785591125" Latitude="-33.901054100511" />
+			<Address UseType="3">
+				<StreetNmbr>P.O.Box 32452
+					Camps Bay
+					Cape Town</StreetNmbr>
+				<PostalCode>8040</PostalCode>
+			</Address>
+			<ContactNumbers>
+				<ContactNumber PhoneNumber="+27 21 424 3353"
+					PhoneUseType="3" PhoneTechType="1" />
+				<ContactNumber PhoneNumber="+27 21 424 3355"
+					PhoneUseType="3" PhoneTechType="3" />
+				<ContactNumber PhoneNumber="+27 84 804 9902"
+					PhoneUseType="5" PhoneTechType="5" />
+			</ContactNumbers>
+			<RateRange CurrencyCode="ZAR" RateTimeUnit="Day" FixedRate="1600.0" />
+		</Property>
+		<Property BrandName="Marshall, Vanessa" HotelCodeContext="RZ"
+			HotelName="Atlantic Vistas" HotelCityCode="CPT" HotelCode="134"
+			BrandCode="800" ChainCode="5" MaxGroupRoomQuantity="0">
+			<Position AltitudeUnitOfMeasureCode="MTR" Altitude="0.0"
+				Longitude="18.4076680882637" Latitude="-33.9000734273338" />
+			<Address UseType="3">
+				<StreetNmbr>P.O.Box 32452
+					Camps Bay
+					Cape Town</StreetNmbr>
+				<PostalCode>8040</PostalCode>
+			</Address>
+			<ContactNumbers>
+				<ContactNumber PhoneNumber="+27 21 424 3353"
+					PhoneUseType="3" PhoneTechType="1" />
+				<ContactNumber PhoneNumber="+27 21 424 3355"
+					PhoneUseType="3" PhoneTechType="3" />
+				<ContactNumber PhoneNumber="+27 84 804 9902"
+					PhoneUseType="5" PhoneTechType="5" />
+			</ContactNumbers>
+			<RateRange CurrencyCode="ZAR" RateTimeUnit="Day" FixedRate="1600.0" />
+		</Property>
+		<Property BrandName="Davis, Andy" HotelCodeContext="RZ"
+			HotelName="Bali Luxury Suite C" HotelCityCode="CPT" HotelCode="137"
+			BrandCode="1703" ChainCode="5" MaxGroupRoomQuantity="0">
+			<Position AltitudeUnitOfMeasureCode="MTR" Altitude="0.0"
+				Longitude="18.3772251469419" Latitude="-33.9591319578459" />
+			<Address UseType="3">
+				<StreetNmbr>P.O.Box 32452
+					Camps Bay
+					Cape Town</StreetNmbr>
+				<PostalCode>8040</PostalCode>
+			</Address>
+			<ContactNumbers>
+				<ContactNumber PhoneNumber="+27 21 424 3353"
+					PhoneUseType="3" PhoneTechType="1" />
+				<ContactNumber PhoneNumber="+27 21 424 3355"
+					PhoneUseType="3" PhoneTechType="3" />
+				<ContactNumber PhoneNumber="+27 84 804 9902"
+					PhoneUseType="5" PhoneTechType="5" />
+			</ContactNumbers>
+			<RateRange CurrencyCode="ZAR" RateTimeUnit="Day" FixedRate="2700.0" />
+		</Property>
+		<Property BrandName="Joida Properties" HotelCodeContext="RZ"
+			HotelName="Bali Luxury Suite E" HotelCityCode="CPT" HotelCode="138"
+			BrandCode="7259" ChainCode="5" MaxGroupRoomQuantity="0">
+			<Position AltitudeUnitOfMeasureCode="MTR" Altitude="0.0"
+				Longitude="18.3772536114401" Latitude="-33.9591667558536" />
+			<Address UseType="3">
+				<StreetNmbr>P.O.Box 32452
+					Camps Bay
+					Cape Town</StreetNmbr>
+				<PostalCode>8040</PostalCode>
+			</Address>
+			<ContactNumbers>
+				<ContactNumber PhoneNumber="+27 21 424 3353"
+					PhoneUseType="3" PhoneTechType="1" />
+				<ContactNumber PhoneNumber="+27 21 424 3355"
+					PhoneUseType="3" PhoneTechType="3" />
+				<ContactNumber PhoneNumber="+27 84 804 9902"
+					PhoneUseType="5" PhoneTechType="5" />
+			</ContactNumbers>
+			<RateRange CurrencyCode="ZAR" RateTimeUnit="Day" FixedRate="2700.0" />
+		</Property>
+		<Property BrandName="Von Heynitz, Michelle" HotelCodeContext="RZ"
+			HotelName="Camps Bay Manor" HotelCityCode="CPT" HotelCode="140"
+			BrandCode="5297" ChainCode="5" MaxGroupRoomQuantity="0">
+			<Position AltitudeUnitOfMeasureCode="MTR" Altitude="0.0"
+				Longitude="18.3761126661928" Latitude="-33.9629902485941" />
+			<Address UseType="3">
+				<StreetNmbr>P.O.Box 32452
+					Camps Bay
+					Cape Town</StreetNmbr>
+				<PostalCode>8040</PostalCode>
+			</Address>
+			<ContactNumbers>
+				<ContactNumber PhoneNumber="+27 21 424 3353"
+					PhoneUseType="3" PhoneTechType="1" />
+				<ContactNumber PhoneNumber="+27 21 424 3355"
+					PhoneUseType="3" PhoneTechType="3" />
+				<ContactNumber PhoneNumber="+27 84 804 9902"
+					PhoneUseType="5" PhoneTechType="5" />
+			</ContactNumbers>
+			<RateRange CurrencyCode="ZAR" RateTimeUnit="Day" FixedRate="1750.0" />
+		</Property>
+		<Property BrandName="Herrick, Brian" HotelCodeContext="RZ"
+			HotelName="Cape Blue" HotelCityCode="CPT" HotelCode="141" BrandCode="2765"
+			ChainCode="5" MaxGroupRoomQuantity="0">
+			<Position AltitudeUnitOfMeasureCode="MTR" Altitude="0.0"
+				Longitude="18.379154849726" Latitude="-33.9601888888889" />
+			<Address UseType="3">
+				<StreetNmbr>P.O.Box 32452
+					Camps Bay
+					Cape Town</StreetNmbr>
+				<PostalCode>8040</PostalCode>
+			</Address>
+			<ContactNumbers>
+				<ContactNumber PhoneNumber="+27 21 424 3353"
+					PhoneUseType="3" PhoneTechType="1" />
+				<ContactNumber PhoneNumber="+27 21 424 3355"
+					PhoneUseType="3" PhoneTechType="3" />
+				<ContactNumber PhoneNumber="+27 84 804 9902"
+					PhoneUseType="5" PhoneTechType="5" />
+			</ContactNumbers>
+			<RateRange CurrencyCode="ZAR" RateTimeUnit="Day" FixedRate="2700.0" />
+		</Property>
+		<Property BrandName="Tourinfo cc" HotelCodeContext="RZ"
+			HotelName="CBT Lodge" HotelCityCode="CPT" HotelCode="143" BrandCode="890"
+			ChainCode="5" MaxGroupRoomQuantity="0">
+			<Position AltitudeUnitOfMeasureCode="MTR" Altitude="0.0"
+				Longitude="18.3772945404053" Latitude="-33.9571902537236" />
+			<Address UseType="3">
+				<StreetNmbr>P.O.Box 32452
+					Camps Bay
+					Cape Town</StreetNmbr>
+				<PostalCode>8040</PostalCode>
+			</Address>
+			<ContactNumbers>
+				<ContactNumber PhoneNumber="+27 21 424 3353"
+					PhoneUseType="3" PhoneTechType="1" />
+				<ContactNumber PhoneNumber="+27 21 424 3355"
+					PhoneUseType="3" PhoneTechType="3" />
+				<ContactNumber PhoneNumber="+27 84 804 9902"
+					PhoneUseType="5" PhoneTechType="5" />
+			</ContactNumbers>
+			<Amenities>
+				<Amenity RoomAmenity="88" />
+			</Amenities>
+			<RateRange CurrencyCode="ZAR" RateTimeUnit="Day" FixedRate="2600.0" />
+		</Property>
+		<Property BrandName="Tourinfo cc" HotelCodeContext="RZ"
+			HotelName="CBT Palm Suite" HotelCityCode="CPT" HotelCode="144"
+			BrandCode="890" ChainCode="5" MaxGroupRoomQuantity="0">
+			<Position AltitudeUnitOfMeasureCode="MTR" Altitude="0.0"
+				Longitude="18.3773481845856" Latitude="-33.9571457582702" />
+			<Address UseType="3">
+				<StreetNmbr>P.O.Box 32452
+					Camps Bay
+					Cape Town</StreetNmbr>
+				<PostalCode>8040</PostalCode>
+			</Address>
+			<ContactNumbers>
+				<ContactNumber PhoneNumber="+27 21 424 3353"
+					PhoneUseType="3" PhoneTechType="1" />
+				<ContactNumber PhoneNumber="+27 21 424 3355"
+					PhoneUseType="3" PhoneTechType="3" />
+				<ContactNumber PhoneNumber="+27 84 804 9902"
+					PhoneUseType="5" PhoneTechType="5" />
+			</ContactNumbers>
+			<RateRange CurrencyCode="ZAR" RateTimeUnit="Day" FixedRate="1600.0" />
+		</Property>
+		<Property BrandName="Tourinfo cc" HotelCodeContext="RZ"
+			HotelName="CBT Penthouse" HotelCityCode="CPT" HotelCode="145"
+			BrandCode="890" ChainCode="5" MaxGroupRoomQuantity="0">
+			<Position AltitudeUnitOfMeasureCode="MTR" Altitude="0.0"
+				Longitude="18.3776485919952" Latitude="-33.9569321797697" />
+			<Address UseType="3">
+				<StreetNmbr>P.O.Box 32452
+					Camps Bay
+					Cape Town</StreetNmbr>
+				<PostalCode>8040</PostalCode>
+			</Address>
+			<ContactNumbers>
+				<ContactNumber PhoneNumber="+27 21 424 3353"
+					PhoneUseType="3" PhoneTechType="1" />
+				<ContactNumber PhoneNumber="+27 21 424 3355"
+					PhoneUseType="3" PhoneTechType="3" />
+				<ContactNumber PhoneNumber="+27 84 804 9902"
+					PhoneUseType="5" PhoneTechType="5" />
+			</ContactNumbers>
+			<RateRange CurrencyCode="ZAR" RateTimeUnit="Day" FixedRate="2300.0" />
+		</Property>
+		<Property BrandName="Tourinfo cc" HotelCodeContext="RZ"
+			HotelName="CBT Suite" HotelCityCode="CPT" HotelCode="146" BrandCode="890"
+			ChainCode="5" MaxGroupRoomQuantity="0">
+			<Position AltitudeUnitOfMeasureCode="MTR" Altitude="0.0"
+				Longitude="18.3776164054871" Latitude="-33.9569677762237" />
+			<Address UseType="3">
+				<StreetNmbr>P.O.Box 32452
+					Camps Bay
+					Cape Town</StreetNmbr>
+				<PostalCode>8040</PostalCode>
+			</Address>
+			<ContactNumbers>
+				<ContactNumber PhoneNumber="+27 21 424 3353"
+					PhoneUseType="3" PhoneTechType="1" />
+				<ContactNumber PhoneNumber="+27 21 424 3355"
+					PhoneUseType="3" PhoneTechType="3" />
+				<ContactNumber PhoneNumber="+27 84 804 9902"
+					PhoneUseType="5" PhoneTechType="5" />
+			</ContactNumbers>
+			<RateRange CurrencyCode="ZAR" RateTimeUnit="Day" FixedRate="1100.0" />
+		</Property>
+		<Property BrandName="Sidebottom, Walter" HotelCodeContext="RZ"
+			HotelName="Dunmore Place" HotelCityCode="NC085" HotelCode="148"
+			BrandCode="5392" ChainCode="5" MaxGroupRoomQuantity="0">
+			<Position AltitudeUnitOfMeasureCode="MTR" Altitude="0.0"
+				Longitude="18.3773416666667" Latitude="-33.9324610117349" />
+			<Address UseType="3">
+				<StreetNmbr>P.O.Box 32452
+					Camps Bay
+					Cape Town</StreetNmbr>
+				<PostalCode>8040</PostalCode>
+			</Address>
+			<ContactNumbers>
+				<ContactNumber PhoneNumber="+27 21 424 3353"
+					PhoneUseType="3" PhoneTechType="1" />
+				<ContactNumber PhoneNumber="+27 21 424 3355"
+					PhoneUseType="3" PhoneTechType="3" />
+				<ContactNumber PhoneNumber="+27 84 804 9902"
+					PhoneUseType="5" PhoneTechType="5" />
+			</ContactNumbers>
+			<RateRange CurrencyCode="ZAR" RateTimeUnit="Day" FixedRate="1600.0" />
+		</Property>
+		<Property BrandName="Hollyberry Props 140 (Pty) Ltd"
+			HotelCodeContext="RZ" HotelName="Funkey Apartment" HotelCityCode="CPT"
+			HotelCode="149" BrandCode="8272" ChainCode="5" MaxGroupRoomQuantity="0">
+			<Position AltitudeUnitOfMeasureCode="MTR" Altitude="0.0"
+				Longitude="18.3759777767836" Latitude="-33.9620416800538" />
+			<Address UseType="3">
+				<StreetNmbr>P.O.Box 32452
+					Camps Bay
+					Cape Town</StreetNmbr>
+				<PostalCode>8040</PostalCode>
+			</Address>
+			<ContactNumbers>
+				<ContactNumber PhoneNumber="+27 21 424 3353"
+					PhoneUseType="3" PhoneTechType="1" />
+				<ContactNumber PhoneNumber="+27 21 424 3355"
+					PhoneUseType="3" PhoneTechType="3" />
+				<ContactNumber PhoneNumber="+27 84 804 9902"
+					PhoneUseType="5" PhoneTechType="5" />
+			</ContactNumbers>
+			<RateRange CurrencyCode="ZAR" RateTimeUnit="Day" FixedRate="1200.0" />
+		</Property>
+		<Property BrandName="Fine Asset Investments 18"
+			HotelCodeContext="RZ" HotelName="Gryphon House" HotelCityCode="CPT"
+			HotelCode="150" BrandCode="4211" ChainCode="5" MaxGroupRoomQuantity="0">
+			<Position AltitudeUnitOfMeasureCode="MTR" Altitude="0.0"
+				Longitude="18.3824651097657" Latitude="-33.9601086493188" />
+			<Address UseType="3">
+				<StreetNmbr>P.O.Box 32452
+					Camps Bay
+					Cape Town</StreetNmbr>
+				<PostalCode>8040</PostalCode>
+			</Address>
+			<ContactNumbers>
+				<ContactNumber PhoneNumber="+27 21 424 3353"
+					PhoneUseType="3" PhoneTechType="1" />
+				<ContactNumber PhoneNumber="+27 21 424 3355"
+					PhoneUseType="3" PhoneTechType="3" />
+				<ContactNumber PhoneNumber="+27 84 804 9902"
+					PhoneUseType="5" PhoneTechType="5" />
+			</ContactNumbers>
+			<RateRange CurrencyCode="ZAR" RateTimeUnit="Day" FixedRate="4000.0" />
+		</Property>
+		<Property BrandName="Rivers, Keith" HotelCodeContext="RZ"
+			HotelName="Houghton Steps" HotelCityCode="CPT" HotelCode="151"
+			BrandCode="5227" ChainCode="5" MaxGroupRoomQuantity="0">
+			<Position AltitudeUnitOfMeasureCode="MTR" Altitude="0.0"
+				Longitude="18.3780261621574" Latitude="-33.95921358422" />
+			<Address UseType="3">
+				<StreetNmbr>P.O.Box 32452
+					Camps Bay
+					Cape Town</StreetNmbr>
+				<PostalCode>8040</PostalCode>
+			</Address>
+			<ContactNumbers>
+				<ContactNumber PhoneNumber="+27 21 424 3353"
+					PhoneUseType="3" PhoneTechType="1" />
+				<ContactNumber PhoneNumber="+27 21 424 3355"
+					PhoneUseType="3" PhoneTechType="3" />
+				<ContactNumber PhoneNumber="+27 84 804 9902"
+					PhoneUseType="5" PhoneTechType="5" />
+			</ContactNumbers>
+			<RateRange CurrencyCode="ZAR" RateTimeUnit="Day" FixedRate="2700.0" />
+		</Property>
+		<Property BrandName="The Hall Family Trust" HotelCodeContext="RZ"
+			HotelName="iThemba" HotelCityCode="CPT" HotelCode="152" BrandCode="4187"
+			ChainCode="5" MaxGroupRoomQuantity="0">
+			<Position AltitudeUnitOfMeasureCode="MTR" Altitude="0.0"
+				Longitude="18.3778884123223" Latitude="-33.9574120284626" />
+			<Address UseType="3">
+				<StreetNmbr>P.O.Box 32452
+					Camps Bay
+					Cape Town</StreetNmbr>
+				<PostalCode>8040</PostalCode>
+			</Address>
+			<ContactNumbers>
+				<ContactNumber PhoneNumber="+27 21 424 3353"
+					PhoneUseType="3" PhoneTechType="1" />
+				<ContactNumber PhoneNumber="+27 21 424 3355"
+					PhoneUseType="3" PhoneTechType="3" />
+				<ContactNumber PhoneNumber="+27 84 804 9902"
+					PhoneUseType="5" PhoneTechType="5" />
+			</ContactNumbers>
+			<RateRange CurrencyCode="ZAR" RateTimeUnit="Day" FixedRate="2700.0" />
+		</Property>
+		<Property BrandName="Blair, Bill" HotelCodeContext="RZ"
+			HotelName="La Corniche" HotelCityCode="NC085" HotelCode="153"
+			BrandCode="5239" ChainCode="5" MaxGroupRoomQuantity="0">
+			<Position AltitudeUnitOfMeasureCode="MTR" Altitude="0.0"
+				Longitude="18.3778292646031" Latitude="-33.9365496686941" />
+			<Address UseType="3">
+				<StreetNmbr>P.O.Box 32452
+					Camps Bay
+					Cape Town</StreetNmbr>
+				<PostalCode>8040</PostalCode>
+			</Address>
+			<ContactNumbers>
+				<ContactNumber PhoneNumber="+27 21 424 3353"
+					PhoneUseType="3" PhoneTechType="1" />
+				<ContactNumber PhoneNumber="+27 21 424 3355"
+					PhoneUseType="3" PhoneTechType="3" />
+				<ContactNumber PhoneNumber="+27 84 804 9902"
+					PhoneUseType="5" PhoneTechType="5" />
+			</ContactNumbers>
+			<RateRange CurrencyCode="ZAR" RateTimeUnit="Day" FixedRate="2300.0" />
+		</Property>
+		<Property BrandName="Boehnke, Jochen" HotelCodeContext="RZ"
+			HotelName="La Grange" HotelCityCode="CPT" HotelCode="154" BrandCode="5445"
+			ChainCode="5" MaxGroupRoomQuantity="0">
+			<Position AltitudeUnitOfMeasureCode="MTR" Altitude="0.0"
+				Longitude="18.38106952223" Latitude="-33.9465301425191" />
+			<Address UseType="3">
+				<StreetNmbr>P.O.Box 32452
+					Camps Bay
+					Cape Town</StreetNmbr>
+				<PostalCode>8040</PostalCode>
+			</Address>
+			<ContactNumbers>
+				<ContactNumber PhoneNumber="+27 21 424 3353"
+					PhoneUseType="3" PhoneTechType="1" />
+				<ContactNumber PhoneNumber="+27 21 424 3355"
+					PhoneUseType="3" PhoneTechType="3" />
+				<ContactNumber PhoneNumber="+27 84 804 9902"
+					PhoneUseType="5" PhoneTechType="5" />
+			</ContactNumbers>
+			<RateRange CurrencyCode="ZAR" RateTimeUnit="Day" FixedRate="2700.0" />
+		</Property>
+		<Property BrandName="White, Graeme" HotelCodeContext="RZ"
+			HotelName="La Plantacion" HotelCityCode="CPT" HotelCode="155"
+			BrandCode="5433" ChainCode="5" MaxGroupRoomQuantity="0">
+			<Position AltitudeUnitOfMeasureCode="MTR" Altitude="0.0"
+				Longitude="18.3817859349754" Latitude="-33.9635527777778" />
+			<Address UseType="3">
+				<StreetNmbr>P.O.Box 32452
+					Camps Bay
+					Cape Town</StreetNmbr>
+				<PostalCode>8040</PostalCode>
+			</Address>
+			<ContactNumbers>
+				<ContactNumber PhoneNumber="+27 21 424 3353"
+					PhoneUseType="3" PhoneTechType="1" />
+				<ContactNumber PhoneNumber="+27 21 424 3355"
+					PhoneUseType="3" PhoneTechType="3" />
+				<ContactNumber PhoneNumber="+27 84 804 9902"
+					PhoneUseType="5" PhoneTechType="5" />
+			</ContactNumbers>
+			<RateRange CurrencyCode="ZAR" RateTimeUnit="Day" FixedRate="1850.0" />
+		</Property>
+		<Property BrandName="Riley, Cathryn" HotelCodeContext="RZ"
+			HotelName="Lansdown" HotelCityCode="CPT" HotelCode="156" BrandCode="2928"
+			ChainCode="5" MaxGroupRoomQuantity="0">
+			<Position AltitudeUnitOfMeasureCode="MTR" Altitude="0.0"
+				Longitude="18.380319768334" Latitude="-33.9569959882314" />
+			<Address UseType="3">
+				<StreetNmbr>P.O.Box 32452
+					Camps Bay
+					Cape Town</StreetNmbr>
+				<PostalCode>8040</PostalCode>
+			</Address>
+			<ContactNumbers>
+				<ContactNumber PhoneNumber="+27 21 424 3353"
+					PhoneUseType="3" PhoneTechType="1" />
+				<ContactNumber PhoneNumber="+27 21 424 3355"
+					PhoneUseType="3" PhoneTechType="3" />
+				<ContactNumber PhoneNumber="+27 84 804 9902"
+					PhoneUseType="5" PhoneTechType="5" />
+			</ContactNumbers>
+			<RateRange CurrencyCode="ZAR" RateTimeUnit="Day" FixedRate="1350.0" />
+		</Property>
+		<Property BrandName="Overside Properties Pty"
+			HotelCodeContext="RZ" HotelName="Medburn Views" HotelCityCode="CPT"
+			HotelCode="157" BrandCode="6230" ChainCode="5" MaxGroupRoomQuantity="0">
+			<Position AltitudeUnitOfMeasureCode="MTR" Altitude="0.0"
+				Longitude="18.3863925100808" Latitude="-33.9523987176921" />
+			<Address UseType="3">
+				<StreetNmbr>P.O.Box 32452
+					Camps Bay
+					Cape Town</StreetNmbr>
+				<PostalCode>8040</PostalCode>
+			</Address>
+			<ContactNumbers>
+				<ContactNumber PhoneNumber="+27 21 424 3353"
+					PhoneUseType="3" PhoneTechType="1" />
+				<ContactNumber PhoneNumber="+27 21 424 3355"
+					PhoneUseType="3" PhoneTechType="3" />
+				<ContactNumber PhoneNumber="+27 84 804 9902"
+					PhoneUseType="5" PhoneTechType="5" />
+			</ContactNumbers>
+			<RateRange CurrencyCode="ZAR" RateTimeUnit="Day" FixedRate="3500.0" />
+		</Property>
+		<Property BrandName="Overside Properties Pty"
+			HotelCodeContext="RZ" HotelName="Medburn Views Studio" HotelCityCode="CPT"
+			HotelCode="158" BrandCode="6230" ChainCode="5" MaxGroupRoomQuantity="0">
+			<Position AltitudeUnitOfMeasureCode="MTR" Altitude="0.0"
+				Longitude="18.3863925100808" Latitude="-33.9523987176921" />
+			<Address UseType="3">
+				<StreetNmbr>P.O.Box 32452
+					Camps Bay
+					Cape Town</StreetNmbr>
+				<PostalCode>8040</PostalCode>
+			</Address>
+			<ContactNumbers>
+				<ContactNumber PhoneNumber="+27 21 424 3353"
+					PhoneUseType="3" PhoneTechType="1" />
+				<ContactNumber PhoneNumber="+27 21 424 3355"
+					PhoneUseType="3" PhoneTechType="3" />
+				<ContactNumber PhoneNumber="+27 84 804 9902"
+					PhoneUseType="5" PhoneTechType="5" />
+			</ContactNumbers>
+			<RateRange CurrencyCode="ZAR" RateTimeUnit="Day" FixedRate="1200.0" />
+		</Property>
+		<Property BrandName="26 Rontree Avenue Trust"
+			HotelCodeContext="RZ" HotelName="Oceangazer" HotelCityCode="CPT"
+			HotelCode="160" BrandCode="5174" ChainCode="5" MaxGroupRoomQuantity="0">
+			<Position AltitudeUnitOfMeasureCode="MTR" Altitude="0.0"
+				Longitude="18.3800745253933" Latitude="-33.9652433819474" />
+			<Address UseType="3">
+				<StreetNmbr>P.O.Box 32452
+					Camps Bay
+					Cape Town</StreetNmbr>
+				<PostalCode>8040</PostalCode>
+			</Address>
+			<ContactNumbers>
+				<ContactNumber PhoneNumber="+27 21 424 3353"
+					PhoneUseType="3" PhoneTechType="1" />
+				<ContactNumber PhoneNumber="+27 21 424 3355"
+					PhoneUseType="3" PhoneTechType="3" />
+				<ContactNumber PhoneNumber="+27 84 804 9902"
+					PhoneUseType="5" PhoneTechType="5" />
+			</ContactNumbers>
+			<RateRange CurrencyCode="ZAR" RateTimeUnit="Day" FixedRate="2600.0" />
+		</Property>
+		<Property BrandName="Sunset Point CC" HotelCodeContext="RZ"
+			HotelName="Panoramic Views" HotelCityCode="CPT" HotelCode="161"
+			BrandCode="2415" ChainCode="5" MaxGroupRoomQuantity="0">
+			<Position AltitudeUnitOfMeasureCode="MTR" Altitude="0.0"
+				Longitude="18.3838491449358" Latitude="-33.9559737506553" />
+			<Address UseType="3">
+				<StreetNmbr>P.O.Box 32452
+					Camps Bay
+					Cape Town</StreetNmbr>
+				<PostalCode>8040</PostalCode>
+			</Address>
+			<ContactNumbers>
+				<ContactNumber PhoneNumber="+27 21 424 3353"
+					PhoneUseType="3" PhoneTechType="1" />
+				<ContactNumber PhoneNumber="+27 21 424 3355"
+					PhoneUseType="3" PhoneTechType="3" />
+				<ContactNumber PhoneNumber="+27 84 804 9902"
+					PhoneUseType="5" PhoneTechType="5" />
+			</ContactNumbers>
+			<RateRange CurrencyCode="ZAR" RateTimeUnit="Day" FixedRate="1350.0" />
+		</Property>
+		<Property BrandName="Seasonsfind 37 CC" HotelCodeContext="RZ"
+			HotelName="Seasonsfind - The Bay" HotelCityCode="CPT" HotelCode="162"
+			BrandCode="3673" ChainCode="5" MaxGroupRoomQuantity="0">
+			<Position AltitudeUnitOfMeasureCode="MTR" Altitude="0.0"
+				Longitude="18.3792709187422" Latitude="-33.9488006767632" />
+			<Address UseType="3">
+				<StreetNmbr>P.O.Box 32452
+					Camps Bay
+					Cape Town</StreetNmbr>
+				<PostalCode>8040</PostalCode>
+			</Address>
+			<ContactNumbers>
+				<ContactNumber PhoneNumber="+27 21 424 3353"
+					PhoneUseType="3" PhoneTechType="1" />
+				<ContactNumber PhoneNumber="+27 21 424 3355"
+					PhoneUseType="3" PhoneTechType="3" />
+				<ContactNumber PhoneNumber="+27 84 804 9902"
+					PhoneUseType="5" PhoneTechType="5" />
+			</ContactNumbers>
+			<RateRange CurrencyCode="ZAR" RateTimeUnit="Day" FixedRate="950.0" />
+		</Property>
+		<Property BrandName="Seasonsfind 37 CC" HotelCodeContext="RZ"
+			HotelName="Seasonsfind - The Sunset" HotelCityCode="CPT" HotelCode="163"
+			BrandCode="3673" ChainCode="5" MaxGroupRoomQuantity="0">
+			<Position AltitudeUnitOfMeasureCode="MTR" Altitude="0.0"
+				Longitude="18.3792709187422" Latitude="-33.9488006767632" />
+			<Address UseType="3">
+				<StreetNmbr>P.O.Box 32452
+					Camps Bay
+					Cape Town</StreetNmbr>
+				<PostalCode>8040</PostalCode>
+			</Address>
+			<ContactNumbers>
+				<ContactNumber PhoneNumber="+27 21 424 3353"
+					PhoneUseType="3" PhoneTechType="1" />
+				<ContactNumber PhoneNumber="+27 21 424 3355"
+					PhoneUseType="3" PhoneTechType="3" />
+				<ContactNumber PhoneNumber="+27 84 804 9902"
+					PhoneUseType="5" PhoneTechType="5" />
+			</ContactNumbers>
+			<RateRange CurrencyCode="ZAR" RateTimeUnit="Day" FixedRate="2100.0" />
+		</Property>
+		<Property BrandName="Overkloof (Pty) Ltd" HotelCodeContext="RZ"
+			HotelName="Serendipity" HotelCityCode="CPT" HotelCode="164"
+			BrandCode="2611" ChainCode="5" MaxGroupRoomQuantity="0">
+			<Position AltitudeUnitOfMeasureCode="MTR" Altitude="0.0"
+				Longitude="18.3891623584879" Latitude="-33.9484278893127" />
+			<Address UseType="3">
+				<StreetNmbr>P.O.Box 32452
+					Camps Bay
+					Cape Town</StreetNmbr>
+				<PostalCode>8040</PostalCode>
+			</Address>
+			<ContactNumbers>
+				<ContactNumber PhoneNumber="+27 21 424 3353"
+					PhoneUseType="3" PhoneTechType="1" />
+				<ContactNumber PhoneNumber="+27 21 424 3355"
+					PhoneUseType="3" PhoneTechType="3" />
+				<ContactNumber PhoneNumber="+27 84 804 9902"
+					PhoneUseType="5" PhoneTechType="5" />
+			</ContactNumbers>
+			<RateRange CurrencyCode="ZAR" RateTimeUnit="Day" FixedRate="3500.0" />
+		</Property>
+		<Property BrandName="Tate, Craig" HotelCodeContext="RZ"
+			HotelName="Tidal Rayz" HotelCityCode="CPT" HotelCode="166" BrandCode="4600"
+			ChainCode="5" MaxGroupRoomQuantity="0">
+			<Position AltitudeUnitOfMeasureCode="MTR" Altitude="0.0"
+				Longitude="18.3791806449866" Latitude="-33.959943162294" />
+			<Address UseType="3">
+				<StreetNmbr>P.O.Box 32452
+					Camps Bay
+					Cape Town</StreetNmbr>
+				<PostalCode>8040</PostalCode>
+			</Address>
+			<ContactNumbers>
+				<ContactNumber PhoneNumber="+27 21 424 3353"
+					PhoneUseType="3" PhoneTechType="1" />
+				<ContactNumber PhoneNumber="+27 21 424 3355"
+					PhoneUseType="3" PhoneTechType="3" />
+				<ContactNumber PhoneNumber="+27 84 804 9902"
+					PhoneUseType="5" PhoneTechType="5" />
+			</ContactNumbers>
+			<RateRange CurrencyCode="ZAR" RateTimeUnit="Day" FixedRate="3600.0" />
+		</Property>
+		<Property BrandName="Henman, Hazel" HotelCodeContext="RZ"
+			HotelName="Valhalla" HotelCityCode="NC085" HotelCode="168" BrandCode="3061"
+			ChainCode="5" MaxGroupRoomQuantity="0">
+			<Position AltitudeUnitOfMeasureCode="MTR" Altitude="0.0"
+				Longitude="18.3780469930564" Latitude="-33.9353776640564" />
+			<Address UseType="3">
+				<StreetNmbr>P.O.Box 32452
+					Camps Bay
+					Cape Town</StreetNmbr>
+				<PostalCode>8040</PostalCode>
+			</Address>
+			<ContactNumbers>
+				<ContactNumber PhoneNumber="+27 21 424 3353"
+					PhoneUseType="3" PhoneTechType="1" />
+				<ContactNumber PhoneNumber="+27 21 424 3355"
+					PhoneUseType="3" PhoneTechType="3" />
+				<ContactNumber PhoneNumber="+27 84 804 9902"
+					PhoneUseType="5" PhoneTechType="5" />
+			</ContactNumbers>
+			<RateRange CurrencyCode="ZAR" RateTimeUnit="Day" FixedRate="900.0" />
+		</Property>
+		<Property BrandName="Combrink, Dr" HotelCodeContext="RZ"
+			HotelName="Villa Combrink" HotelCityCode="CPT" HotelCode="169"
+			BrandCode="7038" ChainCode="5" MaxGroupRoomQuantity="0">
+			<Position AltitudeUnitOfMeasureCode="MTR" Altitude="0.0"
+				Longitude="18.3818006515503" Latitude="-33.9644604982577" />
+			<Address UseType="3">
+				<StreetNmbr>P.O.Box 32452
+					Camps Bay
+					Cape Town</StreetNmbr>
+				<PostalCode>8040</PostalCode>
+			</Address>
+			<ContactNumbers>
+				<ContactNumber PhoneNumber="+27 21 424 3353"
+					PhoneUseType="3" PhoneTechType="1" />
+				<ContactNumber PhoneNumber="+27 21 424 3355"
+					PhoneUseType="3" PhoneTechType="3" />
+				<ContactNumber PhoneNumber="+27 84 804 9902"
+					PhoneUseType="5" PhoneTechType="5" />
+			</ContactNumbers>
+			<RateRange CurrencyCode="ZAR" RateTimeUnit="Day" FixedRate="1850.0" />
+		</Property>
+		<Property BrandName="Maratos, Sue" HotelCodeContext="RZ"
+			HotelName="White Cliffs" HotelCityCode="NC085" HotelCode="170"
+			BrandCode="2193" ChainCode="5" MaxGroupRoomQuantity="0">
+			<Position AltitudeUnitOfMeasureCode="MTR" Altitude="0.0"
+				Longitude="18.3780670166016" Latitude="-33.935954379636" />
+			<Address UseType="3">
+				<StreetNmbr>P.O.Box 32452
+					Camps Bay
+					Cape Town</StreetNmbr>
+				<PostalCode>8040</PostalCode>
+			</Address>
+			<ContactNumbers>
+				<ContactNumber PhoneNumber="+27 21 424 3353"
+					PhoneUseType="3" PhoneTechType="1" />
+				<ContactNumber PhoneNumber="+27 21 424 3355"
+					PhoneUseType="3" PhoneTechType="3" />
+				<ContactNumber PhoneNumber="+27 84 804 9902"
+					PhoneUseType="5" PhoneTechType="5" />
+			</ContactNumbers>
+			<RateRange CurrencyCode="ZAR" RateTimeUnit="Day" FixedRate="1850.0" />
+		</Property>
+		<Property BrandName="Zanone Knitwear (Pty) Ltd"
+			HotelCodeContext="RZ" HotelName="Alba" HotelCityCode="NC085"
+			HotelCode="174" BrandCode="7629" ChainCode="5" MaxGroupRoomQuantity="0">
+			<Position AltitudeUnitOfMeasureCode="MTR" Altitude="0.0"
+				Longitude="18.3779060840607" Latitude="-33.9363727401273" />
+			<Address UseType="3">
+				<StreetNmbr>P.O.Box 32452
+					Camps Bay
+					Cape Town</StreetNmbr>
+				<PostalCode>8040</PostalCode>
+			</Address>
+			<ContactNumbers>
+				<ContactNumber PhoneNumber="+27 21 424 3353"
+					PhoneUseType="3" PhoneTechType="1" />
+				<ContactNumber PhoneNumber="+27 21 424 3355"
+					PhoneUseType="3" PhoneTechType="3" />
+				<ContactNumber PhoneNumber="+27 84 804 9902"
+					PhoneUseType="5" PhoneTechType="5" />
+			</ContactNumbers>
+			<RateRange CurrencyCode="ZAR" RateTimeUnit="Day" FixedRate="1350.0" />
+		</Property>
+		<Property BrandName="Van Huysteen" HotelCodeContext="RZ"
+			HotelName="62 on Fourth" HotelCityCode="NC085" HotelCode="175"
+			BrandCode="7258" ChainCode="5" MaxGroupRoomQuantity="0">
+			<Position AltitudeUnitOfMeasureCode="MTR" Altitude="0.0"
+				Longitude="18.3780670166016" Latitude="-33.935954379636" />
+			<Address UseType="3">
+				<StreetNmbr>P.O.Box 32452
+					Camps Bay
+					Cape Town</StreetNmbr>
+				<PostalCode>8040</PostalCode>
+			</Address>
+			<ContactNumbers>
+				<ContactNumber PhoneNumber="+27 21 424 3353"
+					PhoneUseType="3" PhoneTechType="1" />
+				<ContactNumber PhoneNumber="+27 21 424 3355"
+					PhoneUseType="3" PhoneTechType="3" />
+				<ContactNumber PhoneNumber="+27 84 804 9902"
+					PhoneUseType="5" PhoneTechType="5" />
+			</ContactNumbers>
+			<RateRange CurrencyCode="ZAR" RateTimeUnit="Day" FixedRate="3500.0" />
+		</Property>
+		<Property BrandName="Montocchio, Vincent" HotelCodeContext="RZ"
+			HotelName="Villa Vista" HotelCityCode="" HotelCode="176" BrandCode="7834"
+			ChainCode="7832" MaxGroupRoomQuantity="0">
+			<Position AltitudeUnitOfMeasureCode="MTR" Altitude="null"
+				Longitude="57.803385257721" Latitude="-20.2346973544229" />
+			<Address UseType="3" />
+			<RateRange CurrencyCode="EUR" RateTimeUnit="Day" />
+		</Property>
+		<Property BrandName="Leisure Hotels" HotelCodeContext="RZ"
+			HotelName="Fountains A" HotelCode="177" BrandCode="7854" ChainCode="5"
+			MaxGroupRoomQuantity="0">
+			<Position AltitudeUnitOfMeasureCode="MTR" Altitude="null"
+				Longitude="18.4247267246246" Latitude="-33.9198058744007" />
+			<Address UseType="3">
+				<StreetNmbr>P.O.Box 32452
+					Camps Bay
+					Cape Town</StreetNmbr>
+				<PostalCode>8040</PostalCode>
+			</Address>
+			<ContactNumbers>
+				<ContactNumber PhoneNumber="+27 21 424 3353"
+					PhoneUseType="3" PhoneTechType="1" />
+				<ContactNumber PhoneNumber="+27 21 424 3355"
+					PhoneUseType="3" PhoneTechType="3" />
+				<ContactNumber PhoneNumber="+27 84 804 9902"
+					PhoneUseType="5" PhoneTechType="5" />
+			</ContactNumbers>
+			<RateRange CurrencyCode="ZAR" RateTimeUnit="Day" FixedRate="900.0" />
+		</Property>
+		<Property BrandName="Leisure Hotels" HotelCodeContext="RZ"
+			HotelName="Fountains B" HotelCode="178" BrandCode="7854" ChainCode="5"
+			MaxGroupRoomQuantity="0">
+			<Position AltitudeUnitOfMeasureCode="MTR" Altitude="null"
+				Longitude="18.4247589111328" Latitude="-33.9197880684055" />
+			<Address UseType="3">
+				<StreetNmbr>P.O.Box 32452
+					Camps Bay
+					Cape Town</StreetNmbr>
+				<PostalCode>8040</PostalCode>
+			</Address>
+			<ContactNumbers>
+				<ContactNumber PhoneNumber="+27 21 424 3353"
+					PhoneUseType="3" PhoneTechType="1" />
+				<ContactNumber PhoneNumber="+27 21 424 3355"
+					PhoneUseType="3" PhoneTechType="3" />
+				<ContactNumber PhoneNumber="+27 84 804 9902"
+					PhoneUseType="5" PhoneTechType="5" />
+			</ContactNumbers>
+			<RateRange CurrencyCode="ZAR" RateTimeUnit="Day" FixedRate="900.0" />
+		</Property>
+		<Property BrandName="Leisure Hotels" HotelCodeContext="RZ"
+			HotelName="Fountains C" HotelCode="179" BrandCode="7854" ChainCode="5"
+			MaxGroupRoomQuantity="0">
+			<Position AltitudeUnitOfMeasureCode="MTR" Altitude="null"
+				Longitude="18.4247589111328" Latitude="-33.9197880684055" />
+			<Address UseType="3">
+				<StreetNmbr>P.O.Box 32452
+					Camps Bay
+					Cape Town</StreetNmbr>
+				<PostalCode>8040</PostalCode>
+			</Address>
+			<ContactNumbers>
+				<ContactNumber PhoneNumber="+27 21 424 3353"
+					PhoneUseType="3" PhoneTechType="1" />
+				<ContactNumber PhoneNumber="+27 21 424 3355"
+					PhoneUseType="3" PhoneTechType="3" />
+				<ContactNumber PhoneNumber="+27 84 804 9902"
+					PhoneUseType="5" PhoneTechType="5" />
+			</ContactNumbers>
+			<RateRange CurrencyCode="ZAR" RateTimeUnit="Day" FixedRate="900.0" />
+		</Property>
+		<Property BrandName="Leisure Hotels" HotelCodeContext="RZ"
+			HotelName="Fountains D" HotelCode="180" BrandCode="7854" ChainCode="5"
+			MaxGroupRoomQuantity="0">
+			<Position AltitudeUnitOfMeasureCode="MTR" Altitude="null"
+				Longitude="18.4246301651001" Latitude="-33.9197168443874" />
+			<Address UseType="3">
+				<StreetNmbr>P.O.Box 32452
+					Camps Bay
+					Cape Town</StreetNmbr>
+				<PostalCode>8040</PostalCode>
+			</Address>
+			<ContactNumbers>
+				<ContactNumber PhoneNumber="+27 21 424 3353"
+					PhoneUseType="3" PhoneTechType="1" />
+				<ContactNumber PhoneNumber="+27 21 424 3355"
+					PhoneUseType="3" PhoneTechType="3" />
+				<ContactNumber PhoneNumber="+27 84 804 9902"
+					PhoneUseType="5" PhoneTechType="5" />
+			</ContactNumbers>
+			<RateRange CurrencyCode="ZAR" RateTimeUnit="Day" FixedRate="900.0" />
+		</Property>
+		<Property BrandName="Leisure Hotels" HotelCodeContext="RZ"
+			HotelName="Fountains E" HotelCode="181" BrandCode="7854" ChainCode="5"
+			MaxGroupRoomQuantity="0">
+			<Position AltitudeUnitOfMeasureCode="MTR" Altitude="null"
+				Longitude="18.4248018264771" Latitude="-33.9197168443874" />
+			<Address UseType="3">
+				<StreetNmbr>P.O.Box 32452
+					Camps Bay
+					Cape Town</StreetNmbr>
+				<PostalCode>8040</PostalCode>
+			</Address>
+			<ContactNumbers>
+				<ContactNumber PhoneNumber="+27 21 424 3353"
+					PhoneUseType="3" PhoneTechType="1" />
+				<ContactNumber PhoneNumber="+27 21 424 3355"
+					PhoneUseType="3" PhoneTechType="3" />
+				<ContactNumber PhoneNumber="+27 84 804 9902"
+					PhoneUseType="5" PhoneTechType="5" />
+			</ContactNumbers>
+			<RateRange CurrencyCode="ZAR" RateTimeUnit="Day" FixedRate="900.0" />
+		</Property>
+		<Property BrandName="Leisure Hotels" HotelCodeContext="RZ"
+			HotelName="Fountains F" HotelCode="182" BrandCode="7854" ChainCode="5"
+			MaxGroupRoomQuantity="0">
+			<Position AltitudeUnitOfMeasureCode="MTR" Altitude="null"
+				Longitude="18.4246730804443" Latitude="-33.9197524564039" />
+			<Address UseType="3">
+				<StreetNmbr>P.O.Box 32452
+					Camps Bay
+					Cape Town</StreetNmbr>
+				<PostalCode>8040</PostalCode>
+			</Address>
+			<ContactNumbers>
+				<ContactNumber PhoneNumber="+27 21 424 3353"
+					PhoneUseType="3" PhoneTechType="1" />
+				<ContactNumber PhoneNumber="+27 21 424 3355"
+					PhoneUseType="3" PhoneTechType="3" />
+				<ContactNumber PhoneNumber="+27 84 804 9902"
+					PhoneUseType="5" PhoneTechType="5" />
+			</ContactNumbers>
+			<RateRange CurrencyCode="ZAR" RateTimeUnit="Day" FixedRate="1400.0" />
+		</Property>
+		<Property BrandName="Leisure Hotels" HotelCodeContext="RZ"
+			HotelName="Fountains G" HotelCode="183" BrandCode="7854" ChainCode="5"
+			MaxGroupRoomQuantity="0">
+			<Position AltitudeUnitOfMeasureCode="MTR" Altitude="null"
+				Longitude="18.4246730804443" Latitude="-33.919681232356" />
+			<Address UseType="3">
+				<StreetNmbr>P.O.Box 32452
+					Camps Bay
+					Cape Town</StreetNmbr>
+				<PostalCode>8040</PostalCode>
+			</Address>
+			<ContactNumbers>
+				<ContactNumber PhoneNumber="+27 21 424 3353"
+					PhoneUseType="3" PhoneTechType="1" />
+				<ContactNumber PhoneNumber="+27 21 424 3355"
+					PhoneUseType="3" PhoneTechType="3" />
+				<ContactNumber PhoneNumber="+27 84 804 9902"
+					PhoneUseType="5" PhoneTechType="5" />
+			</ContactNumbers>
+			<RateRange CurrencyCode="ZAR" RateTimeUnit="Day" FixedRate="900.0" />
+		</Property>
+		<Property BrandName="Leisure Hotels" HotelCodeContext="RZ"
+			HotelName="Fountains H" HotelCode="184" BrandCode="7854" ChainCode="5"
+			MaxGroupRoomQuantity="0">
+			<Position AltitudeUnitOfMeasureCode="MTR" Altitude="null"
+				Longitude="18.4246730804443" Latitude="-33.9197880684055" />
+			<Address UseType="3">
+				<StreetNmbr>P.O.Box 32452
+					Camps Bay
+					Cape Town</StreetNmbr>
+				<PostalCode>8040</PostalCode>
+			</Address>
+			<ContactNumbers>
+				<ContactNumber PhoneNumber="+27 21 424 3353"
+					PhoneUseType="3" PhoneTechType="1" />
+				<ContactNumber PhoneNumber="+27 21 424 3355"
+					PhoneUseType="3" PhoneTechType="3" />
+				<ContactNumber PhoneNumber="+27 84 804 9902"
+					PhoneUseType="5" PhoneTechType="5" />
+			</ContactNumbers>
+			<RateRange CurrencyCode="ZAR" RateTimeUnit="Day" FixedRate="900.0" />
+		</Property>
+		<Property BrandName="Leisure Hotels" HotelCodeContext="RZ"
+			HotelName="Fountains I" HotelCode="185" BrandCode="7854" ChainCode="5"
+			MaxGroupRoomQuantity="0">
+			<Position AltitudeUnitOfMeasureCode="MTR" Altitude="null"
+				Longitude="18.4247159957886" Latitude="-33.9199661281903" />
+			<Address UseType="3">
+				<StreetNmbr>P.O.Box 32452
+					Camps Bay
+					Cape Town</StreetNmbr>
+				<PostalCode>8040</PostalCode>
+			</Address>
+			<ContactNumbers>
+				<ContactNumber PhoneNumber="+27 21 424 3353"
+					PhoneUseType="3" PhoneTechType="1" />
+				<ContactNumber PhoneNumber="+27 21 424 3355"
+					PhoneUseType="3" PhoneTechType="3" />
+				<ContactNumber PhoneNumber="+27 84 804 9902"
+					PhoneUseType="5" PhoneTechType="5" />
+			</ContactNumbers>
+			<RateRange CurrencyCode="ZAR" RateTimeUnit="Day" FixedRate="900.0" />
+		</Property>
+		<Property BrandName="Leisure Hotels" HotelCodeContext="RZ"
+			HotelName="Fountains J" HotelCode="186" BrandCode="7854" ChainCode="5"
+			MaxGroupRoomQuantity="0">
+			<Position AltitudeUnitOfMeasureCode="MTR" Altitude="null"
+				Longitude="18.4247159957886" Latitude="-33.9196456203097" />
+			<Address UseType="3">
+				<StreetNmbr>P.O.Box 32452
+					Camps Bay
+					Cape Town</StreetNmbr>
+				<PostalCode>8040</PostalCode>
+			</Address>
+			<ContactNumbers>
+				<ContactNumber PhoneNumber="+27 21 424 3353"
+					PhoneUseType="3" PhoneTechType="1" />
+				<ContactNumber PhoneNumber="+27 21 424 3355"
+					PhoneUseType="3" PhoneTechType="3" />
+				<ContactNumber PhoneNumber="+27 84 804 9902"
+					PhoneUseType="5" PhoneTechType="5" />
+			</ContactNumbers>
+			<RateRange CurrencyCode="ZAR" RateTimeUnit="Day" FixedRate="900.0" />
+		</Property>
+		<Property HotelCodeContext="RZ" HotelName="Tranquility"
+			HotelCode="187" MaxGroupRoomQuantity="0">
+			<Position AltitudeUnitOfMeasureCode="MTR" Altitude="null"
+				Longitude="18.41722" Latitude="-33.92889" />
+		</Property>
+		<Property BrandName="Silva, Maria" HotelCodeContext="RZ"
+			HotelName="Villa Silva" HotelCityCode="CPT" HotelCode="191"
+			BrandCode="7910" ChainCode="5" MaxGroupRoomQuantity="0">
+			<Position AltitudeUnitOfMeasureCode="MTR" Altitude="null"
+				Longitude="18.41722" Latitude="-33.92889" />
+			<Address UseType="3">
+				<StreetNmbr>P.O.Box 32452
+					Camps Bay
+					Cape Town</StreetNmbr>
+				<PostalCode>8040</PostalCode>
+			</Address>
+			<ContactNumbers>
+				<ContactNumber PhoneNumber="+27 21 424 3353"
+					PhoneUseType="3" PhoneTechType="1" />
+				<ContactNumber PhoneNumber="+27 21 424 3355"
+					PhoneUseType="3" PhoneTechType="3" />
+				<ContactNumber PhoneNumber="+27 84 804 9902"
+					PhoneUseType="5" PhoneTechType="5" />
+			</ContactNumbers>
+			<RateRange CurrencyCode="ZAR" RateTimeUnit="Day" />
+		</Property>
+		<Property BrandName="Seargeant, Tom" HotelCodeContext="RZ"
+			HotelName="Hove Villa" HotelCityCode="CPT" HotelCode="192" BrandCode="7911"
+			ChainCode="5" MaxGroupRoomQuantity="0">
+			<Position AltitudeUnitOfMeasureCode="MTR" Altitude="null"
+				Longitude="18.41722" Latitude="-33.92889" />
+			<Address UseType="3">
+				<StreetNmbr>P.O.Box 32452
+					Camps Bay
+					Cape Town</StreetNmbr>
+				<PostalCode>8040</PostalCode>
+			</Address>
+			<ContactNumbers>
+				<ContactNumber PhoneNumber="+27 21 424 3353"
+					PhoneUseType="3" PhoneTechType="1" />
+				<ContactNumber PhoneNumber="+27 21 424 3355"
+					PhoneUseType="3" PhoneTechType="3" />
+				<ContactNumber PhoneNumber="+27 84 804 9902"
+					PhoneUseType="5" PhoneTechType="5" />
+			</ContactNumbers>
+			<RateRange CurrencyCode="ZAR" RateTimeUnit="Day" />
+		</Property>
+		<Property BrandName="Longden, Leigh" HotelCodeContext="RZ"
+			HotelName="Africabana Guesthouse" HotelCityCode="CPT" HotelCode="193"
+			BrandCode="6450" ChainCode="5" MaxGroupRoomQuantity="0">
+			<Position AltitudeUnitOfMeasureCode="MTR" Altitude="null"
+				Longitude="18.41722" Latitude="-33.92889" />
+			<Address UseType="3">
+				<StreetNmbr>P.O.Box 32452
+					Camps Bay
+					Cape Town</StreetNmbr>
+				<PostalCode>8040</PostalCode>
+			</Address>
+			<ContactNumbers>
+				<ContactNumber PhoneNumber="+27 21 424 3353"
+					PhoneUseType="3" PhoneTechType="1" />
+				<ContactNumber PhoneNumber="+27 21 424 3355"
+					PhoneUseType="3" PhoneTechType="3" />
+				<ContactNumber PhoneNumber="+27 84 804 9902"
+					PhoneUseType="5" PhoneTechType="5" />
+			</ContactNumbers>
+			<RateRange CurrencyCode="ZAR" RateTimeUnit="Day" />
+		</Property>
+		<Property BrandName="Simonis, Madeleine" HotelCodeContext="RZ"
+			HotelName="Bond 008" HotelCityCode="CPT" HotelCode="194" BrandCode="7912"
+			ChainCode="5" MaxGroupRoomQuantity="0">
+			<Position AltitudeUnitOfMeasureCode="MTR" Altitude="null"
+				Longitude="18.41722" Latitude="-33.92889" />
+			<Address UseType="3">
+				<StreetNmbr>P.O.Box 32452
+					Camps Bay
+					Cape Town</StreetNmbr>
+				<PostalCode>8040</PostalCode>
+			</Address>
+			<ContactNumbers>
+				<ContactNumber PhoneNumber="+27 21 424 3353"
+					PhoneUseType="3" PhoneTechType="1" />
+				<ContactNumber PhoneNumber="+27 21 424 3355"
+					PhoneUseType="3" PhoneTechType="3" />
+				<ContactNumber PhoneNumber="+27 84 804 9902"
+					PhoneUseType="5" PhoneTechType="5" />
+			</ContactNumbers>
+			<RateRange CurrencyCode="ZAR" RateTimeUnit="Day" />
+		</Property>
+		<Property BrandName="Accommdation Cape Town"
+			HotelCodeContext="RZ" HotelName="A19 Soho On Strand" HotelCode="198"
+			BrandCode="7905" ChainCode="7905" MaxGroupRoomQuantity="0">
+			<Position AltitudeUnitOfMeasureCode="MTR" Altitude="null"
+				Longitude="18.4186327457428" Latitude="-33.9176691284045" />
+			<Address UseType="3">
+				<StreetNmbr>203 Neptune Isle, Milnerton, Cape Town</StreetNmbr>
+				<CityName>Milnerton</CityName>
+				<PostalCode></PostalCode>
+				<StateProv StateCode="ZAWC">Western Cape</StateProv>
+				<CountryName Code="ZA">South Africa</CountryName>
+			</Address>
+			<ContactNumbers>
+				<ContactNumber PhoneNumber="0824628787" PhoneUseType="3"
+					PhoneTechType="1" />
+				<ContactNumber PhoneNumber="0824628787" PhoneUseType="5"
+					PhoneTechType="5" />
+			</ContactNumbers>
+			<RateRange CurrencyCode="ZAR" RateTimeUnit="Day" FixedRate="850.0" />
+		</Property>
+		<Property BrandName="Accommdation Cape Town"
+			HotelCodeContext="RZ" HotelName="A18 Soho On Strand" HotelCode="199"
+			BrandCode="7905" ChainCode="7905" MaxGroupRoomQuantity="0">
+			<Position AltitudeUnitOfMeasureCode="MTR" Altitude="null"
+				Longitude="18.4186381101608" Latitude="-33.9176691284045" />
+			<Address UseType="3">
+				<StreetNmbr>203 Neptune Isle, Milnerton, Cape Town</StreetNmbr>
+				<CityName>Milnerton</CityName>
+				<PostalCode></PostalCode>
+				<StateProv StateCode="ZAWC">Western Cape</StateProv>
+				<CountryName Code="ZA">South Africa</CountryName>
+			</Address>
+			<ContactNumbers>
+				<ContactNumber PhoneNumber="0824628787" PhoneUseType="3"
+					PhoneTechType="1" />
+				<ContactNumber PhoneNumber="0824628787" PhoneUseType="5"
+					PhoneTechType="5" />
+			</ContactNumbers>
+			<RateRange CurrencyCode="ZAR" RateTimeUnit="Day" FixedRate="850.0" />
+		</Property>
+		<Property BrandName="Accommdation Cape Town"
+			HotelCodeContext="RZ" HotelName="A10 Soho On Strand" HotelCode="201"
+			BrandCode="7905" ChainCode="7905" MaxGroupRoomQuantity="0">
+			<Position AltitudeUnitOfMeasureCode="MTR" Altitude="null"
+				Longitude="18.4183859825134" Latitude="-33.9180519660024" />
+			<Address UseType="3">
+				<StreetNmbr>203 Neptune Isle, Milnerton, Cape Town</StreetNmbr>
+				<CityName>Milnerton</CityName>
+				<PostalCode></PostalCode>
+				<StateProv StateCode="ZAWC">Western Cape</StateProv>
+				<CountryName Code="ZA">South Africa</CountryName>
+			</Address>
+			<ContactNumbers>
+				<ContactNumber PhoneNumber="0824628787" PhoneUseType="3"
+					PhoneTechType="1" />
+				<ContactNumber PhoneNumber="0824628787" PhoneUseType="5"
+					PhoneTechType="5" />
+			</ContactNumbers>
+			<RateRange CurrencyCode="ZAR" RateTimeUnit="Day" FixedRate="850.0" />
+		</Property>
+		<Property BrandName="Accommdation Cape Town"
+			HotelCodeContext="RZ" HotelName="The Rockwell 513" HotelCode="202"
+			BrandCode="7905" ChainCode="7905" MaxGroupRoomQuantity="0">
+			<Position AltitudeUnitOfMeasureCode="MTR" Altitude="null"
+				Longitude="18.418847322464" Latitude="-33.9150426380406" />
+			<Address UseType="3">
+				<StreetNmbr>203 Neptune Isle, Milnerton, Cape Town</StreetNmbr>
+				<CityName>Milnerton</CityName>
+				<PostalCode></PostalCode>
+				<StateProv StateCode="ZAWC">Western Cape</StateProv>
+				<CountryName Code="ZA">South Africa</CountryName>
+			</Address>
+			<ContactNumbers>
+				<ContactNumber PhoneNumber="0824628787" PhoneUseType="3"
+					PhoneTechType="1" />
+				<ContactNumber PhoneNumber="0824628787" PhoneUseType="5"
+					PhoneTechType="5" />
+			</ContactNumbers>
+			<RateRange CurrencyCode="ZAR" RateTimeUnit="Day" FixedRate="1000.0" />
+		</Property>
+		<Property BrandName="Accommdation Cape Town"
+			HotelCodeContext="RZ" HotelName="The Rockwell 319" HotelCode="203"
+			BrandCode="7905" ChainCode="7905" MaxGroupRoomQuantity="0">
+			<Position AltitudeUnitOfMeasureCode="MTR" Altitude="null"
+				Longitude="18.4191584587097" Latitude="-33.9149714100558" />
+			<Address UseType="3">
+				<StreetNmbr>203 Neptune Isle, Milnerton, Cape Town</StreetNmbr>
+				<CityName>Milnerton</CityName>
+				<PostalCode></PostalCode>
+				<StateProv StateCode="ZAWC">Western Cape</StateProv>
+				<CountryName Code="ZA">South Africa</CountryName>
+			</Address>
+			<ContactNumbers>
+				<ContactNumber PhoneNumber="0824628787" PhoneUseType="3"
+					PhoneTechType="1" />
+				<ContactNumber PhoneNumber="0824628787" PhoneUseType="5"
+					PhoneTechType="5" />
+			</ContactNumbers>
+			<RateRange CurrencyCode="ZAR" RateTimeUnit="Day" FixedRate="1000.0" />
+		</Property>
+		<Property BrandName="Accommdation Cape Town"
+			HotelCodeContext="RZ" HotelName="Sunset Boulevard 10" HotelCode="204"
+			BrandCode="7905" ChainCode="7905" MaxGroupRoomQuantity="0">
+			<Position AltitudeUnitOfMeasureCode="MTR" Altitude="null"
+				Longitude="18.4737038612366" Latitude="-33.8167181381726" />
+			<Address UseType="3">
+				<StreetNmbr>203 Neptune Isle, Milnerton, Cape Town</StreetNmbr>
+				<CityName>Milnerton</CityName>
+				<PostalCode></PostalCode>
+				<StateProv StateCode="ZAWC">Western Cape</StateProv>
+				<CountryName Code="ZA">South Africa</CountryName>
+			</Address>
+			<ContactNumbers>
+				<ContactNumber PhoneNumber="0824628787" PhoneUseType="3"
+					PhoneTechType="1" />
+				<ContactNumber PhoneNumber="0824628787" PhoneUseType="5"
+					PhoneTechType="5" />
+			</ContactNumbers>
+			<RateRange CurrencyCode="ZAR" RateTimeUnit="Day" FixedRate="750.0" />
+		</Property>
+		<Property BrandName="Accommdation Cape Town"
+			HotelCodeContext="RZ" HotelName="Neptune Isle 301" HotelCityCode="CPT"
+			HotelCode="205" BrandCode="7905" ChainCode="7905"
+			MaxGroupRoomQuantity="0">
+			<Position AltitudeUnitOfMeasureCode="MTR" Altitude="null"
+				Longitude="18.4819865226746" Latitude="-33.8934044004908" />
+			<Address UseType="3">
+				<StreetNmbr>203 Neptune Isle, Milnerton, Cape Town</StreetNmbr>
+				<CityName>Milnerton</CityName>
+				<PostalCode></PostalCode>
+				<StateProv StateCode="ZAWC">Western Cape</StateProv>
+				<CountryName Code="ZA">South Africa</CountryName>
+			</Address>
+			<ContactNumbers>
+				<ContactNumber PhoneNumber="0824628787" PhoneUseType="3"
+					PhoneTechType="1" />
+				<ContactNumber PhoneNumber="0824628787" PhoneUseType="5"
+					PhoneTechType="5" />
+			</ContactNumbers>
+			<RateRange CurrencyCode="ZAR" RateTimeUnit="Day" FixedRate="1200.0" />
+		</Property>
+		<Property BrandName="Accommdation Cape Town"
+			HotelCodeContext="RZ" HotelName="A16 Soho On Strand" HotelCode="207"
+			BrandCode="7905" ChainCode="7905" MaxGroupRoomQuantity="0">
+			<Position AltitudeUnitOfMeasureCode="MTR" Altitude="null"
+				Longitude="18.4186863899231" Latitude="-33.9177225477075" />
+			<Address UseType="3">
+				<StreetNmbr>203 Neptune Isle, Milnerton, Cape Town</StreetNmbr>
+				<CityName>Milnerton</CityName>
+				<PostalCode></PostalCode>
+				<StateProv StateCode="ZAWC">Western Cape</StateProv>
+				<CountryName Code="ZA">South Africa</CountryName>
+			</Address>
+			<ContactNumbers>
+				<ContactNumber PhoneNumber="0824628787" PhoneUseType="3"
+					PhoneTechType="1" />
+				<ContactNumber PhoneNumber="0824628787" PhoneUseType="5"
+					PhoneTechType="5" />
+			</ContactNumbers>
+			<RateRange CurrencyCode="ZAR" RateTimeUnit="Day" FixedRate="1250.0" />
+		</Property>
+		<Property BrandName="Cape Luxury Rentals" HotelCodeContext="RZ"
+			HotelName="New Cumberland" HotelCityCode="CPT" HotelCode="209"
+			BrandCode="8007" ChainCode="8007" MaxGroupRoomQuantity="0">
+			<Position AltitudeUnitOfMeasureCode="MTR" Altitude="0.0"
+				Longitude="18.3991813659668" Latitude="-33.9042598242738" />
+			<Address UseType="3">
+				<PostalCode></PostalCode>
+			</Address>
+			<ContactNumbers>
+				<ContactNumber PhoneNumber="021 433 0142"
+					PhoneUseType="3" PhoneTechType="1" />
+			</ContactNumbers>
+			<RateRange CurrencyCode="ZAR" RateTimeUnit="Day" />
+		</Property>
+		<Property BrandName="Cape Luxury Rentals" HotelCodeContext="RZ"
+			HotelName="19 Rhodora" HotelCityCode="CPT" HotelCode="210" BrandCode="8007"
+			ChainCode="8007" MaxGroupRoomQuantity="0">
+			<Position AltitudeUnitOfMeasureCode="MTR" Altitude="0.0"
+				Longitude="18.3994710445404" Latitude="-33.9027950015655" />
+			<Address UseType="3">
+				<PostalCode></PostalCode>
+			</Address>
+			<ContactNumbers>
+				<ContactNumber PhoneNumber="021 433 0142"
+					PhoneUseType="3" PhoneTechType="1" />
+			</ContactNumbers>
+			<RateRange CurrencyCode="ZAR" RateTimeUnit="Day" />
+		</Property>
+		<Property BrandName="Tomes, Brinn" HotelCodeContext="RZ"
+			HotelName="A20 Soho On Strand - Cape Town Luxury Apartment"
+			HotelCode="213" BrandCode="7901" ChainCode="7905"
+			MaxGroupRoomQuantity="0">
+			<Position AltitudeUnitOfMeasureCode="MTR" Altitude="null"
+				Longitude="18.4185469150543" Latitude="-33.9176068058421" />
+			<Address UseType="3">
+				<StreetNmbr>203 Neptune Isle, Milnerton, Cape Town</StreetNmbr>
+				<CityName>Milnerton</CityName>
+				<PostalCode></PostalCode>
+				<StateProv StateCode="ZAWC">Western Cape</StateProv>
+				<CountryName Code="ZA">South Africa</CountryName>
+			</Address>
+			<ContactNumbers>
+				<ContactNumber PhoneNumber="0824628787" PhoneUseType="3"
+					PhoneTechType="1" />
+				<ContactNumber PhoneNumber="0824628787" PhoneUseType="5"
+					PhoneTechType="5" />
+			</ContactNumbers>
+			<RateRange CurrencyCode="ZAR" RateTimeUnit="Day" FixedRate="1800.0" />
+		</Property>
+		<Property BrandName="Tomes, Brinn" HotelCodeContext="RZ"
+			HotelName="Atico Of Penthouses" HotelCityCode="CPT" HotelCode="214"
+			BrandCode="7901" ChainCode="7905" MaxGroupRoomQuantity="0">
+			<Position AltitudeUnitOfMeasureCode="MTR" Altitude="null"
+				Longitude="18.3932644128799" Latitude="-33.9172907407164" />
+			<Address UseType="3">
+				<StreetNmbr>203 Neptune Isle, Milnerton, Cape Town</StreetNmbr>
+				<CityName>Milnerton</CityName>
+				<PostalCode></PostalCode>
+				<StateProv StateCode="ZAWC">Western Cape</StateProv>
+				<CountryName Code="ZA">South Africa</CountryName>
+			</Address>
+			<ContactNumbers>
+				<ContactNumber PhoneNumber="0824628787" PhoneUseType="3"
+					PhoneTechType="1" />
+				<ContactNumber PhoneNumber="0824628787" PhoneUseType="5"
+					PhoneTechType="5" />
+			</ContactNumbers>
+			<RateRange CurrencyCode="ZAR" RateTimeUnit="Day" FixedRate="1500.0" />
+		</Property>
+		<Property BrandName="Bax de Keating" HotelCodeContext="RZ"
+			HotelName="Villa Bali" HotelCityCode="" HotelCode="218" BrandCode="8138"
+			ChainCode="7832" MaxGroupRoomQuantity="0">
+			<Position AltitudeUnitOfMeasureCode="MTR" Altitude="null"
+				Longitude="57.7597510814667" Latitude="-20.1609665375273" />
+			<Address UseType="3" />
+			<RateRange CurrencyCode="EUR" RateTimeUnit="Day" />
+		</Property>
+		<Property BrandName="Munsie, Andrew" HotelCodeContext="RZ"
+			HotelName="Bakoven Palms" HotelCityCode="CPT" HotelCode="248"
+			BrandCode="8321" ChainCode="5" MaxGroupRoomQuantity="0">
+			<Position AltitudeUnitOfMeasureCode="MTR" Altitude="null"
+				Longitude="18.3752882480621" Latitude="-33.9601713960955" />
+			<Address UseType="3">
+				<StreetNmbr>P.O.Box 32452
+					Camps Bay
+					Cape Town</StreetNmbr>
+				<PostalCode>8040</PostalCode>
+			</Address>
+			<ContactNumbers>
+				<ContactNumber PhoneNumber="+27 21 424 3353"
+					PhoneUseType="3" PhoneTechType="1" />
+				<ContactNumber PhoneNumber="+27 21 424 3355"
+					PhoneUseType="3" PhoneTechType="3" />
+				<ContactNumber PhoneNumber="+27 84 804 9902"
+					PhoneUseType="5" PhoneTechType="5" />
+			</ContactNumbers>
+			<RateRange CurrencyCode="ZAR" RateTimeUnit="Day" FixedRate="2700.0" />
+		</Property>
+		<Property BrandName="Meulemans, Ric" HotelCodeContext="RZ"
+			HotelName="Camelot Villa" HotelCityCode="CPT" HotelCode="249"
+			BrandCode="8226" ChainCode="8225" MaxGroupRoomQuantity="0">
+			<Position AltitudeUnitOfMeasureCode="MTR" Altitude="null"
+				Longitude="18.4063" Latitude="-34.0103" />
+			<Address UseType="3">
+				<PostalCode></PostalCode>
+			</Address>
+			<RateRange CurrencyCode="ZAR" RateTimeUnit="Day" FixedRate="4000.0" />
+		</Property>
+		<Property BrandName="Meulemans, Ric" HotelCodeContext="RZ"
+			HotelName="Lyonesse Villa" HotelCityCode="CPT" HotelCode="250"
+			BrandCode="8226" ChainCode="8225" MaxGroupRoomQuantity="0">
+			<Position AltitudeUnitOfMeasureCode="MTR" Altitude="null"
+				Longitude="18.4070992469788" Latitude="-34.0098921165167" />
+			<Address UseType="3">
+				<PostalCode></PostalCode>
+			</Address>
+			<RateRange CurrencyCode="ZAR" RateTimeUnit="Day" FixedRate="4500.0" />
+		</Property>
+		<Property BrandName="Accommdation Cape Town"
+			HotelCodeContext="RZ" HotelName="Harbours Edge 101" HotelCode="253"
+			BrandCode="7905" ChainCode="7905" MaxGroupRoomQuantity="0">
+			<Position AltitudeUnitOfMeasureCode="MTR" Altitude="null"
+				Longitude="18.4210574626923" Latitude="-33.9148556644535" />
+			<Address UseType="3">
+				<StreetNmbr>203 Neptune Isle, Milnerton, Cape Town</StreetNmbr>
+				<CityName>Milnerton</CityName>
+				<PostalCode></PostalCode>
+				<StateProv StateCode="ZAWC">Western Cape</StateProv>
+				<CountryName Code="ZA">South Africa</CountryName>
+			</Address>
+			<ContactNumbers>
+				<ContactNumber PhoneNumber="0824628787" PhoneUseType="3"
+					PhoneTechType="1" />
+				<ContactNumber PhoneNumber="0824628787" PhoneUseType="5"
+					PhoneTechType="5" />
+			</ContactNumbers>
+			<RateRange CurrencyCode="ZAR" RateTimeUnit="Day" FixedRate="1500.0" />
+		</Property>
+		<Property BrandName="Cape Luxury Rentals" HotelCodeContext="RZ"
+			HotelName="Villa Capri B3" HotelCityCode="CPT" HotelCode="255"
+			BrandCode="8007" ChainCode="8007" MaxGroupRoomQuantity="0">
+			<Position AltitudeUnitOfMeasureCode="MTR" Altitude="null"
+				Longitude="18.4105914831162" Latitude="-33.8997539670747" />
+			<Address UseType="3">
+				<PostalCode></PostalCode>
+			</Address>
+			<ContactNumbers>
+				<ContactNumber PhoneNumber="021 433 0142"
+					PhoneUseType="3" PhoneTechType="1" />
+			</ContactNumbers>
+			<RateRange CurrencyCode="ZAR" RateTimeUnit="Day" />
+		</Property>
+		<Property BrandName="Coetzee, Justin" HotelCodeContext="RZ"
+			HotelName="Whispering Waves" HotelCityCode="CPT" HotelCode="256"
+			BrandCode="8435" ChainCode="5" MaxGroupRoomQuantity="0">
+			<Position AltitudeUnitOfMeasureCode="MTR" Altitude="null"
+				Longitude="18.3740544319153" Latitude="-33.9627431036429" />
+			<Address UseType="3">
+				<StreetNmbr>P.O.Box 32452
+					Camps Bay
+					Cape Town</StreetNmbr>
+				<PostalCode>8040</PostalCode>
+			</Address>
+			<ContactNumbers>
+				<ContactNumber PhoneNumber="+27 21 424 3353"
+					PhoneUseType="3" PhoneTechType="1" />
+				<ContactNumber PhoneNumber="+27 21 424 3355"
+					PhoneUseType="3" PhoneTechType="3" />
+				<ContactNumber PhoneNumber="+27 84 804 9902"
+					PhoneUseType="5" PhoneTechType="5" />
+			</ContactNumbers>
+			<RateRange CurrencyCode="ZAR" RateTimeUnit="Day" FixedRate="2250.0" />
+		</Property>
+		<Property BrandName="Cape Luxury Rentals" HotelCodeContext="RZ"
+			HotelName="Henley Manor" HotelCityCode="CPT" HotelCode="257"
+			BrandCode="8007" ChainCode="8007" MaxGroupRoomQuantity="0">
+			<Position AltitudeUnitOfMeasureCode="MTR" Altitude="null"
+				Longitude="18.4011769294739" Latitude="-33.9014102979927" />
+			<Address UseType="3">
+				<PostalCode></PostalCode>
+			</Address>
+			<ContactNumbers>
+				<ContactNumber PhoneNumber="021 433 0142"
+					PhoneUseType="3" PhoneTechType="1" />
+			</ContactNumbers>
+			<RateRange CurrencyCode="ZAR" RateTimeUnit="Day" />
+		</Property>
+	</Properties>
+	<Criteria>
+		<Criterion>
+			<Position Latitude="-33.95" />
+		</Criterion>
+		<Criterion>
+			<Position Longitude="18.37" />
+		</Criterion>
+		<Criterion>
+			<Radius UnitOfMeasureCode="2" Distance="1" />
+		</Criterion>
+	</Criteria>
+</OTA_HotelSearchRS>

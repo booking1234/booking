@@ -1,0 +1,75 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<xs:schema attributeFormDefault="unqualified" elementFormDefault="qualified" xmlns:xs="http://www.w3.org/2001/XMLSchema">
+  <xs:element name="units">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element minOccurs="1" maxOccurs="unbounded" name="unit">
+          <xs:complexType>
+            <xs:sequence>
+              <xs:element minOccurs="0" name="availability_year">
+                <xs:annotation>
+                  <xs:documentation xml:lang="de">Detailierte Vakanzinformationen je Objekt</xs:documentation>
+                  <xs:documentation xml:lang="en">Detailed Vacancy Information for one object</xs:documentation>
+                </xs:annotation>
+                <xs:complexType>
+                  <xs:sequence>
+                    <xs:element minOccurs="0" maxOccurs="unbounded" name="availability">
+                      <xs:complexType>
+                        <xs:attribute name="year" type="xs:integer" use="required">
+                          <xs:annotation>
+                            <xs:documentation xml:lang="de">Kalenderjahr, relevant für Datenstring mit Vakanzinformationen</xs:documentation>
+                            <xs:documentation xml:lang="en">Calendar year relevant for vacancy data string</xs:documentation>
+                          </xs:annotation>
+                        </xs:attribute>
+                        <xs:attribute name="start" use="optional">
+                          <xs:annotation>
+                            <xs:documentation xml:lang="de">Datenstring mit Vakanzinformationen (1 Wert = 1 Tag)</xs:documentation>
+                            <xs:documentation xml:lang="en">Data string for vacancies (1 Value = 1 Day)</xs:documentation>
+                          </xs:annotation>
+                          <xs:simpleType>
+                            <xs:restriction base="xs:string">
+                              <xs:pattern value="[ABCFHNOTV]{365,366}">
+                                <xs:annotation>
+                                  <xs:documentation xml:lang="de">Wertausprägungen für Datenstring: A - Nicht belegt, B - Nicht belegt, Anreisetag, C - Nicht belegt, ungeteilt (z.B. Weihnachts-Zeitraum), F - Reserviert vom Besitzer (nach Anfrage) Anreisetag, H - Reserviert vom Besitzer (nach Anfrage), N - Gebucht, Anreisetag, O - Gebucht, T  - Belegt vom Besitzer, Anreisetag, V - Belegt vom Besitzer</xs:documentation>
+                                  <xs:documentation xml:lang="en">Values for data string: A - Available; B - Available, Arrival Day; C - Available, indivisible (e.g. Christmas time); F - Reserved by owner, Arrival Day; H - Reserved by owner; N - Booked out, Arrival Day; O - Booked out; T - Occupied by owner, Arrival Day; V - Occupied by owner</xs:documentation>
+                                </xs:annotation>
+                              </xs:pattern>
+                            </xs:restriction>
+                          </xs:simpleType>
+                        </xs:attribute>
+                      </xs:complexType>
+                    </xs:element>
+                  </xs:sequence>
+                </xs:complexType>
+              </xs:element>
+            </xs:sequence>
+            <xs:attribute name="unitownerid" type="xs:string" use="required">
+              <xs:annotation>
+                <xs:documentation xml:lang="DE">Eindeutige Referenz-Anbieternummer, vergeben durch e-domizil</xs:documentation>
+                <xs:documentation xml:lang="EN">Unique owner identifier, defined by e-domizil</xs:documentation>
+              </xs:annotation>
+            </xs:attribute>
+            <xs:attribute name="internalunitid" type="xs:string" use="required">
+              <xs:annotation>
+                <xs:documentation xml:lang="DE">AnbieterObjektNr, vergeben durch Anbieter</xs:documentation>
+                <xs:documentation xml:lang="EN">Unique unit identifier in owner system</xs:documentation>
+              </xs:annotation>
+            </xs:attribute>
+            <xs:attribute name="internalunitid2" type="xs:string" use="optional">
+              <xs:annotation>
+                <xs:documentation xml:lang="DE">AnbieterObjektNr2, vergeben durch Anbieter</xs:documentation>
+                <xs:documentation xml:lang="EN">Further Unique unit identifier in owner system</xs:documentation>
+              </xs:annotation>
+            </xs:attribute>
+            <xs:attribute name="container" type="xs:string" use="required">
+              <xs:annotation>
+                <xs:documentation xml:lang="de">Datenkategorisierung</xs:documentation>
+                <xs:documentation xml:lang="en">Data Category</xs:documentation>
+              </xs:annotation>
+            </xs:attribute>
+          </xs:complexType>
+        </xs:element>
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+</xs:schema>

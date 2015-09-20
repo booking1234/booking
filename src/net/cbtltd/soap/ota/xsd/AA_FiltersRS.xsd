@@ -1,0 +1,66 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!-- edited with XMLSpy v2005 rel. 3 U (http://www.altova.com) by  () -->
+<xs:schema xmlns:xs="http://www.w3.org/2001/XMLSchema" elementFormDefault="qualified" attributeFormDefault="unqualified">
+	<xs:element name="ERes_FiltersRS">
+		<xs:annotation>
+			<xs:documentation>Response for retrieving all of eRes's defined filters</xs:documentation>
+		</xs:annotation>
+		<xs:complexType>
+			<xs:sequence>
+				<xs:element name="FilterFields">
+					<xs:complexType>
+						<xs:sequence>
+							<xs:element name="FilterField" minOccurs="0" maxOccurs="unbounded">
+								<xs:complexType>
+									<xs:sequence>
+										<xs:element name="FilterValues">
+											<xs:complexType>
+												<xs:sequence>
+													<xs:element name="FilterValue" minOccurs="0" maxOccurs="unbounded">
+														<xs:complexType>
+															<xs:attribute name="Name" type="xs:string" use="required"/>
+														</xs:complexType>
+													</xs:element>
+												</xs:sequence>
+											</xs:complexType>
+										</xs:element>
+									</xs:sequence>
+									<xs:attribute name="Name" type="xs:string" use="required"/>
+								</xs:complexType>
+							</xs:element>
+						</xs:sequence>
+					</xs:complexType>
+				</xs:element>
+				<xs:element name="PropertyAreas">
+					<xs:complexType>
+						<xs:sequence>
+							<xs:element name="PropertyArea" minOccurs="0" maxOccurs="unbounded">
+								<xs:complexType>
+									<xs:sequence>
+										<xs:element name="PropertyLocations">
+											<xs:complexType>
+												<xs:sequence>
+													<xs:element name="PropertyLocation" minOccurs="0" maxOccurs="unbounded">
+														<xs:complexType>
+															<xs:attribute name="Name" type="xs:string" use="required"/>
+														</xs:complexType>
+													</xs:element>
+												</xs:sequence>
+											</xs:complexType>
+										</xs:element>
+									</xs:sequence>
+									<xs:attribute name="Name" type="xs:string" use="required"/>
+								</xs:complexType>
+							</xs:element>
+						</xs:sequence>
+					</xs:complexType>
+				</xs:element>
+			</xs:sequence>
+			<xs:attribute name="Version" type="xs:decimal" use="required">
+				<xs:annotation>
+					<xs:documentation xml:lang="en">For all OTA versioned messages, the version of the message is indicated by a decimal value.</xs:documentation>
+				</xs:annotation>
+			</xs:attribute>
+		</xs:complexType>
+	</xs:element>
+</xs:schema>

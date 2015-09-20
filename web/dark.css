@@ -1,0 +1,681 @@
+body {
+	font-family: Helvetica, Arial, sans-serif;
+	margin: 0;
+	padding: 0;
+	text-align: left;
+}
+		
+/*-------------------------- Typography -------------------------- */
+
+/* Headings */
+h2 {font-size: 1.2em}	
+h3 {font-size: 1.1em}	
+
+h2, h3, h4, h5, h6 {
+	font-weight: 400;
+	line-height: 1.1;
+	margin-bottom: .2em;
+}
+
+/* Anchors */
+a {outline: 0;}
+a img {border: 0px; text-decoration: none;}
+a:link, a:visited {
+color:#006699;
+color: #00a3f4;
+font-weight:bold
+}
+a:hover {
+color: #006699;
+}
+
+a:active  {
+color:#111;
+}
+
+/* Paragraphs */
+p {margin-bottom: 1.143em;}
+* p:last-child {margin-bottom: 0;}
+
+strong, b {font-weight: bold;}
+em, i {font-style: italic;}
+
+
+/*-------------------------- Reset the Lists -------------------------- */
+	
+ul {
+	list-style: outside disc;
+	margin: 1em 0 1.5em 1.5em;
+}
+
+ol {
+	list-style: outside decimal;
+	margin: 1em 0 1.5em 1.5em;
+}
+
+dl {margin: 0 0 1.5em 0;}
+dt {font-weight: bold;}
+dd {margin-left: 1.5em;}
+
+
+q {}
+
+/* External CSS - not obfuscated */
+@external .fix, .clear;
+.fix {clear:both}
+
+.clear { /* generic container (i.e. div) for floating buttons */
+    overflow: hidden;
+    width: 100%;
+}
+
+/*---- Powered by Razor Logo ----*/
+.Logo {
+	cursor: pointer;
+	cursor: hand;
+    display: block;
+    margin-left: auto;
+    margin-right: auto;
+}
+
+/*---- Book Widget ----*/
+.BookWidget {
+	background: #202b30;
+	border: 1px solid #4fa9b8;
+	-webkit-border-radius: 10px;
+	-moz-border-radius: 10px;
+	border-radius: 10px;
+	padding: 10px;
+}
+.BookWidget .Button {
+	margin: 2px 10px;
+	padding: 2px 4px;
+	border: 1px solid #77d5f7;    
+	color: #bfeafa;
+	background-color: #2e90bd;
+	font-size: 80%;
+	-webkit-border-radius: 4px;
+	-moz-border-radius: 4px;
+	border-radius: 4px;
+	cursor: pointer;
+	cursor: hand;
+}
+.BookWidget .Field, .BookWidget .gwt-TextBox, .BookWidget .gwt-ListBox {
+	background-color: #bfeafa;
+	padding: 5px;
+	margin-bottom: 4px;
+	border: 1px solid #77d5f7;
+	font-family: Arial, Helvetica, sans-serif;
+	font-size:13px;
+	font-weight: normal;
+	color: #202b30;
+}
+.BookWidget .Label, .BookWidget .gwt-Label, .BookWidget .GKMNC3EBJ {
+	color: #bfeafa;
+	margin-bottom: 5px;
+	padding-top: 4px;
+	padding-bottom: 4px;
+	font-size:14px;
+	font-weight:bold;
+}
+.BookWidget .Logos {
+	background-color: #bfeafa;
+	margin-top: 2px;
+	margin-right: 0;
+	margin-bottom: 2px;
+	margin-left: 2px;
+	padding-top: 10px;
+	padding-right: 12px;
+	padding-bottom: 10px;
+	padding-left: 10px;
+	border: 1px solid #77d5f7;
+}
+.BookWidget .Notes {
+	background-color: #bfeafa;
+	padding: 5px;
+	margin-bottom: 4px;
+	border: 1px solid #77d5f7;
+	font-family: Arial, Helvetica, sans-serif;
+	font-size:13px;
+	font-weight: normal;
+	color: #202b30;
+}
+.BookWidget .Report {
+	font-size: 80%;
+	float: right;
+	margin-right: 10px;
+}
+
+/*---- Calendar Widget ----*/
+.CalendarWidget {
+	background: #202b30;
+	border: 1px solid #4fa9b8;
+	-webkit-border-radius: 10px;
+	-moz-border-radius: 10px;
+	border-radius: 10px;
+	padding: 10px;
+}
+.CalendarWidget .Control {
+	color: #bfeafa; 
+	margin-top: 4px;
+	font-size: 14px;
+	width:130px;
+}
+.CalendarWidget .Field {
+	background-color: #bfeafa;
+	padding: 5px;
+	margin-bottom: 4px;
+	border: 1px solid #77d5f7;
+	font-family: Arial, Helvetica, sans-serif;
+	font-size:13px;
+	font-weight: normal;
+	color: #202b30;
+	width:300px;
+}
+.CalendarWidget .Label {
+	color: #bfeafa;
+	margin-bottom: 5px;
+	padding-top: 4px;
+	padding-bottom: 4px;
+	font-size:14px;
+	font-weight:bold;
+}
+.CalendarWidget .WeekLine {
+	margin-top: 5px;
+	color: #bfeafa;
+	font-weight: bold;
+	border-collapse: collapse;
+	width: 300px;
+	font-size:14px;
+}
+.CalendarWidget .WeekLine tr td {
+	width:30px;
+	text-align:center;
+}
+.CalendarWidget .DayGrid {
+	margin: 2px;
+	border: 1px solid #77d5f7;
+	width: 300px;
+	text-align: center;
+	font-size: 100%;
+	border-collapse: collapse;
+	background: #bfeafa;
+}
+.CalendarWidget .CurrentMonthSelected {
+	background-color: #076d9b;
+	color:#FFF;
+}
+.CalendarWidget .DayNotAvailable {
+	background-color: #076d9b;
+	color:#FFF;
+	border: 1px solid #77d5f7;
+}
+.CalendarWidget .DaySelected {
+	background-color: #444444;
+	color:#ffffff;
+	border: 1px solid #77d5f7;
+}
+.CalendarWidget .DayOther {
+	color: #96ddf7;
+	background-color:#daeef6;
+	border: 1px solid #77d5f7;
+}
+.CalendarWidget .DayPast{
+	color: #96ddf7;
+	background-color:#daeef6;
+	border: 1px solid #77d5f7;
+}
+.CalendarWidget .CurrentMonthOtherDay {
+	color: #66d0f7;
+	border: 1px solid #77d5f7;
+}
+.CalendarWidget .DayGrid tr {
+	height: 40px; 
+	border: 1px solid #77d5f7;
+}
+.CalendarWidget .Arrived {
+	background-color: #55beee;
+	color:#daeef6;
+	border: 1px solid #77d5f7;
+}
+.CalendarWidget .Briefed {
+	background-color: #55beee;
+	color:#daeef6;
+	border: 1px solid #77d5f7;
+}
+.CalendarWidget .Closed {}
+.CalendarWidget .Confirmed {
+	background-color: #55beee;
+	color:#daeef6;
+	border: 1px solid #77d5f7;
+}
+.CalendarWidget .Departed {
+	background-color: #55beee;
+	color:#daeef6;
+	border: 1px solid #77d5f7;
+}
+.CalendarWidget .FullyPaid {
+	background-color: #55beee;
+	color:#daeef6;
+	border: 1px solid #77d5f7;
+}
+.CalendarWidget .PreDeparture {
+	background-color: #55beee;
+	color:#daeef6;
+	border: 1px solid #77d5f7;
+}
+.CalendarWidget .Provisional {
+	background-color: #55beee;
+	color:#daeef6;
+	border: 1px solid #77d5f7;
+}
+.CalendarWidget .Reserved {
+	background-color: #55beee;
+	color:#daeef6;
+	border: 1px solid #77d5f7;
+}
+.CalendarWidget .Button {
+	margin: 2px 10px;
+	padding: 2px 4px;
+	border: 1px solid #77d5f7;    
+	color: #bfeafa;
+	background-color: #2e90bd;
+	font-size: 80%;
+	-webkit-border-radius: 4px;
+	-moz-border-radius: 4px;
+	border-radius: 4px;
+	cursor: pointer;
+	cursor: hand;
+}
+
+/*---- Map Widget ----*/
+.MapWidget {
+	background: #202b30;
+	border: 1px solid #4fa9b8;
+	-webkit-border-radius: 10px;
+	-moz-border-radius: 10px;
+	border-radius: 10px;
+	padding: 10px;
+}
+.MapWidget .Field {
+	background-color: #bfeafa;
+	padding: 5px;
+	margin-bottom: 4px;
+	border: 1px solid #77d5f7;
+	font-family: Arial, Helvetica, sans-serif;
+	font-size:13px;
+	font-weight: normal;
+	color: #202b30;
+	width:300px;
+}
+.MapWidget .Label {
+	color: #bfeafa;
+	margin-bottom: 5px;
+	padding-top: 4px;
+	padding-bottom: 4px;
+	font-size:14px;
+	font-weight:bold;
+}
+.MapWidget .Map {
+	height: 298px; 
+	width: 298px;
+	border: 1px solid #72b9d7;
+}
+
+/*---- Price Widget ----*/
+.PriceWidget {
+	background: #202b30;
+	border: 1px solid #4fa9b8;
+	-webkit-border-radius: 10px;
+	-moz-border-radius: 10px;
+	border-radius: 10px;
+	padding: 10px;
+}
+.PriceWidget .Field {
+	background-color: #bfeafa;
+	padding: 5px;
+	margin-bottom: 4px;
+	border: 1px solid #77d5f7;
+	font-family: Arial, Helvetica, sans-serif;
+	font-size:13px;
+	font-weight: normal;
+	color: #202b30;
+	width:317px;
+}
+.PriceWidget .Grid {}
+.PriceWidget .Label {
+	color: #bfeafa;
+	margin-bottom: 5px;
+	padding-top: 4px;
+	padding-bottom: 4px;
+	font-size:14px;
+	font-weight:bold;
+}
+.PriceWidget .Header {
+	margin: 0 0 0 1px;
+	color: #bfeafa; 
+	background: #2e90bd;
+	margin-top: 10px;
+	padding:5px;
+	text-shadow:none;
+}
+.PriceWidget .GK1DWH5DEP {
+	background-color:#bfeafa;
+}
+.PriceWidget .Even {
+	margin: 0 1px 0 0;
+	border: 0;
+	padding: 0;
+	color: #202b30;
+	background-color:#bfeafa;
+}
+.PriceWidget .Odd {
+	margin: 0 1px 0 0;
+	border: 0;
+	padding: 0;
+	color: #2e90bd;
+	background-color:#bfeafa;
+}
+.PriceWidget .Date {
+	width: 76px; 
+	font-size: 90%
+}
+.PriceWidget .Price {
+	width: 63px;
+}
+
+/*---- Quote Widget ----*/
+.QuoteWidget {
+	background: #202b30;
+	border: 1px solid #4fa9b8;
+	-webkit-border-radius: 10px;
+	-moz-border-radius: 10px;
+	border-radius: 10px;
+	padding: 10px;
+}
+.QuoteWidget .Field, .QuoteWidget input {
+	background-color: #bfeafa;
+	padding: 5px;
+	margin-bottom: 4px;
+	border: 1px solid #77d5f7;
+	font-family: Arial, Helvetica, sans-serif;
+	font-size:13px;
+	font-weight: normal;
+	color: #202b30;
+}
+.QuoteWidget .Available {
+	width: 146px;
+	background-color: #bfeafa;
+	padding: 5px;
+	border: 1px solid #77d5f7;
+	font-family: Arial, Helvetica, sans-serif;
+	font-size:13px;
+	font-weight: normal;
+	color: #202b30;
+	margin-top: -2px;
+	margin-right: 3px;
+	margin-bottom: 2px;
+	margin-left: 0;
+}
+.QuoteWidget .Label {
+	color: #bfeafa;
+	margin-bottom: 5px;
+	padding-top: 4px;
+	padding-bottom: 4px;
+	font-size:14px;
+	font-weight:bold;
+}
+
+/*---- Review Widget ----*/
+.ReviewWidget {
+	background: #202b30;
+	border: 1px solid #4fa9b8;
+	-webkit-border-radius: 10px;
+	-moz-border-radius: 10px;
+	border-radius: 10px;
+	padding: 10px;
+}
+.ReviewWidget .Field {
+	background-color: #bfeafa;
+	padding: 5px;
+	margin-bottom: 4px;
+	border: 1px solid #77d5f7;
+	font-family: Arial, Helvetica, sans-serif;
+	font-size:13px;
+	font-weight: normal;
+	color: #202b30;
+	width:305px;
+}
+.ReviewWidget .Label {
+	color: #bfeafa;
+	margin-bottom: 5px;
+	padding-top: 4px;
+	padding-bottom: 4px;
+	font-size:14px;
+	font-weight:bold;
+}
+.ReviewWidget .Header {
+	color: #bfeafa; 
+	background: #2e90bd;
+	margin-top: 10px;
+	padding:5px;
+}
+.ReviewWidget .Even {
+	padding: 1px;
+	height: 200px;
+	width: 292px;
+	font-size: 12px;
+	font-family: Arial, Helvetica, sans-serif;
+	font-weight: normal;
+	background-color: #bfeafa;
+	padding: 5px;
+	border: 1px solid #77d5f7;
+	margin-left:2px;
+	color:#202b30;
+}
+.ReviewWidget .Odd {
+	padding: 1px;
+	height: 200px;
+	width: 292px;
+	font-size: 12px;
+	font-family: Arial, Helvetica, sans-serif;
+	font-weight: normal;
+	background-color: #bfeafa;
+	padding: 5px;
+	border: 1px solid #77d5f7;
+	margin-left:2px;
+	color:#202b30;
+}
+
+/*---- Route Widget ----*/
+.RouteWidget {
+	background: #202b30;
+	border: 1px solid #4fa9b8;
+	-webkit-border-radius: 10px;
+	-moz-border-radius: 10px;
+	border-radius: 10px;
+	padding: 10px;
+}
+.RouteWidget .Field {
+	background-color: #bfeafa;
+	padding: 5px;
+	margin-bottom: 4px;
+	border: 1px solid #77d5f7;
+	font-family: Arial, Helvetica, sans-serif;
+	font-size:13px;
+	font-weight: normal;
+	color: #202b30;
+	width:288px;
+}
+.RouteWidget .Label {
+	color: #bfeafa;
+	margin-bottom: 5px;
+	padding-top: 4px;
+	padding-bottom: 4px;
+	font-size:14px;
+	font-weight:bold;
+}
+.RouteWidget .Map {
+	height: 200px;
+	width: 298px;
+	border: 1px solid #72b9d7;
+}
+.RouteWidget .Steps {
+	padding: 1px;
+	height: 400px;
+	width: 288px;
+	font-size: 12px;
+	font-family: Arial, Helvetica, sans-serif;
+	font-weight: normal;
+	background-color: #bfeafa;
+	padding: 5px;
+	border: 1px solid #72b9d7;
+	color: #202b30;
+}
+
+/*---- Text Widget ----*/
+.TextWidget {
+	background: #202b30;
+	border: 1px solid #4fa9b8;
+	-webkit-border-radius: 10px;
+	-moz-border-radius: 10px;
+	border-radius: 10px;
+	padding: 10px;
+}
+.TextWidget .Field {
+	background-color: #bfeafa;
+	padding: 5px;
+	margin-bottom: 4px;
+	border: 1px solid #77d5f7;
+	font-family: Arial, Helvetica, sans-serif;
+	font-size:13px;
+	font-weight: normal;
+	color: #202b30;
+	width:300px;
+}
+.TextWidget .Label {
+	color: #bfeafa;
+	margin-bottom: 5px;
+	padding-top: 4px;
+	padding-bottom: 4px;
+	font-size:14px;
+	font-weight:bold;
+}
+.TextWidget .GK1DWH5DPJ {
+	color: #202b30;
+}
+.TextWidget .Text {
+	padding: 1px;
+	height: 400px;
+	width: 288px;
+	font-size: 12px;
+	font-family: Arial, Helvetica, sans-serif;
+	font-weight: normal;
+	background-color: #bfeafa;
+	padding: 5px;
+	border: 1px solid #72b9d7;
+	margin-left:2px;
+	color: #202b30;
+}
+.TextWidget .GK1DWH5DMQ {
+	color: #202b30;
+}
+
+.TextWidget .Type {width: 80px;}
+
+/*---- Popup Tool Tip ----*/
+.popupContent .gwt-HTML {
+	color: #202b30;
+	padding: 10px;
+	font-size:14px;
+	font-weight:bold;
+}
+
+/*---- Date Picker ----*/
+.DatePicker {
+	font-family: Verdana, Arial;
+	font-size: 12px;
+	color: labelColor;
+	background-color: white;
+	border: fieldPopup;
+	cursor: default;
+	-webkit-box-shadow:0 0 20px #000;
+	-moz-box-shadow: 0 0 20px #000;
+	box-shadow:0 0 20px #000;
+	position: relative;
+	z-index: 20;
+}
+
+.DatePicker td,.DatePickerMonthSelector td:focus {outline: none}
+
+.DatePickerDays {
+	width: 100%;
+	background: white;
+}
+
+.DatePickerDay,.DatePickerWeekdayLabel,.DatePickerWeekendLabel	{
+	text-align: center;
+	padding: 4px;
+	outline: none;
+}
+
+.DatePickerWeekdayLabel,.DatePickerWeekendLabel {
+	background: #202b30;
+	color:#ffffff;
+	padding: 0px 2px 2px;
+	cursor: default;
+}
+
+.DatePickerDay {
+	padding: 5px;
+	cursor: pointer;
+	cursor: hand;
+	border: 1px solid #77d5f7;
+	color: #2e90bd;
+	background-color: #bfeafa;
+}
+
+.DatePickerDayIsToday {
+	border: 1px solid #202b30;
+	background: #202b30;
+	color:#ffffff;
+}
+.DatePickerDayIsWeekend {
+	background: #2e90bd;
+	color: #bfeafa;
+}
+.DatePickerDayIsFiller {
+	color: #96ddf7;
+	background-color: #daeef6;
+}
+.DatePickerDayIsValue {background: #aaccee;}
+
+.DatePickerDayIsDisabled {
+	color: #AAAAAA;
+	font-style: italic;
+}
+
+.DatePickerDayIsHighlighted {background: #F0E68C;}
+.DatePickerDayIsValueAndHighlighted {
+	background: #55beee;
+	color: #daeef6;
+}
+
+.DatePickerMonthSelector {
+	background: #202b30;
+	color:#ffffff;
+	width: 100%;
+}
+
+td.DatePickerMonth {
+	text-align: center;
+	vertical-align: center;
+	white-space: nowrap;
+	font-weight: bold;
+}
+
+.DatePickerPreviousButton,.DatePickerNextButton {
+	cursor: hand;
+	cursor: pointer;
+	font-weight: bold;
+}

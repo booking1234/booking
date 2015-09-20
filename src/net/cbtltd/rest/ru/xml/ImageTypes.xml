@@ -1,0 +1,7 @@
+<?xml version="1.0" encoding="UTF-8"?>
+	<ImageTypes>
+		<ImageType ImageTypeID="1">Main image</ImageType>
+		<ImageType ImageTypeID="2">Property plan</ImageType>
+		<ImageType ImageTypeID="3">Interior</ImageType>
+		<ImageType ImageTypeID="4">Exterior</ImageType>
+	</ImageTypes>

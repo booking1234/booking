@@ -1,0 +1,7 @@
+<?xml version="1.0" encoding="UTF-8" standalone="yes"?>
+<OTA_ProfileCreateRS xmlns="http://www.opentravel.org/OTA/2003/05"
+	RetransmissionIndicator="false" SequenceNmbr="1" TransactionIdentifier="1"
+	Version="1.008" Target="Production" TimeStamp="2009-07-21T13:06:20"
+	EchoToken="OTA_ProfileCreateRQ 5, 5, 2376">
+	<Success />
+</OTA_ProfileCreateRS>

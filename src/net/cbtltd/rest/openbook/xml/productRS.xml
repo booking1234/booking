@@ -1,0 +1,82 @@
+<?xml version="1.0" encoding="UTF-8" standalone="yes"?><!-- no stylesheet -->
+<product>
+	<id>157228</id>
+	<name>Boutique Hotel Egypt Room</name>
+	<state>Created</state>
+	<currency>USD</currency>
+	<language>EN</language>
+	<latitude>25.7587982</latitude>
+	<locationid>52444</locationid>
+	<longitude>-80.1924422</longitude>
+	<type>Accommodation</type>
+	<unit>DAY</unit>
+	<address>1435 Brickell Ave</address>
+	<address>Miami, FL</address>
+	<adult>2</adult>
+	<bathroom>1</bathroom>
+	<child>0</child>
+	<code>Egypt Room</code>
+	<dynamicpricingenabled>false</dynamicpricingenabled>
+	<infant>0</infant>
+	<ownerid>734164</ownerid>
+	<person>2</person>
+	<physicaladdress>1435 Brickell Ave
+		Miami, FL
+	</physicaladdress>
+	<quantity>1</quantity>
+	<room>1</room>
+	<supplierid>734164</supplierid>
+	<toilet>1</toilet>
+	<webaddress>http://razor-cloud.com/razor/?product=157228&amp;pos=26ea2b3185789e5f
+	</webaddress>
+	<bedroom>1</bedroom>
+	<city>Miami</city>
+	<conditions>Specific term of use of THIS listings
+
+		ie. No Smoking
+	</conditions>
+	<contents>Services included in rate
+		Services included in rate
+		Services included in rate
+		Services included in rate
+		Services included in rate
+		Services included in rate
+		Services included in rate
+		Services included in rate
+		Services included in rate
+	</contents>
+	<country>US</country>
+	<description>Example of an apartment in a location where there are many
+		listings at one address.
+
+		This is more description
+
+		Description Description Description Description Description Description
+		Description Description Description Description Description
+		Description Description Description Description Description
+		Description Description Description Description Description
+		Description Description Description Description Description
+		Description Description Description Description Description
+		Description Description Description Description Description
+		Description Description Description Description Description
+		Description Description Description Description Description
+		Description Description Description Description Description
+		Description Description Description Description Description
+		Description Description Description Description Description
+		Description Description Description Description Description
+		Description Description Description Description Description
+		Description Description Description Description Description
+		Description Description Description Description Description
+		Description Description Description Description Description
+		Description Description Description Description Description
+		Description Description Description Description Description
+		Description Description Description Description Description
+		Description Description Description Description Description
+		Description Description Description Description Description
+		Description Description Description Description Description
+		Description Description Description Description
+	</description>
+	<productid>157228</productid>
+	<region>FL</region>
+	<xsl>'no_xsl'</xsl>
+</product>

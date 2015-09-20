@@ -1,0 +1,2502 @@
+<?xml version="1.0"?>
+<xs:schema xmlns:xs="http://www.w3.org/2001/XMLSchema" xmlns:xhtml="http://www.w3.org/1999/xhtml" elementFormDefault="qualified" version="1.0">
+<xs:element name="entity" type="Entity"/>
+<xs:element name="images">
+<xs:complexType>
+<xs:sequence>
+<xs:element name="image" type="Image" maxOccurs="unbounded"/>
+</xs:sequence>
+</xs:complexType>
+</xs:element>
+<xs:element name="listing" type="Listing"/>
+<xs:element name="listingBatch" type="ListingBatch"/>
+<xs:element name="listingContentIndex">
+<xs:complexType>
+<xs:sequence>
+<xs:element name="advertisers" type="AdvertiserListingIndex"/>
+</xs:sequence>
+</xs:complexType>
+</xs:element>
+<xs:element name="unitRatePeriods" type="ListingRatePeriods"/>
+<xs:element name="unitReservations" type="ListingReservations"/>
+<xs:element name="ratePeriods">
+<xs:complexType>
+<xs:sequence>
+<xs:element name="ratePeriod" type="RatePeriod" maxOccurs="unbounded"/>
+</xs:sequence>
+</xs:complexType>
+</xs:element>
+<xs:element name="ratePeriodsBatch" type="RatePeriodsBatch"/>
+<xs:element name="reservationBatch" type="ReservationsBatch"/>
+<xs:element name="reservations">
+<xs:complexType>
+<xs:sequence>
+<xs:element name="reservation" type="Reservation" minOccurs="0" maxOccurs="unbounded"/>
+</xs:sequence>
+</xs:complexType>
+</xs:element>
+<xs:element name="unit">
+<xs:complexType>
+<xs:complexContent>
+<xs:extension base="UnitWSD"/>
+</xs:complexContent>
+</xs:complexType>
+</xs:element>
+<xs:complexType name="AdContent">
+<xs:annotation>
+<xs:documentation xml:lang="en">Textual content for a Listing.</xs:documentation>
+</xs:annotation>
+<xs:sequence>
+<xs:element name="accommodationsSummary" type="Note" minOccurs="0">
+<xs:annotation>
+<xs:documentation xml:lang="en">
+A textual summary of the accommodations that the property provides.
+</xs:documentation>
+</xs:annotation>
+</xs:element>
+<xs:element name="description" type="Note">
+<xs:annotation>
+<xs:documentation xml:lang="en">A textual description of the property.</xs:documentation>
+</xs:annotation>
+</xs:element>
+<xs:element name="headline" type="Note">
+<xs:annotation>
+<xs:documentation xml:lang="en">A headline for the advertisement.</xs:documentation>
+</xs:annotation>
+</xs:element>
+<xs:element name="ownerListingStory" type="Note" minOccurs="0">
+<xs:annotation>
+<xs:documentation xml:lang="en">
+The "story" of the property, how the owner came to own the property, and the role the property has played in his/her life.
+</xs:documentation>
+</xs:annotation>
+</xs:element>
+<xs:element name="propertyName" type="Note" minOccurs="0">
+<xs:annotation>
+<xs:documentation xml:lang="en">The name of the property.</xs:documentation>
+</xs:annotation>
+</xs:element>
+<xs:element name="uniqueBenefits" type="Note" minOccurs="0">
+<xs:annotation>
+<xs:documentation xml:lang="en">
+A description of the unique benefits offered by this property over others.
+</xs:documentation>
+</xs:annotation>
+</xs:element>
+<xs:element name="whyPurchased" type="Note" minOccurs="0">
+<xs:annotation>
+<xs:documentation xml:lang="en">
+A description of why the owner purchased this particular property.
+</xs:documentation>
+</xs:annotation>
+</xs:element>
+<xs:element name="yearPurchased" type="xs:string" minOccurs="0">
+<xs:annotation>
+<xs:documentation xml:lang="en">The year in which the property was purchased.</xs:documentation>
+</xs:annotation>
+</xs:element>
+</xs:sequence>
+</xs:complexType>
+<xs:complexType name="Address">
+<xs:annotation>
+<xs:documentation xml:lang="en">
+A street address. This is a very generic model, meant to capture street addresses globally.
+</xs:documentation>
+</xs:annotation>
+<xs:sequence>
+<xs:element name="addressLine1" type="xs:string">
+<xs:annotation>
+<xs:documentation xml:lang="en">Line one of street address data.</xs:documentation>
+</xs:annotation>
+</xs:element>
+<xs:element name="addressLine2" type="xs:string" minOccurs="0">
+<xs:annotation>
+<xs:documentation xml:lang="en">Line two of street address data.</xs:documentation>
+</xs:annotation>
+</xs:element>
+<xs:element name="city" type="xs:string">
+<xs:annotation>
+<xs:documentation xml:lang="en">Line three of street address data.</xs:documentation>
+</xs:annotation>
+</xs:element>
+<xs:element name="stateOrProvince" type="xs:string" minOccurs="0">
+<xs:annotation>
+<xs:documentation xml:lang="en">Line four of street address data.</xs:documentation>
+</xs:annotation>
+</xs:element>
+<xs:element name="country" type="CountryISOCode">
+<xs:annotation>
+<xs:documentation xml:lang="en">
+The ISO 3166-1-alpha-2 country code in which the address is located.
+</xs:documentation>
+</xs:annotation>
+</xs:element>
+<xs:element name="postalCode" type="xs:string">
+<xs:annotation>
+<xs:documentation xml:lang="en">The postal code of the address.</xs:documentation>
+</xs:annotation>
+</xs:element>
+</xs:sequence>
+</xs:complexType>
+<xs:complexType name="AdvertiserListingIndex">
+<xs:annotation>
+<xs:documentation xml:lang="en">
+A Listing is an advertisement for a vacation rental - it contains the details of the rental property that are presented to travelers. Listings encompass one or more Units. The Listing represents data about the property as a whole - the physical location and attributes of the property as a whole, for example. Each Unit represents a single rentable unit of the property, and describes the particulars of that unit.
+</xs:documentation>
+</xs:annotation>
+<xs:sequence>
+<xs:element name="advertiser" maxOccurs="unbounded">
+<xs:complexType>
+<xs:sequence>
+<xs:element name="assignedId" nillable="false">
+<xs:simpleType>
+<xs:restriction base="xs:string"/>
+</xs:simpleType>
+</xs:element>
+<xs:element name="listingContentIndexEntry" type="ListingContentIndexEntry" maxOccurs="unbounded"/>
+</xs:sequence>
+</xs:complexType>
+</xs:element>
+</xs:sequence>
+</xs:complexType>
+<xs:complexType name="AdvertiserListings">
+<xs:annotation>
+<xs:documentation xml:lang="en">
+A Listing is an advertisement for a vacation rental - it contains the details of the rental property that are presented to travelers. Listings encompass one or more Units. The Listing represents data about the property as a whole - the physical location and attributes of the property as a whole, for example. Each Unit represents a single rentable unit of the property, and describes the particulars of that unit.
+</xs:documentation>
+</xs:annotation>
+<xs:sequence>
+<xs:element name="advertiser" maxOccurs="unbounded">
+<xs:complexType>
+<xs:sequence>
+<xs:element name="assignedId" nillable="false">
+<xs:simpleType>
+<xs:restriction base="xs:string"/>
+</xs:simpleType>
+</xs:element>
+<xs:element name="listings">
+<xs:complexType>
+<xs:sequence>
+<xs:element ref="listing" maxOccurs="unbounded"/>
+</xs:sequence>
+</xs:complexType>
+</xs:element>
+</xs:sequence>
+</xs:complexType>
+</xs:element>
+</xs:sequence>
+</xs:complexType>
+<xs:complexType name="AdvertiserRatePeriods">
+<xs:annotation>
+<xs:documentation xml:lang="en">
+A Listing is an advertisement for a vacation rental - it contains the details of the rental property that are presented to travelers. Listings encompass one or more Units. The Listing represents data about the property as a whole - the physical location and attributes of the property as a whole, for example. Each Unit represents a single rentable unit of the property, and describes the particulars of that unit.
+</xs:documentation>
+</xs:annotation>
+<xs:sequence>
+<xs:element name="advertiser" maxOccurs="unbounded">
+<xs:complexType>
+<xs:sequence>
+<xs:element name="assignedId" type="xs:string" nillable="false"/>
+<xs:element name="advertiserRatePeriods" maxOccurs="unbounded">
+<xs:complexType>
+<xs:sequence>
+<xs:element name="listingExternalId" nillable="false">
+<xs:simpleType>
+<xs:restriction base="xs:string">
+<xs:minLength value="1"/>
+</xs:restriction>
+</xs:simpleType>
+</xs:element>
+<xs:element name="unitExternalId" nillable="false">
+<xs:simpleType>
+<xs:restriction base="xs:string">
+<xs:minLength value="1"/>
+</xs:restriction>
+</xs:simpleType>
+</xs:element>
+<xs:element ref="ratePeriods"/>
+</xs:sequence>
+</xs:complexType>
+</xs:element>
+</xs:sequence>
+</xs:complexType>
+</xs:element>
+</xs:sequence>
+</xs:complexType>
+<xs:complexType name="AdvertiserReservations">
+<xs:annotation>
+<xs:documentation xml:lang="en">
+A Listing is an advertisement for a vacation rental - it contains the details of the rental property that are presented to travelers. Listings encompass one or more Units. The Listing represents data about the property as a whole - the physical location and attributes of the property as a whole, for example. Each Unit represents a single rentable unit of the property, and describes the particulars of that unit.
+</xs:documentation>
+</xs:annotation>
+<xs:sequence>
+<xs:element name="advertiser" maxOccurs="unbounded">
+<xs:complexType>
+<xs:sequence>
+<xs:element name="assignedId" type="xs:string" nillable="false"/>
+<xs:element name="advertiserReservations" maxOccurs="unbounded">
+<xs:complexType>
+<xs:sequence>
+<xs:element name="listingExternalId" nillable="false">
+<xs:simpleType>
+<xs:restriction base="xs:string">
+<xs:minLength value="1"/>
+</xs:restriction>
+</xs:simpleType>
+</xs:element>
+<xs:element name="unitExternalId" nillable="false">
+<xs:simpleType>
+<xs:restriction base="xs:string">
+<xs:minLength value="1"/>
+</xs:restriction>
+</xs:simpleType>
+</xs:element>
+<xs:element ref="reservations" minOccurs="0"/>
+</xs:sequence>
+</xs:complexType>
+</xs:element>
+</xs:sequence>
+</xs:complexType>
+</xs:element>
+</xs:sequence>
+</xs:complexType>
+<xs:complexType name="Bathroom">
+<xs:annotation>
+<xs:documentation xml:lang="en">Structured data about a room.</xs:documentation>
+</xs:annotation>
+<xs:sequence>
+<xs:element name="amenities" minOccurs="0">
+<xs:annotation>
+<xs:documentation xml:lang="en">
+Feature Values represent the normalized ame1866nities offered by the room.
+</xs:documentation>
+</xs:annotation>
+<xs:complexType>
+<xs:sequence>
+<xs:element name="amenity" type="BathroomFeatureValue" minOccurs="0" maxOccurs="unbounded"/>
+</xs:sequence>
+</xs:complexType>
+</xs:element>
+<xs:element name="name" type="Note" minOccurs="0">
+<xs:annotation>
+<xs:documentation xml:lang="en">
+The name of the room - can be used to differentiate multiple rooms of the same type (e.g. "Master Bathroom").
+</xs:documentation>
+</xs:annotation>
+</xs:element>
+<xs:element name="note" type="Note" minOccurs="0">
+<xs:annotation>
+<xs:documentation xml:lang="en">A textual note about the room.</xs:documentation>
+</xs:annotation>
+</xs:element>
+<xs:element name="roomSubType" type="BathroomRoomType">
+<xs:annotation>
+<xs:documentation xml:lang="en">The type of the room.</xs:documentation>
+</xs:annotation>
+</xs:element>
+</xs:sequence>
+</xs:complexType>
+<xs:complexType name="BathroomFeatureValue">
+<xs:annotation>
+<xs:documentation xml:lang="en">
+Feature value represents a user selected "checkbox" for a particular feature in a feature set.
+</xs:documentation>
+</xs:annotation>
+<xs:sequence>
+<xs:element name="count" type="xs:int" default="1" minOccurs="0">
+<xs:annotation>
+<xs:documentation xml:lang="en">The quantity of this feature (e.g. 2 fireplaces).</xs:documentation>
+</xs:annotation>
+</xs:element>
+<xs:element name="description" type="Note" minOccurs="0">
+<xs:annotation>
+<xs:documentation xml:lang="en">Localized description of the feature</xs:documentation>
+</xs:annotation>
+</xs:element>
+<xs:element name="bathroomFeatureName" type="BathroomFeatureName"/>
+</xs:sequence>
+</xs:complexType>
+<xs:complexType name="Bedroom">
+<xs:annotation>
+<xs:documentation xml:lang="en">Structured data about a room.</xs:documentation>
+</xs:annotation>
+<xs:sequence>
+<xs:element name="amenities" minOccurs="0">
+<xs:annotation>
+<xs:documentation xml:lang="en">
+Feature Values represent the normalized amenities offered by the room.
+</xs:documentation>
+</xs:annotation>
+<xs:complexType>
+<xs:sequence>
+<xs:element name="amenity" type="BedroomFeatureValue" minOccurs="0" maxOccurs="unbounded"/>
+</xs:sequence>
+</xs:complexType>
+</xs:element>
+<xs:element name="name" type="Note" minOccurs="0">
+<xs:annotation>
+<xs:documentation xml:lang="en">
+The name of the room - can be used to differentiate multiple rooms of the same type (e.g. "Master Bathroom").
+</xs:documentation>
+</xs:annotation>
+</xs:element>
+<xs:element name="note" type="Note" minOccurs="0">
+<xs:annotation>
+<xs:documentation xml:lang="en">A textual note about the room.</xs:documentation>
+</xs:annotation>
+</xs:element>
+<xs:element name="roomSubType" type="BedroomRoomType">
+<xs:annotation>
+<xs:documentation xml:lang="en">The type of the room.</xs:documentation>
+</xs:annotation>
+</xs:element>
+</xs:sequence>
+</xs:complexType>
+<xs:complexType name="BedroomFeatureValue">
+<xs:annotation>
+<xs:documentation xml:lang="en">
+Feature value represents a user selected "checkbox" for a particular feature in a feature set.
+</xs:documentation>
+</xs:annotation>
+<xs:sequence>
+<xs:element name="count" type="xs:int" default="1" minOccurs="0">
+<xs:annotation>
+<xs:documentation xml:lang="en">The quantity of this feature (e.g. 2 fireplaces).</xs:documentation>
+</xs:annotation>
+</xs:element>
+<xs:element name="description" type="Note" minOccurs="0">
+<xs:annotation>
+<xs:documentation xml:lang="en">Localized description of the feature</xs:documentation>
+</xs:annotation>
+</xs:element>
+<xs:element name="bedroomFeatureName" type="BedroomFeatureName"/>
+</xs:sequence>
+</xs:complexType>
+<xs:complexType name="ContactPhone">
+<xs:annotation>
+<xs:documentation xml:lang="en">Combines a Phone, Note and PhoneRel for a Contact.</xs:documentation>
+</xs:annotation>
+<xs:sequence>
+<xs:element name="note" type="Note" minOccurs="0">
+<xs:annotation>
+<xs:documentation xml:lang="en"/>
+</xs:annotation>
+</xs:element>
+<xs:element name="phone" type="Phone" minOccurs="0">
+<xs:annotation>
+<xs:documentation xml:lang="en"/>
+</xs:annotation>
+</xs:element>
+</xs:sequence>
+<xs:attribute name="rel" type="PhoneRel" use="required">
+<xs:annotation>
+<xs:documentation xml:lang="en"/>
+</xs:annotation>
+</xs:attribute>
+</xs:complexType>
+<xs:complexType name="DateRange">
+<xs:annotation>
+<xs:documentation xml:lang="en">A range of dates.</xs:documentation>
+</xs:annotation>
+<xs:sequence>
+<xs:element name="beginDate" type="xs:date">
+<xs:annotation>
+<xs:documentation xml:lang="en">The beginning date of the range.</xs:documentation>
+</xs:annotation>
+</xs:element>
+<xs:element name="endDate" type="xs:date">
+<xs:annotation>
+<xs:documentation xml:lang="en">The end date of the range.</xs:documentation>
+</xs:annotation>
+</xs:element>
+</xs:sequence>
+</xs:complexType>
+<xs:complexType name="Entity" abstract="true">
+<xs:annotation>
+<xs:documentation xml:lang="en">
+Entities are all of the first-class members of our domain model - objects with their own identity and lifecycle.
+</xs:documentation>
+</xs:annotation>
+<xs:sequence>
+<xs:element name="inserted" type="xs:dateTime" minOccurs="0">
+<xs:annotation>
+<xs:documentation xml:lang="en">
+The date/time at which this entity was inserted into the system.
+</xs:documentation>
+<xs:appinfo>ReadOnly</xs:appinfo>
+</xs:annotation>
+</xs:element>
+<xs:element name="updated" type="xs:dateTime" minOccurs="0">
+<xs:annotation>
+<xs:documentation xml:lang="en">
+The date/time at which this entity was last updated.
+</xs:documentation>
+<xs:appinfo>ReadOnly</xs:appinfo>
+</xs:annotation>
+</xs:element>
+</xs:sequence>
+</xs:complexType>
+<xs:complexType name="GeoCode">
+<xs:annotation>
+<xs:documentation xml:lang="en">
+The geocode specifies a set of latitude/longitude coordinates and a precision value.
+</xs:documentation>
+</xs:annotation>
+<xs:sequence>
+<xs:element name="latLng" type="LatLng">
+<xs:annotation>
+<xs:documentation xml:lang="en">Latitude/longitude coordinates.</xs:documentation>
+</xs:annotation>
+</xs:element>
+</xs:sequence>
+</xs:complexType>
+<xs:complexType name="Image">
+<xs:annotation>
+<xs:documentation>The container for an individual photo for a unit</xs:documentation>
+</xs:annotation>
+<xs:sequence>
+<xs:element name="externalId" nillable="false">
+<xs:simpleType>
+<xs:restriction base="xs:string">
+<xs:maxLength value="255"/>
+<xs:minLength value="1"/>
+<xs:pattern value="([a-zA-Z0-9/:_ -\.])*"/>
+</xs:restriction>
+</xs:simpleType>
+</xs:element>
+<xs:element name="title" type="Note" minOccurs="0">
+<xs:annotation>
+<xs:documentation xml:lang="en">Localized description of the image title</xs:documentation>
+</xs:annotation>
+</xs:element>
+<xs:element name="uri" nillable="false">
+<xs:simpleType>
+<xs:restriction base="xs:string"/>
+</xs:simpleType>
+</xs:element>
+</xs:sequence>
+</xs:complexType>
+<xs:complexType name="LatLng">
+<xs:annotation>
+<xs:documentation xml:lang="en">A latitude/longitude coordinate pair.</xs:documentation>
+</xs:annotation>
+<xs:sequence>
+<xs:element name="latitude">
+<xs:simpleType>
+<xs:annotation>
+<xs:documentation xml:lang="en">
+The latitude coordinate. Latitude values must be between -90 and 90 degress.
+</xs:documentation>
+</xs:annotation>
+<xs:restriction base="xs:decimal">
+<xs:minInclusive value="-90.0"/>
+<xs:maxInclusive value="90.0"/>
+</xs:restriction>
+</xs:simpleType>
+</xs:element>
+<xs:element name="longitude">
+<xs:simpleType>
+<xs:annotation>
+<xs:documentation xml:lang="en">
+The longitude coordinate. Longitude values must be between -180 and 180 degrees.
+</xs:documentation>
+</xs:annotation>
+<xs:restriction base="xs:decimal">
+<xs:minInclusive value="-180.0"/>
+<xs:maxInclusive value="180.0"/>
+</xs:restriction>
+</xs:simpleType>
+</xs:element>
+</xs:sequence>
+</xs:complexType>
+<xs:complexType name="Link">
+<xs:annotation>
+<xs:documentation xml:lang="en">A hypermedia link.</xs:documentation>
+</xs:annotation>
+<xs:sequence/>
+<xs:attribute name="href" type="xs:anyURI" use="required">
+<xs:annotation>
+<xs:documentation xml:lang="en">The linked URL.</xs:documentation>
+</xs:annotation>
+</xs:attribute>
+<xs:attribute name="rel" type="xs:string">
+<xs:annotation>
+<xs:documentation xml:lang="en">
+The relationship of the linked resource to the resource from which the link originates.
+</xs:documentation>
+</xs:annotation>
+</xs:attribute>
+</xs:complexType>
+<xs:complexType name="Listing">
+<xs:annotation>
+<xs:documentation xml:lang="en">
+A Listing is an advertisement for a vacation rental - it contains the details of the rental property that are presented to travelers. Listings encompass one or more Units. The Listing represents data about the property as a whole - the physical location and attributes of the property as a whole, for example. Each Unit represents a single rentable unit of the property, and describes the particulars of that unit.
+</xs:documentation>
+</xs:annotation>
+<xs:complexContent>
+<xs:extension base="Entity">
+<xs:sequence>
+<xs:element name="externalId" nillable="false">
+<xs:simpleType>
+<xs:restriction base="xs:string">
+<xs:maxLength value="255"/>
+<xs:minLength value="1"/>
+<!-- <xs:pattern value="([a-zA-Z0-9 _-])*"/>   -->
+</xs:restriction>
+</xs:simpleType>
+</xs:element>
+<xs:element name="active" type="xs:boolean" minOccurs="0">
+<xs:annotation>
+<xs:documentation xml:lang="en">
+Indicates whether the Listing is active or inactive.
+</xs:documentation>
+</xs:annotation>
+</xs:element>
+<xs:element name="adContent" type="AdContent">
+<xs:annotation>
+<xs:documentation xml:lang="en">Descriptive content about the vacation rental.</xs:documentation>
+</xs:annotation>
+</xs:element>
+<xs:element name="featureValues" minOccurs="0">
+<xs:annotation>
+<xs:documentation xml:lang="en">
+Feature Values represent the normalized property features that the Advertiser can select for the listing.
+</xs:documentation>
+</xs:annotation>
+<xs:complexType>
+<xs:sequence>
+<xs:element name="featureValue" type="ListingFeatureValue" minOccurs="0" maxOccurs="unbounded"/>
+</xs:sequence>
+</xs:complexType>
+</xs:element>
+<xs:element name="location" type="Location">
+<xs:annotation>
+<xs:documentation xml:lang="en">
+Information about the location of the vacation rental.
+</xs:documentation>
+</xs:annotation>
+</xs:element>
+<xs:element ref="images"/>
+<xs:element name="units">
+<xs:annotation>
+<xs:documentation xml:lang="en">
+Listings are composed of one or more Units - each Unit is an independently rentable unit with its own rates and availability, in the same physical location (e.g. a duplex, or several cottages on the same property).
+</xs:documentation>
+</xs:annotation>
+<xs:complexType>
+<xs:sequence>
+<xs:element name="unit" type="UnitWSD" maxOccurs="unbounded"/>
+</xs:sequence>
+</xs:complexType>
+</xs:element>
+</xs:sequence>
+</xs:extension>
+</xs:complexContent>
+</xs:complexType>
+<xs:complexType name="ListingBatch">
+<xs:annotation>
+<xs:documentation xml:lang="en">
+A Listing is an advertisement for a vacation rental - it contains the details of the rental property that are presented to travelers. Listings encompass one or more Units. The Listing represents data about the property as a whole - the physical location and attributes of the property as a whole, for example. Each Unit represents a single rentable unit of the property, and describes the particulars of that unit.
+</xs:documentation>
+</xs:annotation>
+<xs:sequence>
+<xs:element name="documentVersion"/>
+<xs:element name="advertisers" type="AdvertiserListings"/>
+</xs:sequence>
+</xs:complexType>
+<xs:complexType name="ListingFeatureValue">
+<xs:annotation>
+<xs:documentation xml:lang="en">
+Feature value represents a user selected "checkbox" for a particular feature in a feature set.
+</xs:documentation>
+</xs:annotation>
+<xs:sequence>
+<xs:element name="count" type="xs:int" default="1" minOccurs="0">
+<xs:annotation>
+<xs:documentation xml:lang="en">The quantity of this feature (e.g. 2 fireplaces).</xs:documentation>
+</xs:annotation>
+</xs:element>
+<xs:element name="description" type="Note" minOccurs="0">
+<xs:annotation>
+<xs:documentation xml:lang="en">Localized description of the feature</xs:documentation>
+</xs:annotation>
+</xs:element>
+<xs:element name="listingFeatureName" type="ListingFeatureName"/>
+</xs:sequence>
+</xs:complexType>
+<xs:complexType name="ListingContentIndexEntry">
+<xs:sequence>
+<xs:element name="listingExternalId"/>
+<xs:element name="unitExternalId" minOccurs="0"/>
+<xs:element name="active" type="xs:boolean" default="true"/>
+<xs:element name="lastUpdatedDate" type="xs:dateTime"/>
+<xs:choice>
+<xs:element name="listingUrl" minOccurs="0">
+<xs:annotation>
+<xs:documentation>Url to the listing</xs:documentation>
+</xs:annotation>
+</xs:element>
+<xs:element name="unitReservationsUrl" minOccurs="0">
+<xs:annotation>
+<xs:documentation>Url to the unitReservations</xs:documentation>
+</xs:annotation>
+</xs:element>
+<xs:element name="unitRatesUrl" minOccurs="0">
+<xs:annotation>
+<xs:documentation>Url to the unitRatePeriods</xs:documentation>
+</xs:annotation>
+</xs:element>
+</xs:choice>
+</xs:sequence>
+</xs:complexType>
+<xs:complexType name="ListingRatePeriods">
+<xs:sequence>
+<xs:element name="listingExternalId" nillable="false">
+<xs:simpleType>
+<xs:restriction base="xs:string">
+<xs:minLength value="1"/>
+</xs:restriction>
+</xs:simpleType>
+</xs:element>
+<xs:element name="unitExternalId" nillable="false">
+<xs:simpleType>
+<xs:restriction base="xs:string">
+<xs:minLength value="1"/>
+</xs:restriction>
+</xs:simpleType>
+</xs:element>
+<xs:element ref="ratePeriods"/>
+</xs:sequence>
+</xs:complexType>
+<xs:complexType name="ListingReservations">
+<xs:sequence>
+<xs:element name="listingExternalId" nillable="false">
+<xs:simpleType>
+<xs:restriction base="xs:string">
+<xs:minLength value="1"/>
+</xs:restriction>
+</xs:simpleType>
+</xs:element>
+<xs:element name="unitExternalId" nillable="false">
+<xs:simpleType>
+<xs:restriction base="xs:string">
+<xs:minLength value="1"/>
+</xs:restriction>
+</xs:simpleType>
+</xs:element>
+<xs:element ref="reservations"/>
+</xs:sequence>
+</xs:complexType>
+<xs:complexType name="Location">
+<xs:annotation>
+<xs:documentation xml:lang="en">Location-related data for a Listing.</xs:documentation>
+</xs:annotation>
+<xs:sequence>
+<xs:element name="address" type="Address" minOccurs="0">
+<xs:annotation>
+<xs:documentation xml:lang="en">
+The physical street address for the vacation rental property.
+</xs:documentation>
+</xs:annotation>
+</xs:element>
+<xs:element name="allowTravelersToZoom" type="xs:boolean">
+<xs:annotation>
+<xs:documentation xml:lang="en">
+Flag which tells the front-end traveler sites that the owner allows travelers to zoom on the Traveler Map.
+</xs:documentation>
+</xs:annotation>
+</xs:element>
+<xs:element name="defaultZoomLevel" type="xs:int" minOccurs="0">
+<xs:annotation>
+<xs:documentation xml:lang="en">
+Default zoom level for the Traveler Map to start at when loading the property page.
+</xs:documentation>
+</xs:annotation>
+</xs:element>
+<xs:element name="description" type="Note" minOccurs="0">
+<xs:annotation>
+<xs:documentation xml:lang="en">
+A textual description of the location of the property.
+</xs:documentation>
+</xs:annotation>
+</xs:element>
+<xs:element name="enableMap" type="xs:boolean">
+<xs:annotation>
+<xs:documentation xml:lang="en">
+Boolean flag which disables the Traveler map completely per listing.
+</xs:documentation>
+</xs:annotation>
+</xs:element>
+<xs:element name="geoCode" type="GeoCode" minOccurs="0">
+<xs:annotation>
+<xs:documentation xml:lang="en">
+The GeoCode for the property provided by the advertiser.
+</xs:documentation>
+</xs:annotation>
+</xs:element>
+<xs:element name="maxZoomLevel" type="xs:int" minOccurs="0">
+<xs:annotation>
+<xs:documentation xml:lang="en">
+This is the maximum amount of zoom the customer wants to show when viewing a map with the location of their property.
+</xs:documentation>
+</xs:annotation>
+</xs:element>
+<xs:element name="nearestPlaces" minOccurs="0">
+<xs:complexType>
+<xs:sequence>
+<xs:element name="nearestPlace" type="NearestPlace" minOccurs="0" maxOccurs="unbounded"/>
+</xs:sequence>
+</xs:complexType>
+</xs:element>
+<xs:element name="otherActivities" type="Note" minOccurs="0">
+<xs:annotation>
+<xs:documentation xml:lang="en"/>
+</xs:annotation>
+</xs:element>
+<xs:element name="showExactLocation" type="xs:boolean">
+<xs:annotation>
+<xs:documentation xml:lang="en">
+Whether the customer wants us to display their exact location when viewing a map with the location of their property.
+</xs:documentation>
+</xs:annotation>
+</xs:element>
+</xs:sequence>
+</xs:complexType>
+<xs:complexType name="Money" final="extension restriction">
+<xs:annotation>
+<xs:documentation xml:lang="en">Represents an amount of money.</xs:documentation>
+</xs:annotation>
+<xs:simpleContent>
+<xs:extension base="xs:decimal">
+<xs:attribute name="currency" type="xs:string">
+<xs:annotation>
+<xs:documentation xml:lang="en">ISO currency code.</xs:documentation>
+</xs:annotation>
+</xs:attribute>
+</xs:extension>
+</xs:simpleContent>
+</xs:complexType>
+<xs:complexType name="NearestPlace">
+<xs:annotation>
+<xs:documentation xml:lang="en">
+Information regarding a place of interest nearby to a vacation rental.
+</xs:documentation>
+</xs:annotation>
+<xs:sequence>
+<xs:element name="distance" type="xs:decimal" minOccurs="0">
+<xs:annotation>
+<xs:documentation xml:lang="en">
+The distance to the place of interest, expressed in the given DistanceUnit.
+</xs:documentation>
+</xs:annotation>
+</xs:element>
+<xs:element name="distanceUnit" type="DistanceUnit" minOccurs="0">
+<xs:annotation>
+<xs:documentation xml:lang="en">
+The unit of distance in which the distance to the place of interest is expressed.
+</xs:documentation>
+</xs:annotation>
+</xs:element>
+<xs:element name="name" type="Note" minOccurs="0">
+<xs:annotation>
+<xs:documentation xml:lang="en">The name of the place of interest.</xs:documentation>
+</xs:annotation>
+</xs:element>
+</xs:sequence>
+<xs:attribute name="placeType" use="required">
+<xs:simpleType>
+<xs:restriction base="xs:string">
+<xs:enumeration value="AIRPORT"/>
+<xs:enumeration value="BAR"/>
+<xs:enumeration value="BEACH"/>
+<xs:enumeration value="FERRY"/>
+<xs:enumeration value="GOLF"/>
+<xs:enumeration value="HIGHWAY"/>
+<xs:enumeration value="RESTAURANT"/>
+<xs:enumeration value="SKI"/>
+<xs:enumeration value="TRAIN"/>
+</xs:restriction>
+</xs:simpleType>
+</xs:attribute>
+</xs:complexType>
+<xs:complexType name="Note">
+<xs:annotation>
+<xs:documentation xml:lang="en">A piece of localizable text.</xs:documentation>
+</xs:annotation>
+<xs:sequence>
+<xs:element name="texts">
+<xs:annotation>
+<xs:documentation xml:lang="en">The list of variant of this text, by Locale.</xs:documentation>
+</xs:annotation>
+<xs:complexType>
+<xs:sequence>
+<xs:element name="text" type="Text" maxOccurs="unbounded"/>
+</xs:sequence>
+</xs:complexType>
+</xs:element>
+</xs:sequence>
+</xs:complexType>
+<xs:complexType name="Phone">
+<xs:annotation>
+<xs:documentation xml:lang="en">Phone number information</xs:documentation>
+</xs:annotation>
+<xs:sequence>
+<xs:element name="areaCode" type="xs:string" minOccurs="0">
+<xs:annotation>
+<xs:documentation xml:lang="en"/>
+</xs:annotation>
+</xs:element>
+<xs:element name="countryCode" type="xs:string" minOccurs="0">
+<xs:annotation>
+<xs:documentation xml:lang="en"/>
+</xs:annotation>
+</xs:element>
+<xs:element name="ext" type="xs:string" minOccurs="0">
+<xs:annotation>
+<xs:documentation xml:lang="en"/>
+</xs:annotation>
+</xs:element>
+<xs:element name="number" type="xs:string" minOccurs="0">
+<xs:annotation>
+<xs:documentation xml:lang="en"/>
+</xs:annotation>
+</xs:element>
+</xs:sequence>
+</xs:complexType>
+<xs:complexType name="Rate">
+<xs:annotation>
+<xs:documentation xml:lang="en">
+A rental rate amount for a given RateType (for a given RatePeriod).
+</xs:documentation>
+</xs:annotation>
+<xs:sequence>
+<xs:element name="amount" type="Money">
+<xs:annotation>
+<xs:documentation xml:lang="en">The rate amount.</xs:documentation>
+</xs:annotation>
+</xs:element>
+</xs:sequence>
+<xs:attribute name="rateType" type="RateType" use="required">
+<xs:annotation>
+<xs:documentation xml:lang="en"/>
+</xs:annotation>
+</xs:attribute>
+</xs:complexType>
+<xs:complexType name="RatePeriod">
+<xs:annotation>
+<xs:documentation xml:lang="en">
+A set of rate designations in place for a given date range.
+</xs:documentation>
+</xs:annotation>
+<xs:sequence>
+<xs:element name="dateRange" type="DateRange">
+<xs:annotation>
+<xs:documentation xml:lang="en">The effective date range for this rate period.</xs:documentation>
+</xs:annotation>
+</xs:element>
+<xs:element name="minimumStay" type="xs:int" minOccurs="0">
+<xs:annotation>
+<xs:documentation xml:lang="en">
+The minimum number of nights' stay for this rate period.
+</xs:documentation>
+</xs:annotation>
+</xs:element>
+<xs:element name="name" type="Note" minOccurs="0">
+<xs:annotation>
+<xs:documentation xml:lang="en">The name of this rate period.</xs:documentation>
+</xs:annotation>
+</xs:element>
+<xs:element name="note" type="Note" minOccurs="0">
+<xs:annotation>
+<xs:documentation xml:lang="en">A textual note about this rate period.</xs:documentation>
+</xs:annotation>
+</xs:element>
+<xs:element name="rates">
+<xs:annotation>
+<xs:documentation xml:lang="en">The rates table for this rate period.</xs:documentation>
+</xs:annotation>
+<xs:complexType>
+<xs:sequence>
+<xs:element name="rate" type="Rate" maxOccurs="unbounded"/>
+</xs:sequence>
+</xs:complexType>
+</xs:element>
+</xs:sequence>
+</xs:complexType>
+<xs:complexType name="RatePeriodsBatch">
+<xs:annotation>
+<xs:documentation xml:lang="en">
+A Listing is an advertisement for a vacation rental - it contains the details of the rental property that are presented to travelers. Listings encompass one or more Units. The Listing represents data about the property as a whole - the physical location and attributes of the property as a whole, for example. Each Unit represents a single rentable unit of the property, and describes the particulars of that unit.
+</xs:documentation>
+</xs:annotation>
+<xs:sequence>
+<xs:element name="documentVersion"/>
+<xs:element name="advertisers" type="AdvertiserRatePeriods"/>
+</xs:sequence>
+</xs:complexType>
+<xs:complexType name="Reservation">
+<xs:annotation>
+<xs:documentation xml:lang="en">A reservation for a vacation rental.</xs:documentation>
+</xs:annotation>
+<xs:complexContent>
+<xs:extension base="Entity">
+<xs:sequence>
+<xs:element name="reservationDates" type="DateRange">
+<xs:annotation>
+<xs:documentation xml:lang="en">Arrival and departure dates for the reservation.</xs:documentation>
+</xs:annotation>
+</xs:element>
+</xs:sequence>
+</xs:extension>
+</xs:complexContent>
+</xs:complexType>
+
+<xs:complexType name="ReservationsBatch">
+<xs:annotation>
+<xs:documentation xml:lang="en">
+A Listing is an advertisement for a vacation rental - it contains the details of the rental property that are presented to travelers. Listings encompass one or more Units. The Listing represents data about the property as a whole - the physical location and attributes of the property as a whole, for example. Each Unit represents a single rentable unit of the property, and describes the particulars of that unit.
+</xs:documentation>
+</xs:annotation>
+<xs:sequence>
+<xs:element name="documentVersion"/>
+<xs:element name="advertisers" type="AdvertiserReservations"/>
+</xs:sequence>
+</xs:complexType>
+<xs:complexType name="Text">
+<xs:annotation>
+<xs:documentation xml:lang="en">
+A piece of localized text that may or may not have been auto translated.
+</xs:documentation>
+</xs:annotation>
+<xs:sequence>
+<xs:element name="textValue" type="xs:string">
+<xs:annotation>
+<xs:documentation xml:lang="en">
+The approved "live" content for this piece of text.
+</xs:documentation>
+</xs:annotation>
+</xs:element>
+</xs:sequence>
+<xs:attribute name="locale" type="xs:string">
+<xs:annotation>
+<xs:documentation xml:lang="en">The locale for this piece of text.</xs:documentation>
+</xs:annotation>
+</xs:attribute>
+</xs:complexType>
+<xs:complexType name="UnitWSD">
+<xs:annotation>
+<xs:documentation xml:lang="en">
+A Unit is an advertisement for a single unit of a vacation rental property. The Unit describes a single rentable unit of a vacation rental property - details of the property in general, such as location, are contained in the Listing that owns the Unit.
+</xs:documentation>
+</xs:annotation>
+<xs:complexContent>
+<xs:extension base="Entity">
+<xs:sequence>
+<xs:element name="externalId" nillable="false">
+<xs:simpleType>
+<xs:restriction base="xs:string">
+<xs:maxLength value="255"/>
+<xs:minLength value="1"/>
+<!-- <xs:pattern value="([a-zA-Z0-9 _-])*"/>   -->
+</xs:restriction>
+</xs:simpleType>
+</xs:element>
+<xs:element name="active" type="xs:boolean" minOccurs="0">
+<xs:annotation>
+<xs:documentation xml:lang="en">Indicates whether the Unit is active or inactive.</xs:documentation>
+</xs:annotation>
+</xs:element>
+<xs:element name="area" type="xs:int" minOccurs="0">
+<xs:annotation>
+<xs:documentation xml:lang="en">The usable area of the unit.</xs:documentation>
+</xs:annotation>
+</xs:element>
+<xs:element name="areaUnit" type="AreaUnit" minOccurs="0">
+<xs:annotation>
+<xs:documentation xml:lang="en">
+The unit measure in which the unit's area is expressed.
+</xs:documentation>
+</xs:annotation>
+</xs:element>
+<xs:element name="bathroomDetails" type="Note" minOccurs="0">
+<xs:annotation>
+<xs:documentation xml:lang="en">
+Textual details describing the bathroom(s) in the unit.
+</xs:documentation>
+</xs:annotation>
+</xs:element>
+<xs:element name="bathrooms">
+<xs:annotation>
+<xs:documentation xml:lang="en">
+Structured Room data about the bathroom(s) in the unit.
+</xs:documentation>
+</xs:annotation>
+<xs:complexType>
+<xs:sequence>
+<xs:element name="bathroom" type="Bathroom" maxOccurs="unbounded"/>
+</xs:sequence>
+</xs:complexType>
+</xs:element>
+<xs:element name="bedroomDetails" type="Note" minOccurs="0">
+<xs:annotation>
+<xs:documentation xml:lang="en">
+Textual details describing the bedroom(s) in the unit.
+</xs:documentation>
+</xs:annotation>
+</xs:element>
+<xs:element name="bedrooms">
+<xs:annotation>
+<xs:documentation xml:lang="en">
+Structured Room data about the bedroom(s) in the unit.
+</xs:documentation>
+</xs:annotation>
+<xs:complexType>
+<xs:sequence>
+<xs:element name="bedroom" type="Bedroom" maxOccurs="unbounded"/>
+</xs:sequence>
+</xs:complexType>
+</xs:element>
+<xs:element name="description" type="Note" minOccurs="0">
+<xs:annotation>
+<xs:documentation xml:lang="en">A textual description of the unit.</xs:documentation>
+</xs:annotation>
+</xs:element>
+<xs:element name="diningSeating" type="xs:int" minOccurs="0">
+<xs:annotation>
+<xs:documentation xml:lang="en">
+The number of people who can be seated for dining in the unit.
+</xs:documentation>
+</xs:annotation>
+</xs:element>
+<xs:element name="featuresDescription" type="Note" minOccurs="0">
+<xs:annotation>
+<xs:documentation xml:lang="en">
+A textual description of the features of this unit.
+</xs:documentation>
+</xs:annotation>
+</xs:element>
+<xs:element name="featureValues" minOccurs="0">
+<xs:annotation>
+<xs:documentation xml:lang="en">
+Feature Values represent the normalized property features that the Advertiser can select for the unit.
+</xs:documentation>
+</xs:annotation>
+<xs:complexType>
+<xs:sequence>
+<xs:element name="featureValue" type="UnitFeatureValue" minOccurs="0" maxOccurs="unbounded"/>
+</xs:sequence>
+</xs:complexType>
+</xs:element>
+<xs:element name="loungeSeating" type="xs:int" minOccurs="0">
+<xs:annotation>
+<xs:documentation xml:lang="en">
+The number of people who can be seated for lounging in the unit.
+</xs:documentation>
+</xs:annotation>
+</xs:element>
+<xs:element name="maxSleep" type="xs:int">
+<xs:annotation>
+<xs:documentation xml:lang="en">
+The maximum number of people who can be lodged in the unit.
+</xs:documentation>
+</xs:annotation>
+</xs:element>
+<xs:element name="maxSleepInBeds" type="xs:int" minOccurs="0">
+<xs:annotation>
+<xs:documentation xml:lang="en">
+The maximum number of people who can be lodged, in beds, in the unit.
+</xs:documentation>
+</xs:annotation>
+</xs:element>
+<xs:element name="propertyType" type="PropertyType">
+<xs:annotation>
+<xs:documentation xml:lang="en">The type of property this unit represents.</xs:documentation>
+</xs:annotation>
+</xs:element>
+<xs:element name="unitMonetaryInformation" type="UnitMonetaryInformation">
+<xs:annotation>
+<xs:documentation xml:lang="en">
+Fees, taxes, deposits, and other monetary information for the unit.
+</xs:documentation>
+</xs:annotation>
+</xs:element>
+<xs:element name="unitName" type="Note" minOccurs="0">
+<xs:annotation>
+<xs:documentation xml:lang="en">
+The name of the unit - can be used to differentiate units in a multi-unit listing.
+</xs:documentation>
+</xs:annotation>
+</xs:element>
+<xs:element ref="ratePeriods" minOccurs="0"/>
+<xs:element ref="reservations" minOccurs="0"/>
+</xs:sequence>
+</xs:extension>
+</xs:complexContent>
+</xs:complexType>
+<xs:complexType name="UnitFeatureValue">
+<xs:annotation>
+<xs:documentation xml:lang="en">
+Feature value represents a user selected "checkbox" for a particular feature in a feature set.
+</xs:documentation>
+</xs:annotation>
+<xs:sequence>
+<xs:element name="count" type="xs:int" default="1" minOccurs="0">
+<xs:annotation>
+<xs:documentation xml:lang="en">The quantity of this feature (e.g. 2 fireplaces).</xs:documentation>
+</xs:annotation>
+</xs:element>
+<xs:element name="description" type="Note" minOccurs="0">
+<xs:annotation>
+<xs:documentation xml:lang="en">Localized description of the feature</xs:documentation>
+</xs:annotation>
+</xs:element>
+<xs:element name="unitFeatureName" type="UnitFeatureName"/>
+</xs:sequence>
+</xs:complexType>
+<xs:complexType name="UnitMonetaryInformation">
+<xs:annotation>
+<xs:documentation xml:lang="en">
+Fees, deposits, taxes, and other monetary information about a unit.
+</xs:documentation>
+</xs:annotation>
+<xs:sequence>
+<xs:element name="cleaningFee" type="Money" minOccurs="0">
+<xs:annotation>
+<xs:documentation xml:lang="en">The cleaning fee for the unit.</xs:documentation>
+</xs:annotation>
+</xs:element>
+<xs:element name="contractualBookingDeposit" type="xs:decimal" minOccurs="0">
+<xs:annotation>
+<xs:documentation xml:lang="en">
+The contractual booking deposit required for the unit.
+</xs:documentation>
+</xs:annotation>
+</xs:element>
+<xs:element name="currency" type="xs:string">
+<xs:annotation>
+<xs:documentation xml:lang="en">
+The currency in which monetary values are presented for the unit.
+</xs:documentation>
+</xs:annotation>
+</xs:element>
+<xs:element name="damageDeposit" type="Money" minOccurs="0">
+<xs:annotation>
+<xs:documentation xml:lang="en">The damage deposit for the unit.</xs:documentation>
+</xs:annotation>
+</xs:element>
+<xs:element name="gratuity" type="xs:decimal" minOccurs="0">
+<xs:annotation>
+<xs:documentation xml:lang="en">The gratuity required for the unit.</xs:documentation>
+</xs:annotation>
+</xs:element>
+<xs:element name="nonContractualBookingDeposit" type="xs:decimal" minOccurs="0">
+<xs:annotation>
+<xs:documentation xml:lang="en">
+The non-contractual booking deposit required for the unit.
+</xs:documentation>
+</xs:annotation>
+</xs:element>
+<xs:element name="rateNotes" type="Note" minOccurs="0">
+<xs:annotation>
+<xs:documentation xml:lang="en">Notes about the unit's rates.</xs:documentation>
+</xs:annotation>
+</xs:element>
+<xs:element name="tax" type="xs:decimal" minOccurs="0">
+<xs:annotation>
+<xs:documentation xml:lang="en">The tax rate for the unit.</xs:documentation>
+</xs:annotation>
+</xs:element>
+</xs:sequence>
+</xs:complexType>
+<xs:simpleType name="AreaUnit">
+<xs:annotation>
+<xs:documentation xml:lang="en">Units of area measurement.</xs:documentation>
+</xs:annotation>
+<xs:restriction base="xs:string">
+<xs:enumeration value="METERS_SQUARED">
+<xs:annotation>
+<xs:documentation xml:lang="en">meters squared (m²)</xs:documentation>
+</xs:annotation>
+</xs:enumeration>
+<xs:enumeration value="SQUARE_FEET">
+<xs:annotation>
+<xs:documentation xml:lang="en">square feet (ft²)</xs:documentation>
+</xs:annotation>
+</xs:enumeration>
+</xs:restriction>
+</xs:simpleType>
+<xs:simpleType name="BathroomFeatureName">
+<xs:restriction base="xs:string">
+<xs:enumeration value="AMENITY_TOILET"/>
+<xs:enumeration value="AMENITY_COMBO_TUB_SHOWER"/>
+<xs:enumeration value="AMENITY_TUB"/>
+<xs:enumeration value="AMENITY_SHOWER"/>
+<xs:enumeration value="AMENITY_JETTED_TUB"/>
+<xs:enumeration value="AMENITY_BIDET"/>
+<xs:enumeration value="AMENITY_OUTDOOR_SHOWER"/>
+</xs:restriction>
+</xs:simpleType>
+<xs:simpleType name="BathroomRoomType">
+<xs:annotation>
+<xs:documentation xml:lang="en">The type of room represented by a Room element.</xs:documentation>
+</xs:annotation>
+<xs:restriction base="xs:string">
+<xs:enumeration value="FULL_BATH">
+<xs:annotation>
+<xs:documentation xml:lang="en"/>
+</xs:annotation>
+</xs:enumeration>
+<xs:enumeration value="HALF_BATH">
+<xs:annotation>
+<xs:documentation xml:lang="en"/>
+</xs:annotation>
+</xs:enumeration>
+<xs:enumeration value="SHOWER_INDOOR_OR_OUTDOOR">
+<xs:annotation>
+<xs:documentation xml:lang="en"/>
+</xs:annotation>
+</xs:enumeration>
+</xs:restriction>
+</xs:simpleType>
+<xs:simpleType name="BedroomFeatureName">
+<xs:restriction base="xs:string">
+<xs:enumeration value="AMENITY_KING"/>
+<xs:enumeration value="AMENITY_QUEEN"/>
+<xs:enumeration value="AMENITY_DOUBLE"/>
+<xs:enumeration value="AMENITY_TWIN_SINGLE"/>
+<xs:enumeration value="AMENITY_CHILD_BED"/>
+<xs:enumeration value="AMENITY_CRIB"/>
+<xs:enumeration value="AMENITY_SLEEP_SOFA"/>
+<xs:enumeration value="AMENITY_BUNK_BED"/>
+<xs:enumeration value="AMENITY_MURPHY_BED"/>
+</xs:restriction>
+</xs:simpleType>
+<xs:simpleType name="BedroomRoomType">
+<xs:annotation>
+<xs:documentation xml:lang="en">The type of room represented by a Room element.</xs:documentation>
+</xs:annotation>
+<xs:restriction base="xs:string">
+<xs:enumeration value="BEDROOM">
+<xs:annotation>
+<xs:documentation xml:lang="en"/>
+</xs:annotation>
+</xs:enumeration>
+<xs:enumeration value="LIVING_SLEEPING_COMBO">
+<xs:annotation>
+<xs:documentation xml:lang="en"/>
+</xs:annotation>
+</xs:enumeration>
+<xs:enumeration value="OTHER_SLEEPING_AREA">
+<xs:annotation>
+<xs:documentation xml:lang="en"/>
+</xs:annotation>
+</xs:enumeration>
+</xs:restriction>
+</xs:simpleType>
+<xs:simpleType name="CountryISOCode">
+<xs:restriction base="xs:string">
+<xs:enumeration value="AF"/>
+<xs:enumeration value="AX"/>
+<xs:enumeration value="AL"/>
+<xs:enumeration value="DZ"/>
+<xs:enumeration value="AS"/>
+<xs:enumeration value="AD"/>
+<xs:enumeration value="AO"/>
+<xs:enumeration value="AI"/>
+<xs:enumeration value="AQ"/>
+<xs:enumeration value="AG"/>
+<xs:enumeration value="AR"/>
+<xs:enumeration value="AM"/>
+<xs:enumeration value="AW"/>
+<xs:enumeration value="AU"/>
+<xs:enumeration value="AT"/>
+<xs:enumeration value="AZ"/>
+<xs:enumeration value="BS"/>
+<xs:enumeration value="BH"/>
+<xs:enumeration value="BD"/>
+<xs:enumeration value="BB"/>
+<xs:enumeration value="BY"/>
+<xs:enumeration value="BE"/>
+<xs:enumeration value="BZ"/>
+<xs:enumeration value="BJ"/>
+<xs:enumeration value="BM"/>
+<xs:enumeration value="BT"/>
+<xs:enumeration value="BO"/>
+<xs:enumeration value="BQ"/>
+<xs:enumeration value="BA"/>
+<xs:enumeration value="BW"/>
+<xs:enumeration value="BV"/>
+<xs:enumeration value="BR"/>
+<xs:enumeration value="IO"/>
+<xs:enumeration value="BN"/>
+<xs:enumeration value="BG"/>
+<xs:enumeration value="BF"/>
+<xs:enumeration value="BI"/>
+<xs:enumeration value="KH"/>
+<xs:enumeration value="CM"/>
+<xs:enumeration value="CA"/>
+<xs:enumeration value="CV"/>
+<xs:enumeration value="KY"/>
+<xs:enumeration value="CF"/>
+<xs:enumeration value="TD"/>
+<xs:enumeration value="CL"/>
+<xs:enumeration value="CN"/>
+<xs:enumeration value="CX"/>
+<xs:enumeration value="CC"/>
+<xs:enumeration value="CO"/>
+<xs:enumeration value="KM"/>
+<xs:enumeration value="CG"/>
+<xs:enumeration value="CD"/>
+<xs:enumeration value="CK"/>
+<xs:enumeration value="CR"/>
+<xs:enumeration value="CI"/>
+<xs:enumeration value="HR"/>
+<xs:enumeration value="CU"/>
+<xs:enumeration value="CW"/>
+<xs:enumeration value="CY"/>
+<xs:enumeration value="CZ"/>
+<xs:enumeration value="DK"/>
+<xs:enumeration value="DJ"/>
+<xs:enumeration value="DM"/>
+<xs:enumeration value="DO"/>
+<xs:enumeration value="EC"/>
+<xs:enumeration value="EG"/>
+<xs:enumeration value="SV"/>
+<xs:enumeration value="GQ"/>
+<xs:enumeration value="ER"/>
+<xs:enumeration value="EE"/>
+<xs:enumeration value="ET"/>
+<xs:enumeration value="FK"/>
+<xs:enumeration value="FO"/>
+<xs:enumeration value="FJ"/>
+<xs:enumeration value="FI"/>
+<xs:enumeration value="FR"/>
+<xs:enumeration value="GF"/>
+<xs:enumeration value="PF"/>
+<xs:enumeration value="TF"/>
+<xs:enumeration value="GA"/>
+<xs:enumeration value="GM"/>
+<xs:enumeration value="GE"/>
+<xs:enumeration value="DE"/>
+<xs:enumeration value="GH"/>
+<xs:enumeration value="GI"/>
+<xs:enumeration value="GR"/>
+<xs:enumeration value="GL"/>
+<xs:enumeration value="GD"/>
+<xs:enumeration value="GP"/>
+<xs:enumeration value="GU"/>
+<xs:enumeration value="GT"/>
+<xs:enumeration value="GG"/>
+<xs:enumeration value="GN"/>
+<xs:enumeration value="GW"/>
+<xs:enumeration value="GY"/>
+<xs:enumeration value="HT"/>
+<xs:enumeration value="HM"/>
+<xs:enumeration value="VA"/>
+<xs:enumeration value="HN"/>
+<xs:enumeration value="HK"/>
+<xs:enumeration value="HU"/>
+<xs:enumeration value="IS"/>
+<xs:enumeration value="IN"/>
+<xs:enumeration value="ID"/>
+<xs:enumeration value="IR"/>
+<xs:enumeration value="IQ"/>
+<xs:enumeration value="IE"/>
+<xs:enumeration value="IM"/>
+<xs:enumeration value="IL"/>
+<xs:enumeration value="IT"/>
+<xs:enumeration value="JM"/>
+<xs:enumeration value="JP"/>
+<xs:enumeration value="JE"/>
+<xs:enumeration value="JO"/>
+<xs:enumeration value="KZ"/>
+<xs:enumeration value="KE"/>
+<xs:enumeration value="KI"/>
+<xs:enumeration value="KP"/>
+<xs:enumeration value="KR"/>
+<xs:enumeration value="KW"/>
+<xs:enumeration value="KG"/>
+<xs:enumeration value="LA"/>
+<xs:enumeration value="LV"/>
+<xs:enumeration value="LB"/>
+<xs:enumeration value="LS"/>
+<xs:enumeration value="LR"/>
+<xs:enumeration value="LY"/>
+<xs:enumeration value="LI"/>
+<xs:enumeration value="LT"/>
+<xs:enumeration value="LU"/>
+<xs:enumeration value="MO"/>
+<xs:enumeration value="MK"/>
+<xs:enumeration value="MG"/>
+<xs:enumeration value="MW"/>
+<xs:enumeration value="MY"/>
+<xs:enumeration value="MV"/>
+<xs:enumeration value="ML"/>
+<xs:enumeration value="MT"/>
+<xs:enumeration value="MH"/>
+<xs:enumeration value="MQ"/>
+<xs:enumeration value="MR"/>
+<xs:enumeration value="MU"/>
+<xs:enumeration value="YT"/>
+<xs:enumeration value="MX"/>
+<xs:enumeration value="FM"/>
+<xs:enumeration value="MD"/>
+<xs:enumeration value="MC"/>
+<xs:enumeration value="MN"/>
+<xs:enumeration value="ME"/>
+<xs:enumeration value="MS"/>
+<xs:enumeration value="MA"/>
+<xs:enumeration value="MZ"/>
+<xs:enumeration value="MM"/>
+<xs:enumeration value="NA"/>
+<xs:enumeration value="NR"/>
+<xs:enumeration value="NP"/>
+<xs:enumeration value="NL"/>
+<xs:enumeration value="NC"/>
+<xs:enumeration value="NZ"/>
+<xs:enumeration value="NI"/>
+<xs:enumeration value="NE"/>
+<xs:enumeration value="NG"/>
+<xs:enumeration value="NU"/>
+<xs:enumeration value="NF"/>
+<xs:enumeration value="MP"/>
+<xs:enumeration value="NO"/>
+<xs:enumeration value="OM"/>
+<xs:enumeration value="PK"/>
+<xs:enumeration value="PW"/>
+<xs:enumeration value="PS"/>
+<xs:enumeration value="PA"/>
+<xs:enumeration value="PG"/>
+<xs:enumeration value="PY"/>
+<xs:enumeration value="PE"/>
+<xs:enumeration value="PH"/>
+<xs:enumeration value="PN"/>
+<xs:enumeration value="PL"/>
+<xs:enumeration value="PT"/>
+<xs:enumeration value="PR"/>
+<xs:enumeration value="QA"/>
+<xs:enumeration value="RE"/>
+<xs:enumeration value="RO"/>
+<xs:enumeration value="RU"/>
+<xs:enumeration value="RW"/>
+<xs:enumeration value="BL"/>
+<xs:enumeration value="SH"/>
+<xs:enumeration value="KN"/>
+<xs:enumeration value="LC"/>
+<xs:enumeration value="MF"/>
+<xs:enumeration value="PM"/>
+<xs:enumeration value="VC"/>
+<xs:enumeration value="WS"/>
+<xs:enumeration value="SM"/>
+<xs:enumeration value="ST"/>
+<xs:enumeration value="SA"/>
+<xs:enumeration value="SN"/>
+<xs:enumeration value="RS"/>
+<xs:enumeration value="SC"/>
+<xs:enumeration value="SL"/>
+<xs:enumeration value="SG"/>
+<xs:enumeration value="SX"/>
+<xs:enumeration value="SK"/>
+<xs:enumeration value="SI"/>
+<xs:enumeration value="SB"/>
+<xs:enumeration value="SO"/>
+<xs:enumeration value="ZA"/>
+<xs:enumeration value="GS"/>
+<xs:enumeration value="SS"/>
+<xs:enumeration value="ES"/>
+<xs:enumeration value="LK"/>
+<xs:enumeration value="SD"/>
+<xs:enumeration value="SR"/>
+<xs:enumeration value="SJ"/>
+<xs:enumeration value="SZ"/>
+<xs:enumeration value="SE"/>
+<xs:enumeration value="CH"/>
+<xs:enumeration value="SY"/>
+<xs:enumeration value="TW"/>
+<xs:enumeration value="TJ"/>
+<xs:enumeration value="TZ"/>
+<xs:enumeration value="TH"/>
+<xs:enumeration value="TL"/>
+<xs:enumeration value="TG"/>
+<xs:enumeration value="TK"/>
+<xs:enumeration value="TO"/>
+<xs:enumeration value="TT"/>
+<xs:enumeration value="TN"/>
+<xs:enumeration value="TR"/>
+<xs:enumeration value="TM"/>
+<xs:enumeration value="TC"/>
+<xs:enumeration value="TV"/>
+<xs:enumeration value="UG"/>
+<xs:enumeration value="UA"/>
+<xs:enumeration value="AE"/>
+<xs:enumeration value="GB"/>
+<xs:enumeration value="US"/>
+<xs:enumeration value="UM"/>
+<xs:enumeration value="UY"/>
+<xs:enumeration value="UZ"/>
+<xs:enumeration value="VU"/>
+<xs:enumeration value="VE"/>
+<xs:enumeration value="VN"/>
+<xs:enumeration value="VG"/>
+<xs:enumeration value="VI"/>
+<xs:enumeration value="WF"/>
+<xs:enumeration value="EH"/>
+<xs:enumeration value="YE"/>
+<xs:enumeration value="ZM"/>
+<xs:enumeration value="ZW"/>
+</xs:restriction>
+</xs:simpleType>
+<xs:simpleType name="DistanceUnit">
+<xs:annotation>
+<xs:documentation xml:lang="en">Units of distance measurement.</xs:documentation>
+</xs:annotation>
+<xs:restriction base="xs:string">
+<xs:enumeration value="KILOMETRES">
+<xs:annotation>
+<xs:documentation xml:lang="en"/>
+</xs:annotation>
+</xs:enumeration>
+<xs:enumeration value="METRES">
+<xs:annotation>
+<xs:documentation xml:lang="en"/>
+</xs:annotation>
+</xs:enumeration>
+<xs:enumeration value="MILES">
+<xs:annotation>
+<xs:documentation xml:lang="en"/>
+</xs:annotation>
+</xs:enumeration>
+<xs:enumeration value="MINUTES">
+<xs:annotation>
+<xs:documentation xml:lang="en"/>
+</xs:annotation>
+</xs:enumeration>
+</xs:restriction>
+</xs:simpleType>
+<xs:simpleType name="FeatureSetName">
+<xs:annotation>
+<xs:documentation xml:lang="en">Names for groups of FeatureSet options.</xs:documentation>
+</xs:annotation>
+<xs:restriction base="xs:string">
+<xs:enumeration value="ACCOMMODATION_TYPE">
+<xs:annotation>
+<xs:documentation xml:lang="en"/>
+</xs:annotation>
+</xs:enumeration>
+<xs:enumeration value="ADVERTISER_PROFILE_AFFILIATIONS">
+<xs:annotation>
+<xs:documentation xml:lang="en"/>
+</xs:annotation>
+</xs:enumeration>
+<xs:enumeration value="AMENITY">
+<xs:annotation>
+<xs:documentation xml:lang="en"/>
+</xs:annotation>
+</xs:enumeration>
+<xs:enumeration value="ARRIVAL_DAY">
+<xs:annotation>
+<xs:documentation xml:lang="en"/>
+</xs:annotation>
+</xs:enumeration>
+<xs:enumeration value="ATTRACTIONS">
+<xs:annotation>
+<xs:documentation xml:lang="en"/>
+</xs:annotation>
+</xs:enumeration>
+<xs:enumeration value="BUILDING_TYPE">
+<xs:annotation>
+<xs:documentation xml:lang="en"/>
+</xs:annotation>
+</xs:enumeration>
+<xs:enumeration value="CAR">
+<xs:annotation>
+<xs:documentation xml:lang="en"/>
+</xs:annotation>
+</xs:enumeration>
+<xs:enumeration value="CLE_VACANCES">
+<xs:annotation>
+<xs:documentation xml:lang="en"/>
+</xs:annotation>
+</xs:enumeration>
+<xs:enumeration value="COMMUNICATION_INTERNET">
+<xs:annotation>
+<xs:documentation xml:lang="en"/>
+</xs:annotation>
+</xs:enumeration>
+<xs:enumeration value="DINING">
+<xs:annotation>
+<xs:documentation xml:lang="en"/>
+</xs:annotation>
+</xs:enumeration>
+<xs:enumeration value="DINING_CHECKBOX">
+<xs:annotation>
+<xs:documentation xml:lang="en"/>
+</xs:annotation>
+</xs:enumeration>
+<xs:enumeration value="ENTERTAINMENT">
+<xs:annotation>
+<xs:documentation xml:lang="en"/>
+</xs:annotation>
+</xs:enumeration>
+<xs:enumeration value="FINDUS">
+<xs:annotation>
+<xs:documentation xml:lang="en"/>
+</xs:annotation>
+</xs:enumeration>
+<xs:enumeration value="FORMS_OF_PAYMENT">
+<xs:annotation>
+<xs:documentation xml:lang="en"/>
+</xs:annotation>
+</xs:enumeration>
+<xs:enumeration value="GENERAL">
+<xs:annotation>
+<xs:documentation xml:lang="en"/>
+</xs:annotation>
+</xs:enumeration>
+<xs:enumeration value="INTERNET_ACCESS">
+<xs:annotation>
+<xs:documentation xml:lang="en"/>
+</xs:annotation>
+</xs:enumeration>
+<xs:enumeration value="KATRINAHOUSING">
+<xs:annotation>
+<xs:documentation xml:lang="en"/>
+</xs:annotation>
+</xs:enumeration>
+<xs:enumeration value="KITCHEN">
+<xs:annotation>
+<xs:documentation xml:lang="en"/>
+</xs:annotation>
+</xs:enumeration>
+<xs:enumeration value="LANGUAGE">
+<xs:annotation>
+<xs:documentation xml:lang="en"/>
+</xs:annotation>
+</xs:enumeration>
+<xs:enumeration value="LEISURE_ACTIVITIES">
+<xs:annotation>
+<xs:documentation xml:lang="en"/>
+</xs:annotation>
+</xs:enumeration>
+<xs:enumeration value="LIVING_ROOM">
+<xs:annotation>
+<xs:documentation xml:lang="en"/>
+</xs:annotation>
+</xs:enumeration>
+<xs:enumeration value="LOCAL_ACTIVITIES">
+<xs:annotation>
+<xs:documentation xml:lang="en"/>
+</xs:annotation>
+</xs:enumeration>
+<xs:enumeration value="LOCAL_SERVICES_AND_BUSINESSES">
+<xs:annotation>
+<xs:documentation xml:lang="en"/>
+</xs:annotation>
+</xs:enumeration>
+<xs:enumeration value="LOCATION_TYPE">
+<xs:annotation>
+<xs:documentation xml:lang="en"/>
+</xs:annotation>
+</xs:enumeration>
+<xs:enumeration value="MEALS_AVAILABILITY">
+<xs:annotation>
+<xs:documentation xml:lang="en"/>
+</xs:annotation>
+</xs:enumeration>
+<xs:enumeration value="MEALS_TYPES">
+<xs:annotation>
+<xs:documentation xml:lang="en"/>
+</xs:annotation>
+</xs:enumeration>
+<xs:enumeration value="NATURAL_FEATURES">
+<xs:annotation>
+<xs:documentation xml:lang="en"/>
+</xs:annotation>
+</xs:enumeration>
+<xs:enumeration value="NEARBY_ACTIVITIES">
+<xs:annotation>
+<xs:documentation xml:lang="en"/>
+</xs:annotation>
+</xs:enumeration>
+<xs:enumeration value="NEARBY_ATTRACTION_FACILITY">
+<xs:annotation>
+<xs:documentation xml:lang="en"/>
+</xs:annotation>
+</xs:enumeration>
+<xs:enumeration value="NEARBY_SERVICES">
+<xs:annotation>
+<xs:documentation xml:lang="en"/>
+</xs:annotation>
+</xs:enumeration>
+<xs:enumeration value="ONSITE_EQUIPMENT">
+<xs:annotation>
+<xs:documentation xml:lang="en"/>
+</xs:annotation>
+</xs:enumeration>
+<xs:enumeration value="ONSITE_SERVICES">
+<xs:annotation>
+<xs:documentation xml:lang="en"/>
+</xs:annotation>
+</xs:enumeration>
+<xs:enumeration value="OUTSIDE">
+<xs:annotation>
+<xs:documentation xml:lang="en"/>
+</xs:annotation>
+</xs:enumeration>
+<xs:enumeration value="PAYMENT_TYPE">
+<xs:annotation>
+<xs:documentation xml:lang="en"/>
+</xs:annotation>
+</xs:enumeration>
+<xs:enumeration value="POOL_SPA">
+<xs:annotation>
+<xs:documentation xml:lang="en"/>
+</xs:annotation>
+</xs:enumeration>
+<xs:enumeration value="PROPERTY_DESCRIPTOR">
+<xs:annotation>
+<xs:documentation xml:lang="en"/>
+</xs:annotation>
+</xs:enumeration>
+<xs:enumeration value="PROPERTY_SUPERTYPE">
+<xs:annotation>
+<xs:documentation xml:lang="en"/>
+</xs:annotation>
+</xs:enumeration>
+<xs:enumeration value="PROPERTY_TYPE">
+<xs:annotation>
+<xs:documentation xml:lang="en"/>
+</xs:annotation>
+</xs:enumeration>
+<xs:enumeration value="RATING">
+<xs:annotation>
+<xs:documentation xml:lang="en"/>
+</xs:annotation>
+</xs:enumeration>
+<xs:enumeration value="RENTAL_CHARGES">
+<xs:annotation>
+<xs:documentation xml:lang="en"/>
+</xs:annotation>
+</xs:enumeration>
+<xs:enumeration value="RENTAL_CHARGES_RB">
+<xs:annotation>
+<xs:documentation xml:lang="en"/>
+</xs:annotation>
+</xs:enumeration>
+<xs:enumeration value="ROOM_SUBTYPE">
+<xs:annotation>
+<xs:documentation xml:lang="en"/>
+</xs:annotation>
+</xs:enumeration>
+<xs:enumeration value="ROOM_TYPE">
+<xs:annotation>
+<xs:documentation xml:lang="en"/>
+</xs:annotation>
+</xs:enumeration>
+<xs:enumeration value="ROOMS">
+<xs:annotation>
+<xs:documentation xml:lang="en"/>
+</xs:annotation>
+</xs:enumeration>
+<xs:enumeration value="SPORTS_AND_ADVENTURE_ACTIVITIES">
+<xs:annotation>
+<xs:documentation xml:lang="en"/>
+</xs:annotation>
+</xs:enumeration>
+<xs:enumeration value="SUITABILITY">
+<xs:annotation>
+<xs:documentation xml:lang="en"/>
+</xs:annotation>
+</xs:enumeration>
+<xs:enumeration value="SUITABILITY_CHKBOX">
+<xs:annotation>
+<xs:documentation xml:lang="en"/>
+</xs:annotation>
+</xs:enumeration>
+<xs:enumeration value="SWIMMING_POOL">
+<xs:annotation>
+<xs:documentation xml:lang="en"/>
+</xs:annotation>
+</xs:enumeration>
+<xs:enumeration value="THEME">
+<xs:annotation>
+<xs:documentation xml:lang="en"/>
+</xs:annotation>
+</xs:enumeration>
+<xs:enumeration value="WASHING_FACILITIES">
+<xs:annotation>
+<xs:documentation xml:lang="en"/>
+</xs:annotation>
+</xs:enumeration>
+</xs:restriction>
+</xs:simpleType>
+<xs:simpleType name="ListingEnabledStatus">
+<xs:annotation>
+<xs:documentation xml:lang="en">Enabled/Disabled status for a Listing.</xs:documentation>
+</xs:annotation>
+<xs:restriction base="xs:string">
+<xs:enumeration value="ENABLED">
+<xs:annotation>
+<xs:documentation xml:lang="en"/>
+</xs:annotation>
+</xs:enumeration>
+<xs:enumeration value="DISABLED">
+<xs:annotation>
+<xs:documentation xml:lang="en"/>
+</xs:annotation>
+</xs:enumeration>
+</xs:restriction>
+</xs:simpleType>
+<xs:simpleType name="ListingFeatureName">
+<xs:restriction base="xs:string">
+<xs:enumeration value="SPORTS_BASKETBALL_COURT"/>
+<xs:enumeration value="SPORTS_CYCLING"/>
+<xs:enumeration value="SPORTS_DEEPSEA_FISHING"/>
+<xs:enumeration value="SPORTS_EQUESTRIAN_EVENTS"/>
+<xs:enumeration value="SPORTS_FISHING"/>
+<xs:enumeration value="SPORTS_FISHING_FLY"/>
+<xs:enumeration value="SPORTS_FISHING_FRESHWATER"/>
+<xs:enumeration value="SPORTS_GOLF"/>
+<xs:enumeration value="SPORTS_GOLF_OPTIONAL"/>
+<xs:enumeration value="SPORTS_HIKING"/>
+<xs:enumeration value="SPORTS_HUNTING"/>
+<xs:enumeration value="SPORTS_HUNTING_BIG_GAME"/>
+<xs:enumeration value="SPORTS_HUNTING_SMALL_GAME"/>
+<xs:enumeration value="SPORTS_ICE_SKATING"/>
+<xs:enumeration value="SPORTS_JET_SKIING"/>
+<xs:enumeration value="SPORTS_MOUNTAIN_BIKING"/>
+<xs:enumeration value="SPORTS_MOUNTAIN_CLIMBING"/>
+<xs:enumeration value="SPORTS_MOUNTAINEERING"/>
+<xs:enumeration value="SPORTS_PARAGLIDING"/>
+<xs:enumeration value="SPORTS_PIER_FISHING"/>
+<xs:enumeration value="SPORTS_RAFTING"/>
+<xs:enumeration value="SPORTS_ROLLER_BLADING"/>
+<xs:enumeration value="SPORTS_SAILING"/>
+<xs:enumeration value="SPORTS_SCUBA_OR_SNORKELING"/>
+<xs:enumeration value="SPORTS_SKI_LIFT_PRIVILEDGES"/>
+<xs:enumeration value="SPORTS_SKI_LIFT_PRIVILEDGES_OPTIONAL"/>
+<xs:enumeration value="SPORTS_SKI_LIFT_PRIVILEGES"/>
+<xs:enumeration value="SPORTS_SKI_LIFT_PRIVILEGES_OPTIONAL"/>
+<xs:enumeration value="SPORTS_SKIING"/>
+<xs:enumeration value="SPORTS_SNORKELING"/>
+<xs:enumeration value="SPORTS_FISHING_BAY"/>
+<xs:enumeration value="SPORTS_SPELUNKING"/>
+<xs:enumeration value="SPORTS_FISHING_SURF"/>
+<xs:enumeration value="SPORTS_SURFING"/>
+<xs:enumeration value="SPORTS_SWIMMING"/>
+<xs:enumeration value="SPORTS_TENNIS"/>
+<xs:enumeration value="SPORTS_SKIING_WATER"/>
+<xs:enumeration value="SPORTS_TUBING_WATER"/>
+<xs:enumeration value="SPORTS_WHITEWATER_RAFTING"/>
+<xs:enumeration value="SPORTS_WIND_SURFING"/>
+<xs:enumeration value="SPORTS_CROSS_COUNTRY_SKIING"/>
+<xs:enumeration value="SPORTS_HOT_AIR_BALLOONING"/>
+<xs:enumeration value="SPORTS_KAYAKING"/>
+<xs:enumeration value="SPORTS_PARASAILING"/>
+<xs:enumeration value="SPORTS_RACQUETBALL"/>
+<xs:enumeration value="SPORTS_ROCK_CLIMBING"/>
+<xs:enumeration value="SPORTS_SNOWBOARDING"/>
+<xs:enumeration value="SPORTS_SNOWMOBILING"/>
+<xs:enumeration value="CAR_NECESSARY"/>
+<xs:enumeration value="CAR_NOT_NECESSARY"/>
+<xs:enumeration value="CAR_RECOMMENDED"/>
+<xs:enumeration value="LOCATION_TYPE_BEACH"/>
+<xs:enumeration value="LOCATION_TYPE_BEACH_VIEW"/>
+<xs:enumeration value="LOCATION_TYPE_BEACH_FRONT"/>
+<xs:enumeration value="LOCATION_TYPE_LAKE"/>
+<xs:enumeration value="LOCATION_TYPE_LAKE_VIEW"/>
+<xs:enumeration value="LOCATION_TYPE_LAKE_FRONT"/>
+<xs:enumeration value="LOCATION_TYPE_NEAR_OCEAN"/>
+<xs:enumeration value="LOCATION_TYPE_OCEAN_VIEW"/>
+<xs:enumeration value="LOCATION_TYPE_OCEAN_FRONT"/>
+<xs:enumeration value="LOCATION_TYPE_RIVER"/>
+<xs:enumeration value="LOCATION_TYPE_WATERFRONT"/>
+<xs:enumeration value="LOCATION_TYPE_WATER_VIEW"/>
+<xs:enumeration value="LOCATION_TYPE_MOUNTAIN"/>
+<xs:enumeration value="LOCATION_TYPE_MOUNTAIN_VIEW"/>
+<xs:enumeration value="LOCATION_TYPE_MONUMENT_VIEW"/>
+<xs:enumeration value="LOCATION_TYPE_SKI_IN_OUT"/>
+<xs:enumeration value="LOCATION_TYPE_SKI_IN"/>
+<xs:enumeration value="LOCATION_TYPE_SKI_OUT"/>
+<xs:enumeration value="LOCATION_TYPE_GOLF_COURSE_FRONT"/>
+<xs:enumeration value="LOCATION_TYPE_GOLF_COURSE_VIEW"/>
+<xs:enumeration value="LOCATION_TYPE_DOWNTOWN"/>
+<xs:enumeration value="LOCATION_TYPE_RESORT"/>
+<xs:enumeration value="LOCATION_TYPE_RURAL"/>
+<xs:enumeration value="LOCATION_TYPE_TOWN"/>
+<xs:enumeration value="LOCATION_TYPE_VILLAGE"/>
+<xs:enumeration value="ATTRACTIONS_ARBORETUM"/>
+<xs:enumeration value="ATTRACTIONS_AUTUMN_FOLIAGE"/>
+<xs:enumeration value="ATTRACTIONS_BAY"/>
+<xs:enumeration value="ATTRACTIONS_BOTANICAL_GARDEN"/>
+<xs:enumeration value="ATTRACTIONS_CAVE"/>
+<xs:enumeration value="ATTRACTIONS_CHURCHES"/>
+<xs:enumeration value="ATTRACTIONS_CINEMAS"/>
+<xs:enumeration value="ATTRACTIONS_COIN_LAUNDRY"/>
+<xs:enumeration value="ATTRACTIONS_DUTY_FREE"/>
+<xs:enumeration value="ATTRACTIONS_FESTIVALS"/>
+<xs:enumeration value="ATTRACTIONS_FORESTS"/>
+<xs:enumeration value="ATTRACTIONS_HEALTH_BEAUTY_SPA"/>
+<xs:enumeration value="ATTRACTIONS_LIBRARY"/>
+<xs:enumeration value="ATTRACTIONS_LIVE_THEATER"/>
+<xs:enumeration value="ATTRACTIONS_MARINA"/>
+<xs:enumeration value="ATTRACTIONS_MUSEUMS"/>
+<xs:enumeration value="ATTRACTIONS_NUDE_BEACH"/>
+<xs:enumeration value="ATTRACTIONS_PLAYGROUND"/>
+<xs:enumeration value="ATTRACTIONS_POND"/>
+<xs:enumeration value="ATTRACTIONS_RAIN_FORESTS"/>
+<xs:enumeration value="ATTRACTIONS_REC_CENTER"/>
+<xs:enumeration value="ATTRACTIONS_REEF"/>
+<xs:enumeration value="ATTRACTIONS_RESTAURANTS"/>
+<xs:enumeration value="ATTRACTIONS_RUINS"/>
+<xs:enumeration value="ATTRACTIONS_SYNAGOGUES"/>
+<xs:enumeration value="ATTRACTIONS_THEME_PARKS"/>
+<xs:enumeration value="ATTRACTIONS_VOLCANO"/>
+<xs:enumeration value="ATTRACTIONS_WATER_PARKS"/>
+<xs:enumeration value="ATTRACTIONS_WATERFALLS"/>
+<xs:enumeration value="ATTRACTIONS_WINERY_TOURS"/>
+<xs:enumeration value="ATTRACTIONS_ZOO"/>
+<xs:enumeration value="LEISURE_ANTIQUING"/>
+<xs:enumeration value="LEISURE_BEACHCOMBING"/>
+<xs:enumeration value="LEISURE_BIRD_WATCHING"/>
+<xs:enumeration value="LEISURE_ECO_TOURISM"/>
+<xs:enumeration value="LEISURE_GAMBLING"/>
+<xs:enumeration value="LEISURE_HORSEBACK_RIDING"/>
+<xs:enumeration value="LEISURE_HORSESHOES"/>
+<xs:enumeration value="LEISURE_LUAUS"/>
+<xs:enumeration value="LEISURE_OUTLET_SHOPPING"/>
+<xs:enumeration value="LEISURE_PADDLE_BOATING"/>
+<xs:enumeration value="LEISURE_PHOTOGRAPHY"/>
+<xs:enumeration value="LEISURE_SCENIC_DRIVES"/>
+<xs:enumeration value="LEISURE_SIGHT_SEEING"/>
+<xs:enumeration value="LEISURE_SLEDDING"/>
+<xs:enumeration value="LEISURE_WALKING"/>
+<xs:enumeration value="LEISURE_WHALE_WATCHING"/>
+<xs:enumeration value="LEISURE_BOATING"/>
+<xs:enumeration value="LEISURE_MINIATURE_GOLF"/>
+<xs:enumeration value="LEISURE_SHELLING"/>
+<xs:enumeration value="LEISURE_SHOPPING"/>
+<xs:enumeration value="LEISURE_SHUFFLEBOARD"/>
+<xs:enumeration value="LEISURE_WILDLIFE_VIEWING"/>
+<xs:enumeration value="LEISURE_DISCO"/>
+<xs:enumeration value="LEISURE_BOWLING"/>
+<xs:enumeration value="LEISURE_WATER_SPORTS"/>
+<xs:enumeration value="LEISURE_THALASSOTHERAPY"/>
+<xs:enumeration value="LEISURE_THERMALISME"/>
+<xs:enumeration value="LEISURE_NATURISME"/>
+<xs:enumeration value="LOCAL_ATM_BANK"/>
+<xs:enumeration value="LOCAL_FITNESS_CENTER"/>
+<xs:enumeration value="LOCAL_GROCERIES"/>
+<xs:enumeration value="LOCAL_HOSPITAL"/>
+<xs:enumeration value="LOCAL_LAUNDROMAT"/>
+<xs:enumeration value="LOCAL_MASSAGE_THERAPIST"/>
+<xs:enumeration value="LOCAL_MEDICAL_SERVICES"/>
+<xs:enumeration value="LOCAL_BABYSITTING"/>
+</xs:restriction>
+</xs:simpleType>
+<xs:simpleType name="ListingLifecycleState">
+<xs:annotation>
+<xs:documentation xml:lang="en">Workflow state for a listing.</xs:documentation>
+<xs:appinfo>Experimental</xs:appinfo>
+</xs:annotation>
+<xs:restriction base="xs:string">
+<xs:enumeration value="ARCHIVED">
+<xs:annotation>
+<xs:documentation xml:lang="en"/>
+</xs:annotation>
+</xs:enumeration>
+<xs:enumeration value="CANCELLED">
+<xs:annotation>
+<xs:documentation xml:lang="en"/>
+</xs:annotation>
+</xs:enumeration>
+<xs:enumeration value="DELETED">
+<xs:annotation>
+<xs:documentation xml:lang="en"/>
+</xs:annotation>
+</xs:enumeration>
+<xs:enumeration value="ENABLED">
+<xs:annotation>
+<xs:documentation xml:lang="en"/>
+</xs:annotation>
+</xs:enumeration>
+<xs:enumeration value="EXPIRED">
+<xs:annotation>
+<xs:documentation xml:lang="en"/>
+</xs:annotation>
+</xs:enumeration>
+<xs:enumeration value="FRAUD_CHECK_FAILED">
+<xs:annotation>
+<xs:documentation xml:lang="en"/>
+</xs:annotation>
+</xs:enumeration>
+<xs:enumeration value="FRAUD_CHECK_SKIPPED">
+<xs:annotation>
+<xs:documentation xml:lang="en"/>
+</xs:annotation>
+</xs:enumeration>
+<xs:enumeration value="HIDDEN">
+<xs:annotation>
+<xs:documentation xml:lang="en"/>
+</xs:annotation>
+</xs:enumeration>
+<xs:enumeration value="INACTIVE_BY_CSR">
+<xs:annotation>
+<xs:documentation xml:lang="en"/>
+</xs:annotation>
+</xs:enumeration>
+<xs:enumeration value="INACTIVE_BY_OWNER_REQUEST">
+<xs:annotation>
+<xs:documentation xml:lang="en"/>
+</xs:annotation>
+</xs:enumeration>
+<xs:enumeration value="LISTING_CONTENT_COMPLETE">
+<xs:annotation>
+<xs:documentation xml:lang="en"/>
+</xs:annotation>
+</xs:enumeration>
+<xs:enumeration value="LISTING_FULFILLED">
+<xs:annotation>
+<xs:documentation xml:lang="en"/>
+</xs:annotation>
+</xs:enumeration>
+<xs:enumeration value="MINIMUM_CONTENT_SPECIFIED">
+<xs:annotation>
+<xs:documentation xml:lang="en"/>
+</xs:annotation>
+</xs:enumeration>
+<xs:enumeration value="NEW">
+<xs:annotation>
+<xs:documentation xml:lang="en"/>
+</xs:annotation>
+</xs:enumeration>
+<xs:enumeration value="PENDING">
+<xs:annotation>
+<xs:documentation xml:lang="en"/>
+</xs:annotation>
+</xs:enumeration>
+<xs:enumeration value="PENDING_XSELL">
+<xs:annotation>
+<xs:documentation xml:lang="en"/>
+</xs:annotation>
+</xs:enumeration>
+</xs:restriction>
+</xs:simpleType>
+<xs:simpleType name="ListingOwnerRole">
+<xs:annotation>
+<xs:documentation xml:lang="en">Role of the Contact in ownership of a listing</xs:documentation>
+</xs:annotation>
+<xs:restriction base="xs:string">
+<xs:enumeration value="OWN_MANAGE">
+<xs:annotation>
+<xs:documentation xml:lang="en">The contact owns the listing and manages it.</xs:documentation>
+</xs:annotation>
+</xs:enumeration>
+<xs:enumeration value="OWN_NOT_MANAGE">
+<xs:annotation>
+<xs:documentation xml:lang="en">
+The contact owns the listing but does not manage it.
+</xs:documentation>
+</xs:annotation>
+</xs:enumeration>
+<xs:enumeration value="PM">
+<xs:annotation>
+<xs:documentation xml:lang="en">
+The contact doesn't own the listing but manages it, property managers.
+</xs:documentation>
+</xs:annotation>
+</xs:enumeration>
+</xs:restriction>
+</xs:simpleType>
+<xs:simpleType name="ListingProductType">
+<xs:annotation>
+<xs:documentation xml:lang="en">The product type that was purchased for a Listing.</xs:documentation>
+</xs:annotation>
+<xs:restriction base="xs:string">
+<xs:enumeration value="SUBSCRIPTION_V1">
+<xs:annotation>
+<xs:documentation xml:lang="en"/>
+</xs:annotation>
+</xs:enumeration>
+<xs:enumeration value="SUBSCRIPTION_V2">
+<xs:annotation>
+<xs:documentation xml:lang="en"/>
+</xs:annotation>
+</xs:enumeration>
+<xs:enumeration value="PAY_PER_BOOKING">
+<xs:annotation>
+<xs:documentation xml:lang="en"/>
+</xs:annotation>
+</xs:enumeration>
+<xs:enumeration value="PAY_PER_BOOKING_EXTERNAL">
+<xs:annotation>
+<xs:documentation xml:lang="en"/>
+</xs:annotation>
+</xs:enumeration>
+<xs:enumeration value="PREVIEW">
+<xs:annotation>
+<xs:documentation xml:lang="en"/>
+</xs:annotation>
+</xs:enumeration>
+<xs:enumeration value="PAY_PER_LEAD">
+<xs:annotation>
+<xs:documentation xml:lang="en"/>
+</xs:annotation>
+</xs:enumeration>
+</xs:restriction>
+</xs:simpleType>
+<xs:simpleType name="PhoneRel">
+<xs:annotation>
+<xs:documentation xml:lang="en">Phone number relationship</xs:documentation>
+</xs:annotation>
+<xs:restriction base="xs:string">
+<xs:enumeration value="HOME">
+<xs:annotation>
+<xs:documentation xml:lang="en"/>
+</xs:annotation>
+</xs:enumeration>
+<xs:enumeration value="FAX">
+<xs:annotation>
+<xs:documentation xml:lang="en"/>
+</xs:annotation>
+</xs:enumeration>
+<xs:enumeration value="OTHER">
+<xs:annotation>
+<xs:documentation xml:lang="en"/>
+</xs:annotation>
+</xs:enumeration>
+<xs:enumeration value="MOBILE">
+<xs:annotation>
+<xs:documentation xml:lang="en"/>
+</xs:annotation>
+</xs:enumeration>
+<xs:enumeration value="PERSONAL">
+<xs:annotation>
+<xs:documentation xml:lang="en"/>
+</xs:annotation>
+</xs:enumeration>
+<xs:enumeration value="PRIMARY">
+<xs:annotation>
+<xs:documentation xml:lang="en"/>
+</xs:annotation>
+</xs:enumeration>
+<xs:enumeration value="SECONDARY">
+<xs:annotation>
+<xs:documentation xml:lang="en"/>
+</xs:annotation>
+</xs:enumeration>
+<xs:enumeration value="SMS">
+<xs:annotation>
+<xs:documentation xml:lang="en"/>
+</xs:annotation>
+</xs:enumeration>
+<xs:enumeration value="TERTIARY">
+<xs:annotation>
+<xs:documentation xml:lang="en"/>
+</xs:annotation>
+</xs:enumeration>
+<xs:enumeration value="WORK">
+<xs:annotation>
+<xs:documentation xml:lang="en"/>
+</xs:annotation>
+</xs:enumeration>
+</xs:restriction>
+</xs:simpleType>
+<xs:simpleType name="Precision">
+<xs:annotation>
+<xs:documentation xml:lang="en">Precision at which a GeoCode was collected.</xs:documentation>
+</xs:annotation>
+<xs:restriction base="xs:string">
+<xs:enumeration value="TRANSLATED">
+<xs:annotation>
+<xs:documentation xml:lang="en"/>
+</xs:annotation>
+</xs:enumeration>
+<xs:enumeration value="COUNTRY">
+<xs:annotation>
+<xs:documentation xml:lang="en"/>
+</xs:annotation>
+</xs:enumeration>
+<xs:enumeration value="CITY">
+<xs:annotation>
+<xs:documentation xml:lang="en"/>
+</xs:annotation>
+</xs:enumeration>
+<xs:enumeration value="NONE">
+<xs:annotation>
+<xs:documentation xml:lang="en"/>
+</xs:annotation>
+</xs:enumeration>
+<xs:enumeration value="STREET">
+<xs:annotation>
+<xs:documentation xml:lang="en"/>
+</xs:annotation>
+</xs:enumeration>
+<xs:enumeration value="MASSMOVE">
+<xs:annotation>
+<xs:documentation xml:lang="en"/>
+</xs:annotation>
+</xs:enumeration>
+<xs:enumeration value="EYEBALL">
+<xs:annotation>
+<xs:documentation xml:lang="en"/>
+</xs:annotation>
+</xs:enumeration>
+<xs:enumeration value="OWNERSEYE">
+<xs:annotation>
+<xs:documentation xml:lang="en"/>
+</xs:annotation>
+</xs:enumeration>
+<xs:enumeration value="ADDRESS">
+<xs:annotation>
+<xs:documentation xml:lang="en"/>
+</xs:annotation>
+</xs:enumeration>
+<xs:enumeration value="STATE">
+<xs:annotation>
+<xs:documentation xml:lang="en"/>
+</xs:annotation>
+</xs:enumeration>
+<xs:enumeration value="ZIP">
+<xs:annotation>
+<xs:documentation xml:lang="en"/>
+</xs:annotation>
+</xs:enumeration>
+</xs:restriction>
+</xs:simpleType>
+<xs:simpleType name="PropertyType">
+<xs:restriction base="xs:string">
+<xs:enumeration value="PROPERTY_TYPE_APARTMENT"/>
+<xs:enumeration value="PROPERTY_TYPE_BARN"/>
+<xs:enumeration value="PROPERTY_TYPE_BUNGALOW"/>
+<xs:enumeration value="PROPERTY_TYPE_CABIN"/>
+<xs:enumeration value="PROPERTY_TYPE_CASTLE"/>
+<xs:enumeration value="PROPERTY_TYPE_CHACARA"/>
+<xs:enumeration value="PROPERTY_TYPE_CHALET"/>
+<xs:enumeration value="PROPERTY_TYPE_CONDO"/>
+<xs:enumeration value="PROPERTY_TYPE_COTTAGE"/>
+<xs:enumeration value="PROPERTY_TYPE_ESTATE"/>
+<xs:enumeration value="PROPERTY_TYPE_FARMHOUSE"/>
+<xs:enumeration value="PROPERTY_TYPE_HOTEL"/>
+<xs:enumeration value="PROPERTY_TYPE_HOUSE"/>
+<xs:enumeration value="PROPERTY_TYPE_HOUSE_BOAT"/>
+<xs:enumeration value="PROPERTY_TYPE_LODGE"/>
+<xs:enumeration value="PROPERTY_TYPE_TOWNHOME"/>
+<xs:enumeration value="PROPERTY_TYPE_VILLA"/>
+<xs:enumeration value="PROPERTY_TYPE_YACHT"/>
+<xs:enumeration value="PROPERTY_TYPE_STUDIO"/>
+<xs:enumeration value="PROPERTY_TYPE_MOBILE_HOME"/>
+<xs:enumeration value="PROPERTY_TYPE_CHATEAU"/>
+<xs:enumeration value="PROPERTY_TYPE_MILL"/>
+<xs:enumeration value="PROPERTY_TYPE_TOWER"/>
+<xs:enumeration value="PROPERTY_TYPE_BOAT"/>
+<xs:enumeration value="PROPERTY_TYPE_RECREATIONAL_VEHICLE"/>
+<xs:enumeration value="PROPERTY_TYPE_GUESTHOUSE"/>
+<xs:enumeration value="PROPERTY_TYPE_BUILDING"/>
+<xs:enumeration value="PROPERTY_TYPE_MAS"/>
+<xs:enumeration value="PROPERTY_TYPE_RIAD"/>
+</xs:restriction>
+</xs:simpleType>
+<xs:simpleType name="RateType">
+<xs:annotation>
+<xs:documentation xml:lang="en">The type of rate presented by a given Rate value.</xs:documentation>
+</xs:annotation>
+<xs:restriction base="xs:string">
+<xs:enumeration value="EXTRA_NIGHT">
+<xs:annotation>
+<xs:documentation xml:lang="en"/>
+</xs:annotation>
+</xs:enumeration>
+<xs:enumeration value="NIGHTLY_WEEKDAY">
+<xs:annotation>
+<xs:documentation xml:lang="en"/>
+</xs:annotation>
+</xs:enumeration>
+<xs:enumeration value="NIGHTLY_WEEKEND">
+<xs:annotation>
+<xs:documentation xml:lang="en"/>
+</xs:annotation>
+</xs:enumeration>
+<xs:enumeration value="WEEKEND">
+<xs:annotation>
+<xs:documentation xml:lang="en"/>
+</xs:annotation>
+</xs:enumeration>
+<xs:enumeration value="WEEKLY">
+<xs:annotation>
+<xs:documentation xml:lang="en"/>
+</xs:annotation>
+</xs:enumeration>
+<xs:enumeration value="MONTHLY">
+<xs:annotation>
+<xs:documentation xml:lang="en"/>
+</xs:annotation>
+</xs:enumeration>
+</xs:restriction>
+</xs:simpleType>
+<xs:simpleType name="ReservationState">
+<xs:annotation>
+<xs:documentation xml:lang="en">The booked state of a reservation.</xs:documentation>
+</xs:annotation>
+<xs:restriction base="xs:string">
+<xs:enumeration value="CANCEL">
+<xs:annotation>
+<xs:documentation xml:lang="en"/>
+</xs:annotation>
+</xs:enumeration>
+<xs:enumeration value="DELETE">
+<xs:annotation>
+<xs:documentation xml:lang="en"/>
+</xs:annotation>
+</xs:enumeration>
+<xs:enumeration value="HOLD">
+<xs:annotation>
+<xs:documentation xml:lang="en"/>
+</xs:annotation>
+</xs:enumeration>
+<xs:enumeration value="RESERVE">
+<xs:annotation>
+<xs:documentation xml:lang="en"/>
+</xs:annotation>
+</xs:enumeration>
+<xs:enumeration value="UNAVAILABLE">
+<xs:annotation>
+<xs:documentation xml:lang="en"/>
+</xs:annotation>
+</xs:enumeration>
+</xs:restriction>
+</xs:simpleType>
+<xs:simpleType name="UnitFeatureName">
+<xs:restriction base="xs:string">
+<xs:enumeration value="SUITABILITY_CHILDREN_ASK"/>
+<xs:enumeration value="SUITABILITY_CHILDREN_WELCOME"/>
+<xs:enumeration value="SUITABILITY_CHILDREN_NOT_ALLOWED"/>
+<xs:enumeration value="SUITABILITY_PETS_ASK"/>
+<xs:enumeration value="SUITABILITY_PETS_CONSIDERED"/>
+<xs:enumeration value="SUITABILITY_PETS_NOT_ALLOWED"/>
+<xs:enumeration value="SUITABILITY_SMOKING_ASK"/>
+<xs:enumeration value="SUITABILITY_SMOKING_ALLOWED"/>
+<xs:enumeration value="SUITABILITY_SMOKING_NOT_ALLOWED"/>
+<xs:enumeration value="SUITABILITY_ACCESSIBILITY_ASK"/>
+<xs:enumeration value="SUITABILITY_ACCESSIBILITY_WHEELCHAIR_ACCESSIBLE"/>
+<xs:enumeration value="SUITABILITY_ACCESSIBILITY_LIMITED_ACCESSIBILITY"/>
+<xs:enumeration value="SUITABILITY_ACCESSIBILITY_WHEELCHAIR_INACCESSIBLE"/>
+<xs:enumeration value="SUITABILITY_MINIMUM_AGE_LIMIT"/>
+<xs:enumeration value="SUITABILITY_SENIOR_ADULTS_ONLY"/>
+<xs:enumeration value="SUITABILITY_OTHER_LONG_TERM_RENTERS"/>
+<xs:enumeration value="SUITABILITY_OTHER_EVENTS_ALLOWED"/>
+<xs:enumeration value="SUITABILITY_WHEELCHAIRS"/>
+<xs:enumeration value="KITCHEN_DINING_KITCHEN"/>
+<xs:enumeration value="KITCHEN_DINING_AREA"/>
+<xs:enumeration value="KITCHEN_DINING_REFRIGERATOR"/>
+<xs:enumeration value="KITCHEN_DINING_MICROWAVE"/>
+<xs:enumeration value="KITCHEN_DINING_COFFEE_MAKER"/>
+<xs:enumeration value="KITCHEN_DINING_DISHWASHER"/>
+<xs:enumeration value="KITCHEN_DINING_DISHES_UTENSILS"/>
+<xs:enumeration value="KITCHEN_DINING_SPICES"/>
+<xs:enumeration value="KITCHEN_DINING_STOVE"/>
+<xs:enumeration value="KITCHEN_DINING_OVEN"/>
+<xs:enumeration value="KITCHEN_DINING_ICE_MAKER"/>
+<xs:enumeration value="KITCHEN_DINING_HIGHCHAIR"/>
+<xs:enumeration value="KITCHEN_DINING_TOASTER"/>
+<xs:enumeration value="KITCHEN_DINING_ROOM"/>
+<xs:enumeration value="KITCHEN_DINING_RACLETTE"/>
+<xs:enumeration value="ENTERTAINMENT_TELEVISION"/>
+<xs:enumeration value="ENTERTAINMENT_STEREO"/>
+<xs:enumeration value="ENTERTAINMENT_VIDEO_LIBRARY"/>
+<xs:enumeration value="ENTERTAINMENT_MUSIC_LIBRARY"/>
+<xs:enumeration value="ENTERTAINMENT_VIDEO_GAMES"/>
+<xs:enumeration value="ENTERTAINMENT_GAMES"/>
+<xs:enumeration value="ENTERTAINMENT_BOOKS"/>
+<xs:enumeration value="ENTERTAINMENT_TOYS"/>
+<xs:enumeration value="ENTERTAINMENT_POOL_TABLE"/>
+<xs:enumeration value="ENTERTAINMENT_PING_PONG_TABLE"/>
+<xs:enumeration value="ENTERTAINMENT_FOOSBALL"/>
+<xs:enumeration value="ENTERTAINMENT_DVD"/>
+<xs:enumeration value="ENTERTAINMENT_SATELLITE_OR_CABLE"/>
+<xs:enumeration value="OUTDOOR_GRILL"/>
+<xs:enumeration value="OUTDOOR_DECK_PATIO_UNCOVERED"/>
+<xs:enumeration value="OUTDOOR_LANAI_GAZEBO_COVERED"/>
+<xs:enumeration value="OUTDOOR_BALCONY"/>
+<xs:enumeration value="OUTDOOR_GARDEN"/>
+<xs:enumeration value="OUTDOOR_BICYCLE"/>
+<xs:enumeration value="OUTDOOR_TENNIS"/>
+<xs:enumeration value="OUTDOOR_GOLF"/>
+<xs:enumeration value="OUTDOOR_BOAT"/>
+<xs:enumeration value="OUTDOOR_BOAT_DOCK"/>
+<xs:enumeration value="OUTDOOR_KAYAK_CANOE"/>
+<xs:enumeration value="OUTDOOR_WATER_SPORTS_GEAR"/>
+<xs:enumeration value="OUTDOOR_SNOW_SPORTS_GEAR"/>
+<xs:enumeration value="OUTDOOR_VERANDA"/>
+<xs:enumeration value="OUTDOOR_PETANQUE"/>
+<xs:enumeration value="POOL_SPA_COMMUNAL_POOL"/>
+<xs:enumeration value="POOL_SPA_PRIVATE_POOL"/>
+<xs:enumeration value="POOL_SPA_HOT_TUB"/>
+<xs:enumeration value="POOL_SPA_SAUNA"/>
+<xs:enumeration value="POOL_SPA_INDOOR_POOL"/>
+<xs:enumeration value="POOL_SPA_HEATED_POOL"/>
+<xs:enumeration value="ACCOMMODATIONS_TYPE_BED_AND_BREAKFAST"/>
+<xs:enumeration value="ACCOMMODATIONS_TYPE_GUEST_HOUSE"/>
+<xs:enumeration value="ACCOMMODATIONS_TYPE_HOTEL"/>
+<xs:enumeration value="ACCOMMODATIONS_TYPE_MOTEL"/>
+<xs:enumeration value="ACCOMMODATIONS_MEALS_GUESTS_FURNISH_OWN"/>
+<xs:enumeration value="ACCOMMODATIONS_MEALS_CATERING_AVAILABLE"/>
+<xs:enumeration value="ACCOMMODATIONS_BREAKFAST_NOT_AVAILABLE"/>
+<xs:enumeration value="ACCOMMODATIONS_BREAKFAST_BOOKING_POSSIBLE"/>
+<xs:enumeration value="ACCOMMODATIONS_BREAKFAST_INCLUDED_IN_PRICE"/>
+<xs:enumeration value="ACCOMMODATIONS_LUNCH_NOT_AVAILABLE"/>
+<xs:enumeration value="ACCOMMODATIONS_LUNCH_BOOKING_POSSIBLE"/>
+<xs:enumeration value="ACCOMMODATIONS_LUNCH_INCLUDED_IN_PRICE"/>
+<xs:enumeration value="ACCOMMODATIONS_DINNER_NOT_AVAILABLE"/>
+<xs:enumeration value="ACCOMMODATIONS_DINNER_BOOKING_POSSIBLE"/>
+<xs:enumeration value="ACCOMMODATIONS_DINNER_INCLUDED_IN_PRICE"/>
+<xs:enumeration value="ACCOMMODATIONS_HOUSE_CLEANING_INCLUDED"/>
+<xs:enumeration value="ACCOMMODATIONS_HOUSE_CLEANING_OPTIONAL"/>
+<xs:enumeration value="ACCOMMODATIONS_OTHER_SERVICES_CHAUFFEUR"/>
+<xs:enumeration value="ACCOMMODATIONS_OTHER_SERVICES_CONCIERGE"/>
+<xs:enumeration value="ACCOMMODATIONS_OTHER_SERVICES_PRIVATE_CHEF"/>
+<xs:enumeration value="ACCOMMODATIONS_OTHER_SERVICES_MASSAGE"/>
+<xs:enumeration value="ACCOMMODATIONS_OTHER_SERVICES_STAFF"/>
+<xs:enumeration value="ACCOMMODATIONS_OTHER_SERVICES_CAR_AVAILABLE"/>
+<xs:enumeration value="THEMES_FAMILY"/>
+<xs:enumeration value="THEMES_AWAY_FROM_IT_ALL"/>
+<xs:enumeration value="THEMES_LUXURY"/>
+<xs:enumeration value="THEMES_TOURIST_ATTRACTIONS"/>
+<xs:enumeration value="THEMES_ROMANTIC"/>
+<xs:enumeration value="THEMES_BUDGET"/>
+<xs:enumeration value="THEMES_HISTORIC"/>
+<xs:enumeration value="THEMES_ADVENTURE"/>
+<xs:enumeration value="THEMES_HOLIDAY_COMPLEX"/>
+<xs:enumeration value="THEMES_SPA"/>
+<xs:enumeration value="THEMES_FARM_HOLIDAYS"/>
+<xs:enumeration value="THEMES_SPORTS_ACTIVITIES"/>
+<xs:enumeration value="AMENITIES_INTERNET"/>
+<xs:enumeration value="AMENITIES_FIREPLACE"/>
+<xs:enumeration value="AMENITIES_WOOD_STOVE"/>
+<xs:enumeration value="AMENITIES_AIR_CONDITIONING"/>
+<xs:enumeration value="AMENITIES_HEATING"/>
+<xs:enumeration value="AMENITIES_LINENS"/>
+<xs:enumeration value="AMENITIES_TOWELS"/>
+<xs:enumeration value="AMENITIES_WASHER"/>
+<xs:enumeration value="AMENITIES_DRYER"/>
+<xs:enumeration value="AMENITIES_PARKING"/>
+<xs:enumeration value="AMENITIES_GARAGE"/>
+<xs:enumeration value="AMENITIES_TELEPHONE"/>
+<xs:enumeration value="AMENITIES_LIVING_ROOM"/>
+<xs:enumeration value="AMENITIES_FITNESS_ROOM"/>
+<xs:enumeration value="AMENITIES_GAME_ROOM"/>
+<xs:enumeration value="AMENITIES_IRON_BOARD"/>
+<xs:enumeration value="AMENITIES_HAIR_DRYER"/>
+<xs:enumeration value="AMENITIES_ELEVATOR"/>
+<xs:enumeration value="ARRIVAL_DAY_FLEXIBLE"/>
+<xs:enumeration value="ARRIVAL_DAY_NEGOTIABLE"/>
+<xs:enumeration value="ARRIVAL_DAY_MONDAY"/>
+<xs:enumeration value="ARRIVAL_DAY_TUESDAY"/>
+<xs:enumeration value="ARRIVAL_DAY_WEDNESDAY"/>
+<xs:enumeration value="ARRIVAL_DAY_THURSDAY"/>
+<xs:enumeration value="ARRIVAL_DAY_FRIDAY"/>
+<xs:enumeration value="ARRIVAL_DAY_SATURDAY"/>
+<xs:enumeration value="ARRIVAL_DAY_SUNDAY"/>
+</xs:restriction>
+</xs:simpleType>
+</xs:schema>

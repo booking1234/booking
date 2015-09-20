@@ -1,0 +1,79 @@
+@def fontFamily Verdana, Arial;
+@def formBackground #F3F3F3;
+@def formBorder 1px solid gray;
+@def fieldBorder 1px solid gray;
+
+.formStyle {height: 720px;}
+
+.frameStyle {
+	height: 730px;
+	width: 1440px;
+	margin: 10px;
+}
+
+.helpLabel {
+	margin: 10px 0;
+	border: 2px solid blue;
+	background-color: white;
+	color: blue;
+	font-size: 85%;
+	text-align: center;
+}
+
+.loginButton {
+	padding: 20px 20px 0 20px;
+	color: white;
+	font-size: 200%;
+	text-transform: uppercase; 
+	text-shadow: -2px -2px black;
+}
+
+.magnify {font-size: 160%;}
+
+.passwordcreateStyle {
+	margin: 10px 0;
+	color: blue;
+	text-decoration: underline;
+	cursor: pointer;
+	cursor: hand;
+}
+
+.passwordcreateStyle:hover {color: #90A6C6;}
+.passwordField {margin: 20px 0;}
+
+.registerButton {
+	padding: 5px 20px 15px;
+	color: red;
+	text-shadow: -1px -1px black;
+}
+.registerLabel {
+	color: gray;
+	font-weight: bold;
+	text-align: center;
+}
+.registerText {
+	color: gray;
+	font-weight: normal;
+	text-align: center;
+	font-style: italic;
+}
+
+.sessionButton {
+	height: 80px;
+	width: 200px;
+	margin: 20px;
+	text-align: center;
+	-webkit-border-radius: 20px;
+	-moz-border-radius: 20px;
+	border-radius: 20px;
+	-webkit-box-shadow:0 0 10px #000;
+	-moz-box-shadow: 0 0 10px #000;
+	box-shadow:0 0 10px #000;
+	cursor: pointer;
+	cursor: hand;
+}
+
+.sessionError {
+	width: 300px;
+	margin: 10px;
+}

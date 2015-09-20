@@ -1,0 +1,47 @@
+.balanceLabel {margin: 1px;}
+
+.balanceField {
+	margin-top: 1px;
+	width: 100px;
+}
+
+.charthalfStyle {
+	height: 500px;
+	width: 400px;
+}
+.chartStyle {
+	height: 500px;
+	width: 800px;
+}
+
+.chartzoomhalfStyle {
+	height: 800px;
+	width: 800px;
+}
+
+.chartzoomStyle {
+	height: 800px;
+	width: 1600px;
+}
+.daterangeField {width: 150px;}
+.emailcontentField {height: 200px;}
+.financialcommandBar {padding: 4px;}
+.fromtodateField {width: 100px;}
+.ratioStyle{}
+.reportButton {
+	width: 300px;
+	margin-left: 7px;
+}
+.reportTitle {
+	margin-top: 10px;
+	border-bottom: 1px solid #ddd;
+}
+.stackStyle {
+	height: 730px;
+	width: 800px;
+	margin-top: 10px;
+}
+.statesStyle {height: 300px;}
+.summaryStyle {}
+.trendStyle{}
+.typesStyle {height: 300px;}

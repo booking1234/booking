@@ -1,0 +1,24 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<OTA_HotelAvailNotifRQ xmlns="http://www.opentravel.org/OTA/2003/05" Version="1.0" EchoToken="aaa000" TimeStamp="2013-01-01T12:00:00Z">
+<AvailStatusMessages HotelCode="123">
+<AvailStatusMessage BookingLimit="10">
+<StatusApplicationControl Start="2013-01-01" End="2013-01-31"
+InvTypeCode="130"
+Mon="0" Tue="0" Weds="0" Thur="0" Fri="1" Sat="1" Sun="1">
+</StatusApplicationControl>
+<LengthsOfStay>
+<LengthOfStay MinMaxMessageType="SetMinLOS" Time="2" TimeUnit="Day" />
+</LengthsOfStay>
+</AvailStatusMessage>
+</AvailStatusMessages>
+
+<AvailStatusMessages HotelCode="HXCAIZZ">
+<AvailStatusMessage BookingLimit="10">
+<StatusApplicationControl Start="2013-01-12" End="2013-01-14"
+InvTypeCode="130" RatePlanCode="200">
+</StatusApplicationControl>
+<RestrictionStatus Status="Close" Restriction="Master" />
+</AvailStatusMessage>
+</AvailStatusMessages>
+
+</OTA_HotelAvailNotifRQ>

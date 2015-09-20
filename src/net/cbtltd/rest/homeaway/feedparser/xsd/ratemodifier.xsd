@@ -1,0 +1,71 @@
+<xs:schema attributeFormDefault="unqualified" elementFormDefault="qualified" xmlns:xs="http://www.w3.org/2001/XMLSchema">
+  <xs:element name="rateModifiers">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element name="taxes">
+          <xs:complexType>
+            <xs:sequence>
+              <xs:element name="tax" maxOccurs="unbounded" minOccurs="0">
+                <xs:complexType>
+                  <xs:sequence>
+                    <xs:element type="xs:short" name="id"/>
+                    <xs:element type="xs:string" name="type"/>
+                    <xs:element type="xs:string" name="title"/>
+                    <xs:element type="xs:float" name="value"/>
+                    <xs:element type="xs:string" name="flat"/>
+                    <xs:element type="xs:string" name="frequency"/>
+                  </xs:sequence>
+                </xs:complexType>
+              </xs:element>
+            </xs:sequence>
+          </xs:complexType>
+        </xs:element>
+        <xs:element name="Fees">
+          <xs:complexType>
+            <xs:sequence>
+              <xs:element name="fee" maxOccurs="unbounded" minOccurs="0">
+                <xs:complexType>
+                  <xs:sequence>
+                    <xs:element type="xs:string" name="title"/>
+                    <xs:element type="xs:float" name="value"/>
+                    <xs:element type="xs:string" name="flat"/>
+                    <xs:element type="xs:string" name="taxExempt"/>
+                    <xs:element name="taxes" minOccurs="0">
+                      <xs:complexType>
+                        <xs:sequence>
+                          <xs:element type="xs:short" name="tax" maxOccurs="unbounded" minOccurs="0"/>
+                        </xs:sequence>
+                      </xs:complexType>
+                    </xs:element>
+                  </xs:sequence>
+                </xs:complexType>
+              </xs:element>
+            </xs:sequence>
+          </xs:complexType>
+        </xs:element>
+       <xs:element name="deposits">
+	    <xs:complexType>
+	      <xs:sequence>
+	        <xs:element name="deposit" maxOccurs="unbounded" minOccurs="0">
+	          <xs:complexType>
+	            <xs:sequence>
+	              <xs:element type="xs:string" name="title"/>
+	              <xs:element type="xs:float" name="value"/>
+	            </xs:sequence>
+	          </xs:complexType>
+	        </xs:element>
+	      </xs:sequence>
+	    </xs:complexType>
+	  </xs:element>
+	  <xs:element name="discounts">
+	    <xs:complexType>
+	      <xs:sequence>
+	        <xs:element name="discount" maxOccurs="unbounded" minOccurs="0">
+	        </xs:element>
+	      </xs:sequence>
+	    </xs:complexType>
+	  </xs:element>
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+</xs:schema>

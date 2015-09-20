@@ -1,0 +1,510 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="net.cbtltd.server.api.EventMapper">
+
+	<resultMap id="ResultMap" type="Event">
+		<id column="event.ID" jdbcType="INTEGER" property="id" />
+		<result column="event.OrganizationID" jdbcType="INTEGER" property="organizationid" />
+		<result column="event.ActorID" jdbcType="INTEGER" property="actorid" />
+		<result column="event.ParentID" jdbcType="INTEGER" property="parentid" />
+		<result column="event.Name" jdbcType="VARCHAR" property="name" />
+		<result column="event.State" jdbcType="VARCHAR" property="state" />
+		<result column="event.Type" jdbcType="VARCHAR" property="type" />
+		<result column="event.Activity" jdbcType="VARCHAR" property="activity" />
+		<result column="event.Process" jdbcType="VARCHAR" property="process" />
+		<result column="event.Date" jdbcType="DATE" property="date" />
+		<result column="event.DueDate" jdbcType="DATE" property="duedate" />
+		<result column="event.DoneDate" jdbcType="DATE" property="donedate" />
+		<result column="event.Notes" jdbcType="VARCHAR" property="notes" />
+	</resultMap>
+
+	<resultMap extends="ResultMap" id="EventJournalResultMap" type="EventJournal">
+		<result column="journal.ID" jdbcType="INTEGER" property="journalid" />
+		<result column="journal.MatchID" jdbcType="INTEGER" property="matchid" />
+		<result column="journal.AccountID" jdbcType="INTEGER" property="accountid" />
+		<result column="journal.OrganizationID" jdbcType="INTEGER" property="organizationid" />
+		<result column="journal.LocationID" jdbcType="INTEGER" property="locationid" />
+		<result column="journal.EntityType" jdbcType="VARCHAR" property="entitytype" />
+		<result column="journal.EntityID" jdbcType="INTEGER" property="entityid" />
+		<result column="journal.Quantity" jdbcType="DOUBLE" property="quantity" />
+		<result column="journal.Unit" jdbcType="VARCHAR" property="unit" />
+		<result column="journal.Unitprice" jdbcType="DOUBLE" property="unitprice" />
+		<result column="journal.Currency" jdbcType="VARCHAR" property="currency" />
+		<result column="journal.CreditAmount" jdbcType="DECIMAL" property="creditAmount" />
+		<result column="journal.DebitAmount" jdbcType="DECIMAL" property="debitAmount" />
+		<result column="journal.Description" jdbcType="VARCHAR" property="description" />
+		<result column="account.Name" jdbcType="VARCHAR" property="accountname" />
+		<result column="location.Name" jdbcType="VARCHAR" property="locationname" />
+	</resultMap>
+	
+	<sql id="columns">
+		event.ID, event.OrganizationID, event.ActorID, event.ParentID, event.Name, event.State,
+		event.Activity, event.Process, event.Type, event.Date, event.DueDate, event.DoneDate, event.Notes
+	</sql>
+
+	<sql id="eventjournalcolumns">
+		event.ID, event.OrganizationID, event.ActorID, event.ParentID, event.Name, event.State,
+		event.Activity, event.Process, event.Type, event.Date, event.DueDate, event.DoneDate, event.Notes,
+		journal.ID as journalid, journal.MatchID, journal.AccountID, journal.LocationID, journal.EntityType, journal.EntityID, 
+		journal.Quantity, journal.Unit, journal.Unitprice, journal.Currency, journal.CreditAmount, journal.DebitAmount, 
+		journal.Description, account.Name as accountname
+	</sql>
+
+	<select id="read" parameterType="String" resultMap="ResultMap">
+		select
+		(CASE
+			WHEN Activity = 'Reservation' THEN reservation.Name
+			WHEN Activity = 'Task' THEN task.Name
+			ELSE ''
+		END) AS parent, 
+		<include refid="columns" />
+		from event
+			left join reservation on reservation.ID = event.ParentID 
+				and event.Activity = 'Reservation'
+			left join task on task.ID = event.ParentID 
+				and event.Activity = 'Task'
+		where event.ID = #{id,jdbcType=INTEGER}
+	</select>
+
+	<delete id="delete" parameterType="String">
+		delete from event
+		where ID = #{id,jdbcType=INTEGER}
+	</delete>
+
+	<delete id="deletevent" parameterType="Event">
+		delete from event
+		where OrganizationID = #{organizationid,jdbcType=INTEGER}
+			and Process = #{process,jdbcType=VARCHAR}
+			and Name = #{name,jdbcType=VARCHAR}
+	</delete>
+
+	<delete id="deleteitem" parameterType="Event">
+		delete from journal
+		where EventID in
+		(
+			select ID from event
+			where Process = #{process}
+			and Name = #{name}
+			and OrganizationID = #{organizationid}
+		)
+	</delete>
+
+	<delete id="deleterelation" parameterType="Event">
+		delete from relation
+		where Name = concat('Event', ' ', #{process})
+			and HeadID in (
+				select ID from event
+				where Process = #{process}
+				and Name = #{name}
+				and OrganizationID = #{organizationid}
+			)
+	</delete>
+
+	<insert id="create" parameterType="Event" useGeneratedKeys="true" keyProperty="id">
+		insert into event (
+			OrganizationID, 
+			ActorID, 
+			ParentID,
+			Name, 
+			State, 
+			Activity,
+			Process, 
+			Type, 
+			Date, 
+			DueDate, 
+			DoneDate, 
+			Notes
+		)
+		values (
+			#{organizationid,jdbcType=INTEGER}, 
+			#{actorid,jdbcType=INTEGER},
+			#{parentid,jdbcType=INTEGER},
+			#{name,jdbcType=VARCHAR},
+			#{state,jdbcType=VARCHAR},
+			#{activity,jdbcType=VARCHAR},
+			#{process,jdbcType=VARCHAR}, 
+			#{type,jdbcType=VARCHAR},
+			#{date,jdbcType=DATE},
+			#{duedate,jdbcType=DATE},
+			#{donedate,jdbcType=DATE}, 
+			#{notes,jdbcType=VARCHAR}
+		)
+	</insert>
+
+	<update id="update" parameterType="Event">
+		update event
+		<set>
+			<if test="organizationid != null">
+				OrganizationID = #{organizationid,jdbcType=INTEGER},
+ 			</if>
+			<if test="actorid != null">
+				ActorID = #{actorid,jdbcType=INTEGER},
+ 			</if>
+			<if test="parentid != null">
+				ParentID = #{parentid,jdbcType=INTEGER},
+ 			</if>
+			<if test="name != null">
+				Name = #{name,jdbcType=VARCHAR},
+ 			</if>
+			<if test="state != null">
+				State = #{state,jdbcType=VARCHAR},
+ 			</if>
+			<if test="activity != null">
+				Activity = #{activity,jdbcType=VARCHAR},
+ 			</if>
+			<if test="process != null">
+				Process = #{process,jdbcType=VARCHAR},
+ 			</if>
+			<if test="type != null">
+				Type = #{type,jdbcType=VARCHAR},
+ 			</if>
+			<if test="date != null">
+				Date = #{date,jdbcType=DATE},
+ 			</if>
+			<if test="duedate != null">
+				DueDate = #{duedate,jdbcType=DATE},
+ 			</if>
+			<if test="donedate != null">
+				DoneDate = #{donedate,jdbcType=DATE},
+ 			</if>
+			<if test="notes != null">
+				Notes = #{notes,jdbcType=VARCHAR},
+ 			</if>
+		</set>
+		where ID = #{id,jdbcType=INTEGER}
+	</update>
+
+	<update id="updateByPrimaryKey" parameterType="Event">
+		update event
+		set
+			OrganizationID = #{organizationid,jdbcType=INTEGER},
+			ActorID = #{actorid,jdbcType=INTEGER},
+			ParentID = #{parentid,jdbcType=INTEGER},
+			Name = #{name,jdbcType=VARCHAR},
+			State = #{state,jdbcType=VARCHAR},
+			Activity = #{activity,jdbcType=VARCHAR},
+			Process = #{process,jdbcType=VARCHAR},
+			Type = #{type,jdbcType=VARCHAR},
+			Date = #{date,jdbcType=DATE},
+			DueDate = #{duedate,jdbcType=DATE},
+			DoneDate = #{donedate,jdbcType=DATE},
+			Notes = #{notes,jdbcType=VARCHAR}
+		where ID = #{id,jdbcType=INTEGER}
+	</update>
+	
+	<update id="downloaded" parameterType="String">
+		update event
+		set Downloaded = 1
+		where ID = #{id,jdbcType=INTEGER}
+	</update>
+
+	<select id="nameidbyid" parameterType="NameIdAction" resultType="NameId">
+		select distinct Name, ID
+		from event
+		where ID = #{id}
+	</select>
+
+	<select id="nameidbyname" parameterType="NameIdAction" resultType="NameId">
+		select distinct concat(Name,' ',Process) as name, ID
+		from event
+		where Name <![CDATA[ >= ]]>	#{name}
+			and Type <![CDATA[ <> ]]> 'Logging'
+		<if test="organizationid != null">
+			and OrganizationID = #{organizationid,jdbcType=INTEGER}
+		</if>
+		<if test="type != null">
+			and Type = #{type}
+		</if>
+		<if test="state == null">
+			and State = 'Created'
+		</if>
+		<if test="state != null">
+			and State in (${state})
+		</if>
+		order by Name
+		limit 0, #{numrows}
+	</select>
+
+<!--Actions by Account-->
+	<select id="listbyaccount" parameterType="AccountAction" resultType="EventJournal">
+		select distinct 
+		<include refid="eventjournalcolumns"/>,
+		(CASE
+			WHEN EntityType = 'Asset' THEN asset.Name
+			WHEN EntityType = 'Finance' THEN finance.Name
+			WHEN EntityType = 'Party' THEN party.Name
+			WHEN EntityType = 'Product' THEN product.Name
+		END) AS entityname
+		from journal join event on journal.EventID = event.ID
+			join account on account.ID = journal.AccountID
+			left join asset on asset.ID = EntityID and Entitytype = 'Asset'
+			left join finance on finance.ID = EntityID and Entitytype = 'Finance'
+			left join party on party.ID = EntityID and Entitytype = 'Party'
+			left join product on product.ID = EntityID and Entitytype = 'Product'
+		where event.OrganizationID = #{organizationid}
+		<if test="accountid != null">
+		and account.ID in (${accountid})
+		</if>		
+		<if test="fromdate != null">
+		and event.Date <![CDATA[ >= ]]> #{fromdate}
+		</if>
+		<if test="todate != null">
+		and event.Date <![CDATA[ <= ]]> #{todate}
+		</if>
+		<if test="currency != null">
+		and journal.Currency = #{currency}
+		</if>
+		<if test="state != null">
+		and event.State = in ${state}
+		</if>
+		<if test="state = null">
+		and event.State not in ('Initial', 'Final')
+		</if>
+		order by account.Name, event.Date, journal.ID
+	</select>
+
+	<select id="journalwidget" parameterType="AccountAction" resultType="net.cbtltd.json.journal.JournalWidgetItem">
+		select distinct 
+		<include refid="eventjournalcolumns"/>,
+		(CASE
+			WHEN EntityType = 'Asset' THEN asset.Name
+			WHEN EntityType = 'Finance' THEN finance.Name
+			WHEN EntityType = 'Party' THEN party.Name
+			WHEN EntityType = 'Product' THEN product.Name
+		END) AS entityname
+		from journal join event on journal.EventID = event.ID
+			join account on account.ID = journal.AccountID
+			left join asset on asset.ID = EntityID and Entitytype = 'Asset'
+			left join finance on finance.ID = EntityID and Entitytype = 'Finance'
+			left join party on party.ID = EntityID and Entitytype = 'Party'
+			left join product on product.ID = EntityID and Entitytype = 'Product'
+		where event.OrganizationID = #{organizationid}
+		<if test="accountid != 0">
+		and account.ID in (${accountid})
+		</if>		
+		<if test="entityid != 0">
+		and EntityID in (${entityid})
+		</if>
+		<if test="fromdate != null">
+		and event.Date <![CDATA[ >= ]]> #{fromdate}
+		</if>
+		<if test="todate != null">
+		and event.Date <![CDATA[ <= ]]> #{todate}
+		</if>
+		<if test="currency != null">
+		and journal.Currency = #{currency}
+		</if>
+		<if test="state != null">
+		and event.State = in ${state}
+		</if>
+		<if test="state = null">
+		and event.State not in ('Initial', 'Final')
+		</if>
+		order by account.Name, event.Date, journal.ID
+		limit 0, #{numrows}
+	</select>
+
+<!--Actions by Event-->
+	<select id="listbyevent" parameterType="AccountAction" resultType="EventJournal">
+		select distinct 
+		<include refid="eventjournalcolumns"/>,
+		(CASE
+			WHEN EntityType = 'Asset' THEN asset.Name
+			WHEN EntityType = 'Finance' THEN finance.Name
+			WHEN EntityType = 'Party' THEN party.Name
+			WHEN EntityType = 'Product' THEN product.Name
+		END) AS entityname
+		from journal join event on journal.EventID = event.ID
+			join account on account.ID = journal.AccountID
+			left join asset on asset.ID = EntityID and Entitytype = 'Asset'
+			left join finance on finance.ID = EntityID and Entitytype = 'Finance'
+			left join party on party.ID = EntityID and Entitytype = 'Party'
+			left join product on product.ID = EntityID and Entitytype = 'Product'
+		where event.OrganizationID = #{organizationid}
+		and (#{test} or event.Downloaded = 0)
+		<if test="eventid != null">
+		and event.Name in (${eventid})
+		</if>		
+		<if test="fromdate != null">
+		and event.Date <![CDATA[ >= ]]> #{fromdate}
+		</if>
+		<if test="todate != null">
+		and event.Date <![CDATA[ <= ]]> #{todate}
+		</if>
+		<if test="currency != null">
+		and journal.Currency = #{currency}
+		</if>
+		<if test="state != null">
+		and event.State = in ${state}
+		</if>
+		<if test="state = null">
+		and event.State not in ('Initial', 'Final')
+		</if>
+		order by event.Name, journal.ID
+	</select>
+
+	<select id="balancebyevent" parameterType="String" resultType="Double">
+		select sum(DebitAmount - CreditAmount) 
+		from journal
+		where EventID = #{id}
+	</select>
+
+	<select id="countbyevent" parameterType="String" resultType="Integer">
+		select count(*) 
+		from journal
+		where EventID = #{id}
+	</select>
+
+<!-- Actions by entity -->
+	<sql id="entityquery">
+		where event.OrganizationID = #{organizationid}
+		and journal.EntityType = #{entitytype}
+		and journal.EntityID = #{entityid}
+		<if test="currency != null">
+		and journal.Currency = #{currency}
+		</if>
+		and event.State not in ('Initial', 'Final')
+	</sql>
+
+	<select id="quantitybyentity" parameterType="EventJournal" resultType="Double">
+		select sum(Quantity)
+		from journal join event on journal.EventID = event.ID
+		<include refid="entityquery"/>
+	</select>
+
+	<select id="balancebyentity" parameterType="EventJournal" resultType="Double">
+		select sum(DebitAmount - CreditAmount)
+		from journal join event on journal.EventID = event.ID
+		<include refid="entityquery"/>
+	</select>
+
+	<select id="countbyentity" parameterType="EventJournal" resultType="Integer">
+		select count(journal.ID)
+		from journal join event on journal.EventID = event.ID
+		<include refid="entityquery"/>
+	</select>
+
+	<select id="listbyentity" parameterType="EventJournalTable" resultType="EventJournal">
+		select distinct 
+		<include refid="eventjournalcolumns"/>,
+		(CASE
+			WHEN EntityType = 'Asset' THEN asset.Name
+			WHEN EntityType = 'Finance' THEN finance.Name
+			WHEN EntityType = 'Party' THEN party.Name
+			WHEN EntityType = 'Product' THEN product.Name
+		END) AS entityname
+		from journal join event on journal.EventID = event.ID
+			join account on account.ID = journal.AccountID
+			left join asset on asset.ID = EntityID and Entitytype = 'Asset'
+			left join finance on finance.ID = EntityID and Entitytype = 'Finance'
+			left join party on party.ID = EntityID and Entitytype = 'Party'
+			left join product on product.ID = EntityID and Entitytype = 'Product'
+		<include refid="entityquery"/>
+		order by ${orderby}
+		limit #{startrow}, #{numrows}
+	</select>
+
+<!--Actions by reservation-->
+	<sql id="reservationquery">
+		from reservation 
+			join event on event.ParentID = reservation.ID 
+				and event.Activity = 'Reservation'
+			join journal on journal.EventID = event.ID
+			join account on account.ID = journal.AccountID
+			left join asset on asset.ID = EntityID and Entitytype = 'Asset'
+			left join finance on finance.ID = EntityID and Entitytype = 'Finance'
+			left join party on party.ID = EntityID and Entitytype = 'Party'
+			left join product on product.ID = EntityID and Entitytype = 'Product'
+		where reservation.ID = #{id}
+			and journal.EntityType = 'Party'
+			and (
+				journal.EntityID = reservation.CustomerID 
+				or journal.EntityID = reservation.AgentID
+			)
+			and event.State not in ('Initial', 'Final')
+			and journal.organizationid = event.organizationid
+	</sql>
+
+	<select id="balancebyreservation" parameterType="String" resultType="Double">
+		select sum(DebitAmount - CreditAmount)
+		<include refid="reservationquery"/>
+	</select>
+
+	<select id="countbyreservation" parameterType="String" resultType="Integer">
+		select count(journal.ID)
+		<include refid="reservationquery"/>
+	</select>
+	
+	<select id="listbyreservation" parameterType="String" resultType="EventJournal">
+		select 
+		<include refid="eventjournalcolumns"/>,
+		reservation.Name as parent,
+		(CASE
+			WHEN EntityType = 'Asset' THEN asset.Name
+			WHEN EntityType = 'Finance' THEN finance.Name
+			WHEN EntityType = 'Party' THEN party.Name
+			WHEN EntityType = 'Product' THEN product.Name
+		END) AS entityname
+		<include refid="reservationquery"/>
+	</select>
+	
+<!--Actions by task-->
+	<sql id="taskquery">
+		from task
+			join event on event.ParentID = task.ID
+				and event.Activity = 'Task'
+			join journal on journal.EventID = event.ID
+			join account on account.ID = journal.AccountID
+			left join location on location.ID = journal.LocationID
+		where task.ID = #{id}
+			and journal.EntityType = 'Party'
+			and journal.EntityID = task.CustomerID 
+			and journal.Currency = task.Currency
+			and event.State not in ('Initial', 'Final')
+	</sql>
+
+	<select id="balancebytask" parameterType="Task" resultType="Double">
+		select sum(DebitAmount - CreditAmount)
+		<include refid="taskquery"/>
+	</select>
+
+	<select id="countbytask" parameterType="Task" resultType="Integer">
+		select count(journal.ID)
+		<include refid="taskquery"/>
+	</select>
+	
+	<select id="listbytask" parameterType="Task" resultType="EventJournal">
+		select 
+		<include refid="eventjournalcolumns"/>,
+		task.Name AS parent
+		<include refid="taskquery"/>
+	</select>
+	
+	<select id="ratebparent" parameterType="Rate" resultType="Rate">
+		select event.ID, event.ActorID, event.Activity, event.ParentID,
+		event.OrganizationID,
+		event.Name, event.Type, event.Process, event.State, event.Date, event.DoneDate,
+		event.DueDate, event.Notes,
+		(CASE
+			WHEN Activity = 'Reservation' THEN reservation.Name
+			WHEN Activity = 'Task' THEN task.Name
+		END) AS Parent
+		from event
+		left join reservation on reservation.ID = event.ParentID
+			and event.Activity = 'Reservation'
+		left join task on task.ID = event.ParentID and event.Activity = 'Task'
+		where event.ParentID = #{id}
+		and Process = 'Rate'
+		order by Date desc
+		limit 0,1
+	</select>
+
+	<select id="flipkeyexists" parameterType="String" resultType="String">
+		select ID
+		from event
+		where event.Name = #{id}
+		and event.OrganizationID = '10942'
+		limit 0,1
+	</select>
+
+</mapper>

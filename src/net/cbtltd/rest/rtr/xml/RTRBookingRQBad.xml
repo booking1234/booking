@@ -1,0 +1,5 @@
+<RTRBookingRequest Version="3">
+	<BookingRequest PropertyID="1049" RequestType="AvailabilityInformation"
+		CheckInDate="2012-10-28" CheckOutDate="2012-11-04" GuestCount="0"
+		CouponCode="" />
+</RTRBookingRequest>

@@ -1,0 +1,57 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+
+<mapper namespace="net.cbtltd.server.api.PriceExtMapper">
+    <resultMap id="ResultMap" type="PriceExt">
+    <id column="priceExt.ID" jdbcType="INTEGER" property="id" />
+    <id column="priceExt.priceID" jdbcType="INTEGER" property="priceID" />
+    <id column="priceExt.rateID" jdbcType="VARCHAR" property="rateID" />
+     <id column="priceExt.ClosedOnArrival" jdbcType="INTEGER" property="closedOnArrival" />
+      <id column="priceExt.ClosedOnDep" jdbcType="INTEGER" property="closedOnDep" />
+       <id column="priceExt.Closed" jdbcType="INTEGER" property="closed" />
+    
+   </resultMap>
+
+
+
+<insert id="create" parameterType="PriceExt" useGeneratedKeys="true" keyProperty="id">
+		insert into price_ext (
+			priceID, rateID,ClosedOnArrival, ClosedOnDep, Closed
+		)
+		values (
+			#{priceID,jdbcType=INTEGER},
+			#{rateID,jdbcType=VARCHAR}, 
+			#{closedOnArrival,jdbcType=INTEGER}, 
+			#{closedOnDep,jdbcType=INTEGER}, 
+			#{closed,jdbcType=INTEGER}
+		)
+	</insert>
+	
+<update id="update" parameterType="PriceExt">
+		update price_ext
+		<set>
+			
+			<if test="closedOnArrival != null">
+				ClosedOnArrival = #{closedOnArrival,jdbcType=INTEGER},
+			</if>
+			<if test="closedOnDep != null">
+				ClosedOnDep = #{closedOnDep,jdbcType=INTEGER},
+			</if>
+			<if test="closed != null">
+				Closed = #{closed,jdbcType=INTEGER},
+			</if>
+			
+			
+			<if test="rateID != null">
+				rateID = #{rateID,jdbcType=VARCHAR},
+			</if>
+		</set>
+		where priceID = #{priceID,jdbcType=INTEGER}
+	</update>
+	
+	<delete id="delete" parameterType="String">
+		delete from price_ext
+		where priceID = #{priceID,jdbcType=INTEGER}
+	</delete>
+	
+ </mapper>

@@ -1,0 +1,24 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="net.cbtltd.server.api.ProductExportSettingsMapper">
+
+ 	<cache readOnly="true"/> 
+
+	<resultMap id="ResultMap" type="net.cbtltd.shared.ProductExportSettings">
+	    <result column="col1" jdbcType="VARCHAR" property="field" />
+	    <result column="col2" jdbcType="VARCHAR" property="value" />
+	</resultMap>
+    
+	<sql id="columns">
+		variable as col1,settings_value as col2
+	</sql>
+	
+	<select id="getProductExportSettings"  parameterType="String" resultMap="ResultMap">
+		select
+		<include refid="columns" />
+		from product_export_settings
+		where AltPartyID = #{partnerid,jdbcType=VARCHAR}
+	</select>
+	
+	
+</mapper>

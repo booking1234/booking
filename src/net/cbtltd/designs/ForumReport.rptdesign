@@ -1,0 +1,421 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<report xmlns="http://www.eclipse.org/birt/2005/design" version="3.2.23" id="1">
+    <property name="createdBy">Eclipse BIRT Designer Version 3.7.2.v20120213 Build &lt;3.7.2.v20120214-1408></property>
+    <list-property name="propertyBindings">
+        <structure>
+            <property name="name">odaDriverClass</property>
+            <property name="id">36</property>
+        </structure>
+        <structure>
+            <property name="name">odaURL</property>
+            <property name="id">36</property>
+            <expression name="value" type="javascript">params["RP_Database"].value</expression>
+        </structure>
+        <structure>
+            <property name="name">odaUser</property>
+            <property name="id">36</property>
+        </structure>
+        <structure>
+            <property name="name">odaAutoCommit</property>
+            <property name="id">36</property>
+        </structure>
+        <structure>
+            <property name="name">odaIsolationMode</property>
+            <property name="id">36</property>
+        </structure>
+        <structure>
+            <property name="name">odaPassword</property>
+            <property name="id">36</property>
+        </structure>
+        <structure>
+            <property name="name">odaJndiName</property>
+            <property name="id">36</property>
+        </structure>
+        <structure>
+            <property name="name">OdaConnProfileName</property>
+            <property name="id">36</property>
+        </structure>
+        <structure>
+            <property name="name">OdaConnProfileStorePath</property>
+            <property name="id">36</property>
+        </structure>
+    </list-property>
+    <property name="units">in</property>
+    <property name="iconFile">/templates/blank_report.gif</property>
+    <property name="layoutPreference">auto layout</property>
+    <parameters>
+        <scalar-parameter name="RP_ReportID" id="52">
+            <text-property name="helpText">Enter the ID of the report</text-property>
+            <text-property name="promptText">Report ID</text-property>
+            <property name="valueType">static</property>
+            <property name="isRequired">true</property>
+            <property name="dataType">string</property>
+            <property name="distinct">true</property>
+            <property name="paramType">simple</property>
+            <property name="concealValue">false</property>
+            <property name="controlType">text-box</property>
+            <structure name="format">
+                <property name="category">Unformatted</property>
+            </structure>
+        </scalar-parameter>
+        <scalar-parameter name="RP_Database" id="690">
+            <text-property name="promptText">Database URL</text-property>
+            <property name="valueType">static</property>
+            <property name="dataType">string</property>
+            <property name="distinct">true</property>
+            <simple-property-list name="defaultValue">
+                <value type="constant">jdbc:mysql://54.197.247.82:3306/razor</value>
+            </simple-property-list>
+            <list-property name="selectionList"/>
+            <property name="paramType">simple</property>
+            <property name="controlType">text-box</property>
+            <structure name="format">
+                <property name="category">Unformatted</property>
+            </structure>
+        </scalar-parameter>
+    </parameters>
+    <data-sources>
+        <oda-data-source extensionID="org.eclipse.birt.report.data.oda.jdbc" name="Razor Cloud" id="36">
+            <list-property name="privateDriverProperties">
+                <ex-property>
+                    <name>metadataBidiFormatStr</name>
+                    <value>ILYNN</value>
+                </ex-property>
+                <ex-property>
+                    <name>disabledMetadataBidiFormatStr</name>
+                </ex-property>
+                <ex-property>
+                    <name>contentBidiFormatStr</name>
+                    <value>ILYNN</value>
+                </ex-property>
+                <ex-property>
+                    <name>disabledContentBidiFormatStr</name>
+                </ex-property>
+            </list-property>
+            <property name="odaDriverClass">com.mysql.jdbc.Driver</property>
+            <property name="odaURL">jdbc:mysql://uatdb.mybookingpal.com:3306/razor</property>
+            <property name="odaUser">root</property>
+            <encrypted-property name="odaPassword" encryptionID="base64">NGVWZldEZFA=</encrypted-property>
+        </oda-data-source>
+    </data-sources>
+    <data-sets>
+        <oda-data-set extensionID="org.eclipse.birt.report.data.oda.jdbc.JdbcSelectDataSet" name="Forum" id="78">
+            <list-property name="parameters">
+                <structure>
+                    <property name="name">DSP_ReportID</property>
+                    <property name="paramName">RP_ReportID</property>
+                    <property name="dataType">integer</property>
+                    <property name="position">1</property>
+                    <property name="isInput">true</property>
+                    <property name="isOutput">false</property>
+                </structure>
+            </list-property>
+            <structure name="cachedMetaData">
+                <list-property name="resultSet">
+                    <structure>
+                        <property name="position">1</property>
+                        <property name="name">OrganizationId</property>
+                        <property name="dataType">integer</property>
+                    </structure>
+                    <structure>
+                        <property name="position">2</property>
+                        <property name="name">Name</property>
+                        <property name="dataType">string</property>
+                    </structure>
+                    <structure>
+                        <property name="position">3</property>
+                        <property name="name">State</property>
+                        <property name="dataType">string</property>
+                    </structure>
+                    <structure>
+                        <property name="position">4</property>
+                        <property name="name">Topic</property>
+                        <property name="dataType">string</property>
+                    </structure>
+                    <structure>
+                        <property name="position">5</property>
+                        <property name="name">Date</property>
+                        <property name="dataType">date-time</property>
+                    </structure>
+                    <structure>
+                        <property name="position">6</property>
+                        <property name="name">Data</property>
+                        <property name="dataType">string</property>
+                    </structure>
+                    <structure>
+                        <property name="position">7</property>
+                        <property name="name">Party</property>
+                        <property name="dataType">string</property>
+                    </structure>
+                </list-property>
+            </structure>
+            <property name="dataSource">Razor Cloud</property>
+            <list-property name="resultSet">
+                <structure>
+                    <property name="position">1</property>
+                    <property name="name">OrganizationId</property>
+                    <property name="nativeName">OrganizationId</property>
+                    <property name="dataType">integer</property>
+                </structure>
+                <structure>
+                    <property name="position">2</property>
+                    <property name="name">Name</property>
+                    <property name="nativeName">Name</property>
+                    <property name="dataType">string</property>
+                </structure>
+                <structure>
+                    <property name="position">3</property>
+                    <property name="name">State</property>
+                    <property name="nativeName">State</property>
+                    <property name="dataType">string</property>
+                </structure>
+                <structure>
+                    <property name="position">4</property>
+                    <property name="name">Topic</property>
+                    <property name="nativeName">Topic</property>
+                    <property name="dataType">string</property>
+                </structure>
+                <structure>
+                    <property name="position">5</property>
+                    <property name="name">Date</property>
+                    <property name="nativeName">Date</property>
+                    <property name="dataType">date-time</property>
+                </structure>
+                <structure>
+                    <property name="position">6</property>
+                    <property name="name">Data</property>
+                    <property name="nativeName">Data</property>
+                    <property name="dataType">string</property>
+                </structure>
+                <structure>
+                    <property name="position">7</property>
+                    <property name="name">Party</property>
+                    <property name="nativeName">Party</property>
+                    <property name="dataType">string</property>
+                </structure>
+            </list-property>
+            <xml-property name="queryText"><![CDATA[SELECT forum.OrganizationId, forum.Name, forum.State, Topic, forum.Date, Data, party.Name AS Party
+FROM report, forum
+JOIN party ON party.PartyId = forum.PartyId
+WHERE report.ReportID = ?
+AND forum.OrganizationID = report.OrganizationID
+AND forum.Name = report.FromName
+AND forum.Topic = report.ToName
+ORDER BY forum.Date]]></xml-property>
+        </oda-data-set>
+    </data-sets>
+    <styles>
+        <style name="crosstab-cell" id="4">
+            <property name="borderBottomColor">#CCCCCC</property>
+            <property name="borderBottomStyle">solid</property>
+            <property name="borderBottomWidth">1pt</property>
+            <property name="borderLeftColor">#CCCCCC</property>
+            <property name="borderLeftStyle">solid</property>
+            <property name="borderLeftWidth">1pt</property>
+            <property name="borderRightColor">#CCCCCC</property>
+            <property name="borderRightStyle">solid</property>
+            <property name="borderRightWidth">1pt</property>
+            <property name="borderTopColor">#CCCCCC</property>
+            <property name="borderTopStyle">solid</property>
+            <property name="borderTopWidth">1pt</property>
+        </style>
+        <style name="crosstab" id="5">
+            <property name="borderBottomColor">#CCCCCC</property>
+            <property name="borderBottomStyle">solid</property>
+            <property name="borderBottomWidth">1pt</property>
+            <property name="borderLeftColor">#CCCCCC</property>
+            <property name="borderLeftStyle">solid</property>
+            <property name="borderLeftWidth">1pt</property>
+            <property name="borderRightColor">#CCCCCC</property>
+            <property name="borderRightStyle">solid</property>
+            <property name="borderRightWidth">1pt</property>
+            <property name="borderTopColor">#CCCCCC</property>
+            <property name="borderTopStyle">solid</property>
+            <property name="borderTopWidth">1pt</property>
+        </style>
+        <style name="ReportTitle" id="7">
+            <property name="fontFamily">"Arial"</property>
+            <property name="fontSize">xx-large</property>
+            <property name="fontWeight">bolder</property>
+        </style>
+        <style name="ReportHeader" id="50">
+            <property name="backgroundColor">#C0C0C0</property>
+            <property name="fontFamily">"Arial"</property>
+            <property name="fontSize">medium</property>
+            <property name="fontWeight">bold</property>
+        </style>
+        <style name="ReportLine" id="51">
+            <property name="fontFamily">"Arial"</property>
+        </style>
+    </styles>
+    <page-setup>
+        <simple-master-page name="Simple MasterPage" id="2">
+            <property name="topMargin">1in</property>
+            <property name="leftMargin">0.5104166666666666in</property>
+            <property name="bottomMargin">1in</property>
+            <property name="rightMargin">0.4791666666666667in</property>
+            <page-footer>
+                <text id="3">
+                    <property name="style">ReportLine</property>
+                    <property name="contentType">html</property>
+                    <text-property name="content"><![CDATA[Report <VALUE-OF>params["RP_ReportID"]</VALUE-OF>&amp;nbsp;&amp;nbsp;&amp;nbsp;<value-of>new Date()</value-of>]]></text-property>
+                </text>
+            </page-footer>
+        </simple-master-page>
+    </page-setup>
+    <body>
+        <table id="97">
+            <property name="height">1.03125in</property>
+            <property name="width">7.5in</property>
+            <property name="dataSet">Forum</property>
+            <list-property name="boundDataColumns">
+                <structure>
+                    <property name="name">OrganizationId</property>
+                    <expression name="expression">dataSetRow["OrganizationId"]</expression>
+                    <property name="dataType">integer</property>
+                </structure>
+                <structure>
+                    <property name="name">Name</property>
+                    <expression name="expression">dataSetRow["Name"]</expression>
+                    <property name="dataType">string</property>
+                </structure>
+                <structure>
+                    <property name="name">State</property>
+                    <expression name="expression">dataSetRow["State"]</expression>
+                    <property name="dataType">string</property>
+                </structure>
+                <structure>
+                    <property name="name">Topic</property>
+                    <expression name="expression">dataSetRow["Topic"]</expression>
+                    <property name="dataType">string</property>
+                </structure>
+                <structure>
+                    <property name="name">Date</property>
+                    <expression name="expression">dataSetRow["Date"]</expression>
+                    <property name="dataType">date-time</property>
+                </structure>
+                <structure>
+                    <property name="name">Data</property>
+                    <expression name="expression">dataSetRow["Data"]</expression>
+                    <property name="dataType">string</property>
+                </structure>
+                <structure>
+                    <property name="name">Party</property>
+                    <expression name="expression">dataSetRow["Party"]</expression>
+                    <property name="dataType">string</property>
+                </structure>
+            </list-property>
+            <column id="113">
+                <property name="width">40mm</property>
+            </column>
+            <column id="114"/>
+            <column id="115">
+                <property name="width">30mm</property>
+            </column>
+            <column id="116">
+                <property name="width">40mm</property>
+            </column>
+            <header>
+                <row id="130">
+                    <property name="style">ReportTitle</property>
+                    <cell id="131">
+                        <property name="colSpan">2</property>
+                        <property name="rowSpan">1</property>
+                        <label id="135">
+                            <property name="textAlign">left</property>
+                            <text-property name="text">Forum Report</text-property>
+                        </label>
+                    </cell>
+                    <cell id="133"/>
+                    <cell id="134"/>
+                </row>
+                <row id="98">
+                    <property name="style">ReportHeader</property>
+                    <property name="borderBottomColor">#000000</property>
+                    <property name="borderBottomStyle">solid</property>
+                    <property name="borderBottomWidth">medium</property>
+                    <property name="borderTopColor">#000000</property>
+                    <property name="borderTopStyle">solid</property>
+                    <property name="borderTopWidth">medium</property>
+                    <cell id="99">
+                        <label id="117">
+                            <text-property name="text">Forum</text-property>
+                        </label>
+                    </cell>
+                    <cell id="100">
+                        <label id="119">
+                            <text-property name="text">Topic</text-property>
+                        </label>
+                    </cell>
+                    <cell id="101">
+                        <label id="121">
+                            <text-property name="text">Posted By</text-property>
+                        </label>
+                    </cell>
+                    <cell id="102">
+                        <label id="123">
+                            <text-property name="text">On Date</text-property>
+                        </label>
+                    </cell>
+                </row>
+            </header>
+            <detail>
+                <row id="103">
+                    <property name="height">0.2604166666666667in</property>
+                    <property name="style">ReportLine</property>
+                    <cell id="104">
+                        <data id="118">
+                            <property name="resultSetColumn">Name</property>
+                        </data>
+                    </cell>
+                    <cell id="105">
+                        <data id="120">
+                            <property name="resultSetColumn">Topic</property>
+                        </data>
+                    </cell>
+                    <cell id="106">
+                        <data id="122">
+                            <property name="resultSetColumn">Party</property>
+                        </data>
+                    </cell>
+                    <cell id="107">
+                        <data id="124">
+                            <structure name="dateTimeFormat">
+                                <property name="category">Custom</property>
+                                <property name="pattern">dd/MM/yyyy</property>
+                            </structure>
+                            <property name="resultSetColumn">Date</property>
+                        </data>
+                    </cell>
+                </row>
+                <row id="126">
+                    <property name="height">0.2604166666666667in</property>
+                    <property name="style">ReportLine</property>
+                    <property name="pageBreakAfter">avoid</property>
+                    <property name="pageBreakBefore">avoid</property>
+                    <property name="pageBreakInside">avoid</property>
+                    <cell id="127">
+                        <property name="colSpan">4</property>
+                        <property name="rowSpan">1</property>
+                        <data id="129">
+                            <property name="resultSetColumn">Data</property>
+                        </data>
+                    </cell>
+                </row>
+            </detail>
+            <footer>
+                <row id="108">
+                    <property name="height">0.23958333333333334in</property>
+                    <property name="style">ReportHeader</property>
+                    <property name="borderBottomColor">#000000</property>
+                    <property name="borderBottomStyle">solid</property>
+                    <property name="borderBottomWidth">medium</property>
+                    <cell id="109">
+                        <property name="colSpan">4</property>
+                        <property name="rowSpan">1</property>
+                    </cell>
+                </row>
+            </footer>
+        </table>
+    </body>
+</report>

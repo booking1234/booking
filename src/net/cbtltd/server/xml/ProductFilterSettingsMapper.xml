@@ -1,0 +1,31 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="net.cbtltd.server.api.ProductFilterSettingsMapper">
+
+ 	<cache readOnly="true"/> 
+
+	<resultMap id="ResultMap" type="net.cbtltd.shared.ProductFilterSettings">
+	    <result column="col1" jdbcType="VARCHAR" property="field" />
+	    <result column="col2" jdbcType="VARCHAR" property="values" />
+	</resultMap>
+    
+	<sql id="columns">
+		filter_by as col1,filter_values as col2
+	</sql>
+	
+	<select id="getImportProductFilterSettings"  parameterType="String" resultMap="ResultMap">
+		select
+		<include refid="columns" />
+		from product_filter_settings
+		where AltPartyID = #{partnerid,jdbcType=VARCHAR}
+		and opr_type='import'
+	</select>
+	<select id="getExportProductFilterSettings"  parameterType="String" resultMap="ResultMap">
+		select
+		<include refid="columns" />
+		from product_filter_settings
+		where AltPartyID = #{partnerid,jdbcType=VARCHAR}
+		and opr_type='export'
+	</select>
+	
+</mapper>

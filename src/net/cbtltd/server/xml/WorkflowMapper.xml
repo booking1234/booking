@@ -1,0 +1,248 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="net.cbtltd.server.api.WorkflowMapper">
+
+	<resultMap id="ResultMap" type="Workflow">
+		<id column="ID" jdbcType="INTEGER" property="id" />
+		<id column="Process" jdbcType="VARCHAR" property="process" />
+		<id column="State" jdbcType="VARCHAR" property="state" />
+		<result column="Datename" jdbcType="VARCHAR" property="datename" />
+		<result column="Enabled" jdbcType="BIT" property="enabled" />
+		<result column="Prior" jdbcType="BIT" property="prior" />
+		<result column="Duration" jdbcType="INTEGER" property="duration" />
+		<result column="Unit" jdbcType="VARCHAR" property="unit" />
+	</resultMap>
+
+	<sql id="columns">
+		ID, Process, State, Datename, Enabled, Prior, Duration, Unit
+	</sql>
+
+	<select id="read" parameterType="String" resultMap="ResultMap">
+		select
+		<include refid="columns" />
+		from workflow
+		where ID = #{id,jdbcType=INTEGER}
+		order by Sequence
+	</select>
+
+	<select id="exists" parameterType="Workflow" resultMap="ResultMap">
+		select
+		<include refid="columns" />
+		from workflow
+		where ID = #{id,jdbcType=INTEGER}
+		and Process = #{process,jdbcType=VARCHAR}
+		and State = #{state,jdbcType=VARCHAR}
+		limit 1
+	</select>
+
+	<delete id="delete" parameterType="String">
+		delete from workflow
+		where ID = #{id,jdbcType=INTEGER}
+	</delete>
+
+	<insert id="create" parameterType="Workflow">
+		insert into workflow (ID, Process, State, Datename, Enabled, Prior, Duration, Unit)
+		values (
+			#{id,jdbcType=INTEGER},
+			#{process,jdbcType=VARCHAR},
+			#{state,jdbcType=VARCHAR},
+			#{datename,jdbcType=VARCHAR},
+			#{enabled,jdbcType=BIT},
+			#{prior,jdbcType=BIT},
+			#{duration,jdbcType=INTEGER},
+			#{unit,jdbcType=VARCHAR}
+		)
+	</insert>
+
+	<insert id="copy" parameterType="NameId">
+		insert into workflow (ID, Process, State, Enabled, Prior, Datename, Duration, Unit)
+		select #{id,jdbcType=INTEGER}, Process, State, Enabled, Prior, Datename, Duration, Unit
+		from workflow 
+		where ID = #{name,jdbcType=INTEGER}
+	</insert>
+
+	<update id="update" parameterType="Workflow">
+		update workflow
+		<set>
+			<if test="datename != null">
+				Datename = #{datename,jdbcType=VARCHAR},
+			</if>
+			<if test="enabled != null">
+				Enabled = #{enabled,jdbcType=BIT},
+			</if>
+			<if test="prior != null">
+				Prior = #{prior,jdbcType=BIT},
+			</if>
+			<if test="duration != null">
+				Duration = #{duration,jdbcType=INTEGER},
+			</if>
+			<if test="unit != null">
+				Unit = #{unit,jdbcType=VARCHAR},
+			</if>
+		</set>
+		where ID = #{id,jdbcType=INTEGER}
+			and Process = #{process,jdbcType=VARCHAR}
+			and State = #{state,jdbcType=VARCHAR}
+	</update>
+
+	<update id="updateByPrimaryKey" parameterType="Workflow">
+		update workflow set
+			Datename = #{datename,jdbcType=VARCHAR},
+			Enabled = #{enabled,jdbcType=BIT},
+			Prior = #{prior,jdbcType=BIT},
+			Duration = #{duration,jdbcType=INTEGER},
+			Unit = #{unit,jdbcType=VARCHAR}
+		where ID = #{id,jdbcType=INTEGER}
+			and Process = #{process,jdbcType=VARCHAR}
+			and State = #{state,jdbcType=VARCHAR}
+	</update>
+
+	<sql id="wherereservation">
+		where reservation.OrganizationID = #{id}
+			and reservation.DoneDate is null
+			<if test="actorid != null">
+			and reservation.ActorID = #{actorid}
+			</if>
+			<if test="reservationstates != null">
+			and reservation.State in (${reservationstates})
+			</if>
+	</sql>
+
+	<select id="reservationcount" parameterType="WorkflowTable" resultType="Integer">
+		select count(ID) from reservation
+		<include refid="wherereservation" />
+	</select>
+
+	<sql id="wheretask">
+		where task.OrganizationID = #{id}
+			and task.DoneDate is null
+			<if test="actorid != null">
+			and task.ActorID = #{actorid}
+			</if>
+			and (
+				(task.Process = 'Maintenance' and task.State in (${maintenancestates}))
+				or (task.Process = 'Marketing' and task.State in (${marketingstates}))
+				or (task.Process = 'Service' and task.State in (${servicestates}))
+			)
+	</sql>
+
+	<select id="taskcount" parameterType="WorkflowTable" resultType="Integer">
+		select count(ID) from task
+		<include refid="wheretask" />
+	</select>
+
+	<select id="worklist" parameterType="WorkflowTable" resultType="Process">
+		select 
+			reservation.ParentID, 
+			reservation.ID, 
+			reservation.Name, 
+			reservation.DueDate, 
+			'Reservation' as process,
+			reservation.State, 
+			customer.Name as parentname,
+			substring(reservation.Notes, 1, 80) as notes, 
+			party.Name as actorname
+		from reservation
+			join party on party.ID = reservation.ActorID
+			left join party as customer on customer.ID = reservation.CustomerID
+		<include refid="wherereservation" />
+	union
+		select 
+			task.ParentID, 
+			task.ID, 
+			task.Name, 
+			task.DueDate, 
+			task.Process, 
+			task.State, 
+			customer.Name as parentname,
+			substring(task.Notes, 1, 80) as notes, 
+			party.Name as actorname
+		from task
+			join party on party.ID = task.ActorID
+			left join party as customer on customer.ID = task.CustomerID
+		<include refid="wheretask" />
+		order by ${orderby}
+		limit #{startrow}, #{numrows}
+	</select>
+
+	<select id="progressoverduereservation" parameterType="WorkflowProgress" resultType="Double">
+		select sum(if(duedate <![CDATA[ < ]]> date(now()), 1, 0))
+		from reservation
+		where State in (${states})
+			and OrganizationID = #{id}
+			and reservation.DoneDate is null
+			<if test="actorid != null">
+			and ActorID = #{actorid}
+			</if>
+	</select>
+	
+	<select id="progresstotalreservation" parameterType="WorkflowProgress" resultType="Double">
+		select count(ID) from reservation
+		where State in (${states})
+			and OrganizationID = #{id}
+			and reservation.DoneDate is null
+			<if test="actorid != null">
+			and ActorID = #{actorid}
+			</if>
+	</select>
+	
+	<select id="progressoverduetask" parameterType="WorkflowProgress" resultType="Double">
+		select sum(if(duedate <![CDATA[ < ]]> date(now()), 1, 0))
+		from task
+		where State in (${states})
+			and Process in (${processes})
+			and OrganizationID = #{id}
+			and task.DoneDate is null
+			<if test="actorid != null">
+			and ActorID = #{actorid}
+			</if>
+	</select>
+	
+	<select id="progresstotaltask" parameterType="WorkflowProgress" resultType="Double">
+		select count(ID) from task
+		where State in (${states})
+			and Process in (${processes})
+			and OrganizationID = #{id}
+			and task.DoneDate is null
+			<if test="actorid != null">
+			and ActorID = #{actorid}
+			</if>
+	</select>
+
+<!-- 	<select id="progresstotalmarketing" parameterType="WorkflowProgress" resultType="Double"> -->
+<!-- 		select sum(if(duedate <![CDATA[ < ]]> date(now()), 1, 0)) -->
+<!-- 		from task -->
+<!-- 		where State in (${states}) -->
+<!-- 			and Process = 'Marketing' -->
+<!-- 			and OrganizationID = #{id} -->
+<!-- 			and task.DoneDate is null -->
+<!-- 			<if test="actorid != null"> -->
+<!-- 			and ActorID = #{actorid} -->
+<!-- 			</if> -->
+<!-- 	</select> -->
+	
+<!-- 	<select id="progresstotalmarketing" parameterType="WorkflowProgress" resultType="Double"> -->
+<!-- 		select count(ID) from task -->
+<!-- 		where State in (${states}) -->
+<!-- 			and Process = 'Marketing' -->
+<!-- 			and OrganizationID = #{id} -->
+<!-- 			and task.DoneDate is null -->
+<!-- 			<if test="actorid != null"> -->
+<!-- 			and ActorID = #{actorid} -->
+<!-- 			</if> -->
+<!-- 	</select> -->
+
+	<select id="nameidstate" parameterType="NameIdState" resultType="NameId">
+			select distinct State as name, State as id
+			from reservation
+			where State is not null
+			and State not in ('Initial', 'Cancelled', 'Closed', 'Final')
+		union
+			select distinct State as name, State as id
+			from task
+			where State is not null
+			and State not in ('Initial', 'Final')
+		order by name
+	</select>
+
+</mapper>

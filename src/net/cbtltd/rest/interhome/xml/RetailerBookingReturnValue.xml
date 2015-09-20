@@ -1,0 +1,25 @@
+<?xml version="1.0" encoding="UTF-8" standalone="yes"?>
+<retailerBookingReturnValue xmlns="http://www.interhome.com/webservice">
+	<Ok>false</Ok>
+	<Errors>
+		<Error>
+			<Number>93</Number>
+			<Description>ZI_MAINT_MSG/No complete post-address, at least
+				Country/Mail is required!</Description>
+		</Error>
+		<Error>
+			<Number>83</Number>
+			<Description>ZI_RES_MSG/Insert a Customer (Direct encash.)
+			</Description>
+		</Error>
+		<Error>
+			<Number>15</Number>
+			<Description>ZI_RES_MSG/No reservation found</Description>
+		</Error>
+	</Errors>
+	<BookingID></BookingID>
+	<PaymentStatus>
+		<Ok>false</Ok>
+		<Errors />
+	</PaymentStatus>
+</retailerBookingReturnValue>

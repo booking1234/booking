@@ -1,0 +1,17 @@
+<?xml version="1.0" encoding="utf-8"?>
+<Reservation>
+	<PropertyID>5</PropertyID>
+	<FirstName>John</FirstName>
+	<LastName>Doe</LastName>
+	<Address>123 First St.</Address>
+	<City>Springfield</City>
+	<State>IL</State>
+	<Zip>12345</Zip>
+	<Country>US</Country>
+	<DayPhone>123-456-7890</DayPhone>
+	<EveningPhone>9876543210</EveningPhone>
+	<Email>johndoe@gmail.com</Email>
+	<Adults>1</Adults>
+	<Children>2</Children>
+	<InsuranceOptIn>1</InsuranceOptIn>
+</Reservation>

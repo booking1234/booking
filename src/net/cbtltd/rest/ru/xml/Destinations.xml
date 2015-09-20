@@ -1,0 +1,9 @@
+<?xml version="1.0" encoding="UTF-8"?>
+	<Destinations>
+		<Destination DestinationID="26">Airport</Destination>
+		<Destination DestinationID="97">Main Railway Station</Destination>
+		<Destination DestinationID="129">Grocery Store</Destination>
+		<Destination DestinationID="302">Bus stop</Destination>
+		<Destination DestinationID="316">Historical Centre</Destination>
+		<Destination DestinationID="386">Centrum (Central) district</Destination>
+	</Destinations>

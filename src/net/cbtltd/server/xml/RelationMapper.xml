@@ -1,0 +1,122 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE mapper
+PUBLIC "-//ibatis.apache.org//DTD Mapper 3.0//EN"
+"http://ibatis.apache.org/dtd/ibatis-3-mapper.dtd">
+<mapper namespace="net.cbtltd.server.api.RelationMapper">
+
+	<resultMap id="ResultMap" type="Relation">
+		<result column="Link" property="link" jdbcType="VARCHAR" />
+		<result column="HeadID" property="headid" jdbcType="VARCHAR" />
+		<result column="LineID" property="lineid" jdbcType="VARCHAR" />
+	</resultMap>
+
+	<sql id="columns">distinct link, headid, lineid</sql>
+
+	<insert id="create" parameterType="Relation">
+		insert into relation (link, headid, lineid)
+		values (#{link,	jdbcType=VARCHAR}, #{headid, jdbcType=VARCHAR}, #{lineid, jdbcType=VARCHAR})
+	</insert>
+
+	<delete id="delete" parameterType="Relation">
+		delete from relation
+		where Link = #{link, jdbcType=VARCHAR} 
+		<if test="headid != null">
+			and HeadID = #{headid, jdbcType=VARCHAR}
+		</if>
+		<if test="lineid != null">
+			and LineID = #{lineid, jdbcType=VARCHAR} 
+		</if>
+	</delete>
+
+	<delete id="deletekey" parameterType="Relation">
+		delete from relation
+		where Link = #{link, jdbcType=VARCHAR} 
+			and HeadID = #{headid, jdbcType=VARCHAR}
+			and substring(LineID, 1, locate(':', LineID) - 1) = #{lineid, jdbcType=VARCHAR} 
+	</delete>
+
+	<select id="exists" parameterType="Relation" resultMap="ResultMap">
+		select
+		<include refid="columns" />
+		from relation
+		where Link = #{link, jdbcType=VARCHAR}
+			and HeadID = #{headid, jdbcType=VARCHAR}
+			and LineID = #{lineid, jdbcType=VARCHAR}
+		limit 0, 1
+	</select>
+
+	<select id="match" parameterType="Relation" resultMap="ResultMap">
+		select
+		<include refid="columns" />
+		from relation
+		where substring(Link, 1, length(#{link, jdbcType=VARCHAR})) = #{link, jdbcType=VARCHAR}
+			and HeadID = #{headid, jdbcType=VARCHAR}
+			and LineID = #{lineid, jdbcType=VARCHAR}
+		limit 0, 1
+	</select>
+
+	<select id="list" parameterType="Relation" resultMap="ResultMap">
+		select
+		<include refid="columns" />
+		from relation
+		<if test="link != null">
+		where Link = #{link, jdbcType=VARCHAR}
+		</if>
+		<if test="headid != null">
+			and HeadID = #{headid, jdbcType=VARCHAR}
+		</if>
+		<if test="lineid != null">
+			and LineID = #{lineid, jdbcType=VARCHAR}
+		</if>
+	</select>
+
+	<select id="headids" parameterType="Relation" resultType="String">
+		select distinct headid
+		from relation
+		where Link = #{link, jdbcType=VARCHAR} 
+		<if test="lineid != null">
+			and LineID = #{lineid, jdbcType=VARCHAR} 
+		</if>
+	</select>
+
+	<select id="lineids" parameterType="Relation" resultType="String">
+		select distinct lineid
+		from relation
+		where Link = #{link, jdbcType=VARCHAR} 
+		<if test="headid != null">
+			and HeadID = #{headid, jdbcType=VARCHAR}
+		</if>
+	</select>
+
+	<select id="attributes" parameterType="Relation" resultType="String">
+		select distinct lineid
+		from relation
+		where Link = #{link, jdbcType=VARCHAR} 
+			and HeadID = #{headid,jdbcType=VARCHAR}
+			and substring(LineID, 1, 3) = #{lineid, jdbcType=VARCHAR} 
+	</select>
+	
+	<select id="headidsattributes" resultMap="ResultMap">
+		select *
+		from relation
+		where Link = "Product Attribute"
+			and HeadID in 
+			<foreach item="item" index="index" collection="list"
+        		open="(" separator="," close=")">
+          		#{item}
+    		</foreach> 
+	</select>
+	
+	<select id="productsclasstype" resultMap="ResultMap">
+		select *
+		from relation
+		where Link = "Product Attribute"
+			and LineID like "PCT%"
+			and HeadID in 
+			<foreach item="item" index="index" collection="list"
+        		open="(" separator="," close=")">
+          		#{item}
+    		</foreach> 
+	</select>
+	
+</mapper>

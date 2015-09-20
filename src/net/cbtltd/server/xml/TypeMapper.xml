@@ -1,0 +1,87 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="net.cbtltd.server.api.TypeMapper">
+
+	<cache readOnly="true"/>
+
+	<resultMap id="ResultMap" type="Type">
+		<id column="ID" jdbcType="INTEGER" property="id" />
+		<result column="Name" jdbcType="VARCHAR" property="name" />
+		<result column="Language" jdbcType="VARCHAR" property="language" />
+		<result column="Type" jdbcType="VARCHAR" property="type" />
+	</resultMap>
+
+	<sql id="columns">
+		ID, Name, Language, Type
+	</sql>
+
+	<select id="read" parameterType="String" resultMap="ResultMap">
+		select
+		<include refid="columns" />
+		from type
+		where ID = #{id,jdbcType=INTEGER}
+	</select>
+
+	<delete id="delete" parameterType="String">
+		delete from type
+		where ID = #{id,jdbcType=INTEGER}
+	</delete>
+
+	<insert id="create" parameterType="Type" useGeneratedKeys="true" keyProperty="id">
+		insert into type (Name, Language, Type)
+		values (#{name,jdbcType=VARCHAR}, #{language,jdbcType=VARCHAR}, #{type,jdbcType=VARCHAR})
+	</insert>
+
+	<update id="update" parameterType="Type">
+		update type
+		<set>
+			<if test="name != null">
+				Name = #{name,jdbcType=VARCHAR},
+      </if>
+			<if test="language != null">
+				Language = #{language,jdbcType=VARCHAR},
+      </if>
+			<if test="type != null">
+				Type = #{type,jdbcType=VARCHAR},
+      </if>
+		</set>
+		where ID = #{id,jdbcType=INTEGER}
+	</update>
+
+	<update id="updateByPrimaryKey" parameterType="Type">
+		update type
+		set Name = #{name,jdbcType=VARCHAR},
+		Language = #{language,jdbcType=VARCHAR},
+		Type = #{type,jdbcType=VARCHAR}
+		where ID = #{id,jdbcType=INTEGER}
+	</update>
+
+	<select id="nameidbyid" parameterType="NameIdAction" resultType="NameId">
+		select distinct Name, ID
+		from type
+		where ID = #{id}
+	</select>
+
+	<select id="nameidbyname" parameterType="NameIdAction" resultType="NameId">
+		select distinct Name, ID
+		from type
+		<if test="organizationid != null">
+		join relation on Link = 'Organization Type'
+			and LineID = ID 
+			and HeadID = #{organizationid}
+		</if>
+		where Name <![CDATA[ >= ]]> #{name}
+		<if test="type != null">
+			and Type = #{type}
+		</if>
+		<if test="language == null">
+			and Language not in ('Initial', 'Final')
+		</if>
+		<if test="language != null">
+			and Language in (${language})
+		</if>
+		order by Name
+		limit 0, #{numrows}
+	</select>
+
+</mapper>

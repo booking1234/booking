@@ -1,0 +1,8 @@
+<price>
+	<entity>1400</entity>
+	<fromdate>2012-10-01</fromdate>
+	<todate>2012-12-31</todate>
+	<value>300.0</value>
+	<minimum>1200.00</minimum>
+	<currency>USD</currency>
+</price>

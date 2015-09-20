@@ -1,0 +1,229 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="net.cbtltd.server.api.FinanceMapper">
+
+	<cache readOnly="true"/>
+
+	<resultMap id="ResultMap" type="Finance">
+		<id column="finance.ID" jdbcType="INTEGER" property="id" />
+		<result column="finance.OwnerID" jdbcType="INTEGER" property="ownerid" />
+		<result column="finance.AccountID" jdbcType="INTEGER" property="accountid" />
+		<result column="finance.Name" jdbcType="VARCHAR" property="name" />
+		<result column="finance.State" jdbcType="VARCHAR" property="state" />
+		<result column="finance.Type" jdbcType="VARCHAR" property="type" />
+		<result column="finance.BankName" jdbcType="VARCHAR" property="bankname" />
+		<result column="finance.BranchName" jdbcType="VARCHAR" property="branchname" />
+		<result column="finance.BranchNumber" jdbcType="VARCHAR" property="branchnumber" />
+		<result column="finance.AccountNumber" jdbcType="VARCHAR" property="accountnumber" />
+		<result column="finance.IbanSwift" jdbcType="VARCHAR" property="ibanswift" />
+		<result column="finance.ContactPerson" jdbcType="VARCHAR" property="contactperson" />
+		<result column="finance.PhoneNumber" jdbcType="VARCHAR" property="phonenumber" />
+		<result column="finance.Currency" jdbcType="VARCHAR" property="currency" />
+		<result column="finance.Notes" jdbcType="VARCHAR" property="notes" />
+		<result column="finance.Month" jdbcType="VARCHAR" property="month" />
+		<result column="finance.Year" jdbcType="VARCHAR" property="year" />
+		<result column="finance.Code" jdbcType="VARCHAR" property="code" />
+		<result column="party.Name" jdbcType="VARCHAR" property="ownername" />
+	</resultMap>
+
+	<sql id="columns">
+		finance.ID, finance.OwnerID, finance.AccountID, finance.Name, finance.State, finance.Type, finance.BankName,
+		finance.BranchName, finance.BranchNumber, finance.AccountNumber, finance.IbanSwift, finance.ContactPerson, finance.PhoneNumber,
+		finance.Currency, finance.Notes, finance.Month, finance.Year, finance.Code, party.Name
+	</sql>
+
+	<select id="read" parameterType="String" resultMap="ResultMap">
+		select
+		<include refid="columns" />
+		from finance
+			join party on party.ID = finance.OwnerID
+		where finance.ID = #{id,jdbcType=INTEGER}
+	</select>
+
+	<select id="exists" parameterType="Finance" resultMap="ResultMap">
+		select
+		<include refid="columns" />
+		from finance
+			join party on party.ID = finance.OwnerID
+		where finance.OwnerID = #{ownerid,jdbcType=INTEGER}
+			and finance.Name = #{name,jdbcType=VARCHAR}
+			and finance.State not in ('Initial', 'Final')
+		limit 0, 1
+	</select>
+
+	<delete id="delete" parameterType="String">
+		delete from finance
+		where ID = #{id,jdbcType=INTEGER}
+	</delete>
+
+	<insert id="create" parameterType="Finance" useGeneratedKeys="true" keyProperty="id">
+		insert into finance (
+			OwnerID, AccountID, Name, State, Type, BankName,
+			BranchName, BranchNumber, AccountNumber, IbanSwift, ContactPerson, 
+			PhoneNumber, Currency, Notes, Month, Year, Code
+		)
+		values (
+			#{ownerid,jdbcType=INTEGER},
+			#{accountid,jdbcType=INTEGER},
+			#{name,jdbcType=VARCHAR},
+			#{state,jdbcType=VARCHAR},
+			#{type,jdbcType=VARCHAR},
+			#{bankname,jdbcType=VARCHAR},
+			#{branchname,jdbcType=VARCHAR},
+			#{branchnumber,jdbcType=VARCHAR},
+			#{accountnumber,jdbcType=VARCHAR},
+			#{ibanswift,jdbcType=VARCHAR},
+			#{contactperson,jdbcType=VARCHAR},
+			#{phonenumber,jdbcType=VARCHAR},
+			#{currency,jdbcType=VARCHAR},
+			#{notes,jdbcType=VARCHAR},
+			#{month,jdbcType=VARCHAR},
+			#{year,jdbcType=VARCHAR},
+			#{code,jdbcType=VARCHAR}
+		)
+	</insert>
+
+	<update id="update" parameterType="Finance">
+		update finance
+		<set>
+			<if test="ownerid != null">
+				OwnerID = #{ownerid,jdbcType=INTEGER},
+ 			</if>
+			<if test="accountid != null">
+				AccountID = #{accountid,jdbcType=INTEGER},
+ 			</if>
+			<if test="name != null">
+				Name = #{name,jdbcType=VARCHAR},
+ 			</if>
+			<if test="state != null">
+				State = #{state,jdbcType=VARCHAR},
+ 			</if>
+			<if test="type != null">
+				Type = #{type,jdbcType=VARCHAR},
+ 			</if>
+			<if test="bankname != null">
+				BankName = #{bankname,jdbcType=VARCHAR},
+ 			</if>
+			<if test="branchname != null">
+				BranchName = #{branchname,jdbcType=VARCHAR},
+ 			</if>
+			<if test="branchnumber != null">
+				BranchNumber = #{branchnumber,jdbcType=VARCHAR},
+ 			</if>
+			<if test="accountnumber != null">
+				AccountNumber = #{accountnumber,jdbcType=VARCHAR},
+ 			</if>
+			<if test="ibanswift != null">
+				IbanSwift = #{ibanswift,jdbcType=VARCHAR},
+ 			</if>
+			<if test="contactperson != null">
+				ContactPerson = #{contactperson,jdbcType=VARCHAR},
+ 			</if>
+			<if test="phonenumber != null">
+				PhoneNumber = #{phonenumber,jdbcType=VARCHAR},
+ 			</if>
+			<if test="currency != null">
+				Currency = #{currency,jdbcType=VARCHAR},
+ 			</if>
+			<if test="notes != null">
+				Notes = #{notes,jdbcType=VARCHAR},
+ 			</if>
+			<if test="month != null">
+				Month = #{month,jdbcType=VARCHAR},
+ 			</if>
+			<if test="year != null">
+				Year = #{year,jdbcType=VARCHAR},
+ 			</if>
+			<if test="code != null">
+				Code = #{code,jdbcType=VARCHAR},
+ 			</if>
+		</set>
+		where ID = #{id,jdbcType=INTEGER}
+	</update>
+
+	<update id="updateByPrimaryKey" parameterType="Finance">
+		update finance
+		set
+			OwnerID = #{ownerid,jdbcType=INTEGER},
+			AccountID = #{accountid,jdbcType=INTEGER},
+			Name = #{name,jdbcType=VARCHAR},
+			State = #{state,jdbcType=VARCHAR},
+			Type = #{type,jdbcType=VARCHAR},
+			BankName = #{bankname,jdbcType=VARCHAR},
+			BranchName = #{branchname,jdbcType=VARCHAR},
+			BranchNumber = #{branchnumber,jdbcType=VARCHAR},
+			AccountNumber = #{accountnumber,jdbcType=VARCHAR},
+			IbanSwift = #{ibanswift,jdbcType=VARCHAR},
+			ContactPerson = #{contactperson,jdbcType=VARCHAR},
+			PhoneNumber = #{phonenumber,jdbcType=VARCHAR},
+			Currency = #{currency,jdbcType=VARCHAR},
+			Notes = #{notes,jdbcType=VARCHAR},
+			Month = #{month,jdbcType=VARCHAR},
+			Year = #{year,jdbcType=VARCHAR},
+			Code = #{code,jdbcType=VARCHAR}
+		where ID = #{id,jdbcType=INTEGER}
+	</update>
+
+	<select id="nameidbyid" parameterType="NameIdAction" resultType="NameId">
+		select distinct Name, ID
+		from finance
+		where ID = #{id}
+	</select>
+
+	<select id="nameidbyname" parameterType="NameIdAction" resultType="NameId">
+		select distinct Name, ID
+		from finance
+		where Name <![CDATA[ >= ]]> #{name}
+		<if test="organizationid != null">
+			and OwnerID = #{organizationid}
+		</if>
+		<if test="type != null">
+			and Type = #{type}
+		</if>
+		<if test="state == null">
+			and State = 'Created'
+		</if>
+		<if test="state != null">
+			and State = #{state}
+		</if>
+	union
+		select distinct Name, ID
+		from finance
+		where ID = 2	
+		order by Name
+		limit 0, #{numrows}
+	</select>
+
+	<select id="count" parameterType="HasTableService" resultType="Integer">
+		select count(*)
+		from finance
+		where finance.OwnerID = #{id}
+			and finance.State in ('Created')
+	</select>
+	
+	<select id="list" parameterType="HasTableService" resultMap="ResultMap">
+		select
+		<include refid="columns" />
+		from finance
+			join party on party.ID = finance.OwnerID
+		where finance.OwnerID = #{id}
+			and finance.State in ('Created')
+		order by ${orderby}
+		limit #{startrow}, #{numrows}
+	</select>
+	
+<!-- JSON Queries -->
+	<select id="financewidget" parameterType="String" resultType="net.cbtltd.json.finance.FinanceWidgetItem">
+		select
+			party.Name as owner, account.Name as account, finance.Name, finance.Type, finance.BankName,
+			finance.BranchName, finance.BranchNumber, finance.AccountNumber, finance.IbanSwift, finance.ContactPerson, finance.PhoneNumber,
+			finance.Currency as currency, currency.Name as currencyname, text.Notes as notes
+		from finance
+			left join currency on currency.ID = finance.currency 
+			left join party on party.ID = finance.OwnerID 
+			left join account on account.ID = finance.AccountID 
+			left join text on text.ID = concat('Finance',finance.ID,'Public')
+		where finance.ID = #{id,jdbcType=INTEGER}
+	</select>
+	
+</mapper>

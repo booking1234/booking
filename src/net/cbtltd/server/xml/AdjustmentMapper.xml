@@ -1,0 +1,226 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="net.cbtltd.server.api.AdjustmentMapper">
+
+	<resultMap id="ResultMap" type="Adjustment">
+		<id column="ID" jdbcType="INTEGER" property="id" />
+		<result column="ProductID" jdbcType="INTEGER" property="productid" />
+		<result column="PartyID" jdbcType="INTEGER" property="partyid" />
+		<result column="State" jdbcType="INTEGER" property="state" />
+		<result column="FromDate" jdbcType="DATE" property="fromdate" />
+		<result column="ToDate" jdbcType="DATE" property="todate" />
+		<result column="Extra" jdbcType="DOUBLE" property="extra" />
+		<result column="FixPrice" jdbcType="DOUBLE" property="fixprice" />
+		<result column="Currency" jdbcType="VARCHAR" property="currency" />
+		<result column="MinStay" jdbcType="INTEGER" property="minstay" />
+		<result column="MaxStay" jdbcType="INTEGER" property="maxstay" />
+		<result column="Servicedays" jdbcType="BIT" property="servicedays" />
+		<result column="version" jdbcType="TIMESTAMP" property="version" />
+	</resultMap>
+
+	<sql id="columns">
+		ID, ProductID, PartyID, State, FromDate, ToDate, Extra, FixPrice, Currency, MinStay, MaxStay, Servicedays, version
+	</sql>
+
+	<select id="read" parameterType="Integer" resultMap="ResultMap">
+		select
+		<include refid="columns" />
+		from adjustment
+		where ID = #{id,jdbcType=INTEGER}
+	</select>
+
+	<select id="exists" parameterType="Adjustment" resultMap="ResultMap">
+		select
+		<include refid="columns" />
+		from adjustment
+		where ProductID = #{productid,jdbcType=INTEGER}
+		<if test="partyid != null">
+			and PartyID = #{partyid,jdbcType=INTEGER}
+		</if>
+		<if test="state != null">
+			and State = #{state,jdbcType=INTEGER}
+		</if>
+		<if test="fromdate != null">
+			and FromDate = #{fromdate,jdbcType=DATE}
+		</if>
+		<if test="todate != null">
+			and ToDate = #{todate,jdbcType=DATE}
+		</if>
+		<if test="extra != null">
+			and Extra = #{extra,jdbcType=DOUBLE}
+		</if>
+		<if test="fixprice != null">
+			and FixPrice = #{fixprice,jdbcType=DOUBLE}
+		</if>
+		<if test="currency != null">
+			and Currency = #{currency,jdbcType=VARCHAR}
+		</if>
+		<if test="minstay != null">
+			and Minstay = #{minstay,jdbcType=INTEGER}
+		</if>
+		<if test="maxstay != null">
+			and Maxstay = #{maxstay,jdbcType=INTEGER}
+		</if>
+		<if test="servicedays != null">
+			and Servicedays = #{servicedays,jdbcType=BIT}
+		</if>
+		limit 1
+	</select>
+
+	<delete id="delete" parameterType="String">
+		delete from adjustment
+		where ID = #{id,jdbcType=INTEGER}
+	</delete>
+
+	<insert id="create" parameterType="Adjustment" useGeneratedKeys="true" keyProperty="id">
+		insert into adjustment (ProductID, PartyID, State, FromDate, ToDate, Extra, FixPrice, Currency, MinStay, MaxStay, Servicedays, version)
+		values (
+			#{productid,jdbcType=INTEGER},
+			#{partyid,jdbcType=INTEGER},
+			#{state,jdbcType=INTEGER},	
+			#{fromdate,jdbcType=DATE},
+			#{todate,jdbcType=DATE},
+			#{extra,jdbcType=DOUBLE},
+			#{fixprice,jdbcType=DOUBLE},
+			#{currency,jdbcType=VARCHAR},			
+			#{minstay,jdbcType=INTEGER},
+			#{maxstay,jdbcType=INTEGER},
+			#{servicedays,jdbcType=BIT},
+			#{version,jdbcType=TIMESTAMP}
+		)
+	</insert>
+
+	<update id="update" parameterType="Adjustment">
+		update adjustment
+		<set>
+			<if test="productid != null">
+				ProductID = #{productid,jdbcType=INTEGER},
+			</if>
+			<if test="partyid != null">
+				PartyID = #{partyid,jdbcType=INTEGER},
+			</if>
+			<if test="state != null">
+				State = #{state,jdbcType=INTEGER},
+			</if>
+			<if test="fromdate != null">
+				FromDate = #{fromdate,jdbcType=DATE},
+			</if>
+			<if test="todate != null">
+				ToDate = #{todate,jdbcType=DATE},
+			</if>
+			<if test="extra != null">
+				Extra = #{extra,jdbcType=DOUBLE},
+			</if>
+			<if test="fixprice != null">
+				FixPrice = #{fixprice,jdbcType=DOUBLE},
+			</if>
+			<if test="currency != null">
+				Currency = #{currency,jdbcType=VARCHAR},
+			</if>
+			<if test="minstay != null">
+				Minstay = #{minstay,jdbcType=INTEGER},
+			</if>
+			<if test="maxstay != null">
+				Maxstay = #{maxstay,jdbcType=INTEGER},
+			</if>
+			<if test="servicedays != null">
+				Servicedays = #{servicedays,jdbcType=BIT},
+			</if>
+			<if test="version != null">
+				version = #{version,jdbcType=TIMESTAMP}
+			</if>
+		</set>
+		where ID = #{id,jdbcType=INTEGER}
+	</update>
+	
+	<update id="cancelversion" parameterType="Adjustment">
+		update adjustment set State = 3
+		where PartyID = #{partyid,jdbcType=INTEGER}
+		<if test="productid != null">
+			and ProductID = #{productid,jdbcType=INTEGER}
+		</if>
+			and Currency = #{currency,jdbcType=VARCHAR}
+			and version <![CDATA[ <> ]]> #{version}
+	</update>
+	
+	<update id="canceladjustmentlist" parameterType="Adjustment">
+		update adjustment set State = 3
+		where ID in 
+		<foreach item="item" index="index" collection="list" open="(" separator="," close=")">
+			#{item}
+		</foreach>
+	</update>
+	
+	<select id="getfixprice" parameterType="Adjustment" resultType="Double">
+		select FixPrice
+		from adjustment
+		where ProductID = #{productid,jdbcType=INTEGER}
+			and PartyID = #{partyid,jdbcType=VARCHAR}
+		<if test="maxstay != null">
+			and MaxStay = #{maxstay,jdbcType=INTEGER}
+		</if>
+		<if test="currency != null">
+			and Currency = #{currency,jdbcType=VARCHAR}
+		</if>			
+			and State = #{state,jdbcType=INTEGER}
+		<if test="fromdate != null">
+			and FromDate <![CDATA[ <= ]]> #{fromdate,jdbcType=DATE}
+			and ToDate <![CDATA[ >= ]]> #{fromdate,jdbcType=DATE}
+		</if>
+		limit 1
+	</select>
+	
+	<select id="readbyexample" parameterType="Adjustment" resultMap="ResultMap">
+		select
+		<include refid="columns" />
+		from adjustment
+		where ProductID = #{productid,jdbcType=INTEGER}
+			and PartyID = #{partyid,jdbcType=VARCHAR}
+			<if test="currency != null">
+				and Currency = #{currency,jdbcType=VARCHAR}
+			</if>
+			<if test="minstay != null">
+				and MinStay <![CDATA[ <= ]]> #{minstay,jdbcType=INTEGER}
+			</if>
+			<if test="maxstay != null">
+				and MaxStay <![CDATA[ >= ]]> #{maxstay,jdbcType=INTEGER}
+			</if>
+			<if test="state != null">
+				and State = #{state,jdbcType=INTEGER}
+			</if>
+			<if test="fromdate != null and todate != null">
+				and FromDate <![CDATA[ <= ]]> #{fromdate,jdbcType=DATE}
+				and ToDate <![CDATA[ >= ]]> #{todate,jdbcType=DATE}
+			</if>
+		order by minstay DESC	
+		limit 1
+	</select>
+	
+	<select id="readbyreservation" parameterType="HasPrice" resultMap="ResultMap">
+		select
+			<include refid="columns" />
+		from adjustment
+		where ProductID = #{productid,jdbcType=INTEGER}
+			and PartyID = #{supplierid,jdbcType=INTEGER}
+			and State = 2						
+			<if test="fromdate != null and todate != null">
+				and FromDate <![CDATA[ <= ]]> #{fromdate,jdbcType=DATE}
+				and ToDate <![CDATA[ >= ]]> #{todate,jdbcType=DATE}
+				and MinStay <![CDATA[ <= ]]> DATEDIFF(#{todate,jdbcType=DATE},#{fromdate,jdbcType=DATE}) 
+				and MaxStay <![CDATA[ >= ]]> DATEDIFF(#{todate,jdbcType=DATE},#{fromdate,jdbcType=DATE})
+			</if>
+		order by minstay DESC	
+		limit 1
+	</select>
+	
+	<select id="readbyproductandstate" parameterType="Adjustment" resultMap="ResultMap">
+		select
+		<include refid="columns" />
+		from adjustment
+		where ProductID = #{productid,jdbcType=INTEGER}
+			and PartyID = #{partyid,jdbcType=INTEGER}
+			and State = #{state,jdbcType=INTEGER}
+		order by FromDate	
+	</select>
+
+</mapper>

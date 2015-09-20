@@ -1,0 +1,18 @@
+<product>
+	<id>157215</id>
+	<pricetable>
+		<price>
+			<name>Rack Rate</name>
+			<id>157215</id>
+			<quantity>6</quantity>
+			<date>2013-02-15</date>
+			<todate>2013-02-16</todate>
+			<minimum>51.00</minimum>
+			<value>51.00</value>
+			<unit>DAY</unit>
+			<type>Reservation</type>
+			<currency>USD</currency>
+			<rule>AnyCheckIn</rule>
+		</price>
+	</pricetable>
+</product>

@@ -1,0 +1,91 @@
+.assetTable {padding-right: 10px;}
+
+.attributeStyle {
+	height: 420px;
+	width: 320px;
+}
+
+.descriptionField {
+	height: 420px;
+	width: 478px;
+	white-space: pre-wrap;
+	color: gray;
+	background: white;
+	border: 0;
+}
+.discountField {width: 94px;}
+.latitudeLabel {
+	width: 240px;
+	margin: 4px;
+}
+.linenchangeField {font-size: 90%;}
+.locationField {
+	width: 240px;
+	margin: 1px;
+	padding: 2px;
+}
+
+.mapStyle {
+	height: 600px;
+	width: 800px;
+}
+
+.offlineField {
+	width: 140px;
+	color: gray;
+}
+.offlineLabel {
+	margin-top: 2px;
+	margin-left: 10px;
+	color: gray;
+}
+.productTable {padding-right: 10px;}
+
+.productStyle {
+	margin-right: 0;
+	width: 295px;
+}
+
+.quantityField {
+	margin-top: 2px;
+	padding: 2px;
+	width: 120px;
+}
+
+.ratingSlider {width: 180px;}
+.ratingStyle {margin-top: 2px;}
+.servicelabelStyle {
+	margin-top: 10px;
+	font-size: 120%;
+	font-weight: bold;
+}
+.servicepriceEmpty {
+	margin: 0;
+	padding: 10px;
+	font-size: 110%;
+}
+.servicepriceLabel {
+	font-size: 120%;
+	font-weight: bold;
+}
+.servicetextStyle {
+	height: 65px;
+	width: 315px;
+}
+.spinnerField {width: 70px;}
+.stackStyle {
+	height: 730px;
+	width: 800px;
+	margin-top: 10px;
+}
+
+.textField {
+	position: relative;
+	height: 226px;
+	width: 360px;
+	white-space: pre-wrap;
+	color: gray;
+	background: white;
+	border: 1px solid gray;
+	padding: 1px;
+}

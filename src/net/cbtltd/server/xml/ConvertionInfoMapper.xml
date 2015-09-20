@@ -1,0 +1,60 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="net.cbtltd.server.api.ConvertionInfoMapper">
+	<resultMap id="ResultMap" type="ConvertionInfo">
+		<id column="ID" jdbcType="INTEGER" property="id" />
+		<result column="from_currency" jdbcType="VARCHAR" property="fromCurrency" />
+		<result column="from_amount" jdbcType="DOUBLE" property="fromAmount" />
+		<result column="rate" jdbcType="DOUBLE" property="rate" />
+		<result column="convertion_date" jdbcType="TIMESTAMP" property="convertionDate" />
+	</resultMap>
+
+	<sql id="columns">
+		ID, from_currency, from_amount, rate, convertion_date
+	</sql>
+
+	<insert id="create" parameterType="ConvertionInfo" useGeneratedKeys="true" keyProperty="id">
+		insert into convertion_info (from_currency, from_amount, rate, convertion_date)
+		values (#{fromCurrency,jdbcType=VARCHAR}, #{fromAmount,jdbcType=DOUBLE}, #{rate,jdbcType=DOUBLE}, #{convertionDate,jdbcType=DATE})
+	</insert>
+
+	<select id="read" parameterType="int" resultMap="ResultMap">
+		select
+		<include refid="columns" />
+		from convertion_info
+		where ID = #{id,jdbcType=INTEGER}
+	</select>
+
+	<update id="update" parameterType="ConvertionInfo">
+		update convertion_info
+		<set>
+			<if test="fromCurrency != null">
+				from_currency = #{fromCurrency,jdbcType=VARCHAR},
+			</if>
+			<if test="fromAmount != null">
+				from_amount = #{fromAmount,jdbcType=DOUBLE},
+			</if>
+			<if test="rate != null">
+				rate = #{rate,jdbcType=DOUBLE},
+			</if>
+			<if test="convertionDate != null">
+				convertion_date = #{convertionDate,jdbcType=DATE},
+			</if>
+		</set>
+		where ID = #{id,jdbcType=INTEGER}
+	</update>
+
+	<update id="updateByPrimaryKey" parameterType="ConvertionInfo">
+		update convertion_info
+		set from_currency = #{fromCurrency,jdbcType=VARCHAR},
+		from_amount = #{fromAmount,jdbcType=DOUBLE},
+		rate = #{rate,jdbcType=DOUBLE},
+		convertion_date = #{convertionDate,jdbcType=DATE}
+		where ID = #{id,jdbcType=INTEGER}
+	</update>
+
+	<delete id="delete" parameterType="int">
+		delete from convertion_info
+		where ID = #{id,jdbcType=INTEGER}
+	</delete>
+</mapper>

@@ -1,0 +1,72 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="net.cbtltd.server.api.SerialMapper">
+
+	<resultMap id="ResultMap" type="Serial">
+		<id column="ID" jdbcType="INTEGER" property="id" />
+		<result column="PartyID" jdbcType="INTEGER" property="partyid" />
+		<result column="Series" jdbcType="VARCHAR" property="series" />
+		<result column="Format" jdbcType="VARCHAR" property="format" />
+		<result column="Last" jdbcType="INTEGER" property="last" />
+	</resultMap>
+
+	<sql id="columns">
+		ID, PartyID, Series, Format, Last
+	</sql>
+
+	<select id="read" parameterType="String" resultMap="ResultMap">
+		select
+		<include refid="columns" />
+		from serial
+		where ID = #{id,jdbcType=INTEGER}
+	</select>
+
+	<select id="readbyexample" parameterType="Serial" resultMap="ResultMap">
+		select
+		<include refid="columns" />
+		from serial
+		where PartyID = #{partyid,jdbcType=INTEGER}
+		and Series = #{series,jdbcType=VARCHAR}
+	</select>
+
+	<delete id="delete" parameterType="String">
+		delete from serial
+		where ID = #{id,jdbcType=INTEGER}
+	</delete>
+
+	<insert id="create" parameterType="Serial" useGeneratedKeys="true" keyProperty="id">
+<!--		<selectKey keyProperty="ID" order="AFTER" resultType="java.lang.Integer">-->
+<!--			SELECT LAST_INSERT_ID()-->
+<!--		</selectKey>-->
+		insert into serial (PartyID, Series, Format, Last)
+		values (#{partyid,jdbcType=INTEGER}, #{series,jdbcType=VARCHAR}, #{format,jdbcType=VARCHAR}, #{last,jdbcType=INTEGER})
+	</insert>
+
+	<update id="update" parameterType="Serial">
+		update serial
+		<set>
+			<if test="partyid != null">
+				PartyID = #{partyid,jdbcType=INTEGER},
+			</if>
+			<if test="series != null">
+				Series = #{series,jdbcType=VARCHAR},
+			</if>
+			<if test="format != null">
+				Format = #{format,jdbcType=VARCHAR},
+			</if>
+			<if test="last != null">
+				Last = #{last,jdbcType=INTEGER},
+			</if>
+		</set>
+		where ID = #{id,jdbcType=INTEGER}
+	</update>
+
+	<update id="updateByPrimaryKey" parameterType="Serial">
+		update serial
+		set PartyID = #{partyid,jdbcType=INTEGER},
+		Series = #{series,jdbcType=VARCHAR},
+		Format = #{format,jdbcType=VARCHAR},
+		Last = #{last,jdbcType=INTEGER}
+		where ID = #{id,jdbcType=INTEGER}
+  </update>
+</mapper>

@@ -1,0 +1,128 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<web-app>
+	<display-name>Razor Web Application</display-name>
+	<description>Razor Web</description>
+
+	<welcome-file-list>
+		<welcome-file>Razor.html</welcome-file>
+	</welcome-file-list>
+
+	<!-- see https://code.google.com/p/javamelody/wiki/UserGuide?tm=6 <filter> 
+		<filter-name>monitoring</filter-name> <filter-class>net.bull.javamelody.MonitoringFilter</filter-class> 
+		</filter> <filter-mapping> <filter-name>monitoring</filter-name> <url-pattern>/*</url-pattern> 
+		</filter-mapping> <listener> <listener-class>net.bull.javamelody.SessionListener</listener-class> 
+		</listener> -->
+
+	<context-param>
+		<!-- max size of the upload request -->
+		<param-name>maxSize</param-name>
+		<param-value>3145728</param-value>
+	</context-param>
+
+	<context-param>
+		<!-- Useful in development mode to slow down the uploads in fast networks. 
+			Put the number of milliseconds to sleep in each block received in the server. 
+			false or 0, means don't use slow uploads -->
+		<param-name>slowUploads</param-name>
+		<param-value>200</param-value>
+	</context-param>
+	<!-- 
+	<listener>
+	    <listener-class>
+	        com.mybookingpal.guice.listener.GuiceLoader
+	    </listener-class>
+	</listener>
+ -->
+	<servlet>
+		<servlet-name>RazorServer</servlet-name>
+		<description>This servlet plays the "model" role in the MVP.
+		</description>
+		<servlet-class>net.cbtltd.server.RazorServer</servlet-class>
+	</servlet>
+
+	<servlet>
+		<servlet-name>FileUploadServer</servlet-name>
+		<description>This servlet allows file uploads.</description>
+		<servlet-class>net.cbtltd.server.UploadFileService</servlet-class>
+	</servlet>
+
+	<servlet>
+		<servlet-name>JSONServer</servlet-name>
+		<description>This servlet responds to JSON requests.</description>
+		<servlet-class>net.cbtltd.json.JSONServer</servlet-class>
+	</servlet>
+
+	<servlet>
+		<servlet-name>JSONService</servlet-name>
+		<description>Servlet to respond to widget JSON requests.</description>
+		<servlet-class>net.cbtltd.json.JSONService</servlet-class>
+	</servlet>
+
+	<servlet-mapping>
+		<servlet-name>RazorServer</servlet-name>
+		<url-pattern>/razor/RazorService</url-pattern>
+	</servlet-mapping>
+
+	<servlet-mapping>
+		<servlet-name>FileUploadServer</servlet-name>
+		<url-pattern>/razor/UploadFileService</url-pattern>
+	</servlet-mapping>
+
+	<servlet-mapping>
+		<servlet-name>JSONServer</servlet-name>
+		<url-pattern>/JSONServer/*</url-pattern>
+	</servlet-mapping>
+
+	<servlet-mapping>
+		<servlet-name>JSONService</servlet-name>
+		<url-pattern>/JSONService/*</url-pattern>
+	</servlet-mapping>
+	
+	 <servlet>
+    <description></description>
+    <display-name>printEmail</display-name>
+    <servlet-name>printEmail</servlet-name>
+    <servlet-class>com.mybookingpal.server.EmailPrintService</servlet-class>
+  </servlet>
+  <servlet-mapping>
+    <servlet-name>printEmail</servlet-name>
+    <url-pattern>/printEmail</url-pattern>
+  </servlet-mapping>
+  
+   <servlet>
+    <description></description>
+    <display-name>getMap</display-name>
+    <servlet-name>getMap</servlet-name>
+    <servlet-class>com.mybookingpal.server.EmailMapService</servlet-class>
+  </servlet>
+  <servlet-mapping>
+    <servlet-name>getMap</servlet-name>
+    <url-pattern>/getMap</url-pattern>
+  </servlet-mapping>
+  
+  <servlet>
+	<description></description>
+	<display-name>registration</display-name>
+	<servlet-name>registration</servlet-name>
+	<servlet-class>com.mybookingpal.server.RegistrationService</servlet-class>
+  </servlet>
+  <servlet-mapping>
+  	<servlet-name>registration</servlet-name>
+  	<url-pattern>/registration</url-pattern>
+  </servlet-mapping>
+  
+  <servlet>
+	<servlet-name>register</servlet-name>
+	<jsp-file>/registration.jsp</jsp-file>
+  </servlet>
+  <servlet-mapping>
+	<servlet-name>register</servlet-name>
+	<url-pattern>/register</url-pattern>
+  </servlet-mapping>
+	
+	<session-config>
+        <session-timeout>
+            60
+        </session-timeout>
+    </session-config>
+</web-app>

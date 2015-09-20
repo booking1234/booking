@@ -1,0 +1,99 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<beans xmlns="http://www.springframework.org/schema/beans"
+	xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:jaxrs="http://cxf.apache.org/jaxrs"
+	xmlns:jaxws="http://cxf.apache.org/jaxws"
+	xsi:schemaLocation="http://www.springframework.org/schema/beans 
+	http://www.springframework.org/schema/beans/spring-beans.xsd
+	http://cxf.apache.org/jaxws 
+	http://cxf.apache.org/schemas/jaxws.xsd
+	http://cxf.apache.org/jaxrs
+	http://cxf.apache.org/schemas/jaxrs.xsd">
+
+	<import resource="classpath:META-INF/cxf/cxf.xml" />
+	<import resource="classpath:META-INF/cxf/cxf-extension-soap.xml" />
+	<import resource="classpath:META-INF/cxf/cxf-extension-xml.xml" />
+	<import resource="classpath:META-INF/cxf/cxf-extension-http-binding.xml"/>
+	<import resource="classpath:META-INF/cxf/cxf-servlet.xml"/>
+
+	<!-- <jaxws:endpoint id="soapServer" implementor="net.cbtltd.soap.ota.RazorPortTypeImpl" 
+		address="/soap" /> <bean class="net.cbtltd.soap.ota.RazorPortTypeImpl"/> 
+		serviceBean="org.apache.cxf.example.DemoImpl" address="http://localhost:8080/demo" 
+		/> -->
+
+	<jaxws:server id="soapServer" serviceClass="net.cbtltd.soap.ota.RazorPortType"
+		address="/soap">
+		<jaxws:serviceBean>
+			<ref bean="soapBean" />
+		</jaxws:serviceBean>
+	</jaxws:server>
+
+	<jaxrs:server id="restServer" address="/rest">
+		<jaxrs:serviceBeans>
+			<ref bean="accountBean" />
+			<ref bean="locationBean" />
+			<ref bean="partyBean" />
+			<ref bean="productBean" />
+			<ref bean="reservationBean" />
+			<ref bean="flipkeyBean" />
+			<ref bean="otaBean" />
+			<ref bean="paymentBean" />
+			<ref bean="pushAPI" />
+			<ref bean="reservationPushAPI" />
+			<ref bean="hotelsCombinedReservationPushAPI" />
+			<ref bean="facebookOAuthClient" />
+		    <ref bean="bookingPalOAuthService" />
+		</jaxrs:serviceBeans>
+		<jaxrs:outInterceptors>
+			<ref bean="stylesheetInterceptor" />
+		</jaxrs:outInterceptors>
+	</jaxrs:server>
+
+	<jaxrs:server id="jsonServer" address="/json">
+		<jaxrs:serviceBeans>
+			<ref bean="accountJson" />
+			<ref bean="locationJson" />
+			<ref bean="partyJson" />
+			<ref bean="productJson" />			
+			<ref bean="registrationJson" />
+			<ref bean="reservationJson" />
+			<ref bean="paymentJson" />
+			<ref bean="reservationPushAPI" />
+			<ref bean="hotelsCombinedReservationPushAPI" />
+			<ref bean="facebookOAuthClient" />
+			<ref bean="bookingPalOAuthService" />
+		</jaxrs:serviceBeans>
+		<jaxrs:inInterceptors>
+			<bean class="org.apache.cxf.jaxrs.provider.jsonp.JsonpInInterceptor">
+				<property name="callbackParam" value="jsonp"/>
+			</bean>
+    	</jaxrs:inInterceptors>
+    	<jaxrs:outInterceptors>
+       		<bean class="org.apache.cxf.jaxrs.provider.jsonp.JsonpPreStreamInterceptor"/>
+       		<bean class="org.apache.cxf.jaxrs.provider.jsonp.JsonpPostStreamInterceptor"/>
+    	</jaxrs:outInterceptors> 
+	</jaxrs:server>
+
+	<bean id="soapBean" class="net.cbtltd.soap.ota.RazorPortTypeImpl" />
+	<bean id="accountBean" class="net.cbtltd.rest.AccountRest" />
+	<bean id="locationBean" class="net.cbtltd.rest.LocationRest" />
+	<bean id="partyBean" class="net.cbtltd.rest.PartyRest" />
+	<bean id="productBean" class="net.cbtltd.rest.ProductRest" />
+	<bean id="reservationBean" class="net.cbtltd.rest.ReservationRest" />
+	<bean id="flipkeyBean" class="net.cbtltd.rest.flipkey.FlipkeyRest" />
+	<bean id="otaBean" class="net.cbtltd.rest.ota.OtaRest" />
+	<bean id="paymentBean" class="net.cbtltd.rest.PaymentRest" />
+	<bean id="basicAuthAuthorizationInterceptor" class="net.cbtltd.rest.BasicAuthAuthorizationInterceptor" />
+	<bean id="stylesheetInterceptor" class="net.cbtltd.rest.StylesheetInterceptor" />
+	<bean id="accountJson" class="net.cbtltd.rest.AccountJson" />
+	<bean id="locationJson" class="net.cbtltd.rest.LocationJson" />
+	<bean id="partyJson" class="net.cbtltd.rest.PartyJson" />
+	<bean id="productJson" class="net.cbtltd.rest.ProductJson" />
+	<bean id="registrationJson" class="net.cbtltd.rest.RegistrationJson" />
+	<bean id="reservationJson" class="net.cbtltd.rest.ReservationJson" />
+	<bean id="paymentJson" class="net.cbtltd.rest.PaymentJson" />
+	<bean id="pushAPI" class="net.cbtltd.rest.atraveo.api.PushAPI"/>
+	<bean id="reservationPushAPI" class="net.cbtltd.rest.bookingcom.reservation.ReservationPushAPI" />
+	<bean id="hotelsCombinedReservationPushAPI" class="net.cbtltd.rest.hotelscombined.reservation.ReservationPushAPI" />
+	<bean id="facebookOAuthClient" class="net.cbtltd.oauth2.client.FacebookOAuthClient" />
+	<bean id="bookingPalOAuthService" class="net.cbtltd.oauth2.client.BookingSyncOAuthClient" />
+</beans>

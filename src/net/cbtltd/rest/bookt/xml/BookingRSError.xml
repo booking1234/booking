@@ -1,0 +1,82 @@
+<?xml version="1.0" encoding="UTF-8" standalone="yes"?>
+<ns9:booking xmlns="http://connect.bookt.com/Schemas/Event.xsd"
+	xmlns:ns2="http://connect.bookt.com/Schemas/Person.xsd" xmlns:ns3="http://schemas.microsoft.com/2003/10/Serialization/Arrays"
+	xmlns:ns4="http://connect.bookt.com/Schemas/Statement.xsd" xmlns:ns5="http://connect.bookt.com/Schemas/StatementDetail.xsd"
+	xmlns:ns6="http://connect.bookt.com/Schemas/Tax.xsd" xmlns:ns7="http://connect.bookt.com/Schemas/Booking.xsd"
+	xmlns:ns8="http://connect.bookt.com/Schemas/CreditCard.xsd" xmlns:ns9="https://connect.bookt.com/connect"
+	xmlns:ns10="http://connect.bookt.com/Schemas/Review.xsd" xmlns:ns11="http://connect.bookt.com/Schemas/Unit.xsd"
+	xmlns:ns12="http://connect.bookt.com/Schemas/Media.xsd" xmlns:ns13="http://connect.bookt.com/Schemas/Property.xsd"
+	xmlns:ns14="http://connect.bookt.com/Schemas/Fee.xsd" xmlns:ns15="http://schemas.microsoft.com/2003/10/Serialization/">
+	<ns7:AltID>1420528</ns7:AltID>
+	<ns7:BookedBy>
+		<ns2:Address1></ns2:Address1>
+		<ns15:string>8868</ns15:string>
+		<ns2:CellPhone>0741855959</ns2:CellPhone>
+		<ns2:City xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+			xsi:nil="true" />
+		<ns2:Company>8868</ns2:Company>
+		<ns2:Country>ZA</ns2:Country>
+		<ns2:FaxNumber></ns2:FaxNumber>
+		<ns2:FirstName>Dan Elkington</ns2:FirstName>
+		<ns2:Greeting>Mr</ns2:Greeting>
+		<ns2:HomePhone xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+			xsi:nil="true" />
+		<ns2:LastName>Dan Elkington</ns2:LastName>
+		<ns2:LeadSource xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+			xsi:nil="true" />
+		<ns2:Notes xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+			xsi:nil="true" />
+		<ns2:PostalCode xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+			xsi:nil="true" />
+		<ns2:PrimaryEmail>danelkington@hotmail.com</ns2:PrimaryEmail>
+		<ns2:Status>Created</ns2:Status>
+		<ns3:ArrayOfstring />
+		<ns2:Title>Mr</ns2:Title>
+		<ns2:Type xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+			xsi:nil="true" />
+		<ns2:WebSite></ns2:WebSite>
+		<ns2:WorkPhone>0214343579</ns2:WorkPhone>
+	</ns7:BookedBy>
+	<ns7:CheckIn>2012-10-21T00:00:00</ns7:CheckIn>
+	<ns7:CheckOut>2012-10-22T00:00:00</ns7:CheckOut>
+	<ns8:CreditCard xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+		xsi:nil="true" />
+	<ns7:NumAdults>0</ns7:NumAdults>
+	<ns7:NumChildren>0</ns7:NumChildren>
+	<ns7:PrivateNotes></ns7:PrivateNotes>
+	<ns7:PropertyID>24247</ns7:PropertyID>
+	<ns7:Renter>
+		<ns2:Address1></ns2:Address1>
+		<ns15:string>8729</ns15:string>
+		<ns2:CellPhone></ns2:CellPhone>
+		<ns2:City xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+			xsi:nil="true" />
+		<ns2:Company>8729</ns2:Company>
+		<ns2:Country>ZA</ns2:Country>
+		<ns2:FaxNumber></ns2:FaxNumber>
+		<ns2:FirstName>Zero Comm Agent</ns2:FirstName>
+		<ns2:Greeting>Mr</ns2:Greeting>
+		<ns2:HomePhone xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+			xsi:nil="true" />
+		<ns2:LastName>Zero Comm Agent</ns2:LastName>
+		<ns2:Latitude>-33.92889</ns2:Latitude>
+		<ns2:LeadSource>5</ns2:LeadSource>
+		<ns2:Longitude>18.41722</ns2:Longitude>
+		<ns2:Notes xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+			xsi:nil="true" />
+		<ns2:PostalCode></ns2:PostalCode>
+		<ns2:PrimaryEmail>dummy@razorpms.com</ns2:PrimaryEmail>
+		<ns2:Status>Created</ns2:Status>
+		<ns3:ArrayOfstring />
+		<ns2:Title>Mr</ns2:Title>
+		<ns2:Type xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+			xsi:nil="true" />
+		<ns2:WebSite></ns2:WebSite>
+		<ns2:WorkPhone></ns2:WorkPhone>
+	</ns7:Renter>
+	<ns7:Statement xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+		xsi:nil="true" />
+	<ns7:Status>Provisional</ns7:Status>
+	<ns7:TotalDueNow>0.0</ns7:TotalDueNow>
+	<ns7:Type></ns7:Type>
+</ns9:booking>

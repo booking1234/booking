@@ -1,0 +1,93 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="net.cbtltd.server.api.UnspscMapper">
+
+	<cache readOnly="true"/>
+
+	<resultMap id="ResultMap" type="Unspsc">
+		<id column="ID" jdbcType="INTEGER" property="id" />
+		<result column="Level" jdbcType="VARCHAR" property="level" />
+		<result column="Code" jdbcType="VARCHAR" property="code" />
+		<result column="Name" jdbcType="VARCHAR" property="name" />
+		<result column="Notes" jdbcType="VARCHAR" property="notes" />
+	</resultMap>
+
+	<sql id="columns">
+		ID, Level, Code, Name, Notes
+	</sql>
+
+	<select id="read" parameterType="String" resultMap="ResultMap">
+		select
+		<include refid="columns" />
+		from unspsc
+		where ID = #{id,jdbcType=INTEGER}
+	</select>
+
+	<delete id="delete" parameterType="String">
+		delete from unspsc
+		where ID = #{id,jdbcType=INTEGER}
+	</delete>
+
+	<insert id="create" parameterType="Unspsc" useGeneratedKeys="true" keyProperty="id">
+<!--		<selectKey keyProperty="ID" order="AFTER" resultType="java.lang.Integer">-->
+<!--			SELECT LAST_INSERT_ID()-->
+<!--		</selectKey>-->
+		insert into unspsc (Level, Code, Name, Notes)
+		values (#{level,jdbcType=VARCHAR}, #{code,jdbcType=VARCHAR},
+		#{name,jdbcType=VARCHAR}, #{notes,jdbcType=VARCHAR})
+	</insert>
+
+	<update id="update" parameterType="Unspsc">
+		update unspsc
+		<set>
+			<if test="level != null">
+				Level = #{level,jdbcType=VARCHAR},
+      </if>
+			<if test="code != null">
+				Code = #{code,jdbcType=VARCHAR},
+      </if>
+			<if test="name != null">
+				Name = #{name,jdbcType=VARCHAR},
+      </if>
+			<if test="notes != null">
+				Notes = #{notes,jdbcType=VARCHAR},
+      </if>
+		</set>
+		where ID = #{id,jdbcType=INTEGER}
+	</update>
+
+	<update id="updateByPrimaryKey" parameterType="Unspsc">
+		update unspsc
+		set Level = #{level,jdbcType=VARCHAR},
+		Code = #{code,jdbcType=VARCHAR},
+		Name = #{name,jdbcType=VARCHAR},
+		Notes = #{notes,jdbcType=VARCHAR}
+		where ID = #{id,jdbcType=INTEGER}
+	</update>
+
+	<select id="nameidbyid" parameterType="NameIdAction" resultType="NameId">
+		select distinct Name, ID
+		from unspsc
+		where ID = #{id}
+	</select>
+
+	<select id="nameidbyname" parameterType="NameIdAction" resultType="NameId">
+		select distinct Name, ID
+		from unspsc
+		<if test="organizationid != null">
+		join relation on Link = 'Organization Unspsc'
+			and LineID = ID 
+			and HeadID = #{organizationid}
+		</if>
+		where Name <![CDATA[ >= ]]> #{name}
+		<if test="state == null">
+			and State not in ('Initial', 'Final')
+		</if>
+		<if test="state != null">
+			and State in (${state})
+		</if>
+		order by Name
+		limit 0, #{numrows}
+	</select>
+
+</mapper>

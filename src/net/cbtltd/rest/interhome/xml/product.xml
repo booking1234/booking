@@ -1,0 +1,47 @@
+<?xml version="1.0" encoding="UTF-8" standalone="yes"?><!-- no stylesheet -->
+<product>
+	<id>48564</id>
+	<name>Sunbird Apartment 3</name>
+	<state>Created</state>
+	<currency>ZAR</currency>
+	<language>EN</language>
+	<latitude>-33.95</latitude>
+	<locationid>58777</locationid>
+	<longitude>18.3833333</longitude>
+	<type>Accommodation</type>
+	<unit>DAY</unit>
+	<address></address>
+	<adult>2</adult>
+	<bathroom>1</bathroom>
+	<child>0</child>
+	<code></code>
+	<dynamicpricingenabled>false</dynamicpricingenabled>
+	<infant>0</infant>
+	<ownerid>136749</ownerid>
+	<person>2</person>
+	<physicaladdress></physicaladdress>
+	<quantity>1</quantity>
+	<room>1</room>
+	<supplierid>136749</supplierid>
+	<toilet>0</toilet>
+	<webaddress>http://razor-cloud.com/razor/?product=48564&amp;pos=95f6273306930346
+	</webaddress>
+	<attributes>
+		<attribute>
+			<key>Ages Allowed</key>
+			<values>
+				<value>Teenager (13 - 17 years)</value>
+				<value>Adult (18 - 64 years)</value>
+				<value>Senior (65+ years)</value>
+			</values>
+		</attribute>
+		<attribute>
+			<key>Bed Type</key>
+			<values>
+				<value>Twin</value>
+			</values>
+		</attribute>
+	</attributes>
+	<bedroom>1</bedroom>
+	<city>Camps Bay</city>
+	<contents>Fully equipped separate kitchen</contents>

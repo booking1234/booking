@@ -1,0 +1,122 @@
+.availableStyle {
+	height: 650px;
+}
+.controlStyle {
+	height: 26px;
+	padding: 4px;
+}
+
+@sprite .controlshadowStyle {gwt-image: 'shadow_control_wide';}
+
+.countField {margin-left: 4px;}
+
+.countunitField {
+	margin-right: 4px;
+	width: 80px;
+}
+
+.distanceField {
+	width: 200px;
+	margin: 0 4px;
+	border: 0 solid gray;
+	padding: 0;
+}
+
+.exactcountField {
+	margin-right: 15px;
+	width: 80px;
+}
+.fromdateField {
+	width: 100px;
+	margin: 0 4px;
+}
+
+.legendcellStyle {
+	height: 10px;
+	width: 10px;
+	margin-top: 0;
+	margin-right: 4px;
+	margin-bottom: 0;
+	margin-left: 40px;
+}
+
+.legendStyle {
+	color: gray;
+	font-size: 90%;
+	border: 1px solid gray;
+	padding: 1px;
+	-webkit-border-radius: 3px;
+	-moz-border-radius: 3px;
+	border-radius: 3px;
+}
+
+.locationField {
+	margin-left: 2px;
+	width: 200px;
+}
+
+.organizationField {
+	margin: 0 4px;
+	width: 150px;
+}
+
+@external .Initial, .Provisional, .Reserved, .Confirmed, .FullyPaid, .Briefed, .Arrived, .PreDeparture, .Departed, .Closed, .Cancelled, .Final, .Created, .Started, .Suspended, .Completed;
+.Initial {
+	border: 1px solid gray;
+	background-color: white;
+}
+
+.Provisional {
+	color: black;
+	background-color: #FF0000;
+}
+
+.Reserved {
+	color: black;
+	background-color: #FFA500;
+}
+
+.Confirmed {
+	color: black;
+	background-color: #FFFF00;
+}
+
+.FullyPaid {
+	color: white;
+	background-color: #008000;
+}
+
+.Briefed {
+	color: white;
+	background-color: #00A550;
+}
+
+.Arrived {
+	color: white;
+	background-color: #0000FF;
+}
+
+.PreDeparture {
+	color: white;
+	background-color: #0087BD;
+}
+
+.Departed {
+	color: black;
+	background-color: #ADD8E6;
+}
+
+.Closed {
+	color: black;
+	background-color: #A9A9A9;
+}
+
+.Cancelled {
+	color: #00CCFF;
+	background-color: #FF3300;
+}
+
+.Final {
+	color: black;
+	background-color: #000000;
+}

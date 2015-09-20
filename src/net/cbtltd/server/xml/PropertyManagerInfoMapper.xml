@@ -1,0 +1,239 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="net.cbtltd.server.api.PropertyManagerInfoMapper">
+
+	<resultMap id="ResultMap" type="net.cbtltd.shared.PropertyManagerInfo">
+		<id column="ID" jdbcType="INTEGER" property="id" />
+		<result column="pm_id" jdbcType="INTEGER" property="propertyManagerId" />
+		<result column="pms_id" jdbcType="INTEGER" property="pmsId" />
+		<result column="funds_holder" jdbcType="TINYINT" property="fundsHolder" />
+		<result column="payment_processing_type" jdbcType="TINYINT" property="paymentProcessingType" />
+		<result column="registration_step_id" jdbcType="INTEGER" property="registrationStepId" />
+		<result column="damage_coverage_type" jdbcType="INTEGER" property="damageCoverageType" />
+		<result column="damage_insurance" jdbcType="VARCHAR" property="damageInsurance" />
+		<result column="cancellation_type" jdbcType="INTEGER" property="cancellationType" />
+		<result column="number_of_payments" jdbcType="INTEGER" property="numberOfPayments" />
+		<result column="payment_amount" jdbcType="DOUBLE" property="paymentAmount" />
+		<result column="payment_type" jdbcType="INTEGER" property="paymentType" />
+		<result column="remainder_payment_date" jdbcType="INTEGER" property="remainderPaymentDate" />
+		<result column="check_in_time" jdbcType="TIME" property="checkInTime" />
+		<result column="check_out_time" jdbcType="TIME" property="checkOutTime" />
+		<result column="terms_link" jdbcType="VARCHAR" property="termsLink" />
+		<result column="new_registration" jdbcType="BOOLEAN" property="newRegistration" />
+		<result column="created_date" jdbcType="DATE" property="createdDate" />
+		<result column="inquire_only" jdbcType="TINYINT" property="inquireOnly" />
+		<result column="commission" jdbcType="DOUBLE" property="commission" />
+		<result column="bp_commission" jdbcType="DOUBLE" property="bpCommission" />
+		<result column="net_rate" jdbcType="BOOLEAN" property="netRate" />
+		<result column="pms_markup" jdbcType="DOUBLE" property="pmsMarkup" />
+		<result column="additional_commission" jdbcType="DOUBLE" property="additionalCommission" />
+		<result column="configuration_id" jdbcType="INTEGER" property="configurationId" />
+	</resultMap>
+		
+	<sql id="columns">
+		ID, pm_id, pms_id, funds_holder, payment_processing_type, registration_step_id, damage_coverage_type, damage_insurance,
+		 cancellation_type, number_of_payments, payment_amount, payment_type, remainder_payment_date, check_in_time, check_out_time,
+		 terms_link, new_registration, created_date, inquire_only, commission, bp_commission, net_rate, pms_markup, additional_commission,
+		 configuration_id
+	</sql>
+	
+	<sql id="columnstocreate">
+		 pm_id, pms_id, funds_holder, payment_processing_type, registration_step_id, damage_coverage_type, damage_insurance,
+		 cancellation_type, number_of_payments, payment_amount, payment_type, remainder_payment_date, check_in_time, check_out_time,
+		 terms_link, new_registration, created_date, inquire_only, commission, bp_commission, net_rate, pms_markup, additional_commission,
+		 configuration_id
+	</sql>
+	
+	<insert id="create" parameterType="net.cbtltd.shared.PropertyManagerInfo" useGeneratedKeys="true" keyProperty="id">
+		insert into property_manager_info (
+		<include refid="columnstocreate"/>
+		)
+		values (
+			#{propertyManagerId,jdbcType=INTEGER},
+			#{pmsId,jdbcType=INTEGER},
+			#{fundsHolder,jdbcType=TINYINT},
+			#{paymentProcessingType,jdbcType=TINYINT},
+			#{registrationStepId,jdbcType=INTEGER},
+			#{damageCoverageType,jdbcType=INTEGER},			
+			#{damageInsurance,jdbcType=VARCHAR},
+			#{cancellationType,jdbcType=INTEGER},
+			#{numberOfPayments,jdbcType=INTEGER},
+			#{paymentAmount,jdbcType=DOUBLE},
+			#{paymentType,jdbcType=INTEGER},
+			#{remainderPaymentDate,jdbcType=INTEGER},
+			#{checkInTime,jdbcType=TIME},
+			#{checkOutTime,jdbcType=TIME},
+			#{termsLink,jdbcType=VARCHAR},
+			#{newRegistration,jdbcType=BOOLEAN},
+			#{createdDate,jdbcType=DATE},
+			#{inquireOnly,jdbcType=TINYINT},
+			#{commission,jdbcType=DOUBLE},
+			#{bpCommission,jdbcType=DOUBLE},
+			#{netRate,jdbcType=BOOLEAN},
+			#{pmsMarkup,jdbcType=DOUBLE},
+			#{additionalCommission,jdbcType=DOUBLE},
+		 	#{configurationId,jdbcType=INTEGER}
+		)
+	</insert>
+	
+	<select id="readbypmid" parameterType="INTEGER" resultMap="ResultMap">
+		select
+		<include refid="columns" />
+		from property_manager_info
+		where pm_id = #{id,jdbcType=INTEGER}
+	</select>
+	
+	<select id="list" resultMap="ResultMap">
+		select distinct
+		<include refid="columns" />
+		from property_manager_info
+	</select>
+	
+	<update id="updatebypmid" parameterType="PropertyManagerInfo">
+		update property_manager_info
+		<set>		
+			<if test="pmsId != null">
+				pms_id = #{pmsId,jdbcType=INTEGER},
+			</if>
+			<if test="fundsHolder != null">
+				funds_holder = #{fundsHolder,jdbcType=INTEGER},
+			</if>
+			<if test="paymentProcessingType != null">
+				payment_processing_type = #{paymentProcessingType,jdbcType=INTEGER},
+			</if>
+			<if test="registrationStepId != null">
+				registration_step_id = #{registrationStepId,jdbcType=INTEGER},
+			</if>
+			<if test="damageCoverageType != null">
+				damage_coverage_type = #{damageCoverageType,jdbcType=INTEGER},
+			</if>
+			<if test="damageInsurance != null">
+				damage_insurance = #{damageInsurance,jdbcType=VARCHAR},
+			</if>
+			<if test="cancellationType != null">
+				cancellation_type = #{cancellationType,jdbcType=INTEGER},
+			</if>
+			<if test="numberOfPayments != null">
+				 number_of_payments = #{numberOfPayments,jdbcType=DOUBLE},
+			</if>
+			<if test="paymentAmount != null">
+				 payment_amount = #{paymentAmount,jdbcType=DOUBLE},
+			</if>
+			<if test="paymentType != null">
+				 payment_type = #{paymentType,jdbcType=INTEGER},
+			</if>
+			<if test="remainderPaymentDate != null">
+				 remainder_payment_date = #{remainderPaymentDate,jdbcType=INTEGER},
+			</if>
+			<if test="checkInTime != null">
+				 check_in_time = #{checkInTime,jdbcType=TIME},
+			</if>
+			<if test="checkOutTime != null">
+				 check_out_time = #{checkOutTime,jdbcType=TIME},
+			</if>
+			<if test="termsLink != null">
+				 terms_link = #{termsLink,jdbcType=VARCHAR},
+			</if>
+			<if test="inquireOnly != null">
+				inquire_only = #{inquireOnly,jdbcType=TINYINT},
+			</if>
+			<if test="commission != null">
+				commission = #{commission,jdbcType=DOUBLE},
+			</if>
+			<if test="bpCommission != null">
+				bp_commission = #{bpCommission,jdbcType=DOUBLE},
+			</if>
+			<if test="netRate != null">
+				net_rate = #{netRate,jdbcType=BOOLEAN},
+			</if>
+			<if test="pmsMarkup != null">
+				pms_markup = #{pmsMarkup,jdbcType=DOUBLE},
+			</if>
+			<if test="additionalCommission != null">
+				additional_commission = #{additionalCommission,jdbcType=DOUBLE},
+			</if>
+			<if test="configurationId != null">
+				configuration_id = #{configurationId,jdbcType=INTEGER}
+			</if>
+		</set>
+		where pm_id = #{propertyManagerId,jdbcType=INTEGER}
+	</update>
+	
+	<update id="update" parameterType="PropertyManagerInfo">
+		update property_manager_info
+		<set>
+			<if test="propertyManagerId != null">
+				pm_id = #{propertyManagerId,jdbcType=INTEGER},
+			</if>
+			<if test="pmsId != null">
+				pms_id = #{pmsId,jdbcType=INTEGER},
+			</if>
+			<if test="fundsHolder != null">
+				funds_holder = #{fundsHolder,jdbcType=INTEGER},
+			</if>
+			<if test="paymentProcessingType != null">
+				payment_processing_type = #{paymentProcessingType,jdbcType=INTEGER},
+			</if>
+			<if test="registrationStepId != null">
+				registration_step_id = #{registrationStepId,jdbcType=INTEGER},
+			</if>
+			<if test="damageCoverageType != null">
+				damage_coverage_type = #{damageCoverageType,jdbcType=INTEGER},
+			</if>
+			<if test="damageInsurance != null">
+				damage_insurance = #{damageInsurance,jdbcType=VARCHAR},
+			</if>
+			<if test="cancellationType != null">
+				cancellation_type = #{cancellationType,jdbcType=INTEGER},
+			</if>
+			<if test="numberOfPayments != null">
+				 number_of_payments = #{numberOfPayments,jdbcType=DOUBLE},
+			</if>
+			<if test="paymentAmount != null">
+				 payment_amount = #{paymentAmount,jdbcType=DOUBLE},
+			</if>
+			<if test="paymentType != null">
+				 payment_type = #{paymentType,jdbcType=INTEGER},
+			</if>
+			<if test="remainderPaymentDate != null">
+				 remainder_payment_date = #{remainderPaymentDate,jdbcType=INTEGER},
+			</if>
+			<if test="checkInTime != null">
+				 check_in_time = #{checkInTime,jdbcType=TIME},
+			</if>
+			<if test="checkOutTime != null">
+				 check_out_time = #{checkOutTime,jdbcType=TIME},
+			</if>
+			<if test="termsLink != null">
+				 terms_link = #{termsLink,jdbcType=VARCHAR},
+			</if>
+			<if test="newRegistration != null">
+				new_registration = #{newRegistration,jdbcType=BOOLEAN},
+			</if>
+			<if test="inquireOnly != null">
+				inquire_only = #{inquireOnly,jdbcType=TINYINT},
+			</if>
+			<if test="commission != null">
+				commission = #{commission,jdbcType=DOUBLE},
+			</if>
+			<if test="bpCommission != null">
+				bp_commission = #{bpCommission,jdbcType=DOUBLE},
+			</if>
+			<if test="netRate != null">
+				net_rate = #{netRate,jdbcType=BOOLEAN},
+			</if>
+			<if test="pmsMarkup != null">
+				pms_markup = #{pmsMarkup,jdbcType=DOUBLE},
+			</if>
+			<if test="additionalCommission != null">
+				additional_commission = #{additionalCommission,jdbcType=DOUBLE},
+			</if>
+			<if test="configurationId != null">
+				configuration_id = #{configurationId,jdbcType=INTEGER}
+			</if>
+		</set>
+		where ID = #{id,jdbcType=INTEGER}
+	</update>
+		
+</mapper>
+

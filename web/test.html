@@ -1,0 +1,90 @@
+<html>
+<head>
+<base href="http://browsersize.com/">
+<title>setmy.browsersize.com</title>
+<meta http-equiv="Content-Type" content="text/html; charset=iso-8859-1">
+<meta name="keywords" content="browser size screen resolution set resize">
+<meta name="generator" content="UltraEdit-32">
+<meta name="author" content="Ates Goral">
+<meta name="description" content="A nifty online tool for setting your browser size while doing Web design.">
+<link rel="stylesheet" type="text/css" href="main.css?200812271631">
+<script type="text/javascript">
+function $(id) { return document.getElementById(id); }
+
+function init() {
+	var resizeWindow = function (w, h) {
+		var n = window, d = document, s = n.screen;
+
+		function r(o) {
+			n.resizeTo(Number(w) + o, h);
+
+			return n.innerWidth || d.body.clientWidth;
+		}
+		
+		function c(t, u) {
+			return t > u ? (t - u) >> 1 : 0;
+		}
+
+		if (r(1) == r(0)) {
+			if (typeof p == "undefined" || p.closed) {
+				$("info").className = "no_popup";
+
+				p = n.open(n.location.href, "resize_popup",
+					"menubar,toolbar,location,directories,status,resizable,titlebar,"
+						.split(",").join("=yes,")
+					+ ",width=" + w + ",height=" + h
+					+ ",left=" + c(s.width, w) + ",top=" + c(s.height, h));
+			} else {
+				p.focus();
+			}
+
+			p.resizeTo(w, h);
+			n = p;
+		}
+
+		if (w > s.width || h > s.height) {
+			n.moveTo(0, 0);
+		}
+	};
+	
+	if (window.name == "resize_popup" && window.opener) {
+		window.opener.$("info").className = "no_resize";
+	}
+
+	var anchors = $("sizes").getElementsByTagName("a");
+	
+	for (var i = 0; i < anchors.length; i++) {
+		var anchor = anchors[i];
+		
+		anchor.href =
+			"javascript:(" + resizeWindow.toString().replace(/\s/g, "")
+				.replace(/(function(?!\()|return|typeof|var)/g, "$1 ")
+			+ ")(" + anchor.innerHTML.replace(/ x/, ",") + ");";
+	}
+
+	$("set_custom").onclick = function () {
+		resizeWindow($("width").value, $("height").value);	
+	};
+	
+	var tokens = /\/(\d+)x(\d+)(!?)$/.exec(window.location.pathname);
+	
+	if (tokens) {
+		resizeWindow(tokens[1], tokens[2]);
+		
+		if (tokens[3] == "!") {
+			window.history.back();
+		}
+	}
+}
+
+function dismissInfo() {
+	$("info").className = "hidden";
+}
+</script>
+</head>
+
+<body class="setmy">
+
+<a href="http://setmy.browsersize.com/1152x864">1152 x 864!</a>
+</body>
+</html> 

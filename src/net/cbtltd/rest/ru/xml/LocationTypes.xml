@@ -1,0 +1,8 @@
+<?xml version="1.0" encoding="UTF-8"?>
+	<LocationTypes>
+		<LocationType LocationTypeID="1">Continent</LocationType>
+		<LocationType LocationTypeID="2">Country</LocationType>
+		<LocationType LocationTypeID="3">Region</LocationType>
+		<LocationType LocationTypeID="4">City</LocationType>
+		<LocationType LocationTypeID="5">District</LocationType>
+	</LocationTypes>

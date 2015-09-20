@@ -1,0 +1,18 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<eclipse-userlibraries version="2">
+    <library name="AWS_Lib" systemlibrary="false">
+        <archive path="/Razor/lib/aws/aspectjrt.jar"/>
+        <archive path="/Razor/lib/aws/aspectjweaver.jar"/>
+        <archive path="/Razor/lib/aws/aws-java-sdk-1.7.5.jar"/>
+        <archive path="/Razor/lib/aws/freemarker-2.3.18.jar"/>
+        <archive path="/Razor/lib/aws/httpclient-4.2.3.jar"/>
+        <archive path="/Razor/lib/aws/httpcore-4.2.5.jar"/>
+        <archive path="/Razor/lib/aws/jackson-annotations-2.1.1.jar"/>
+        <archive path="/Razor/lib/aws/jackson-core-2.1.1.jar"/>
+        <archive path="/Razor/lib/aws/jackson-databind-2.1.1.jar"/>
+        <archive path="/Razor/lib/aws/joda-time-2.2.jar"/>
+        <archive path="/Razor/lib/aws/mail-1.4.3.jar"/>
+        <archive path="/Razor/lib/aws/stax-1.2.0.jar"/>
+        <archive path="/Razor/lib/aws/stax-api-1.0.1.jar"/>
+    </library>
+</eclipse-userlibraries>

@@ -1,0 +1,81 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="net.cbtltd.server.api.PaymentRegisterMapper">
+	<resultMap id="ResultMap" type="PaymentRegister">
+		<id column="id" jdbcType="INTEGER" property="id" />
+		<result column="entry_date_time" jdbcType="TIMESTAMP" property="entryDateTime" />
+		<result column="reservation_id" jdbcType="INTEGER" property="reservationId" />
+		<result column="property_id" jdbcType="INTEGER" property="propertyId" />
+		<result column="pm_id" jdbcType="INTEGER" property="pmId" />
+		<result column="partner_id" jdbcType="INTEGER" property="partnerId" />
+		<result column="payment_transaction_id" jdbcType="INTEGER" property="paymentTransactionId" />
+		<result column="type" jdbcType="SMALLINT" property="type" />
+		<result column="cleared" jdbcType="TINYINT" property="cleared" />
+	</resultMap>
+
+	<sql id="columns">
+		id, entry_date_time, reservation_id, property_id, pm_id, partner_id, payment_transaction_id, type, cleared
+	</sql>
+	
+	<sql id="create_columns">
+		entry_date_time, reservation_id, property_id, pm_id, partner_id, payment_transaction_id, type, cleared
+	</sql>
+
+	<insert id="create" parameterType="PaymentRegister" useGeneratedKeys="true" keyProperty="id">
+		insert into payment_register (
+			<include refid="create_columns" />
+		)
+		values (#{entryDateTime,jdbcType=TIMESTAMP}, #{reservationId,jdbcType=INTEGER}, #{propertyId,jdbcType=INTEGER},
+		 #{pmId,jdbcType=INTEGER}, #{partnerId,jdbcType=INTEGER}, #{paymentTransactionId,jdbcType=INTEGER}, #{type,jdbcType=SMALLINT}, #{cleared,jdbcType=TINYINT})
+	</insert>
+
+	<select id="read" parameterType="int" resultMap="ResultMap">
+		select
+		<include refid="columns" />
+		from payment_register
+		where id = #{id,jdbcType=INTEGER}
+	</select>
+	
+	<select id="list" resultMap="ResultMap">
+		select
+		<include refid="columns" />
+		from payment_register
+	</select>
+
+	<update id="update" parameterType="PaymentRegister">
+		update payment_register
+		<set>
+			<if test="entry_date_time != null">
+				entry_date_time = #{entryDateTime,jdbcType=TIMESTAMP},
+			</if>
+			<if test="reservation_id != null">
+				reservation_id = #{reservationId,jdbcType=INTEGER},
+			</if>
+			<if test="property_id != null">
+				property_id = #{propertyId,jdbcType=INTEGER},
+			</if>
+			<if test="pm_id != null">
+				pm_id = #{pmId,jdbcType=INTEGER},
+			</if>
+			<if test="partner_id != null">
+				partner_id = #{partnerId,jdbcType=INTEGER},
+			</if>
+			<if test="payment_transaction_id != null">
+				payment_transaction_id = #{paymentTransactionId,jdbcType=INTEGER},
+			</if>
+			<if test="type != null">
+				type = #{type,jdbcType=SMALLINT},
+			</if>
+			<if test="cleared != null">
+				cleared = #{cleared,jdbcType=TINYINT},
+			</if>
+		</set>
+		where id = #{id,jdbcType=INTEGER}
+	</update>
+
+	<delete id="delete" parameterType="int">
+		delete from customer_payment_profile
+		where id = #{id,jdbcType=INTEGER}
+	</delete>
+	
+</mapper>

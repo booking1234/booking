@@ -1,0 +1,99 @@
+<?xml version="1.0" encoding="UTF-8" standalone="yes"?>
+<ns8:booking xmlns="http://connect.bookt.com/Schemas/Event.xsd"
+	xmlns:ns2="http://connect.bookt.com/Schemas/Person.xsd" xmlns:ns3="http://schemas.microsoft.com/2003/10/Serialization/Arrays"
+	xmlns:ns4="http://connect.bookt.com/Schemas/Statement.xsd" xmlns:ns5="http://connect.bookt.com/Schemas/StatementDetail.xsd"
+	xmlns:ns6="http://connect.bookt.com/Schemas/Booking.xsd" xmlns:ns7="http://connect.bookt.com/Schemas/CreditCard.xsd"
+	xmlns:ns8="https://connect.bookt.com/svc/rest.svc" xmlns:ns9="http://connect.bookt.com/Schemas/Review.xsd"
+	xmlns:ns10="http://connect.bookt.com/Schemas/Unit.xsd" xmlns:ns11="http://connect.bookt.com/Schemas/Tax.xsd"
+	xmlns:ns12="http://connect.bookt.com/Schemas/Media.xsd" xmlns:ns13="http://connect.bookt.com/Schemas/Property.xsd"
+	xmlns:ns14="http://connect.bookt.com/Schemas/Fee.xsd" xmlns:ns15="http://schemas.microsoft.com/2003/10/Serialization/">
+	<ns6:AltID>0</ns6:AltID>
+	<ns6:BookedBy xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+		xsi:nil="true" />
+	<ns6:CheckIn>2012-08-10T15:00:00</ns6:CheckIn>
+	<ns6:CheckOut>2012-08-20T10:00:00</ns6:CheckOut>
+	<ns6:CreditCard xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+		xsi:nil="true" />
+	<ns6:ID>2212885</ns6:ID>
+	<ns6:NumAdults>2</ns6:NumAdults>
+	<ns6:NumChildren>0</ns6:NumChildren>
+	<ns6:PaymentTerms xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+		xsi:nil="true" />
+	<ns6:PrivateNotes>XML Reservation Request</ns6:PrivateNotes>
+	<ns6:PropertyID>24233</ns6:PropertyID>
+	<ns6:PublicNotes></ns6:PublicNotes>
+	<ns6:Renter>
+		<ns2:Address1>P.O. Box 313</ns2:Address1>
+		<ns2:Address2>Sea Point</ns2:Address2>
+		<ns2:AltID></ns2:AltID>
+		<ns2:CellPhone>0828861706</ns2:CellPhone>
+		<ns2:City>Cape Town</ns2:City>
+		<ns2:Company>4121</ns2:Company>
+		<ns2:Country>South Africa</ns2:Country>
+		<ns2:FaxNumber></ns2:FaxNumber>
+		<ns2:FirstName>GMPI Trust</ns2:FirstName>
+		<ns2:Greeting>Mr</ns2:Greeting>
+		<ns2:HomePhone></ns2:HomePhone>
+		<ns2:ID>544746</ns2:ID>
+		<ns2:Initial></ns2:Initial>
+		<ns2:LastName>GMPI Trust</ns2:LastName>
+		<ns2:Latitude>-33.9169494000</ns2:Latitude>
+		<ns2:LeadSource xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+			xsi:nil="true" />
+		<ns2:Longitude>18.3875487000</ns2:Longitude>
+		<ns2:Notes>Tax # 0994033157</ns2:Notes>
+		<ns2:PostalCode>8060</ns2:PostalCode>
+		<ns2:Prefix></ns2:Prefix>
+		<ns2:PrimaryEmail>campsbayrich@gmail.com</ns2:PrimaryEmail>
+		<ns2:State>Western Cape</ns2:State>
+		<ns2:Status>A</ns2:Status>
+		<ns2:Suffix></ns2:Suffix>
+		<ns2:Tags />
+		<ns2:Title>Mr</ns2:Title>
+		<ns2:Type>C</ns2:Type>
+		<ns2:WebSite xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+			xsi:nil="true" />
+		<ns2:WorkPhone xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+			xsi:nil="true" />
+	</ns6:Renter>
+	<ns6:Statement>
+		<ns4:Currency>USD</ns4:Currency>
+		<ns4:Description>Re: Booking ID:2212885 (8/10/2012-8/20/2012)
+		</ns4:Description>
+		<ns4:Details>
+			<ns5:StatementDetail>
+				<ns5:Amount>600.00</ns5:Amount>
+				<ns5:Currency>USD</ns5:Currency>
+				<ns5:ID>1526509</ns5:ID>
+				<ns5:Notes>1 Week @ $600.00
+					&lt;small&gt;8/10/2012-8/17/2012&lt;/small&gt;</ns5:Notes>
+				<ns5:Quantity>1.0000</ns5:Quantity>
+				<ns5:Status>A</ns5:Status>
+				<ns5:SubTotal>600.00</ns5:SubTotal>
+				<ns5:Type>S</ns5:Type>
+			</ns5:StatementDetail>
+			<ns5:StatementDetail>
+				<ns5:Amount>85.71</ns5:Amount>
+				<ns5:Currency>USD</ns5:Currency>
+				<ns5:ID>1526510</ns5:ID>
+				<ns5:Notes>3 Nights @ $85.71
+					&lt;small&gt;8/17/2012-8/20/2012&lt;/small&gt;</ns5:Notes>
+				<ns5:Quantity>3.0000</ns5:Quantity>
+				<ns5:Status>A</ns5:Status>
+				<ns5:SubTotal>257.13</ns5:SubTotal>
+				<ns5:Type>S</ns5:Type>
+			</ns5:StatementDetail>
+		</ns4:Details>
+		<ns4:DueOn>2012-08-20T10:00:00</ns4:DueOn>
+		<ns4:ID>357796</ns4:ID>
+		<ns4:Notes></ns4:Notes>
+		<ns4:Status>D</ns4:Status>
+		<ns4:Total>857.13</ns4:Total>
+		<ns4:Type xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+			xsi:nil="true" />
+	</ns6:Statement>
+	<ns6:Status>X</ns6:Status>
+	<ns6:TotalDueNow>0</ns6:TotalDueNow>
+	<ns6:Type>I</ns6:Type>
+	<ns6:UnitID>88411</ns6:UnitID>
+</ns8:booking>

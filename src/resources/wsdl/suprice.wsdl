@@ -1,0 +1,365 @@
+<?xml version="1.0" encoding="ISO-8859-1"?>
+<definitions xmlns:SOAP-ENV="http://schemas.xmlsoap.org/soap/envelope/" xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:SOAP-ENC="http://schemas.xmlsoap.org/soap/encoding/" xmlns:tns="urn:service" xmlns:soap="http://schemas.xmlsoap.org/wsdl/soap/" xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/" xmlns="http://schemas.xmlsoap.org/wsdl/" targetNamespace="urn:service">
+<types>
+<xsd:schema targetNamespace="urn:service"
+>
+ <xsd:import namespace="http://schemas.xmlsoap.org/soap/encoding/" />
+ <xsd:import namespace="http://schemas.xmlsoap.org/wsdl/" />
+ <xsd:complexType name="parameters">
+  <xsd:all>
+   <xsd:element name="id" type="xsd:string"/>
+   <xsd:element name="code" type="xsd:string"/>
+   <xsd:element name="firstname" type="xsd:string"/>
+   <xsd:element name="lastname" type="xsd:string"/>
+   <xsd:element name="age" type="xsd:int"/>
+   <xsd:element name="telnumber" type="xsd:string"/>
+   <xsd:element name="countryofresidence" type="xsd:string"/>
+   <xsd:element name="vehiclegroup" type="xsd:string"/>
+   <xsd:element name="pickuplocationcode" type="xsd:int"/>
+   <xsd:element name="pickupdate" type="xsd:date"/>
+   <xsd:element name="pickuptime" type="xsd:string"/>
+   <xsd:element name="returnlocationcode" type="xsd:int"/>
+   <xsd:element name="returndate" type="xsd:date"/>
+   <xsd:element name="returntime" type="xsd:string"/>
+   <xsd:element name="numberofdays" type="xsd:int"/>
+   <xsd:element name="numberofdrivers" type="xsd:int"/>
+   <xsd:element name="flightnumber" type="xsd:string"/>
+   <xsd:element name="departureairport" type="xsd:string"/>
+   <xsd:element name="deliveryaddress" type="xsd:string"/>
+   <xsd:element name="notes" type="xsd:string"/>
+   <xsd:element name="babyseats" type="xsd:int"/>
+   <xsd:element name="childseats" type="xsd:int"/>
+   <xsd:element name="boosterseats" type="xsd:int"/>
+   <xsd:element name="roofrack" type="xsd:int"/>
+   <xsd:element name="gpsnavigation" type="xsd:int"/>
+   <xsd:element name="snowchains" type="xsd:int"/>
+   <xsd:element name="skirack" type="xsd:int"/>
+   <xsd:element name="extralist" type="xsd:string"/>
+   <xsd:element name="confirmlink" type="xsd:string"/>
+   <xsd:element name="declinelink" type="xsd:string"/>
+   <xsd:element name="price" type="xsd:double"/>
+   <xsd:element name="pricecode" type="xsd:string"/>
+   <xsd:element name="borderexit" type="xsd:int"/>
+   <xsd:element name="cash" type="xsd:double"/>
+   <xsd:element name="upgrade" type="xsd:string"/>
+  </xsd:all>
+ </xsd:complexType>
+ <xsd:complexType name="priceparameters">
+  <xsd:all>
+   <xsd:element name="id" type="xsd:string"/>
+   <xsd:element name="age" type="xsd:int"/>
+   <xsd:element name="vehiclegroup" type="xsd:string"/>
+   <xsd:element name="pickuplocationcode" type="xsd:int"/>
+   <xsd:element name="pickupdate" type="xsd:date"/>
+   <xsd:element name="pickuptime" type="xsd:string"/>
+   <xsd:element name="returnlocationcode" type="xsd:int"/>
+   <xsd:element name="returndate" type="xsd:date"/>
+   <xsd:element name="returntime" type="xsd:string"/>
+   <xsd:element name="numberofdays" type="xsd:int"/>
+  </xsd:all>
+ </xsd:complexType>
+ <xsd:complexType name="amendparameters">
+  <xsd:all>
+   <xsd:element name="id" type="xsd:string"/>
+   <xsd:element name="code" type="xsd:string"/>
+   <xsd:element name="firstname" type="xsd:string"/>
+   <xsd:element name="lastname" type="xsd:string"/>
+   <xsd:element name="age" type="xsd:int"/>
+   <xsd:element name="telnumber" type="xsd:string"/>
+   <xsd:element name="countryofresidence" type="xsd:string"/>
+   <xsd:element name="vehiclegroup" type="xsd:string"/>
+   <xsd:element name="pickuplocationcode" type="xsd:int"/>
+   <xsd:element name="pickupdate" type="xsd:date"/>
+   <xsd:element name="pickuptime" type="xsd:string"/>
+   <xsd:element name="returnlocationcode" type="xsd:int"/>
+   <xsd:element name="returndate" type="xsd:date"/>
+   <xsd:element name="returntime" type="xsd:string"/>
+   <xsd:element name="numberofdays" type="xsd:int"/>
+   <xsd:element name="numberofdrivers" type="xsd:int"/>
+   <xsd:element name="flightnumber" type="xsd:string"/>
+   <xsd:element name="departureairport" type="xsd:string"/>
+   <xsd:element name="deliveryaddress" type="xsd:string"/>
+   <xsd:element name="notes" type="xsd:string"/>
+   <xsd:element name="babyseats" type="xsd:int"/>
+   <xsd:element name="childseats" type="xsd:int"/>
+   <xsd:element name="boosterseats" type="xsd:int"/>
+   <xsd:element name="roofrack" type="xsd:int"/>
+   <xsd:element name="gpsnavigation" type="xsd:int"/>
+   <xsd:element name="snowchains" type="xsd:int"/>
+   <xsd:element name="skirack" type="xsd:int"/>
+   <xsd:element name="confirmlink" type="xsd:string"/>
+   <xsd:element name="declinelink" type="xsd:string"/>
+   <xsd:element name="price" type="xsd:double"/>
+   <xsd:element name="pricecode" type="xsd:string"/>
+   <xsd:element name="borderexit" type="xsd:int"/>
+   <xsd:element name="cash" type="xsd:double"/>
+   <xsd:element name="confirmationnumber" type="xsd:string"/>
+  </xsd:all>
+ </xsd:complexType>
+ <xsd:complexType name="cancelparameters">
+  <xsd:all>
+   <xsd:element name="id" type="xsd:string"/>
+   <xsd:element name="code" type="xsd:string"/>
+   <xsd:element name="confirmationnumber" type="xsd:string"/>
+  </xsd:all>
+ </xsd:complexType>
+ <xsd:complexType name="statusparameters">
+  <xsd:all>
+   <xsd:element name="id" type="xsd:string"/>
+   <xsd:element name="code" type="xsd:string"/>
+   <xsd:element name="confirmationnumber" type="xsd:string"/>
+  </xsd:all>
+ </xsd:complexType>
+ <xsd:complexType name="returnparameters">
+  <xsd:all>
+   <xsd:element name="result" type="xsd:string"/>
+   <xsd:element name="confirmationnumber" type="xsd:string"/>
+  </xsd:all>
+ </xsd:complexType>
+ <xsd:complexType name="cargroup">
+  <xsd:all>
+   <xsd:element name="cgroup" type="xsd:string"/>
+   <xsd:element name="aircondition" type="xsd:int"/>
+   <xsd:element name="persons" type="xsd:int"/>
+   <xsd:element name="radiocd" type="xsd:int"/>
+   <xsd:element name="doors" type="xsd:int"/>
+   <xsd:element name="automatic" type="xsd:int"/>
+   <xsd:element name="type" type="xsd:string"/>
+   <xsd:element name="price" type="xsd:string"/>
+  </xsd:all>
+ </xsd:complexType>
+ <xsd:complexType name="cargroupList">
+  <xsd:complexContent>
+   <xsd:restriction base="SOAP-ENC:Array">
+    <xsd:attribute ref="SOAP-ENC:arrayType" wsdl:arrayType="tns:cargroup[]"/>
+   </xsd:restriction>
+  </xsd:complexContent>
+ </xsd:complexType>
+ <xsd:complexType name="terms">
+  <xsd:all>
+   <xsd:element name="title" type="xsd:string"/>
+   <xsd:element name="text" type="xsd:string"/>
+  </xsd:all>
+ </xsd:complexType>
+ <xsd:complexType name="vehicleModel">
+  <xsd:all>
+   <xsd:element name="SIPPCode" type="xsd:string"/>
+   <xsd:element name="cgroup" type="xsd:string"/>
+   <xsd:element name="aircondition" type="xsd:int"/>
+   <xsd:element name="persons" type="xsd:int"/>
+   <xsd:element name="radiocd" type="xsd:int"/>
+   <xsd:element name="doors" type="xsd:int"/>
+   <xsd:element name="TransmissionType" type="xsd:char"/>
+   <xsd:element name="type" type="xsd:string"/>
+   <xsd:element name="cc" type="xsd:int"/>
+   <xsd:element name="cdw" type="xsd:string"/>
+   <xsd:element name="fdw_o_excess" type="xsd:string"/>
+   <xsd:element name="size" type="xsd:string"/>
+   <xsd:element name="photo_url" type="xsd:string"/>
+   <xsd:element name="extras" type="tns:PricedEquipsT"/>
+  </xsd:all>
+ </xsd:complexType>
+ <xsd:complexType name="vehicleCharge">
+  <xsd:all>
+   <xsd:element name="price" type="xsd:string"/>
+   <xsd:element name="currency" type="xsd:string"/>
+   <xsd:element name="TaxInclusive" type="xsd:int"/>
+  </xsd:all>
+ </xsd:complexType>
+ <xsd:complexType name="LocationDetail">
+  <xsd:all>
+   <xsd:element name="attr" type="tns:LocationDetail_attrT"/>
+   <xsd:element name="address" type="tns:LocationDetail_Address"/>
+   <xsd:element name="work_hours" type="tns:WorkHours"/>
+  </xsd:all>
+ </xsd:complexType>
+ <xsd:complexType name="Locations">
+  <xsd:complexContent>
+   <xsd:restriction base="SOAP-ENC:Array">
+    <xsd:attribute areas="http://schemas.xmlsoap.org/soap/encoding/:arrayType" wsdl:arrayType="tns:LocationDetail[]"/>
+   </xsd:restriction>
+  </xsd:complexContent>
+ </xsd:complexType>
+ <xsd:complexType name="cargroupAvailableInfo">
+  <xsd:all>
+   <xsd:element name="status" type="xsd:int"/>
+   <xsd:element name="status_message" type="xsd:string"/>
+   <xsd:element name="model" type="tns:vehicleModel"/>
+   <xsd:element name="charge" type="tns:vehicleCharge"/>
+   <xsd:element name="extras" type="tns:PricedEquipsT"/>
+   <xsd:element name="termsConditions" type="tns:terms"/>
+   <xsd:element name="tpa" type="tns:TPA_Extensions"/>
+   <xsd:element name="locations" type="tns:Locations"/>
+  </xsd:all>
+ </xsd:complexType>
+ <xsd:complexType name="cargroupAvailableInfoList">
+  <xsd:complexContent>
+   <xsd:restriction base="SOAP-ENC:Array">
+    <xsd:attribute ref="SOAP-ENC:arrayType" wsdl:arrayType="tns:cargroupAvailableInfo[]"/>
+   </xsd:restriction>
+  </xsd:complexContent>
+ </xsd:complexType>
+ <xsd:complexType name="ChargeT_attr">
+  <xsd:all>
+   <xsd:element name="EquipmentId" type="xsd:int"/>
+   <xsd:element name="Charge" type="xsd:string"/>
+   <xsd:element name="Prepaid" type="xsd:int"/>
+   <xsd:element name="Description" type="xsd:string"/>
+   <xsd:element name="CurrencyCode" type="xsd:string"/>
+   <xsd:element name="IncludedInRate" type="xsd:int"/>
+  </xsd:all>
+ </xsd:complexType>
+ <xsd:complexType name="PricedEquipsT">
+  <xsd:complexContent>
+   <xsd:restriction base="SOAP-ENC:Array">
+    <xsd:attribute PricedEquip="http://schemas.xmlsoap.org/soap/encoding/:arrayType" wsdl:arrayType="tns:ChargeT_attr[]"/>
+   </xsd:restriction>
+  </xsd:complexContent>
+ </xsd:complexType>
+ <xsd:complexType name="TPA_Extensions">
+  <xsd:all>
+   <xsd:element name="MaximumAge" type="xsd:int"/>
+   <xsd:element name="MinimumAge" type="xsd:int"/>
+  </xsd:all>
+ </xsd:complexType>
+ <xsd:complexType name="LocationDetail_attrT">
+  <xsd:all>
+   <xsd:element name="Code" type="xsd:string"/>
+   <xsd:element name="Name" type="xsd:string"/>
+   <xsd:element name="Stage" type="xsd:string"/>
+   <xsd:element name="AtAirport" type="xsd:int"/>
+  </xsd:all>
+ </xsd:complexType>
+ <xsd:complexType name="phone">
+  <xsd:all>
+   <xsd:element name="number" type="xsd:string"/>
+  </xsd:all>
+ </xsd:complexType>
+ <xsd:complexType name="phones">
+  <xsd:complexContent>
+   <xsd:restriction base="SOAP-ENC:Array">
+    <xsd:attribute values="http://schemas.xmlsoap.org/soap/encoding/:arrayType" wsdl:arrayType="tns:phone[]"/>
+   </xsd:restriction>
+  </xsd:complexContent>
+ </xsd:complexType>
+ <xsd:complexType name="LocationDetail_Address">
+  <xsd:all>
+   <xsd:element name="AddressLine" type="xsd:string"/>
+   <xsd:element name="CityName" type="xsd:string"/>
+   <xsd:element name="PostalCode" type="xsd:string"/>
+   <xsd:element name="CountryName" type="xsd:int"/>
+   <xsd:element name="Telephone" type="tns:phones"/>
+   <xsd:element name="MeetingPoint" type="xsd:string"/>
+  </xsd:all>
+ </xsd:complexType>
+ <xsd:complexType name="WorkHoursDaily">
+  <xsd:all>
+   <xsd:element name="Day" type="xsd:string"/>
+   <xsd:element name="Start" type="xsd:string"/>
+   <xsd:element name="End" type="xsd:string"/>
+  </xsd:all>
+ </xsd:complexType>
+ <xsd:complexType name="WorkHours">
+  <xsd:complexContent>
+   <xsd:restriction base="SOAP-ENC:Array">
+    <xsd:attribute Day="http://schemas.xmlsoap.org/soap/encoding/:arrayType" wsdl:arrayType="tns:WorkHoursDaily[]"/>
+   </xsd:restriction>
+  </xsd:complexContent>
+ </xsd:complexType>
+</xsd:schema>
+</types>
+<message name="getAvailableInfoRequest">
+  <part name="parameters" type="tns:priceparameters" /></message>
+<message name="getAvailableInfoResponse">
+  <part name="return" type="tns:cargroupAvailableInfoList" /></message>
+<message name="getPriceRequest">
+  <part name="parameters" type="tns:priceparameters" /></message>
+<message name="getPriceResponse">
+  <part name="return" type="tns:cargroupList" /></message>
+<message name="reserveRequest">
+  <part name="parameters" type="tns:parameters" /></message>
+<message name="reserveResponse">
+  <part name="return" type="tns:returnparameters" /></message>
+<message name="amendRequest">
+  <part name="parameters" type="tns:amendparameters" /></message>
+<message name="amendResponse">
+  <part name="return" type="tns:returnparameters" /></message>
+<message name="cancelRequest">
+  <part name="parameters" type="tns:cancelparameters" /></message>
+<message name="cancelResponse">
+  <part name="return" type="xsd:string" /></message>
+<message name="statusRequest">
+  <part name="parameters" type="tns:statusparameters" /></message>
+<message name="statusResponse">
+  <part name="return" type="tns:returnparameters" /></message>
+<portType name="servicePortType">
+  <operation name="getAvailableInfo">
+    <documentation>get full price for a reservation</documentation>
+    <input message="tns:getAvailableInfoRequest"/>
+    <output message="tns:getAvailableInfoResponse"/>
+  </operation>
+  <operation name="getPrice">
+    <documentation>get price for a reservation</documentation>
+    <input message="tns:getPriceRequest"/>
+    <output message="tns:getPriceResponse"/>
+  </operation>
+  <operation name="reserve">
+    <documentation>initiates a reservation</documentation>
+    <input message="tns:reserveRequest"/>
+    <output message="tns:reserveResponse"/>
+  </operation>
+  <operation name="amend">
+    <documentation>amends a reservation</documentation>
+    <input message="tns:amendRequest"/>
+    <output message="tns:amendResponse"/>
+  </operation>
+  <operation name="cancel">
+    <documentation>cancels a reservation</documentation>
+    <input message="tns:cancelRequest"/>
+    <output message="tns:cancelResponse"/>
+  </operation>
+  <operation name="status">
+    <documentation>return the status of a reservation</documentation>
+    <input message="tns:statusRequest"/>
+    <output message="tns:statusResponse"/>
+  </operation>
+</portType>
+<binding name="serviceBinding" type="tns:servicePortType">
+  <soap:binding style="rpc" transport="http://schemas.xmlsoap.org/soap/http"/>
+  <operation name="getAvailableInfo">
+    <soap:operation soapAction="urn:service#getAvailableInfo" style="rpc"/>
+    <input><soap:body use="encoded" namespace="urn:service" encodingStyle="http://schemas.xmlsoap.org/soap/encoding/"/></input>
+    <output><soap:body use="encoded" namespace="urn:service" encodingStyle="http://schemas.xmlsoap.org/soap/encoding/"/></output>
+  </operation>
+  <operation name="getPrice">
+    <soap:operation soapAction="urn:service#getPrice" style="rpc"/>
+    <input><soap:body use="encoded" namespace="urn:service" encodingStyle="http://schemas.xmlsoap.org/soap/encoding/"/></input>
+    <output><soap:body use="encoded" namespace="urn:service" encodingStyle="http://schemas.xmlsoap.org/soap/encoding/"/></output>
+  </operation>
+  <operation name="reserve">
+    <soap:operation soapAction="urn:service#reserve" style="rpc"/>
+    <input><soap:body use="encoded" namespace="urn:service" encodingStyle="http://schemas.xmlsoap.org/soap/encoding/"/></input>
+    <output><soap:body use="encoded" namespace="urn:service" encodingStyle="http://schemas.xmlsoap.org/soap/encoding/"/></output>
+  </operation>
+  <operation name="amend">
+    <soap:operation soapAction="urn:service#reserve" style="rpc"/>
+    <input><soap:body use="encoded" namespace="urn:service" encodingStyle="http://schemas.xmlsoap.org/soap/encoding/"/></input>
+    <output><soap:body use="encoded" namespace="urn:service" encodingStyle="http://schemas.xmlsoap.org/soap/encoding/"/></output>
+  </operation>
+  <operation name="cancel">
+    <soap:operation soapAction="urn:service#reserve" style="rpc"/>
+    <input><soap:body use="encoded" namespace="urn:service" encodingStyle="http://schemas.xmlsoap.org/soap/encoding/"/></input>
+    <output><soap:body use="encoded" namespace="urn:service" encodingStyle="http://schemas.xmlsoap.org/soap/encoding/"/></output>
+  </operation>
+  <operation name="status">
+    <soap:operation soapAction="urn:service#status" style="rpc"/>
+    <input><soap:body use="encoded" namespace="urn:service" encodingStyle="http://schemas.xmlsoap.org/soap/encoding/"/></input>
+    <output><soap:body use="encoded" namespace="urn:service" encodingStyle="http://schemas.xmlsoap.org/soap/encoding/"/></output>
+  </operation>
+</binding>
+<service name="service">
+  <port name="servicePort" binding="tns:serviceBinding">
+    <soap:address location="http://servicecarrentals.com/test/service.php"/>
+  </port>
+</service>
+</definitions>

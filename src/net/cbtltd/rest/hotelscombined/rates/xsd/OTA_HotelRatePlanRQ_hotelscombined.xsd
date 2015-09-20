@@ -1,0 +1,57 @@
+<xs:schema attributeFormDefault="unqualified" elementFormDefault="qualified" targetNamespace="http://www.opentravel.org/OTA/2003/05" xmlns:xs="http://www.w3.org/2001/XMLSchema">
+  <xs:element name="OTA_HotelRatePlanRQ">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element name="RatePlans">
+          <xs:complexType>
+            <xs:sequence>
+              <xs:element name="RatePlan" maxOccurs="unbounded" minOccurs="0">
+                <xs:complexType>
+                  <xs:sequence>
+                    <xs:element name="DateRange">
+                      <xs:complexType>
+                        <xs:simpleContent>
+                          <xs:extension base="xs:string">
+                            <xs:attribute type="xs:string" name="Start" use="optional"/>
+                            <xs:attribute type="xs:string" name="End" use="optional"/>
+                          </xs:extension>
+                        </xs:simpleContent>
+                      </xs:complexType>
+                    </xs:element>
+                    <xs:element name="HotelRef">
+                      <xs:complexType>
+                        <xs:simpleContent>
+                          <xs:extension base="xs:string">
+                            <xs:attribute type="xs:string" name="HotelCode" use="optional"/>
+                          </xs:extension>
+                        </xs:simpleContent>
+                      </xs:complexType>
+                    </xs:element>
+                    <xs:element name="RatePlanCandidates">
+                      <xs:complexType>
+                        <xs:sequence>
+                          <xs:element name="RatePlanCandidate">
+                            <xs:complexType>
+                              <xs:simpleContent>
+                                <xs:extension base="xs:string">
+                                  <xs:attribute type="xs:string" name="RatePlanCode" use="optional"/>
+                                </xs:extension>
+                              </xs:simpleContent>
+                            </xs:complexType>
+                          </xs:element>
+                        </xs:sequence>
+                      </xs:complexType>
+                    </xs:element>
+                  </xs:sequence>
+                </xs:complexType>
+              </xs:element>
+            </xs:sequence>
+          </xs:complexType>
+        </xs:element>
+      </xs:sequence>
+      <xs:attribute type="xs:float" name="Version"/>
+      <xs:attribute type="xs:dateTime" name="TimeStamp"/>
+      <xs:attribute type="xs:string" name="EchoToken"/>
+    </xs:complexType>
+  </xs:element>
+</xs:schema>

@@ -1,0 +1,15 @@
+.attributeStyle {height: 590px; width: 320px;}
+.balanceField {margin-top: 1px;	width: 120px;}
+.descriptionPopup {height: 554px; width: 600px}
+.messageStyle {width: 300px;}
+.notesStyle {
+	height: 290px;
+	width: 428px;
+	white-space: pre-wrap;
+	color: gray;
+	background: white;
+	border: 0;
+}
+.reportButton {margin: 2px 4px;	padding: 0;	font-size: 75%;}
+.stackStyle {height: 730px;	width: 750px; margin-top: 10px;}
+.typesStyle {height: 95px;}

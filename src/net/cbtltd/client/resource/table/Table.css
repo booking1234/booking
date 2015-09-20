@@ -1,0 +1,93 @@
+/*
+(c)2011 CBT Ltd
+You may use this css and any derivative product to format data served
+by any Razor or other FlitePlan application or web service.
+
+In GWT, each class of widget has an associated style name that binds it to a CSS rule. Furthermore, 
+you can assign an id to a particular component to create a CSS rule that applies just to that one component. 
+By default, the class name for each component is gwt-<classname>.
+For example, the Button widget has a default style of gwt-Button.
+In order to give all buttons a larger font, you could put the following rule in your application's CSS file:
+  .gwt-Button { font-size: 150%; }
+All of the widgets created with the GWT toolkit will have a default class name, but a widget's style name 
+can be set using setStyleName(). Static elements can have their class set in the HTML source code for your application.
+
+Color Picker: http://www.w3schools.com/tags/ref_colorpicker.asp
+Color Invertor: http://janim.net/free-online-tools/inverse-color/inverse-color-generator.php
+
+Definitions */
+@def selectionBorderWidth 0;
+
+.cellTableWidget {height: 100%; width: 100%;}
+.cellTableFirstColumn {}
+.cellTableLastColumn {}
+
+.cellTableFooter {
+	background-color: #90A6C6; 
+	background-image: -webkit-linear-gradient(top, #CADEFA, #90A6C6); /* Safari 5.1+, Mobile Safari, Chrome 10+ */
+	background-image: -moz-linear-gradient(top, #CADEFA, #90A6C6);   /* Firefox 3.6+ */
+	background-image: -ms-linear-gradient(top, #CADEFA, #90A6C6); /* IE 10+ */
+	background-image: -o-linear-gradient(top, #CADEFA, #90A6C6); /* Opera 11.10+ */
+	height: 24px;
+	padding: 0;
+	color: labelColor;
+	font-weight: normal;
+	text-shadow: labelShadow;
+}
+
+.cellTableHeader {
+	background-color: #90A6C6; 
+	background-image: -webkit-linear-gradient(top, #CADEFA, #90A6C6); /* Safari 5.1+, Mobile Safari, Chrome 10+ */
+	background-image: -moz-linear-gradient(top, #CADEFA, #90A6C6);   /* Firefox 3.6+ */
+	background-image: -ms-linear-gradient(top, #CADEFA, #90A6C6); /* IE 10+ */
+	background-image: -o-linear-gradient(top, #CADEFA, #90A6C6); /* Opera 11.10+ */
+	height: 24px;
+/* 	width: 100%; */
+	color: labelColor;
+	font-weight: normal;
+	text-shadow: labelShadow;
+	white-space: nowrap;
+}
+
+.cellTableCell {
+	padding: 1px 5px;
+	white-space: nowrap;
+	cursor: pointer;
+	cursor: hand;
+}
+
+.cellTableFirstColumnFooter {}
+.cellTableFirstColumnHeader {}
+.cellTableLastColumnFooter {}
+.cellTableLastColumnHeader {}
+.cellTableSortableHeader {cursor: pointer; cursor: hand;}
+.cellTableSortableHeader:hover {color: #6c6b6b;}
+.cellTableSortedHeaderAscending {}
+.cellTableSortedHeaderDescending {}
+.cellTableEvenRow {background: #ffffff;}
+.cellTableEvenRowCell {border: selectionBorderWidth solid #ffffff;}
+.cellTableOddRow {background: #f3f7fb;}
+.cellTableOddRowCell {border: selectionBorderWidth solid #f3f7fb;}
+.cellTableHoveredRow {background: #eee;}
+.cellTableHoveredRowCell {border: selectionBorderWidth solid #eee;}
+.cellTableKeyboardSelectedRow {background: #ffc;}
+.cellTableKeyboardSelectedRowCell {border: selectionBorderWidth solid #ffc;}
+
+.cellTableSelectedRow {
+	background-color: #90A6C6; 
+	background-image: -webkit-linear-gradient(top, #CADEFA, #90A6C6); /* Safari 5.1+, Mobile Safari, Chrome 10+ */
+	background-image: -moz-linear-gradient(top, #CADEFA, #90A6C6);   /* Firefox 3.6+ */
+	background-image: -ms-linear-gradient(top, #CADEFA, #90A6C6); /* IE 10+ */
+	background-image: -o-linear-gradient(top, #CADEFA, #90A6C6); /* Opera 11.10+ */
+	color: labelColor;
+	height: auto;
+	overflow: auto;
+}
+
+.cellTableSelectedRowCell {border: selectionBorderWidth solid #628cd5;}
+.cellTableKeyboardSelectedCell {border: selectionBorderWidth solid #d7dde8;} /** The keyboard selected cell is visible over selection. */
+.cellTableLoading {margin: 350px 900px 350px 30px;}
+/* @sprite .cellTableLoading { */
+/* 	gwt-image: 'cellTableLoading'; */
+/* 	margin: 30px; */
+/* } */

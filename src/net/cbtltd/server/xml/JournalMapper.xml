@@ -1,0 +1,358 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="net.cbtltd.server.api.JournalMapper">
+
+	<resultMap id="ResultMap" type="Journal">
+		<id column="journal.ID" jdbcType="INTEGER" property="id" />
+		<result column="journal.EventID" jdbcType="INTEGER" property="eventid" />
+		<result column="journal.MatchID" jdbcType="INTEGER" property="matchid" />
+		<result column="journal.AccountID" jdbcType="INTEGER" property="accountid" />
+		<result column="journal.OrganizationID" jdbcType="INTEGER" property="organizationid" />
+		<result column="journal.LocationID" jdbcType="INTEGER" property="locationid" />
+		<result column="journal.EntityType" jdbcType="VARCHAR" property="entitytype" />
+		<result column="journal.EntityID" jdbcType="INTEGER" property="entityid" />
+		<result column="journal.Quantity" jdbcType="DOUBLE" property="quantity" />
+		<result column="journal.Unit" jdbcType="VARCHAR" property="unit" />
+		<result column="journal.Unitprice" jdbcType="DECIMAL" property="unitprice" />
+		<result column="journal.Currency" jdbcType="VARCHAR" property="currency" />
+		<result column="journal.Creditamount" jdbcType="DECIMAL" property="creditamount" />
+		<result column="journal.Debitamount" jdbcType="DECIMAL" property="debitamount" />
+		<result column="journal.Description" jdbcType="VARCHAR" property="description" />
+	</resultMap>
+
+	<sql id="columns">
+		journal.ID, journal.EventID, journal.MatchID, journal.AccountID, journal.OrganizationID, 
+		journal.LocationID, journal.EntityType, journal.EntityID, journal.Quantity, journal.Unit, 
+		journal.Unitprice, journal.Currency, journal.Creditamount, journal.Debitamount, journal.Description
+	</sql>
+
+<!--	<select id="read" parameterType="String" resultMap="ResultMap">-->
+<!--		select-->
+<!--		<include refid="columns" />-->
+<!--		from journal-->
+<!--		where ID = #{id,jdbcType=INTEGER}-->
+<!--	</select>-->
+
+	<select id="read" parameterType="String" resultType="Journal">
+		select distinct 
+		organization.Name as organizationname,
+		account.Name as accountname,
+		(CASE
+			WHEN EntityType = 'Asset' THEN asset.Name
+			WHEN EntityType = 'Finance' THEN finance.Name
+			WHEN EntityType = 'Party' THEN party.Name
+			WHEN EntityType = 'Product' THEN product.Name
+		END) AS entityname,
+		<include refid="columns" />
+		from journal
+		join party as organization on organization.ID = journal.OrganizationID
+		join account on account.ID = journal.AccountID
+			left join asset on asset.ID = EntityID and Entitytype = 'Asset'
+			left join finance on finance.ID = EntityID and Entitytype = 'Finance'
+			left join party on party.ID = EntityID and Entitytype = 'Party'
+			left join product on product.ID = EntityID and Entitytype = 'Product'
+		where EventID = #{id}
+		order by journal.ID
+	</select>
+	
+<!--	<select id="exists" parameterType="Journal" resultMap="ResultMap">-->
+<!--		select-->
+<!--		<include refid="columns" />-->
+<!--		from journal-->
+<!--		where EventID = #{eventid,jdbcType=INTEGER}-->
+<!--			and AccountID = #{accountid,jdbcType=INTEGER}-->
+<!--			and OrganizationID = #{organizationid,jdbcType=INTEGER}-->
+<!--			and LocationID = #{locationid,jdbcType=INTEGER}-->
+<!--			and EntityType = #{entitytype,jdbcType=VARCHAR}-->
+<!--			and EntityID = #{entityid,jdbcType=INTEGER}-->
+<!--			and Unit = #{unit,jdbcType=VARCHAR}-->
+<!--			and Currency = #{currency,jdbcType=VARCHAR}-->
+<!--	    limit 0, 1-->
+<!--	</select>-->
+
+	<delete id="delete" parameterType="String">
+		delete from journal
+		where ID = #{id,jdbcType=INTEGER}
+	</delete>
+
+	<insert id="create" parameterType="Journal" useGeneratedKeys="true" keyProperty="id">
+		insert into journal (
+			EventID, MatchID, AccountID, OrganizationID, LocationID, EntityType, EntityID, 
+			Quantity, Unit, Unitprice, Currency, Creditamount, Debitamount, Description
+		)
+		values (
+			#{eventid,jdbcType=INTEGER}, #{matchid,jdbcType=INTEGER}, #{accountid,jdbcType=INTEGER},
+			#{organizationid,jdbcType=INTEGER}, #{locationid,jdbcType=INTEGER}, 
+			#{entitytype,jdbcType=VARCHAR}, #{entityid,jdbcType=INTEGER},
+			#{quantity,jdbcType=DOUBLE}, #{unit,jdbcType=VARCHAR}, 
+			#{unitprice,jdbcType=DECIMAL}, #{currency,jdbcType=VARCHAR},
+			#{creditamount,jdbcType=DECIMAL}, #{debitamount,jdbcType=DECIMAL},
+			#{description,jdbcType=VARCHAR}
+		)
+	</insert>
+
+	<update id="update" parameterType="Journal">
+		update journal
+		<set>
+			<if test="eventid != null">
+				EventID = #{eventid,jdbcType=INTEGER},
+			</if>
+			<if test="matchid != null">
+				MatchID = #{matchid,jdbcType=INTEGER},
+			</if>
+			<if test="accountid != null">
+				AccountID = #{accountid,jdbcType=INTEGER},
+			</if>
+			<if test="organizationid != null">
+				OrganizationID = #{organizationid,jdbcType=INTEGER},
+			</if>
+			<if test="locationid != null">
+				LocationID = #{locationid,jdbcType=INTEGER},
+			</if>
+			<if test="entitytype != null">
+				EntityType = #{entitytype,jdbcType=VARCHAR},
+			</if>
+			<if test="entityid != null">
+				EntityID = #{entityid,jdbcType=INTEGER},
+			</if>
+			<if test="quantity != null">
+				Quantity = #{quantity,jdbcType=DOUBLE},
+			</if>
+			<if test="unit != null">
+				Unit = #{unit,jdbcType=VARCHAR},
+			</if>
+			<if test="unitprice != null">
+				Unitprice = #{unitprice,jdbcType=DOUBLE},
+			</if>
+			<if test="currency != null">
+				Currency = #{currency,jdbcType=VARCHAR},
+			</if>
+			<if test="creditamount != null">
+				Creditamount = #{creditamount,jdbcType=DECIMAL},
+			</if>
+			<if test="debitamount != null">
+				Debitamount = #{debitamount,jdbcType=DECIMAL},
+			</if>
+			<if test="description != null">
+				Description = #{description,jdbcType=VARCHAR},
+			</if>
+		</set>
+		where ID = #{id,jdbcType=INTEGER}
+	</update>
+
+	<update id="updateByPrimaryKey" parameterType="Journal">
+		update journal
+		set 
+			EventID = #{eventid,jdbcType=INTEGER},
+			MatchID = #{matchid,jdbcType=INTEGER},
+			AccountID = #{accountid,jdbcType=INTEGER},
+			OrganizationID = #{organizationid,jdbcType=INTEGER},
+			LocationID = #{locationid,jdbcType=INTEGER},
+			EntityType = #{entitytype,jdbcType=VARCHAR},
+			EntityID = #{entityid,jdbcType=INTEGER},
+			Quantity = #{quantity,jdbcType=DOUBLE},
+			Unit = #{unit,jdbcType=VARCHAR},
+			Unitprice = #{unitprice,jdbcType=DOUBLE},
+			Currency = #{currency,jdbcType=VARCHAR},
+			Creditamount = #{creditamount,jdbcType=DECIMAL},
+			Debitamount = #{debitamount,jdbcType=DECIMAL},
+			Description = #{description,jdbcType=VARCHAR}
+		where ID = #{id,jdbcType=INTEGER}
+	</update>
+
+	<select id="currencynameid" parameterType="NameIdAction" resultType="NameId">
+		select distinct currency.Name as name, currency.ID as id 
+		from journal join currency on currency.ID = journal.Currency
+		where journal.OrganizationID = #{organizationid}
+	    order by currency.Name
+	</select>
+  
+	<select id="entitytypenameid" parameterType="NameIdAction" resultType="NameId">
+		select distinct Entitytype as name, Entitytype as id 
+		from journal
+		where OrganizationID = #{organizationid}
+	    order by Type
+	</select>
+	
+	<select id="eventtypenameid" parameterType="NameIdAction" resultType="NameId">
+		select distinct Type as name, Type as id 
+		from journal
+		where OrganizationID = #{organizationid}
+	    order by Type
+	</select>
+	
+	<select id="locationnameid" parameterType="NameIdAction" resultType="NameId">
+		select distinct location.Name as name, location.ID as id 
+		from journal join location on location.ID = journal.LocationID
+		where journal.OrganizationID = #{organizationid}
+	    order by location.Name
+	</select>
+  
+	<select id="statenameid" parameterType="NameIdAction" resultType="NameId">
+		select distinct State as name, State as id from event
+	</select>
+  
+	<select id="typenameid" parameterType="NameIdAction" resultType="NameId">
+		select distinct Type as name, Type as id from account
+	</select>
+  
+	<select id="unitnameid" parameterType="NameIdAction" resultType="NameId">
+		select distinct unit.Name as name, unit.ID as id 
+		from journal join unit on unit.ID = journal.Unit
+		where journal.OrganizationID = #{organizationid}
+	    order by unit.Name
+	</select>
+	
+	<select id="licensebalance" parameterType="NameId" resultType="Balance">
+		select 
+			sum(CreditAmount - DebitAmount) as balance,
+			party.Currency as currency
+		from journal
+			join event on event.ID = journal.EventID
+			join party ON party.ID = journal.OrganizationID
+		where EntityType = 'Party'
+			and EntityID = #{name}
+			and journal.OrganizationID = #{id}
+			and journal.Currency = 'USD'
+			and event.State <![CDATA[ <> ]]> 'Final'
+		group by journal.OrganizationID HAVING balance <![CDATA[ > ]]> 1.0
+	</select>
+	
+	<select id="licensebalances" parameterType="String" resultType="Balance">
+		select 
+			sum(CreditAmount - DebitAmount) as balance,
+			party.id as partyid,
+			party.emailaddress AS emailaddress, 
+			party.Currency as currency
+		from journal
+			join event on event.ID = journal.EventID
+			join party ON party.ID = journal.OrganizationID
+		where EntityType = 'Party'
+			and EntityID = #{licensorid}
+			and party.id not in (select id from party where EmailAddress like '%openbook%') <!-- Skip Openbook accounts -->
+			and party.id not in (select id from party where EmailAddress in ('nextpaxapi@vacasol.dk', 'api@bungalow.net', 'nextpaxapi@tui-ferienhaus.de', 'nextpaxapi@dancenter.com', 'nextpaxapi@roompot.nl',
+			'api@belvilla.com', 'api@nextpax.com'))
+			and party.id not in ('90640', '206544', '11274', '139219', '147768', '150269', '159113', '186873', '189386', '189958', '190379', '191944', '290192', '294110', '294338', '296095', '296147', '302874', '303914', '307047', '310312', '314370',
+			 '314372', '314381', '314534', '314545', '314547', '315850', '314370', '325061', '210254', '325369', '321479', '231057', '317832', '314757', '210270', '324833',
+			 '324431', '102017', '254061', '324539', '325252', '205124', '231048', '191908', '231049', '231050', '231051', '231053', '318396'
+			 )
+			and journal.Currency = 'USD'
+			and event.State = 'Created'
+			and party.skip_license <![CDATA[ <> ]]> 1
+		group by journal.OrganizationID HAVING balance <![CDATA[ > ]]> 1.0
+	</select>
+
+	<select id="commission" parameterType="Date" resultType="Journal">
+		select distinct 
+			reservation.ActorID,
+			reservation.OrganizationID as organizationid,
+			'Product' as entitytype,
+			33 as entityid,
+			11 as accountid, 
+			1.0 as quantity,
+			cost * 0.02 as unitprice,
+			cost * 0.02 as debitamount,
+			0 as tax,
+			concat('Reservation ', reservation.Name, ' on ', date(reservation.Date)) as description,
+			'EA' as unit, 
+			reservation.Currency
+		from event
+			join reservation 
+				on reservation.OrganizationID = event.OrganizationID 
+				and	reservation.ID = event.ParentID
+		where reservation.State not in ('Initial', 'Closed', 'Cancelled', 'Final')
+			and reservation.Cost <![CDATA[ > ]]> 0
+			and (month(reservation.Date) = month(adddate(#{date}, -31)))
+			and (year(reservation.Date) = year(adddate(#{date}, -31)))
+			and exists (
+				select * from event
+					left join party 
+						on party.ID = event.ActorID
+					where event.ParentID = reservation.ID
+						and event.Type = 'Logging'
+      					and event.Activity = 'Reservation'
+      					and event.Process = 'StateChange'
+						and event.State not in ('Cancelled')
+ 						and (
+							event.ActorID = 2
+						or 
+							party.EmployerID <![CDATA[ <> ]]> reservation.OrganizationID
+						)
+			)
+		order by reservation.OrganizationID, reservation.Name, reservation.Date
+	</select>
+
+	<select id="firstlicensedate" parameterType="String" resultType="Date">
+		select 
+			date_add(min(event.Date), interval 27 day) 
+		from journal
+			join event 
+				on event.ID = journal.EventID
+				and Currency = 'USD'
+				and EntityType = 'Party'
+				and EntityID = 4
+				and journal.OrganizationID = #{organizationid}
+		group by journal.OrganizationID
+	</select>
+
+	<!-- TODO: refactor to enable flexible license configuration -->
+	<select id="license" parameterType="Date" resultType="Journal">
+		select distinct 
+			SupplierID as organizationid,
+			'Product' as entitytype,
+			product.ID as entityid, 
+			11 as accountid, 
+			product.quantity, 
+			5 as unitprice,
+			product.quantity * 5 as debitamount,
+			0 as tax,
+			product.Name as description,
+			'MON' as unit,
+			'USD' as currency
+		from product
+			join relation 
+				on relation.HeadId = SupplierID 
+				and relation.Link = 'Organization Product'
+				and relation.LineID = ID
+			join party on product.SupplierID = party.id 
+		where product.State = 'Created'
+		and product.type = 'Accommodation'
+			and SupplierID is not null			
+			and SupplierID not in (select id from party where EmailAddress like '%openbook%')
+			and SupplierID not in (select id from party where EmailAddress in ('nextpaxapi@vacasol.dk', 'api@bungalow.net', 'nextpaxapi@tui-ferienhaus.de', 'nextpaxapi@dancenter.com', 'nextpaxapi@roompot.nl',
+			'api@belvilla.com', 'api@nextpax.com'))
+			and SupplierID not in ('90640', '206544', '11274', '139219', '147768', '150269', '159113', '186873', '189386', '189958', '190379', '191944', '290192', '294110', '294338', '296095', '296147', '302874', '303914', '307047', '310312', '314370',
+			 '314372', '314381', '314534', '314545', '314547', '315850', '314370', '325061', '210254', '325369', '321479', '231057', '317832', '314757', '210270', '324833',
+			 '324431', '102017', '254061', '324539', '325252', '205124', '231048', '191908', '231049', '231050', '231051', '231053', '318396'
+			 )
+			 and party.skip_license <![CDATA[ <> ]]> 1
+		order by SupplierID, Description
+	</select>
+
+	<select id="agentcommision" parameterType="Date" resultType="Journal">
+		select distinct
+			reservation.AgentID,
+			party.EmployerID,
+			party.Name,
+			sum(cost * 0.02) as amount,
+			reservation.Currency
+		from event
+			join reservation
+				on reservation.OrganizationID = event.OrganizationID
+				and reservation.Name = event.Name
+			left join party
+				on party.ID = reservation.AgentID
+		where type = 'Logging'
+			and event.state = 'Provisional'
+			and reservation.State not in ('Initial','Closed','Cancelled','Final')
+			and reservation.Cost <![CDATA[ > ]]> 0
+			and (event.Date <![CDATA[ >= ]]> adddate(#{date}, -93))
+			and reservation.AgentID <![CDATA[ <> ]]> reservation.OrganizationID
+			and (
+				event.ActorID = 2
+				or party.EmployerID <![CDATA[ <> ]]> reservation.OrganizationID
+			)
+		group by reservation.AgentID
+	</select>
+	
+</mapper>	

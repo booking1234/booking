@@ -1,0 +1,594 @@
+<?xml version="1.0" encoding="utf-8"?>
+<wsdl:definitions xmlns:soap="http://schemas.xmlsoap.org/wsdl/soap/" xmlns:tns="http://realtimerental.com/webservice" xmlns:s="http://www.w3.org/2001/XMLSchema" xmlns:soap12="http://schemas.xmlsoap.org/wsdl/soap12/" targetNamespace="http://realtimerental.com/webservice" xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/">
+  <wsdl:types>
+    <s:schema elementFormDefault="qualified" targetNamespace="http://realtimerental.com/webservice">
+      <s:element name="RTRPropertyCatalog">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="RTRKey" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="RTRPropertyCatalogResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="RTRPropertyCatalogResult" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="RTRCustomPropertyCatalog">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="RTRKey" type="s:string" />
+            <s:element minOccurs="1" maxOccurs="1" name="options" type="s:int" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="RTRCustomPropertyCatalogResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="RTRCustomPropertyCatalogResult" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="RTRLoadPropertyCatalog">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="RTRKey" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="RTRProperties" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="RTRLoadPropertyCatalogResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="RTRLoadPropertyCatalogResult" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="RTRPropertyInformation">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="RTRKey" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="RTRPropertyInfoRequest" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="RTRPropertyInformationResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="RTRPropertyInformationResult" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="RTRPropertyAvailability">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="RTRKey" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="RTRBookingRequest" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="RTRPropertyAvailabilityResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="RTRPropertyAvailabilityResult" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="RTRBookingRequest">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="RTRKey" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="RTRBookingRequest" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="RTRBookingRequestResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="RTRBookingRequestResult" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="RTRCancelBooking">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="RTRKey" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="RTRCancelRequest" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="RTRCancelBookingResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="RTRCancelBookingResult" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="RTRHoldRequest">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="RTRKey" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="RTRBookingRequest" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="RTRHoldRequestResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="RTRHoldRequestResult" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="RTRCancelHold">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="RTRKey" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="RTRCancelRequest" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="RTRCancelHoldResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="RTRCancelHoldResult" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="RTRHoldToReservation">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="RTRKey" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="RTRBookingRequest" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="RTRHoldToReservationResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="RTRHoldToReservationResult" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="RTRCustomDistributionCatalog">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="RTRKey" type="s:string" />
+            <s:element minOccurs="1" maxOccurs="1" name="options" type="s:int" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="RTRCustomDistributionCatalogResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="RTRCustomDistributionCatalogResult" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="RTRRentalHistory">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="RTRKey" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="startDate" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="endDate" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="RTRRentalHistoryResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="RTRRentalHistoryResult" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="HelloWorld">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="RTRKey" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="HelloWorldResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="HelloWorldResult" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+    </s:schema>
+  </wsdl:types>
+  <wsdl:message name="RTRPropertyCatalogSoapIn">
+    <wsdl:part name="parameters" element="tns:RTRPropertyCatalog" />
+  </wsdl:message>
+  <wsdl:message name="RTRPropertyCatalogSoapOut">
+    <wsdl:part name="parameters" element="tns:RTRPropertyCatalogResponse" />
+  </wsdl:message>
+  <wsdl:message name="RTRCustomPropertyCatalogSoapIn">
+    <wsdl:part name="parameters" element="tns:RTRCustomPropertyCatalog" />
+  </wsdl:message>
+  <wsdl:message name="RTRCustomPropertyCatalogSoapOut">
+    <wsdl:part name="parameters" element="tns:RTRCustomPropertyCatalogResponse" />
+  </wsdl:message>
+  <wsdl:message name="RTRLoadPropertyCatalogSoapIn">
+    <wsdl:part name="parameters" element="tns:RTRLoadPropertyCatalog" />
+  </wsdl:message>
+  <wsdl:message name="RTRLoadPropertyCatalogSoapOut">
+    <wsdl:part name="parameters" element="tns:RTRLoadPropertyCatalogResponse" />
+  </wsdl:message>
+  <wsdl:message name="RTRPropertyInformationSoapIn">
+    <wsdl:part name="parameters" element="tns:RTRPropertyInformation" />
+  </wsdl:message>
+  <wsdl:message name="RTRPropertyInformationSoapOut">
+    <wsdl:part name="parameters" element="tns:RTRPropertyInformationResponse" />
+  </wsdl:message>
+  <wsdl:message name="RTRPropertyAvailabilitySoapIn">
+    <wsdl:part name="parameters" element="tns:RTRPropertyAvailability" />
+  </wsdl:message>
+  <wsdl:message name="RTRPropertyAvailabilitySoapOut">
+    <wsdl:part name="parameters" element="tns:RTRPropertyAvailabilityResponse" />
+  </wsdl:message>
+  <wsdl:message name="RTRBookingRequestSoapIn">
+    <wsdl:part name="parameters" element="tns:RTRBookingRequest" />
+  </wsdl:message>
+  <wsdl:message name="RTRBookingRequestSoapOut">
+    <wsdl:part name="parameters" element="tns:RTRBookingRequestResponse" />
+  </wsdl:message>
+  <wsdl:message name="RTRCancelBookingSoapIn">
+    <wsdl:part name="parameters" element="tns:RTRCancelBooking" />
+  </wsdl:message>
+  <wsdl:message name="RTRCancelBookingSoapOut">
+    <wsdl:part name="parameters" element="tns:RTRCancelBookingResponse" />
+  </wsdl:message>
+  <wsdl:message name="RTRHoldRequestSoapIn">
+    <wsdl:part name="parameters" element="tns:RTRHoldRequest" />
+  </wsdl:message>
+  <wsdl:message name="RTRHoldRequestSoapOut">
+    <wsdl:part name="parameters" element="tns:RTRHoldRequestResponse" />
+  </wsdl:message>
+  <wsdl:message name="RTRCancelHoldSoapIn">
+    <wsdl:part name="parameters" element="tns:RTRCancelHold" />
+  </wsdl:message>
+  <wsdl:message name="RTRCancelHoldSoapOut">
+    <wsdl:part name="parameters" element="tns:RTRCancelHoldResponse" />
+  </wsdl:message>
+  <wsdl:message name="RTRHoldToReservationSoapIn">
+    <wsdl:part name="parameters" element="tns:RTRHoldToReservation" />
+  </wsdl:message>
+  <wsdl:message name="RTRHoldToReservationSoapOut">
+    <wsdl:part name="parameters" element="tns:RTRHoldToReservationResponse" />
+  </wsdl:message>
+  <wsdl:message name="RTRCustomDistributionCatalogSoapIn">
+    <wsdl:part name="parameters" element="tns:RTRCustomDistributionCatalog" />
+  </wsdl:message>
+  <wsdl:message name="RTRCustomDistributionCatalogSoapOut">
+    <wsdl:part name="parameters" element="tns:RTRCustomDistributionCatalogResponse" />
+  </wsdl:message>
+  <wsdl:message name="RTRRentalHistorySoapIn">
+    <wsdl:part name="parameters" element="tns:RTRRentalHistory" />
+  </wsdl:message>
+  <wsdl:message name="RTRRentalHistorySoapOut">
+    <wsdl:part name="parameters" element="tns:RTRRentalHistoryResponse" />
+  </wsdl:message>
+  <wsdl:message name="HelloWorldSoapIn">
+    <wsdl:part name="parameters" element="tns:HelloWorld" />
+  </wsdl:message>
+  <wsdl:message name="HelloWorldSoapOut">
+    <wsdl:part name="parameters" element="tns:HelloWorldResponse" />
+  </wsdl:message>
+  <wsdl:portType name="RTRWSAPISoap">
+    <wsdl:operation name="RTRPropertyCatalog">
+      <wsdl:documentation xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/">Brokers Only Access. Returns the property information of all properties assigned to a broker.</wsdl:documentation>
+      <wsdl:input message="tns:RTRPropertyCatalogSoapIn" />
+      <wsdl:output message="tns:RTRPropertyCatalogSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="RTRCustomPropertyCatalog">
+      <wsdl:documentation xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/">Brokers Only Access. Broker access to the property data.</wsdl:documentation>
+      <wsdl:input message="tns:RTRCustomPropertyCatalogSoapIn" />
+      <wsdl:output message="tns:RTRCustomPropertyCatalogSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="RTRLoadPropertyCatalog">
+      <wsdl:documentation xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/">Load or update propery information</wsdl:documentation>
+      <wsdl:input message="tns:RTRLoadPropertyCatalogSoapIn" />
+      <wsdl:output message="tns:RTRLoadPropertyCatalogSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="RTRPropertyInformation">
+      <wsdl:documentation xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/">Returns the property information for the properties requested.  Options include property details, broker information and availability information.</wsdl:documentation>
+      <wsdl:input message="tns:RTRPropertyInformationSoapIn" />
+      <wsdl:output message="tns:RTRPropertyInformationSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="RTRPropertyAvailability">
+      <wsdl:documentation xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/">Returns an available/unavailable status of a property.  Example:&amp;lt;RTRBookingRequest&amp;gt;&amp;lt;BookingRequest PropertyReferenceID='12121212121212' CheckInDate='2012-09-27' CheckOutDate='2012-09-29'/&amp;gt;&amp;lt;RTRBookingRequest&amp;gt;</wsdl:documentation>
+      <wsdl:input message="tns:RTRPropertyAvailabilitySoapIn" />
+      <wsdl:output message="tns:RTRPropertyAvailabilitySoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="RTRBookingRequest">
+      <wsdl:documentation xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/">Request a property be reserved</wsdl:documentation>
+      <wsdl:input message="tns:RTRBookingRequestSoapIn" />
+      <wsdl:output message="tns:RTRBookingRequestSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="RTRCancelBooking">
+      <wsdl:documentation xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/">Request that a property reservation be cancelled.</wsdl:documentation>
+      <wsdl:input message="tns:RTRCancelBookingSoapIn" />
+      <wsdl:output message="tns:RTRCancelBookingSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="RTRHoldRequest">
+      <wsdl:documentation xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/">Request that a property be held for 24 hours</wsdl:documentation>
+      <wsdl:input message="tns:RTRHoldRequestSoapIn" />
+      <wsdl:output message="tns:RTRHoldRequestSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="RTRCancelHold">
+      <wsdl:documentation xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/">Request that a property hold be canceled.  The property will become available.</wsdl:documentation>
+      <wsdl:input message="tns:RTRCancelHoldSoapIn" />
+      <wsdl:output message="tns:RTRCancelHoldSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="RTRHoldToReservation">
+      <wsdl:documentation xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/">Change the status of a property hold to a property reservation.  This must be done within 24 hours of the RTRHoldRequest unless the option to reserve if still available is selected.</wsdl:documentation>
+      <wsdl:input message="tns:RTRHoldToReservationSoapIn" />
+      <wsdl:output message="tns:RTRHoldToReservationSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="RTRCustomDistributionCatalog">
+      <wsdl:documentation xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/">Download a customized Distribution Catalog with data selected</wsdl:documentation>
+      <wsdl:input message="tns:RTRCustomDistributionCatalogSoapIn" />
+      <wsdl:output message="tns:RTRCustomDistributionCatalogSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="RTRRentalHistory">
+      <wsdl:documentation xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/">Download the rental history for a specific time period</wsdl:documentation>
+      <wsdl:input message="tns:RTRRentalHistorySoapIn" />
+      <wsdl:output message="tns:RTRRentalHistorySoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="HelloWorld">
+      <wsdl:documentation xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/">Test Message to verify access request &amp; response</wsdl:documentation>
+      <wsdl:input message="tns:HelloWorldSoapIn" />
+      <wsdl:output message="tns:HelloWorldSoapOut" />
+    </wsdl:operation>
+  </wsdl:portType>
+  <wsdl:binding name="RTRWSAPISoap" type="tns:RTRWSAPISoap">
+    <soap:binding transport="http://schemas.xmlsoap.org/soap/http" />
+    <wsdl:operation name="RTRPropertyCatalog">
+      <soap:operation soapAction="http://realtimerental.com/webservice/RTRPropertyCatalog" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="RTRCustomPropertyCatalog">
+      <soap:operation soapAction="http://realtimerental.com/webservice/RTRCustomPropertyCatalog" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="RTRLoadPropertyCatalog">
+      <soap:operation soapAction="http://realtimerental.com/webservice/RTRLoadPropertyCatalog" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="RTRPropertyInformation">
+      <soap:operation soapAction="http://realtimerental.com/webservice/RTRPropertyInformation" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="RTRPropertyAvailability">
+      <soap:operation soapAction="http://realtimerental.com/webservice/RTRPropertyAvailability" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="RTRBookingRequest">
+      <soap:operation soapAction="http://realtimerental.com/webservice/RTRBookingRequest" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="RTRCancelBooking">
+      <soap:operation soapAction="http://realtimerental.com/webservice/RTRCancelBooking" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="RTRHoldRequest">
+      <soap:operation soapAction="http://realtimerental.com/webservice/RTRHoldRequest" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="RTRCancelHold">
+      <soap:operation soapAction="http://realtimerental.com/webservice/RTRCancelHold" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="RTRHoldToReservation">
+      <soap:operation soapAction="http://realtimerental.com/webservice/RTRHoldToReservation" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="RTRCustomDistributionCatalog">
+      <soap:operation soapAction="http://realtimerental.com/webservice/RTRCustomDistributionCatalog" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="RTRRentalHistory">
+      <soap:operation soapAction="http://realtimerental.com/webservice/RTRRentalHistory" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="HelloWorld">
+      <soap:operation soapAction="http://realtimerental.com/webservice/HelloWorld" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+  </wsdl:binding>
+  <wsdl:binding name="RTRWSAPISoap12" type="tns:RTRWSAPISoap">
+    <soap12:binding transport="http://schemas.xmlsoap.org/soap/http" />
+    <wsdl:operation name="RTRPropertyCatalog">
+      <soap12:operation soapAction="http://realtimerental.com/webservice/RTRPropertyCatalog" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="RTRCustomPropertyCatalog">
+      <soap12:operation soapAction="http://realtimerental.com/webservice/RTRCustomPropertyCatalog" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="RTRLoadPropertyCatalog">
+      <soap12:operation soapAction="http://realtimerental.com/webservice/RTRLoadPropertyCatalog" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="RTRPropertyInformation">
+      <soap12:operation soapAction="http://realtimerental.com/webservice/RTRPropertyInformation" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="RTRPropertyAvailability">
+      <soap12:operation soapAction="http://realtimerental.com/webservice/RTRPropertyAvailability" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="RTRBookingRequest">
+      <soap12:operation soapAction="http://realtimerental.com/webservice/RTRBookingRequest" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="RTRCancelBooking">
+      <soap12:operation soapAction="http://realtimerental.com/webservice/RTRCancelBooking" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="RTRHoldRequest">
+      <soap12:operation soapAction="http://realtimerental.com/webservice/RTRHoldRequest" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="RTRCancelHold">
+      <soap12:operation soapAction="http://realtimerental.com/webservice/RTRCancelHold" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="RTRHoldToReservation">
+      <soap12:operation soapAction="http://realtimerental.com/webservice/RTRHoldToReservation" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="RTRCustomDistributionCatalog">
+      <soap12:operation soapAction="http://realtimerental.com/webservice/RTRCustomDistributionCatalog" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="RTRRentalHistory">
+      <soap12:operation soapAction="http://realtimerental.com/webservice/RTRRentalHistory" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="HelloWorld">
+      <soap12:operation soapAction="http://realtimerental.com/webservice/HelloWorld" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+  </wsdl:binding>
+  <wsdl:service name="RTRWSAPI">
+    <wsdl:port name="RTRWSAPISoap" binding="tns:RTRWSAPISoap">
+      <soap:address location="https://www.realtimerental.com/webservice/RTRWSAPI.asmx" />
+    </wsdl:port>
+    <wsdl:port name="RTRWSAPISoap12" binding="tns:RTRWSAPISoap12">
+      <soap12:address location="https://www.realtimerental.com/webservice/RTRWSAPI.asmx" />
+    </wsdl:port>
+  </wsdl:service>
+</wsdl:definitions>

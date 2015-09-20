@@ -1,0 +1,53 @@
+<?xml version="1.0" encoding="UTF-8" standalone="yes"?>
+<retailerBookingInputValue xmlns="http://www.interhome.com/webservice">
+	<SalesOfficeCode>2052</SalesOfficeCode>
+	<LanguageCode>en</LanguageCode>
+	<CurrencyCode>EUR</CurrencyCode>
+	<AccommodationCode>DE2981.100.1</AccommodationCode>
+	<CheckIn>2013-06-01</CheckIn>
+	<CheckOut>2013-06-08</CheckOut>
+	<Adults>2</Adults>
+	<Babies>0</Babies>
+	<Children>0</Children>
+	<CustomerSalutationType>MrAndMrs</CustomerSalutationType>
+	<CustomerName>Marshall</CustomerName>
+	<CustomerFirstName>Chris</CustomerFirstName>
+	<RetailerCode>CH1000725</RetailerCode>
+	<RetailerContact>Geronimo</RetailerContact>
+	<Comment>Enter notes specific to this reservation here. This could be
+		guest requests internal communications. eg: 'Arrange an airport
+		transfer for Mr Smith, arriving on flight XYZ123 at 8h00'
+	</Comment>
+	<PaymentType>SecuredCreditCard</PaymentType>
+	<CreditCardType>MASTER</CreditCardType>
+	<CreditCardNumber></CreditCardNumber>
+	<CreditCardCvc></CreditCardCvc>
+	<CreditCardExpiry></CreditCardExpiry>
+	<CreditCardHolder></CreditCardHolder>
+</retailerBookingInputValue>
+
+<?xml version="1.0" encoding="UTF-8" standalone="yes"?>
+<retailerBookingInputValue xmlns="http://www.interhome.com/webservice">
+	<SalesOfficeCode>2052</SalesOfficeCode>
+	<LanguageCode>en</LanguageCode>
+	<CurrencyCode>EUR</CurrencyCode>
+	<AccommodationCode>DE2981.100.1</AccommodationCode>
+	<CheckIn>2013-06-01</CheckIn>
+	<CheckOut>2013-06-08</CheckOut>
+	<Adults>2</Adults>
+	<Babies>0</Babies>
+	<Children>0</Children>
+	<CustomerSalutationType>MrAndMrs</CustomerSalutationType>
+	<CustomerName>Marshall</CustomerName>
+	<CustomerFirstName>Chris</CustomerFirstName>
+	<RetailerContact>Geronimo</RetailerContact>
+	<Comment>Enter notes specific to this reservation here. This could be
+		guest requests internal communications. eg: 'Arrange an airport
+		transfer for Mr Smith, arriving on flight XYZ123 at 8h00'</Comment>
+	<PaymentType>SecuredCreditCard</PaymentType>
+	<CreditCardType>MASTER</CreditCardType>
+	<CreditCardNumber></CreditCardNumber>
+	<CreditCardCvc></CreditCardCvc>
+	<CreditCardExpiry></CreditCardExpiry>
+	<CreditCardHolder></CreditCardHolder>
+</retailerBookingInputValue>

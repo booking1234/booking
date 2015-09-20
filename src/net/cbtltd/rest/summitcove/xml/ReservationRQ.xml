@@ -1,0 +1,18 @@
+<Reservation>
+	<PropertyID>452</PropertyID>
+	<ArrivalDate>2013-10-31</ArrivalDate>
+	<DepartureDate>2013-11-01</DepartureDate>
+	<FirstName>Daniel</FirstName>
+	<LastName>Daniel</LastName>
+	<Address>900 13th St.</Address>
+	<City>Golden, CO</City>
+	<State>Unknown</State>
+	<Zip>80403</Zip>
+	<Country>US</Country>
+	<DayPhone>970-368-7023</DayPhone>
+	<EveningPhone />
+	<Email>daniel@summitcove.com</Email>
+	<Adults>2</Adults>
+	<Children>0</Children>
+	<InsuranceOptIn>1</InsuranceOptIn>
+</Reservation>

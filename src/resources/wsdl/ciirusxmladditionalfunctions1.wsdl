@@ -1,0 +1,984 @@
+<?xml version="1.0" encoding="utf-8"?>
+<wsdl:definitions xmlns:s="http://www.w3.org/2001/XMLSchema" xmlns:soap12="http://schemas.xmlsoap.org/wsdl/soap12/" xmlns:mime="http://schemas.xmlsoap.org/wsdl/mime/" xmlns:tns="http://xml.ciirus.com/" xmlns:soap="http://schemas.xmlsoap.org/wsdl/soap/" xmlns:tm="http://microsoft.com/wsdl/mime/textMatching/" xmlns:http="http://schemas.xmlsoap.org/wsdl/http/" xmlns:soapenc="http://schemas.xmlsoap.org/soap/encoding/" targetNamespace="http://xml.ciirus.com/" xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/">
+  <wsdl:documentation xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/">Ciirus XML Additional Functions 1</wsdl:documentation>
+  <wsdl:types>
+    <s:schema elementFormDefault="qualified" targetNamespace="http://xml.ciirus.com/">
+      <s:element name="GetExtras">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="APIUserName" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="APIPassword" type="s:string" />
+            <s:element minOccurs="1" maxOccurs="1" name="PropertyID" type="s:int" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="GetExtrasResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="1" maxOccurs="1" name="GetExtrasResult" type="tns:GetExtrasResult" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:complexType name="GetExtrasResult">
+        <s:sequence>
+          <s:element minOccurs="1" maxOccurs="1" name="RowCount" type="s:int" />
+          <s:element minOccurs="0" maxOccurs="1" name="Extras" type="tns:ArrayOfPropertyExtras" />
+        </s:sequence>
+      </s:complexType>
+      <s:complexType name="ArrayOfPropertyExtras">
+        <s:sequence>
+          <s:element minOccurs="0" maxOccurs="unbounded" name="PropertyExtras" type="tns:PropertyExtras" />
+        </s:sequence>
+      </s:complexType>
+      <s:complexType name="PropertyExtras">
+        <s:sequence>
+          <s:element minOccurs="1" maxOccurs="1" name="PropertyID" type="s:int" />
+          <s:element minOccurs="0" maxOccurs="1" name="ItemCode" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="ItemDescription" type="s:string" />
+          <s:element minOccurs="1" maxOccurs="1" name="FlatFee" type="s:boolean" />
+          <s:element minOccurs="1" maxOccurs="1" name="FlatFeeAmount" type="s:decimal" />
+          <s:element minOccurs="1" maxOccurs="1" name="DailyFee" type="s:boolean" />
+          <s:element minOccurs="1" maxOccurs="1" name="DailyFeeAmount" type="s:decimal" />
+          <s:element minOccurs="1" maxOccurs="1" name="PercentageFee" type="s:boolean" />
+          <s:element minOccurs="1" maxOccurs="1" name="Percentage" type="s:decimal" />
+          <s:element minOccurs="1" maxOccurs="1" name="Mandatory" type="s:boolean" />
+          <s:element minOccurs="1" maxOccurs="1" name="MinimumCharge" type="s:decimal" />
+          <s:element minOccurs="1" maxOccurs="1" name="ChargeTax1" type="s:boolean" />
+          <s:element minOccurs="1" maxOccurs="1" name="ChargeTax2" type="s:boolean" />
+          <s:element minOccurs="1" maxOccurs="1" name="ChargeTax3" type="s:boolean" />
+        </s:sequence>
+      </s:complexType>
+      <s:element name="GetTaxRates">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="APIUserName" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="APIPassword" type="s:string" />
+            <s:element minOccurs="1" maxOccurs="1" name="PropertyID" type="s:int" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="GetTaxRatesResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="1" maxOccurs="1" name="GetTaxRatesResult" type="tns:TaxRates" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:complexType name="TaxRates">
+        <s:sequence>
+          <s:element minOccurs="0" maxOccurs="1" name="Tax1Name" type="s:string" />
+          <s:element minOccurs="1" maxOccurs="1" name="Tax1Percent" type="s:decimal" />
+          <s:element minOccurs="0" maxOccurs="1" name="Tax2Name" type="s:string" />
+          <s:element minOccurs="1" maxOccurs="1" name="Tax2Percent" type="s:decimal" />
+          <s:element minOccurs="0" maxOccurs="1" name="Tax3Name" type="s:string" />
+          <s:element minOccurs="1" maxOccurs="1" name="Tax3Percent" type="s:decimal" />
+        </s:sequence>
+      </s:complexType>
+      <s:element name="GetPoolHeatSettings">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="APIUserName" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="APIPassword" type="s:string" />
+            <s:element minOccurs="1" maxOccurs="1" name="PropertyID" type="s:int" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="GetPoolHeatSettingsResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="1" maxOccurs="1" name="GetPoolHeatSettingsResult" type="tns:PoolHeatSettings" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:complexType name="PoolHeatSettings">
+        <s:sequence>
+          <s:element minOccurs="1" maxOccurs="1" name="HasPrivatePool" type="s:boolean" />
+          <s:element minOccurs="1" maxOccurs="1" name="PoolHeatable" type="s:boolean" />
+          <s:element minOccurs="1" maxOccurs="1" name="PoolHeatIncludedInPrice" type="s:boolean" />
+          <s:element minOccurs="1" maxOccurs="1" name="DailyCharge" type="s:decimal" />
+          <s:element minOccurs="1" maxOccurs="1" name="MinimumNumberOfDaysToCharge" type="s:int" />
+        </s:sequence>
+      </s:complexType>
+      <s:element name="GetCleaningFee">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="APIUserName" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="APIPassword" type="s:string" />
+            <s:element minOccurs="1" maxOccurs="1" name="PropertyID" type="s:int" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="GetCleaningFeeResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="1" maxOccurs="1" name="GetCleaningFeeResult" type="tns:CleaningFeeSettings" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:complexType name="CleaningFeeSettings">
+        <s:sequence>
+          <s:element minOccurs="1" maxOccurs="1" name="ChargeCleaningFee" type="s:boolean" />
+          <s:element minOccurs="1" maxOccurs="1" name="CleaningFeeAmount" type="s:decimal" />
+          <s:element minOccurs="1" maxOccurs="1" name="OnlyChargeCleaningFeeWhenLessThanDays" type="s:int" />
+        </s:sequence>
+      </s:complexType>
+      <s:element name="GetDescriptions">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="APIUserName" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="APIPassword" type="s:string" />
+            <s:element minOccurs="1" maxOccurs="1" name="PropertyID" type="s:int" />
+            <s:element minOccurs="1" maxOccurs="1" name="GetPlainText" type="s:boolean" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="GetDescriptionsResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="GetDescriptionsResult" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="CancelBooking">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="APIUsername" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="APIPassword" type="s:string" />
+            <s:element minOccurs="1" maxOccurs="1" name="BookingID" type="s:int" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="CancelBookingResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="CancelBookingResult" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="GetAllReservations">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="APIUsername" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="APIPassword" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="GetAllReservationsResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="GetAllReservationsResult" type="tns:ArrayOfReservation" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:complexType name="ArrayOfReservation">
+        <s:sequence>
+          <s:element minOccurs="0" maxOccurs="unbounded" name="Reservation" type="tns:Reservation" />
+        </s:sequence>
+      </s:complexType>
+      <s:complexType name="Reservation">
+        <s:sequence>
+          <s:element minOccurs="1" maxOccurs="1" name="PropertyID" type="s:int" />
+          <s:element minOccurs="1" maxOccurs="1" name="BookingID" type="s:int" />
+          <s:element minOccurs="1" maxOccurs="1" name="ArrivalDate" type="s:dateTime" />
+          <s:element minOccurs="1" maxOccurs="1" name="DepartureDate" type="s:dateTime" />
+        </s:sequence>
+      </s:complexType>
+      <s:element name="AddGuests">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="APIUsername" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="APIPassword" type="s:string" />
+            <s:element minOccurs="1" maxOccurs="1" name="BookingID" type="s:int" />
+            <s:element minOccurs="0" maxOccurs="1" name="Guests" type="tns:ArrayOfGuest" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:complexType name="ArrayOfGuest">
+        <s:sequence>
+          <s:element minOccurs="0" maxOccurs="unbounded" name="Guest" type="tns:Guest" />
+        </s:sequence>
+      </s:complexType>
+      <s:complexType name="Guest">
+        <s:sequence>
+          <s:element minOccurs="0" maxOccurs="1" name="Name" type="s:string" />
+          <s:element minOccurs="1" maxOccurs="1" name="Age" type="s:int" />
+        </s:sequence>
+      </s:complexType>
+      <s:element name="AddGuestsResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="AddGuestsResult" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="AddGuestPayment">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="APIUsername" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="APIPassword" type="s:string" />
+            <s:element minOccurs="1" maxOccurs="1" name="BookingID" type="s:int" />
+            <s:element minOccurs="0" maxOccurs="1" name="PaymentDate" type="s:string" />
+            <s:element minOccurs="1" maxOccurs="1" name="PaymentAmount" type="s:decimal" />
+            <s:element minOccurs="0" maxOccurs="1" name="Description" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="AddGuestPaymentResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="AddGuestPaymentResult" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="AddBooking">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="APIUsername" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="APIPassword" type="s:string" />
+            <s:element minOccurs="1" maxOccurs="1" name="BookingParameters" type="tns:AddBookingParameters" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:complexType name="AddBookingParameters">
+        <s:sequence>
+          <s:element minOccurs="1" maxOccurs="1" name="PropertyID" type="s:int" />
+          <s:element minOccurs="0" maxOccurs="1" name="FirstName" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="LastName" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="EmailAddress" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="Address" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="Telephone" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="ArrivalDate" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="DepartureDate" type="s:string" />
+          <s:element minOccurs="1" maxOccurs="1" name="AddAsTentative" type="s:boolean" />
+          <s:element minOccurs="0" maxOccurs="1" name="TentativeExpiryDate" type="s:string" />
+          <s:element minOccurs="1" maxOccurs="1" name="PoolHeat" type="s:boolean" />
+          <s:element minOccurs="1" maxOccurs="1" name="BaseRentalAmountToMCExTax" type="s:decimal" />
+          <s:element minOccurs="1" maxOccurs="1" name="BaseRentalAmountToAgentExTax" type="s:decimal" />
+          <s:element minOccurs="1" maxOccurs="1" name="BasePoolHeatAmountExTax" type="s:decimal" />
+          <s:element minOccurs="1" maxOccurs="1" name="BaseBookingFeeAmountExTax" type="s:decimal" />
+          <s:element minOccurs="1" maxOccurs="1" name="BaseCleaningFeeAmountExTax" type="s:decimal" />
+          <s:element minOccurs="1" maxOccurs="1" name="Tax1Percent" type="s:decimal" />
+          <s:element minOccurs="1" maxOccurs="1" name="Tax2Percent" type="s:decimal" />
+          <s:element minOccurs="1" maxOccurs="1" name="Tax3Percent" type="s:decimal" />
+          <s:element minOccurs="1" maxOccurs="1" name="ChargeTax1OnRental" type="s:boolean" />
+          <s:element minOccurs="1" maxOccurs="1" name="ChargeTax2OnRental" type="s:boolean" />
+          <s:element minOccurs="1" maxOccurs="1" name="ChargeTax3OnRental" type="s:boolean" />
+          <s:element minOccurs="1" maxOccurs="1" name="ChargeTax1OnPoolHeat" type="s:boolean" />
+          <s:element minOccurs="1" maxOccurs="1" name="ChargeTax2OnPoolHeat" type="s:boolean" />
+          <s:element minOccurs="1" maxOccurs="1" name="ChargeTax3OnPoolHeat" type="s:boolean" />
+          <s:element minOccurs="1" maxOccurs="1" name="ChargeTax1OnBookingFee" type="s:boolean" />
+          <s:element minOccurs="1" maxOccurs="1" name="ChargeTax2OnBookingFee" type="s:boolean" />
+          <s:element minOccurs="1" maxOccurs="1" name="ChargeTax3OnBookingFee" type="s:boolean" />
+          <s:element minOccurs="1" maxOccurs="1" name="ChargeTax1OnCleaningFee" type="s:boolean" />
+          <s:element minOccurs="1" maxOccurs="1" name="ChargeTax2OnCleaningFee" type="s:boolean" />
+          <s:element minOccurs="1" maxOccurs="1" name="ChargeTax3OnCleaningFee" type="s:boolean" />
+          <s:element minOccurs="1" maxOccurs="1" name="TaxExemptBooking" type="s:boolean" />
+          <s:element minOccurs="0" maxOccurs="1" name="Comments" type="s:string" />
+          <s:element minOccurs="1" maxOccurs="1" name="PaymentTakenBy" type="tns:ePaymentTakenBy" />
+        </s:sequence>
+      </s:complexType>
+      <s:simpleType name="ePaymentTakenBy">
+        <s:restriction base="s:string">
+          <s:enumeration value="MC" />
+          <s:enumeration value="Agent" />
+        </s:restriction>
+      </s:simpleType>
+      <s:element name="AddBookingResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="1" maxOccurs="1" name="AddBookingResult" type="tns:sAddBookingResult" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:complexType name="sAddBookingResult">
+        <s:sequence>
+          <s:element minOccurs="1" maxOccurs="1" name="BookingID" type="s:int" />
+          <s:element minOccurs="0" maxOccurs="1" name="ErrorMessage" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="dsClashingBookings">
+            <s:complexType>
+              <s:sequence>
+                <s:any />
+              </s:sequence>
+            </s:complexType>
+          </s:element>
+        </s:sequence>
+      </s:complexType>
+      <s:element name="GetExtrasResult" type="tns:GetExtrasResult" />
+      <s:element name="TaxRates" type="tns:TaxRates" />
+      <s:element name="PoolHeatSettings" type="tns:PoolHeatSettings" />
+      <s:element name="CleaningFeeSettings" type="tns:CleaningFeeSettings" />
+      <s:element name="string" nillable="true" type="s:string" />
+      <s:element name="ArrayOfReservation" nillable="true" type="tns:ArrayOfReservation" />
+    </s:schema>
+  </wsdl:types>
+  <wsdl:message name="GetExtrasSoapIn">
+    <wsdl:part name="parameters" element="tns:GetExtras" />
+  </wsdl:message>
+  <wsdl:message name="GetExtrasSoapOut">
+    <wsdl:part name="parameters" element="tns:GetExtrasResponse" />
+  </wsdl:message>
+  <wsdl:message name="GetTaxRatesSoapIn">
+    <wsdl:part name="parameters" element="tns:GetTaxRates" />
+  </wsdl:message>
+  <wsdl:message name="GetTaxRatesSoapOut">
+    <wsdl:part name="parameters" element="tns:GetTaxRatesResponse" />
+  </wsdl:message>
+  <wsdl:message name="GetPoolHeatSettingsSoapIn">
+    <wsdl:part name="parameters" element="tns:GetPoolHeatSettings" />
+  </wsdl:message>
+  <wsdl:message name="GetPoolHeatSettingsSoapOut">
+    <wsdl:part name="parameters" element="tns:GetPoolHeatSettingsResponse" />
+  </wsdl:message>
+  <wsdl:message name="GetCleaningFeeSoapIn">
+    <wsdl:part name="parameters" element="tns:GetCleaningFee" />
+  </wsdl:message>
+  <wsdl:message name="GetCleaningFeeSoapOut">
+    <wsdl:part name="parameters" element="tns:GetCleaningFeeResponse" />
+  </wsdl:message>
+  <wsdl:message name="GetDescriptionsSoapIn">
+    <wsdl:part name="parameters" element="tns:GetDescriptions" />
+  </wsdl:message>
+  <wsdl:message name="GetDescriptionsSoapOut">
+    <wsdl:part name="parameters" element="tns:GetDescriptionsResponse" />
+  </wsdl:message>
+  <wsdl:message name="CancelBookingSoapIn">
+    <wsdl:part name="parameters" element="tns:CancelBooking" />
+  </wsdl:message>
+  <wsdl:message name="CancelBookingSoapOut">
+    <wsdl:part name="parameters" element="tns:CancelBookingResponse" />
+  </wsdl:message>
+  <wsdl:message name="GetAllReservationsSoapIn">
+    <wsdl:part name="parameters" element="tns:GetAllReservations" />
+  </wsdl:message>
+  <wsdl:message name="GetAllReservationsSoapOut">
+    <wsdl:part name="parameters" element="tns:GetAllReservationsResponse" />
+  </wsdl:message>
+  <wsdl:message name="AddGuestsSoapIn">
+    <wsdl:part name="parameters" element="tns:AddGuests" />
+  </wsdl:message>
+  <wsdl:message name="AddGuestsSoapOut">
+    <wsdl:part name="parameters" element="tns:AddGuestsResponse" />
+  </wsdl:message>
+  <wsdl:message name="AddGuestPaymentSoapIn">
+    <wsdl:part name="parameters" element="tns:AddGuestPayment" />
+  </wsdl:message>
+  <wsdl:message name="AddGuestPaymentSoapOut">
+    <wsdl:part name="parameters" element="tns:AddGuestPaymentResponse" />
+  </wsdl:message>
+  <wsdl:message name="AddBookingSoapIn">
+    <wsdl:part name="parameters" element="tns:AddBooking" />
+  </wsdl:message>
+  <wsdl:message name="AddBookingSoapOut">
+    <wsdl:part name="parameters" element="tns:AddBookingResponse" />
+  </wsdl:message>
+  <wsdl:message name="GetExtrasHttpGetIn">
+    <wsdl:part name="APIUserName" type="s:string" />
+    <wsdl:part name="APIPassword" type="s:string" />
+    <wsdl:part name="PropertyID" type="s:string" />
+  </wsdl:message>
+  <wsdl:message name="GetExtrasHttpGetOut">
+    <wsdl:part name="Body" element="tns:GetExtrasResult" />
+  </wsdl:message>
+  <wsdl:message name="GetTaxRatesHttpGetIn">
+    <wsdl:part name="APIUserName" type="s:string" />
+    <wsdl:part name="APIPassword" type="s:string" />
+    <wsdl:part name="PropertyID" type="s:string" />
+  </wsdl:message>
+  <wsdl:message name="GetTaxRatesHttpGetOut">
+    <wsdl:part name="Body" element="tns:TaxRates" />
+  </wsdl:message>
+  <wsdl:message name="GetPoolHeatSettingsHttpGetIn">
+    <wsdl:part name="APIUserName" type="s:string" />
+    <wsdl:part name="APIPassword" type="s:string" />
+    <wsdl:part name="PropertyID" type="s:string" />
+  </wsdl:message>
+  <wsdl:message name="GetPoolHeatSettingsHttpGetOut">
+    <wsdl:part name="Body" element="tns:PoolHeatSettings" />
+  </wsdl:message>
+  <wsdl:message name="GetCleaningFeeHttpGetIn">
+    <wsdl:part name="APIUserName" type="s:string" />
+    <wsdl:part name="APIPassword" type="s:string" />
+    <wsdl:part name="PropertyID" type="s:string" />
+  </wsdl:message>
+  <wsdl:message name="GetCleaningFeeHttpGetOut">
+    <wsdl:part name="Body" element="tns:CleaningFeeSettings" />
+  </wsdl:message>
+  <wsdl:message name="GetDescriptionsHttpGetIn">
+    <wsdl:part name="APIUserName" type="s:string" />
+    <wsdl:part name="APIPassword" type="s:string" />
+    <wsdl:part name="PropertyID" type="s:string" />
+    <wsdl:part name="GetPlainText" type="s:string" />
+  </wsdl:message>
+  <wsdl:message name="GetDescriptionsHttpGetOut">
+    <wsdl:part name="Body" element="tns:string" />
+  </wsdl:message>
+  <wsdl:message name="CancelBookingHttpGetIn">
+    <wsdl:part name="APIUsername" type="s:string" />
+    <wsdl:part name="APIPassword" type="s:string" />
+    <wsdl:part name="BookingID" type="s:string" />
+  </wsdl:message>
+  <wsdl:message name="CancelBookingHttpGetOut">
+    <wsdl:part name="Body" element="tns:string" />
+  </wsdl:message>
+  <wsdl:message name="GetAllReservationsHttpGetIn">
+    <wsdl:part name="APIUsername" type="s:string" />
+    <wsdl:part name="APIPassword" type="s:string" />
+  </wsdl:message>
+  <wsdl:message name="GetAllReservationsHttpGetOut">
+    <wsdl:part name="Body" element="tns:ArrayOfReservation" />
+  </wsdl:message>
+  <wsdl:message name="AddGuestPaymentHttpGetIn">
+    <wsdl:part name="APIUsername" type="s:string" />
+    <wsdl:part name="APIPassword" type="s:string" />
+    <wsdl:part name="BookingID" type="s:string" />
+    <wsdl:part name="PaymentDate" type="s:string" />
+    <wsdl:part name="PaymentAmount" type="s:string" />
+    <wsdl:part name="Description" type="s:string" />
+  </wsdl:message>
+  <wsdl:message name="AddGuestPaymentHttpGetOut">
+    <wsdl:part name="Body" element="tns:string" />
+  </wsdl:message>
+  <wsdl:message name="GetExtrasHttpPostIn">
+    <wsdl:part name="APIUserName" type="s:string" />
+    <wsdl:part name="APIPassword" type="s:string" />
+    <wsdl:part name="PropertyID" type="s:string" />
+  </wsdl:message>
+  <wsdl:message name="GetExtrasHttpPostOut">
+    <wsdl:part name="Body" element="tns:GetExtrasResult" />
+  </wsdl:message>
+  <wsdl:message name="GetTaxRatesHttpPostIn">
+    <wsdl:part name="APIUserName" type="s:string" />
+    <wsdl:part name="APIPassword" type="s:string" />
+    <wsdl:part name="PropertyID" type="s:string" />
+  </wsdl:message>
+  <wsdl:message name="GetTaxRatesHttpPostOut">
+    <wsdl:part name="Body" element="tns:TaxRates" />
+  </wsdl:message>
+  <wsdl:message name="GetPoolHeatSettingsHttpPostIn">
+    <wsdl:part name="APIUserName" type="s:string" />
+    <wsdl:part name="APIPassword" type="s:string" />
+    <wsdl:part name="PropertyID" type="s:string" />
+  </wsdl:message>
+  <wsdl:message name="GetPoolHeatSettingsHttpPostOut">
+    <wsdl:part name="Body" element="tns:PoolHeatSettings" />
+  </wsdl:message>
+  <wsdl:message name="GetCleaningFeeHttpPostIn">
+    <wsdl:part name="APIUserName" type="s:string" />
+    <wsdl:part name="APIPassword" type="s:string" />
+    <wsdl:part name="PropertyID" type="s:string" />
+  </wsdl:message>
+  <wsdl:message name="GetCleaningFeeHttpPostOut">
+    <wsdl:part name="Body" element="tns:CleaningFeeSettings" />
+  </wsdl:message>
+  <wsdl:message name="GetDescriptionsHttpPostIn">
+    <wsdl:part name="APIUserName" type="s:string" />
+    <wsdl:part name="APIPassword" type="s:string" />
+    <wsdl:part name="PropertyID" type="s:string" />
+    <wsdl:part name="GetPlainText" type="s:string" />
+  </wsdl:message>
+  <wsdl:message name="GetDescriptionsHttpPostOut">
+    <wsdl:part name="Body" element="tns:string" />
+  </wsdl:message>
+  <wsdl:message name="CancelBookingHttpPostIn">
+    <wsdl:part name="APIUsername" type="s:string" />
+    <wsdl:part name="APIPassword" type="s:string" />
+    <wsdl:part name="BookingID" type="s:string" />
+  </wsdl:message>
+  <wsdl:message name="CancelBookingHttpPostOut">
+    <wsdl:part name="Body" element="tns:string" />
+  </wsdl:message>
+  <wsdl:message name="GetAllReservationsHttpPostIn">
+    <wsdl:part name="APIUsername" type="s:string" />
+    <wsdl:part name="APIPassword" type="s:string" />
+  </wsdl:message>
+  <wsdl:message name="GetAllReservationsHttpPostOut">
+    <wsdl:part name="Body" element="tns:ArrayOfReservation" />
+  </wsdl:message>
+  <wsdl:message name="AddGuestPaymentHttpPostIn">
+    <wsdl:part name="APIUsername" type="s:string" />
+    <wsdl:part name="APIPassword" type="s:string" />
+    <wsdl:part name="BookingID" type="s:string" />
+    <wsdl:part name="PaymentDate" type="s:string" />
+    <wsdl:part name="PaymentAmount" type="s:string" />
+    <wsdl:part name="Description" type="s:string" />
+  </wsdl:message>
+  <wsdl:message name="AddGuestPaymentHttpPostOut">
+    <wsdl:part name="Body" element="tns:string" />
+  </wsdl:message>
+  <wsdl:portType name="CiirusXMLAdditionalFunctions1Soap">
+    <wsdl:operation name="GetExtras">
+      <wsdl:documentation xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/">Returns the optional and mandatory extras for specified property</wsdl:documentation>
+      <wsdl:input message="tns:GetExtrasSoapIn" />
+      <wsdl:output message="tns:GetExtrasSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="GetTaxRates">
+      <wsdl:documentation xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/">Returns the tax rates for the specified property</wsdl:documentation>
+      <wsdl:input message="tns:GetTaxRatesSoapIn" />
+      <wsdl:output message="tns:GetTaxRatesSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="GetPoolHeatSettings">
+      <wsdl:documentation xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/">Returns the Pool Heating Rules</wsdl:documentation>
+      <wsdl:input message="tns:GetPoolHeatSettingsSoapIn" />
+      <wsdl:output message="tns:GetPoolHeatSettingsSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="GetCleaningFee">
+      <wsdl:documentation xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/">Returns the Cleaning Fee</wsdl:documentation>
+      <wsdl:input message="tns:GetCleaningFeeSoapIn" />
+      <wsdl:output message="tns:GetCleaningFeeSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="GetDescriptions">
+      <wsdl:documentation xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/">Returns the Description for specified property</wsdl:documentation>
+      <wsdl:input message="tns:GetDescriptionsSoapIn" />
+      <wsdl:output message="tns:GetDescriptionsSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="CancelBooking">
+      <wsdl:input message="tns:CancelBookingSoapIn" />
+      <wsdl:output message="tns:CancelBookingSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="GetAllReservations">
+      <wsdl:input message="tns:GetAllReservationsSoapIn" />
+      <wsdl:output message="tns:GetAllReservationsSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="AddGuests">
+      <wsdl:input message="tns:AddGuestsSoapIn" />
+      <wsdl:output message="tns:AddGuestsSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="AddGuestPayment">
+      <wsdl:input message="tns:AddGuestPaymentSoapIn" />
+      <wsdl:output message="tns:AddGuestPaymentSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="AddBooking">
+      <wsdl:input message="tns:AddBookingSoapIn" />
+      <wsdl:output message="tns:AddBookingSoapOut" />
+    </wsdl:operation>
+  </wsdl:portType>
+  <wsdl:portType name="CiirusXMLAdditionalFunctions1HttpGet">
+    <wsdl:operation name="GetExtras">
+      <wsdl:documentation xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/">Returns the optional and mandatory extras for specified property</wsdl:documentation>
+      <wsdl:input message="tns:GetExtrasHttpGetIn" />
+      <wsdl:output message="tns:GetExtrasHttpGetOut" />
+    </wsdl:operation>
+    <wsdl:operation name="GetTaxRates">
+      <wsdl:documentation xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/">Returns the tax rates for the specified property</wsdl:documentation>
+      <wsdl:input message="tns:GetTaxRatesHttpGetIn" />
+      <wsdl:output message="tns:GetTaxRatesHttpGetOut" />
+    </wsdl:operation>
+    <wsdl:operation name="GetPoolHeatSettings">
+      <wsdl:documentation xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/">Returns the Pool Heating Rules</wsdl:documentation>
+      <wsdl:input message="tns:GetPoolHeatSettingsHttpGetIn" />
+      <wsdl:output message="tns:GetPoolHeatSettingsHttpGetOut" />
+    </wsdl:operation>
+    <wsdl:operation name="GetCleaningFee">
+      <wsdl:documentation xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/">Returns the Cleaning Fee</wsdl:documentation>
+      <wsdl:input message="tns:GetCleaningFeeHttpGetIn" />
+      <wsdl:output message="tns:GetCleaningFeeHttpGetOut" />
+    </wsdl:operation>
+    <wsdl:operation name="GetDescriptions">
+      <wsdl:documentation xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/">Returns the Description for specified property</wsdl:documentation>
+      <wsdl:input message="tns:GetDescriptionsHttpGetIn" />
+      <wsdl:output message="tns:GetDescriptionsHttpGetOut" />
+    </wsdl:operation>
+    <wsdl:operation name="CancelBooking">
+      <wsdl:input message="tns:CancelBookingHttpGetIn" />
+      <wsdl:output message="tns:CancelBookingHttpGetOut" />
+    </wsdl:operation>
+    <wsdl:operation name="GetAllReservations">
+      <wsdl:input message="tns:GetAllReservationsHttpGetIn" />
+      <wsdl:output message="tns:GetAllReservationsHttpGetOut" />
+    </wsdl:operation>
+    <wsdl:operation name="AddGuestPayment">
+      <wsdl:input message="tns:AddGuestPaymentHttpGetIn" />
+      <wsdl:output message="tns:AddGuestPaymentHttpGetOut" />
+    </wsdl:operation>
+  </wsdl:portType>
+  <wsdl:portType name="CiirusXMLAdditionalFunctions1HttpPost">
+    <wsdl:operation name="GetExtras">
+      <wsdl:documentation xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/">Returns the optional and mandatory extras for specified property</wsdl:documentation>
+      <wsdl:input message="tns:GetExtrasHttpPostIn" />
+      <wsdl:output message="tns:GetExtrasHttpPostOut" />
+    </wsdl:operation>
+    <wsdl:operation name="GetTaxRates">
+      <wsdl:documentation xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/">Returns the tax rates for the specified property</wsdl:documentation>
+      <wsdl:input message="tns:GetTaxRatesHttpPostIn" />
+      <wsdl:output message="tns:GetTaxRatesHttpPostOut" />
+    </wsdl:operation>
+    <wsdl:operation name="GetPoolHeatSettings">
+      <wsdl:documentation xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/">Returns the Pool Heating Rules</wsdl:documentation>
+      <wsdl:input message="tns:GetPoolHeatSettingsHttpPostIn" />
+      <wsdl:output message="tns:GetPoolHeatSettingsHttpPostOut" />
+    </wsdl:operation>
+    <wsdl:operation name="GetCleaningFee">
+      <wsdl:documentation xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/">Returns the Cleaning Fee</wsdl:documentation>
+      <wsdl:input message="tns:GetCleaningFeeHttpPostIn" />
+      <wsdl:output message="tns:GetCleaningFeeHttpPostOut" />
+    </wsdl:operation>
+    <wsdl:operation name="GetDescriptions">
+      <wsdl:documentation xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/">Returns the Description for specified property</wsdl:documentation>
+      <wsdl:input message="tns:GetDescriptionsHttpPostIn" />
+      <wsdl:output message="tns:GetDescriptionsHttpPostOut" />
+    </wsdl:operation>
+    <wsdl:operation name="CancelBooking">
+      <wsdl:input message="tns:CancelBookingHttpPostIn" />
+      <wsdl:output message="tns:CancelBookingHttpPostOut" />
+    </wsdl:operation>
+    <wsdl:operation name="GetAllReservations">
+      <wsdl:input message="tns:GetAllReservationsHttpPostIn" />
+      <wsdl:output message="tns:GetAllReservationsHttpPostOut" />
+    </wsdl:operation>
+    <wsdl:operation name="AddGuestPayment">
+      <wsdl:input message="tns:AddGuestPaymentHttpPostIn" />
+      <wsdl:output message="tns:AddGuestPaymentHttpPostOut" />
+    </wsdl:operation>
+  </wsdl:portType>
+  <wsdl:binding name="CiirusXMLAdditionalFunctions1Soap" type="tns:CiirusXMLAdditionalFunctions1Soap">
+    <soap:binding transport="http://schemas.xmlsoap.org/soap/http" />
+    <wsdl:operation name="GetExtras">
+      <soap:operation soapAction="http://xml.ciirus.com/GetExtras" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetTaxRates">
+      <soap:operation soapAction="http://xml.ciirus.com/GetTaxRates" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetPoolHeatSettings">
+      <soap:operation soapAction="http://xml.ciirus.com/GetPoolHeatSettings" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetCleaningFee">
+      <soap:operation soapAction="http://xml.ciirus.com/GetCleaningFee" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetDescriptions">
+      <soap:operation soapAction="http://xml.ciirus.com/GetDescriptions" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="CancelBooking">
+      <soap:operation soapAction="http://xml.ciirus.com/CancelBooking" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetAllReservations">
+      <soap:operation soapAction="http://xml.ciirus.com/GetAllReservations" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="AddGuests">
+      <soap:operation soapAction="http://xml.ciirus.com/AddGuests" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="AddGuestPayment">
+      <soap:operation soapAction="http://xml.ciirus.com/AddGuestPayment" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="AddBooking">
+      <soap:operation soapAction="http://xml.ciirus.com/AddBooking" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+  </wsdl:binding>
+  <wsdl:binding name="CiirusXMLAdditionalFunctions1Soap12" type="tns:CiirusXMLAdditionalFunctions1Soap">
+    <soap12:binding transport="http://schemas.xmlsoap.org/soap/http" />
+    <wsdl:operation name="GetExtras">
+      <soap12:operation soapAction="http://xml.ciirus.com/GetExtras" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetTaxRates">
+      <soap12:operation soapAction="http://xml.ciirus.com/GetTaxRates" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetPoolHeatSettings">
+      <soap12:operation soapAction="http://xml.ciirus.com/GetPoolHeatSettings" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetCleaningFee">
+      <soap12:operation soapAction="http://xml.ciirus.com/GetCleaningFee" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetDescriptions">
+      <soap12:operation soapAction="http://xml.ciirus.com/GetDescriptions" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="CancelBooking">
+      <soap12:operation soapAction="http://xml.ciirus.com/CancelBooking" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetAllReservations">
+      <soap12:operation soapAction="http://xml.ciirus.com/GetAllReservations" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="AddGuests">
+      <soap12:operation soapAction="http://xml.ciirus.com/AddGuests" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="AddGuestPayment">
+      <soap12:operation soapAction="http://xml.ciirus.com/AddGuestPayment" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="AddBooking">
+      <soap12:operation soapAction="http://xml.ciirus.com/AddBooking" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+  </wsdl:binding>
+  <wsdl:binding name="CiirusXMLAdditionalFunctions1HttpGet" type="tns:CiirusXMLAdditionalFunctions1HttpGet">
+    <http:binding verb="GET" />
+    <wsdl:operation name="GetExtras">
+      <http:operation location="/GetExtras" />
+      <wsdl:input>
+        <http:urlEncoded />
+      </wsdl:input>
+      <wsdl:output>
+        <mime:mimeXml part="Body" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetTaxRates">
+      <http:operation location="/GetTaxRates" />
+      <wsdl:input>
+        <http:urlEncoded />
+      </wsdl:input>
+      <wsdl:output>
+        <mime:mimeXml part="Body" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetPoolHeatSettings">
+      <http:operation location="/GetPoolHeatSettings" />
+      <wsdl:input>
+        <http:urlEncoded />
+      </wsdl:input>
+      <wsdl:output>
+        <mime:mimeXml part="Body" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetCleaningFee">
+      <http:operation location="/GetCleaningFee" />
+      <wsdl:input>
+        <http:urlEncoded />
+      </wsdl:input>
+      <wsdl:output>
+        <mime:mimeXml part="Body" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetDescriptions">
+      <http:operation location="/GetDescriptions" />
+      <wsdl:input>
+        <http:urlEncoded />
+      </wsdl:input>
+      <wsdl:output>
+        <mime:mimeXml part="Body" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="CancelBooking">
+      <http:operation location="/CancelBooking" />
+      <wsdl:input>
+        <http:urlEncoded />
+      </wsdl:input>
+      <wsdl:output>
+        <mime:mimeXml part="Body" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetAllReservations">
+      <http:operation location="/GetAllReservations" />
+      <wsdl:input>
+        <http:urlEncoded />
+      </wsdl:input>
+      <wsdl:output>
+        <mime:mimeXml part="Body" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="AddGuestPayment">
+      <http:operation location="/AddGuestPayment" />
+      <wsdl:input>
+        <http:urlEncoded />
+      </wsdl:input>
+      <wsdl:output>
+        <mime:mimeXml part="Body" />
+      </wsdl:output>
+    </wsdl:operation>
+  </wsdl:binding>
+  <wsdl:binding name="CiirusXMLAdditionalFunctions1HttpPost" type="tns:CiirusXMLAdditionalFunctions1HttpPost">
+    <http:binding verb="POST" />
+    <wsdl:operation name="GetExtras">
+      <http:operation location="/GetExtras" />
+      <wsdl:input>
+        <mime:content type="application/x-www-form-urlencoded" />
+      </wsdl:input>
+      <wsdl:output>
+        <mime:mimeXml part="Body" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetTaxRates">
+      <http:operation location="/GetTaxRates" />
+      <wsdl:input>
+        <mime:content type="application/x-www-form-urlencoded" />
+      </wsdl:input>
+      <wsdl:output>
+        <mime:mimeXml part="Body" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetPoolHeatSettings">
+      <http:operation location="/GetPoolHeatSettings" />
+      <wsdl:input>
+        <mime:content type="application/x-www-form-urlencoded" />
+      </wsdl:input>
+      <wsdl:output>
+        <mime:mimeXml part="Body" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetCleaningFee">
+      <http:operation location="/GetCleaningFee" />
+      <wsdl:input>
+        <mime:content type="application/x-www-form-urlencoded" />
+      </wsdl:input>
+      <wsdl:output>
+        <mime:mimeXml part="Body" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetDescriptions">
+      <http:operation location="/GetDescriptions" />
+      <wsdl:input>
+        <mime:content type="application/x-www-form-urlencoded" />
+      </wsdl:input>
+      <wsdl:output>
+        <mime:mimeXml part="Body" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="CancelBooking">
+      <http:operation location="/CancelBooking" />
+      <wsdl:input>
+        <mime:content type="application/x-www-form-urlencoded" />
+      </wsdl:input>
+      <wsdl:output>
+        <mime:mimeXml part="Body" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetAllReservations">
+      <http:operation location="/GetAllReservations" />
+      <wsdl:input>
+        <mime:content type="application/x-www-form-urlencoded" />
+      </wsdl:input>
+      <wsdl:output>
+        <mime:mimeXml part="Body" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="AddGuestPayment">
+      <http:operation location="/AddGuestPayment" />
+      <wsdl:input>
+        <mime:content type="application/x-www-form-urlencoded" />
+      </wsdl:input>
+      <wsdl:output>
+        <mime:mimeXml part="Body" />
+      </wsdl:output>
+    </wsdl:operation>
+  </wsdl:binding>
+  <wsdl:service name="CiirusXMLAdditionalFunctions1">
+    <wsdl:documentation xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/">Ciirus XML Additional Functions 1</wsdl:documentation>
+    <wsdl:port name="CiirusXMLAdditionalFunctions1Soap" binding="tns:CiirusXMLAdditionalFunctions1Soap">
+      <soap:address location="http://xml.ciirus.com/XMLAdditionalFunctions1.asmx" />
+    </wsdl:port>
+    <wsdl:port name="CiirusXMLAdditionalFunctions1Soap12" binding="tns:CiirusXMLAdditionalFunctions1Soap12">
+      <soap12:address location="http://xml.ciirus.com/XMLAdditionalFunctions1.asmx" />
+    </wsdl:port>
+    <wsdl:port name="CiirusXMLAdditionalFunctions1HttpGet" binding="tns:CiirusXMLAdditionalFunctions1HttpGet">
+      <http:address location="http://xml.ciirus.com/XMLAdditionalFunctions1.asmx" />
+    </wsdl:port>
+    <wsdl:port name="CiirusXMLAdditionalFunctions1HttpPost" binding="tns:CiirusXMLAdditionalFunctions1HttpPost">
+      <http:address location="http://xml.ciirus.com/XMLAdditionalFunctions1.asmx" />
+    </wsdl:port>
+  </wsdl:service>
+</wsdl:definitions>

@@ -1,0 +1,16 @@
+<?xml version="1.0" encoding="UTF-8" standalone="yes"?>
+<product>
+	<message>POST product?pos=a3a2e74b809e0e87&amp;xsl='no_xsl'
+		params Property [message=null, xsl='no_xsl',
+		attributes=net.cbtltd.rest.Attributes@66bccad2, attributelist=null,
+		images=net.cbtltd.rest.Images@74a7d5af, pricelist=null, prices=[Price
+		[partyid=null, entity=null, id=null, fromdate=null, todate=null,
+		unit=null, currency=null, value=null, minimum=null, message=null,
+		xsl=null]], texts=null, type=Accommodation, entitytype=Product,
+		locationid=58777, currency=ZAR, language=EN, unit=DAY,
+		latitude=-33.9571457582702, longitude=18.3773481845856, altitude=0.0,
+		taxes=null, organizationid=null, actorid=null, altpartyid=null,
+		altid=null, status=0, state=Created, values=null, attributemap=null,
+		imageurls=null, name=Camps Bay Terrace Palm Suite, id=null] null
+	</message>
+</product>

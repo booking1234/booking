@@ -1,0 +1,20 @@
+<?xml version="1.0" encoding="UTF-8" standalone="yes"?>
+<OTA_HotelSearchRQ xmlns="http://www.opentravel.org/OTA/2003/05"
+	PrimaryLangID="en" RetransmissionIndicator="false" SequenceNmbr="1"
+	TransactionIdentifier="1" Version="2.004" Target="Production"
+	TimeStamp="2009-07-23T13:14:29" EchoToken="OTA_HotelSearchRQ 5, CardCode=MC, 2376">
+	<POS>
+		<Source>
+			<RequestorID ID="2376" ID_Context="RZ" />
+		</Source>
+	</POS>
+	<Criteria>
+		<Criterion>
+			<AcceptedPayments>
+				<AcceptedPayment>
+					<PaymentCard CardCode="MC" CardType="1" />
+				</AcceptedPayment>
+			</AcceptedPayments>
+		</Criterion>
+	</Criteria>
+</OTA_HotelSearchRQ>

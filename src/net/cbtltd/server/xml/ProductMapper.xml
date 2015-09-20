@@ -1,0 +1,1275 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="net.cbtltd.server.api.ProductMapper">
+
+	<resultMap id="ResultMap" type="Product">
+		<id column="ID" jdbcType="INTEGER" property="id" />
+		<result column="PartofID" jdbcType="INTEGER" property="partofid" />
+		<result column="OwnerID" jdbcType="INTEGER" property="ownerid" />
+		<result column="LocationID" jdbcType="INTEGER" property="locationid" />
+		<result column="SupplierID" jdbcType="INTEGER" property="supplierid" />
+		<result column="AltPartyID" jdbcType="INTEGER" property="altpartyid" />
+		<result column="AltID" jdbcType="VARCHAR" property="altid" />
+		<result column="AltSupplierID" jdbcType="VARCHAR" property="altsupplierid" />
+		<result column="Name" jdbcType="VARCHAR" property="name" />
+		<result column="State" jdbcType="VARCHAR" property="state" />
+		<result column="Options" jdbcType="VARCHAR" property="options" />
+		<result column="Type" jdbcType="VARCHAR" property="type" />
+		<result column="Webaddress" jdbcType="VARCHAR" property="webaddress" />
+		<result column="Physicaladdress" jdbcType="VARCHAR" property="physicaladdress" />
+		<result column="Tax" jdbcType="VARCHAR" property="tax" />
+		<result column="Code" jdbcType="VARCHAR" property="code" />
+		<result column="Unspsc" jdbcType="VARCHAR" property="unspsc" />
+		<result column="Currency" jdbcType="VARCHAR" property="currency" />
+		<result column="Unit" jdbcType="VARCHAR" property="unit" />
+		<result column="Servicedays" jdbcType="VARCHAR" property="servicedays" />
+		<result column="Room" jdbcType="INTEGER" property="room" />
+		<result column="Bathroom" jdbcType="INTEGER" property="bathroom" />
+		<result column="Toilet" jdbcType="INTEGER" property="toilet" />
+		<result column="Floor" jdbcType="INTEGER" property="floor" />
+		<result column="Space" jdbcType="VARCHAR" property="space" />
+		<result column="Quantity" jdbcType="INTEGER" property="quantity" />
+		<result column="Person" jdbcType="INTEGER" property="person" />
+		<result column="Child" jdbcType="INTEGER" property="child" />
+		<result column="Infant" jdbcType="INTEGER" property="infant" />
+		<result column="Rating" jdbcType="INTEGER" property="rating" />
+		<result column="Linenchange" jdbcType="INTEGER" property="linenchange" />
+		<result column="Refresh" jdbcType="INTEGER" property="refresh" />
+		<result column="DynamicPricingEnabled" jdbcType="BIT" property="dynamicpricingenabled" />
+		<result column="Commission" jdbcType="DOUBLE" property="commission" />
+		<result column="Discount" jdbcType="DOUBLE" property="discount" />
+		<result column="OwnerDiscount" jdbcType="DOUBLE" property="ownerdiscount" />
+		<result column="Rank" jdbcType="DOUBLE" property="rank" />
+		<result column="Latitude" jdbcType="DOUBLE" property="latitude" />
+		<result column="Longitude" jdbcType="DOUBLE" property="longitude" />
+		<result column="Altitude" jdbcType="DOUBLE" property="altitude" />
+		<result column="SecurityDeposit" jdbcType="DOUBLE" property="securitydeposit" />
+		<result column="CleaningFee" jdbcType="DOUBLE" property="cleaningfee" />
+		<result column="AssignedtoManager" jdbcType="BOOLEAN" property="assignedtomanager" />
+		<result column="UseOnePriceRow" jdbcType="BOOLEAN" property="useonepricerow" />
+		<result column="inquire_state" jdbcType="VARCHAR" property="inquireState" />
+		<result column="version" jdbcType="TIMESTAMP" property="version" />
+		<result column="DisplayAddress" jdbcType="BOOLEAN" property="displayaddress" />
+	</resultMap>
+
+	<!--  REST Result Map -->
+	<resultMap id="ProductInfoResultMap" type="ProductInfo">
+		<id column="ID" jdbcType="VARCHAR" property="id" />
+		<result column="location" jdbcType="VARCHAR" property="location" />
+		<result column="country" jdbcType="VARCHAR" property="country" />
+		<result column="address" jdbcType="VARCHAR" property="address" />
+		<result column="description" jdbcType="VARCHAR" property="description" />
+		<result column="bathrooms" jdbcType="VARCHAR" property="bathrooms" />
+		<result column="commission" jdbcType="VARCHAR" property="commission" />
+		<result column="securityDeposit" jdbcType="VARCHAR" property="securityDeposit" />
+		<result column="cleaningFee" jdbcType="VARCHAR" property="cleaningFee" />
+		<result column="selected" jdbcType="BOOLEAN" property="selected" />
+	</resultMap>
+
+	<sql id="columns">
+		ID, PartofID, OwnerID, LocationID, SupplierID, AltPartyID,
+		AltID, AltSupplierID, Name, State, Options, Type, Webaddress, Physicaladdress,
+		Tax,
+		Code,
+		Unspsc, Currency, Unit, Servicedays, Room, Bathroom, Toilet, Floor, Space,
+		Quantity, Person, Child, Infant, Rating, Linenchange, Refresh,
+		DynamicPricingEnabled, Commission, Discount, OwnerDiscount, Rank,
+		Latitude, Longitude, Altitude, SecurityDeposit, CleaningFee, AssignedtoManager, UseOnePriceRow,
+		inquire_state, version, DisplayAddress
+	</sql>
+	
+	<sql id="registrationProductFilter">
+		and product.State NOT IN ('FINAL')
+	</sql>
+
+	<select id="read" parameterType="String" resultMap="ResultMap">
+		select
+		<include refid="columns" />
+		from product
+		where ID = #{id,jdbcType=INTEGER}
+	</select>
+	
+	<select id="readAllSupplier"  resultMap="ResultMap" parameterType="NameIdAction">
+		select
+		<include refid="columns" />
+		from product where State='Created'
+		<if test="ids != null">
+			and supplierid in (${ids})
+		</if>
+		<if test="productids != null">
+			and ID in (${productids}) 
+		</if>
+		and type = 'Accommodation'
+		limit #{offsetrows},#{numrows}
+	</select>
+	
+	<select id="readAll"  resultMap="ResultMap" parameterType="NameIdAction">
+		select
+		<include refid="columns" />
+		from product 
+		limit #{offsetrows},#{numrows}
+	</select>
+	
+
+	<select id="readonlineaccomodation" parameterType="String" resultMap="ResultMap">
+		select
+		<include refid="columns" />
+		from product
+		where ID = #{id,jdbcType=INTEGER} 
+		and type = 'Accommodation' 
+		and state = 'Created'
+		and Rank is not null 
+		and Rank <![CDATA[ >= ]]> 0
+	</select>
+
+	<select id="discount" parameterType="String" resultType="Double">
+		select
+		Discount
+		from product
+		where State = 'Created'
+		and Discount is not null
+		and
+		SupplierID = #{id}
+		limit 1
+	</select>
+
+	<select id="commission" parameterType="String" resultType="Double">
+		select Commission
+		from product
+		where State = 'Created'
+		and Commission is
+		not null
+		and SupplierID = #{id}
+		limit 1
+	</select>
+
+	<select id="exists" parameterType="Product" resultMap="ResultMap">
+		select
+		<include refid="columns" />
+		from product
+		where Name = #{name, jdbcType=VARCHAR}
+		and SupplierID = #{supplierid, jdbcType=INTEGER}
+		<if test="altid != null">
+				and AltID = #{altid,jdbcType=VARCHAR}
+		</if>
+		and State in ('Created', 'Suspended')
+		limit 0,
+		1
+	</select>
+
+	<delete id="delete" parameterType="String">
+		delete from product
+		where ID =
+		#{id,jdbcType=INTEGER}
+	</delete>
+
+	<insert id="create" parameterType="Product" useGeneratedKeys="true" keyProperty="id">
+		insert into product (
+		PartofID, OwnerID, LocationID,
+		SupplierID, AltPartyID, AltID , AltSupplierID , Name, State,
+		Options, Type,
+		Webaddress,
+		Physicaladdress, Tax, Code, Unspsc, Currency, Unit, Servicedays,
+		Room,
+		Bathroom, Toilet, Floor, Space, Quantity, Person, Child, Infant,
+		Rating, Linenchange,
+		Refresh, DynamicPricingEnabled, Commission, Discount,
+		OwnerDiscount,
+		Rank,
+		Latitude, Longitude, Altitude,
+		SecurityDeposit, CleaningFee, AssignedtoManager, UseOnePriceRow,
+		inquire_state, version,DisplayAddress
+		)
+		values
+		(
+		#{partofid,jdbcType=INTEGER},
+		#{ownerid,jdbcType=INTEGER},
+		#{locationid,jdbcType=INTEGER},
+		#{supplierid,jdbcType=INTEGER},
+		#{altpartyid,jdbcType=INTEGER},
+		#{altid,jdbcType=VARCHAR},
+		#{altsupplierid,jdbcType=VARCHAR}, 
+		#{name,jdbcType=VARCHAR},
+		#{state,jdbcType=VARCHAR},
+		#{options,jdbcType=VARCHAR},
+		#{type,jdbcType=VARCHAR},
+		#{webaddress,jdbcType=VARCHAR},
+		#{physicaladdress,jdbcType=VARCHAR},
+		#{tax,jdbcType=VARCHAR},
+		#{code,jdbcType=VARCHAR},
+		#{unspsc,jdbcType=VARCHAR},
+		#{currency,jdbcType=VARCHAR},
+		#{unit,jdbcType=VARCHAR},
+		#{servicedays,jdbcType=VARCHAR},
+		#{room,jdbcType=INTEGER},
+		#{bathroom,jdbcType=INTEGER},
+		#{toilet,jdbcType=INTEGER},
+		#{floor,jdbcType=INTEGER},
+		#{space,jdbcType=VARCHAR},
+		#{quantity,jdbcType=INTEGER},
+		#{person,jdbcType=INTEGER},
+		#{child,jdbcType=INTEGER},
+		#{infant,jdbcType=INTEGER},
+		#{rating,jdbcType=INTEGER},
+		#{linenchange,jdbcType=INTEGER},
+		#{refresh,jdbcType=INTEGER},
+		#{dynamicpricingenabled,jdbcType=BIT},
+		#{commission,jdbcType=DOUBLE},
+		#{discount,jdbcType=DOUBLE},
+		#{ownerdiscount,jdbcType=DOUBLE},
+		#{rank,jdbcType=DOUBLE},
+		#{latitude,jdbcType=DOUBLE},
+		#{longitude,jdbcType=DOUBLE},
+		#{altitude,jdbcType=DOUBLE},
+		#{securitydeposit,jdbcType=DOUBLE},
+		#{cleaningfee,jdbcType=DOUBLE},
+		#{assignedtomanager,jdbcType=BOOLEAN},
+		#{useonepricerow,jdbcType=BOOLEAN},
+		#{inquireState,jdbcType=VARCHAR},
+		#{version,jdbcType=TIMESTAMP},
+		#{displayaddress,jdbcType=BOOLEAN}
+		)
+	</insert>
+
+	<update id="update" parameterType="Product">
+		update product
+		<set>
+			<!-- <if test="partofid != null"> -->
+			PartofID = #{partofid,jdbcType=INTEGER},
+			<!-- </if> -->
+			<if test="ownerid != null">
+				OwnerID = #{ownerid,jdbcType=INTEGER},
+			</if>
+			<if test="locationid != null">
+				LocationID = #{locationid,jdbcType=INTEGER},
+			</if>
+			<if test="supplierid != null">
+				SupplierID = #{supplierid,jdbcType=INTEGER},
+			</if>
+			<if test="altpartyid != null">
+				AltPartyID = #{altpartyid,jdbcType=INTEGER},
+			</if>
+			<if test="altid != null">
+				AltID = #{altid,jdbcType=VARCHAR},
+			</if>
+			<if test="altsupplierid != null">
+				altsupplierid = #{altsupplierid,jdbcType=VARCHAR},
+			</if>
+			<if test="name != null">
+				Name = #{name,jdbcType=VARCHAR},
+			</if>
+			<if test="state != null">
+				State = #{state,jdbcType=VARCHAR},
+			</if>
+			<if test="options != null">
+				Options = #{options,jdbcType=VARCHAR},
+			</if>
+			<if test="type != null">
+				Type = #{type,jdbcType=VARCHAR},
+			</if>
+			<if test="webaddress != null">
+				Webaddress = #{webaddress,jdbcType=VARCHAR},
+			</if>
+			<if test="physicaladdress != null">
+				Physicaladdress = #{physicaladdress,jdbcType=VARCHAR},
+			</if>
+			<if test="tax != null">
+				Tax = #{tax,jdbcType=VARCHAR},
+			</if>
+			<if test="code != null">
+				Code = #{code,jdbcType=VARCHAR},
+			</if>
+			<if test="unspsc != null">
+				Unspsc = #{unspsc,jdbcType=VARCHAR},
+			</if>
+			<if test="currency != null">
+				Currency = #{currency,jdbcType=VARCHAR},
+			</if>
+			<if test="unit != null">
+				Unit = #{unit,jdbcType=VARCHAR},
+			</if>
+			<if test="servicedays != null">
+				Servicedays = #{servicedays,jdbcType=VARCHAR},
+			</if>
+			<if test="room != null">
+				Room = #{room,jdbcType=INTEGER},
+			</if>
+			<if test="bathroom != null">
+				Bathroom = #{bathroom,jdbcType=INTEGER},
+			</if>
+			<if test="toilet != null">
+				Toilet = #{toilet,jdbcType=INTEGER},
+			</if>
+			<if test="floor != null">
+				Floor = #{floor,jdbcType=INTEGER},
+			</if>
+			<if test="space != null">
+				Space = #{space,jdbcType=VARCHAR},
+			</if>
+			<if test="quantity != null">
+				Quantity = #{quantity,jdbcType=INTEGER},
+			</if>
+			<if test="person != null">
+				Person = #{person,jdbcType=INTEGER},
+			</if>
+			<if test="child != null">
+				Child = #{child,jdbcType=INTEGER},
+			</if>
+			<if test="infant != null">
+				Infant = #{infant,jdbcType=INTEGER},
+			</if>
+			<if test="rating != null">
+				Rating = #{rating,jdbcType=INTEGER},
+			</if>
+			<if test="dynamicpricingenabled != null">
+				DynamicPricingEnabled =
+				#{dynamicpricingenabled,jdbcType=BIT},
+			</if>
+			<if test="linenchange != null">
+				Linenchange = #{linenchange,jdbcType=INTEGER},
+			</if>
+			<if test="refresh != null">
+				Refresh = #{refresh,jdbcType=INTEGER},
+			</if>
+			<if test="commission != null">
+				Commission = #{commission,jdbcType=DOUBLE},
+			</if>
+			<if test="discount != null">
+				Discount = #{discount,jdbcType=DOUBLE},
+			</if>
+			<if test="ownerdiscount != null">
+				OwnerDiscount = #{ownerdiscount,jdbcType=DOUBLE},
+			</if>
+			<if test="rank != null">
+				Rank = #{rank,jdbcType=DOUBLE},
+			</if>
+			<if test="latitude != null">
+				Latitude = #{latitude,jdbcType=DOUBLE},
+			</if>
+			<if test="longitude != null">
+				Longitude = #{longitude,jdbcType=DOUBLE},
+			</if>
+			<if test="altitude != null">
+				Altitude = #{altitude,jdbcType=DOUBLE},
+			</if>
+			<if test="securitydeposit != null">
+				SecurityDeposit = #{securitydeposit,jdbcType=DOUBLE},
+			</if>
+			<if test="cleaningfee != null">
+				CleaningFee = #{cleaningfee,jdbcType=DOUBLE},
+			</if>
+			<if test="assignedtomanager != null">
+				AssignedToManager =
+				#{assignedtomanager,jdbcType=BOOLEAN},
+			</if>
+			<if test="useonepricerow != null">
+				UseOnePriceRow =
+				#{useonepricerow,jdbcType=BOOLEAN},
+			</if>
+			<if test="inquireState != null">
+				inquire_state = #{inquireState,jdbcType=VARCHAR},
+			</if>
+			<if test="version != null">
+				version = #{version,jdbcType=TIMESTAMP},
+			</if>
+			<if test="displayaddress != null">
+				displayaddress = #{displayaddress,jdbcType=BOOLEAN},
+			</if>
+		</set>
+		where ID = #{id,jdbcType=INTEGER}
+	</update>
+
+	
+	<update id="updateByPrimaryKey" parameterType="Product">
+		update product
+		set
+		PartofID = #{partofid,jdbcType=INTEGER},
+		OwnerID = #{ownerid,jdbcType=INTEGER},
+		LocationID = #{locationid,jdbcType=INTEGER},
+		SupplierID = #{supplierid,jdbcType=INTEGER},
+		AltPartyID = #{altpartyid,jdbcType=INTEGER},
+		AltID = #{altid,jdbcType=VARCHAR},
+		AltSupplierID = #{altsupplierid,jdbcType=VARCHAR},              
+		Name = #{name,jdbcType=VARCHAR},
+		State = #{state,jdbcType=VARCHAR},
+		Options = #{options,jdbcType=VARCHAR},
+		Type = #{type,jdbcType=VARCHAR},
+		Webaddress = #{webaddress,jdbcType=VARCHAR},
+		Tax = #{tax,jdbcType=VARCHAR},
+		Code = #{code,jdbcType=VARCHAR},
+		Unspsc = #{unspsc,jdbcType=VARCHAR},
+		Currency = #{currency,jdbcType=VARCHAR},
+		Unit = #{unit,jdbcType=VARCHAR},
+		Servicedays = #{servicedays,jdbcType=VARCHAR},
+		Room = #{room,jdbcType=INTEGER},
+		Bathoom = #{bathroom,jdbcType=INTEGER},
+		Toilet = #{toilet,jdbcType=INTEGER},
+		Floor = #{floor,jdbcType=INTEGER},
+		Space = #{space,jdbcType=VARCHAR},
+		Quantity = #{quantity,jdbcType=INTEGER},
+		Person = #{person,jdbcType=INTEGER},
+		Child = #{child,jdbcType=INTEGER},
+		Infant = #{infant,jdbcType=INTEGER},
+		Rating = #{rating,jdbcType=INTEGER},
+		Linenchange = #{linenchange,jdbcType=INTEGER},
+		Refresh = #{refresh,jdbcType=INTEGER},
+		DynamicPricingEnabled = #{dynamicpricingenabled,jdbcType=BIT},
+		Commission = #{commission,jdbcType=DOUBLE},
+		Discount = #{discount,jdbcType=DOUBLE},
+		OwnerDiscount = #{ownerdiscount,jdbcType=DOUBLE},
+		Rank = #{rank,jdbcType=DOUBLE},
+		Latitude = #{latitude,jdbcType=DOUBLE},
+		Longitude = #{longitude,jdbcType=DOUBLE},
+		Altitude = #{altitude,jdbcType=DOUBLE},
+		SecurityDeposit = #{securitydeposit,jdbcType=DOUBLE},
+		CleaningFee = #{cleaningfee,jdbcType=DOUBLE},
+		AssignedToManager =	#{assignedtomanager,jdbcType=BOOLEAN},
+		UseOnePriceRow = #{useonepricerow,jdbcType=BOOLEAN},
+		inquire_state = #{inquireState,jdbcType=VARCHAR},
+		version = #{version,jdbcType=TIMESTAMP},
+		displayaddress= #{displayaddress,jdbcType=BOOLEAN}
+		where ID = #{id,jdbcType=INTEGER}
+	</update>
+
+	<update id="restoreparty" parameterType="String">
+		update product
+		set State
+		= 'Created'
+		where SupplierID = #{id,jdbcType=INTEGER}
+		and State =
+		'Unlicensed'
+	</update>
+
+	<update id="suspendparty" parameterType="String">
+		update product
+		set State
+		= 'Unlicensed'
+		where SupplierID = #{id,jdbcType=INTEGER}
+		and State =
+		'Created'
+	</update>
+
+	<select id="nameidbyid" parameterType="NameIdAction" resultType="NameId">
+		select distinct Name, ID
+		from product
+		where ID = #{id}
+	</select>
+
+	<select id="nameidbyname" parameterType="NameIdAction" resultType="NameId">
+		select distinct product.Name, product.ID
+		from product
+		<if test="organizationid != null">
+			join relation on relation.Link = 'Organization Product'
+			and
+			relation.LineID = product.ID
+			and relation.HeadID =
+			#{organizationid}
+		</if>
+		where Name <![CDATA[ >= ]]>
+		#{name}
+		<if test="state == null">
+			and State in ('Created', 'Suspended')
+		</if>
+		<if test="state != null">
+			and State = #{state}
+		</if>
+		<if test="type != null">
+			and type = #{type}
+		</if>
+		<if test="ids != null">
+			and ID in (${ids})
+		</if>
+		<if test="version != null">
+			and product.version <![CDATA[ > ]]>
+			#{version}
+		</if>
+		<if test="rank != null">
+			and product.Rank <![CDATA[ >= ]]>
+			#{rank}
+		</if>
+		order by Name
+		limit 0, #{numrows}
+	</select>
+
+	<select id="channelProductsNameIdByName" parameterType="NameIdAction" resultType="NameId">
+		select  product.Name, product.ID
+		from product
+			join manager_to_channel on (manager_to_channel.channel_partner_id = (select id from channel_partner where channel_partner.party_id = #{id}) and product.SupplierID = manager_to_channel.property_manager_id)
+		where State ="Created"
+			and product.AssignedToManager = 1
+		
+		<if test="type != null">
+			and type = #{type}
+		</if>
+		
+		<if test="version != null">
+			and product.version <![CDATA[ > ]]>
+			#{version}
+		</if>
+	</select>
+		<select id="nameidnooffline" parameterType="NameIdAction" resultType="NameId">
+		select distinct product.Name, product.ID
+		from product
+		<if test="organizationid != null">
+			join relation on relation.Link = 'Organization Product'
+			and
+			relation.LineID = product.ID
+			and relation.HeadID =
+			#{organizationid}
+		</if>
+		where Name <![CDATA[ >= ]]>
+		#{name}
+		and Rank <![CDATA[ >= ]]>
+		0.0
+		<if test="state == null">
+			and State in ('Created', 'Suspended')
+		</if>
+		<if test="state != null">
+			and State in (${state})
+		</if>
+		<if test="type != null">
+			and Type = #{type}
+		</if>
+		order by Name
+		limit 0, #{numrows}
+	</select>
+
+	<select id="nameidnopartof" parameterType="NameIdAction" resultType="NameId">
+		select distinct product.Name, product.ID
+		from product
+		<if test="organizationid != null">
+			join relation on relation.Link = 'Organization Product'
+			and
+			relation.LineID = product.ID
+			and relation.HeadID =
+			#{organizationid}
+		</if>
+		where Name <![CDATA[ >= ]]>
+		#{name}
+		and (PartofID is null or PartofID = '')
+		<if test="state == null">
+			and State in ('Created', 'Suspended')
+		</if>
+		<if test="state != null">
+			and State in (${state})
+		</if>
+		<if test="type != null">
+			and Type = #{type}
+		</if>
+		order by Name
+		limit 0, #{numrows}
+	</select>
+
+	<select id="nameidbyaccountid" parameterType="NameIdAction" resultType="NameId">
+		select distinct product.Name AS name, product.ID AS id
+		from relation as
+		accounttypes join account on account.ID =
+		accounttypes.HeadID and
+		accounttypes.Link = 'Account Subledger'
+		<!-- join relation as entitytypes on accounttypes.LineID = entitytypes.LineID and entitytypes.Link = 'Product Type' -->
+		join product on product.ID = accounttypes.LineID and Subledger =
+		'Product' and product.State in ('Created', 'Suspended')
+		join relation
+		as products
+		on products.LineID = product.ID and
+		products.Link =
+		'Organization Product'
+		where product.Name <![CDATA[ >= ]]>
+		#{name}
+		and account.ID = #{id}
+		and products.HeadID = #{organizationid}
+		order by product.Name
+		limit 0, #{numrows}
+	</select>
+
+	<select id="nameidtype" parameterType="NameIdType" resultType="NameId">
+		select distinct Type as name, Type as id
+		from asset
+		where Type is not
+		null
+		order by name
+	</select>
+
+	<select id="valuenameid" parameterType="ProductValue" resultType="NameId">
+		select ID, Name
+		from ota
+		where List = #{type}
+		and ID = #{id}
+		order by Name
+	</select>
+
+	<select id="valuenameids" parameterType="ProductValue" resultType="NameId">
+		select distinct ID, Name
+		from ota
+		where List = #{type}
+		and ID <![CDATA[ <> ]]>
+		'0'
+		order by Name
+	</select>
+
+	<select id="hotelsearch" parameterType="net.cbtltd.soap.ota.server.OtaSearchParameter" resultMap="ResultMap">
+		select
+		<include refid="columns" />
+		from product
+		<if test="maxrate != null">
+			join price on product.ID = price.EntityID
+			and
+			price.EntityType = 'Product'
+			and price.PartyID = product.SupplierID
+		</if>
+		where State = 'Created'
+		and Type = 'Accommodation'
+		<if test="productid != null">
+			and product.ID = #{productid}
+		</if>
+		<if test="productname != null">
+			and product.Name = #{productname}
+		</if>
+		<if test="supplierid != null">
+			and product.SupplierID = #{supplierid}
+		</if>
+		<if test="ownerid != null">
+			and product.OwnerID = #{ownerid}
+		</if>
+		<if test="guestcount != null">
+			and product.Person <![CDATA[ >= ]]>
+			#{guestcount}
+		</if>
+		<if test="maxrate != null">
+			and price.Value <![CDATA[ <= ]]>
+			#{maxrate}
+		</if>
+		<if test="nelatitude != null">
+			and product.Latitude <![CDATA[ <= ]]>
+			#{nelatitude}
+		</if>
+		<if test="swlatitude != null">
+			and product.Latitude <![CDATA[ >= ]]>
+			#{swlatitude}
+		</if>
+		<if test="nelongitude != null">
+			and product.Longitude <![CDATA[ <= ]]>
+			#{nelongitude}
+		</if>
+		<if test="swlongitude != null">
+			and product.Longitude <![CDATA[ >= ]]>
+			#{swlongitude}
+		</if>
+	</select>
+	<!-- if (hasOtas()) {sb.append("\nand ProductId in (" + getOtalist() + ")");} -->
+	<!-- if (hasOrotas(Attribute.BED)) {sb.append("\nand ProductId in (" + getOrotalist(Attribute.BED) + ")");} -->
+	<!-- if (hasOrotas(Attribute.PMT)) {sb.append("\nand ProductId in (" + getOrotalist(Attribute.PMT) + ")");} -->
+	<!-- if (hasOrotas(CARD_CODE)) {sb.append("\nand ProductId in (" + getOrotalist(CARD_CODE) + ")");} -->
+	<!-- if (hasRateRange()) {sb.append("\nand ProductId in (" + getRatelist() + ")");} -->
+	<!-- if (hasTimespan()) {sb.append("\nand ProductId not in (" + getCollisionlist() + ")");} -->
+	<!-- if (hasRoomtype()) {sb.append("\nand roomtype.LineID = '" + getRoomtype() + "'");} -->
+
+	<select id="count" parameterType="Product" resultType="Integer">
+		select
+		count(ID)
+		from product
+		where AltPartyID = #{AltPartyID}
+	</select>
+
+	<select id="list" parameterType="Product" resultMap="ResultMap">
+		select
+		<include refid="columns" />
+		from product
+		where AltPartyID = #{AltPartyID}
+	</select>
+
+	<select id="altlist" parameterType="String" resultMap="ResultMap">
+		select
+		<include refid="columns" />
+		from product
+		where AltPartyID = #{id}
+	</select>
+	
+	<select id="getProductsForChannel" parameterType="String" resultMap="ResultMap">
+		select
+		<include refid="columns" />
+		from product
+		where AltSupplierID in(
+		select property_manager_id from manager_to_channel where
+		channel_partner_id=#{id});
+	</select>
+
+	<select id="componentlist" parameterType="String" resultMap="ResultMap">
+		select
+		<include refid="columns" />
+		from product
+		where PartofID = #{id}
+	</select>
+
+	<select id="nameidbyarea" parameterType="Area" resultType="NameId">
+		select distinct product.Name as name, product.ID as id
+		from product
+		where product.State = 'Created'
+		and Type = 'Accommodation'
+		and Latitude <![CDATA[ <= ]]>
+		#{nelatitude}
+		and Latitude <![CDATA[ >= ]]>
+		#{swlatitude}
+		and Longitude <![CDATA[ <= ]]>
+		#{nelongitude}
+		and Longitude <![CDATA[ >= ]]>
+		#{swlongitude}
+		order by product.Name
+	</select>
+
+	<select id="nameidbylocationid" resultType="NameId">
+		select distinct Name, ID
+		from product
+		where product.LocationID in
+		<foreach item="item" index="index" collection="array" open="(" separator="," close=")">
+			#{item}
+		</foreach>
+		and product.State = 'Created'
+		and product.Type = 'Accommodation'
+		order
+		by product.Name
+	</select>
+
+	<select id="nameiddynamic" parameterType="Void" resultType="NameId">
+		select distinct product.Name, product.ID
+		from product
+		where State =
+		'Created'
+		and
+		DynamicPricingEnabled = 1
+		order by Name
+	</select>
+
+	<!-- <select id="attribute" parameterType="Void" resultType="NameId"> -->
+	<!-- select distinct Name, concat(List,ID) as id -->
+	<!-- from attribute -->
+	<!-- where Type = 'RZ' -->
+	<!-- and ID <![CDATA[ <> ]]> '0' -->
+	<!-- </select> -->
+
+	<select id="type" parameterType="Void" resultType="NameId">
+		select
+		distinct Type as name, Type as id
+		from product
+		order by Type
+	</select>
+
+	<!-- REST SQL queries -->
+	<select id="property" parameterType="String" resultType="net.cbtltd.rest.Property">
+		select
+		product.ID as id, product.OwnerID, product.LocationID,
+		product.SupplierID,
+		product.Name as name,
+		product.State, product.Type,
+		product.Unit, product.Currency, product.Unspsc,
+		product.Code,
+		product.WebAddress, product.Tax,
+		product.Rank, product.Latitude,
+		product.Longitude,
+		product.Altitude,
+		product.Room, product.Bathroom,
+		product.Toilet,
+		product.Person,
+		product.Child,
+		product.version,
+		product.Infant,
+		product.Physicaladdress, 
+		product.DynamicPricingEnabled,
+		product.UseOnePriceRow as useonepricerow,
+		product.inquire_state as inquireState,
+		location.Name as city,
+		location.Region,
+		location.Country
+		from product
+		left join location on location.ID = product.LocationID
+		where product.ID
+		=
+		#{id,jdbcType=INTEGER}
+	</select>
+
+	<select id="propertylist" parameterType="String" resultType="net.cbtltd.rest.Property">
+		select product.ID as id,
+		product.OwnerID, product.LocationID,
+		product.SupplierID, product.Name as name,
+		product.State, product.Type, product.Unit, product.Currency,
+		product.Unspsc, product.Code,
+		product.WebAddress, product.Tax,
+		product.Rank, product.Latitude, product.Longitude,
+		product.Altitude, product.Room, product.Bathroom,
+		product.Toilet, product.Floor, product.Space,
+		product.Quantity, product.Person, product.Child,
+		product.Infant, product.Physicaladdress,
+		product.DynamicPricingEnabled,
+		location.Name as city,
+		location.Region, location.Country
+		from product
+		left join location on location.ID = product.LocationID
+		where
+		product.AltPartyID = #{id,jdbcType=INTEGER}
+		limit 5
+	</select>
+
+	<select id="productforpos" parameterType="NameId" resultType="Integer">
+		select count(HeadID)
+		from relation
+		where Link = 'Organization Product'
+		and
+		HeadID in (${name})
+		and LineID = #{id,jdbcType=INTEGER}
+	</select>
+
+	<select id="productotas" parameterType="String" resultType="NameId">
+		select distinct ID, Name
+		from attribute
+		<!-- join relation on Link = 'Product OTA' -->
+		<!-- and LineID = CONCAT(List, ID) -->
+		where List = #{list}
+		and ID <![CDATA[ <> ]]>
+		'0'
+		order by Name
+	</select>
+
+	<select id="otatypes" parameterType="Void" resultType="NameId">
+		select
+		distinct List as id, Name
+		from attribute
+		where ID = '0'
+		order by Name
+	</select>
+
+	<select id="flipkeyproducts" parameterType="String" resultType="String">
+		select distinct ID
+		from product
+		where SupplierID = #{id}
+		and Type =
+		'Accommodation'
+		order by ID
+	</select>
+
+	<select id="productInfoListBySupplier" parameterType="NameIdAction" resultMap="ProductInfoResultMap">
+		select
+		product.ID as id,
+		location.Name as location,
+		location.Country as	country,
+		product.Physicaladdress as address,
+		product.Name as description,
+		product.Room as	bedrooms,
+		product.Bathroom as bathrooms,
+		product.Discount as commission,	
+		product.SecurityDeposit as securityDeposit,
+		product.CleaningFee as cleaningFee,
+		IFNULL(product.AssignedtoManager,0)  as selected
+		from product
+		inner join location on location.ID = product.locationID
+		where product.SupplierID = #{id}
+		<include refid="registrationProductFilter" /> 
+		order by description		
+		limit #{offsetrows}, #{numrows}
+	</select>
+	
+	<select id="productCountBySupplier" parameterType="String" resultType="String">
+		select count(*)
+		from product
+		inner join
+		location on location.ID = product.locationID
+		where product.SupplierID = #{id,jdbcType=INTEGER}
+		<include refid="registrationProductFilter" />
+	</select>
+	
+	<select id="productCountByAltSupplier" parameterType="map" resultType="String">
+		select count(*)
+		from product
+		inner join
+		location on location.ID = product.locationID
+		where product.AltSupplierId = #{altsupplierid} and product.AltPartyID = #{altpartyid}
+			<include refid="registrationProductFilter" />	
+	</select>
+	
+	<select id="selectedProductCountBySupplier" parameterType="String" resultType="String">
+		select count(*)
+		from product
+		inner join
+		location on location.ID = product.locationID
+		where product.SupplierID = #{id,jdbcType=INTEGER}
+			and product.AssignedtoManager = 1
+	</select>
+	
+	<update id="updateSupplierIdByAltSupplier" parameterType="Product">
+		update product
+		set product.SupplierID = #{supplierid}
+		where product.AltSupplierID = #{altsupplierid} 
+		and product.AltPartyID = #{altpartyid}
+	</update>
+
+	<!-- JSON SQL queries -->
+	<select id="productwidget" parameterType="String" resultType="net.cbtltd.json.product.ProductWidgetItem">
+		select
+		product.Altitude,
+		product.Code,
+		product.Commission,
+		product.Currency,
+		product.Discount,
+		product.ID,
+		product.Latitude,
+		product.Linenchange,
+		product.LocationID,
+		location.Name as locationname,
+		product.Longitude,
+		product.Name,
+		product.OwnerDiscount,
+		product.OwnerID,
+		owner.Name as ownername,
+		product.PartofID,
+		partof.Name as partofname,
+		product.Person,
+		product.Child,
+		product.Infant,
+		product.Physicaladdress,
+		product.Quantity,
+		product.Rank,
+		product.Rating,
+		product.Refresh,
+		product.Room,
+		product.Bathroom,
+		product.Toilet,
+		product.Servicedays,
+		product.State,
+		product.SupplierID,
+		supplier.Name as suppliername,
+		product.Tax,
+		product.Unit,
+		product.Unspsc,
+		product.Webaddress
+		from product
+		left join product as partof on partof.ID = product.PartofID
+		left join
+		party as owner on owner.ID =
+		product.OwnerID
+		left join party as
+		supplier on supplier.ID = product.SupplierID
+		left join location on
+		location.ID = product.locationID
+		where
+		product.ID =
+		#{id,jdbcType=INTEGER}
+	</select>
+
+	<select id="nameidwidget" parameterType="net.cbtltd.json.Parameter" resultType="net.cbtltd.json.nameid.NameIdWidgetItem">
+		select distinct Name, ID
+		from product
+		<if test="organizationid != null">
+			join relation on Link = 'Organization Product'
+			and LineID =
+			ID
+			and HeadID = #{organizationid}
+		</if>
+		where State = 'Created'
+		and Rank <![CDATA[ >= ]]>
+		0.0
+		<if test="id != null">
+			and ID in (${id})
+		</if>
+		order by Name
+	</select>
+
+	<select id="jsonnameids" resultType="net.cbtltd.json.nameid.NameIdWidgetItem">
+		select distinct Name, ID
+		from product
+		where product.ID in
+		<foreach item="item" index="index" collection="array" open="(" separator="," close=")">
+			#{item}
+		</foreach>
+		and product.State = 'Created'
+		and product.Rank <![CDATA[ >= ]]>
+		0.0
+		order by product.Name
+	</select>
+
+	<select id="imagewidget" parameterType="net.cbtltd.json.Parameter" resultType="net.cbtltd.json.image.ImageWidgetItem">
+		select distinct
+		concat('http://razor-cloud.com/pictures/',text.ID) as url, text.Notes
+		from text
+		where ID like concat(#{model},#{id},'-%') and type = 'Image'
+		order by text.ID
+	</select>
+
+	<select id="positions" parameterType="Product" resultType="Position">
+		select avg(Latitude) as latitude,
+		avg(Longitude) as longitude,
+		count(*)
+		as altitude
+		from product
+		where state = 'Created'
+		and Type =
+		'Accommodation'
+		and Latitude is not null
+		and Longitude is not null
+		and
+		Latitude <![CDATA[ <= ]]>
+		#{nelatitude}
+		and Latitude <![CDATA[ >= ]]>
+		#{swlatitude}
+		and Longitude <![CDATA[ <= ]]>
+		#{nelongitude}
+		and Longitude <![CDATA[ >= ]]>
+		#{swlongitude}
+		and Latitude <![CDATA[ <> ]]>
+		0.0
+		and Longitude <![CDATA[ <> ]]>
+		0.0
+		and Latitude <![CDATA[ <> ]]>
+		1.0
+		and Longitude <![CDATA[ <> ]]>
+		1.0
+		group by round(Latitude, #{numrows}), round(Longitude, #{numrows})
+	</select>
+
+	<select id="nameidbyparentlocationid" resultType="NameId">
+		select distinct p.Name, p.ID
+		from product as p join location as l
+			where p.LocationID = l.ID
+			and l.ParentID in
+			<foreach item="item" index="index" collection="array" open="(" separator="," close=")">
+				#{item}
+			</foreach>
+			and p.State = 'Created'
+			and p.Type = 'Accommodation'
+			order by p.Name
+	</select>
+	
+	<select id="idsbyparentlocationandprice" parameterType="map" resultType="String">
+		select distinct p.ID
+		from product as p 
+			join location as l
+			join price
+			join party on party.id = p.SupplierID
+		where p.LocationID = l.ID
+			and price.EntityID = p.ID
+			and (l.ParentID = #{locationid} or l.ID = #{locationid}) 
+			and p.State = 'Created'
+			and p.Type = 'Accommodation'
+			and price.Date <![CDATA[ < ]]> #{todate}
+			and #{fromdate} <![CDATA[ <= ]]> price.Todate
+			and party.State not in ('Suspended', 'Final') 
+			and price.Type = 'Reservation'
+			and price.State = 'Created'
+			and price.EntityType = 'Product'
+			and price.Available IS NOT NULL
+			and price.Available > 0
+	</select>
+	
+	<select id="inquireonlyidsbyparentlocationandprice" parameterType="map" resultType="String">
+		select distinct p.ID
+		from product as p 
+			join location as l
+			join price
+			join party on party.id = p.SupplierID
+		where p.LocationID = l.ID
+			and price.EntityID = p.ID
+			and (l.ParentID = #{locationid} or l.ID = #{locationid})
+			and p.State = 'Created'
+			and p.Type = 'Accommodation'
+			and price.Date <![CDATA[ < ]]> #{todate}
+			and #{fromdate} <![CDATA[ <= ]]> price.Todate
+			and party.State not in ('Suspended', 'Final') 
+			and price.Type = 'Reservation'
+			and price.State = 'Created'
+			and price.EntityType = 'Product'
+			and price.Available IS NOT NULL
+			and price.Available > 0
+			and ( EXISTS (SELECT * FROM property_manager_info pmi 
+						WHERE pmi.pm_id = p.SupplierID and pmi.inquire_only = 1)
+			or NOT EXISTS (SELECT * FROM property_manager_info pmi 
+						WHERE pmi.pm_id = p.SupplierID))
+	</select>
+	
+	<select id="idswithreservationcollision" parameterType="map" resultType="String">
+		select DISTINCT productid from (
+			select r.ProductID as productid 
+				from reservation r
+					join product as p on p.ID = r.ProductID and p.State = 'Created' and p.`Type` = 'Accommodation'
+					join location as l on l.ID = p.LocationID
+				where r.FromDate <![CDATA[ < ]]> #{todate} 
+					and r.ToDate <![CDATA[ > ]]> #{fromdate} 
+					and (l.ParentID = #{locationid} or l.ID = #{locationid})
+					and r.State not in ('Initial', 'Inquiry', 'Cancelled', 'Final')
+			union
+				select p.ID as productid 
+				from reservation r
+					join product p on p.PartofID = r.ProductID and p.State = 'Created' and p.`Type` = 'Accommodation'
+					join location as l on l.ID = p.LocationID
+				where r.FromDate <![CDATA[ < ]]> #{todate} 
+					and r.ToDate <![CDATA[ > ]]> #{fromdate} 
+					and (l.ParentID = #{locationid} or l.ID = #{locationid})
+					and r.State not in ('Initial', 'Inquiry', 'Cancelled', 'Final')
+			union
+				select child.PartofID as productid 
+				from reservation r
+					join product as child on child.ID = r.ProductID and child.State = 'Created' and child.`Type` = 'Accommodation' and child.PartofID IS NOT NULL
+					join product as p on p.ID = child.PartofID	
+					join location as l on l.ID = p.LocationID
+				where r.FromDate <![CDATA[ < ]]> #{todate} 
+					and r.ToDate <![CDATA[ > ]]> #{fromdate} 
+					and (l.ParentID = #{locationid} or l.ID = #{locationid})
+					and r.State not in ('Initial', 'Inquiry', 'Cancelled', 'Final')) as tmp;
+	</select>
+	
+
+	<!-- Foreign SQL queries -->
+	<select id="altread" parameterType="NameId" resultMap="ResultMap">
+		select
+		<include refid="columns" />
+		from product
+		where AltPartyId = #{name}
+		and AltID = #{id}
+		limit 1
+	</select>
+	
+	<!-- Foreign SQL queries -->
+	<select id="altPartyread" parameterType="NameId" resultMap="ResultMap">
+		select
+		<include refid="columns" />
+		from product
+		where AltPartyId = #{id}
+		</select>
+	
+	
+	<!-- Foreign SQL queries -->
+	<select id="nameRead" parameterType="NameId" resultMap="ResultMap">
+		select
+		<include refid="columns" />
+		from product
+		where AltID = #{id}
+		limit 1
+	</select>
+
+	<select id="changeLogInMin" parameterType="NameId" resultType="Integer">
+		select if(TIMESTAMPDIFF(MINUTE,min(version),now()),TIMESTAMPDIFF(MINUTE,min(version),now()),0) from 
+		product
+		where  AltPartyID = #{id}
+		limit 1
+	</select>
+
+	<select id="activeproductid"  resultType="String">
+		select product.id
+		from product
+		where product.State ="Created" ; 
+	</select>
+
+	<select id="activeProductIdListBySupplier" parameterType="NameIdAction" resultType="String">
+		select
+		product.ID as id
+		from product
+		where product.SupplierID = #{id,jdbcType=INTEGER} 
+			and product.State = "Created"
+			limit #{offsetrows}, #{numrows}
+	</select>
+	
+	<select id="activeProductAltIdListBySupplier" parameterType="String" resultType="String">
+		select
+			AltID
+		from product
+		where product.SupplierID = #{partyId,jdbcType=INTEGER} 
+			and product.State in ("Created", "Initial")
+	</select>
+	
+	<select id ="activeproductidListbyChannelPartner" parameterType="NameIdAction" resultType="String">
+		select
+		product.ID as id
+		from product
+		inner join manager_to_channel
+		on product.SupplierID = manager_to_channel.property_manager_id
+			where manager_to_channel.channel_partner_id = #{id,jdbcType=INTEGER} 
+			and product.State = "Created"
+			and product.AssignedToManager = 1
+	</select>
+	
+	<update id="cancelversion" parameterType="Product">
+		update product set State = 'Final'
+		where AltPartyID = #{altpartyid}
+		<if test="state != null">
+			and State = #{state}
+		</if>
+		<if test="type != null">
+			and Type = #{type}
+		</if>
+		and version <![CDATA[ <> ]]> #{version}
+	</update>
+	
+	<update id="initializeProductsNotInFeed" parameterType="Product">
+		update product set State = 'Initial'
+		where AltPartyID = #{altpartyid}
+		<if test="state != null">
+			and State = #{state}
+		</if>
+		<if test="type != null">
+			and Type = #{type}
+		</if>
+		and version <![CDATA[ <> ]]> #{version}
+	</update>
+	
+	<select id = "test" parameterType = "String" resultType = "String">
+		select id
+		from product
+		where altid = #{id}
+	</select>
+	
+	<select id="activeListOfPropertyManagersAndCommision"  resultMap="ResultMap">
+         select distinct product.SupplierID  , product.Discount
+         from  product
+         where product.AssignedtoManager = 1  and product.State = "Created"
+         group by  product.SupplierID
+	     order by product.SupplierID asc , product.Discount desc ;
+	</select>
+	
+	<select id = "getProductsWithAltIdAndAltPartyIdasNullbyVersion" parameterType = "String" resultType = "String">
+		select id
+		from product
+		where version > #{verison}  
+			and  state = 'Created' 
+			and type = 'Accommodation'
+			and AltPartyID is null 
+			and altid is null
+	</select>
+	<select id = "getInActiveProductsWithAltIdAndAltPartyIdasNull" parameterType = "String" resultType = "String">
+		select id
+		from product
+		where state in ('Suspended', 'Final', 'Initial', 'Unlicensed')
+			and type = 'Accommodation'
+			and AltPartyID is null 
+			and altid is null
+			<if test="version != null">
+			and product.version <![CDATA[ > ]]>
+			#{version}
+		</if>
+	</select>
+	
+	<select id = "productIdListWithNullLocationBySupplierId" parameterType = "String" resultMap="ResultMap">
+		select <include refid="columns" />
+		from product
+		where supplierID = #{supplierID}  
+		and LocationID is null
+	</select>
+	
+	<insert id="insertRoomIds" parameterType="java.util.List" useGeneratedKeys="true" keyProperty="rid">
+	  INSERT INTO product_rooms (product_id,room_id)
+	  VALUES
+	  <foreach item="roomId" index="index" collection="list"
+		  open="(" separator="),(" close=")">
+		  #{roomId.id}, #{roomId.name}
+	  </foreach>
+	</insert>
+	<delete id="deleteRoom" parameterType="NameId">
+		delete from product_rooms where product_id = #{id} and room_id = #{name}
+	</delete>
+	
+	<resultMap type="java.lang.String" id="domainsResult"> 
+		<result property="" column="room_id"/> 
+	</resultMap> 
+
+	<select id="selectRoomsForProduct" parameterType = "String" resultMap="domainsResult"> 
+	 SELECT room_id FROM product_rooms WHERE product_id = #{productid} 
+	</select>
+	
+<!-- XML Writer -->
+</mapper>

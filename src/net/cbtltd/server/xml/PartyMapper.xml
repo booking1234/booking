@@ -1,0 +1,1291 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="net.cbtltd.server.api.PartyMapper">
+
+	<resultMap id="ResultMap" type="Party">
+		<id column="ID" jdbcType="INTEGER" property="id" />
+		<result column="EmployerID" jdbcType="INTEGER" property="employerid" />
+		<result column="CreatorID" jdbcType="INTEGER" property="creatorid" />
+		<result column="LocationID" jdbcType="INTEGER" property="locationid" />
+		<result column="FinanceID" jdbcType="INTEGER" property="financeid" />
+		<result column="JurisdictionID" jdbcType="INTEGER" property="jurisdictionid" />
+		<result column="AltPartyID" jdbcType="INTEGER" property="altpartyid" />
+		<result column="AltID" jdbcType="VARCHAR" property="altid" />
+		<result column="Name" jdbcType="VARCHAR" property="name" />
+		<result column="State" jdbcType="VARCHAR" property="state" />
+		<result column="Options" jdbcType="VARCHAR" property="options" />
+		<result column="ExtraName" jdbcType="VARCHAR" property="extraname" />
+		<result column="IdentityNumber" jdbcType="VARCHAR" property="identitynumber" />
+		<result column="TaxNumber" jdbcType="VARCHAR" property="taxnumber" />
+		<result column="PostalAddress" jdbcType="VARCHAR" property="postaladdress" />
+		<result column="PostalCode" jdbcType="VARCHAR" property="postalcode" />
+		<result column="Country" jdbcType="VARCHAR" property="country" />
+		<result column="EmailAddress" jdbcType="VARCHAR" property="emailaddress" />
+		<result column="WebAddress" jdbcType="VARCHAR" property="webaddress" />
+		<result column="DayPhone" jdbcType="VARCHAR" property="dayphone" />
+		<result column="NightPhone" jdbcType="VARCHAR" property="nightphone" />
+		<result column="FaxPhone" jdbcType="VARCHAR" property="faxphone" />
+		<result column="MobilePhone" jdbcType="VARCHAR" property="mobilephone" />
+		<result column="Password" jdbcType="VARCHAR" property="password" />
+		<result column="Birthdate" jdbcType="DATE" property="birthdate" />
+		<result column="Currency" jdbcType="VARCHAR" property="currency" />
+		<result column="Unit" jdbcType="VARCHAR" property="unit" />
+		<result column="Latitude" jdbcType="DOUBLE" property="latitude" />
+		<result column="Longitude" jdbcType="DOUBLE" property="longitude" />
+		<result column="Altitude" jdbcType="DOUBLE" property="altitude" />
+		<result column="Notes" jdbcType="VARCHAR" property="notes" />
+		<result column="Language" jdbcType="VARCHAR" property="language" />
+		<result column="FormatDate" jdbcType="VARCHAR" property="formatdate" />
+		<result column="FormatPhone" jdbcType="VARCHAR" property="formatphone" />
+		<result column="Rank" jdbcType="INTEGER" property="rank" />
+		<result column="UserType" jdbcType="VARCHAR" property="usertype" />
+		<result column="skip_license" jdbcType="BOOLEAN" property="skipLicense" />
+		
+	</resultMap>
+	
+	<resultMap id="PropertyManagerMap" type="net.cbtltd.shared.PropertyManager">
+		<id column="ID" jdbcType="INTEGER" property="id" />
+		<result column="EmployerID" jdbcType="INTEGER" property="employerid" />
+		<result column="CreatorID" jdbcType="INTEGER" property="creatorid" />
+		<result column="LocationID" jdbcType="INTEGER" property="locationid" />
+		<result column="FinanceID" jdbcType="INTEGER" property="financeid" />
+		<result column="JurisdictionID" jdbcType="INTEGER" property="jurisdictionid" />
+		<result column="AltPartyID" jdbcType="INTEGER" property="altpartyid" />
+		<result column="AltID" jdbcType="VARCHAR" property="altid" />
+		<result column="Name" jdbcType="VARCHAR" property="name" />
+		<result column="State" jdbcType="VARCHAR" property="state" />
+		<result column="Options" jdbcType="VARCHAR" property="options" />
+		<result column="ExtraName" jdbcType="VARCHAR" property="extraname" />
+		<result column="IdentityNumber" jdbcType="VARCHAR" property="identitynumber" />
+		<result column="TaxNumber" jdbcType="VARCHAR" property="taxnumber" />
+		<result column="PostalAddress" jdbcType="VARCHAR" property="postaladdress" />
+		<result column="PostalCode" jdbcType="VARCHAR" property="postalcode" />
+		<result column="Country" jdbcType="VARCHAR" property="country" />
+		<result column="EmailAddress" jdbcType="VARCHAR" property="emailaddress" />
+		<result column="WebAddress" jdbcType="VARCHAR" property="webaddress" />
+		<result column="DayPhone" jdbcType="VARCHAR" property="dayphone" />
+		<result column="NightPhone" jdbcType="VARCHAR" property="nightphone" />
+		<result column="FaxPhone" jdbcType="VARCHAR" property="faxphone" />
+		<result column="MobilePhone" jdbcType="VARCHAR" property="mobilephone" />
+		<result column="Password" jdbcType="VARCHAR" property="password" />
+		<result column="Birthdate" jdbcType="DATE" property="birthdate" />
+		<result column="Currency" jdbcType="VARCHAR" property="currency" />
+		<result column="Unit" jdbcType="VARCHAR" property="unit" />
+		<result column="Latitude" jdbcType="DOUBLE" property="latitude" />
+		<result column="Longitude" jdbcType="DOUBLE" property="longitude" />
+		<result column="Altitude" jdbcType="DOUBLE" property="altitude" />
+		<result column="Notes" jdbcType="VARCHAR" property="notes" />
+		<result column="Language" jdbcType="VARCHAR" property="language" />
+		<result column="FormatDate" jdbcType="VARCHAR" property="formatdate" />
+		<result column="FormatPhone" jdbcType="VARCHAR" property="formatphone" />
+		<result column="Rank" jdbcType="INTEGER" property="rank" />
+		<result column="UserType" jdbcType="VARCHAR" property="usertype" />
+		<result column="skip_license" jdbcType="BOOLEAN" property="skipLicense" />
+	</resultMap>
+		
+	<sql id="columns">
+		ID, EmployerID, CreatorID, LocationID, FinanceID, JurisdictionID, AltPartyID, AltID, Name, State, Options, ExtraName, IdentityNumber,
+		TaxNumber, PostalAddress, PostalCode, Country, EmailAddress, WebAddress,
+		DayPhone, NightPhone, FaxPhone, MobilePhone, Password, Birthdate, 
+		Currency, Unit, Latitude, Longitude, Altitude, Notes, Language, FormatDate, FormatPhone, Rank, UserType, skip_license
+	</sql>
+	
+	<sql id="columnswithjoin">
+		party.ID, party.EmployerID, party.CreatorID, party.LocationID, party.FinanceID, party.JurisdictionID, 
+		party.AltPartyID, party.AltID, party.Name, party.State, party.Options, party.ExtraName, party.IdentityNumber,
+		party.TaxNumber, party.PostalAddress, party.PostalCode, party.Country, party.EmailAddress, party.WebAddress,
+		party.DayPhone, party.NightPhone, party.FaxPhone, party.MobilePhone, party.Password, party.Birthdate, 
+		party.Currency, party.Unit, party.Latitude, party.Longitude, party.Altitude, party.Notes, party.Language, party.FormatDate, party.FormatPhone, 
+		party.Rank, party.UserType, party.skip_license
+	</sql>
+
+	<!-- REGISTRATION JSON Queries -->
+
+	<select id="readbyemailwithinfo" parameterType="String" resultMap="PropertyManagerMap">
+		select
+		<include refid="columnswithjoin" />,
+		info.registration_step_id as StepID
+		from party
+		LEFT JOIN property_manager_info as info on (info.pm_id = party.ID)
+		where emailaddress = #{emailaddress,jdbcType=VARCHAR}
+			and party.State not in ('Initial', 'Final')
+    	limit 0, 1
+	</select>
+
+	<!-- END REGISTRATION JSON Queries -->
+
+	<select id="read" parameterType="String" resultMap="ResultMap">
+		select
+		<include refid="columns" />
+		from party
+		where ID = #{id,jdbcType=INTEGER}
+	</select>
+
+<!-- 	<select id="exists" parameterType="Party" resultMap="ResultMap"> -->
+<!-- 		select -->
+<!-- 		<include refid="columns" /> -->
+<!-- 		from Party -->
+<!-- 		where emailaddress = #{emailaddress, jdbcType=VARCHAR} -->
+<!--     	limit 0, 1 -->
+<!-- 	</select> -->
+	
+	<select id="readbyemailaddress" parameterType="String" resultMap="ResultMap">
+		select
+		<include refid="columns" />
+		from party
+		where emailaddress = #{emailaddress,jdbcType=VARCHAR}
+			and State not in ('Initial', 'Final')
+    	limit 0, 1
+	</select>
+
+	<select id="organizationread" parameterType="String" resultType="Organization">
+		select
+		<include refid="columns" />
+		from party
+		where ID = #{id,jdbcType=INTEGER}
+	</select>
+
+	<delete id="delete" parameterType="String">
+		delete from party
+		where ID = #{id,jdbcType=INTEGER}
+	</delete>
+	
+	<insert id="create" parameterType="Party" useGeneratedKeys="true" keyProperty="id">
+		insert into party (
+			EmployerID, CreatorID, LocationID, FinanceID, JurisdictionID, AltPartyID, AltID, Name, State, Options, ExtraName, IdentityNumber, TaxNumber,
+			PostalAddress, PostalCode, Country, EmailAddress, WebAddress, DayPhone, NightPhone, FaxPhone, MobilePhone,
+			Password, Birthdate, Currency, Unit, Latitude, Longitude, Altitude, Notes, Language, FormatDate, FormatPhone, Rank, UserType, skip_license
+		)
+		values (
+			#{employerid,jdbcType=INTEGER}, 
+			#{creatorid,jdbcType=INTEGER},
+			#{locationid,jdbcType=INTEGER},
+			#{financeid,jdbcType=INTEGER}, 
+			#{jurisdictionid,jdbcType=INTEGER}, 
+			#{altpartyid,jdbcType=INTEGER},
+			#{altid,jdbcType=VARCHAR}, 
+			#{name,jdbcType=VARCHAR}, 
+			#{state,jdbcType=VARCHAR},
+			#{options,jdbcType=VARCHAR},
+			#{extraname,jdbcType=VARCHAR}, 
+			#{identitynumber,jdbcType=VARCHAR},
+			#{taxnumber,jdbcType=VARCHAR},
+			#{postaladdress,jdbcType=VARCHAR}, 
+			#{postalcode,jdbcType=VARCHAR}, 
+			#{country,jdbcType=VARCHAR},
+			#{emailaddress,jdbcType=VARCHAR}, 
+			#{webaddress,jdbcType=VARCHAR},
+			#{dayphone,jdbcType=VARCHAR},
+			#{nightphone,jdbcType=VARCHAR}, 
+			#{faxphone,jdbcType=VARCHAR}, 
+			#{mobilephone,jdbcType=VARCHAR},
+			#{password,jdbcType=VARCHAR}, 
+			#{birthdate,jdbcType=DATE},
+			#{currency,jdbcType=VARCHAR},
+			#{unit,jdbcType=VARCHAR},
+			#{latitude,jdbcType=DOUBLE},
+			#{longitude,jdbcType=DOUBLE}, 
+			#{altitude,jdbcType=DOUBLE}, 
+			#{notes,jdbcType=VARCHAR},
+			#{language,jdbcType=VARCHAR},
+			#{formatdate,jdbcType=VARCHAR},
+			#{formatphone,jdbcType=VARCHAR},
+			#{rank,jdbcType=INTEGER},
+			#{usertype,jdbcType=VARCHAR},
+			#{skipLicense,jdbcType=BOOLEAN}
+		)
+	</insert>
+
+	<update id="update" parameterType="Party">
+		update party
+		<set>
+			<if test="employerid != null">
+				EmployerID = #{employerid,jdbcType=INTEGER},
+			</if>
+			<if test="creatorid != null">
+				CreatorID = #{creatorid,jdbcType=INTEGER},
+			</if>
+			<if test="locationid != null">
+				LocationID = #{locationid,jdbcType=INTEGER},
+			</if>
+			<if test="financeid != null">
+				FinanceID = #{financeid,jdbcType=INTEGER},
+			</if>
+			<if test="jurisdictionid != null">
+				JurisdictionID = #{jurisdictionid,jdbcType=INTEGER},
+			</if>
+			<if test="altpartyid != null">
+				AltPartyID = #{altpartyid,jdbcType=INTEGER},
+			</if>
+			<if test="altid != null">
+				AltID = #{altid,jdbcType=VARCHAR},
+			</if>
+			<if test="name != null">
+				Name = #{name,jdbcType=VARCHAR},
+			</if>
+			<if test="state != null">
+				State = #{state,jdbcType=VARCHAR},
+			</if>
+			<if test="options != null">
+				Options = #{options,jdbcType=VARCHAR},
+			</if>
+			<if test="extraname != null">
+				ExtraName = #{extraname,jdbcType=VARCHAR},
+			</if>
+			<if test="identitynumber != null">
+				IdentityNumber = #{identitynumber,jdbcType=VARCHAR},
+			</if>
+			<if test="taxnumber != null">
+				TaxNumber = #{taxnumber,jdbcType=VARCHAR},
+			</if>
+			<if test="postaladdress != null">
+				PostalAddress = #{postaladdress,jdbcType=VARCHAR},
+			</if>
+			<if test="postalcode != null">
+				PostalCode = #{postalcode,jdbcType=VARCHAR},
+			</if>
+			<if test="country != null">
+				Country = #{country,jdbcType=VARCHAR},
+			</if>
+			<if test="emailaddress != null">
+				EmailAddress = #{emailaddress,jdbcType=VARCHAR},
+			</if>
+			<if test="webaddress != null">
+				WebAddress = #{webaddress,jdbcType=VARCHAR},
+			</if>
+			<if test="dayphone != null">
+				DayPhone = #{dayphone,jdbcType=VARCHAR},
+			</if>
+			<if test="nightphone != null">
+				NightPhone = #{nightphone,jdbcType=VARCHAR},
+			</if>
+			<if test="faxphone != null">
+				FaxPhone = #{faxphone,jdbcType=VARCHAR},
+			</if>
+			<if test="mobilephone != null">
+				MobilePhone = #{mobilephone,jdbcType=VARCHAR},
+			</if>
+			<if test="password != null">
+				Password = #{password,jdbcType=VARCHAR},
+			</if>
+			<if test="birthdate != null">
+				Birthdate = #{birthdate,jdbcType=DATE},
+			</if>
+			<if test="currency != null">
+				Currency = #{currency,jdbcType=VARCHAR},
+			</if>
+			<if test="unit != null">
+				Unit = #{unit,jdbcType=VARCHAR},
+			</if>
+			<if test="latitude != null">
+				Latitude = #{latitude,jdbcType=DOUBLE},
+			</if>
+			<if test="longitude != null">
+				Longitude = #{longitude,jdbcType=DOUBLE},
+			</if>
+			<if test="altitude != null">
+				Altitude = #{altitude,jdbcType=DOUBLE},
+			</if>
+			<if test="notes != null">
+				Notes = #{notes,jdbcType=VARCHAR},
+			</if>
+			<if test="language != null">
+				Language = #{language,jdbcType=VARCHAR},
+			</if>
+			<if test="formatdate != null">
+				FormatDate = #{formatdate,jdbcType=VARCHAR},
+			</if>
+			<if test="formatphone != null">
+				FormatPhone = #{formatphone,jdbcType=VARCHAR},
+			</if>
+			<if test="rank != null">
+				Rank = #{rank,jdbcType=INTEGER},
+			</if>
+			<if test="usertype != null">
+				UserType = #{usertype,jdbcType=VARCHAR},
+			</if>
+			<if test="skipLicense != null">
+				skip_license = #{skipLicense,jdbcType=BOOLEAN}
+			</if>
+		</set>
+		where ID = #{id,jdbcType=INTEGER}
+	</update>
+
+	<update id="updateByPrimaryKey" parameterType="Party">
+		update party
+		set EmployerID = #{employerid,jdbcType=INTEGER},
+		CreatorID = #{creatorid,jdbcType=INTEGER},
+		LocationID = #{locationid,jdbcType=INTEGER},
+		FinanceID = #{financeid,jdbcType=INTEGER},
+		JurisdictionID = #{jurisdictionid,jdbcType=INTEGER},
+		AltPartyID = #{altpartyid,jdbcType=INTEGER},
+		AltID = #{altid,jdbcType=VARCHAR},
+		Name = #{name,jdbcType=VARCHAR},
+		State = #{state,jdbcType=VARCHAR},
+		Options = #{options,jdbcType=VARCHAR},
+		ExtraName = #{extraname,jdbcType=VARCHAR},
+		IdentityNumber = #{identitynumber,jdbcType=VARCHAR},
+		TaxNumber = #{taxnumber,jdbcType=VARCHAR},
+		PostalAddress = #{postaladdress,jdbcType=VARCHAR},
+		PostalCode = #{postalcode,jdbcType=VARCHAR},
+		Country = #{country,jdbcType=VARCHAR},
+		EmailAddress = #{emailaddress,jdbcType=VARCHAR},
+		WebAddress = #{webaddress,jdbcType=VARCHAR},
+		DayPhone = #{dayphone,jdbcType=VARCHAR},
+		NightPhone = #{nightphone,jdbcType=VARCHAR},
+		FaxPhone = #{faxphone,jdbcType=VARCHAR},
+		MobilePhone = #{mobilephone,jdbcType=VARCHAR},
+		Password = #{password,jdbcType=VARCHAR},
+		Birthdate = #{birthdate,jdbcType=DATE},
+		Currency = #{currency,jdbcType=VARCHAR},
+		Unit = #{unit,jdbcType=VARCHAR},
+		Latitude = #{latitude,jdbcType=DOUBLE},
+		Longitude = #{longitude,jdbcType=DOUBLE},
+		Altitude = #{altitude,jdbcType=DOUBLE},
+		Notes = #{notes,jdbcType=VARCHAR},
+		Language = #{language,jdbcType=VARCHAR},
+		FormatDate = #{formatdate,jdbcType=VARCHAR},
+		FormatPhone = #{formatphone,jdbcType=VARCHAR},
+		Rank = #{rank,jdbcType=INTEGER},
+		UserType = #{usertype,jdbcType=VARCHAR},
+		skip_license = #{skipLicense,jdbcType=BOOLEAN}
+		where ID = #{id,jdbcType=INTEGER}
+	</update>
+	
+	<update id="suspendparty" parameterType="String">
+		update party
+		set State = 'Suspended'
+		where ID = #{id,jdbcType=INTEGER}
+	</update>
+
+	<select id="nameidbyid" parameterType="NameIdAction" resultType="NameId">
+		select distinct Name, ID
+		from party
+		where ID = #{id}
+	</select>
+
+	<select id="nameidbyname" parameterType="NameIdAction" resultType="NameId">
+		select distinct Name, ID
+		from relation 
+			join party
+				on ID = LineID
+			<if test="organizationid != null">
+				and HeadID = #{organizationid,jdbcType=INTEGER}
+			</if>
+			<if test="type == null">
+				and substring(Link,1,10) = 'ORG_PARTY_'
+			</if>
+			<if test="type != null">
+				and Link = concat('ORG_PARTY_', #{type,jdbcType=VARCHAR}) 
+			</if>
+		where Name <![CDATA[ >= ]]> #{name,jdbcType=VARCHAR}
+			and Name <![CDATA[ > ]]> ''
+			and Name is not null
+			and ID is not null
+		<if test="state == null">
+			and State in ('Created', 'Suspended')
+		</if>
+		<if test="state != null">
+			and State = #{state,jdbcType=VARCHAR}
+		</if>
+		<if test="ids != null">
+			and ID in (${ids})
+		</if>
+		<if test="version != null">
+			and party.version <![CDATA[ > ]]> #{version}
+		</if>
+		order by Name
+		limit 0, #{numrows}
+	</select>
+	
+	<select id="agentnameidbyname" parameterType="NameIdAction" resultType="NameId">
+		select distinct  Name, ID
+		from relation r
+			join party on party.ID = r.HeadID and  r.Link = 'Party Role' 
+				<if test="ids != null">
+					and  r.LineID in (${ids})
+				</if> 
+		where Name <![CDATA[ >= ]]> #{name,jdbcType=VARCHAR}
+		and Name <![CDATA[ > ]]> ''
+		and Name is not null
+		and ID is not null
+		<if test="state == null">
+			and State in ('Created', 'Suspended')
+		</if>
+		<if test="state != null">
+			and State = #{state,jdbcType=VARCHAR}
+		</if>
+		<if test="version != null">
+			and party.version <![CDATA[ > ]]> #{version}
+		</if>
+		UNION 
+		select distinct  Name, ID
+		from relation r
+			join party on  party.ID = r.LineID  and substring(r.Link,1,10) = 'ORG_PARTY_' and r.Link <![CDATA[ <> ]]> 'ORG_PARTY_Product'
+				<if test="organizationid != null">
+					and r.HeadID = #{organizationid,jdbcType=INTEGER}					
+				</if> 		
+		where Name <![CDATA[ >= ]]> #{name,jdbcType=VARCHAR}
+		and Name <![CDATA[ > ]]> ''
+		and Name is not null
+		and ID is not null
+		<if test="state == null">
+			and State in ('Created', 'Suspended')
+		</if>
+		<if test="state != null">
+			and State = #{state,jdbcType=VARCHAR}
+		</if>
+		<if test="version != null">
+			and party.version <![CDATA[ > ]]> #{version}
+		</if>
+		order by Name
+		limit 0, #{numrows} 
+	</select>
+
+	<select id="organizationnameid" parameterType="NameIdAction" resultType="NameId">
+		select distinct party.Name, party.ID
+		from party
+		join relation on substring(Link,1,10) = 'ORG_PARTY_'
+			and substring(Link,11) in ('Agent', 'Organization')
+			and relation.HeadID = party.ID
+		where party.Name <![CDATA[ >= ]]> #{name}
+			and party.CreatorID = #{id}
+   			and party.state not in ( 'Initial', 'Final')
+		order by party.Name
+		limit 0, #{numrows}
+	</select>
+	
+	<select id="propertymanagernameid" resultType="NameId">
+		select distinct party.Name, party.ID
+		from party
+			join relation as r on r.HeadID = party.ID  AND r.LineID = party.ID
+		where party.state not in ( 'Initial', 'Final') 
+			AND r.Link = 'ORG_PARTY_Organization'
+		order by party.Name
+	</select>
+
+	<select id="creatornameid" parameterType="String" resultType="NameId">
+		select distinct Name, ID
+		from party
+			join relation on Link = 'Party Creator'
+				and LineID = #{emailaddress}
+		order by Name
+		limit 0, 100
+	</select>
+	
+	<select id="employeenameid" parameterType="NameIdAction" resultType="NameId">
+		select distinct Name, ID
+		from party
+		where Name <![CDATA[ >= ]]> #{name}
+		<if test="organizationid != null">
+			and EmployerID = #{organizationid}
+		</if>
+		order by Name
+		limit 0, #{numrows}
+	</select>
+	
+	<select id="jurisdictionnameid" parameterType="NameIdAction" resultType="NameId">
+		select distinct Name, ID
+		from party
+		join relation on substring(Link,1,10) = 'ORG_PARTY_'
+			and substring(Link,11) = 'Jurisdiction'
+			and relation.HeadID = party.ID
+		where Name <![CDATA[ >= ]]> #{name}
+   			and party.state not in ('Initial', 'Final')
+		order by Name
+		limit 0, #{numrows}
+	</select>
+	
+	<select id="type" parameterType="NameIdAction" resultType="NameId">
+		select distinct substring(relation.Link,11) as name, substring(relation.Link,11) as id
+		from relation 
+		where substring(relation.Link,1,10) = 'ORG_PARTY_'
+		<if test="organizationid != null">
+			and relation.HeadID = #{organizationid}
+		</if>
+		limit 0, #{numrows}
+	</select>
+	
+	<select id="workflownameid" parameterType="NameIdAction" resultType="NameId">
+			select distinct party.Name, party.ID
+			from party
+			join reservation on reservation.ActorID = party.ID
+			where party.Name <![CDATA[ >= ]]> #{name}
+			and reservation.State not in ('Initial', 'Cancelled', 'Closed', 'Departed', 'Final')
+			and reservation.DoneDate is null
+			<if test="organizationid != null">
+				and reservation.OrganizationID = #{organizationid}
+			</if>
+
+		union
+			select distinct party.Name, party.ID
+			from party
+			join task on task.ActorID = party.ID
+			where party.Name <![CDATA[ >= ]]> #{name}
+			and task.State not in ('Initial', 'Cancelled', 'Closed', 'Departed', 'Final')
+			and task.DoneDate is null
+			<if test="organizationid != null">
+				and task.OrganizationID = #{organizationid}
+			</if>
+		order by Name
+	</select>
+	
+	<select id="actorsessioncount" parameterType="HasTableService" resultType="Integer">
+		select count(*)
+		from session
+		where ActorID = #{id,jdbcType=INTEGER}
+	</select>
+  
+	<select id="actorsessionlist" parameterType="HasTableService" resultType="Session">
+		select ID, ActorID, Login, Logout
+		from session
+		where ActorID = #{id,jdbcType=INTEGER}
+		order by ${orderby}
+		limit #{startrow}, #{numrows}
+	</select>
+
+	<insert id="insertaccounts" parameterType="String">
+		insert into relation (Link, HeadId, LineID)
+		select distinct 'Organization Account', #{id}, ID
+		from account
+		where ID <![CDATA[ < ]]> 100
+	</insert>
+
+	<insert id="insertlogo" parameterType="String">
+		insert into text (ID, Type, Name, Notes, Data, Date, Language)
+		select distinct concat('Logo.', #{id}, '.jpg'), 'Blob', #{id}, 'Default', Data, now(), 'EN' 
+		from text
+		where ID = 'Logo.4.jpg'
+	</insert>
+
+	<select id="accommodationcount" parameterType="Void" resultType="Integer">
+		select count(*)
+		from product
+		where State = 'Created'
+			and type = 'Accommodation'
+	</select>
+
+	<select id="organizationidsbyagentid" parameterType="String" resultType="String">
+		select OrganizationID from contract
+		where PartyID = #{id}
+		and State not in ('Initial', 'Final')
+	</select>
+	
+	<select id="partyrolecount" parameterType="HasTableService" resultType="Integer">
+	    select count(HeadID)
+	    from relation
+	    where Link = 'Party Role'
+	    and LineID = #{id}
+	</select>
+	
+	<select id="partyrolelist" parameterType="HasTableService" resultMap="ResultMap">
+    	select
+		<include refid="columns" />
+    	from relation
+    	join party on ID = HeadID and Link = 'Party Role' and LineID = #{id}
+	    order by ${orderby}
+	    limit #{startrow}, #{numrows}
+	</select>
+		
+	<!-- Channel Pertners  -->
+	
+	<insert id="insertChannelPatner" parameterType="map">
+    	insert into
+    	manager_to_channel (property_manager_id, channel_partner_id)
+    	VALUES (#{pmid}, #{channelid})
+	</insert>
+	
+	<select id="listChannelID" parameterType="Integer" resultType="Integer">
+		select channel_partner_id
+		from manager_to_channel
+		where property_manager_id = #{id,jdbcType=INTEGER}
+	</select>
+	
+	<delete id="deleteChannelPartners" parameterType="Integer">
+		delete from manager_to_channel
+		where property_manager_id = #{id,jdbcType=INTEGER}
+	</delete>
+	
+	<!-- END Channel Pertners  -->
+
+	<select id="employeecount" parameterType="HasTableService" resultType="Integer">
+	    select count(ID)
+	    from party
+    	where EmployerID = #{id}
+    		and State = 'Created'
+	</select>
+	
+	<select id="employeelist" parameterType="HasTableService" resultType="Party">
+    	select
+		<include refid="columns" />
+    	from party
+    	where EmployerID = #{id}
+    		and State = 'Created'
+	    order by ${orderby}
+	    limit #{startrow}, #{numrows}
+	</select>
+
+	<select id="relationcount" parameterType="HasTableService" resultType="Integer">
+	select SUM(rank)from (
+		select count(distinct party.ID) as rank
+		from reservation join party on party.id = reservation.customerid 
+		where reservation.state not in ('Initial','Final') 
+			and party.name is  not null 
+			and party.state = 'Created' 
+			and organizationid = #{id}
+
+		union
+		select count(distinct party.ID) as rank
+		from reservation join party on party.id = reservation.agentid 
+		where reservation.state not in ('Initial','Final') 
+			and party.name is  not null 
+			and party.state = 'Created' 
+			and organizationid = #{id}
+
+		union
+		select count(distinct party.ID) as rank
+		from reservation join party on party.id = reservation.actorid 
+		where reservation.state not in ('Initial','Final') 
+			and party.name is  not null 
+			and party.state = 'Created' 
+			and organizationid = #{id}
+
+		union
+		select count(distinct party.ID) as rank
+		from reservation join party on party.id = reservation.serviceid 
+		where reservation.state not in ('Initial','Final') 
+			and party.name is  not null 
+			and party.state = 'Created' 
+			and organizationid = #{id}
+
+		union
+		select count(distinct party.ID) as rank
+		from reservation join party on party.id = reservation.organizationid 
+		where reservation.state not in ('Initial','Final') 
+			and party.name is  not null 
+			and party.state = 'Created' 
+			and agentid = #{id}
+
+		union
+		select count(distinct party.ID) as rank
+		from reservation join party on party.id = reservation.customerid 
+		where reservation.state not in ('Initial','Final') 
+			and party.name is  not null 
+			and party.state = 'Created' 
+			and agentid = #{id}
+
+		union
+		select count(distinct party.ID) as rank
+		from reservation join party on party.id = reservation.actorid 
+		where reservation.state not in ('Initial','Final') 
+			and party.name is  not null 
+			and party.state = 'Created' 
+			and agentid = #{id}
+
+		union
+		select count(distinct party.ID) as rank
+		from reservation join party on party.id = reservation.serviceid 
+		where reservation.state not in ('Initial','Final') 
+			and party.name is  not null 
+			and party.state = 'Created' 
+			and agentid = #{id}
+
+		union
+		select count(distinct party.ID) as rank
+		from reservation join party on party.id = reservation.organizationid 
+		where reservation.state not in ('Initial','Final') 
+			and party.name is  not null 
+			and party.state = 'Created' 
+			and customerid = #{id}
+
+		union
+		select count(distinct party.ID) as rank
+		from reservation join party on party.id = reservation.agentid 
+		where reservation.state not in ('Initial','Final') 
+			and party.name is  not null 
+			and party.state = 'Created' 
+			and customerid = #{id}
+
+		union
+		select count(distinct party.ID) as rank
+		from reservation join party on party.id = reservation.actorid 
+		where reservation.state not in ('Initial','Final') 
+			and party.name is  not null 
+			and party.state = 'Created' 
+			and customerid = #{id}
+
+		union
+		select count(distinct party.ID) as rank
+		from reservation join party on party.id = reservation.serviceid 
+		where reservation.state not in ('Initial','Final') 
+			and party.name is  not null 
+			and party.state = 'Created' 
+			and customerid = #{id}
+
+		union
+		select count(distinct party.ID) as rank
+		from reservation join party on party.id = reservation.organizationid 
+		where reservation.state not in ('Initial','Final') 
+			and party.name is  not null 
+			and party.state = 'Created' 
+			and actorid = #{id}
+
+		union
+		select count(distinct party.ID) as rank
+		from reservation join party on party.id = reservation.agentid 
+		where reservation.state not in ('Initial','Final') 
+			and party.name is  not null 
+			and party.state = 'Created' 
+			and actorid = #{id}
+
+		union
+		select count(distinct party.ID) as rank
+		from reservation join party on party.id = reservation.customerid 
+		where reservation.state not in ('Initial','Final') 
+			and party.name is  not null 
+			and party.state = 'Created' 
+			and actorid = #{id}
+
+		union
+		select count(distinct party.ID) as rank
+		from reservation join party on party.id = reservation.serviceid 
+		where reservation.state not in ('Initial','Final') 
+			and party.name is  not null 
+			and party.state = 'Created' 
+			and actorid = #{id}
+
+		union
+		select count(distinct party.ID) as rank
+		from party join party as employee on employee.id = party.employerid 
+		where employee.state = 'Created' 
+			and party.name is  not null 
+			and party.state = 'Created' 
+			and party.id = #{id}
+
+		union
+		select count(distinct party.ID) as rank
+		from party join product on product.ownerid = party.id 
+		where product.state not in ('Initial','Final') 
+			and party.name is  not null 
+			and party.state = 'Created' 
+			and product.supplierid = #{id}
+
+		union
+		select count(distinct party.ID) as rank
+		from party join product on product.supplierid = party.id 
+		where product.state not in ('Initial','Final') 
+			and party.name is  not null 
+			and party.state = 'Created' 
+			and product.ownerid = #{id}
+
+		union
+		select count(distinct party.ID) as rank
+		from party 
+		where party.name is  not null 
+			and party.state = 'Created' 
+			and party.creatorid = #{id}
+
+		union
+		select count(distinct party.ID) as rank
+		from party join party as temp on temp.creatorid = party.id 
+		where temp.state = 'Created' 
+			and party.name is not null 
+			and party.state = 'Created' 
+			and temp.id = #{id}
+
+		union
+		select count(distinct party.ID) as rank
+		from party join party as temp on temp.jurisdictionid = party.id 
+		where temp.state = 'Created' 
+			and party.name is not null 
+			and party.state = 'Created' 
+			and temp.id = #{id}
+
+		union
+		select count(distinct party.ID) as rank
+		from party 
+		where party.name is  not null 
+			and party.state = 'Created' 
+			and party.jurisdictionid = #{id}
+
+		union
+		select count(distinct party.ID) as rank
+		from party join rate on rate.customerid = party.id join event on event.id = rate.eventid 
+		where party.name is  not null 
+			and party.state = 'Created' 
+			and event.organizationid = #{id}
+
+		union
+		select count(distinct party.ID) as rank
+		from party join event on event.organizationid = party.id join rate on rate.eventid = event.id 
+		where party.name is  not null 
+			and party.state = 'Created' 
+			and rate.customerid = #{id}
+	) party
+	</select>
+	
+	<select id="relationlist" parameterType="HasTableService" resultType="Party">
+	select * from (
+		select distinct 'Guest' as state,
+			count(*) as rank,
+		 	party.id, party.name, party.emailaddress, party.dayphone, party.mobilephone
+			from reservation join party on party.id = reservation.customerid 
+		where reservation.state not in ('Initial','Final') 
+			and party.name is  not null 
+			and party.state = 'Created' 
+			and organizationid = #{id}
+		group by party.name
+
+		union
+		select distinct 'Travel Agent' as state,
+			count(*) as rank,
+		 	party.id, party.name, party.emailaddress, party.dayphone, party.mobilephone
+			from reservation join party on party.id = reservation.agentid 
+		where reservation.state not in ('Initial','Final') 
+			and party.name is  not null 
+			and party.state = 'Created' 
+			and organizationid = #{id}
+		group by party.name
+
+		union
+		select distinct 'Hospitality' as state,
+			count(*) as rank,
+		 	party.id, party.name, party.emailaddress, party.dayphone, party.mobilephone
+			from reservation join party on party.id = reservation.actorid 
+		where reservation.state not in ('Initial','Final') 
+			and party.name is  not null 
+			and party.state = 'Created' 
+			and organizationid = #{id}
+		group by party.name
+
+		union
+		select distinct 'Housekeeping' as state,
+			count(*) as rank,
+		 	party.id, party.name, party.emailaddress, party.dayphone, party.mobilephone
+			from reservation join party on party.id = reservation.serviceid 
+		where reservation.state not in ('Initial','Final') 
+			and party.name is  not null 
+			and party.state = 'Created' 
+			and organizationid = #{id}
+		group by party.name
+
+		union
+		select distinct 'Property Manager' as state,
+			count(*) as rank,
+		 	party.id, party.name, party.emailaddress, party.dayphone, party.mobilephone
+			from reservation join party on party.id = reservation.organizationid 
+		where reservation.state not in ('Initial','Final') 
+			and party.name is  not null 
+			and party.state = 'Created' 
+			and agentid = #{id}
+		group by party.name
+
+		union
+		select distinct 'Guest' as state,
+			count(*) as rank,
+		 	party.id, party.name, party.emailaddress, party.dayphone, party.mobilephone
+			from reservation join party on party.id = reservation.customerid 
+		where reservation.state not in ('Initial','Final') 
+			and party.name is  not null 
+			and party.state = 'Created' 
+			and agentid = #{id}
+		group by party.name
+
+		union
+		select distinct 'Hospitality' as state,
+			count(*) as rank,
+		 	party.id, party.name, party.emailaddress, party.dayphone, party.mobilephone
+			from reservation join party on party.id = reservation.actorid 
+		where reservation.state not in ('Initial','Final') 
+			and party.name is  not null 
+			and party.state = 'Created' 
+			and agentid = #{id}
+		group by party.name
+
+		union
+		select distinct 'Housekeeping' as state,
+			count(*) as rank,
+		 	party.id, party.name, party.emailaddress, party.dayphone, party.mobilephone
+			from reservation join party on party.id = reservation.serviceid 
+		where reservation.state not in ('Initial','Final') 
+			and party.name is  not null 
+			and party.state = 'Created' 
+			and agentid = #{id}
+		group by party.name
+
+		union
+		select distinct 'Property Manager' as state,
+			count(*) as rank,
+		 	party.id, party.name, party.emailaddress, party.dayphone, party.mobilephone
+			from reservation join party on party.id = reservation.organizationid 
+		where reservation.state not in ('Initial','Final') 
+			and party.name is  not null 
+			and party.state = 'Created' 
+			and customerid = #{id}
+		group by party.name
+
+		union
+		select distinct 'Travel Agent' as state,
+			count(*) as rank,
+		 	party.id, party.name, party.emailaddress, party.dayphone, party.mobilephone
+			from reservation join party on party.id = reservation.agentid 
+		where reservation.state not in ('Initial','Final') 
+			and party.name is  not null 
+			and party.state = 'Created' 
+			and customerid = #{id}
+		group by party.name
+
+		union
+		select distinct 'Hospitality' as state,
+			count(*) as rank,
+		 	party.id, party.name, party.emailaddress, party.dayphone, party.mobilephone
+			from reservation join party on party.id = reservation.actorid 
+		where reservation.state not in ('Initial','Final') 
+			and party.name is  not null 
+			and party.state = 'Created' 
+			and customerid = #{id}
+		group by party.name
+
+		union
+		select distinct 'Housekeeping' as state,
+			count(*) as rank,
+		 	party.id, party.name, party.emailaddress, party.dayphone, party.mobilephone
+			from reservation join party on party.id = reservation.serviceid 
+		where reservation.state not in ('Initial','Final') 
+			and party.name is  not null 
+			and party.state = 'Created' 
+			and customerid = #{id}
+		group by party.name
+
+		union
+		select distinct 'Hospitality' as state,
+			count(*) as rank,
+		 	party.id, party.name, party.emailaddress, party.dayphone, party.mobilephone
+			from reservation join party on party.id = reservation.organizationid 
+		where reservation.state not in ('Initial','Final') 
+			and party.name is  not null 
+			and party.state = 'Created' 
+			and actorid = #{id}
+		group by party.name
+
+		union
+		select distinct 'Travel Agent' as state,
+			count(*) as rank,
+		 	party.id, party.name, party.emailaddress, party.dayphone, party.mobilephone
+			from reservation join party on party.id = reservation.agentid 
+		where reservation.state not in ('Initial','Final') 
+			and party.name is  not null 
+			and party.state = 'Created' 
+			and actorid = #{id}
+		group by party.name
+
+		union
+		select distinct 'Guest' as state,
+			count(*) as rank,
+		 	party.id, party.name, party.emailaddress, party.dayphone, party.mobilephone
+			from reservation join party on party.id = reservation.customerid 
+		where reservation.state not in ('Initial','Final') 
+			and party.name is  not null 
+			and party.state = 'Created' 
+			and actorid = #{id}
+		group by party.name
+
+		union
+		select distinct 'Housekeeping' as state,
+			count(*) as rank,
+		 	party.id, party.name, party.emailaddress, party.dayphone, party.mobilephone
+		from reservation join party on party.id = reservation.serviceid 
+		where reservation.state not in ('Initial','Final') 
+			and party.name is  not null 
+			and party.state = 'Created' 
+			and actorid = #{id}
+		group by party.name
+
+		union
+		select distinct 'Employee' as state,
+			count(*) as rank,
+		 	party.id, party.name, party.emailaddress, party.dayphone, party.mobilephone
+		from party join party as employee on employee.id = party.employerid 
+		where employee.state = 'Created' 
+			and party.name is  not null 
+			and party.state = 'Created' 
+			and party.id = #{id}
+		group by party.name
+
+		union
+		select distinct 'Property Owner' as state,
+			count(*) as rank,
+		 	party.id, party.name, party.emailaddress, party.dayphone, party.mobilephone
+		from party join product on product.ownerid = party.id 
+		where product.state not in ('Initial','Final') 
+			and party.name is  not null 
+			and party.state = 'Created' 
+			and product.supplierid = #{id}
+		group by party.name
+
+		union
+		select distinct 'Property Manager' as state,
+			count(*) as rank,
+		 	party.id, party.name, party.emailaddress, party.dayphone, party.mobilephone
+		from party join product on product.supplierid = party.id 
+		where product.state not in ('Initial','Final') 
+			and party.name is  not null 
+			and party.state = 'Created' 
+			and product.ownerid = #{id}
+		group by party.name
+
+		union
+		select distinct 'Affiliated' as state,
+			count(*) as rank,
+		 	party.id, party.name, party.emailaddress, party.dayphone, party.mobilephone
+		from party 
+		where party.name is  not null 
+			and party.state = 'Created' 
+			and party.creatorid = #{id}
+		group by party.name
+
+		union
+		select distinct 'Affiliate' as state,
+			count(*) as rank,
+		 	party.id, party.name, party.emailaddress, party.dayphone, party.mobilephone
+		from party join party as temp on temp.creatorid = party.id 
+		where temp.state = 'Created' 
+			and party.name is not null 
+			and party.state = 'Created' 
+			and temp.id = #{id}
+		group by party.name
+
+		union
+		select distinct 'Jurisdiction' as state,
+			count(*) as rank,
+		 	party.id, party.name, party.emailaddress, party.dayphone, party.mobilephone
+		from party join party as temp on temp.jurisdictionid = party.id 
+		where temp.state = 'Created' 
+			and party.name is not null 
+			and party.state = 'Created' 
+			and temp.id = #{id}
+		group by party.name
+
+		union
+		select distinct 'Party' as state,
+			count(*) as rank,
+		 	party.id, party.name, party.emailaddress, party.dayphone, party.mobilephone
+		from party 
+		where party.name is  not null 
+			and party.state = 'Created' 
+			and party.jurisdictionid = #{id}
+		group by party.name
+
+		union
+		select distinct 'Rated Manager' as state,
+			count(*) as rank,
+		 	party.id, party.name, party.emailaddress, party.dayphone, party.mobilephone
+		from party join rate on rate.customerid = party.id join event on event.id = rate.eventid 
+		where party.name is  not null 
+			and party.state = 'Created' 
+			and event.organizationid = #{id}
+		group by party.name
+
+		union
+		select distinct 'Rated By' as state,
+			count(*) as rank,
+		 	party.id, party.name, party.emailaddress, party.dayphone, party.mobilephone
+		from party join event on event.organizationid = party.id join rate on rate.eventid = event.id 
+		where party.name is  not null 
+			and party.state = 'Created' 
+			and rate.customerid = #{id}
+		group by party.name
+	) party
+		order by rank desc
+		limit #{startrow}, #{numrows}
+	</select>
+
+	<delete id="progressdelete" parameterType="String">
+		delete from relation
+		where Link = 'Party Value'
+			and substring_index(LineID, ':', 1) in (
+				'ProgressActivityMax', 'ProgressAge',
+		 		'ProgressAgeMax', 'ProgressBrochure', 'ProgressBrochureMax', 
+		 		'ProgressConfirm', 'ProgressCreator', 'ProgressCreatorMax', 
+		 		'ProgressValue', 'ProgressValueMax'
+		)
+	</delete>
+
+	<insert id="progressactivitymax" parameterType="Void">
+		insert into relation (Link, HeadID, LineID)
+		select 'Party Value', 0, concat('ProgressActivityMax:', max(0 + substring_index(LineID, ':', -1)))
+		from relation
+		where Link = 'Party Value'
+		and substring_index(LineID, ':', 1) = 'ProgressActivity'
+	</insert>
+
+	<insert id="progressage" parameterType="Void">
+		insert into relation (Link, HeadID, LineID)
+		select 'Party Value', ActorID, concat('ProgressAge:',max(datediff(curdate(), Login)))
+		from session
+		group by ActorID
+	</insert>
+
+	<insert id="progressagemax" parameterType="Void">
+		insert into relation (Link, HeadID, LineID)
+		select 'Party Value', 0, concat('ProgressAgeMax:',max(age)) from (select ActorID, max(datediff(curdate(), Login)) as age
+		from session
+		group by ActorID) as temp
+	</insert>
+
+	<insert id="progressconfirm" parameterType="Void">
+		insert into relation (Link, HeadID, LineID)
+		select 'Party Value', ActorID, concat('ProgressConfirm:',(sum(if(State = 'Cancelled', 0.0, Quote)) * 100 ) / sum(Quote)) as percent FROM reservation
+		where State not in ('Initial', 'Closed', 'Final')
+		and ActorID is not null
+		and Quote is not null
+		and Quote > 0
+		group by ActorID
+	</insert>
+
+	<insert id="progresscreator" parameterType="Void">
+		insert into relation (Link, HeadID, LineID)
+		select 'Party Value', HeadID, concat('ProgressCreator:',count(LineID)) FROM relation
+		where Link = 'Party Creator'
+		group by HeadID
+	</insert>
+
+	<insert id="progresscreatormax" parameterType="Void">
+		insert into relation (Link, HeadID, LineID)
+		select 'Party Value', 0, concat('ProgressCreatorMax:',if (max(value) is null, '0', max(value))) from
+		(select count(LineID) as value FROM relation
+		where Link = 'Party Creator'
+		group by HeadID) as temp
+	</insert>
+
+	<insert id="progressvalue" parameterType="Void">
+		insert into relation (Link, HeadID, LineID)
+		select 'Party Value', ActorID, concat('ProgressValue:',sum(CreditAmount)) from journal
+		join event on event.ID = journal.EventID
+		and event.Process in ('Sale', 'ReservationSale')
+		and event.State not in ('Initial', 'Final')
+		group by ActorID
+	</insert>
+
+	<insert id="progressvaluemax" parameterType="Void">
+		insert into relation (Link, HeadID, LineID)
+		select 'Party Value', 0, concat('ProgressValueMax:',max(value)) from
+		(select ActorID, sum(CreditAmount) as value
+		from journal
+		join event on event.ID = journal.EventID
+		and event.Process in ('Sale', 'ReservationSale')
+		and event.State not in ('Initial', 'Final')
+		group by ActorID) as temp
+	</insert>
+
+
+<!-- JSON Queries -->
+	<select id="partywidget" parameterType="String" resultType="net.cbtltd.json.party.PartyWidgetItem">
+		select
+			employer.ID as employerid, 
+			creator.ID as creatorid, 
+			location.ID as locationid, 
+			finance.ID as financeid, 
+			jurisdiction.ID as jurisdictionid, 
+			party.Name, 
+			party.ExtraName, 
+			party.IdentityNumber, 
+			party.TaxNumber, 
+			party.PostalAddress, 
+			party.PostalCode, 
+			country.ID as country,
+			party.EmailAddress, 
+			party.WebAddress, 
+			party.DayPhone, 
+			party.NightPhone, 
+			party.FaxPhone, 
+			party.MobilePhone, 
+			party.Birthdate, 
+			currency.ID as currency, 
+			language.ID as language, 
+			party.Latitude, 
+			party.Longitude, 
+			party.Altitude
+		from party
+			left join party as creator on creator.ID = party.creatorID 
+			left join party as employer on employer.ID = party.employerID 
+			left join party as jurisdiction on jurisdiction.ID = party.jurisdictionID 
+			left join country on country.ID = party.country 
+			left join currency on currency.ID = party.currency 
+			left join language on language.ID = party.language 
+			left join finance on finance.ID = party.financeID 
+			left join location on location.ID = party.locationID 
+		where party.ID = #{id,jdbcType=INTEGER}
+	</select>
+
+	<select id="partywidgetexists" parameterType="String" resultType="net.cbtltd.json.party.PartyWidgetItem">
+		select
+			employer.ID as employerid, creator.ID as creatorid, location.ID as locationid, finance.ID as financeid, jurisdiction.ID as jurisdictionid, 
+			party.ID, party.Name, party.ExtraName, party.IdentityNumber, party.TaxNumber, party.PostalAddress, party.PostalCode, country.ID as country,
+			party.EmailAddress, party.WebAddress, party.DayPhone, party.NightPhone, party.FaxPhone, party.MobilePhone, party.Birthdate, 
+			currency.ID as currency, language.ID as language, party.Latitude, party.Longitude, party.Altitude
+		from party
+			left join party as creator on creator.ID = party.creatorID 
+			left join party as employer on employer.ID = party.employerID 
+			left join party as jurisdiction on jurisdiction.ID = party.jurisdictionID 
+			left join country on country.ID = party.country 
+			left join currency on currency.ID = party.currency 
+			left join language on language.ID = party.language 
+			left join finance on finance.ID = party.financeID 
+			left join location on location.ID = party.locationID 
+		where party.EmailAddress = #{emailaddress,jdbcType=VARCHAR}
+	</select>
+
+	<select id="nameidwidget" parameterType="net.cbtltd.json.Parameter" resultType="net.cbtltd.json.nameid.NameIdWidgetItem">
+		select distinct Name, ID
+		<if test="organizationid == null">
+		from party
+		</if>
+		<if test="organizationid != null">
+		from relation 
+			join party
+				on ID = LineID
+				and HeadID = #{organizationid}
+				and substring(Link,1,10) = 'ORG_PARTY_'
+		</if>
+		where State = 'Created'
+		<if test="id != null">
+			and ID in (${id})
+		</if>
+		order by Name
+	</select>
+	
+	<select id="credentials" parameterType="Void" resultType="NameId">
+		select distinct emailaddress as name, password as id
+		from party
+		where state = 'Created'
+			and employerid = id
+			and emailaddress is not null
+			and password is not null
+			and emailaddress <![CDATA[ <> ]]> ''
+			and password <![CDATA[ <> ]]> ''
+	</select>
+
+<!-- KIGO SQL queries -->
+	<select id="kigoread" parameterType="Integer" resultType="Party">
+	    select
+		<include refid="columns" />
+	    from download 
+	    	join party 
+	    		on party.ID = download.HeadID 
+	    		and download.Link = 'KIGO_PARTY_ID'
+		where download.LineID = #{id}
+	</select>
+
+<!-- Foreign SQL queries -->
+	<select id="altread" parameterType="NameId" resultMap="ResultMap">
+	    select
+		<include refid="columns" />
+	    from party 
+		where AltPartyId = #{name}
+			and AltID = #{id}
+	</select>
+
+</mapper>
+
+

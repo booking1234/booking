@@ -1,0 +1,21 @@
+ <?xml version="1.0" encoding="UTF-8" standalone="yes"?>
+<OTA_HotelInvCountNotifRQ xmlns="http://www.opentravel.org/OTA/2003/05"
+	PrimaryLangID="en" RetransmissionIndicator="false" SequenceNmbr="1"
+	TransactionIdentifier="1" Version="1.009" Target="Production"
+	TimeStamp="2009-07-20T10:54:05" EchoToken="OTA_HotelInvCountNotifRQ 5, 155, 2009-07-19, 2009-07-25, 5">
+	<POS>
+		<Source>
+			<RequestorID ID="5" ID_Context="RZ" />
+		</Source>
+	</POS>
+	<Inventories HotelCodeContext="RZ" HotelCode="155"
+		ChainCode="5">
+		<Inventory>
+			<StatusApplicationControl InvTypeCode="2 Bedrooms"
+				End="2009-07-25" Start="2009-07-19" PromotionVendorCode="" />
+			<InvCounts>
+				<InvCount Count="1" CountType="1" />
+			</InvCounts>
+		</Inventory>
+	</Inventories>
+</OTA_HotelInvCountNotifRQ>

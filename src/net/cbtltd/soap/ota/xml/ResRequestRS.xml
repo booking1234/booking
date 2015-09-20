@@ -1,0 +1,77 @@
+<?xml version="1.0" encoding="UTF-8" standalone="yes"?>
+<OTA_ResRetrieveRS xmlns="http://www.opentravel.org/OTA/2003/05"
+	PrimaryLangID="en" RetransmissionIndicator="false" SequenceNmbr="1"
+	TransactionIdentifier="1" Version="5.001" Target="Production"
+	TimeStamp="2009-07-28T12:57:17" EchoToken="OTA_ReadRQ 5, 102503, 7171">
+	<Success />
+	<ReservationsList>
+		<HotelReservation CreatorID="7171" CreateDateTime="2009-05-29T00:00:00"
+			ResStatus="FullyPaid">
+			<ResGuests>
+				<ResGuest CodeContext="RZ" DepartureTime="10:00:00"
+					ArrivalTime="14:00:00">
+					<Profiles>
+						<ProfileInfo />
+						<ProfileInfo>
+							<Profile ProfileType="1" StatusCode="">
+								<Customer>
+									<PersonName>
+										<GivenName>Family</GivenName>
+										<Surname>Rechain</Surname>
+									</PersonName>
+									<Email DefaultInd="true" EmailType="1">unknown@rechain.com
+									</Email>
+								</Customer>
+							</Profile>
+						</ProfileInfo>
+					</Profiles>
+				</ResGuest>
+			</ResGuests>
+			<ResGlobalInfo>
+				<TimeSpan End="2009-08-15" Duration="4.0" Start="2009-08-11" />
+				<SpecialRequests>
+					<SpecialRequest Language="en">
+						<Text Formatted="false">FOUNTAIN 1105
+							arrival - 12h00-12h30
+							departure - 05h30
+							JE135 arrives at 10h40 from JNB
+							2 adults and 2 children age 13 and 9
+							Names and ages of all guests. Mr Jean-Marc Rechain
+							Mrs Sylvie Chataignier
+							Mr Antoine Rechain - 13
+							Miss Alice Rechain - 9</Text>
+					</SpecialRequest>
+				</SpecialRequests>
+				<DepositPayments>
+					<GuaranteePayment NoCardHolderInfoReqInd="false"
+						Type="31">
+						<AcceptedPayments />
+					</GuaranteePayment>
+				</DepositPayments>
+				<CancelPenalties CancelPolicyIndicator="true">
+					<CancelPenalty>
+						<Deadline OffsetUnitMultiplier="30" OffsetTimeUnit="Day" />
+						<AmountPercent Percent="100" />
+						<PenaltyDescription Language="en"
+							CreateDateTime="2009-07-28T12:57:17">
+							<Text Formatted="false">Refunds and waiver of cancellation policies are at the discretion of management. Refunds are dependent on re-letting of the room. Guests are advised to take out cancellation insurance.</Text>
+						</PenaltyDescription>
+					</CancelPenalty>
+					<CancelPenalty>
+						<Deadline OffsetUnitMultiplier="60" OffsetTimeUnit="Day" />
+						<AmountPercent Percent="50" />
+					</CancelPenalty>
+					<CancelPenalty>
+						<Deadline OffsetUnitMultiplier="90" OffsetTimeUnit="Day" />
+						<AmountPercent Percent="25" />
+					</CancelPenalty>
+				</CancelPenalties>
+				<Total CurrencyCode="ZAR" AmountAfterTax="3600.0" />
+				<HotelReservationIDs>
+					<HotelReservationID ResID_Date="2009-05-29T00:00:00"
+						ResID_Value="102503" ResID_Type="14" />
+				</HotelReservationIDs>
+			</ResGlobalInfo>
+		</HotelReservation>
+	</ReservationsList>
+</OTA_ResRetrieveRS>

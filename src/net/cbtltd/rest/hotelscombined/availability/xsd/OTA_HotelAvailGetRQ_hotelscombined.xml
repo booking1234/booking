@@ -1,0 +1,13 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<OTA_HotelAvailGetRQ xmlns="http://www.opentravel.org/OTA/2003/05" Version="1.0"
+TimeStamp="2012-01-01T12:00:00Z" EchoToken="aaa000">
+<HotelAvailRequests>
+<HotelAvailRequest>
+<DateRange Start="2012-03-01" End="2012-03-04" />
+<HotelRef HotelCode="123"/>
+<RoomTypeCandidates>
+<RoomTypeCandidate RoomTypeCode="456" />
+</RoomTypeCandidates>
+</HotelAvailRequest>
+</HotelAvailRequests>
+</OTA_HotelAvailGetRQ>

@@ -1,0 +1,191 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="net.cbtltd.server.api.LicenseMapper">
+
+	<resultMap id="ResultMap" type="License">
+		<id column="ID" jdbcType="INTEGER" property="id" />
+		<result column="UpstreamID" jdbcType="INTEGER" property="upstreamid" />
+		<result column="DownstreamID" jdbcType="INTEGER" property="downstreamid" />
+		<result column="ProductID" jdbcType="INTEGER" property="productid" />
+		<result column="State" jdbcType="VARCHAR" property="state" />
+		<result column="Type" jdbcType="VARCHAR" property="type" />
+		<result column="FromDate" jdbcType="DATE" property="fromdate" />
+		<result column="ToDate" jdbcType="DATE" property="todate" />
+		<result column="Wait" jdbcType="INTEGER" property="wait" />
+		<result column="Subscription" jdbcType="DOUBLE" property="subscription" />
+		<result column="Transaction" jdbcType="DOUBLE" property="transaction" />
+		<result column="Upstream" jdbcType="DOUBLE" property="upstream" />
+		<result column="Downstream" jdbcType="DOUBLE" property="downstream" />
+		<result column="Notes" jdbcType="VARCHAR" property="notes" />
+	</resultMap>
+
+	<sql id="columns">
+		ID, UpstreamID, DownstreamID, ProductID, State, Type, FromDate, ToDate, Wait, Subscription, Transaction, Upstream, Downstream, Notes
+	</sql>
+
+	<select id="read" parameterType="String" resultMap="ResultMap">
+		select
+		<include refid="columns" />
+		from license
+		where ID = #{id,jdbcType=INTEGER}
+	</select>
+
+	<select id="exists" parameterType="License" resultMap="ResultMap">
+		select
+		<include refid="columns" />
+		from license
+		where State = 'Created'
+			<if test="upstreamid != null">
+			and UpstreamID = #{upstreamid,jdbcType=INTEGER}
+			</if>
+			<if test="downstreamid != null">
+			and DownstreamID = #{downstreamid,jdbcType=INTEGER}
+			</if>
+			<if test="productid != null">
+			and ProductID = #{productid,jdbcType=INTEGER}
+			</if>
+			<if test="type != null">
+			and Type = #{type,jdbcType=VARCHAR}
+			</if>
+			<if test="fromdate != null">
+			and FromDate <![CDATA[ <= ]]> #{fromdate,jdbcType=DATE}
+			</if>
+			<if test="todate != null">
+			and ToDate <![CDATA[ >= ]]> #{todate,jdbcType=DATE}
+			</if>
+		limit 1
+	</select>
+
+	<delete id="delete" parameterType="String">
+		delete from license
+		where ID =
+		#{id,jdbcType=INTEGER}
+	</delete>
+
+	<insert id="create" parameterType="License" useGeneratedKeys="true" keyProperty="id">
+		insert into license (
+			UpstreamID, DownstreamID, ProductID, State, Type, FromDate, ToDate, Wait, Subscription, Transaction, Upstream, Downstream, Notes
+		)
+		values (
+			#{upstreamid,jdbcType=INTEGER},
+			#{downstreamid,jdbcType=INTEGER}, 
+			#{productid,jdbcType=INTEGER}, 
+			#{state,jdbcType=VARCHAR}, 
+			#{type,jdbcType=VARCHAR}, 
+			#{fromdate,jdbcType=DATE},
+			#{todate,jdbcType=DATE},
+			#{wait,jdbcType=INTEGER},
+			#{subscription,jdbcType=DOUBLE},
+			#{transaction,jdbcType=DOUBLE},
+			#{upstream,jdbcType=DOUBLE},
+			#{downstream,jdbcType=DOUBLE},
+			#{notes,jdbcType=VARCHAR}			
+		)
+	</insert>
+
+	<update id="update" parameterType="License">
+		update license
+		<set>
+			<if test="upstreamid != null">
+				UpstreamID = #{upstreamid,jdbcType=INTEGER},
+			</if>
+			<if test="downstreamid != null">
+				DownstreamID = #{downstreamid,jdbcType=INTEGER},
+			</if>
+			<if test="productid != null">
+				ProductID = #{productid,jdbcType=INTEGER},
+			</if>
+			<if test="state != null">
+				State = #{state,jdbcType=VARCHAR},
+			</if>
+			<if test="type != null">
+				Type = #{type,jdbcType=VARCHAR},
+			</if>
+			<if test="fromdate != null">
+				FromDate = #{fromdate,jdbcType=DATE},
+			</if>
+			<if test="todate != null">
+				ToDate = #{todate,jdbcType=DATE},
+			</if>
+			<if test="wait != null">
+				Wait = #{wait,jdbcType=INTEGER},
+			</if>
+			<if test="subscription != null">
+				Subscription = #{subscription,jdbcType=DOUBLE},
+			</if>
+			<if test="transaction != null">
+				Transaction = #{transaction,jdbcType=DOUBLE},
+			</if>
+			<if test="upstream != null">
+				Upstream = #{upstream,jdbcType=DOUBLE},
+			</if>
+			<if test="downstream != null">
+				Downstream = #{downstream,jdbcType=DOUBLE},
+			</if>
+			<if test="notes != null">
+				Notes = #{notes,jdbcType=VARCHAR},
+			</if>
+		</set>
+		where ID = #{id,jdbcType=INTEGER}
+	</update>
+
+	<update id="updateByPrimaryKey" parameterType="License">
+		update license
+		set
+			UpstreamID = #{upstreamid,jdbcType=INTEGER},
+			DownstreamID = #{downstreamid,jdbcType=INTEGER},
+			ProductID = #{productid,jdbcType=INTEGER},
+			State = #{state,jdbcType=VARCHAR},
+			Type = #{type,jdbcType=VARCHAR},
+			FromDate = #{fromdate,jdbcType=DATE},
+			ToDate = #{todate,jdbcType=DATE},
+			Wait = #{wait,jdbcType=INTEGER},
+			Subscription = #{subscription,jdbcType=DOUBLE},
+			Transaction = #{transaction,jdbcType=DOUBLE},
+			Upstream = #{upstream,jdbcType=DOUBLE},
+			Downstream = #{downstream,jdbcType=DOUBLE},
+			Notes = #{notes,jdbcType=VARCHAR}
+		where ID = #{id,jdbcType=INTEGER}
+	</update>
+
+	<sql id="tablewhere">
+		where UpstreamID = #{upstreamid,jdbcType=INTEGER}
+			<if test="downstreamid != null">
+			and DownstreamID = #{downstreamid,jdbcType=INTEGER}
+			</if>
+			<if test="productid != null">
+			and ProductID = #{productid,jdbcType=INTEGER}
+			</if>
+			<if test="state != null">
+			and State = #{state,jdbcType=VARCHAR}
+			</if>
+			<if test="type != null">
+			and Type = #{type,jdbcType=VARCHAR}
+			</if>
+			<if test="fromdate != null">
+			and FromDate <![CDATA[ >= ]]> #{fromdate,jdbcType=DATE}
+			</if>
+			<if test="todate != null">
+			and ToDate <![CDATA[ <= ]]> #{todate,jdbcType=DATE}
+			</if>
+	</sql>
+
+	<select id="count" parameterType="LicenseTable" resultType="Integer">
+		select count(*)
+		from license
+		<include refid="tablewhere" />
+	</select>
+	
+	<select id="list" parameterType="LicenseTable" resultMap="ResultMap">
+		select
+		license.ID, license.UpstreamID, license.DownstreamID, license.ProductID, license.State, license.Type, license.FromDate, license.ToDate, license.Wait,
+		license.Subscription, license.Transaction, license.Upstream, license.Downstream, license.Notes, party.Name as downstreamname, product.Name as productname
+		from license
+			left join party on party.ID = license.DownstreamID
+			left join product on product.ID = license.ProductID
+		<include refid="tablewhere" />
+		order by ${orderby}
+		limit #{startrow}, #{numrows}
+	</select>
+	
+</mapper>

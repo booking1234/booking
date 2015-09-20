@@ -1,0 +1,855 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd" >
+<mapper namespace="net.cbtltd.server.api.ReportMapper">
+
+	<resultMap id="ResultMap" type="Report">
+		<id column="ID" property="id" jdbcType="INTEGER" />
+		<result column="OrganizationID" property="organizationid" jdbcType="INTEGER" />
+		<result column="ActorID" property="actorid" jdbcType="INTEGER" />
+		<result column="AccountID" property="accountid" jdbcType="INTEGER" />
+		<result column="EntityID" property="entityid" jdbcType="INTEGER" />
+		<result column="Process" property="process" jdbcType="VARCHAR" />
+		<result column="Name" property="name" jdbcType="VARCHAR" />
+		<result column="State" property="state" jdbcType="VARCHAR" />
+		<result column="Design" property="design" jdbcType="VARCHAR" />
+		<result column="FromName" property="fromname" jdbcType="VARCHAR" />
+		<result column="ToName" property="toname" jdbcType="VARCHAR" />
+		<result column="FromDate" property="fromdate" jdbcType="DATE" />
+		<result column="ToDate" property="todate" jdbcType="DATE" />
+		<result column="Date" property="date" jdbcType="DATE" />
+		<result column="Groupby" property="groupby" jdbcType="VARCHAR" />
+		<result column="Currency" property="currency" jdbcType="VARCHAR" />
+		<result column="Language" property="language" jdbcType="VARCHAR" />
+		<result column="States" property="states" jdbcType="VARCHAR" />
+		<result column="Types" property="types" jdbcType="VARCHAR" />
+		<result column="Notes" property="notes" jdbcType="VARCHAR" />
+		<result column="Format" property="format" jdbcType="VARCHAR" />
+	</resultMap>
+
+	<sql id="columns">
+		ID, OrganizationID, ActorID, AccountID, EntityID, Process, Name, State, Design, FromName, ToName,
+		FromDate, ToDate, Date, Groupby, Currency, Language, States, Types, Notes, Format
+	</sql>
+
+	<select id="read" parameterType="String" resultMap="ResultMap">
+		select
+		<include refid="columns" />
+		from report
+		where ID = #{id,jdbcType=INTEGER}
+	</select>
+
+	<delete id="delete" parameterType="String">
+		delete from report
+		where ID = #{id,jdbcType=INTEGER}
+	</delete>
+
+	<insert id="create" parameterType="Report" useGeneratedKeys="true" keyProperty="id">
+		insert into report (
+			OrganizationID, ActorID, AccountID, EntityID, Process, Name, State, Design, 
+			FromName, ToName, FromDate, ToDate, Date, Groupby, Currency, Language, States, Types, Notes, Format
+		)
+		values (
+			#{organizationid,jdbcType=INTEGER}, 
+			#{actorid,jdbcType=INTEGER},
+			#{accountid,jdbcType=INTEGER},
+			#{entityid,jdbcType=INTEGER},
+			#{process,jdbcType=VARCHAR},
+			#{name,jdbcType=VARCHAR},
+			#{state,jdbcType=VARCHAR}, 
+			#{design,jdbcType=VARCHAR}, 
+			#{fromname,jdbcType=VARCHAR},
+			#{toname,jdbcType=VARCHAR}, 
+			#{fromdate,jdbcType=DATE},
+			#{todate,jdbcType=DATE},
+			#{date,jdbcType=DATE}, 
+			#{groupby,jdbcType=VARCHAR}, 
+			#{currency,jdbcType=VARCHAR}, 
+			#{language,jdbcType=VARCHAR}, 
+			#{states,jdbcType=VARCHAR},
+			#{types,jdbcType=VARCHAR},
+			#{notes,jdbcType=VARCHAR},
+			#{format,jdbcType=VARCHAR}
+		)
+	</insert>
+
+	<update id="update" parameterType="Report">
+		update report
+		<set>
+			<if test="organizationid != null">
+				OrganizationID = #{organizationid,jdbcType=INTEGER},
+			</if>
+			<if test="actorid != null">
+				ActorID = #{actorid,jdbcType=INTEGER},
+			</if>
+			<if test="accountid != null">
+				AccountID = #{accountid,jdbcType=INTEGER},
+			</if>
+			<if test="entityid != null">
+				EntityID = #{entityid,jdbcType=INTEGER},
+			</if>
+			<if test="process != null">
+				Process = #{process,jdbcType=VARCHAR},
+			</if>
+			<if test="name != null">
+				Name = #{name,jdbcType=VARCHAR},
+			</if>
+			<if test="state != null">
+				State = #{state,jdbcType=VARCHAR},
+			</if>
+			<if test="design != null">
+				Design = #{design,jdbcType=VARCHAR},
+			</if>
+			<if test="fromname != null">
+				FromName = #{fromname,jdbcType=VARCHAR},
+			</if>
+			<if test="toname != null">
+				ToName = #{toname,jdbcType=VARCHAR},
+			</if>
+			<if test="fromdate != null">
+				FromDate = #{fromdate,jdbcType=DATE},
+			</if>
+			<if test="todate != null">
+				ToDate = #{todate,jdbcType=DATE},
+			</if>
+			<if test="date != null">
+				Date = #{date,jdbcType=DATE},
+			</if>
+			<if test="groupby != null">
+				Groupby = #{groupby,jdbcType=VARCHAR},
+			</if>
+			<if test="currency != null">
+				Currency = #{currency,jdbcType=VARCHAR},
+			</if>
+			<if test="language != null">
+				Language = #{language,jdbcType=VARCHAR},
+			</if>
+			<if test="states != null">
+				States = #{states,jdbcType=VARCHAR},
+			</if>
+			<if test="types != null">
+				Types = #{types,jdbcType=VARCHAR},
+			</if>
+			<if test="notes != null">
+				Notes = #{notes,jdbcType=VARCHAR},
+			</if>
+			<if test="format != null">
+				Format = #{format,jdbcType=VARCHAR},
+			</if>
+		</set>
+		where ID = #{id,jdbcType=INTEGER}
+	</update>
+
+	<update id="updateByPrimaryKey" parameterType="Report">
+		update report
+			set OrganizationID = #{organizationid,jdbcType=INTEGER},
+			ActorID = #{actorid,jdbcType=INTEGER},
+			AccountID = #{accountid,jdbcType=INTEGER},
+			EntityID = #{entityid,jdbcType=INTEGER},
+			Process = #{process,jdbcType=VARCHAR},
+			Name = #{name,jdbcType=VARCHAR},
+			State = #{state,jdbcType=VARCHAR},
+			Design = #{design,jdbcType=VARCHAR},
+			FromName = #{fromname,jdbcType=VARCHAR},
+			ToName = #{toname,jdbcType=VARCHAR},
+			FromDate = #{fromdate,jdbcType=DATE},
+			ToDate = #{todate,jdbcType=DATE},
+			Date = #{date,jdbcType=DATE},
+			Groupby = #{groupby,jdbcType=VARCHAR},
+			Currency = #{currency,jdbcType=VARCHAR},
+			Language = #{language,jdbcType=VARCHAR},
+			States = #{states,jdbcType=VARCHAR},
+			Types = #{types,jdbcType=VARCHAR},
+			Notes = #{notes,jdbcType=VARCHAR},
+			Format = #{format,jdbcType=VARCHAR},
+		where ID = #{id,jdbcType=INTEGER}
+	</update>
+
+	<select id="nameidbyid" parameterType="NameIdAction" resultType="NameId">
+		select distinct Name, ID
+		from report
+		where ID = #{id}
+	</select>
+
+	<select id="nameidbyname" parameterType="NameIdAction" resultType="NameId">
+		select distinct Name, ID
+		from report
+		where Name <![CDATA[ >= ]]> #{name}
+		<if test="organizationid != null">
+			and OrganizationID = #{organizationid}
+		</if>
+		<if test="state = null">
+			and State not in ('Initial', 'Final')
+		</if>
+		<if test="state != null">
+			and State in (${state})
+		</if>
+		order by Name
+		limit 0, #{numrows}
+	</select>
+
+	<select id="countbydesign" parameterType="String" resultType="Integer">
+	    select count(ID)
+	    from report
+	    where Design = #id:VARCHAR#
+	</select>
+  
+	<select id="listbydesign" parameterType="HasTableService" resultMap="ResultMap">
+		select
+    		<include refid="columns" />
+	    from report
+	    where Design = #{id}
+	    and OrganizationID = #{organizationid}
+	    order by ${orderby}
+	    limit #{startrow}, #{numrows}
+	</select>
+
+<!--Actions by account-->
+	<sql id="wherejournal">
+		where event.Date <![CDATA[ >= ]]> #{fromdate}
+		and event.Date <![CDATA[ <= ]]>	#{todate}
+		and event.State not in ('Initial', 'Final')
+		and event.Process in ('Journal', 'Payment', 'Purchase', 'PurchaseSale', 'Receipt', 'ReservationSale', 'Sale')
+		<if test="process != null">
+		and event.Process = #{process}
+		</if>
+		<if test="accountid != null">
+		and journal.AccountID = #{accountid}
+		</if>
+		<if test="entitytype != null">
+		and journal.Entitytype = #{entitytype}
+		</if>
+		<if test="entityid != null">
+		and journal.EntityID = #{entityid}
+		</if>
+		and account.Type in (${types})
+		and journal.OrganizationID = #{organizationid}
+		and journal.Currency = #{currency}
+	</sql>
+
+	<select id="balancebyaccount" parameterType="Report" resultType="Double">
+		select sum(DebitAmount - CreditAmount)
+		from journal
+			join event on journal.EventID = event.ID
+			join account on account.ID = journal.AccountID
+		<include refid="wherejournal"/>
+	</select>
+
+	<select id="countbyaccount" parameterType="Report" resultType="Integer">
+		select count(journal.ID)
+		from journal 
+			join event on journal.EventID = event.ID
+			join account on account.ID = journal.AccountID
+		<include refid="wherejournal"/>
+	</select>
+
+	<select id="listbyaccount" parameterType="Report" resultType="EventJournal">
+		select distinct
+			event.ID,
+			event.Date,
+			event.Process,
+			event.Name,
+			journal.DebitAmount, 
+			journal.CreditAmount, 
+			journal.Currency,
+			journal.Description, 
+			account.Name as accountname, 
+			(CASE
+				WHEN EntityType = 'Asset' THEN asset.Name
+				WHEN EntityType = 'Finance' THEN finance.Name
+				WHEN EntityType = 'Party' THEN party.Name
+				WHEN EntityType = 'Product' THEN product.Name
+			END) AS entityname
+		from journal
+			join event on event.ID = journal.EventID
+			join account on account.ID = journal.AccountID
+			left join asset on asset.ID = EntityID and Entitytype = 'Asset'
+			left join finance on finance.ID = EntityID and Entitytype = 'Finance'
+			left join party on party.ID = EntityID and Entitytype = 'Party'
+			left join product on product.ID = EntityID and Entitytype = 'Product'
+		<include refid="wherejournal"/>
+		order by ${orderby}
+		limit #{startrow}, #{numrows}
+	</select>
+
+	<sql id="wheresummary">
+		where event.OrganizationID = #{organizationid}
+		<if test="process != null">
+		and event.Process = #{process}
+		</if>
+		<if test="accountid != null">
+		and journal.AccountID = #{accountid}
+		</if>
+		<if test="entitytype = null">
+		and journal.Entitytype = 'Party'
+		</if>
+		<if test="entitytype != null">
+		and journal.Entitytype = #{entitytype}
+		</if>
+		<if test="entityid != null">
+		and journal.EntityID = #{entityid}
+		</if>
+		and account.Type in (${types})
+		and journal.Currency = #{currency}
+		and event.Date <![CDATA[ >= ]]> #{fromdate}
+		and event.Date <![CDATA[ <= ]]>	#{todate}
+		and event.State not in ('Initial', 'Final')
+		and event.Process in ('Journal', 'Payment', 'Purchase', 'PurchaseSale', 'Receipt', 'ReservationSale', 'Sale')
+		<if test="groupbyday">
+		group by Year(event.Date), Month(event.Date), Day(event.Date)
+		</if>
+		<if test="groupbyweek">
+		group by Year(event.Date), Week(event.Date, 1)
+		</if>
+		<if test="groupbymonth">
+		group by Year(event.Date), Month(event.Date)
+		</if>
+		<if test="groupbyquarter">
+		group by Year(event.Date), Quarter(event.Date)
+		</if>
+		<if test="groupbyyear">
+		group by Year(event.Date)
+		</if>
+		<if test="process != null">
+		, process
+		</if>
+		<if test="accountid != null">
+		, accountname
+		</if>
+		<if test="entityid != null">
+		, entityname
+		</if>
+	</sql>
+
+	<select id="countbyaccountsummary" parameterType="Report" resultType="Integer">
+		select count(min(journal.ID))
+		from journal 
+			join event on journal.EventID = event.ID
+			join account on account.ID = journal.AccountID
+		<include refid="wheresummary"/>
+	</select>
+
+	<select id="listbyaccountsummary" parameterType="Report" resultType="AccountSummary">
+		select distinct 
+			#{groupby} as groupby,
+			Year(event.Date) as year, 
+			Month(event.Date) as month, 
+			event.Process, 
+			account.ID as accountid,
+			account.Name as accountname,
+			EntityID as entityid,
+			(CASE
+				WHEN EntityType = 'Asset' THEN asset.Name
+				WHEN EntityType = 'Finance' THEN finance.Name
+				WHEN EntityType = 'Party' THEN party.Name
+				WHEN EntityType = 'Product' THEN product.Name
+			END) AS entityname,
+			sum(journal.DebitAmount) as debitamount, 
+			sum(journal.CreditAmount) as creditamount,
+			count(journal.ID) as count,
+			min(journal.Currency) as currency
+		from journal
+			join event on event.ID = journal.EventID
+			join account on account.ID = journal.AccountID
+			left join asset on asset.ID = EntityID and Entitytype = 'Asset'
+			left join finance on finance.ID = EntityID and Entitytype = 'Finance'
+			left join party on party.ID = EntityID and Entitytype = 'Party'
+			left join product on product.ID = EntityID and Entitytype = 'Product'
+		<include refid="wheresummary"/>
+	</select>
+
+	<sql id="wherechart">
+		where event.OrganizationID = #{organizationid}
+		<if test="process != null">
+		and event.Process = #{process}
+		</if>
+		<if test="accountid != null">
+		and journal.AccountID = #{accountid}
+		</if>
+		<if test="entitytype = null">
+		and journal.Entitytype = 'Party'
+		</if>
+		<if test="entitytype != null">
+		and journal.Entitytype = #{entitytype}
+		</if>
+		<if test="entityid != null">
+		and journal.EntityID = #{entityid}
+		</if>
+		and account.Type in (${types})
+		and journal.Currency = #{currency}
+		and event.Date <![CDATA[ >= ]]> #{fromdate}
+		and event.Date <![CDATA[ <= ]]>	#{todate}
+		and event.State not in ('Initial', 'Final')
+		and event.Process in ('Journal', 'Payment', 'Purchase', 'PurchaseSale', 'Receipt', 'ReservationSale', 'Sale')
+		<if test="groupbyday">
+		group by journal.AccountID, Year(event.Date), Month(event.Date), Day(event.Date)
+		</if>
+		<if test="groupbyweek">
+		group by journal.AccountID, Year(event.Date), Week(event.Date, 1)
+		</if>
+		<if test="groupbymonth">
+		group by journal.AccountID, Year(event.Date), Month(event.Date)
+		</if>
+		<if test="groupbyquarter">
+		group by journal.AccountID, Year(event.Date), Quarter(event.Date)
+		</if>
+		<if test="groupbyyear">
+		group by journal.AccountID, Year(event.Date)
+		</if>
+	</sql>
+
+	<select id="accountchart" parameterType="Report" resultType="VisualizationData">
+		select 
+			<include refid="formatevent"/>
+			min(account.Name) as name,
+			sum(DebitAmount - CreditAmount) as y
+		from journal
+			join event on event.ID = journal.eventID
+			join account on account.ID = journal.accountID
+		<include refid="wherechart"/>
+	</select>
+
+	<sql id="formatevent">
+		<if test="groupbyday">
+			date_format(min(event.Date), '%Y') as category,
+		</if>
+		<if test="groupbyweek">
+			date_format(min(event.Date), '%Y/%V') as category,
+		</if>
+		<if test="groupbymonth">
+		date_format(min(event.Date), '%y/%m') as category,
+		</if>
+		<if test="groupbyquarter">
+		date_format(min(event.Date), '%y/%m') as category,
+		</if>
+		<if test="groupbyyear">
+			date_format(min(event.Date), '%Y') as category,
+		</if>
+	</sql>
+
+	<sql id="groupjournal">
+		and journal.Currency = #{currency}
+		and event.Date <![CDATA[ >= ]]> #{fromdate}
+		and event.Date <![CDATA[ <= ]]>	#{todate}
+		and event.State not in ('Initial', 'Final')
+		<if test="groupbyday">
+		group by journal.AccountID, Year(event.Date), Month(event.Date), Day(event.Date)
+		</if>
+		<if test="groupbyweek">
+		group by journal.AccountID, Year(event.Date), Week(event.Date, 1)
+		</if>
+		<if test="groupbymonth">
+		group by journal.AccountID, Year(event.Date), Month(event.Date)
+		</if>
+		<if test="groupbyquarter">
+		group by journal.AccountID, Year(event.Date), Quarter(event.Date)
+		</if>
+		<if test="groupbyyear">
+		group by journal.AccountID, Year(event.Date)
+		</if>
+	</sql>
+
+	<select id="revenuechart" parameterType="Report" resultType="VisualizationData">
+		select 
+			<include refid="formatevent"/>
+			min('Total Sales') as name,
+			sum(CreditAmount - DebitAmount) as y
+		from journal
+			join event on event.ID = journal.eventID
+			join account on account.ID = journal.accountID
+		where event.OrganizationID = #{organizationid}
+			and journal.AccountID = 61
+			and journal.EntityType = 'Product'
+			<if test="entityid != null">
+			and journal.EntityID = #{entityid}
+			</if>
+			<include refid="groupjournal"/>
+	union
+		select 
+			<include refid="formatevent"/>
+			min('Owner Sales') as name,
+			sum(CreditAmount - DebitAmount) as y
+		from journal
+			join event on event.ID = journal.eventID
+			join account on account.ID = journal.accountID
+		where event.OrganizationID = #{organizationid}
+			and event.OrganizationID <![CDATA[ <> ]]> journal.OrganizationID
+			and journal.AccountID = 61
+			and journal.EntityType = 'Product'
+			<if test="entityid != null">
+			and journal.EntityID = #{entityid}
+			</if>
+			<include refid="groupjournal"/>
+	union
+			select 
+			<include refid="formatevent"/>
+			min('Manager Sales') as name,
+			sum(CreditAmount - DebitAmount) as y
+		from journal
+			join event on event.ID = journal.eventID
+			join account on account.ID = journal.accountID
+		where event.OrganizationID = #{organizationid}
+			and event.OrganizationID = journal.OrganizationID
+			and journal.AccountID = 61
+			and journal.EntityType = 'Product'
+			<if test="entityid != null">
+			and journal.EntityID = #{entityid}
+			</if>
+			<include refid="groupjournal"/>
+	</select>
+	
+	<select id="profitchart" parameterType="Report" resultType="VisualizationData">
+		select 
+			<include refid="formatevent"/>
+			min('Income') as name,
+			sum(CreditAmount - DebitAmount) as y
+		from journal
+			join event on event.ID = journal.eventID
+			join account on account.ID = journal.accountID
+		where event.OrganizationID = #{organizationid}
+			and event.OrganizationID = journal.OrganizationID
+			and account.Type = 'Income'
+			<include refid="groupjournal"/>
+	union
+		select 
+			<include refid="formatevent"/>
+			min('Expenses') as name,
+			sum(DebitAmount - CreditAmount) as y
+		from journal
+			join event on event.ID = journal.eventID
+			join account on account.ID = journal.accountID
+		where event.OrganizationID = #{organizationid}
+			and event.OrganizationID = journal.OrganizationID
+			and account.Type = 'Expense'
+			<include refid="groupjournal"/>
+	union
+		select 
+			<include refid="formatevent"/>
+			min('Profit') as name,
+			sum(DebitAmount - CreditAmount) as y
+		from journal
+			join event on event.ID = journal.eventID
+			join account on account.ID = journal.accountID
+		where event.OrganizationID = #{organizationid}
+			and event.OrganizationID = journal.OrganizationID
+			and (account.Type = 'Expense' or account.Type = 'Income')
+			<include refid="groupjournal"/>
+	</select>
+
+	<sql id="formattimeline">
+		<if test="groupbyday">
+		date_format(min(timeline.Date), '%e') as category,
+		</if>
+		<if test="groupbyweek">
+			date_format(min(timeline.Date), '%Y/%V') as category,
+		</if>
+		<if test="groupbymonth">
+		date_format(min(timeline.Date), '%y/%m') as category,
+		</if>
+		<if test="groupbyquarter">
+		date_format(min(timeline.Date), '%y/%m') as category,
+		</if>
+		<if test="groupbyyear">
+		date_format(min(timeline.Date), '%Y') as category,
+		</if>
+	</sql>
+
+	<sql id="groupreservation">
+		from timeline
+				join reservation on timeline.Date <![CDATA[ >= ]]> reservation.FromDate 
+					and timeline.Date <![CDATA[ < ]]> reservation.ToDate
+		where reservation.OrganizationID = #{organizationid}
+			<if test="entityid != null">
+			and reservation.ProductID = #{entityid}
+			</if>
+			and reservation.State not in ('Initial', 'Cancelled', 'Closed', 'Final')
+			and timeline.Date <![CDATA[ >= ]]> #{fromdate}
+			and timeline.Date <![CDATA[ <= ]]>	#{todate}
+			<if test="groupbyday">
+			group by Year(timeline.Date), Month(timeline.Date), Day(timeline.Date)
+			</if>
+			<if test="groupbyweek">
+			group by Year(timeline.Date), Week(timeline.Date, 1)
+			</if>
+			<if test="groupbymonth">
+			group by Year(timeline.Date), Month(timeline.Date)
+			</if>
+			<if test="groupbyquarter">
+			group by Year(timeline.Date), Quarter(timeline.Date)
+			</if>
+			<if test="groupbyyear">
+			group by Year(timeline.Date)
+			</if>
+	</sql>
+
+	<select id="averagerate" parameterType="Report" resultType="VisualizationData">
+		select 
+			<include refid="formattimeline"/>
+			'Gross ADR' as name,
+			avg(reservation.Price / datediff(reservation.ToDate, reservation.FromDate)) as y
+			<include refid="groupreservation"/>
+	union
+		select 
+			<include refid="formattimeline"/>
+			'Quote ADR' as name,
+			avg(reservation.Quote / datediff(reservation.ToDate, reservation.FromDate)) as y
+			<include refid="groupreservation"/>
+	union
+		select 
+			<include refid="formattimeline"/>
+			'Net ADR' as name,
+			avg(reservation.Cost / datediff(reservation.ToDate, reservation.FromDate)) as y
+			<include refid="groupreservation"/>
+	</select>
+
+	<select id="revpar" parameterType="Report" resultType="VisualizationData">
+		select 
+			<include refid="formattimeline"/>
+			'Gross PAR' as name,
+			sum(reservation.Price / datediff(reservation.ToDate, reservation.FromDate)) / (DAY(LAST_DAY(timeline.Date)) * count(distinct reservation.ProductID)) as y
+			<include refid="groupreservation"/>
+	union	
+		select 
+			<include refid="formattimeline"/>
+			'Quote PAR' as name,
+			sum(reservation.Quote / datediff(reservation.ToDate, reservation.FromDate)) / (DAY(LAST_DAY(timeline.Date)) * count(distinct reservation.ProductID)) as y
+			<include refid="groupreservation"/>
+	union	
+		select 
+			<include refid="formattimeline"/>
+			'Net PAR' as name,
+			sum(reservation.Cost / datediff(reservation.ToDate, reservation.FromDate)) / (DAY(LAST_DAY(timeline.Date)) * count(distinct reservation.ProductID)) as y
+			<include refid="groupreservation"/>
+	</select>
+	
+	<select id="occupancy" parameterType="Report" resultType="VisualizationData">
+		select category, name, avg(y) as y from (
+			select 
+				<include refid="formattimeline"/>
+				'Occupancy %' as name,
+<!-- 				count(distinct timeline.ID) / day(if (#{todate} <![CDATA[ < ]]> last_day(timeline.Date), #{todate}, last_day(timeline.Date))) * 100 AS y -->
+				count(distinct timeline.ID) / day(last_day(timeline.Date)) * 100 AS y
+			from reservation
+					join timeline on timeline.Date <![CDATA[ >= ]]> reservation.FromDate 
+					and timeline.Date <![CDATA[ < ]]> reservation.ToDate
+			where reservation.OrganizationID = #{organizationid}
+				<if test="entityid != null">
+				and reservation.ProductID = #{entityid}
+				</if>
+				and reservation.State not in ('Initial', 'Cancelled', 'Closed', 'Final')
+				and timeline.Date <![CDATA[ >= ]]> #{fromdate}
+				and timeline.Date <![CDATA[ <= ]]>	#{todate}
+				<if test="groupbyday">
+				group by Year(timeline.Date), Month(timeline.Date), Day(timeline.Date), reservation.ProductID
+				</if>
+				<if test="groupbyweek">
+				group by Year(timeline.Date), Week(timeline.Date, 1), reservation.ProductID
+				</if>
+				<if test="groupbymonth">
+				group by Year(timeline.Date), Month(timeline.Date), reservation.ProductID
+				</if>
+				<if test="groupbyquarter">
+				group by Year(timeline.Date), Quarter(timeline.Date), reservation.ProductID
+				</if>
+				<if test="groupbyyear">
+				group by Year(timeline.Date), reservation.ProductID
+				</if>
+			) as temp
+		group by category
+	</select>
+	
+	<sql id="groupevent">
+			from event
+			join reservation on reservation.ID = event.ParentID
+		where event.OrganizationID = #{organizationid}
+			and event.Type = 'Logging'
+			and event.Activity = 'Reservation'
+			and event.State = 'Confirmed'
+		<if test="entityid != null">
+		and reservation.ProductID = #{entityid}
+		</if>
+		and reservation.Currency = #{currency}
+		and event.Date <![CDATA[ >= ]]> #{fromdate}
+		and event.Date <![CDATA[ <= ]]>	#{todate}
+		<if test="groupbyday">
+		group by Year(event.Date), Month(event.Date), Day(event.Date)
+		</if>
+		<if test="groupbyweek">
+		group by Year(event.Date), Week(event.Date, 1)
+		</if>
+		<if test="groupbymonth">
+		group by Year(event.Date), Month(event.Date)
+		</if>
+		<if test="groupbyquarter">
+		group by Year(event.Date), Quarter(event.Date)
+		</if>
+		<if test="groupbyyear">
+		group by Year(event.Date)
+		</if>
+	</sql>
+	
+	<select id="confirmed" parameterType="Report" resultType="VisualizationData">
+		select 
+			<include refid="formatevent"/>
+			'Gross Value' as name,
+			sum(reservation.Price) as y
+			<include refid="groupevent"/>
+	union
+			select 
+			<include refid="formatevent"/>
+			'Quote Value' as name,
+			sum(reservation.Quote) as y
+			<include refid="groupevent"/>
+	union
+			select 
+			<include refid="formatevent"/>
+			'Net Value' as name,
+			sum(reservation.Cost) as y
+			<include refid="groupevent"/>
+	</select>
+	
+	<select id="feedback" parameterType="Report" resultType="VisualizationData">
+		select
+			<include refid="formatevent"/>
+			rate.Name, 
+			sum(Quantity)*100/(count(rate.ID)*6) as y
+		from rate
+			join event on event.ID = rate.EventID
+			and event.State not in ('Initial', 'Final')
+		where event.OrganizationID = #{organizationid}
+		<if test="entityid != null">
+		and rate.ProductID = #{entityid}
+		</if>
+		and rate.Type = 'Rating'
+		and event.State not in ('Initial', 'Final')
+		and Quantity > 0
+		and event.Date <![CDATA[ >= ]]> #{fromdate}
+		and event.Date <![CDATA[ <= ]]>	#{todate}
+		<if test="groupbyday">
+		group by Year(event.Date), Month(event.Date), Day(event.Date), rate.Name
+		</if>
+		<if test="groupbyweek">
+		group by Year(event.Date), Week(event.Date, 1), rate.Name
+		</if>
+		<if test="groupbymonth">
+		group by Year(event.Date), Month(event.Date), rate.Name
+		</if>
+		<if test="groupbyquarter">
+		group by Year(event.Date), Quarter(event.Date), rate.Name
+		</if>
+		<if test="groupbyyear">
+		group by Year(event.Date), rate.Name
+		</if>
+	</select>
+
+	<select id="workflow" parameterType="Report" resultType="VisualizationData">
+    	select 
+	    	party.Name as category,
+	    	'Reservations' as name,
+			100 - sum(if(reservation.Duedate <![CDATA[ < ]]> date(now()), 1, 0)) * 100 / count(reservation.ID) as y
+	   	from reservation
+	   		join party
+	   			on party.ID = reservation.ActorID
+		where reservation.OrganizationID = #{organizationid}
+			and reservation.State not in ('Initial', 'Cancelled', 'Closed', 'Departed', 'Final')
+			and reservation.DoneDate is null
+			<if test="entityid != null">
+			and reservation.ActorID = #{entityid}
+			</if>
+			<if test="states != null">
+			and reservation.State in (${states})
+			</if>
+		group by reservation.ActorID
+	union all
+     	select
+	     	party.Name as category, 
+	    	'Housekeeping' as name,
+			100 - sum(if(task.Duedate <![CDATA[ < ]]> date(now()), 1, 0)) * 100 / count(task.ID)
+		from task
+	   		join party
+	   			on party.ID = task.ActorID
+		where OrganizationID = #{organizationid}
+		and task.Process = 'Service'
+			and task.State not in ('Initial', 'Final')
+			and task.DoneDate is null
+			<if test="entityid != null">
+			and task.ActorID = #{entityid}
+			</if>
+			<if test="states != null">
+			and task.State in (${states})
+			</if>
+		group by task.ActorID
+	union all
+     	select
+	     	party.Name as category, 
+	    	'Marketing' as name,
+			100 - sum(if(task.Duedate <![CDATA[ < ]]> date(now()), 1, 0)) * 100 / count(task.ID)
+		from task
+	   		join party
+	   			on party.ID = task.ActorID
+		where OrganizationID = #{organizationid}
+		and task.Process = 'Marketing'
+			and task.State not in ('Initial', 'Final')
+			<if test="entityid != null">
+			and task.ActorID = #{entityid}
+			</if>
+			<if test="states != null">
+			and task.State in (${states})
+			</if>
+		group by task.ActorID
+	union all
+     	select
+	     	party.Name as category, 
+	    	'Maintenance' as name,
+			100 - sum(if(task.Duedate <![CDATA[ < ]]> date(now()), 1, 0)) * 100 / count(task.ID)
+		from task
+	   		join party
+	   			on party.ID = task.ActorID
+		where OrganizationID = #{organizationid}
+		and task.Process = 'Maintenance'
+			and task.State not in ('Initial', 'Final')
+			<if test="entityid != null">
+			and task.ActorID = #{entityid}
+			</if>
+			<if test="states != null">
+			and task.State in (${states})
+			</if>
+		group by task.ActorID
+	</select>
+	
+	<select id="outcome" parameterType="Report" resultType="VisualizationData">
+    	select 
+	    	Outcome as category,
+	    	Outcome as name,
+			count(ID) as y
+	   	from task
+		where OrganizationID = #{organizationid}
+			and Process = 'Marketing'
+			and Outcome is not null
+			and State not in ('Initial')
+			and Date <![CDATA[ >= ]]> #{fromdate}
+			and Date <![CDATA[ <= ]]>	#{todate}
+		<if test="entityid != null">
+			and ProductID = #{entityid}
+		</if>
+		group by Outcome
+	</select>
+
+	<select id="starter" parameterType="Report" resultType="VisualizationData">
+    	select 
+	    	Starter as category,
+	    	Starter as name,
+			count(ID) as y
+	   	from task
+		where OrganizationID = #{organizationid}
+			and Process = 'Marketing'
+			and Starter is not null 
+			and State not in ('Initial')
+			and Date <![CDATA[ >= ]]> #{fromdate}
+			and Date <![CDATA[ <= ]]>	#{todate}
+		<if test="entityid != null">
+			and ProductID = #{entityid}
+		</if>
+		group by Starter
+	</select>
+	
+</mapper>

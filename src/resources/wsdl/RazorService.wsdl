@@ -1,0 +1,132 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<definitions 
+	xmlns="http://schemas.xmlsoap.org/wsdl/"
+	xmlns:ota="http://www.opentravel.org/OTA/2003/05" 
+	xmlns:soap="http://schemas.xmlsoap.org/wsdl/soap/"
+	xmlns:http="http://schemas.xmlsoap.org/wsdl/http/" 
+	xmlns:xs="http://www.w3.org/2001/XMLSchema"
+	targetNamespace="http://www.opentravel.org/OTA/2003/05">
+	
+	<!-- Import Interface Definition WSDL-->
+	<import namespace="http://www.opentravel.org/OTA/2003/05" location="RazorInterface.wsdl"/>
+		
+	<!-- Define SOAP binding-->
+	<binding name="RazorBinding" type="ota:RazorPortType">
+		<!-- Use document style and not rpc-->
+		<soap:binding style="document" transport="http://schemas.xmlsoap.org/soap/http" />
+
+		<operation name="CancelReservation">
+			<soap:operation soapAction="" style="document" />
+			<input>
+				<soap:body use="literal" />
+			</input>
+			<output>
+				<soap:body use="literal" />
+			</output>
+		</operation>
+
+		<operation name="GetAvailability">
+			<!-- Use 'literal' to include OTA XML as-is-->
+			<soap:operation soapAction="" style="document" />
+			<input>
+				<soap:body use="literal" />
+			</input>
+			<output>
+				<soap:body use="literal" />
+			</output>
+		</operation>
+
+		<operation name="GetDescription">
+			<soap:operation soapAction="" style="document" />
+			<input>
+				<soap:body use="literal" />
+			</input>
+			<output>
+				<soap:body use="literal" />
+			</output>
+		</operation>
+
+		<operation name="CreateReservation">
+			<soap:operation soapAction="" style="document" />
+			<input>
+				<soap:body use="literal" />
+			</input>
+			<output>
+				<soap:body use="literal" />
+			</output>
+		</operation>
+
+		<operation name="UpdateReservation">
+			<soap:operation soapAction="" style="document" />
+			<input>
+				<soap:body use="literal" />
+			</input>
+			<output>
+				<soap:body use="literal" />
+			</output>
+		</operation>
+
+		<operation name="GetRate">
+			<soap:operation soapAction="" style="document" />
+			<input>
+				<soap:body use="literal" />
+			</input>
+			<output>
+				<soap:body use="literal" />
+			</output>
+		</operation>
+
+		<operation name="FindProperty">
+			<soap:operation soapAction="" style="document" />
+			<input>
+				<soap:body use="literal" />
+			</input>
+			<output>
+				<soap:body use="literal" />
+			</output>
+		</operation>
+
+		<operation name="Ping">
+			<soap:operation soapAction="" style="document" />
+			<input>
+				<soap:body use="literal" />
+			</input>
+			<output>
+				<soap:body use="literal" />
+			</output>
+		</operation>
+
+		<operation name="CreateParty">
+			<soap:operation soapAction="" style="document" />
+			<input>
+				<soap:body use="literal" />
+			</input>
+			<output>
+				<soap:body use="literal" />
+			</output>
+		</operation>
+
+		<operation name="GetReservation">
+			<soap:operation soapAction="" style="document" />
+			<input>
+				<soap:body use="literal" />
+			</input>
+			<output>
+				<soap:body use="literal" />
+			</output>
+		</operation>
+
+	</binding>
+	
+	<!-- Define SOAP interface with previously declared binding -->
+	<service name="RazorService">
+		<port name="RazorPort" binding="ota:RazorBinding">
+			<!-- Test with
+			<soap:address location="http://localhost:8080/service/xml/soap" />
+			<soap:address location="http://10.0.0.101:8080/service/xml/soap" />
+			-->
+			<soap:address location="http://razorpms.com/soap/ota" />
+		</port>
+	</service>
+	
+</definitions> 

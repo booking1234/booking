@@ -1,0 +1,20 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<OTA_HotelAvailRQ xmlns="http://www.opentravel.org/OTA/2003/05" Version="1.0"
+TimeStamp="2012-01-01T12:00:00Z" EchoToken="aaa000">
+<AvailRequestSegments>
+<AvailRequestSegment>
+<HotelSearchCriteria>
+<Criterion>
+<HotelRef HotelCode="123"/>
+</Criterion>
+</HotelSearchCriteria>
+</AvailRequestSegment>
+<AvailRequestSegment>
+<HotelSearchCriteria>
+<Criterion>
+<HotelRef HotelCode="456"/>
+</Criterion>
+</HotelSearchCriteria>
+</AvailRequestSegment>
+</AvailRequestSegments>
+</OTA_HotelAvailRQ>

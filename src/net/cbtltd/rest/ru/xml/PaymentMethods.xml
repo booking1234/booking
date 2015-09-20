@@ -1,0 +1,8 @@
+<?xml version="1.0" encoding="UTF-8"?>
+	<PaymentMethods>
+		<PaymentMethod PaymentMethodID="1">Cash</PaymentMethod>
+		<PaymentMethod PaymentMethodID="2">Bank transfer</PaymentMethod>
+		<PaymentMethod PaymentMethodID="3">Credit card</PaymentMethod>
+		<PaymentMethod PaymentMethodID="4">PayPal</PaymentMethod>
+		<PaymentMethod PaymentMethodID="5">Other method</PaymentMethod>
+	</PaymentMethods>

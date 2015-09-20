@@ -1,0 +1,207 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="net.cbtltd.server.api.ChannelPartnerMapper">
+
+	<resultMap id="ChannelPartnerResultMap" type="ChannelPartner">
+		<id column="id" jdbcType="INTEGER" property="id" />
+		<result column="channel_name" jdbcType="VARCHAR" property="channelName" />
+		<result column="logo_url" jdbcType="VARCHAR" property="logoURL" />
+		<result column="website_url" jdbcType="VARCHAR" property="websiteURL" />
+		<result column="channel_type" jdbcType="VARCHAR" property="channelType" />
+		<result column="coverage" jdbcType="VARCHAR" property="coverage" />		
+		<result column="contact_type" jdbcType="VARCHAR" property="contractType" />
+		<result column="payment_process" jdbcType="VARCHAR" property="paymentProcess" />
+		<result column="payouts" jdbcType="VARCHAR" property="payouts" />
+		<result column="damage_coverage" jdbcType="VARCHAR" property="damageCoverage" />
+		<result column="traffic" jdbcType="VARCHAR" property="traffic" />
+		<result column="commission" jdbcType="DOUBLE" property="commission" />
+		<result column="listing_fees" jdbcType="VARCHAR" property="listingFees" />
+		<result column="privacy_policy" jdbcType="VARCHAR" property="privacyPolicy" />
+		<result column="terms_conditions" jdbcType="VARCHAR" property="termsConditions" />
+		<result column="selected" jdbcType="BOOLEAN" property="selected" />		
+		<result column="phone" jdbcType="VARCHAR" property="phone" />		
+		<result column="email" jdbcType="VARCHAR" property="email" />		
+		<result column="office_address" jdbcType="VARCHAR" property="officeAddress" />		
+		<result column="description" jdbcType="LONGVARCHAR" property="description" />		
+		<result column="party_id" jdbcType="INTEGER" property="partyId" />		
+	</resultMap>
+
+	<sql id="columns"> 
+		channel_partner.id, channel_partner.channel_name, channel_partner.logo_url, channel_partner.website_url, channel_partner.channel_type, channel_partner.coverage, channel_partner.contact_type,
+		 channel_partner.payment_process, channel_partner.payouts, channel_partner.damage_coverage, channel_partner.traffic, channel_partner.commission, channel_partner.listing_fees, channel_partner.privacy_policy, 
+		channel_partner.terms_conditions, channel_partner.selected, channel_partner.phone, channel_partner.email, channel_partner.office_address, channel_partner.description, channel_partner.party_id
+	</sql>
+	
+	<sql id="columns_to_create">
+		channel_name, logo_url, website_url, channel_type, coverage, contact_type, payment_process, payouts, damage_coverage, traffic, commission, listing_fees, privacy_policy,
+		terms_conditions, selected, phone, email, office_address, description, party_id
+	</sql>
+
+	<select id="read" parameterType="Integer" resultMap="ChannelPartnerResultMap">
+		select
+		<include refid="columns" />
+		from channel_partner
+		where id = #{id,jdbcType=INTEGER}
+	</select>
+	
+	<select id="list" resultMap="ChannelPartnerResultMap">
+		select
+		<include refid="columns" />
+		from channel_partner
+		inner join party on party.id = channel_partner.party_id
+		where party.state in ('Created')
+		ORDER BY channel_partner.order
+	</select>
+
+	<delete id="delete" parameterType="String">
+		delete from channel_partner
+		where id = #{id,jdbcType=INTEGER}
+	</delete>
+
+	<insert id="create" parameterType="ChannelPartner" useGeneratedKeys="true" keyProperty="id">
+		insert into channel_partner (<include refid="columns_to_create" />)
+		values (#{channelName,jdbcType=VARCHAR}, 
+				#{logoURL,jdbcType=VARCHAR},
+				#{websiteURL,jdbcType=VARCHAR},
+				#{channelType,jdbcType=VARCHAR},
+				#{coverage,jdbcType=VARCHAR}, 
+				#{contractType,jdbcType=VARCHAR}, 
+				#{paymentProcess,jdbcType=VARCHAR}, 
+				#{payouts,jdbcType=VARCHAR},
+				#{damageCoverage,jdbcType=VARCHAR},
+				#{traffic,jdbcType=VARCHAR},
+				#{commission,jdbcType=DOUBLE},
+				#{listingFees,jdbcType=VARCHAR},				
+				#{privacyPolicy,jdbcType=VARCHAR},
+				#{termsConditions,jdbcType=VARCHAR},				
+				#{selected,jdbcType=BOOLEAN},
+				#{phone,jdbcType=VARCHAR(255)},
+				#{email,jdbcType=VARCHAR(255)},
+				#{officeAddress,jdbcType=VARCHAR},
+				#{description,jdbcType=VARCHAR},
+				#{partyId,jdbcType=INTEGER})
+	</insert>
+
+	<update id="update" parameterType="ChannelPartner">
+		update channel_partner
+		<set>
+			<if test="channelName != null"> 
+				name = #{channelName,jdbcType=VARCHAR},
+			</if>
+			<if test="logoURL != null"> 
+				logo_url = #{logoURL,jdbcType=VARCHAR},
+			</if>
+			<if test="websiteURL != null"> 
+				website_url = #{websiteURL,jdbcType=VARCHAR},
+			</if>
+			<if test="channelType != null"> 
+				name = #{channelType,jdbcType=VARCHAR},
+			</if>
+			<if test="coverage != null">
+				coverage_type_id = #{coverage,jdbcType=INTEGER},
+			</if>
+			<if test="contractType != null">
+				contract_type_id = #{contractType,jdbcType=INTEGER},
+			</if>
+			<if test="paymentProcess != null">
+				payment_processing_id = #{paymentProcess,jdbcType=INTEGER},
+			</if>
+			<if test="payouts != null">
+				payouts = #{payouts,jdbcType=VARCHAR},
+			</if>
+			<if test="damageCoverage != null">
+				damage_coverage = #{damageCoverage,jdbcType=VARCHAR},
+			</if>
+			<if test="traffic != null">
+				traffic = #{traffic,jdbcType=DOUBLE},
+			</if>
+			<if test="commission != null">
+				commission = #{commission,jdbcType=VARCHAR},
+			</if>
+			<if test="listingFees != null">
+				listing_fees = #{listingFees,jdbcType=VARCHAR},
+			</if>			
+			<if test="privacyPolicy != null">
+				privacy_policy = #{privacyPolicy,jdbcType=VARCHAR},
+			</if>
+			<if test="termsConditions != null">
+				terms_conditions = #{termsConditions,jdbcType=VARCHAR},
+			</if>			
+			<if test="selected != null">
+				selected = #{selected,jdbcType=BOOLEAN},
+			</if>		
+			<if test="phone != null">
+				phone = #{phone,jdbcType=VARCHAR},
+			</if>		
+			<if test="email != null">
+				email = #{email,jdbcType=VARCHAR},
+			</if>		
+			<if test="officeAddress != null">
+				office_address = #{officeAddress,jdbcType=VARCHAR},
+			</if>		
+			<if test="selected != null">
+				description = #{description,jdbcType=VARCHAR},
+			</if>		
+			<if test="partyId != null">
+				party_id = #{partyId,jdbcType=INTEGER},
+			</if>
+		</set>
+		where ID = #{id,jdbcType=INTEGER}
+	</update>
+
+	<select id="readBySupplierId" parameterType="Integer" resultMap="ChannelPartnerResultMap">
+		select distinct
+		<include refid="columns" />
+		from channel_partner as cp join manager_to_channel as mtc join payment_transaction as pt 
+		where cp.id = mtc.channel_partner_id and mtc.property_manager_id = #{supplierId,jdbcType=INTEGER}
+	</select>
+	
+	<select id="readRelatedManagersByPartyId" parameterType="Integer" resultType="String">
+		select mtc.property_manager_id
+		from channel_partner as cp 
+			join manager_to_channel as mtc on mtc.channel_partner_id = cp.id
+		where cp.party_id = #{partyId,jdbcType=INTEGER}
+	</select>
+	
+	<select id="readByPartyId" parameterType="Integer" resultMap="ChannelPartnerResultMap">
+		select distinct
+		<include refid="columns" />
+		from channel_partner where party_id = #{partyId,jdbcType=INTEGER}
+	</select>
+	
+	<select id="ManagerByChannelList" parameterType="Integer" resultType="Integer">
+		select property_manager_id
+		from manager_to_channel
+		where channel_partner_id = #{channelID,jdbcType=INTEGER}
+	</select>
+	
+	<!-- <update id="updateByPrimaryKey" parameterType="Monitor">
+		update monitor
+		set Name = #{name,jdbcType=VARCHAR},
+		Count = #{count,jdbcType=INTEGER},
+		Duration = #{duration,jdbcType=DOUBLE},
+		Date = #{date,jdbcType=DATE}
+		where ID = #{id,jdbcType=INTEGER}
+	</update> -->
+	
+<!--	<select id="nameidbyid" parameterType="NameIdAction" resultType="NameId">-->
+<!--		select distinct Name, ID-->
+<!--		from monitor-->
+<!--		where ID = #{id}-->
+<!--	</select>-->
+<!---->
+<!--	<select id="nameidbyname" parameterType="NameIdAction" resultType="NameId">-->
+<!--		select distinct Name, ID-->
+<!--		from monitor-->
+<!--		where Name <![CDATA[ >= ]]> #{name}-->
+<!--		<if test="state == null">-->
+<!--			and Frequency not in ('Initial', 'Final')-->
+<!--		</if>-->
+<!--		<if test="state != null">-->
+<!--			and Frequency in (${state})-->
+<!--		</if>-->
+<!--		order by Name-->
+<!--		limit 0, #{numrows}-->
+<!--	</select>-->
+	
+</mapper>

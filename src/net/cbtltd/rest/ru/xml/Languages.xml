@@ -1,0 +1,27 @@
+<?xml version="1.0" encoding="UTF-8"?>
+	<Languages>
+		<Language LanguageID="1" LanguageCode="en">English</Language>
+		<Language LanguageID="2" LanguageCode="de">German</Language>
+		<Language LanguageID="3" LanguageCode="pl">Polish</Language>
+		<Language LanguageID="4" LanguageCode="fr">French</Language>
+		<Language LanguageID="5" LanguageCode="es">Spanish</Language>
+		<Language LanguageID="6" LanguageCode="it">Italian</Language>
+		<Language LanguageID="7" LanguageCode="sv">Swedish</Language>
+		<Language LanguageID="8" LanguageCode="dk">Danish</Language>
+		<Language LanguageID="9" LanguageCode="pt">Portuguese</Language>
+		<Language LanguageID="10" LanguageCode="cz">Czech</Language>
+		<Language LanguageID="11" LanguageCode="nl">Dutch</Language>
+		<Language LanguageID="12" LanguageCode="fi">Finnish</Language>
+		<Language LanguageID="13" LanguageCode="ru">Russian</Language>
+		<Language LanguageID="14" LanguageCode="lv">Latvian</Language>
+		<Language LanguageID="15" LanguageCode="lt">Lithuanian</Language>
+		<Language LanguageID="16" LanguageCode="ee">Estonian</Language>
+		<Language LanguageID="17" LanguageCode="sk">Slovak</Language>
+		<Language LanguageID="18" LanguageCode="hu">Hungarian</Language>
+		<Language LanguageID="19" LanguageCode="jp">Japanese</Language>
+		<Language LanguageID="22" LanguageCode="bg">Bulgarian</Language>
+		<Language LanguageID="23" LanguageCode="tk">Turkish</Language>
+		<Language LanguageID="24" LanguageCode="gr">Greek</Language>
+		<Language LanguageID="25" LanguageCode="ro">Romanian</Language>
+		<Language LanguageID="26" LanguageCode="zh">Chinese</Language>
+	</Languages>

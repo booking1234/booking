@@ -1,0 +1,48 @@
+<?xml version="1.0" encoding="UTF-8" standalone="yes"?>
+<OTA_HotelAvailRQ xmlns="http://www.opentravel.org/OTA/2003/05"
+	EchoToken="OTA_HotelAvailRQ 5, 143, 144, 146, 155, 2009-12-19, 2009-12-25, 5">
+	<POS>
+		<Source>
+			<RequestorID ID="5" ID_Context="RZ" />
+		</Source>
+	</POS>
+	<AvailRequestSegments>
+		<AvailRequestSegment>
+			<HotelSearchCriteria>
+				<Criterion>
+					<HotelRef HotelCodeContext="RZ" HotelCode="143" />
+					<HotelRef HotelCodeContext="RZ" HotelCode=" 144" />
+					<HotelRef HotelCodeContext="RZ" HotelCode=" 146" />
+					<HotelRef HotelCodeContext="RZ" HotelCode=" 155" />
+					<StayDateRange End="2009-12-25" Start="2009-12-19" />
+				</Criterion>
+			</HotelSearchCriteria>
+		</AvailRequestSegment>
+	</AvailRequestSegments>
+</OTA_HotelAvailRQ>
+
+
+<?xml version="1.0" encoding="UTF-8" standalone="true"?>
+<OTA_HotelAvailRQ
+	EchoToken="OTAHotelAvailRQ 143, 144,145,146,155, 2011-06-01T00:00:00, 2011-07-31T00:00:00, true, a3a2e74b809e0e87"
+	xmlns:ns2="http://www.opentravel.org/OTA/2003/05" SummaryOnly="true">
+	<POS>
+		<Source>
+			<RequestorID ID="a3a2e74b809e0e87" ID_Context="RZ" />
+		</Source>
+	</POS>
+	<AvailRequestSegments>
+		<AvailRequestSegment>
+			<HotelSearchCriteria>
+				<Criterion>
+					<HotelRef HotelCodeContext="RZ" HotelCode="143" ChainCode="5" />
+					<HotelRef HotelCodeContext="RZ" HotelCode=" 144" ChainCode="5" />
+					<HotelRef HotelCodeContext="RZ" HotelCode="145" ChainCode="5" />
+					<HotelRef HotelCodeContext="RZ" HotelCode="146" ChainCode="5" />
+					<HotelRef HotelCodeContext="RZ" HotelCode="155" ChainCode="5" />
+					<StayDateRange End="2011-07-31T00:00:00" Start="2011-06-01T00:00:00" />
+				</Criterion>
+			</HotelSearchCriteria>
+		</AvailRequestSegment>
+	</AvailRequestSegments>
+</OTA_HotelAvailRQ>

@@ -1,0 +1,86 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="net.cbtltd.server.api.UsedMapper">
+
+	<cache readOnly="true"/>
+
+	<resultMap id="ResultMap" type="Used">
+		<id column="ID" jdbcType="INTEGER" property="id" />
+		<result column="TaskID" jdbcType="INTEGER" property="taskid" />
+		<result column="EntityType" jdbcType="VARCHAR" property="entitytype" />
+		<result column="EntityID" jdbcType="INTEGER" property="entityid" />
+		<result column="Description" jdbcType="VARCHAR" property="description" />
+		<result column="Quantity" jdbcType="DOUBLE" property="quantity" />
+		<result column="Unit" jdbcType="VARCHAR" property="unit" />
+		<result column="output" jdbcType="BIT" property="output" />
+	</resultMap>
+
+	<sql id="columns">
+		ID, TaskID, EntityType, EntityID, Description, Quantity, Unit, output
+	</sql>
+
+	<select id="read" parameterType="String" resultMap="ResultMap">
+		select
+		<include refid="columns" />
+		from used
+		where ID = #{id,jdbcType=INTEGER}
+	</select>
+
+	<delete id="delete" parameterType="String">
+		delete from used
+		where ID = #{id,jdbcType=INTEGER}
+	</delete>
+
+	<insert id="create" parameterType="Used" useGeneratedKeys="true" keyProperty="id">
+<!--		<selectKey keyProperty="ID" order="AFTER" resultType="java.lang.Integer">-->
+<!--			SELECT LAST_INSERT_ID()-->
+<!--		</selectKey>-->
+		insert into used (TaskID, EntityType, EntityID,
+		Description, Quantity, Unit,
+		output)
+		values (#{taskid,jdbcType=INTEGER}, #{entitytype,jdbcType=VARCHAR},
+		#{entityid,jdbcType=INTEGER},
+		#{description,jdbcType=VARCHAR}, #{quantity,jdbcType=DOUBLE}, #{unit,jdbcType=VARCHAR},
+		#{output,jdbcType=BIT})
+	</insert>
+
+	<update id="update" parameterType="Used">
+		update used
+		<set>
+			<if test="taskid != null">
+				TaskID = #{taskid,jdbcType=INTEGER},
+      </if>
+			<if test="entitytype != null">
+				EntityType = #{entitytype,jdbcType=VARCHAR},
+      </if>
+			<if test="entityid != null">
+				EntityID = #{entityid,jdbcType=INTEGER},
+      </if>
+			<if test="description != null">
+				Description = #{description,jdbcType=VARCHAR},
+      </if>
+			<if test="quantity != null">
+				Quantity = #{quantity,jdbcType=DOUBLE},
+      </if>
+			<if test="unit != null">
+				Unit = #{unit,jdbcType=VARCHAR},
+      </if>
+			<if test="output != null">
+				output = #{output,jdbcType=BIT},
+      </if>
+		</set>
+		where ID = #{id,jdbcType=INTEGER}
+	</update>
+
+	<update id="updateByPrimaryKey" parameterType="Used">
+		update used
+		set TaskID = #{taskid,jdbcType=INTEGER},
+		EntityType = #{entitytype,jdbcType=VARCHAR},
+		EntityID = #{entityid,jdbcType=INTEGER},
+		Description = #{description,jdbcType=VARCHAR},
+		Quantity = #{quantity,jdbcType=DOUBLE},
+		Unit = #{unit,jdbcType=VARCHAR},
+		output = #{output,jdbcType=BIT}
+		where ID = #{id,jdbcType=INTEGER}
+  </update>
+</mapper>

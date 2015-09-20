@@ -1,0 +1,30 @@
+<?xml version="1.0" encoding="UTF-8" standalone="true"?>
+<OTA_HotelRatePlanRS PrimaryLangID="en"
+	RetransmissionIndicator="false" SequenceNmbr="1" TransactionIdentifier="1"
+	Version="2.000" Target="Production" TimeStamp="2011-06-07T16:40:47"
+	EchoToken="OTAHotelRatePlanRQ 145, 2011-01-01T00:00:00, 2011-10-31T00:00:00, USD, a3a2e74b809e0e87"
+	xmlns:ns2="http://www.opentravel.org/OTA/2003/05">
+	<Success />
+	<RatePlans>
+		<RatePlan>
+			<Rates>
+				<Rate CurrencyCode="USD" End="2011-01-05T00:00:00" Start="2011-05-02T00:00:00"
+					RateTimeUnit="Day" CeilingAmount="585.78" FloorAmount="585.78"
+					IsRoom="true">
+					<UniqueID ID="21612" ID_Context="RZ" />
+				</Rate>
+				<Rate CurrencyCode="USD" End="2011-05-03T00:00:00" Start="2011-09-30T00:00:00"
+					RateTimeUnit="Day" CeilingAmount="370.75" FloorAmount="370.75"
+					IsRoom="true">
+					<UniqueID ID="21614" ID_Context="RZ" />
+				</Rate>
+				<Rate CurrencyCode="USD" End="2011-10-01T00:00:00" Start="2011-10-31T00:00:00"
+					RateTimeUnit="Day" CeilingAmount="489.39" FloorAmount="489.39"
+					IsRoom="true">
+					<UniqueID ID="21615" ID_Context="RZ" />
+				</Rate>
+			</Rates>
+			<HotelRef HotelCodeContext="RZ" HotelCode="145" ChainCode="5" />
+		</RatePlan>
+	</RatePlans>
+</OTA_HotelRatePlanRS>

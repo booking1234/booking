@@ -1,0 +1,29 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<report xmlns="http://www.eclipse.org/birt/2005/design" version="3.2.23" id="1">
+    <list-property name="configVars">
+        <structure>
+            <property name="name">__isdisplay__RP_ReportID_52_0</property>
+            <property name="value">118346</property>
+        </structure>
+        <structure>
+            <property name="name">__isdisplay__RP_Database_690_1</property>
+            <property name="value">jdbc:mysql://54.197.247.82:3306/razor</property>
+        </structure>
+        <structure>
+            <property name="name">RP_Database_690_2</property>
+            <property name="value">jdbc:mysql://54.197.247.82:3306/razor</property>
+        </structure>
+        <structure>
+            <property name="name">RP_Database_690_type_</property>
+            <property name="value">string</property>
+        </structure>
+        <structure>
+            <property name="name">RP_ReportID_52_3</property>
+            <property name="value">118346</property>
+        </structure>
+        <structure>
+            <property name="name">RP_ReportID_52_type_</property>
+            <property name="value">string</property>
+        </structure>
+    </list-property>
+</report>

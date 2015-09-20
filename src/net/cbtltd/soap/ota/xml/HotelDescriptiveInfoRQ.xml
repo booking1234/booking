@@ -1,0 +1,16 @@
+<?xml version="1.0" encoding="UTF-8" standalone="yes"?>
+<OTA_HotelDescriptiveInfoRQ xmlns="http://www.opentravel.org/OTA/2003/05"
+	PrimaryLangID="en" RetransmissionIndicator="false" SequenceNmbr="1"
+	TransactionIdentifier="1" Version="1.009" Target="Production"
+	TimeStamp="2009-07-20T10:54:04" EchoToken="OTA_HotelDescriptiveInfoRQ 5, 143, 5">
+	<POS>
+		<Source>
+			<RequestorID ID="5" ID_Context="RZ" />
+		</Source>
+	</POS>
+	<HotelDescriptiveInfos>
+		<HotelDescriptiveInfo BrandCodeList=""
+			CountryCodeList="" StateCodeList="" HotelCodeContext="RZ" HotelCode="143"
+			ChainCode="5" />
+	</HotelDescriptiveInfos>
+</OTA_HotelDescriptiveInfoRQ>
